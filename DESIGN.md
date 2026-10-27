@@ -299,3 +299,38 @@ The October 27 extension preserves the Read-mode document family. The header gro
 The blog uses the existing reading section and publication rhythm. A local script reads a public Press feed with credentials omitted, renders text through DOM text nodes, and permits article links only to the project's platform blog. Empty and failed feeds retain a real destination and explicit recovery. Article titles use the existing trace-title component scale (24px desktop, 22px mobile); the detector's off-ramp advisories for those two literals are intentional reuse of that documented scale. No external script or article HTML is embedded.
 
 The history page renders the attributed append-only journal at build time through native disclosure controls. Summaries preserve author, date precision and proposal/implementation/measurement status. Expanded evidence and limitations remain wrapped and readable. RFC-0005 is a draft proposal; there is no new live routing display or claim of community ratification.
+
+
+## Packet replay and downloadable evidence (October 27)
+
+The public document family now has 21 pages. The separate replay uses the same
+Operating Sheet faces, tones and normal navigation with a compact 32px title.
+Its signature diagram is the measured A—R—B Ethernet path, horizontal on desktop
+and vertical on mobile. A moving dot uses WAAPI transform only, linear timing and
+an explicitly illustrative 150/650/1200ms interval per frame. Playback begins only
+on request; stepping remains immediate. Reduced motion hides the dot while keeping
+the frame state and controls. Pause, scenario change, resize and visibility loss
+stop playback. No entrance effects or animation library were added.
+
+The journal keeps all capture records selectable; packet inspection displays the
+end sender/addressee separately from the physical hop. Times belong to each PCAP,
+not a shared clock. This is a saved SHA-256 experiment, not a live LLM deployment.
+Downloads are plain public file links with readable scope, size and SHA-256.
+The user request extends the earlier no-replay reading-portal guideline for this
+explicitly labelled evidence view; the original explanatory component is unchanged.
+
+
+## Administration (October 27)
+
+The 22-page family adds an administration screen in the same Operating Sheet
+colors and Plex faces. Its compact title, searchable member rows and a full-width
+selected-user form with two edit columns use the existing reading frame without a new app sidebar.
+On mobile the selected form moves above the list and provides a return anchor.
+Roles, reversible access changes, moderation and the audit are separate tasks.
+All profile labels and contributed text render as text, including apparent HTML.
+No motion or new icon library is added. Private panels wait for the server's
+admin role and are cleared on denied requests, restored-page revalidation or
+session loss. The public page shell contains no member data.
+
+The separate localhost preview is visibly labeled and uses temporary synthetic
+users. It is not the production login or a mode installed in the public service.

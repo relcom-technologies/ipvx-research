@@ -137,6 +137,20 @@ class CommunityAdapter(unittest.TestCase):
         self.provider.clock=lambda:2_000_003_601
         self.assertEqual(self.call('POST','/community/v1/rfcs/rfc-0005/entries',self.bob,{'text':'Expired session'})[0],401)
 
+    def test_admin_member_routes_and_immediate_suspension_through_both_proxies(self):
+        alice = self.call('GET','/community/v1/session',self.alice)[2]['author']['id']
+        self.assertEqual(self.call('GET','/community/v1/members',self.alice)[0],403)
+        status,headers,body = self.call('GET','/community/v1/members',self.owner)
+        self.assertEqual(status,200)
+        self.assertIn(alice,[member['id'] for member in body['members']])
+        self.assertIn('no-store',headers['Cache-Control'])
+        path = '/community/v1/members/'+alice+'/access'
+        self.assertEqual(self.call('POST',path,self.owner,{'action':'block','reason':'Owner suspension'})[0],200)
+        self.assertEqual(self.call('POST','/community/v1/rfcs/rfc-0005/entries',self.alice,{'text':'Blocked message'})[0],403)
+        self.assertEqual(self.call('GET','/community/v1/session',self.alice)[2]['access'],'blocked')
+        self.assertEqual(self.call('POST',path,self.owner,{'action':'restore','reason':'Resume participation'})[0],200)
+        self.assertEqual(self.call('POST','/community/v1/rfcs/rfc-0005/entries',self.alice,{'text':'Resumed message'})[0],201)
+
     def test_long_utf8_public_pages_fit_real_proxy(self):
         wanted=set()
         for _ in range(15):

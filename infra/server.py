@@ -10,7 +10,7 @@ from urllib.parse import unquote, urlsplit
 
 CSP = "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://press.relcom.com; object-src 'none'; base-uri 'none'; form-action 'self' https://github.com https://id.relcom.com; frame-ancestors 'none'"
 AUTH_PATHS = {'/auth/login', '/auth/callback', '/auth/session', '/auth/logout'}
-COMMUNITY_PATH = re.compile(r'/community/v1/(?:session|moderation|audit|roles|rfcs/rfc-000[1-7]/entries|entries/[1-9][0-9]{0,8}(?:/vote|/moderation)?)')
+COMMUNITY_PATH = re.compile(r'/community/v1/(?:session|moderation|audit|roles|members(?:/member_[a-f0-9]{24}/access)?|rfcs/rfc-000[1-7]/entries|entries/[1-9][0-9]{0,8}(?:/vote|/moderation)?)')
 
 
 class PublicFiles(BaseHTTPRequestHandler):

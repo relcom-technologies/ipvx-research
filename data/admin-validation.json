@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "status": "prepared_and_tested_not_deployed",
+  "recorded_at": "2026-10-27T16:27:42.548677+00:00",
+  "source_file_sha256": {
+    "infra/community.py": "d160e645b5d9c929f75807f29e847facc0f35a3c76e1bfb0ead4fcf70fe0dded",
+    "infra/auth.py": "59f50e9b9b8e1996f091033cf59e7f168c1fa1f6ef7345aa905ca01f213d67c8",
+    "infra/server.py": "2efa88a5f9870d55514dd0faa617d17acfbf7c7c081896c58b9215644c9375e5",
+    "assets/admin.js": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f",
+    "assets/admin.css": "091439811eb635ff91d0490e2a8ec0e0ed60f3f9c400aa94a9c6519fdd4a56ff",
+    "scripts/admin_page.py": "86b7471cfe37cd41d08fa327ad57fc77e41156919bf498d3075f6f2975fd8e5d",
+    "scripts/test_admin.py": "0729087abe125e747cde3be76c0e3fcb35f94ec0f8d7bd8b5e7d3da80ec00391",
+    "scripts/test_community_adapter.py": "f1727ea6973a2aa0602fe4cb5efe364b5a92c03741e8783506a8a87127815d2c",
+    "scripts/browser_admin_check.mjs": "5bf9d1a3b0d9a4bf40fae2cf24f92b0c5db8581750efe76b794341b0f2bcf106"
+  },
+  "server_tests": 42,
+  "browser_widths": [
+    1440,
+    1280,
+    768,
+    390
+  ],
+  "browser_checks": [
+    "anonymous/participant denied",
+    "private member pagination",
+    "literal profile/entry text",
+    "same idempotency key after malformed committed response",
+    "role grant",
+    "block/restore",
+    "protected owner",
+    "private DOM cleared after revocation"
+  ],
+  "actual_preview_check": "Synthetic B blocked and restored through the real temporary community database and browser; audit recorded both. No production user, role or session was changed.",
+  "production_acceptance": "Pending protected source review and scoped deployment."
+}

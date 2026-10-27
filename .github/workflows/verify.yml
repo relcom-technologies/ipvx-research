@@ -11,4 +11,10 @@ jobs:
       - run: python3 -m pip install -r infra/auth-requirements.lock
       - run: python3 -m unittest discover -s scripts -p 'test_*.py'
       - run: python3 -m unittest discover -s experiments/strict-native/scripts -p 'test_wire.py'
+      - name: Rebuild the bounded public bundles and verified capture view
+        run: |
+          python3 scripts/build_downloads.py
+          python3 scripts/export_packet_replay.py
+          python3 scripts/build_portal.py
+          git diff --exit-code -- '*.html' data/downloads data/packet-replay.json
       - run: python3 scripts/check_site.py

@@ -113,6 +113,9 @@ class CommunityService:
                 CREATE TABLE IF NOT EXISTS rates (actor TEXT, window INTEGER, count INTEGER,
                     PRIMARY KEY(actor,window));
                 CREATE TABLE IF NOT EXISTS settings (key TEXT PRIMARY KEY,value TEXT);
+                CREATE TABLE IF NOT EXISTS member_state (actor TEXT PRIMARY KEY,
+                    name TEXT NOT NULL DEFAULT '', last_seen INTEGER,
+                    blocked INTEGER NOT NULL DEFAULT 0, access_updated INTEGER);
                 CREATE INDEX IF NOT EXISTS entry_listing ON entries(rfc,status,id);
                 CREATE INDEX IF NOT EXISTS entry_author ON entries(author,status,id);
             ''')
@@ -168,7 +171,22 @@ class CommunityService:
                 raise Rejected(503, 'community_capacity_reached')
             db.execute('INSERT INTO users VALUES (?,?)', (actor, int(self.clock())))
 
-    def _roles(self, db, actor):
+    def _blocked(self, db, actor):
+        row = db.execute('SELECT blocked FROM member_state WHERE actor=?', (actor,)).fetchone() if actor else None
+        return bool(row and row[0])
+
+    def _observe(self, db, actor, user):
+        # Only the validated server session supplies this optional profile label.
+        # It remains admin-private; public discussions retain project pseudonyms.
+        name = user.get('name', '')
+        name = ''.join(c for c in name if ord(c) >= 32 and ord(c) != 127).strip()[:100] if isinstance(name, str) else ''
+        db.execute('INSERT INTO member_state(actor,name,last_seen) VALUES(?,?,?) '
+                   'ON CONFLICT(actor) DO UPDATE SET name=excluded.name,last_seen=excluded.last_seen',
+                   (actor, name, int(self.clock())))
+
+    def _roles(self, db, actor, *, stored=False):
+        if not stored and self._blocked(db, actor):
+            return set()
         return {row[0] for row in db.execute('SELECT role FROM roles WHERE actor=?', (actor,))} if actor else set()
 
     def _require(self, db, actor, *roles):
@@ -250,13 +268,20 @@ class CommunityService:
                 db.execute('BEGIN IMMEDIATE')
                 if actor:
                     self._enroll(db, actor)
+                    self._observe(db, actor, user)
+                # Blocking applies on every request, before cached mutations can
+                # be replayed. Public reading remains available anonymously.
+                if self._blocked(db, actor) and target.path != PREFIX + '/session':
+                    if method == 'POST':
+                        raise Rejected(403, 'access_blocked')
+                    actor = None
                 if method == 'GET':
                     return self._get(db, target.path, query, actor)
                 if not isinstance(request_id, str) or not re.fullmatch(r'[A-Za-z0-9_.:-]{8,128}', request_id):
                     raise Rejected(400, 'idempotency_key_required')
                 # Revoked privileged users must not read a previously cached private
                 # response by replaying an old successful administrator request.
-                if target.path == PREFIX + '/roles':
+                if target.path == PREFIX + '/roles' or re.fullmatch(PREFIX + r'/members/member_[a-f0-9]{24}/access', target.path):
                     self._require(db, actor, 'admin')
                 elif re.fullmatch(PREFIX + r'/entries/([1-9][0-9]{0,8})/moderation', target.path):
                     self._require(db, actor, 'moderator', 'admin')
@@ -285,6 +310,8 @@ class CommunityService:
             return CommunityResponse(503, {'error': 'community_temporarily_unavailable'})
 
     def _get(self, db, path, query, actor):
+        if path == PREFIX + '/members':
+            return self._members(db, query, actor)
         if set(query) - {'limit', 'before', 'mine', 'kind'}:
             raise Rejected(400, 'unknown_query')
         limit = int(query.get('limit', ['25'])[0])
@@ -300,11 +327,13 @@ class CommunityService:
             if query:
                 raise Rejected(400, 'unexpected_query')
             roles = self._roles(db, actor)
+            blocked = self._blocked(db, actor)
             return CommunityResponse(200, {'authenticated': bool(actor),
                 'author': {'id': actor, 'label': 'Участник ' + actor[-6:]} if actor else None,
-                'roles': sorted({'participant', *roles}) if actor else [],
+                'roles': sorted({'participant', *roles}) if actor and not blocked else [],
+                'access': 'blocked' if blocked else 'active' if actor else 'anonymous',
                 'governance': {'votesBinding': False, 'ratification': 'RFC-0003 / pinned GitHub electorate'},
-                'capabilities': ['submit_pending', 'advisory_vote'] if actor else []})
+                'capabilities': ['submit_pending', 'advisory_vote'] if actor and not blocked else []})
         match = re.fullmatch(PREFIX + r'/rfcs/(rfc-\d{4})/entries', path)
         if match:
             kind = query.get('kind', ['comment'])[0]
@@ -334,7 +363,65 @@ class CommunityService:
             return CommunityResponse(200, {'entry': self._public_entry(db, row)})
         raise Rejected(404, 'route_not_found')
 
+    def _member(self, db, row):
+        return {'id': row['actor'], 'label': row['name'] or 'Участник ' + row['actor'][-6:],
+                'roles': sorted({'participant', *self._roles(db, row['actor'], stored=True)}),
+                'access': 'blocked' if row['blocked'] else 'active',
+                'joinedAt': _stamp(row['created']),
+                'lastSeenAt': _stamp(row['last_seen']) if row['last_seen'] is not None else None,
+                'accessUpdatedAt': _stamp(row['access_updated']) if row['access_updated'] is not None else None,
+                'protected': bool(db.execute("SELECT 1 FROM settings WHERE key='bootstrap_admin' AND value=?", (row['actor'],)).fetchone())}
+
+    def _members(self, db, query, actor):
+        self._require(db, actor, 'admin')
+        if set(query) - {'limit', 'after', 'search', 'access'}:
+            raise Rejected(400, 'unknown_query')
+        limit = int(query.get('limit', ['25'])[0])
+        after = query.get('after', [''])[0]
+        search = _text(query.get('search', [''])[0], 0, 100)
+        access = query.get('access', ['all'])[0]
+        if (not 1 <= limit <= 50 or (after and not re.fullmatch(r'member_[a-f0-9]{24}', after))
+                or access not in ('all', 'active', 'blocked')):
+            raise Rejected(400, 'invalid_pagination')
+        clause, values = ['1=1'], []
+        if search:
+            escaped = '%' + search.replace('\\', '\\\\').replace('%', '\\%').replace('_', '\\_') + '%'
+            clause.append("(u.actor LIKE ? ESCAPE '\\' OR COALESCE(s.name,'') LIKE ? ESCAPE '\\')")
+            values += [escaped, escaped]
+        if access != 'all':
+            clause.append('COALESCE(s.blocked,0)=?'); values.append(int(access == 'blocked'))
+        where = ' AND '.join(clause)
+        source = ' FROM users u LEFT JOIN member_state s ON s.actor=u.actor '
+        total = db.execute('SELECT count(*)' + source + 'WHERE ' + where, values).fetchone()[0]
+        rows = db.execute("SELECT u.actor,u.created,COALESCE(s.name,'') AS name,s.last_seen,"
+                          'COALESCE(s.blocked,0) AS blocked,s.access_updated' + source +
+                          'WHERE ' + where + ' AND u.actor>? ORDER BY u.actor LIMIT ?',
+                          [*values, after, limit+1]).fetchall()
+        items = [self._member(db, row) for row in rows[:limit]]
+        return CommunityResponse(200, {'members': items, 'total': total,
+            'nextAfter': items[-1]['id'] if len(rows) > limit else None,
+            'visibility': 'admin-private', 'scope': 'verified accounts that have visited this portal; not the entire identity-provider pool'})
+
     def _post(self, db, path, actor, body):
+        match = re.fullmatch(PREFIX + r'/members/(member_[a-f0-9]{24})/access', path)
+        if match:
+            self._require(db, actor, 'admin')
+            _fields(body, {'action', 'reason'})
+            action, reason = body.get('action'), _text(body.get('reason'), 3, 1000)
+            if action not in ('block', 'restore'):
+                raise Rejected(400, 'invalid_access_change')
+            target = match[1]
+            if not db.execute('SELECT 1 FROM users WHERE actor=?', (target,)).fetchone():
+                raise Rejected(404, 'participant_not_found')
+            if action == 'block' and (target == actor or db.execute(
+                    "SELECT 1 FROM settings WHERE key='bootstrap_admin' AND value=?", (target,)).fetchone()):
+                raise Rejected(409, 'protected_admin')
+            before = self._blocked(db, target)
+            db.execute('INSERT INTO member_state(actor,blocked,access_updated) VALUES(?,?,?) '
+                       'ON CONFLICT(actor) DO UPDATE SET blocked=excluded.blocked,access_updated=excluded.access_updated',
+                       (target, int(action == 'block'), int(self.clock())))
+            self._audit(db, actor, action + '_access', target, {'reason': reason, 'from': 'blocked' if before else 'active'})
+            return CommunityResponse(200, {'authorId': target, 'access': 'blocked' if action == 'block' else 'active'})
         match = re.fullmatch(PREFIX + r'/rfcs/(rfc-\d{4})/entries', path)
         if match:
             _fields(body, {'kind', 'title', 'text'})
@@ -393,6 +480,8 @@ class CommunityService:
                 raise Rejected(400, 'invalid_role_change')
             if not db.execute('SELECT 1 FROM users WHERE actor=?', (target,)).fetchone():
                 raise Rejected(404, 'participant_not_found')
+            if action == 'grant' and self._blocked(db, target):
+                raise Rejected(409, 'participant_blocked')
             owner = db.execute("SELECT value FROM settings WHERE key='bootstrap_admin'").fetchone()
             if action == 'revoke' and role == 'admin' and owner and target == owner[0]:
                 raise Rejected(409, 'bootstrap_admin_requires_operator_migration')

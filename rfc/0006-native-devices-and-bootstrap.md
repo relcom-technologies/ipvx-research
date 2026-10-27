@@ -132,3 +132,24 @@ The XNS1 diagnostic used guest-generated Ed25519 keys, public-key-derived NodeID
 The local model and Unix-socket task interface in the diagram remain target work. AF_UNIX availability was probed, but no model or model-facing SDK task ran in these strict guests. The SHA-256 task is deterministic computation. Physical hardware, hostile admission, durable recovery, dynamic routing and an equal-budget IP efficiency comparison remain untested. The host/build Internet and operator trust remain disclosed.
 
 Source/config/image hashes, receipts, full captures and console records are linked in the [public measured summary](https://ipvx.org/data/strict-native-2026-10-27/summary.json). This run supplies bounded evidence toward G1–G3. It does not complete G4–G7 or prove bit-for-bit reproducibility of every host package. A subsequent change needs its own frozen revision, evidence and decision.
+
+
+## Measured readiness appendix — 2026-10-27
+
+After explicit owner approval of infrastructure PR760, read-only run40535896278
+confirmed that the existing A/B/R guests currently occupy three different cluster
+nodes and that A/B have identical pinned local model weights. Both expose a KVM
+device and a CPU virtualization flag. The current kernel supports kexec, but its
+user-space tool is absent. No package, boot, service, power or network changed.
+The [sanitized aggregate](https://ipvx.org/data/strict-readiness-2026-10-27.json)
+keeps raw inventory private. This is operator-collected readiness, not strict-OS
+LLM execution, verified nested acceleration or an IP performance comparison.
+
+The next proposed path is a separately reviewed strict guest on each of the
+already allocated hosts, with in-process offline inference and actual native
+Ethernet between machines. A local Unix virtual-NIC adapter may connect a strict
+guest to the existing Ethernet NIC; no cross-machine TCP/UDP backend or inference
+proxy qualifies. The complete guest links, adapter boundary and physical native
+frames must be associated by their actual bytes. Management in the surrounding
+host OS remains IP and must stay explicit. No such adapter or multi-host strict
+model run is established by this readiness appendix.

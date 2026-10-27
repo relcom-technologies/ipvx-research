@@ -2,6 +2,9 @@
 .taste-skill/inspect/
 __pycache__/
 *.zip
+!data/downloads/ipvx-native-device-prototype.zip
+!data/downloads/ipvx-research-history.zip
 
 browser-evidence/
 node_modules/
+/node_modules

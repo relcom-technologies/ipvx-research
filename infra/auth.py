@@ -40,7 +40,7 @@ TX_SECONDS = 600
 SESSION_SECONDS = 3600
 RECHECK_SECONDS = 600
 MAX_JSON = 131072
-COMMUNITY_ROUTE = re.compile(r'/community/v1/(?:session|moderation|audit|roles|rfcs/rfc-000[1-7]/entries|entries/[1-9][0-9]{0,8}(?:/vote|/moderation)?)')
+COMMUNITY_ROUTE = re.compile(r'/community/v1/(?:session|moderation|audit|roles|members(?:/member_[a-f0-9]{24}/access)?|rfcs/rfc-000[1-7]/entries|entries/[1-9][0-9]{0,8}(?:/vote|/moderation)?)')
 
 
 class AuthFailure(Exception):
