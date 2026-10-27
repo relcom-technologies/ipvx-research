@@ -13,6 +13,7 @@ try {
    await page.goto(base+'packet-replay.html');
    await page.getByText('Запись готова: все 90 кадров, 16 из 16 задач.',{exact:true}).waitFor();
    await page.evaluate(()=>document.fonts.ready);
+   if(width===1440&&!reduced)await page.screenshot({path:'browser-evidence/replay-first-screen.png',fullPage:false});
    if(await page.locator('#replay-events button').count()!==90)throw Error('Omitted baseline frames');
    // Select a task, then verify that the physical hop and final addressee differ.
    await page.locator('#replay-events button').filter({hasText:'19. A → R · TASK №1'}).click();
@@ -24,6 +25,10 @@ try {
    await page.locator('#replay-speed').selectOption('150');
    await page.getByRole('button',{name:'Воспроизвести',exact:true}).click();
    if(reduced && await page.locator('#replay-packet').isVisible())throw Error('Reduced motion packet still moves');
+   if(!reduced)await page.waitForFunction(()=>{
+    const p=document.getElementById('replay-packet');
+    return !p.hidden && p.getAnimations().some(a=>a.currentTime>30);
+   });
    await page.waitForFunction(()=>Number(document.getElementById('replay-position').value)>=21);
    await page.getByRole('button',{name:'Пауза',exact:true}).click();
    const stopped=await page.locator('#replay-position').inputValue();
