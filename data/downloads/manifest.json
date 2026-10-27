@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "snapshot_through": "HX-0064",
+  "bundles": [
+    {
+      "name": "ipvx-native-device-prototype.zip",
+      "label": "Код, инструкции и захваты трафика",
+      "scope": "Проверенный строгий прототип: три гостя на одном CI-хосте, задачи SHA-256, без LLM.",
+      "bytes": 96142,
+      "sha256": "419d6b415d405066be53c760e0a42ead99822172a57a59eb9086ca0d36256ce1",
+      "files": 38
+    },
+    {
+      "name": "ipvx-research-history.zip",
+      "label": "Полная доступная выгрузка истории",
+      "scope": "64 событий по HX-0064; авторы, основания, проверки и ограничения.",
+      "bytes": 123632,
+      "sha256": "e13f84e7eb049a0c5923b1ed4a1e82c9a5f84fce03a7d3ec8cbdf6e55dd678d3",
+      "files": 11
+    }
+  ]
+}
