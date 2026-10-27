@@ -1,0 +1,17 @@
+---
+description: Record every IPvX project change and each participant's evidence-based conclusions
+alwaysApply: true
+---
+
+# Attributed project history
+
+Follow `AGENTS.md` and `history/README.md` for every project change.
+Before handoff, append an own-author event to `history/events.jsonl` using the
+template. Record the concrete change, concise public decision rationale, exact
+revision/evidence, checks, failures, limits and remaining questions.
+Keep speaker and recorder separate; register actual participants and label
+reconstructions. Never invent timestamps, independent agent opinions or approval.
+Distinguish proposal, approval, implementation and measurement. Correct earlier
+claims by new linked entries; preserve negative results. Do not expose private
+scratch reasoning, credentials, private addresses, owner email or login details.
+History does not grant votes, keys, network admission or deployment permission.

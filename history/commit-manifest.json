@@ -1,0 +1,397 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-27T10:50:14.129837+00:00",
+  "notice": "Git metadata dates are preserved as stored. Conversation event dates are separate. Git author identity is not inferred as the author of assistant or model statements. This snapshot cannot contain its own future commit; the next contributor records the resulting revision.",
+  "repositories": [
+    {
+      "repository": "relcom-technologies/ipvx-research",
+      "captured_head": "a8264e37c2831fc64024e154e1d2935a8ab0fd6f",
+      "scope": "Every reachable commit at this recorded head; no unrelated repositories or private file contents.",
+      "commits": [
+        {
+          "revision": "68aeb2099f4ece59cc5e7ca148bc18af3342bae2",
+          "git_author_date": "2026-10-27T08:29:23+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Create IPvX research portal with draft RFCs and majority admission workflow",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "c90a31a02edcac4b77dd1e1b9f46a4cb14e77814",
+          "git_author_date": "2026-10-27T08:31:16+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Pin browser evidence runner to supported Ubuntu 24.04",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "0cadd3162c10df266507aeafa5cabd6a10e463ec",
+          "git_author_date": "2026-10-27T08:34:18+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Keep native message path readable on phone screens",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "4220b1b16f92ea98ce434f738e264aea7ec18bd5",
+          "git_author_date": "2026-10-27T08:44:23+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Publish measured local LLM versus IP comparison with transcripts and failed hypotheses",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "673e096f82282a1dde0476b26499210eb1cbdb43",
+          "git_author_date": "2026-10-27T08:45:02+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Include generated comparison figure in the static portal",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "7e76ee0ff97c773d9243e4469f60cf413eaf45f6",
+          "git_author_date": "2026-10-27T08:47:40+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Verify measured transcripts and graceful long-proposal and report error states",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "6a918e34d538ac1053d7fdc4d3a3d862dedefae9",
+          "git_author_date": "2026-10-27T09:02:09+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Make measured evidence readable and export an audited minimal signed trace",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "2ba8d2f605f9a79eea2bad471d13928f0a2b7e35",
+          "git_author_date": "2026-10-27T09:04:42+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Keep tablet routing diagram readable and provide an offline proof verifier",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "53e30fec988b5cb53397bc35d00e120bc470f4ff",
+          "git_author_date": "2026-10-27T09:30:14+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Document the verified research portal design and responsive evidence",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "dc049bc664acc32554bc1c107345f83babc0a9a9",
+          "git_author_date": "2026-10-27T09:40:40+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Serve public research files on the existing IPvX observer",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "a8264e37c2831fc64024e154e1d2935a8ab0fd6f",
+          "git_author_date": "2026-10-27T10:01:24+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Use the exact public export in browser acceptance and deployment",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        }
+      ]
+    },
+    {
+      "repository": "relcom-technologies/ipvx-agent-lab",
+      "captured_head": "27360439752925ad58f2054860bac3b221d1392c",
+      "scope": "Every reachable commit at this recorded head; no unrelated repositories or private file contents.",
+      "commits": [
+        {
+          "revision": "bb246b66ff6895062f99c339b95c8ac70533fcf9",
+          "git_author_date": "2026-10-26T15:39:41+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Build the observable IPvX agent pilot, client library and executable protocol",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "bc08ec1299e27b55981273278cfc02d2772ec8db",
+          "git_author_date": "2026-10-26T15:43:50+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Correct event directions, mobile visualization, typography and connection states",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "3d78321a526837c00ee1303c9872269ff6bf4ff2",
+          "git_author_date": "2026-10-26T15:45:30+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Validate the container deployment and quote tmpfs mount options",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "5f055ac5727b5e6c43ae7f83418603aa6c6d950c",
+          "git_author_date": "2026-10-26T15:59:25+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Finalize pilot contracts, design guidance and reproducible operational acceptance",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "67a854b272c035a061e14dc66228720c27aeaffd",
+          "git_author_date": "2026-10-26T16:06:02+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Record v0.1.0 server, resilience and operational acceptance evidence",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "a8a26568cf95e89dbf0969e0cb1a4776d50ba28c",
+          "git_author_date": "2026-10-26T20:50:20+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Add autonomous numeric-IP peers with local keys and signed direct migration",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "08c15788c4d85e307d5a25f7a130c39eacd5fc35",
+          "git_author_date": "2026-10-26T20:59:48+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Add direct-exchange evidence view and repeatable two-VM acceptance",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "de1908c1ffc9e14b5c2a7ebb67a43a41b5cec113",
+          "git_author_date": "2026-10-26T21:04:37+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Clarify distributed lookup and IP routing boundaries",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "9847b265964d84d7594897723aa08ab15394aa3b",
+          "git_author_date": "2026-10-26T21:07:26+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Bound operator SSH waits and reuse authenticated connections",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "50563c2bbf8c57ae36f835a876153ba4d3cd2791",
+          "git_author_date": "2026-10-26T21:08:39+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Use portable short SSH control paths and gateway-aware connection timeout",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "51691645043a9e0385a9ff0cc8c87fef503691ed",
+          "git_author_date": "2026-10-26T21:53:02+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Preserve live evidence disclosure and keyboard focus; record two-VM acceptance",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "8a3a60a088cc14080e24acf5392fad684c5a5524",
+          "git_author_date": "2026-10-26T22:04:19+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Finalize direct-stage operating guidance and verified UI evidence",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "41bdbb37e1002453b47f17e0ba57f6da87772bbf",
+          "git_author_date": "2026-10-26T23:43:34+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Prefer the documented VPN route and verify operator tunnel readiness",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "a1ca621eb5d90c28512a9c132959272c62d61fdb",
+          "git_author_date": "2026-10-26T23:57:13+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Add signed neighbor routing and encrypted multi-hop delivery",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "0e7475be29a09d8847b8129d8ab977e3b182217f",
+          "git_author_date": "2026-10-27T00:09:07+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Carry route control and agent tasks in native signed Ethernet frames",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "c6c5cff036e3089eea293691f3621f51f17d443e",
+          "git_author_date": "2026-10-27T00:13:40+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Prepare fixed native Ethernet guests and validate kernel isolation syntax",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "05072bcf6d63ffb1520bc61c870f19c62e4756e4",
+          "git_author_date": "2026-10-27T00:20:29+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Show native paths, per-hop packet fields and bounded relay outage controls",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "3cb2d1e28b5da6159092dd6ed40ebc50eff2756f",
+          "git_author_date": "2026-10-27T00:24:20+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Accept the empty IPv4 inventory of an unnumbered Ethernet interface",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "bbf957b9ae082dead07aa48d79986d4d275bd48e",
+          "git_author_date": "2026-10-27T00:27:49+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Automate bounded five-VM acceptance and operator-independent recovery evidence",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "7993998d96c4bd075c3db6e2ecf30f0f20505384",
+          "git_author_date": "2026-10-27T00:36:39+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Separate management capture traffic and document native network scope",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "5f5540ddfdf1eb7d09297150b167dd5e3fddd7af",
+          "git_author_date": "2026-10-27T00:41:09+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Record complete native acceptance and clarify live routing evidence",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "a82711c287da7d5aa86ebe593b787e15539b509d",
+          "git_author_date": "2026-10-27T01:03:08+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Add bounded native document workers and explicit capacity experiment",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "f6117bfa8625cd4dd8bec72fbf88143c23e47066",
+          "git_author_date": "2026-10-27T01:05:44+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Disable namespace bridge IPv6 and verify actual outage interval",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "00cbf3bdc5d4e05c04bdd411efc9f6d6e238ef07",
+          "git_author_date": "2026-10-27T01:10:43+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Correct task lifetime and causal per-hop fault simulation; suppress bridge multicast",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "3d1f674b49f77e41c98685030c51cc065e7e805f",
+          "git_author_date": "2026-10-27T01:14:11+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Publish measured native workload and separate interactive capacity exploration",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "af96bbb8067047700f8935a08d72580a90e81cb5",
+          "git_author_date": "2026-10-27T01:16:51+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Isolate native CI interfaces from runner network managers",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "26f3c7b818b2dc79533d7cd7d704d92cdc45fdd4",
+          "git_author_date": "2026-10-27T01:27:14+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Clarify torus edge ports and supported native scale in the model view",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "deac82ecb1c2002cdcc07311dae8b2745576c515",
+          "git_author_date": "2026-10-27T01:27:29+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Document real tool workload, library use and unverified adoption",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "d5c42269bc64b0ee66ae6c3123a3d69a40318a9a",
+          "git_author_date": "2026-10-27T01:33:38+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Reserve an outer label lane for right-side wrap ports",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "1519b214f103dea7aaa5156669567a82206a8c56",
+          "git_author_date": "2026-10-27T01:38:41+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Record reviewed mesh and scale surface evidence without changing design system",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "c98f33dc820cd1eca61b1b3fcc96918124fc62fe",
+          "git_author_date": "2026-10-27T08:14:20+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Add local LLM collaboration experiment with native and IP baselines",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "0601efab055ac6847bf669fb51118d798fc6492a",
+          "git_author_date": "2026-10-27T08:16:51+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Complete isolated model dependencies and root-owned identity directory",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "f7afeb62530a15a177a19bdbc26772f4f52c404d",
+          "git_author_date": "2026-10-27T08:17:12+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Keep failed attempts separate and reset transient unit state before retry",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "6460b0117d1283baef27a236abf82e965cc84029",
+          "git_author_date": "2026-10-27T08:17:25+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Keep raw LLM run evidence outside source releases",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "d21360cab22ad50f6d2c8b8e6b6fb2fc9ea3922a",
+          "git_author_date": "2026-10-27T08:19:48+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Check readiness in the private experiment directory with operator privileges",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "0618d01165649fee4895d38689add3b65025ba0b",
+          "git_author_date": "2026-10-27T08:22:16+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Decode durable model tasks and fail fast if an experiment worker stops",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "f7d1acf1cb6b8b45d7b072d23d77133316933250",
+          "git_author_date": "2026-10-27T08:22:29+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Use matching configured ports in the durable queue regression test",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "d9c37ff7a1e0b945e0da8118a1cdd4b73463ef77",
+          "git_author_date": "2026-10-27T08:30:08+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Atomically publish admission files and retain a fresh experiment restoration timer",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "384924e905650099be20d71de8a8a674429fa957",
+          "git_author_date": "2026-10-27T08:31:13+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Reset capture service state and write captures in the private run directory",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "83be07f2953b0c95fa56b7d65795f3fcf30fe1f8",
+          "git_author_date": "2026-10-27T08:42:59+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Verify signed LLM exchange evidence and report network and reasoning limits separately",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "bb30c6c02917930913ed0b43fcc75b536a4ee955",
+          "git_author_date": "2026-10-27T08:45:40+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Document repeatable LLM evaluation and preserve all hypothesis dispositions",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        },
+        {
+          "revision": "27360439752925ad58f2054860bac3b221d1392c",
+          "git_author_date": "2026-10-27T08:47:43+01:00",
+          "git_author_name": "Ashkitt",
+          "subject": "Record the exact successful worker release SHA",
+          "attribution_notice": "Git author metadata; not proof of who wrote or approved the work."
+        }
+      ]
+    }
+  ],
+  "upstream_baseline": {
+    "repository": "relcom-technologies/IPvX_resolver",
+    "revision": "218bf93acb842604167c93144e5bc967b70ecb6a",
+    "basis": "reports/manifest.json at lab recorded head"
+  }
+}

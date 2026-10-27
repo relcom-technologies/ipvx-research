@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-27T10:52:20.320671+00:00",
+  "repository": "relcom-technologies/relcom-infra",
+  "captured_head": "afd3e02d5153ffd7f0ee045de0e41377cd3c53b2",
+  "path_filters": [
+    "ipvx-agent-lab",
+    ".github/workflows/ipvx*.yml"
+  ],
+  "scope": "Non-merge commits touching only the IPvX lab tree or IPvX-named workflows at this recorded head. Other projects and full infrastructure history are intentionally outside this public project record. Shared ingress changes are separately evidenced by scoped IPvX PRs.",
+  "notice": "Git metadata does not prove human authorship, approval, merge or deployment. The captured head may include a pending documentation PR. No infrastructure file content, host address or credential is exported.",
+  "commits": [
+    {
+      "revision": "25260283e458757e8a10e9647fa0cd1cb55911ee",
+      "git_author_date": "2026-10-26T13:58:37+01:00",
+      "git_author_name": "ashkitt",
+      "subject": "Merge pull request #730 from relcom-technologies/resources/release-0ecae72"
+    },
+    {
+      "revision": "504d3267ec8f7a56848688c29141062508776252",
+      "git_author_date": "2026-10-26T15:08:26+01:00",
+      "git_author_name": "ashkitt",
+      "subject": "Add isolated IPvX agent experiment guest and bounded provisioning workflow (#731)"
+    },
+    {
+      "revision": "5baf41824adcba066eacaec36b0dbf7ace79f43d",
+      "git_author_date": "2026-10-26T15:34:12+01:00",
+      "git_author_name": "ashkitt",
+      "subject": "Complete isolated lab baseline and owner access (#733)"
+    },
+    {
+      "revision": "612268d29d533c1810faeaa5445abe216e761004",
+      "git_author_date": "2026-10-26T15:55:14+01:00",
+      "git_author_name": "ashkitt",
+      "subject": "Record IPvX pilot acceptance and pin its guest host key (#734)"
+    },
+    {
+      "revision": "b3f84fdbd196734d4f91ab881751c8875212d10d",
+      "git_author_date": "2026-10-26T20:54:23+01:00",
+      "git_author_name": "ashkitt",
+      "subject": "Add two isolated guests for autonomous DNS-free IPvX agent exchange (#735)"
+    },
+    {
+      "revision": "0f85faf05e0593875facd93caa47c389c4f1838f",
+      "git_author_date": "2026-10-26T21:01:40+01:00",
+      "git_author_name": "ashkitt",
+      "subject": "Fix isolated IPvX inventory and pin new peer SSH keys (#736)"
+    },
+    {
+      "revision": "a9cb82397ad22e02d65df1890f8a6c7e1319d830",
+      "git_author_date": "2026-10-26T21:40:10+01:00",
+      "git_author_name": "ashkitt",
+      "subject": "Add bounded direct-peer acceptance via existing CI access (#737)"
+    },
+    {
+      "revision": "f83e42966432e1b50386619ac4eac93fa7fc8987",
+      "git_author_date": "2026-10-26T21:46:18+01:00",
+      "git_author_name": "ashkitt",
+      "subject": "Verify real direct stand interactions and responsive evidence from CI (#738)"
+    },
+    {
+      "revision": "73edd5ad9f76d98a9609c6a4a599e1e098740356",
+      "git_author_date": "2026-10-26T21:57:59+01:00",
+      "git_author_name": "ashkitt",
+      "subject": "Preserve live IPvX evidence interaction and record direct acceptance (#739)"
+    },
+    {
+      "revision": "67120ec4607715f4ba074cac45c3e27c81222bcf",
+      "git_author_date": "2026-10-26T23:53:20+01:00",
+      "git_author_name": "Ashkitt",
+      "subject": "Declare three bounded private relays for the IPvX multi-hop experiment"
+    },
+    {
+      "revision": "9033fceec1d29b5355b62ea9f52c2fe714a8637a",
+      "git_author_date": "2026-10-27T00:30:42+01:00",
+      "git_author_name": "Ashkitt",
+      "subject": "Pin relay hosts and add real native-network visual acceptance"
+    },
+    {
+      "revision": "aa76f9dad59c2d0a9ad626a1afd49e105300ca2e",
+      "git_author_date": "2026-10-27T01:39:40+01:00",
+      "git_author_name": "ashkitt",
+      "subject": "Record IPvX native document workload and validate the scale demonstration (#744)"
+    },
+    {
+      "revision": "df3f841cf6c9f1a2c88a28e2783632302740b19a",
+      "git_author_date": "2026-10-27T10:06:12+01:00",
+      "git_author_name": "Ashkitt",
+      "subject": "Publish IPvX research from its existing observer through the standard ingress"
+    },
+    {
+      "revision": "2a837915a426ce3f4799e9d66d70db44d109d468",
+      "git_author_date": "2026-10-27T11:11:37+01:00",
+      "git_author_name": "Ashkitt",
+      "subject": "Verify the real IPvX public domain after DNS and TLS activation"
+    },
+    {
+      "revision": "00474c5a712fa15156a326e9d1691465894574e5",
+      "git_author_date": "2026-10-27T11:13:45+01:00",
+      "git_author_name": "Ashkitt",
+      "subject": "Record actual IPvX deployment and bounded public acceptance limits"
+    },
+    {
+      "revision": "afd3e02d5153ffd7f0ee045de0e41377cd3c53b2",
+      "git_author_date": "2026-10-27T11:32:55+01:00",
+      "git_author_name": "Ashkitt",
+      "subject": "Record accepted IPvX public HTTPS and serving boundaries"
+    }
+  ],
+  "additional_scoped_publication_prs": [
+    "https://github.com/relcom-technologies/relcom-infra/pull/747",
+    "https://github.com/relcom-technologies/relcom-infra/pull/749",
+    "https://github.com/relcom-technologies/relcom-infra/pull/750",
+    "https://github.com/relcom-technologies/relcom-infra/pull/751"
+  ]
+}

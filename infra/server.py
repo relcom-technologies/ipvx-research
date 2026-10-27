@@ -1,13 +1,15 @@
-"""Read-only public research files; no lab control or model execution endpoints."""
+"""Public research files and a bounded local sign-in proxy; no lab control API."""
 import argparse
 import json
 import mimetypes
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from http.client import HTTPConnection
 from pathlib import Path
 import re
 from urllib.parse import unquote, urlsplit
 
-CSP = "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action https://github.com; frame-ancestors 'none'"
+CSP = "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://press.relcom.com; object-src 'none'; base-uri 'none'; form-action 'self' https://github.com https://id.relcom.com; frame-ancestors 'none'"
+AUTH_PATHS = {'/auth/login', '/auth/callback', '/auth/session', '/auth/logout'}
 
 
 class PublicFiles(BaseHTTPRequestHandler):
@@ -21,7 +23,8 @@ class PublicFiles(BaseHTTPRequestHandler):
         self.send_header('Content-Security-Policy', CSP)
         self.send_header('X-Content-Type-Options', 'nosniff')
         self.send_header('X-Frame-Options', 'DENY')
-        self.send_header('Referrer-Policy', 'strict-origin-when-cross-origin')
+        self.send_header('Referrer-Policy', 'no-referrer' if getattr(self, 'auth_response', False)
+                         else 'strict-origin-when-cross-origin')
         self.send_header('X-IPvX-Revision', self.server.revision)
         super().end_headers()
 
@@ -33,6 +36,9 @@ class PublicFiles(BaseHTTPRequestHandler):
             path = unquote(urlsplit(self.path).path, errors='strict')
         except (ValueError, UnicodeError):
             self.send_error(400)
+            return
+        if path in AUTH_PATHS:
+            self.proxy_auth('HEAD' if head else 'GET')
             return
         if path == '/healthz':
             data = json.dumps({'status': 'ok', 'revision': self.server.revision}).encode()
@@ -55,8 +61,57 @@ class PublicFiles(BaseHTTPRequestHandler):
         if not head:
             self.wfile.write(data)
 
+    def do_POST(self):
+        if urlsplit(self.path).path != '/auth/logout':
+            self.send_error(404)
+            return
+        self.proxy_auth('POST')
 
-def make_server(root, bind, port, revision):
+    def proxy_auth(self, method):
+        """Only the fixed, loopback authentication process receives these requests."""
+        if not self.server.auth_port:
+            self.send_error(503, 'Sign-in is available on the public production portal')
+            return
+        try:
+            lengths = self.headers.get_all('Content-Length', [])
+            size = int(lengths[0]) if lengths else 0
+            if len(lengths) > 1 or size < 0 or size > 1024 or self.headers.get('Transfer-Encoding'):
+                raise ValueError('Unsupported body')
+        except ValueError:
+            self.send_error(400)
+            return
+        host = self.headers.get('Host', '').lower()
+        if host not in ('ipvx.org', 'www.ipvx.org'):
+            self.send_error(400, 'Unexpected portal host')
+            return
+        body = self.rfile.read(size) if size else b''
+        headers = {name: self.headers[name] for name in
+                   ('Cookie', 'Content-Type', 'Origin', 'Sec-Fetch-Site') if name in self.headers}
+        headers['Host'] = host
+        conn = HTTPConnection('127.0.0.1', self.server.auth_port, timeout=35)
+        try:
+            conn.request(method, self.path, body=body, headers=headers)
+            response = conn.getresponse()
+            data = response.read(131073)
+            if len(data) > 131072:
+                raise ValueError('Authentication response exceeds its bound')
+            self.auth_response = True
+            self.send_response(response.status)
+            for name, value in response.getheaders():
+                if name.lower() in ('content-type', 'set-cookie', 'location', 'cache-control', 'pragma',
+                                    'vary', 'retry-after', 'allow'):
+                    self.send_header(name, value)
+            self.send_header('Content-Length', str(len(data)))
+            self.end_headers()
+            if method != 'HEAD':
+                self.wfile.write(data)
+        except (OSError, ValueError):
+            self.send_error(503, 'Sign-in temporarily unavailable')
+        finally:
+            conn.close()
+
+
+def make_server(root, bind, port, revision, auth_port=None):
     root = Path(root).resolve()
     files = set()
     for file in root.rglob('*'):
@@ -68,6 +123,7 @@ def make_server(root, bind, port, revision):
         raise ValueError('Incomplete or unversioned public release')
     server = ThreadingHTTPServer((bind, port), PublicFiles)
     server.root, server.public_files, server.revision = root, files, revision
+    server.auth_port = auth_port
     return server
 
 
@@ -77,5 +133,6 @@ if __name__ == '__main__':
     parser.add_argument('--bind', default='10.10.50.131', choices=['10.10.50.131', '127.0.0.1'])
     parser.add_argument('--port', type=int, default=8092)
     parser.add_argument('--revision', required=True)
+    parser.add_argument('--auth-port', type=int, choices=[8094])
     args = parser.parse_args()
-    make_server(args.root, args.bind, args.port, args.revision).serve_forever()
+    make_server(args.root, args.bind, args.port, args.revision, args.auth_port).serve_forever()

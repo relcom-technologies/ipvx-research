@@ -7,7 +7,7 @@ import sys
 def copy_public(source, destination):
     source, destination = Path(source).resolve(), Path(destination)
     files = [*source.glob('*.html'), source / 'governance.json']
-    for directory in ('assets', 'data', 'rfc'):
+    for directory in ('assets', 'data', 'rfc', 'history'):
         files.extend(p for p in (source / directory).rglob('*') if p.is_file() or p.is_symlink())
     if not (source / 'index.html').is_file():
         raise ValueError('Public index is missing')
