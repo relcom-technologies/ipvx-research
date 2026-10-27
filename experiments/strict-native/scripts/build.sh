@@ -20,6 +20,7 @@ if [[ ! -d "$KERNEL" ]]; then tar -xJf "$ARCHIVE" -C "$BUILD/source"; fi
 make -C "$KERNEL" ARCH=x86 KCONFIG_ALLCONFIG="$ROOT/config/strict.config" allnoconfig
 python3 "$ROOT/scripts/check_config.py" "$KERNEL/.config"
 make -C "$KERNEL" ARCH=x86 -j"${XNS_JOBS:-$(nproc)}" bzImage
+python3 "$ROOT/scripts/check_config.py" "$KERNEL/.config" "$KERNEL/include/generated/autoconf.h"
 gcc -std=c11 -O2 -Wall -Wextra -static -fno-pie -no-pie \
   -ffunction-sections -fdata-sections -Wl,--gc-sections -DXNS_CRYPTO \
   "$ROOT/src/native-smoke.c" -o "$BUILD/artifacts/native-smoke" -lcrypto -ldl -pthread
