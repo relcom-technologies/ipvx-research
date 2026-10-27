@@ -1,0 +1,36 @@
+name: Strict native Linux guests
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  whole-guest:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: experiments/strict-native
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Install build and emulator tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y build-essential bc bison flex libelf-dev libssl-dev qemu-system-x86 curl xz-utils gzip python3-venv
+          python3 -m venv .venv
+          .venv/bin/pip install cryptography==50.0.2
+      - name: Compile kernel without IP and static guest
+        run: |
+          .venv/bin/python scripts/test_wire.py
+          bash scripts/build.sh
+      - name: Boot three real kernels and verify signed whole-link captures
+        run: .venv/bin/python scripts/run.py
+      - name: Preserve positive and negative evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: strict-native-guest-evidence
+          path: |
+            experiments/strict-native/build/artifacts
+            experiments/strict-native/build/results
+          if-no-files-found: warn
+          retention-days: 14
