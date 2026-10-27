@@ -10,4 +10,5 @@ jobs:
         with: {python-version: '3.13'}
       - run: python3 -m pip install -r infra/auth-requirements.lock
       - run: python3 -m unittest discover -s scripts -p 'test_*.py'
+      - run: python3 -m unittest discover -s experiments/strict-native/scripts -p 'test_wire.py'
       - run: python3 scripts/check_site.py

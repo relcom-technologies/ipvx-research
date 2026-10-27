@@ -14,6 +14,7 @@ from http.cookies import SimpleCookie
 import json
 import os
 from pathlib import Path
+import re
 import secrets
 import sqlite3
 import stat
@@ -39,6 +40,7 @@ TX_SECONDS = 600
 SESSION_SECONDS = 3600
 RECHECK_SECONDS = 600
 MAX_JSON = 131072
+COMMUNITY_ROUTE = re.compile(r'/community/v1/(?:session|moderation|audit|roles|rfcs/rfc-000[1-7]/entries|entries/[1-9][0-9]{0,8}(?:/vote|/moderation)?)')
 
 
 class AuthFailure(Exception):
@@ -218,12 +220,13 @@ class RelcomProvider:
 
 
 class AuthService:
-    def __init__(self, client_id, org_id, state_dir, *, provider=None, clock=time.time):
+    def __init__(self, client_id, org_id, state_dir, *, provider=None, clock=time.time, community=None):
         if not client_id or not org_id or len(client_id) > 150 or len(org_id) > 150:
             raise ValueError('Relcom ID public client and pool IDs are required')
         self.provider = provider or RelcomProvider(client_id, org_id)
         self.binding = _hash(client_id + ':' + org_id)
         self.clock = clock
+        self.community = community
         directory = Path(state_dir)
         directory.mkdir(mode=0o700, parents=True, exist_ok=True)
         if directory.is_symlink() or not directory.is_dir():
@@ -260,7 +263,13 @@ class AuthService:
             return None
         if not client or not org:
             raise ValueError('Incomplete Relcom ID configuration')
-        return cls(client, org, os.environ.get('IPVX_AUTH_STATE_DIR', '/var/lib/ipvx-research/auth'))
+        community = None
+        if os.environ.get('IPVX_COMMUNITY_STATE_DIR'):
+            from community import CommunityService
+            community = CommunityService(os.environ['IPVX_COMMUNITY_STATE_DIR'],
+                bootstrap_admin_author_id=os.environ.get('IPVX_COMMUNITY_ADMIN_AUTHOR_ID'))
+        return cls(client, org, os.environ.get('IPVX_AUTH_STATE_DIR', '/var/lib/ipvx-research/auth'),
+                   community=community)
 
     @contextmanager
     def _db(self):
@@ -333,6 +342,8 @@ class AuthService:
 
     def handle(self, method, path, headers, body=b''):
         target = urlsplit(path)
+        if target.path.startswith('/community/'):
+            return self.handle_community(method, path, headers, body)
         if target.path not in ('/auth/login', '/auth/callback', '/auth/session', '/auth/logout'):
             return None
         # The front server must pass the request's real Host. It must not use an untrusted
@@ -410,9 +421,60 @@ class AuthService:
                                                _cookie(TX_COOKIE, '', 0), ('Retry-After', '30')])
             return _response(503, {'error': 'authentication_temporarily_unavailable'}, [('Retry-After', '30')])
 
+    def handle_community(self, method, path, headers, body=b''):
+        """Only verified server-side identity reaches the bounded discussion store."""
+        target = urlsplit(path)
+        if not COMMUNITY_ROUTE.fullmatch(target.path) or len(path) > 1500:
+            return _response(404, {'error': 'not_found'})
+        if headers.get('Host', '').lower() != 'ipvx.org':
+            return _response(400, {'error': 'canonical_origin_required'})
+        if method not in ('GET', 'POST'):
+            return _response(405, {'error': 'method_not_allowed'}, [('Allow', 'GET, POST')])
+        if self.community is None:
+            return _response(503, {'error': 'community_not_configured'})
+        if method == 'POST':
+            if (headers.get('Origin') != ORIGIN
+                    or headers.get('Sec-Fetch-Site', 'same-origin') != 'same-origin'):
+                return _response(403, {'error': 'same_origin_required'})
+            if headers.get('Content-Type', '').split(';', 1)[0].strip().lower() != 'application/json':
+                return _response(415, {'error': 'json_required'})
+        if len(body) > 12000:
+            return _response(413, {'error': 'body_too_large'})
+        try:
+            # Query/header/body cannot supply the user or roles. A stale/revoked
+            # provider session is checked by the same path as /auth/session.
+            _, session = self._session(headers)
+            user = session['user'] if session else None
+            parsed = None
+            if method == 'POST':
+                def unique_pairs(pairs):
+                    value = {}
+                    for key, item in pairs:
+                        if key in value:
+                            raise ValueError('duplicate JSON key')
+                        value[key] = item
+                    return value
+                def reject_constant(value):
+                    raise ValueError('non-JSON constant')
+                parsed = json.loads(body.decode('utf-8'), object_pairs_hook=unique_pairs,
+                                    parse_constant=reject_constant)
+                if not isinstance(parsed, dict):
+                    raise ValueError('JSON object required')
+            elif body:
+                return _response(400, {'error': 'unexpected_body'})
+            result = self.community.handle(method, path, user, parsed,
+                                           request_id=headers.get('Idempotency-Key'))
+            return _response(result.status, result.data) if result else _response(404, {'error': 'not_found'})
+        except (UnicodeError, ValueError, RecursionError):
+            return _response(400, {'error': 'invalid_json'})
+        except AuthFailure:
+            return _response(401, {'error': 'sign_in_required'})
+        except (ProviderUnavailable, sqlite3.Error):
+            return _response(503, {'error': 'community_temporarily_unavailable'}, [('Retry-After', '30')])
+
 
 def make_auth_server(service, port=8094):
-    """Loopback-only adapter. The public server proxies only four exact routes.
+    """Loopback-only adapter for the exact auth and community route allowlist.
 
     Forward the original Host, Cookie and Origin, and return every Set-Cookie separately.
     Neither visitor request URLs nor provider credentials enter the service journal.
@@ -431,7 +493,8 @@ def make_auth_server(service, port=8094):
                 if self.headers.get('Transfer-Encoding') or len(lengths) > 1:
                     raise ValueError()
                 length = int(lengths[0]) if lengths else 0
-                if length < 0 or length > 1024 or len(self.path) > 5000:
+                maximum = 12000 if self.path.startswith('/community/') else 1024
+                if length < 0 or length > maximum or len(self.path) > 5000:
                     raise ValueError()
             except ValueError:
                 response = _response(413, {'error': 'request_too_large'})

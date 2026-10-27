@@ -10,6 +10,7 @@ from urllib.parse import unquote, urlsplit
 
 CSP = "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://press.relcom.com; object-src 'none'; base-uri 'none'; form-action 'self' https://github.com https://id.relcom.com; frame-ancestors 'none'"
 AUTH_PATHS = {'/auth/login', '/auth/callback', '/auth/session', '/auth/logout'}
+COMMUNITY_PATH = re.compile(r'/community/v1/(?:session|moderation|audit|roles|rfcs/rfc-000[1-7]/entries|entries/[1-9][0-9]{0,8}(?:/vote|/moderation)?)')
 
 
 class PublicFiles(BaseHTTPRequestHandler):
@@ -37,7 +38,10 @@ class PublicFiles(BaseHTTPRequestHandler):
         except (ValueError, UnicodeError):
             self.send_error(400)
             return
-        if path in AUTH_PATHS:
+        if path in AUTH_PATHS or COMMUNITY_PATH.fullmatch(path):
+            if path != urlsplit(self.path).path:
+                self.send_error(404)
+                return
             self.proxy_auth('HEAD' if head else 'GET')
             return
         if path == '/healthz':
@@ -62,7 +66,8 @@ class PublicFiles(BaseHTTPRequestHandler):
             self.wfile.write(data)
 
     def do_POST(self):
-        if urlsplit(self.path).path != '/auth/logout':
+        path = urlsplit(self.path).path
+        if path != '/auth/logout' and not COMMUNITY_PATH.fullmatch(path):
             self.send_error(404)
             return
         self.proxy_auth('POST')
@@ -75,7 +80,8 @@ class PublicFiles(BaseHTTPRequestHandler):
         try:
             lengths = self.headers.get_all('Content-Length', [])
             size = int(lengths[0]) if lengths else 0
-            if len(lengths) > 1 or size < 0 or size > 1024 or self.headers.get('Transfer-Encoding'):
+            maximum = 12000 if self.path.startswith('/community/') else 1024
+            if len(lengths) > 1 or size < 0 or size > maximum or self.headers.get('Transfer-Encoding'):
                 raise ValueError('Unsupported body')
         except ValueError:
             self.send_error(400)
@@ -86,7 +92,7 @@ class PublicFiles(BaseHTTPRequestHandler):
             return
         body = self.rfile.read(size) if size else b''
         headers = {name: self.headers[name] for name in
-                   ('Cookie', 'Content-Type', 'Origin', 'Sec-Fetch-Site') if name in self.headers}
+                   ('Cookie', 'Content-Type', 'Origin', 'Sec-Fetch-Site', 'Idempotency-Key') if name in self.headers}
         headers['Host'] = host
         conn = HTTPConnection('127.0.0.1', self.server.auth_port, timeout=35)
         try:

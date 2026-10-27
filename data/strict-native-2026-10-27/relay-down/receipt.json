@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "mode": "relay-down",
+  "passed": true,
+  "actual_guests": 3,
+  "topology": "A--R--B; no direct A/B link",
+  "guest_ip_stack": "compiled_out_and_probed",
+  "kernel_socket_rejections": 12,
+  "all_capture_frames_verified": 10,
+  "ether_types": [
+    "0x88b5"
+  ],
+  "node_keys": {
+    "1": {
+      "public_key": "f79c66c0f8b477f414c4b03ff9128c2e27c60da74ff0ef29d24cb017911aacf3",
+      "node_id": "5816836c2fd814441a491b97e421e8de606f1e0171029035626d603552e0e866"
+    },
+    "2": {
+      "public_key": "9c9e680a45d1ca99f9d6c30e30818e112ec1ba90d9afeb0af61e83442a21a934",
+      "node_id": "ecf8e7027467e9bde02809f429314fe925dec5ca6074d5d3121c3ba87a766c97"
+    },
+    "3": {
+      "public_key": "c8accac13395a785c94a8a4bc026f4e675bcc11fadb4eb755e7803fb9322a712",
+      "node_id": "141feac27f6ea61e1da8b704ecd0951f82ad8cb700c454055d11d2fdecd32906"
+    }
+  },
+  "completed_sha256_tasks": 0,
+  "llm": false,
+  "confidentiality": false,
+  "identity": "guest-generated Ed25519; SHA256(public key); RAM only",
+  "admission": "TOFU role binding on fixed private links; not external operator admission",
+  "routing": "fixed forwarding table; no dynamic discovery of paths or failover",
+  "hashes": {
+    "R.console.log": "4176dc935d47b166f90d7b92981b45f2d0dc92a397b0ae8adf30bb14207cceb7",
+    "rb.pcap": "ef3b05b49489510713fad7e2303136f6bd5cfd4bd1561c32a7a3737b096965f6",
+    "A.console.log": "867ebe00ddd718269ead1c848924e38bdb84b0fc16bbc57af3eebaeeaa772ca6",
+    "B.qemu.log": "f0345d3ea90dd2c39be538108bf5a181fedd9a53ff6d5005d849290f6d80cf3f",
+    "B.console.log": "24620e96da3d4d3b28e91402d04f0ab25679001af5d54755bb4f37c02fcd2ca2",
+    "ar.pcap": "454a3b2564482d6993f87f0ad6638a7bc655a6d56ee5e26b4d2aab578e94ea73",
+    "commands.json": "6515b636cbb899dbdc7b457d52531af5605a78c4b850076739d29c766f8b8a1c",
+    "R.qemu.log": "f0345d3ea90dd2c39be538108bf5a181fedd9a53ff6d5005d849290f6d80cf3f",
+    "A.qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

@@ -50,5 +50,22 @@
     "availability": "Provided conversation context, not a public authenticated transcript.",
     "date_policy": "Unknown event timestamps stay null; sequence captures available discussion order. Same-day conversation items have date-only precision.",
     "retrospection_policy": "Summaries are attributed to the original speaker and separately to the recorder. Quotes are short excerpts; summary language is never presented as an original quotation."
-  }
+  },
+  "supplements": [
+    {
+      "recorded_at": "2026-10-27T12:25:08.550942+00:00",
+      "sources": [
+        {
+          "public_repository_path": "data/public-identity-acceptance.json",
+          "sha256": "fed2ecdc233cea392657b6750fc165e84d950b5925b705795dc234cd9446dee0",
+          "role": "Dated supplementary evidence; see its exact scope and source revision."
+        },
+        {
+          "public_repository_path": "data/strict-native-2026-10-27/summary.json",
+          "sha256": "38498687a4421f6cfb46cfad583af6c86436a9d217a3afd37bc07b60b5467828",
+          "role": "Dated supplementary evidence; see its exact scope and source revision."
+        }
+      ]
+    }
+  ]
 }

@@ -22,7 +22,7 @@ The MCP hosting draft was prepared through https://resources.relcom.com/mcp but 
 
 Read RFC-0003 and governance.json. A public proposal and authenticated majority vote are required before admission. The initial electorate contains only the owner; this is bootstrap, not independent community approval. Votes never deploy code or issue credentials. External model code is never executed automatically by a GitHub issue or a vote.
 
-All project RFCs, including RFC-0005, are drafts, not IETF RFCs. The full private lab implementation is separate and is not included in this repository. Evidence snapshots distinguish real measurements from modeling and describe retained failures.
+All project RFCs, including RFC-0005–0007, are drafts, not IETF RFCs. The full private lab implementation is separate and is not included in this repository. Evidence snapshots distinguish real measurements from modeling and describe retained failures.
 
 ## Content and dependency rights
 
@@ -35,3 +35,19 @@ Original project publications remain attributed to their authors. Font files inc
 `blog.html` reads the public Relcom Press latest-article feed using local JavaScript, credentials omitted. It renders titles/excerpts as text and accepts article URLs only on `https://ipvx.press.relcom.org`. Loading, empty and failed states retain the direct blog link. No third-party script or raw article HTML is embedded. CSP must permit only the documented Press feed origin in `connect-src`.
 
 `history.html` is generated from the append-only `history/events.jsonl` and attributed `history/participants.json`. Rebuild after adding a new author record. Draft RFC rows are discovered from the actual `rfc/*.md` files. The measured LLM table/transcripts remain embedded statically by the generator before optional browser refresh.
+
+## Strict devices and collaborative RFCs
+
+RFC-0006 specifies a complete no-IP node: offline image/weights, endpoint-owned keys,
+local model connection through Unix sockets, AF_PACKET Ethernet and console management.
+The separate experiment in experiments/strict-native compiles Linux without INET/IPv6
+and boots three guests. Its signed SHA-256 tasks test transport with fixed routes and
+TOFU; they are not a language-model or physical-hardware result. Actual run receipts,
+including failed runs, are required before claiming runtime success.
+
+RFC pages use exact same-origin /community/v1 routes. Verified participants submit
+pending comments/proposals, moderators publish/hide with a reason, and admins assign
+portal roles with an audit record. Only an operator-confirmed enrolled pseudonym can
+bootstrap admin. No first-login/email promotion, GitHub token, automatic merge or
+model execution exists. Read CONTRIBUTING.md, docs/community-workflow.md and RFC-0007.
+Advisory support does not replace the formal RFC-0003 electorate and window.
