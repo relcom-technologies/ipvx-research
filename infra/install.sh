@@ -25,7 +25,7 @@ Wants=network-online.target
 DynamicUser=yes
 StateDirectory=ipvx-research-auth
 StateDirectoryMode=0700
-Environment=IPVX_AUTH_STATE_DIR=/var/lib/ipvx-research-auth
+Environment=IPVX_AUTH_STATE_DIR=/var/lib/ipvx-research-auth/state
 Environment=RELCOM_ID_CLIENT_ID=396952476441378818
 Environment=RELCOM_ID_ORG_ID=396952378110115842
 ExecStart=$release/auth-venv/bin/python $release/auth.py

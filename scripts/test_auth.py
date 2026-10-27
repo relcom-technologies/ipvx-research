@@ -234,6 +234,22 @@ class Authentication(unittest.TestCase):
         self.assertFalse(json.loads(response.body)['authenticated'])
         self.assertFalse(json.loads(self.service.handle('GET', '/auth/session', headers).body)['authenticated'])
 
+    def test_state_child_under_systemd_managed_link(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            private = root / 'private'
+            private.mkdir(mode=0o700)
+            managed = root / 'managed'
+            managed.symlink_to(private, target_is_directory=True)
+            # DynamicUser StateDirectory can be a trusted parent link. The
+            # application's final state directory, key and database remain real files.
+            service = auth.AuthService('client-1', 'pool-1', managed / 'state', provider=self.provider)
+            self.assertEqual(service.handle('GET', '/auth/session', self.headers).status, 200)
+            self.assertEqual((private / 'state').stat().st_mode & 0o777, 0o700)
+            self.assertEqual((private / 'state/cookie.key').stat().st_mode & 0o777, 0o600)
+            with self.assertRaises(ValueError):
+                auth.AuthService('client-1', 'pool-1', managed, provider=self.provider)
+
 
 if __name__ == '__main__':
     unittest.main()

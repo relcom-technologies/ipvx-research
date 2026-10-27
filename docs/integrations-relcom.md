@@ -36,7 +36,7 @@ these non-secret settings through the scoped service environment:
 ```text
 RELCOM_ID_CLIENT_ID=396952476441378818
 RELCOM_ID_ORG_ID=396952378110115842
-IPVX_AUTH_STATE_DIR=/var/lib/ipvx-research-auth
+IPVX_AUTH_STATE_DIR=/var/lib/ipvx-research-auth/state
 ```
 
 Run `infra/auth.py` with that environment. It binds only `127.0.0.1:8094`.
@@ -53,7 +53,10 @@ need another public listener or shared firewall change. Its StateDirectory is
 private and writable; the public release directory remains read-only.
 
 The generated 0600 Fernet key and 0600 SQLite database stay in a 0700 service state
-directory, outside the public export and Git. Cookies are random opaque references,
+directory, outside the public export and Git. The `state` child is intentional:
+systemd may expose the DynamicUser StateDirectory itself through a managed symlink;
+the application rejects a symlink as its final state directory or key/database.
+Cookies are random opaque references,
 stored by hash; provider credentials and profile data are encrypted at rest using
 the standard cryptography library. Cookies are host-only, Secure, HttpOnly,
 SameSite=Lax, with a `__Host-` prefix and Path=/. Transaction state is one-use,
