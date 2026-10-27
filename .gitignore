@@ -1,0 +1,7 @@
+.impeccable/review/
+.taste-skill/inspect/
+__pycache__/
+*.zip
+
+browser-evidence/
+node_modules/

@@ -1,0 +1,15 @@
+# LLM comparison protocol, 2026-10-27
+
+Frozen network baseline: 7993998d96c4bd075c3db6e2ecf30f0f20505384; repository base: 1519b214f103dea7aaa5156669567a82206a8c56.
+
+Two persistent local Qwen3-0.6B Q8_0 models, one on peer A and one on peer B (different VM/physical hypervisor), llama-cpp-python 0.3.36. Official weights revision 23749fefcc72300e3a2ad315e1317431b06b590a; SHA256 9465e63a22add5354d9bb4b99e90117043c7124007664907259bd16d043bb031. Apache-2.0. CPU only, two threads, context 2048, temperature 0, maximum 160 output tokens. Model call uses in-process library: no inference HTTP/API.
+
+Task: jointly assess publication claims using split evidence from actual prior IPvX experiments. A writes a draft from measurements; B receives it over the selected network and critiques it using independently preloaded methodological limits; A receives the review over that network and writes a final decision. Every stage makes a fresh model call. No response replay, no hidden coordinator supplying results. Orchestrator only distributes public admission/bootstrap, starts runs and collects completed logs. No arbitrary code execution or shell tools available to models.
+
+Compare native IPvX Ethernet A–R1–B to direct ordinary IPv4/TCP A–B, and additionally matched-topology IPv4/TCP A–R1–B. The direct IP baseline has fewer hops: do not attribute its difference to EtherType alone. Same application framing, identity, encryption, receipts, model, seed, prompts and input evidence. DNS disabled in all modes. Native model/router processes reject AF_INET/AF_INET6 and resolver calls; TCP modes allow numeric IP sockets only. Administrative SSH remains IP and is outside the task data plane.
+
+Four split-evidence cases, each once per mode; alternate mode order between two rounds (native/IP-direct/IP-routed then IP-routed/IP-direct/native). Two cases per round. Per-mode warm-up one short local inference on A and B excluded from measurements, same prompt. Small sample is descriptive, not a significance or Internet performance claim.
+
+Metrics: per-model-call wall time/tokens, every delivered application message RTT/bytes/attempts/signed hop path, whole task duration, final evidence IDs and decision rubric. Also 20 fixed 1KiB echo round trips per mode with no model call for delivery-only comparison; sequential, no WAN/load claim. Native capture proves EtherType, TCP capture proves IPv4; shared NIC capture can contain management traffic, count only this project's pinned endpoints and protocol/port. Do not claim whole machine has no IP.
+
+A native path failure is already covered by the five-node baseline, not silently re-tested here. No open Internet admission, global routing, malicious peers or independent operator validation. Model quality and transport delivery are different hypotheses; preserve incorrect model outputs and failed trials.

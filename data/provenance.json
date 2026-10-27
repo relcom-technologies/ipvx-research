@@ -1,0 +1,9 @@
+{
+  "snapshot": "2026-10-27",
+  "native_summary_sha256": "0086c3bf241a31ebe3375d0c10a320bf2184770e80188d5f1b191d11ee906167",
+  "baseline_revision": "7993998d96c4bd075c3db6e2ecf30f0f20505384",
+  "document_experiment_revision": "00cbf3bdc5d4e05c04bdd411efc9f6d6e238ef07",
+  "external_operators_polled": 0,
+  "website_uses_ip_dns_https": true,
+  "management_data_published": false
+}

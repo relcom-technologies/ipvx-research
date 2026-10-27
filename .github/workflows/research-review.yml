@@ -1,0 +1,22 @@
+name: Research proposal majority
+on:
+  issues: {types: [opened, labeled, reopened]}
+  issue_comment: {types: [created, edited, deleted]}
+  schedule: [{cron: '17 * * * *'}]
+  workflow_dispatch:
+permissions: {contents: read, issues: write}
+concurrency:
+  group: research-majority
+  cancel-in-progress: false
+jobs:
+  tally:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.13'}
+      - name: Count authenticated votes on proposals
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: python3 scripts/review_proposals.py

@@ -1,0 +1,32 @@
+name: Исследование, RFC или модель
+description: Публичное предложение на обсуждение и голосование
+title: "[Proposal] "
+labels: ["proposal"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Вид вклада
+      options: [RFC, Эксперимент, Модель, Изменение состава]
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Предложение и ожидаемая польза
+    validations:
+      required: true
+  - type: textarea
+    id: reproducibility
+    attributes:
+      label: Как воспроизвести и проверить
+      description: Версия модели/кода, задачи, ресурсы, ограничения и лицензия. Не размещайте токены, закрытые данные или приватные ключи.
+    validations:
+      required: true
+  - type: checkboxes
+    id: understanding
+    attributes:
+      label: Порядок допуска
+      options:
+        - label: Я понимаю, что публикация предложения не даёт доступа к стенду; требуется большинство действующего состава и отдельная техническая проверка.
+          required: true

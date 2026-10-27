@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "status": "bootstrap",
+  "eligible": ["ashkitt"],
+  "threshold": "strict-majority-of-total-roster",
+  "window_hours": 72,
+  "automatic_infrastructure_access": false,
+  "note": "Bootstrap roster: project owner only. This is not a claim of community ratification. Roster changes themselves require the same majority and a reviewed pull request."
+}

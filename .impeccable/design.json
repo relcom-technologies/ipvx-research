@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-26T14:55:44.820944+00:00",
+  "title": "Design System: IPvX Agent Lab",
+  "extensions": {
+    "colorMeta": {
+      "ground": {
+        "role": "neutral",
+        "displayName": "Stone ground"
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "White sheet"
+      },
+      "raised": {
+        "role": "neutral",
+        "displayName": "Quiet code wash"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink"
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Supporting text"
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Section rule"
+      },
+      "control": {
+        "role": "neutral",
+        "displayName": "Control outline"
+      },
+      "signal-active": {
+        "role": "primary",
+        "displayName": "Active ochre signal"
+      },
+      "signal-fill": {
+        "role": "primary",
+        "displayName": "Selected participant wash"
+      },
+      "signal-border": {
+        "role": "primary",
+        "displayName": "Selected participant stroke"
+      },
+      "positive": {
+        "role": "semantic",
+        "displayName": "Checked result"
+      },
+      "negative": {
+        "role": "semantic",
+        "displayName": "Failure or refusal"
+      },
+      "focus": {
+        "role": "semantic",
+        "displayName": "Keyboard focus"
+      }
+    },
+    "typographyMeta": {
+      "headline": {
+        "displayName": "Page headline",
+        "purpose": "Compact semibold page heading; mobile is 23px."
+      },
+      "title": {
+        "displayName": "Section title",
+        "purpose": "Semibold work-area heading; inspector line height is 1.4."
+      },
+      "body": {
+        "displayName": "Interface body",
+        "purpose": "Regular Russian text; longer prose uses line height 1.8."
+      },
+      "label": {
+        "displayName": "Supporting label",
+        "purpose": "Short metadata; compact labels use 11px."
+      },
+      "event-title": {
+        "displayName": "Event title",
+        "purpose": "Medium-weight journal title."
+      },
+      "graph-title": {
+        "displayName": "Graph participant",
+        "purpose": "Medium-weight SVG participant name."
+      },
+      "code": {
+        "displayName": "Protocol code",
+        "purpose": "Plex Mono code, event numbers and hypothesis identifiers."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "route-travel",
+        "value": "1s linear infinite",
+        "purpose": "The selected event route carries a moving 8 5 dash pattern with dash offset ending at -26."
+      },
+      {
+        "name": "route-stroke-change",
+        "value": "stroke .18s",
+        "purpose": "Brief stroke transition on graph routes."
+      },
+      {
+        "name": "event-replay-step",
+        "value": "1300ms",
+        "purpose": "Discrete advancement through persisted events while replay is active."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}",
+        "purpose": "Stops CSS animation and transitions; selected route, participant state and readable evidence remain. Discrete event replay remains available."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-desktop-max",
+        "value": "1250px"
+      },
+      {
+        "name": "stacked-workspace-max",
+        "value": "960px"
+      },
+      {
+        "name": "mobile-max",
+        "value": "600px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary experiment action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ink action with the shipped medium text weight. Disabled while busy, running or disconnected.",
+      "html": "<button class=\"ds-primary\">Запустить эксперимент <span aria-hidden=\"true\">→</span></button>",
+      "css": ".ds-primary{font:14px/1.55 Plex,Arial,sans-serif;min-height:44px;border-radius:6px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--ink,#171916);color:var(--surface,#fff);padding:10px 16px;font-weight:500;border:0}.ds-primary:not(:disabled):hover{background:#3b3d35}.ds-primary:disabled{opacity:.45;cursor:not-allowed}.ds-primary:focus-visible{outline:3px solid #9b8000;outline-offset:3px}@media(max-width:600px){.ds-primary{min-height:46px}}"
+    },
+    {
+      "name": "Secondary action",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "White outlined action for replay or returning to the operating view.",
+      "html": "<button class=\"ds-secondary\">Воспроизвести</button>",
+      "css": ".ds-secondary{font:14px/1.55 Plex,Arial,sans-serif;min-height:44px;border-radius:6px;cursor:pointer;padding:8px 14px;background:var(--surface,#fff);color:var(--ink,#171916);border:1px solid var(--control,#c8c9c0)}.ds-secondary:not(:disabled):hover{background:#ecece5}.ds-secondary:disabled{opacity:.45;cursor:not-allowed}.ds-secondary:focus-visible{outline:3px solid #9b8000;outline-offset:3px}"
+    },
+    {
+      "name": "Quiet action",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "Unboxed directional control with the same target size and focus treatment.",
+      "html": "<button class=\"ds-quiet\" aria-label=\"Предыдущее событие\">←</button>",
+      "css": ".ds-quiet{font:14px/1.55 Plex,Arial,sans-serif;min-height:44px;border-radius:6px;cursor:pointer;padding:8px 14px;background:transparent;color:var(--ink,#171916);border:0}.ds-quiet:not(:disabled):hover{background:#ecece5}.ds-quiet:disabled{opacity:.45;cursor:not-allowed}.ds-quiet:focus-visible{outline:3px solid #9b8000;outline-offset:3px}"
+    },
+    {
+      "name": "Text action",
+      "kind": "button",
+      "description": "Underlined local action used for opening hypothesis evidence.",
+      "html": "<button class=\"ds-text\">Открыть все гипотезы →</button>",
+      "css": ".ds-text{font:13px/1.55 Plex,Arial,sans-serif;min-height:44px;padding:8px 0;text-align:left;text-decoration:underline;text-underline-offset:4px;margin-top:6px;background:transparent;color:var(--ink,#171916);border:0;border-radius:6px;cursor:pointer}.ds-text:not(:disabled):hover{background:#ecece5}.ds-text:disabled{opacity:.45;cursor:not-allowed}.ds-text:focus-visible{outline:3px solid #9b8000;outline-offset:3px}"
+    },
+    {
+      "name": "Scenario selection",
+      "kind": "input",
+      "refersTo": "scenario-select",
+      "description": "Native selector with a readable outline; stacks with the experiment action on mobile.",
+      "html": "<select class=\"ds-scenario\" aria-label=\"Сценарий эксперимента\"><option>Быстрая демонстрация</option><option>Переезд и смена ключа</option><option>Проверка полномочий</option></select>",
+      "css": ".ds-scenario{font:13px/1.55 Plex,Arial,sans-serif;color:var(--ink,#171916);height:40px;padding:0 12px;background:var(--surface,#fff);border:1px solid var(--control,#c8c9c0);border-radius:6px;cursor:pointer}.ds-scenario:focus-visible{outline:3px solid #9b8000;outline-offset:3px}@media(max-width:1250px){.ds-scenario{height:44px}}@media(max-width:600px){.ds-scenario{width:100%}}"
+    },
+    {
+      "name": "Section navigation",
+      "kind": "nav",
+      "refersTo": "navigation-active",
+      "description": "Quiet vertical desktop list becomes an underlined horizontal mobile navigation.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Разделы стенда\"><button class=\"ds-nav-item ds-current\" aria-current=\"page\">Стенд</button><button class=\"ds-nav-item\">Гипотезы <span>12</span></button><button class=\"ds-nav-item\">Библиотека</button><button class=\"ds-nav-item\">Протокол</button></nav>",
+      "css": ".ds-nav{display:flex;flex-direction:column;gap:6px}.ds-nav-item{font:14px/1.55 Plex,Arial,sans-serif;display:flex;align-items:center;justify-content:space-between;min-height:44px;padding:8px 12px;text-align:left;color:var(--muted,#62645b);background:transparent;border:0;border-radius:6px;cursor:pointer}.ds-nav-item span{font-size:12px}.ds-nav-item.ds-current{color:var(--ink,#171916);font-weight:600;background:#eeede5}.ds-nav-item:not(:disabled):hover{background:#ecece5}.ds-nav-item:focus-visible{outline:3px solid #9b8000;outline-offset:3px}@media(max-width:600px){.ds-nav{flex-direction:row;gap:4px;overflow:auto}.ds-nav-item{font-size:13px;padding:8px 9px;white-space:nowrap;justify-content:center}.ds-nav-item.ds-current{background:transparent;border-radius:0;border-bottom:2px solid #9f8700}.ds-nav-item span{display:none}}"
+    },
+    {
+      "name": "Run-scoped verdict labels",
+      "kind": "chip",
+      "refersTo": "verdict-pass",
+      "description": "The text label carries the conclusion; semantic color supports it. Partial and untested remain distinct.",
+      "html": "<div class=\"ds-verdicts\"><span class=\"ds-badge ds-pass\">Проверено</span> <span class=\"ds-badge ds-partial\">Частично</span> <span class=\"ds-badge ds-fail\">Не прошло</span> <span class=\"ds-badge\">Не проверено</span> <span class=\"ds-badge ds-running\">Проверяем…</span></div>",
+      "css": ".ds-verdicts{font-family:Plex,Arial,sans-serif}.ds-badge{font-size:11px;line-height:1.5;padding:3px 7px;border-radius:4px;white-space:nowrap;background:#efefea;color:#55584c}.ds-pass{background:#e9f3ec;color:var(--positive,#216340)}.ds-partial{background:#fff6d8;color:#735400}.ds-fail{background:#fff0ec;color:#a02525}.ds-running{background:#f5edbb;color:#6b5700}"
+    },
+    {
+      "name": "Operating sheet",
+      "kind": "card",
+      "refersTo": "sheet",
+      "description": "The enclosing white frame uses a thin rule and no shadow. Internal sections are separated by rules.",
+      "html": "<section class=\"ds-sheet\"><h2>Путь задачи</h2><p>События реального запуска</p><div class=\"ds-sheet-rule\">ID отвечает на вопрос «кто?». Резолвер — «где сейчас?».</div></section>",
+      "css": ".ds-sheet{font:14px/1.55 Plex,Arial,sans-serif;background:var(--surface,#fff);color:var(--ink,#171916);border:1px solid var(--rule,#e8e8e0);border-radius:16px;padding:28px 28px 16px}.ds-sheet h2{font-size:16px;line-height:1.25;font-weight:600;margin:0 0 12px}.ds-sheet p{color:var(--muted,#62645b);margin:8px 0 18px}.ds-sheet-rule{border-top:1px solid var(--rule,#e8e8e0);padding:12px 0;color:var(--muted,#62645b);font-size:12px}@media(max-width:960px){.ds-sheet{padding:24px 20px}}@media(max-width:600px){.ds-sheet{border:0;border-radius:0;padding:24px 16px 16px}}"
+    },
+    {
+      "name": "Selected journal row",
+      "kind": "custom",
+      "refersTo": "event-selected",
+      "description": "A real event is one full-width button. Selection opens its explanation, participants and payload.",
+      "html": "<button class=\"ds-event ds-selected\"><span class=\"ds-index\">02</span><span class=\"ds-event-copy\"><strong>Найден источник данных</strong><span>Личный агент → Резолверы · сценарий</span></span><span class=\"ds-event-status\">Факт</span></button>",
+      "css": ".ds-event{font:14px/1.55 Plex,Arial,sans-serif;display:flex;gap:12px;text-align:left;align-items:flex-start;width:100%;padding:10px 8px;min-height:56px;border:0;border-bottom:1px solid var(--rule,#e8e8e0);border-radius:0;background:transparent;color:var(--ink,#171916);cursor:pointer}.ds-event.ds-selected{background:#f5f4eb}.ds-event:not(:disabled):hover{background:#ecece5}.ds-event:focus-visible{outline:3px solid #9b8000;outline-offset:3px}.ds-index{font:11px/1.7 PlexMono,monospace;color:var(--muted,#62645b);min-width:24px;padding-top:2px}.ds-event-copy{flex:1;min-width:0}.ds-event-copy strong{display:block;font-size:13px;font-weight:500;line-height:1.5}.ds-event-copy>span{font-size:11px;color:var(--muted,#62645b)}.ds-event-status{font-size:11px;color:var(--positive,#216340);padding-top:3px}.ds-event-status.ds-error{color:var(--negative,#a72828)}"
+    },
+    {
+      "name": "Event participant selection",
+      "kind": "custom",
+      "description": "Desktop shows the ordered arrow and participant nodes; mobile retains the directed label and selected cells. This sample uses the implemented owner → personal route.",
+      "html": "<svg class=\"ds-graph\" viewBox=\"0 0 250 270\" role=\"img\" aria-label=\"Владелец выдаёт права личному агенту\"><defs><marker id=\"ds-arrow\" markerWidth=\"7\" markerHeight=\"7\" refX=\"6\" refY=\"3.5\" orient=\"auto\"><path d=\"M0 0L7 3.5L0 7\" fill=\"none\" stroke=\"currentColor\"/></marker></defs><path class=\"ds-edge\" d=\"M123 101V167\" fill=\"none\" marker-end=\"url(#ds-arrow)\"/><g class=\"ds-node ds-node-active\"><rect x=\"30\" y=\"35\" width=\"186\" height=\"66\" rx=\"8\"/><text x=\"47\" y=\"61\">Владелец задачи</text><text class=\"ds-node-sub\" x=\"47\" y=\"82\">Выдаёт разрешение</text></g><g class=\"ds-node ds-node-active\"><rect x=\"30\" y=\"167\" width=\"187\" height=\"72\" rx=\"8\"/><text x=\"47\" y=\"195\">Личный агент</text><text class=\"ds-node-sub\" x=\"47\" y=\"217\">Находит и вызывает</text></g></svg><div class=\"ds-mobile-graph\"><div class=\"ds-mobile-route\">Владелец → Личный агент</div><div class=\"ds-mobile-participants\"><p class=\"ds-participant ds-participant-active\">Владелец задачи</p><p class=\"ds-participant ds-participant-active\">Личный агент</p><p class=\"ds-participant\">Три резолвера</p><p class=\"ds-participant\">Источник данных · MCP</p><p class=\"ds-participant\">Аналитик · A2A</p><p class=\"ds-participant\">Новая точка подключения</p></div></div>",
+      "css": ".ds-graph{display:block;width:100%;max-height:380px}.ds-edge{color:#9f8700;stroke:currentColor;stroke-width:3;stroke-dasharray:8 5;animation:ds-travel 1s linear infinite;transition:stroke .18s}.ds-node rect{fill:var(--surface,#fff);stroke:#d5d8cd;stroke-width:1}.ds-node text{font:500 15px Plex,Arial,sans-serif;fill:var(--ink,#171916)}.ds-node .ds-node-sub{font-size:12px;font-weight:400;fill:var(--muted,#62645b)}.ds-node-active rect{fill:#fff9d9;stroke:#b99c00;stroke-width:1.5}.ds-node.ds-node-error rect{fill:#fff1ee;stroke:var(--negative,#a72828)}.ds-mobile-graph{display:none;font:13px/1.55 Plex,Arial,sans-serif;color:var(--ink,#171916)}.ds-mobile-route{padding:12px 0;font-weight:500}.ds-mobile-participants{display:grid;grid-template-columns:1fr 1fr;gap:8px}.ds-participant{margin:0;padding:12px 10px;border:1px solid var(--rule,#e8e8e0);border-radius:6px;background:var(--surface,#fff)}.ds-participant-active{background:#fff9d9;border-color:#b99c00}.ds-participant.ds-participant-error{background:#fff1ee;border-color:var(--negative,#a72828)}@keyframes ds-travel{to{stroke-dashoffset:-26}}@media(max-width:600px){.ds-graph{display:none}.ds-mobile-graph{display:block;padding:12px 0}}@media(prefers-reduced-motion:reduce){.ds-edge{animation:none!important;transition:none!important}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Operating Sheet",
+    "overview": "The interface is a calm, code-led operating surface for a founder or engineer examining an experiment. A tinted stone shell surrounds a white sheet. Black ink, compact Plex typography and thin rules make the action, event sequence and evidence readable without decorative imagery or raised dashboard tiles.\n\nThe system gives observations a visible hierarchy: an experiment action, a brief truth disclosure, participants, an explanation, then detailed evidence. Russian interface text is direct and sentence case; identifiers and protocol examples keep their technical spelling. The disclosure that data is synthetic, there is one operator and no language model remains visible in the primary screen on small displays as well as large ones.",
+    "keyCharacteristics": [
+      "Flat white working surface within a tinted L-shaped shell.",
+      "Ink actions, quiet neutral structure and restrained state color.",
+      "Separate text weights, tabular numerals and monospace identifiers.",
+      "Event selection connects the journal, participants and evidence.",
+      "Responsive reflow preserves the meaning of the selected event."
+    ],
+    "rules": [
+      {
+        "name": "The Active Signal Rule",
+        "body": "Yellow carries selection and run feedback; the experiment action stays ink. Preserve the small identity and active-navigation uses already present.",
+        "section": "colors"
+      },
+      {
+        "name": "The Evidence Label Rule",
+        "body": "Never communicate a verdict through color alone: retain its Russian label and its supporting checks or limitations.",
+        "section": "colors"
+      },
+      {
+        "name": "The Weight File Rule",
+        "body": "Use the shipped 400, 500 and 600 Plex Sans faces for regular copy, medium actions/event titles and semibold headings/current navigation. Keep identifiers in Plex Mono.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Sheet Rule",
+        "body": "Preserve tonal layers and rules as the depth vocabulary; do not add shadows to ordinary controls, journal rows or evidence panels.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep the stone shell, white sheet and ink hierarchy consistent across views.",
+      "Do preserve the brief truth disclosure on desktop and mobile.",
+      "Do connect the selected journal event to its ordered route, participants and evidence.",
+      "Do retain text labels and limitations beside semantic verdict colors.",
+      "Do use the shipped Plex weights and tabular figures, with mono for identifiers and code.",
+      "Do keep keyboard focus visible and preserve selected-event meaning with reduced motion."
+    ],
+    "donts": [
+      "Don't turn the primary experiment action yellow or add decorative color categories.",
+      "Don't add ordinary card shadows, gradients or floating glass layers to the flat sheet system.",
+      "Don't make a replay look like new network activity or present a stored event as a prewritten result.",
+      "Don't label partial or untested hypotheses as passed.",
+      "Don't hide the mobile participants' selected/error states or reduce the mobile graph to an unchanging process list."
+    ]
+  }
+}

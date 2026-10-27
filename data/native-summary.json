@@ -1,0 +1,66 @@
+{
+  "kind": "measured-native-processes",
+  "at": "2026-10-27T00:11:46.016173+00:00",
+  "revision": "00cbf3bdc5d4e05c04bdd411efc9f6d6e238ef07",
+  "nodes": 16,
+  "independent_os_processes": 16,
+  "physical_hosts": 1,
+  "namespace": "isolated Linux network namespace, no management IP inside",
+  "input": {
+    "documents": [
+      {
+        "name": "IPvX_Ecosystem.txt",
+        "source": "https://archive.org/details/ipv-x-ecosystem_202405/IPvX_Ecosystem.pdf",
+        "utf8_bytes": 32576,
+        "sha256": "2a1ddabc2103669dbe7f1a95ea112504b782d31f3eb36d2ce6446b6e1071c6de"
+      },
+      {
+        "name": "Rapid_distributed_IPvX_resolver.txt",
+        "source": "https://archive.org/details/rapid-distributed-ipv-x-resolver/Rapid+distributed+IPvX+resolver",
+        "utf8_bytes": 22000,
+        "sha256": "8a10fdce7fe09e2e88d4a44feedfecc19f1838d52305cc05260f8a7e7cb5e791"
+      }
+    ],
+    "shard_count": 15,
+    "preprocessing": "Public PDF text extracted before network ingress; exact-token shards plus complete papers",
+    "workload": "Actual indexing, exact token search and SHA-256 artifact verification; repeats are explicitly load repetition"
+  },
+  "jobs_submitted": 384,
+  "correct_results": 384,
+  "failed_jobs": [],
+  "actions": {
+    "index": 128,
+    "query": 128,
+    "fingerprint": 128
+  },
+  "unique_executions": 384,
+  "retries": 80,
+  "idempotency_ok": true,
+  "fault_verified": true,
+  "actual_outage_ms": 10044,
+  "correct_deliveries_during_outage_after_detection": 93,
+  "latency_ms": {
+    "p50": 459,
+    "p95": 1321,
+    "max": 12836
+  },
+  "impairments": {
+    "per_interface_delay_ms": 4,
+    "jitter_ms": 1,
+    "random_frame_loss_percent": 0.02,
+    "faults": [
+      {
+        "at_seconds": 4.01,
+        "at_ms": 1793059875012,
+        "node": "N05",
+        "enabled": false
+      },
+      {
+        "at_seconds": 14.07,
+        "at_ms": 1793059885073,
+        "node": "N05",
+        "enabled": true
+      }
+    ]
+  }
+}
