@@ -11,6 +11,8 @@ install -d -m 0755 "$release/public"
 python3 "$source_dir/infra/export.py" "$source_dir" "$release/public"
 install -m 0644 "$source_dir/infra/server.py" "$release/server.py"
 install -m 0644 "$source_dir/infra/auth.py" "$release/auth.py"
+install -m 0644 "$source_dir/infra/community.py" "$release/community.py"
+install -m 0644 "$source_dir/infra/configure_community.py" "$release/configure_community.py"
 install -m 0644 "$source_dir/infra/auth-requirements.lock" "$release/auth-requirements.lock"
 python3 -m venv "$release/auth-venv"
 "$release/auth-venv/bin/python" -m pip install --only-binary=:all: --no-cache-dir -r "$release/auth-requirements.lock"
@@ -25,7 +27,9 @@ Wants=network-online.target
 DynamicUser=yes
 StateDirectory=ipvx-research-auth
 StateDirectoryMode=0700
+EnvironmentFile=-/etc/ipvx-research/community.env
 Environment=IPVX_AUTH_STATE_DIR=/var/lib/ipvx-research-auth/state
+Environment=IPVX_COMMUNITY_STATE_DIR=/var/lib/ipvx-research-auth/community
 Environment=RELCOM_ID_CLIENT_ID=396952476441378818
 Environment=RELCOM_ID_ORG_ID=396952378110115842
 ExecStart=$release/auth-venv/bin/python $release/auth.py

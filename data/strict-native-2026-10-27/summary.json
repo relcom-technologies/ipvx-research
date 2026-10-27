@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "status": "measured",
+  "recorded_at": "2026-10-27T12:18:47.873796+00:00",
+  "source_revision": "90adf2c66cef042d0a663d0e34c097963f6b775d",
+  "run_url": "https://github.com/relcom-technologies/ipvx-research/actions/runs/40500966557",
+  "kernel_version": "6.12.50",
+  "kernel_source_sha256": "c435bd74d1c21fc5a950781a50d78bae2b93944144694843359948ad3afc72a5",
+  "execution": "Three whole QEMU Linux guests, one GitHub-hosted runner, Unix-backed Ethernet links; no guest IP NIC or management IP",
+  "baseline": {
+    "schema_version": 1,
+    "mode": "baseline",
+    "passed": true,
+    "actual_guests": 3,
+    "topology": "A--R--B; no direct A/B link",
+    "guest_ip_stack": "compiled_out_and_probed",
+    "kernel_socket_rejections": 12,
+    "all_capture_frames_verified": 90,
+    "ether_types": [
+      "0x88b5"
+    ],
+    "node_keys": {
+      "1": {
+        "public_key": "4ea5b4569e1b2bd9e5262fc77f80e5e71dacba16df7839abf7702ce101169a4d",
+        "node_id": "107c4222149a193829500600979f96a50893c0ce80db4e0248554298370c844c"
+      },
+      "2": {
+        "public_key": "0c864782d2ddfd07e545164bb4ab2b23689e1b16a52b0e894630ae9948f48784",
+        "node_id": "365eed0785936c4eb24a41c01c0c2fb168e85964a403f44d77b61199ef4b1cfd"
+      },
+      "3": {
+        "public_key": "13dfea0c8b3deec5f25d389334112fe5c536103e83374f63f82d7bea1115b6e9",
+        "node_id": "d9edbbf533101b6c801b26621ad514401916215741d4870cb2debd740fb5b2b3"
+      }
+    },
+    "completed_sha256_tasks": 16,
+    "llm": false,
+    "confidentiality": false,
+    "identity": "guest-generated Ed25519; SHA256(public key); RAM only",
+    "admission": "TOFU role binding on fixed private links; not external operator admission",
+    "routing": "fixed forwarding table; no dynamic discovery of paths or failover",
+    "hashes": {
+      "R.console.log": "769ba88dba562609f2bc7136ebe930b625b0c637d4785645d1c93643c5470cdb",
+      "rb.pcap": "43b20eea7ccf29d75e3157fc730ae4eb4cf2a6e091df28a6ef08974ebd7710e9",
+      "A.console.log": "865d400d5c4c150fe6e187bba40b59a428bb4cd44fe45aa1c052c4fb28e67070",
+      "B.qemu.log": "f0345d3ea90dd2c39be538108bf5a181fedd9a53ff6d5005d849290f6d80cf3f",
+      "B.console.log": "ca48d05c77677211bc5b8d843901927f34e9febe78016dbfae5cd2c016b9362e",
+      "ar.pcap": "7d1823059e88cc1a07eafcb7f99ef9609566b61da1d6b5696e0587b557713567",
+      "commands.json": "22fafa26827323ff6ddbf13689417f3d9fecdbb058efd532c3408ee13b0095b1",
+      "R.qemu.log": "f0345d3ea90dd2c39be538108bf5a181fedd9a53ff6d5005d849290f6d80cf3f",
+      "A.qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "relay_down": {
+    "schema_version": 1,
+    "mode": "relay-down",
+    "passed": true,
+    "actual_guests": 3,
+    "topology": "A--R--B; no direct A/B link",
+    "guest_ip_stack": "compiled_out_and_probed",
+    "kernel_socket_rejections": 12,
+    "all_capture_frames_verified": 10,
+    "ether_types": [
+      "0x88b5"
+    ],
+    "node_keys": {
+      "1": {
+        "public_key": "f79c66c0f8b477f414c4b03ff9128c2e27c60da74ff0ef29d24cb017911aacf3",
+        "node_id": "5816836c2fd814441a491b97e421e8de606f1e0171029035626d603552e0e866"
+      },
+      "2": {
+        "public_key": "9c9e680a45d1ca99f9d6c30e30818e112ec1ba90d9afeb0af61e83442a21a934",
+        "node_id": "ecf8e7027467e9bde02809f429314fe925dec5ca6074d5d3121c3ba87a766c97"
+      },
+      "3": {
+        "public_key": "c8accac13395a785c94a8a4bc026f4e675bcc11fadb4eb755e7803fb9322a712",
+        "node_id": "141feac27f6ea61e1da8b704ecd0951f82ad8cb700c454055d11d2fdecd32906"
+      }
+    },
+    "completed_sha256_tasks": 0,
+    "llm": false,
+    "confidentiality": false,
+    "identity": "guest-generated Ed25519; SHA256(public key); RAM only",
+    "admission": "TOFU role binding on fixed private links; not external operator admission",
+    "routing": "fixed forwarding table; no dynamic discovery of paths or failover",
+    "hashes": {
+      "R.console.log": "4176dc935d47b166f90d7b92981b45f2d0dc92a397b0ae8adf30bb14207cceb7",
+      "rb.pcap": "ef3b05b49489510713fad7e2303136f6bd5cfd4bd1561c32a7a3737b096965f6",
+      "A.console.log": "867ebe00ddd718269ead1c848924e38bdb84b0fc16bbc57af3eebaeeaa772ca6",
+      "B.qemu.log": "f0345d3ea90dd2c39be538108bf5a181fedd9a53ff6d5005d849290f6d80cf3f",
+      "B.console.log": "24620e96da3d4d3b28e91402d04f0ab25679001af5d54755bb4f37c02fcd2ca2",
+      "ar.pcap": "454a3b2564482d6993f87f0ad6638a7bc655a6d56ee5e26b4d2aab578e94ea73",
+      "commands.json": "6515b636cbb899dbdc7b457d52531af5605a78c4b850076739d29c766f8b8a1c",
+      "R.qemu.log": "f0345d3ea90dd2c39be538108bf5a181fedd9a53ff6d5005d849290f6d80cf3f",
+      "A.qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "independent_artifact_reverification": "The downloaded captures/signatures/console probes were checked again locally with the public verifier; same operator, not external audit",
+  "hypotheses": [
+    {
+      "hypothesis": "Whole guest kernel can operate without IPv4/IPv6 while AF_PACKET and AF_UNIX remain available",
+      "result": "passed_in_this_image"
+    },
+    {
+      "hypothesis": "Signed task and result can traverse a relay without IP or DNS",
+      "result": "16_of_16_sha256_tasks_completed"
+    },
+    {
+      "hypothesis": "With the only relay stopped no hidden IP path completes the tasks",
+      "result": "0_of_16_completed_expected_timeout"
+    },
+    {
+      "hypothesis": "Dynamic route repair, persistent identity, hostile admission, confidentiality",
+      "result": "not_tested_in_this_prototype"
+    },
+    {
+      "hypothesis": "Language model inside strict OS and physical hardware operation",
+      "result": "not_tested"
+    },
+    {
+      "hypothesis": "Efficiency relative to IP under equal workload and budget",
+      "result": "not_measured"
+    }
+  ],
+  "limits": [
+    "XNS1 Ed25519 transport proof, not compatible with the existing encrypted IPvX mesh protocol",
+    "Fixed role/next-hop forwarding, not scalable ID-based routing",
+    "TOFU on fixed private links, RAM-only keys, no encryption",
+    "No external operators or adoption claim",
+    "Host build/orchestration uses ordinary Internet; only the complete guest images and their links are in the no-IP claim"
+  ]
+}

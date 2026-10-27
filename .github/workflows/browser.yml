@@ -18,6 +18,7 @@ jobs:
           for attempt in {1..20}; do curl -fsS http://127.0.0.1:8091/healthz && break || sleep 1; done
           curl -fsS http://127.0.0.1:8091/healthz || { cat /tmp/ipvx-portal.log; exit 1; }
           node scripts/browser_check.mjs
+          node scripts/browser_community_check.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with: {name: portal-browser-evidence, path: browser-evidence/}

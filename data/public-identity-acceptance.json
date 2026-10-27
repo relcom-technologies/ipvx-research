@@ -1,0 +1,230 @@
+{
+  "status": "passed",
+  "measuredAtUtc": "2026-10-27T12:07:51.458718+00:00",
+  "expectedRevision": "c7968118ad9f8bbb312be152278280fc6d0104bd",
+  "checks": [
+    {
+      "host": "ipvx.org",
+      "path": "/healthz",
+      "status": 200,
+      "revision": "c7968118ad9f8bbb312be152278280fc6d0104bd"
+    },
+    {
+      "host": "ipvx.org",
+      "path": "/",
+      "status": 200,
+      "sha256": "94b7f6aa049a3fcb18fb0159580091262293fb40a4a9d9abe691be9d5f7e4e04"
+    },
+    {
+      "host": "ipvx.org",
+      "path": "/experiments.html",
+      "status": 200,
+      "sha256": "8c587cc059fb0c6cb2def04fadc7e1049492bd021cd9e654e204bdaa71bc7170"
+    },
+    {
+      "host": "ipvx.org",
+      "path": "/saved-trace.html",
+      "status": 200,
+      "sha256": "4dff8c0a81e61a699606178108e344b1653d99da46a84db57fe49d28c52e4e3a"
+    },
+    {
+      "host": "ipvx.org",
+      "path": "/rfcs.html",
+      "status": 200,
+      "sha256": "63eac732836cb9f9e740cb9671795e010a97417664a87364ff8a9c888874bacb"
+    },
+    {
+      "host": "ipvx.org",
+      "path": "/participate.html",
+      "status": 200,
+      "sha256": "282e169443eabcd862923cdb2f41e84bf20921810873632781f45ab7f49d4ae2"
+    },
+    {
+      "host": "ipvx.org",
+      "path": "/governance.html",
+      "status": 200,
+      "sha256": "29243ef947c233c78c61e2e53e02455a787836805715d0603ecbc3eac8160674"
+    },
+    {
+      "host": "ipvx.org",
+      "path": "/account.html",
+      "status": 200,
+      "sha256": "5a51a792ea1b121e7249db377cc61f34cf195afa78477e7c9bda72cee0f59e28"
+    },
+    {
+      "host": "ipvx.org",
+      "path": "/blog.html",
+      "status": 200,
+      "sha256": "6686239e67e78a2610c1db8ef2499986d76f18305baa6d6ef20273ad2826fd6f"
+    },
+    {
+      "host": "ipvx.org",
+      "path": "/history.html",
+      "status": 200,
+      "sha256": "8981f7aced0e63b1c43ceccf942b3aae7f3401620bb613db797deb8713abcef9"
+    },
+    {
+      "host": "ipvx.org",
+      "path": "/rfc-0005.html",
+      "status": 200,
+      "sha256": "ad632f2a7c78438d00835e21f68687fa5a992a6fd7d6c06f5deb6b42d7d936ad"
+    },
+    {
+      "host": "ipvx.org",
+      "path": "/api/mesh",
+      "status": 404
+    },
+    {
+      "host": "ipvx.org",
+      "path": "/api/direct",
+      "status": 404
+    },
+    {
+      "host": "ipvx.org",
+      "path": "/.env",
+      "status": 404
+    },
+    {
+      "host": "ipvx.org",
+      "path": "/auth/unknown",
+      "status": 404
+    },
+    {
+      "host": "ipvx.org",
+      "path": "/auth.py",
+      "status": 404
+    },
+    {
+      "host": "ipvx.org",
+      "path": "/sessions.sqlite3",
+      "status": 404
+    },
+    {
+      "host": "www.ipvx.org",
+      "path": "/healthz",
+      "status": 200,
+      "revision": "c7968118ad9f8bbb312be152278280fc6d0104bd"
+    },
+    {
+      "host": "www.ipvx.org",
+      "path": "/",
+      "status": 200,
+      "sha256": "94b7f6aa049a3fcb18fb0159580091262293fb40a4a9d9abe691be9d5f7e4e04"
+    },
+    {
+      "host": "www.ipvx.org",
+      "path": "/experiments.html",
+      "status": 200,
+      "sha256": "8c587cc059fb0c6cb2def04fadc7e1049492bd021cd9e654e204bdaa71bc7170"
+    },
+    {
+      "host": "www.ipvx.org",
+      "path": "/saved-trace.html",
+      "status": 200,
+      "sha256": "4dff8c0a81e61a699606178108e344b1653d99da46a84db57fe49d28c52e4e3a"
+    },
+    {
+      "host": "www.ipvx.org",
+      "path": "/rfcs.html",
+      "status": 200,
+      "sha256": "63eac732836cb9f9e740cb9671795e010a97417664a87364ff8a9c888874bacb"
+    },
+    {
+      "host": "www.ipvx.org",
+      "path": "/participate.html",
+      "status": 200,
+      "sha256": "282e169443eabcd862923cdb2f41e84bf20921810873632781f45ab7f49d4ae2"
+    },
+    {
+      "host": "www.ipvx.org",
+      "path": "/governance.html",
+      "status": 200,
+      "sha256": "29243ef947c233c78c61e2e53e02455a787836805715d0603ecbc3eac8160674"
+    },
+    {
+      "host": "www.ipvx.org",
+      "path": "/account.html",
+      "status": 200,
+      "sha256": "5a51a792ea1b121e7249db377cc61f34cf195afa78477e7c9bda72cee0f59e28"
+    },
+    {
+      "host": "www.ipvx.org",
+      "path": "/blog.html",
+      "status": 200,
+      "sha256": "6686239e67e78a2610c1db8ef2499986d76f18305baa6d6ef20273ad2826fd6f"
+    },
+    {
+      "host": "www.ipvx.org",
+      "path": "/history.html",
+      "status": 200,
+      "sha256": "8981f7aced0e63b1c43ceccf942b3aae7f3401620bb613db797deb8713abcef9"
+    },
+    {
+      "host": "www.ipvx.org",
+      "path": "/rfc-0005.html",
+      "status": 200,
+      "sha256": "ad632f2a7c78438d00835e21f68687fa5a992a6fd7d6c06f5deb6b42d7d936ad"
+    },
+    {
+      "host": "www.ipvx.org",
+      "path": "/api/mesh",
+      "status": 404
+    },
+    {
+      "host": "www.ipvx.org",
+      "path": "/api/direct",
+      "status": 404
+    },
+    {
+      "host": "www.ipvx.org",
+      "path": "/.env",
+      "status": 404
+    },
+    {
+      "host": "www.ipvx.org",
+      "path": "/auth/unknown",
+      "status": 404
+    },
+    {
+      "host": "www.ipvx.org",
+      "path": "/auth.py",
+      "status": 404
+    },
+    {
+      "host": "www.ipvx.org",
+      "path": "/sessions.sqlite3",
+      "status": 404
+    },
+    {
+      "host": "ipvx.org",
+      "path": "/auth/session",
+      "status": 200,
+      "anonymous": true,
+      "no_store": true,
+      "tokens_exposed": false
+    },
+    {
+      "host": "ipvx.org",
+      "path": "/auth/login",
+      "status": 302,
+      "issuer": "https://id.relcom.com",
+      "pkce": "S256",
+      "secure_cookie": true
+    },
+    {
+      "host": "ipvx.org",
+      "path": "/auth/logout",
+      "method": "GET",
+      "status": 405,
+      "unauthorized_logout_refused": true
+    },
+    {
+      "host": "ipvx.org",
+      "path": "/auth/logout",
+      "method": "POST",
+      "status": 403,
+      "unauthorized_logout_refused": true
+    }
+  ],
+  "scope": "Public HTTPS and anonymous boundary; no real project user sign-in"
+}
