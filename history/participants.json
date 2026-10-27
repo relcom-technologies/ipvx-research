@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-27T10:50:14.129837+00:00",
+  "authentication_notice": "Это реестр атрибуции, не криптографическая проверка личности, не список избирателей и не разрешение доступа. Актуальные права задаются отдельно в governance.json и инфраструктуре.",
+  "participants": [
+    {
+      "id": "project-owner",
+      "display_name": "Инициатор IPvX / пользователь этой беседы",
+      "kind": "human",
+      "record_basis": "Прямые запросы пользователя в предоставленной беседе. Не является проверкой юридической личности.",
+      "independent_operator": null
+    },
+    {
+      "id": "original-authors",
+      "display_name": "Авторы исходных публикаций IPvX",
+      "kind": "publication_authors",
+      "record_basis": "Атрибуция сохраняется по самим публикациям; состав не восстанавливается по догадке.",
+      "independent_operator": null
+    },
+    {
+      "id": "codex-assistant",
+      "display_name": "Codex — основной ассистент этой беседы",
+      "kind": "assistant",
+      "record_basis": "Решения, объяснения и выполненная работа из доступной беседы и файлов; точная модель исторических ответов не установлена.",
+      "independent_operator": false
+    },
+    {
+      "id": "codex-routing-roles",
+      "display_name": "Codex — технический рецензент ролей маршрутизации (/root/routing_roles)",
+      "kind": "assistant",
+      "record_basis": "Реально подготовленные этим участником RFC-0005 и proposed decision 0005; текущий вклад, не независимый внешний оператор.",
+      "independent_operator": false
+    },
+    {
+      "id": "codex-relcom-integration",
+      "display_name": "Codex — разработчик интеграций Relcom (/root/relcom_integration_contracts)",
+      "kind": "assistant",
+      "record_basis": "Текущий участник параллельной работы. Его конкретная авторская запись должна следовать после собственного handoff; завершение интеграции заранее не утверждается.",
+      "independent_operator": false
+    },
+    {
+      "id": "codex-history-recorder",
+      "display_name": "Codex — составитель истории (/root/research_history)",
+      "kind": "assistant",
+      "record_basis": "Реально созданная в текущем задании документация. Регистратор не становится автором чужих слов.",
+      "independent_operator": false
+    },
+    {
+      "id": "codex-reviewers-historical",
+      "display_name": "Исторические технические и интерфейсные рецензенты Codex",
+      "kind": "assistant_group",
+      "record_basis": "Существующие журналы проверки и reports/agent-survey.json. Там, где нет авторского первичного сообщения, отдельное мнение не приписывается конкретному рецензенту.",
+      "independent_operator": false,
+      "notes": "Два изолированных рецензента из опроса являются экземплярами той же службы Codex, а не независимыми внешними операторами."
+    },
+    {
+      "id": "tool-workers-native16",
+      "display_name": "16 документных рабочих процессов",
+      "kind": "deterministic_tool_workers",
+      "record_basis": "Измеренный запуск индексирования, поиска и проверки SHA-256. Языковой модели нет.",
+      "independent_operator": false
+    },
+    {
+      "id": "qwen-agent-a",
+      "display_name": "Qwen3-0.6B — агент A",
+      "kind": "local_language_model_agent",
+      "record_basis": "Сохранённые свежие выводы черновика и синтеза, опубликованные в data/llm-summary.json.",
+      "model": "Qwen3-0.6B Q8_0",
+      "model_revision": "23749fefcc72300e3a2ad315e1317431b06b590a",
+      "independent_operator": false,
+      "operator_group": "single-ipvx-lab"
+    },
+    {
+      "id": "qwen-agent-b",
+      "display_name": "Qwen3-0.6B — агент B",
+      "kind": "local_language_model_agent",
+      "record_basis": "Сохранённые свежие выводы рецензирования, опубликованные в data/llm-summary.json.",
+      "model": "Qwen3-0.6B Q8_0",
+      "model_revision": "23749fefcc72300e3a2ad315e1317431b06b590a",
+      "independent_operator": false,
+      "operator_group": "single-ipvx-lab"
+    }
+  ]
+}

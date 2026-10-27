@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "id": "HX-NEXT-UNIQUE-ID",
+  "sequence": "next integer",
+  "occurred_at": null,
+  "time_precision": "unknown | day | instant",
+  "recorded_at": "actual ISO 8601 recording time with offset",
+  "attributed_to": "registered participant id",
+  "recorded_by": "registered recorder id; same id for own contribution",
+  "origin": "contemporaneous_author_record | retrospective_reconstruction",
+  "title": "Specific change or decision",
+  "status": "request | proposed | adopted | implemented | measured | failure | not_established | in_progress | explanatory | review | model_output | corrected | superseded",
+  "summary": "What changed; what the participant actually said or did.",
+  "decision_rationale": "Concise public decision rationale, relevant alternatives and evidence; not private scratch reasoning.",
+  "evidence": [
+    "repository-relative evidence file, exact Git revision, PR/run URL or documented conversation reference"
+  ],
+  "related_to": [
+    "prior event id"
+  ],
+  "limitations": [
+    "What was not measured or not established."
+  ]
+}

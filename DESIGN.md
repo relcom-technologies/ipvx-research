@@ -215,7 +215,7 @@ The pairing retains the inherited technical character while opening the type sca
 
 ## Layout
 
-The portal is a static document family of **13 pages**: overview, architecture, experiments, RFC index, publications, participation, governance, reproducibility, four individual RFCs, and the saved native exchange. All share a normal-flow header and footer; six primary navigation links lead into the research material. This public surface uses no fixed private-app sidebar.
+The portal is a static document family of **17 pages**: overview, architecture, experiments, RFC index, publications, participation, governance, reproducibility, five individual RFCs, the saved native exchange, a participant account, research blog and attributed history. All share a normal-flow header and footer; six primary navigation links lead into the research material. This public surface uses no fixed private-app sidebar.
 
 The centered content width is capped (1600px). Page gutters follow the frontmatter `page` token, and the desktop content starts beneath the header with the `gap` spacing. The index uses a twelve-column board: a name band spanning eight columns beside a four-column scope cell; four equal navigation rails below; then an eight-column mechanism cell beside a four-column RFC invitation. Narrow stone gutters connect square tonal cells. The trace and RFC invitation are not floating cards.
 
@@ -290,3 +290,12 @@ The only authored motion is smooth anchor scrolling. Step changes and disclosure
 - **Don't** make the protocol explanation look like a live exchange or describe the saved trace as independent attestation.
 - **Don't** imply that signed ciphertext hashes publicly prove the displayed plaintext without a decryption proof.
 - **Don't** replace the mobile chart with a scaled-down desktop chart or hide the evidence table's off-screen columns.
+
+
+## Participant account, blog and history
+
+The October 27 extension preserves the Read-mode document family. The header groups a canonical account link with the existing source link; research pages remain public. Account details use the existing prose measures and supporting text roles, stack at the mobile breakpoint, and expose loading, anonymous, confirmed, expired, unavailable and retry states. Logout is an ordinary POST form. Verified email is kept distinct from governance membership, legal identity and native AgentID.
+
+The blog uses the existing reading section and publication rhythm. A local script reads a public Press feed with credentials omitted, renders text through DOM text nodes, and permits article links only to the project's platform blog. Empty and failed feeds retain a real destination and explicit recovery. Article titles use the existing trace-title component scale (24px desktop, 22px mobile); the detector's off-ramp advisories for those two literals are intentional reuse of that documented scale. No external script or article HTML is embedded.
+
+The history page renders the attributed append-only journal at build time through native disclosure controls. Summaries preserve author, date precision and proposal/implementation/measurement status. Expanded evidence and limitations remain wrapped and readable. RFC-0005 is a draft proposal; there is no new live routing display or claim of community ratification.

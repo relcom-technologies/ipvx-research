@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-27T10:50:14.129837+00:00",
+  "sources": [
+    {
+      "name": "native-summary.json",
+      "public_repository_path": "data/native-summary.json",
+      "sha256": "0086c3bf241a31ebe3375d0c10a320bf2184770e80188d5f1b191d11ee906167",
+      "role": "Evidence snapshot; complete runtime/operator state is not public."
+    },
+    {
+      "name": "scale-summary.json",
+      "public_repository_path": "data/scale-summary.json",
+      "sha256": "ead5a26fac92146db3c0d59656c2b2c6b0d87db5fa8370e09322a52638c63c75",
+      "role": "Evidence snapshot; complete runtime/operator state is not public."
+    },
+    {
+      "name": "llm-summary.json",
+      "public_repository_path": "data/llm-summary.json",
+      "sha256": "64b33df83eaa3fbd3ec00436a775368252479b3b4536d332a51b339c3a0f28a6",
+      "role": "Evidence snapshot; complete runtime/operator state is not public."
+    },
+    {
+      "name": "provenance.json",
+      "public_repository_path": "data/provenance.json",
+      "sha256": "5df10dd8e63a1e010d31ed8f042ba493eb39abb98a37f7dbe67cbf2227e943e9",
+      "role": "Evidence snapshot; complete runtime/operator state is not public."
+    },
+    {
+      "name": "llm-protocol.txt",
+      "public_repository_path": "data/llm-protocol.txt",
+      "sha256": "423c7ec2fd82ed682d3550a2a75fc729adae9f4c50aab193044d6064cd0505e1",
+      "role": "Evidence snapshot; complete runtime/operator state is not public."
+    },
+    {
+      "name": "native-llm-trace.json",
+      "public_repository_path": "data/native-llm-trace.json",
+      "sha256": "4739d917b10492b6ead848b127f644db9dbfe6d2bbd96311fdf9708cc68ed28b",
+      "role": "Evidence snapshot; complete runtime/operator state is not public."
+    },
+    {
+      "name": "ipvx-public-acceptance.json",
+      "public_repository_path": null,
+      "sha256": "be336f9b59c79f493962e60397bc7b0051978527dab162946774bde330cd18da",
+      "role": "Evidence snapshot; complete runtime/operator state is not public."
+    }
+  ],
+  "conversation": {
+    "reference": "conversation:provided-user-assistant-history",
+    "availability": "Provided conversation context, not a public authenticated transcript.",
+    "date_policy": "Unknown event timestamps stay null; sequence captures available discussion order. Same-day conversation items have date-only precision.",
+    "retrospection_policy": "Summaries are attributed to the original speaker and separately to the recorder. Quotes are short excerpts; summary language is never presented as an original quotation."
+  }
+}

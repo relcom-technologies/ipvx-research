@@ -1,0 +1,11 @@
+# Runtime dependencies for infra/auth.py; versions checked on 2026-10-27.
+Authlib==1.9.1
+requests==2.34.2
+cryptography==50.0.2
+joserfc==1.7.7
+certifi==2026.10.23
+cffi==2.1.1
+charset-normalizer==3.5.2
+idna==3.20
+pycparser==3.12
+urllib3==2.8.0

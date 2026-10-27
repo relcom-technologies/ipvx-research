@@ -10,8 +10,44 @@ release=$base/releases/$revision
 install -d -m 0755 "$release/public"
 python3 "$source_dir/infra/export.py" "$source_dir" "$release/public"
 install -m 0644 "$source_dir/infra/server.py" "$release/server.py"
+install -m 0644 "$source_dir/infra/auth.py" "$release/auth.py"
+install -m 0644 "$source_dir/infra/auth-requirements.lock" "$release/auth-requirements.lock"
+python3 -m venv "$release/auth-venv"
+"$release/auth-venv/bin/python" -m pip install --only-binary=:all: --no-cache-dir -r "$release/auth-requirements.lock"
 ln -sfn "$release" "$base/current.next"
 mv -Tf "$base/current.next" "$base/current"
+cat > /etc/systemd/system/ipvx-research-auth.service <<EOF
+[Unit]
+Description=IPvX Relcom ID sign-in (loopback only, no laboratory access)
+After=network-online.target
+Wants=network-online.target
+[Service]
+DynamicUser=yes
+StateDirectory=ipvx-research-auth
+StateDirectoryMode=0700
+Environment=IPVX_AUTH_STATE_DIR=/var/lib/ipvx-research-auth
+Environment=RELCOM_ID_CLIENT_ID=396952476441378818
+Environment=RELCOM_ID_ORG_ID=396952378110115842
+ExecStart=$release/auth-venv/bin/python $release/auth.py
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+CPUQuota=25%
+MemoryMax=192M
+TasksMax=32
+UMask=0077
+[Install]
+WantedBy=multi-user.target
+EOF
 cat > /etc/systemd/system/ipvx-research.service <<EOF
 [Unit]
 Description=IPvX public research files (no lab API)
@@ -19,7 +55,7 @@ After=network-online.target
 Wants=network-online.target
 [Service]
 DynamicUser=yes
-ExecStart=/usr/bin/python3 $release/server.py --root $release/public --revision $revision
+ExecStart=/usr/bin/python3 $release/server.py --root $release/public --revision $revision --auth-port 8094
 Restart=on-failure
 RestartSec=3
 NoNewPrivileges=yes
@@ -34,6 +70,7 @@ RestrictSUIDSGID=yes
 RestrictAddressFamilies=AF_INET AF_UNIX
 IPAddressDeny=any
 IPAddressAllow=10.10.50.0/24
+IPAddressAllow=127.0.0.1/32
 CPUQuota=25%
 MemoryMax=128M
 TasksMax=32
@@ -42,11 +79,15 @@ UMask=0077
 WantedBy=multi-user.target
 EOF
 systemctl daemon-reload
+systemctl enable --now ipvx-research-auth.service
+systemctl restart ipvx-research-auth.service
 systemctl enable --now ipvx-research.service
 systemctl restart ipvx-research.service
 for attempt in {1..20}; do
   if curl --fail --silent http://10.10.50.131:8092/healthz | python3 -c 'import json,sys; assert json.load(sys.stdin)["revision"]==sys.argv[1]' "$revision"; then
-    exit 0
+    if curl --fail --silent -H 'Host: ipvx.org' http://10.10.50.131:8092/auth/session | python3 -c 'import json,sys; j=json.load(sys.stdin); assert j["authenticated"] is False and j["user"] is None'; then
+      exit 0
+    fi
   fi
   sleep 1
 done
