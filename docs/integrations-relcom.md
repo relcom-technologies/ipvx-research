@@ -123,3 +123,20 @@ Reader comments, if later requested, have their own verified reader client and p
 configuration in Press Settings, separate from staff membership. Embedded/headless
 commenting is outside the current Press reader feature. Do not claim that portal
 sign-in automatically signs a visitor into a separately hosted Press blog.
+
+## Observed production acceptance, 2026-10-27
+
+The real email verification, application callback and logout were observed in ordinary
+Chrome. Source617714d passed55 public HTTPS checks in infrastructure run40504323764.
+The owner separately authorized their portal-admin role; the scoped immutable bootstrap
+run40505011498 passed and the actual role/private audit were visible. A clearly labeled
+technical test passed pending→published→hidden, anonymous privacy checks, advisory abstain
+and withdrawal. It left the RFC unchanged and is hidden. This was one owner account, not
+an external contributor or governance vote. See the public sanitized acceptance receipts.
+
+Google, Apple and Telegram are enabled in this project using the broker's existing
+platform configuration. All three buttons and initial provider authorization pages
+were observed in Chrome. Complete social callbacks/user creation were not performed.
+The application still uses the same public PKCE client and callback, without provider
+secrets. A first Telegram sign-in requires independent email verification.
+The actual public Press feed rendered its empty state; the first article remains draft.

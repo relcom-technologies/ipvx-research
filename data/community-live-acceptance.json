@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-27T12:48:33.890136+00:00",
+  "published_source": "617714dfb306673337fb2347e773b25497a0b907",
+  "method": "ordinary Chrome with the owner verified session; anonymous HTTPS checks without cookies",
+  "observed": {
+    "verified_email_and_real_oidc_callback": true,
+    "owner_admin_explicitly_authorized": true,
+    "owner_admin_pinned_existing_verified_participant": true,
+    "pending_hidden_from_anonymous_list_and_direct_get": true,
+    "published_test_visible_anonymously": true,
+    "advisory_abstain_then_withdraw": true,
+    "test_hidden_and_anonymous_direct_get_404": true,
+    "audit_events_observed": 6,
+    "real_logout_and_private_panels_removed": true,
+    "press_feed_actual_empty_state": true,
+    "social_methods_enabled": [
+      "Google",
+      "Apple",
+      "Telegram"
+    ],
+    "social_authorization_start_pages_observed": [
+      "accounts.google.com",
+      "appleid.apple.com",
+      "oauth.telegram.org"
+    ]
+  },
+  "not_established": [
+    "completed social-provider callbacks or new social-account registrations",
+    "external independent contributors",
+    "real role assignments to additional people",
+    "formal RFC ratification",
+    "published Press article"
+  ],
+  "privacy": "No user email, raw subject, account/profile mapping, cookies, tokens or private audit body in this public receipt. The technical entry was hidden after acceptance.",
+  "runs": [
+    "https://github.com/relcom-technologies/relcom-infra/actions/runs/40504323764",
+    "https://github.com/relcom-technologies/relcom-infra/actions/runs/40505011498"
+  ]
+}
