@@ -4,11 +4,11 @@ const browser=await chromium.launch({headless:true});await fs.mkdir('browser-evi
 for(const width of [1440,1280,768,390]){
  const page=await browser.newPage({viewport:{width,height:1000},reducedMotion:'reduce'}),errors=[];
  page.on('pageerror',e=>errors.push(e.message));
- for(const route of ['index.html','architecture.html','experiments.html','rfcs.html','participate.html','governance.html']){
+ for(const route of ['index.html','architecture.html','experiments.html','rfcs.html','participate.html','governance.html','saved-trace.html']){
   await page.goto('http://127.0.0.1:8091/'+route);await page.evaluate(()=>document.fonts.ready);
   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);
   if(overflow)throw Error(route+' overflow '+width);
-  if(route==='index.html'||route==='experiments.html'||route==='participate.html')await page.screenshot({path:`browser-evidence/${route}-${width}.png`,fullPage:true});
+  if(route==='index.html'||route==='experiments.html'||route==='participate.html'||route==='saved-trace.html')await page.screenshot({path:`browser-evidence/${route}-${width}.png`,fullPage:true});
   if(route==='experiments.html'){await page.getByRole('table').waitFor();if(await page.locator('#llm-transcript details').count()!==6)throw Error('Missing measured transcripts');await page.locator('#llm-transcript summary').first().click();await page.screenshot({path:`browser-evidence/llm-open-${width}.png`,fullPage:true});}
   checks.push({width,route,overflow});
  }

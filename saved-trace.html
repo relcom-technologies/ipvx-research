@@ -16,7 +16,7 @@
     &quot;B1&quot;
   ],
   &quot;explanation&quot;: &quot;The evidence provided does not confirm that all 384 document jobs returned correct results. Only one run completed 384/384 tasks correctly.&quot;
-}</pre></section><section class="prose"><h2>Подписи и пределы проверки</h2><p>Квитанция получателя и каждый переход проверены по открытым ключам участников. Подписи связывают цепочку с хешем зашифрованного сообщения. Открытый текст модели сопоставлен с записью журнала; публичное доказательство расшифровки не предоставляется. Данные собраны владельцем стенда, независимой аттестации нет.</p><p><a href="data/native-llm-trace.json">Сокращённое доказательство JSON: квитанция, цепочка и открытые ключи проверки</a></p></section><section class="prose"><details><summary>Показать подписанную цепочку переходов</summary><pre>{
+}</pre></section><section class="prose"><h2>Подписи и пределы проверки</h2><p>Квитанция получателя и каждый переход проверены по открытым ключам участников. Подписи связывают цепочку с хешем зашифрованного сообщения. Открытый текст модели сопоставлен с записью журнала; публичное доказательство расшифровки не предоставляется. Данные собраны владельцем стенда, независимой аттестации нет.</p><p><a href="data/native-llm-trace.json">Сокращённое доказательство JSON: квитанция, цепочка и открытые ключи проверки</a></p><p><a href="data/verify_native_trace.py">Автономная проверка подписи на Python</a> (PyNaCl; без сетевых вызовов и приватных ключей).</p></section><section class="prose"><details><summary>Показать подписанную цепочку переходов</summary><pre>{
   &quot;receipt&quot;: {
     &quot;payload&quot;: {
       &quot;ciphertext_sha256&quot;: &quot;64609e84796b1f6d62df896830a285c33bbd1497aa0d849e280fc9afe456c8b3&quot;,

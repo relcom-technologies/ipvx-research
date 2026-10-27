@@ -68,12 +68,14 @@ for p in sorted((ROOT/'rfc').glob('*.md')):
  title=p.read_text().splitlines()[0][2:];num=p.name[:4]
  body=heading(title,'Рабочий документ IPvX · черновик · открыто для обсуждения')+f'<article class="rfc-prose">{markdown(p.read_text())}</article><p><a href="rfc/{p.name}">Исходный текст Markdown</a> · <a href="{REPO}/issues/new?template=proposal.yml">Предложить изменение</a></p>'
  (ROOT/f'rfc-{num}.html').write_text(layout('rfcs.html',title,body))
-print('Built',len(list(ROOT.glob('*.html'))),'static pages')
+
 
 trace=json.loads((ROOT/'data/native-llm-trace.json').read_text())
 tb=heading('Сохранённый обмен A → B','Настоящая задача из нативного прогона, исходный ответ модели и подписанные переходы. Это запись, а не текущее сетевое событие.')
 tb+=article('Что передавалось','<p>A → R1 → B · '+str(trace['elapsed_ms'])+' мс до подтверждения очереди. Модель B вычисляла рецензию позже, локально. Номер сообщения:</p><code>'+trace['message_id']+'</code><h3>Задача A, сохранённая в журнале</h3><pre>'+html.escape(json.dumps(trace['saved_plaintext_task'],ensure_ascii=False,indent=2))+'</pre><h3>Ответ модели B</h3><pre>'+html.escape(json.dumps(trace['receiver_model_output'],ensure_ascii=False,indent=2))+'</pre>')
-tb+=article('Подписи и пределы проверки','<p>Квитанция получателя и каждый переход проверены по открытым ключам участников. Подписи связывают цепочку с хешем зашифрованного сообщения. Открытый текст модели сопоставлен с записью журнала; публичное доказательство расшифровки не предоставляется. Данные собраны владельцем стенда, независимой аттестации нет.</p><p><a href="data/native-llm-trace.json">Сокращённое доказательство JSON: квитанция, цепочка и открытые ключи проверки</a></p>')
+tb+=article('Подписи и пределы проверки','<p>Квитанция получателя и каждый переход проверены по открытым ключам участников. Подписи связывают цепочку с хешем зашифрованного сообщения. Открытый текст модели сопоставлен с записью журнала; публичное доказательство расшифровки не предоставляется. Данные собраны владельцем стенда, независимой аттестации нет.</p><p><a href="data/native-llm-trace.json">Сокращённое доказательство JSON: квитанция, цепочка и открытые ключи проверки</a></p><p><a href="data/verify_native_trace.py">Автономная проверка подписи на Python</a> (PyNaCl; без сетевых вызовов и приватных ключей).</p>')
 proof=html.escape(json.dumps(trace['signed_delivery_proof'],ensure_ascii=False,indent=2))
 tb+='<section class="prose"><details><summary>Показать подписанную цепочку переходов</summary><pre>'+proof+'</pre></details></section>'
 (ROOT/'saved-trace.html').write_text(layout('experiments.html','Сохранённый нативный обмен',tb))
+
+print('Built',len(list(ROOT.glob('*.html'))),'static pages')

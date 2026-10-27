@@ -19,4 +19,4 @@ for p in [*root.glob('*.html'),*root.glob('data/*.json'),*root.glob('assets/*.js
  if re.search(r'10\.10\.50\.|BEGIN (?:OPENSSH|RSA) PRIVATE KEY|DIRECT_ADMIN_TOKEN|MESH_ADMIN_TOKEN|ghp_[A-Za-z0-9]{20}',s):errors.append(f'{p.name}: private management material')
 for p in root.glob('data/*.json'):json.loads(p.read_text())
 if errors:raise SystemExit('\n'.join(errors))
-print('12 pages: links, h1, public-data boundaries, JSON checked')
+print(str(len(list(root.glob('*.html'))))+' pages: links, h1, public-data boundaries, JSON checked')
