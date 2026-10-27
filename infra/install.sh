@@ -8,23 +8,8 @@ source_dir=$(cd "$(dirname "$0")/.." && pwd)
 base=/srv/ipvx-research
 release=$base/releases/$revision
 install -d -m 0755 "$release/public"
-python3 - "$source_dir" "$release" <<'PY'
-import shutil,sys
-from pathlib import Path
-source,target=map(Path,sys.argv[1:])
-files=[*source.glob('*.html'), source/'governance.json']
-for directory in ('assets','data','rfc'):
-    files.extend(p for p in (source/directory).rglob('*') if p.is_file())
-for file in files:
-    if file.is_symlink() or not file.resolve().is_relative_to(source.resolve()):
-        raise SystemExit('Non-regular public source refused')
-    destination=target/'public'/file.relative_to(source)
-    destination.parent.mkdir(parents=True,exist_ok=True)
-    shutil.copyfile(file,destination)
-    destination.chmod(0o644)
-shutil.copyfile(source/'infra/server.py',target/'server.py')
-(target/'server.py').chmod(0o644)
-PY
+python3 "$source_dir/infra/export.py" "$source_dir" "$release/public"
+install -m 0644 "$source_dir/infra/server.py" "$release/server.py"
 ln -sfn "$release" "$base/current.next"
 mv -Tf "$base/current.next" "$base/current"
 cat > /etc/systemd/system/ipvx-research.service <<EOF
