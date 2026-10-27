@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "snapshot_through": "HX-0094",
+  "snapshot_through": "HX-0098",
   "bundles": [
     {
       "name": "ipvx-native-device-prototype.zip",
@@ -13,9 +13,9 @@
     {
       "name": "ipvx-research-history.zip",
       "label": "Полная доступная выгрузка истории",
-      "scope": "94 событий по HX-0094; авторы, основания, проверки и ограничения.",
-      "bytes": 196984,
-      "sha256": "9b43cdfd0473b6402a408402159a81dfe9ef461aa5d1404ad7672f89a5fcbdc2",
+      "scope": "98 событий по HX-0098; авторы, основания, проверки и ограничения.",
+      "bytes": 204935,
+      "sha256": "bfa4954e466816c384be5fd166cf180f4bf72cddeae0620eb7c6a2ac14d95ec6",
       "files": 11
     }
   ]
