@@ -12,7 +12,9 @@ Python 3: `python3 -m http.server 8091 --bind 127.0.0.1`, then open http://127.0
 
 `python3 scripts/check_site.py`
 
-Browser CI checks desktop/tablet/mobile, keyboard trace controls, navigation, proposal drafting, no overflow and JS errors. Source ZIP for Relcom excludes Git, internal design notes, CI captures and all secrets. Hosting is prepared through https://resources.relcom.com/mcp and activated in the customer cabinet. A custom domain requires the provider's paid capability; no automatic charge is authorized by this repository.
+Browser CI checks desktop/tablet/mobile, keyboard trace controls, navigation, proposal drafting, no overflow and JS errors using the production static handler and its content security policy. Source ZIP for Relcom excludes Git, internal design notes, CI captures and all secrets.
+
+The MCP hosting draft was prepared through https://resources.relcom.com/mcp but never activated or charged. On 2026-10-27 the owner declined a new subscription and selected the existing IPvX infrastructure for ipvx.org instead. The separate static service in `infra/` binds only to the existing observer's internal address and is published through the normal relcom-infra ingress. See `infra/README.md`. This does not activate a Resources plan or expose the lab controller.
 
 ## Contribute
 
