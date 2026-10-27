@@ -18,7 +18,7 @@ for(const width of [1440,1280,768,390]){
  await page.route('https://github.com/relcom-technologies/ipvx-research/issues/new?**',async route=>{const url=new URL(route.request().url());if(!url.searchParams.get('body').includes('Fixture'))throw Error('Proposal body missing');await route.abort();});
  await page.getByRole('button',{name:'Открыть заявку в GitHub'}).click();
  await page.goto('http://127.0.0.1:8091/participate.html');await page.getByLabel('Короткое название').fill('Long input');await page.getByLabel('Цель и способ проверки').fill('Факт '.repeat(750));await page.getByRole('button',{name:'Открыть заявку в GitHub'}).click();await page.getByText('Заявка слишком длинная для ссылки.',{exact:false}).waitFor();
- await page.route('**/data/llm-summary.json',route=>route.abort());await page.goto('http://127.0.0.1:8091/experiments.html');await page.getByText('Не удалось загрузить сводку.',{exact:false}).waitFor();await page.screenshot({path:`browser-evidence/report-error-${width}.png`,fullPage:true});
+ await page.route('**/data/llm-summary.json',route=>route.abort());await page.goto('http://127.0.0.1:8091/experiments.html');await page.getByText('Не удалось загрузить файл данных.',{exact:false}).waitFor();await page.screenshot({path:`browser-evidence/report-error-${width}.png`,fullPage:true});
  if(errors.length)throw Error(errors.join('\n'));await page.close();
 }
 await browser.close();await fs.writeFile('browser-evidence/checks.json',JSON.stringify(checks,null,2));

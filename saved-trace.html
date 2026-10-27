@@ -1,0 +1,98 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Исследования IPvX: нативная сеть для агентов, воспроизводимые эксперименты и совместная разработка RFC."><meta name="theme-color" content="#f7f6f2"><title>Сохранённый нативный обмен · IPvX Research</title><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/portal.css"><script src="assets/portal.js" defer></script></head><body><a class="skip" href="#main">К содержимому</a><header><a class="wordmark" href="index.html">IPvX<span>Research</span></a><nav aria-label="Разделы"><a href="index.html">Обзор</a><a href="architecture.html">Устройство сети</a><a href="experiments.html" aria-current="page">Эксперименты</a><a href="rfcs.html">RFC</a><a href="publications.html">Публикации</a><a href="participate.html">Участвовать</a></nav><a class="source-link" href="https://github.com/relcom-technologies/ipvx-research">GitHub ↗</a></header><main id="main"><div class="page-title"><h1>Сохранённый обмен A → B</h1><p class="lead">Настоящая задача из нативного прогона, исходный ответ модели и подписанные переходы. Это запись, а не текущее сетевое событие.</p></div><section class="prose"><h2>Что передавалось</h2><p>A → R1 → B · 224.674 мс до подтверждения очереди. Модель B вычисляла рецензию позже, локально. Номер сообщения:</p><code>093f4ab3f36d4427b1302cd152df9243</code><h3>Задача A, сохранённая в журнале</h3><pre>{
+  &quot;action&quot;: &quot;collaborate&quot;,
+  &quot;phase&quot;: &quot;review&quot;,
+  &quot;case&quot;: &quot;delivery&quot;,
+  &quot;draft&quot;: {
+    &quot;decision&quot;: &quot;no&quot;,
+    &quot;evidence&quot;: [
+      &quot;A1&quot;
+    ],
+    &quot;explanation&quot;: &quot;The evidence provided does not confirm that all 384 document jobs returned correct results. Only one run completed 384/384 tasks correctly.&quot;
+  }
+}</pre><h3>Ответ модели B</h3><pre>{
+  &quot;decision&quot;: &quot;no&quot;,
+  &quot;evidence&quot;: [
+    &quot;A1&quot;,
+    &quot;B1&quot;
+  ],
+  &quot;explanation&quot;: &quot;The evidence provided does not confirm that all 384 document jobs returned correct results. Only one run completed 384/384 tasks correctly.&quot;
+}</pre></section><section class="prose"><h2>Подписи и пределы проверки</h2><p>Квитанция получателя и каждый переход проверены по открытым ключам участников. Подписи связывают цепочку с хешем зашифрованного сообщения. Открытый текст модели сопоставлен с записью журнала; публичное доказательство расшифровки не предоставляется. Данные собраны владельцем стенда, независимой аттестации нет.</p><p><a href="data/native-llm-trace.json">Сокращённое доказательство JSON: квитанция, цепочка и открытые ключи проверки</a></p></section><section class="prose"><details><summary>Показать подписанную цепочку переходов</summary><pre>{
+  &quot;receipt&quot;: {
+    &quot;payload&quot;: {
+      &quot;ciphertext_sha256&quot;: &quot;64609e84796b1f6d62df896830a285c33bbd1497aa0d849e280fc9afe456c8b3&quot;,
+      &quot;message_id&quot;: &quot;093f4ab3f36d4427b1302cd152df9243&quot;,
+      &quot;received_at_ms&quot;: 1793086299671,
+      &quot;recipient&quot;: &quot;ipvx:agent:52a8b1b3318ab8586fb3afbd7ae960096baa6f69a9305b3ef4a2e35e24c88343&quot;,
+      &quot;request_hash&quot;: &quot;43879dea21521b424db478f59caa9ee3e6f9857080af9e3cc6644eb280ca6024&quot;,
+      &quot;result_ciphertext&quot;: &quot;0Y0J7gmXLPpRx0v56bNjpfkqspuiQnwIdsl/wKRYyCREs4VyjNiB0bxE14MX/9KZmAKZOBS0pleTvjfgKlJuOzFO/9W13/Ix74p3sw+Tt693kZHXNqCFI/c3P/nHd5Y=&quot;,
+      &quot;sender&quot;: &quot;ipvx:agent:1e16222a0a94368025f835ec2063cfa277ca5303114d9cb06fa64462387d1e50&quot;
+    },
+    &quot;purpose&quot;: &quot;direct-receipt&quot;,
+    &quot;signature&quot;: &quot;fde7886442882b6430bd402959f0d897ec62ec54cbd6f39541be6d907196ed568c0fc270f1f30af796dab90918e22de746c972739b13e57e8429d1fc09a84c06&quot;,
+    &quot;wire&quot;: &quot;ipvx-agent-lab/1&quot;
+  },
+  &quot;hops&quot;: [
+    {
+      &quot;wire&quot;: &quot;ipvx-agent-lab/1&quot;,
+      &quot;purpose&quot;: &quot;mesh-hop&quot;,
+      &quot;payload&quot;: {
+        &quot;node&quot;: &quot;ipvx:agent:52a8b1b3318ab8586fb3afbd7ae960096baa6f69a9305b3ef4a2e35e24c88343&quot;,
+        &quot;next&quot;: &quot;ipvx:agent:f7c58b4cd0ba5969cb99d3ff9d56571c66cc5a08575769b2e6998c6cbc728c8d&quot;,
+        &quot;trace_id&quot;: &quot;77248545a1e144c8b35d9221954fb0c8&quot;,
+        &quot;message_id&quot;: &quot;093f4ab3f36d4427b1302cd152df9243&quot;,
+        &quot;message_hash&quot;: &quot;43879dea21521b424db478f59caa9ee3e6f9857080af9e3cc6644eb280ca6024&quot;,
+        &quot;ciphertext_sha256&quot;: &quot;64609e84796b1f6d62df896830a285c33bbd1497aa0d849e280fc9afe456c8b3&quot;,
+        &quot;receipt_hash&quot;: &quot;f8263af3e75a64cdab18af203ab1bf91885a9f7c8143fbba3c65b784faae758a&quot;,
+        &quot;network&quot;: {
+          &quot;transport&quot;: &quot;ethernet&quot;,
+          &quot;ethertype&quot;: &quot;0x88b5&quot;,
+          &quot;source_mac&quot;: &quot;bc:24:11:99:f9:dd&quot;,
+          &quot;destination_mac&quot;: &quot;bc:24:11:26:7e:e7&quot;,
+          &quot;interface&quot;: &quot;eth0&quot;,
+          &quot;rpc_id&quot;: &quot;69b2c9d5d1da4a9db28eeba98df5f94e&quot;,
+          &quot;tx_frames&quot;: 3,
+          &quot;rx_frames&quot;: 2
+        },
+        &quot;incoming&quot;: null,
+        &quot;remaining_hops&quot;: 7,
+        &quot;at_ms&quot;: 1793086299855
+      },
+      &quot;signature&quot;: &quot;72c5caa9d5ca32803716bc27fed473b2fddb7c56fd4e5d0ce481e05fc87ab44c85908e7d92b4a64965e8b90aeff7a7609f0ed616c949b2a21f5a19b9b0173c08&quot;
+    },
+    {
+      &quot;payload&quot;: {
+        &quot;at_ms&quot;: 1793086299683,
+        &quot;ciphertext_sha256&quot;: &quot;64609e84796b1f6d62df896830a285c33bbd1497aa0d849e280fc9afe456c8b3&quot;,
+        &quot;incoming&quot;: {
+          &quot;destination_mac&quot;: &quot;bc:24:11:26:7e:e7&quot;,
+          &quot;ethertype&quot;: &quot;0x88b5&quot;,
+          &quot;interface&quot;: &quot;eth0&quot;,
+          &quot;rpc_id&quot;: &quot;69b2c9d5d1da4a9db28eeba98df5f94e&quot;,
+          &quot;rx_frames&quot;: 3,
+          &quot;source_mac&quot;: &quot;bc:24:11:99:f9:dd&quot;,
+          &quot;transport&quot;: &quot;ethernet&quot;
+        },
+        &quot;message_hash&quot;: &quot;43879dea21521b424db478f59caa9ee3e6f9857080af9e3cc6644eb280ca6024&quot;,
+        &quot;message_id&quot;: &quot;093f4ab3f36d4427b1302cd152df9243&quot;,
+        &quot;network&quot;: {
+          &quot;destination_mac&quot;: &quot;bc:24:11:dd:73:38&quot;,
+          &quot;ethertype&quot;: &quot;0x88b5&quot;,
+          &quot;interface&quot;: &quot;eth0&quot;,
+          &quot;rpc_id&quot;: &quot;1818791b37754d14b15aee4b618b0407&quot;,
+          &quot;rx_frames&quot;: 2,
+          &quot;source_mac&quot;: &quot;bc:24:11:26:7e:e7&quot;,
+          &quot;transport&quot;: &quot;ethernet&quot;,
+          &quot;tx_frames&quot;: 3
+        },
+        &quot;next&quot;: &quot;ipvx:agent:1e16222a0a94368025f835ec2063cfa277ca5303114d9cb06fa64462387d1e50&quot;,
+        &quot;node&quot;: &quot;ipvx:agent:f7c58b4cd0ba5969cb99d3ff9d56571c66cc5a08575769b2e6998c6cbc728c8d&quot;,
+        &quot;receipt_hash&quot;: &quot;f8263af3e75a64cdab18af203ab1bf91885a9f7c8143fbba3c65b784faae758a&quot;,
+        &quot;remaining_hops&quot;: 6,
+        &quot;trace_id&quot;: &quot;77248545a1e144c8b35d9221954fb0c8&quot;
+      },
+      &quot;purpose&quot;: &quot;mesh-hop&quot;,
+      &quot;signature&quot;: &quot;60da5355048b3eeb99e6549b4aaff64ea3e282460b4e9b416da65f3dcb744f0b869d6f3a9ef2bc48feb2a63307b43e8291585707cddfb0708e83ae51903d8300&quot;,
+      &quot;wire&quot;: &quot;ipvx-agent-lab/1&quot;
+    }
+  ]
+}</pre></details></section></main><footer><a class="wordmark" href="index.html">IPvX<span>Research</span></a><p>Исследуем. Измеряем. Обсуждаем RFC.</p><div><a href="governance.html">Правила участия</a><a href="reproduce.html">Воспроизвести</a><a href="data/provenance.json">Происхождение данных</a></div><p class="small">Экспериментальный проект · один оператор инфраструктуры · снимок данных 27 октября 2026. Этот публичный веб-портал работает через обычные IP, DNS и HTTPS.</p></footer></body></html>
