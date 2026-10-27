@@ -318,3 +318,19 @@ not a shared clock. This is a saved SHA-256 experiment, not a live LLM deploymen
 Downloads are plain public file links with readable scope, size and SHA-256.
 The user request extends the earlier no-replay reading-portal guideline for this
 explicitly labelled evidence view; the original explanatory component is unchanged.
+
+
+## Administration (October 27)
+
+The 22-page family adds an administration screen in the same Operating Sheet
+colors and Plex faces. Its compact title, searchable member rows and a full-width
+selected-user form with two edit columns use the existing reading frame without a new app sidebar.
+On mobile the selected form moves above the list and provides a return anchor.
+Roles, reversible access changes, moderation and the audit are separate tasks.
+All profile labels and contributed text render as text, including apparent HTML.
+No motion or new icon library is added. Private panels wait for the server's
+admin role and are cleared on denied requests, restored-page revalidation or
+session loss. The public page shell contains no member data.
+
+The separate localhost preview is visibly labeled and uses temporary synthetic
+users. It is not the production login or a mode installed in the public service.

@@ -40,6 +40,9 @@ def regular_tree(folder, prefix):
 def build():
     prototype = regular_tree('experiments/strict-native', 'source')
     prototype.update(regular_tree('data/strict-native-2026-10-27', 'evidence'))
+    readiness = ROOT / 'data/strict-readiness-2026-10-27.json'
+    if readiness.exists():
+        prototype['readiness/summary.json'] = readiness.read_bytes()
     for name in ['rfc/0006-native-devices-and-bootstrap.md', 'rfc/0007-collaborative-rfc-review.md',
                  'docs/native-device-prototype.md']:
         prototype[name] = (ROOT / name).read_bytes()
@@ -64,6 +67,8 @@ https://github.com/relcom-technologies/ipvx-research/actions/runs/40500966557
 не работа языковой модели и не измерение выигрыша относительно IP.
 Сборочный хост и сайт используют обычный Интернет. Ядро, бинарники и веса модели
 в этот небольшой архив не включены. Захваты относятся только к данному опыту.
+readiness/summary.json — более поздняя проверка готовности существующих машин,
+без загрузки строгой ОС, запуска моделей или изменения сети.
 '''.encode()
 
     history = regular_tree('history', 'history')

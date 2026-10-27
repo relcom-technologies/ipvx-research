@@ -1,21 +1,21 @@
 {
   "schema_version": 1,
-  "snapshot_through": "HX-0065",
+  "snapshot_through": "HX-0068",
   "bundles": [
     {
       "name": "ipvx-native-device-prototype.zip",
       "label": "Код, инструкции и захваты трафика",
       "scope": "Проверенный строгий прототип: три гостя на одном CI-хосте, задачи SHA-256, без LLM.",
-      "bytes": 96142,
-      "sha256": "419d6b415d405066be53c760e0a42ead99822172a57a59eb9086ca0d36256ce1",
-      "files": 38
+      "bytes": 97760,
+      "sha256": "8bd021c33b9e0f3b48184c2a5e6bd7fc45c4ce3f32a83ce5c27624a9458d07ad",
+      "files": 39
     },
     {
       "name": "ipvx-research-history.zip",
       "label": "Полная доступная выгрузка истории",
-      "scope": "65 событий по HX-0065; авторы, основания, проверки и ограничения.",
-      "bytes": 126350,
-      "sha256": "b8534e833337f9d714179e4ddde6e90bfc42545a58890bd93c3778504666416b",
+      "scope": "68 событий по HX-0068; авторы, основания, проверки и ограничения.",
+      "bytes": 132678,
+      "sha256": "ddc60862b954aff5fa3877e85a5b99fa2734b3fc47f41e259389b46572ee9c3c",
       "files": 11
     }
   ]

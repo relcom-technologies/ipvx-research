@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "status": "readiness_measured_not_execution",
+  "recorded_at": "2026-10-27T15:56:31Z",
+  "workflow_revision": "b1bfb528d557034ee21b1df08bc2673dfdc7b071",
+  "run_url": "https://github.com/relcom-technologies/relcom-infra/actions/runs/40535896278",
+  "evidence_access": "Raw inventory stays private; this is an operator-collected aggregate, not independent hardware attestation.",
+  "distinct_current_cluster_nodes": 3,
+  "all_project_guests_running": true,
+  "models_match": true,
+  "model": {
+    "present": true,
+    "bytes": 639446688,
+    "sha256": "9465e63a22add5354d9bb4b99e90117043c7124007664907259bd16d043bb031"
+  },
+  "nodes": {
+    "A": {
+      "ram_total_kib": 2021512,
+      "ram_available_kib": 1641452,
+      "disk_available_bytes": 17733451776,
+      "model_present": true,
+      "kvm_device_exposed": true,
+      "virtualization_cpu_flag": true,
+      "kexec_enabled_in_current_kernel": true,
+      "kexec_tool_installed": false,
+      "root_filesystem": "ext4"
+    },
+    "B": {
+      "ram_total_kib": 2021512,
+      "ram_available_kib": 1638432,
+      "disk_available_bytes": 17752674304,
+      "model_present": true,
+      "kvm_device_exposed": true,
+      "virtualization_cpu_flag": true,
+      "kexec_enabled_in_current_kernel": true,
+      "kexec_tool_installed": false,
+      "root_filesystem": "ext4"
+    },
+    "R": {
+      "ram_total_kib": 991128,
+      "ram_available_kib": 664952,
+      "disk_available_bytes": 10659500032,
+      "model_present": false,
+      "kvm_device_exposed": true,
+      "virtualization_cpu_flag": true,
+      "kexec_enabled_in_current_kernel": true,
+      "kexec_tool_installed": false,
+      "root_filesystem": "ext4"
+    }
+  },
+  "mutations": {
+    "installed_packages": false,
+    "kernel_load": false,
+    "reboot": false,
+    "service_stop": false,
+    "network_change": false
+  },
+  "limitations": [
+    "KVM device and CPU flags are exposed; successful nested acceleration was not tested.",
+    "The participating OS is not yet a strict image; TCP/IP remains available in the current guests.",
+    "No fresh LLM collaboration, packet delivery or matched IP comparison ran in this readiness check.",
+    "Cluster placement does not prove that the entire physical device or its management firmware has no IP."
+  ]
+}

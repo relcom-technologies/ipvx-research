@@ -20,6 +20,7 @@ jobs:
           node scripts/browser_check.mjs
           node scripts/browser_community_check.mjs
           node scripts/browser_replay_check.mjs
+          node scripts/browser_admin_check.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with: {name: portal-browser-evidence, path: browser-evidence/}
