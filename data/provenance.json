@@ -5,5 +5,9 @@
   "document_experiment_revision": "00cbf3bdc5d4e05c04bdd411efc9f6d6e238ef07",
   "external_operators_polled": 0,
   "website_uses_ip_dns_https": true,
-  "management_data_published": false
+  "management_data_published": false,
+  "llm_run_revision": "384924e905650099be20d71de8a8a674429fa957",
+  "llm_summary_sha256": "64b33df83eaa3fbd3ec00436a775368252479b3b4536d332a51b339c3a0f28a6",
+  "fresh_measured_llm_calls": 36,
+  "verified_deliveries": 144
 }

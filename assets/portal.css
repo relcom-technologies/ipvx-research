@@ -6,3 +6,4 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 
 @media(max-width:700px){.trace svg{display:none}.trace-mobile{display:block;margin:24px 0}.trace-mobile>div{border:1px solid var(--control);border-radius:8px;padding:16px}.trace-mobile strong,.trace-mobile span{display:block}.trace-mobile span{font-size:14px;color:var(--muted);margin-top:4px}.trace-mobile>p{font-size:14px;color:var(--muted);margin:8px 0 8px 16px}}
+.measurement{margin:36px 0;background:var(--surface)}.measurement img{display:block;width:100%;height:auto}.measurement figcaption{font-size:13px;color:var(--muted);padding-top:8px}.hypotheses details{border-top:1px solid var(--rule)}.hypotheses summary{padding:18px 0}.hypotheses details p{padding-bottom:12px}table caption{text-align:left;font-size:14px;font-weight:500;margin-bottom:16px}
