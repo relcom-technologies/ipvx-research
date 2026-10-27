@@ -1,0 +1,1250 @@
+{
+  "schema_version": 1,
+  "status": "measured",
+  "source_revision": "643ddc695f9d24384b945fca61faf9e130f49cfc",
+  "model_sha256": "9465e63a22add5354d9bb4b99e90117043c7124007664907259bd16d043bb031",
+  "answer_comparison": [
+    {
+      "case": "delivery",
+      "same_final": true,
+      "native_correct": false,
+      "ip_correct": false
+    },
+    {
+      "case": "internet",
+      "same_final": true,
+      "native_correct": true,
+      "ip_correct": true
+    },
+    {
+      "case": "once",
+      "same_final": true,
+      "native_correct": true,
+      "ip_correct": true
+    },
+    {
+      "case": "speed",
+      "same_final": true,
+      "native_correct": false,
+      "ip_correct": false
+    }
+  ],
+  "limits": [
+    "Four collaborative cases per mode; no statistical global speed conclusion.",
+    "Guest capture is complete for its one NIC; surrounding host and physical wire also carry management IP.",
+    "Model correctness and transport integrity are separate outcomes. No independent operator preference was tested.",
+    "Control uses the same application hops A–R–B over TCP/IP; this is not direct IP or kernel-only routing.",
+    "Raw captures and signed hop objects retain infrastructure addresses and remain private. This public projection cannot independently re-verify their original bytes.",
+    "Guest UTC is initialized from a local read-only host virtual device; no guest IP time client. Timings use monotonic clocks.",
+    "Fixed three-key admission, two CPU models and four cases per mode do not establish Internet scale or autonomous network adoption."
+  ],
+  "workflow": "https://github.com/relcom-technologies/relcom-infra/actions/runs/40563118803",
+  "model": "Qwen3-0.6B Q8_0",
+  "summary_sha256": "7db5549a577a4cb8455890e027a281f411aa2d3c2172df29f84b98dc4fd5fcdd",
+  "modes": {
+    "native": {
+      "echo": {
+        "count": 40,
+        "p50_ms": 12.114,
+        "p95_ms": 17.999,
+        "min_ms": 9.971,
+        "max_ms": 19.44
+      },
+      "task": {
+        "count": 4,
+        "p50_ms": 36246.635,
+        "p95_ms": 46388.988,
+        "min_ms": 30187.64,
+        "max_ms": 46388.988
+      },
+      "inference": {
+        "count": 12,
+        "p50_ms": 11671.022,
+        "p95_ms": 15306.519,
+        "min_ms": 8196.36,
+        "max_ms": 15306.519
+      },
+      "correct_decisions": 2,
+      "tasks": 4,
+      "signed_deliveries": 48,
+      "capture_frames": 13024,
+      "verified_link_envelopes": 4388,
+      "captures": [
+        {
+          "frames": 1710,
+          "ethertypes": {
+            "88b5": 1710
+          },
+          "verified_link_envelopes": 578,
+          "incomplete_rpc_assemblies": 0,
+          "pcap_sha256": "a689815a89ef10ee1cfa371b4341cb16e9f599b3047525bedbbac664ed1cd37e"
+        },
+        {
+          "frames": 1794,
+          "ethertypes": {
+            "88b5": 1794
+          },
+          "verified_link_envelopes": 602,
+          "incomplete_rpc_assemblies": 0,
+          "pcap_sha256": "77018d9284b92c5c71d486681288a814b544b7b35200217a597530dd781d233f"
+        },
+        {
+          "frames": 3504,
+          "ethertypes": {
+            "88b5": 3504
+          },
+          "verified_link_envelopes": 1180,
+          "incomplete_rpc_assemblies": 0,
+          "pcap_sha256": "a9610072985d711719dcd2d09fc706ddb043c634a47252be4251197781153980"
+        },
+        {
+          "frames": 1475,
+          "ethertypes": {
+            "88b5": 1475
+          },
+          "verified_link_envelopes": 501,
+          "incomplete_rpc_assemblies": 0,
+          "pcap_sha256": "2ad25c6b8900a7f85e8afb30fd643033a89dce4fbadacc4a129cfdb19a697e11"
+        },
+        {
+          "frames": 1533,
+          "ethertypes": {
+            "88b5": 1533
+          },
+          "verified_link_envelopes": 513,
+          "incomplete_rpc_assemblies": 0,
+          "pcap_sha256": "5c58d3b537bbe88ad701b177a51c39438c32504dcf668c6e09b30370904dbbcc"
+        },
+        {
+          "frames": 3008,
+          "ethertypes": {
+            "88b5": 3008
+          },
+          "verified_link_envelopes": 1014,
+          "incomplete_rpc_assemblies": 0,
+          "pcap_sha256": "1c6ee138cc2375f26f1ecbdb073c7fc138d8cc829623d5924de9013e1e176ba2"
+        }
+      ]
+    },
+    "ip": {
+      "echo": {
+        "count": 40,
+        "p50_ms": 20.984,
+        "p95_ms": 27.006,
+        "min_ms": 16.966,
+        "max_ms": 50.826
+      },
+      "task": {
+        "count": 4,
+        "p50_ms": 35944.541,
+        "p95_ms": 46988.695,
+        "min_ms": 29247.064,
+        "max_ms": 46988.695
+      },
+      "inference": {
+        "count": 12,
+        "p50_ms": 11587.101,
+        "p95_ms": 16285.905,
+        "min_ms": 7942.485,
+        "max_ms": 16285.905
+      },
+      "correct_decisions": 2,
+      "tasks": 4,
+      "signed_deliveries": 48,
+      "capture_frames": 41311,
+      "verified_link_envelopes": 0,
+      "captures": [
+        {
+          "frames": 5518,
+          "ethertypes": {
+            "0800": 5518
+          },
+          "verified_link_envelopes": 0,
+          "incomplete_rpc_assemblies": 0,
+          "pcap_sha256": "9bfecea8b90162302c1536171757a49edaf85a0491da06b98cb8d12704ab3c38"
+        },
+        {
+          "frames": 5667,
+          "ethertypes": {
+            "0800": 5667
+          },
+          "verified_link_envelopes": 0,
+          "incomplete_rpc_assemblies": 0,
+          "pcap_sha256": "7f44c5059a793f42d90c8f81da20bf711a1e95e11d73c92044c264593b5a6c05"
+        },
+        {
+          "frames": 10853,
+          "ethertypes": {
+            "0800": 10853
+          },
+          "verified_link_envelopes": 0,
+          "incomplete_rpc_assemblies": 0,
+          "pcap_sha256": "e68e6dd65a9326014af597e85856d0b00a098b6e4da7bad22ef1f93b9c526e4e"
+        },
+        {
+          "frames": 4862,
+          "ethertypes": {
+            "0800": 4862
+          },
+          "verified_link_envelopes": 0,
+          "incomplete_rpc_assemblies": 0,
+          "pcap_sha256": "07cd1b04a03b32c083847f5aef4e0aa50b6fb4dfadacb4555e5fe5dee6afb819"
+        },
+        {
+          "frames": 4888,
+          "ethertypes": {
+            "0800": 4888
+          },
+          "verified_link_envelopes": 0,
+          "incomplete_rpc_assemblies": 0,
+          "pcap_sha256": "da3a3254cb505a66ce16f4224803c6dcff404be67dc6f2bc0c2274e33b560b83"
+        },
+        {
+          "frames": 9523,
+          "ethertypes": {
+            "0800": 9523
+          },
+          "verified_link_envelopes": 0,
+          "incomplete_rpc_assemblies": 0,
+          "pcap_sha256": "be54459bbecf19bc264ef80becac222a92688cf0c28991c92b0ae400dac32855"
+        }
+      ]
+    }
+  },
+  "tasks": [
+    {
+      "case": "delivery",
+      "claim": "All 384 document jobs in the accepted native experiment returned correct results.",
+      "expected": "yes",
+      "final": {
+        "decision": "no",
+        "evidence": [
+          "A1",
+          "B1"
+        ],
+        "explanation": "The evidence provided does not confirm that all 384 document jobs returned correct results. Only one run completed 384/384 tasks correctly."
+      },
+      "decision_correct": false,
+      "elapsed_ms": 30187.64
+    },
+    {
+      "case": "internet",
+      "claim": "The accepted experiment proves IPvX is ready for the global public Internet.",
+      "expected": "no",
+      "final": {
+        "decision": "no",
+        "evidence": [
+          "A2",
+          "B2"
+        ],
+        "explanation": "The evidence provided does not support the claim that IPvX is ready for the global public Internet. The claim relies on the number of processes and tasks completed, which is not a valid or reliable source of evidence."
+      },
+      "decision_correct": true,
+      "elapsed_ms": 38978.725
+    },
+    {
+      "case": "once",
+      "claim": "Duplicate delivery caused extra application executions in the accepted run.",
+      "expected": "no",
+      "final": {
+        "decision": "no",
+        "evidence": [
+          "A3",
+          "B3"
+        ],
+        "explanation": "The peer review supports that duplicate delivery led to extra application executions, as evidenced by the Durable receipt checks counting exactly 384 unique executions for the 384 original tasks."
+      },
+      "decision_correct": true,
+      "elapsed_ms": 33514.544
+    },
+    {
+      "case": "speed",
+      "claim": "Existing measurements show native IPvX is faster than ordinary IP for language-model agents.",
+      "expected": "insufficient",
+      "final": {
+        "decision": "no",
+        "evidence": [
+          "A4",
+          "B4"
+        ],
+        "explanation": "The provided evidence does not support the claim that native IPvX is faster than ordinary IP for language-model agents. The data shows a higher latency for IPvX, not a faster one. Evidence B4 also indicates the experiment did not include language models or an ordinary-IP baseline, making it impossible to establish a comparative speed result."
+      },
+      "decision_correct": false,
+      "elapsed_ms": 46388.988
+    }
+  ],
+  "deliveries": [
+    {
+      "message_id": "4aa1837d1f6240ab8389a7037a49315f",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 18.531,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "961a84d7058f4f94aac4ef73aea0cda7",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 9.971,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "32bcb21377744118bc0f19b8f33bef5a",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 10.374,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "09b8423f942a4953b927ea8e9fd52664",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 10.462,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "e6fea2524d484fb6b4cd361b38bc58e7",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 15.765,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "c8e5ee8fafb947168ca7ed582f7e72cc",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 10.773,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "174b4782f4b643c99d1e5e9331727d24",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 11.362,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "746f7114aa814b268603aeb7c417b094",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 10.603,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "db04659fdfdc4dcf963a90af681b5e51",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 12.849,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "ab090812892d466aa12732475632b363",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 12.529,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "35871575d92b458987c8d763b3aff58d",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 12.381,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "74247c00cd7542d097dab33fc307d68e",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 11.997,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "5fd56e0858684742ac845bc62b6aa177",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 12.356,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "66817d90fdc443ae9df92d1c131bd252",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 11.049,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "a303560636144642afbe7bc945e1d3dd",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 12.166,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "c439c2fb5d1b49f9b8c0affd0c9f34d5",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 11.424,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "8ac891bf531e4c2c9416f2574691fb8a",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 12.672,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "b95d99614f794d1f84c3f117b23eeb2a",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 11.274,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "18247db4fb4b462999614fc9292efb26",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 14.141,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "cf26900d3ff0414eafbe6e265e97f1d8",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 14.259,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "d5cb8cd8c779483197db58de1f848aba",
+      "case": "delivery",
+      "phase": "review",
+      "bytes": 259,
+      "elapsed_ms": 11.747,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "0fb10bdbdd8b4356a594c7fe47742311",
+      "case": "internet",
+      "phase": "review",
+      "bytes": 337,
+      "elapsed_ms": 11.083,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "9c769a29e5e142e190e04cb1a326027e",
+      "case": "delivery",
+      "phase": "final",
+      "bytes": 264,
+      "elapsed_ms": 10.932,
+      "attempts": 1,
+      "path": [
+        "B",
+        "R1",
+        "A"
+      ]
+    },
+    {
+      "message_id": "6bacb19fb9774173835c92acc891ecc3",
+      "case": "internet",
+      "phase": "final",
+      "bytes": 342,
+      "elapsed_ms": 10.816,
+      "attempts": 1,
+      "path": [
+        "B",
+        "R1",
+        "A"
+      ]
+    },
+    {
+      "message_id": "6f45e824c97445c592236183f6c7e759",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 15.698,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "994a2f0f01354f898743c4f07b5ed6cf",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 14.351,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "57399ada6c024cceb3f9c95aff203d77",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 11.586,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "7b33d0b90d31438aaba389d682ca65cb",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 11.595,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "4f866f114411424b9a8864d9561f5a51",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 12.037,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "5653dea08c0445ee8dfa4047118aecb8",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 11.014,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "d1bfa0fe41c74199ac986145eadca85a",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 12.858,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "69cfc7d2e19e4eddb49f697a55acdd78",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 14.116,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "ee8c3ff2c9874e148ab2f9f87f174558",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 19.44,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "5d44980bc00241f9853553c10e1880e2",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 16.22,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "1f31121f6e0947bfbf9786bd3e5788cf",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 17.73,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "c5c24f735699410e91028f2428076860",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 17.999,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "d7a907d6315b4d6ea02d65350e47f6be",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 12.089,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "e642dd9990cb4d20be9e6f83d483614c",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 13.202,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "d9000839a6904686abe8f081b555c706",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 11.165,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "63a5f48b90574198ae16330e5ba04f99",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 11.527,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "d12278ea391644ec85d053078cdc2d86",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 12.029,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "ef199e05a70248cc96ac5a91a6358008",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 11.446,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "46cc6ff0fbe848439a8d05c7a8d313c7",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 11.323,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "387e62881c5e4640b5998fba72e8a740",
+      "case": null,
+      "phase": "echo",
+      "bytes": 1051,
+      "elapsed_ms": 12.139,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "e125dea23ea74c618ece50dc7f00a3e5",
+      "case": "once",
+      "phase": "review",
+      "bytes": 340,
+      "elapsed_ms": 11.332,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "101177a2e318400ca845ae28fa4afb9a",
+      "case": "speed",
+      "phase": "review",
+      "bytes": 361,
+      "elapsed_ms": 11.854,
+      "attempts": 1,
+      "path": [
+        "A",
+        "R1",
+        "B"
+      ]
+    },
+    {
+      "message_id": "0f794b3773c74e6f89a92480757b39b1",
+      "case": "once",
+      "phase": "final",
+      "bytes": 322,
+      "elapsed_ms": 11.413,
+      "attempts": 1,
+      "path": [
+        "B",
+        "R1",
+        "A"
+      ]
+    },
+    {
+      "message_id": "edaf0be9d9e347a8aad302bb9075eae5",
+      "case": "speed",
+      "phase": "final",
+      "bytes": 465,
+      "elapsed_ms": 1844.426,
+      "attempts": 1,
+      "path": [
+        "B",
+        "R1",
+        "A"
+      ]
+    }
+  ],
+  "inferences": [
+    {
+      "node": "A",
+      "run": "round1-native",
+      "case": "warmup",
+      "phase": "warmup",
+      "elapsed_ms": 8563.841,
+      "parsed": {
+        "decision": "yes",
+        "evidence": [
+          "E0"
+        ],
+        "explanation": "The claim is supported by the provided evidence."
+      },
+      "usage": {
+        "prompt_tokens": 98,
+        "completion_tokens": 29,
+        "total_tokens": 127
+      },
+      "prompt_sha256": "e5bf785fa07258ef9dae8c8a2ada05e9761422f758f328bedc310481357bdad8"
+    },
+    {
+      "node": "A",
+      "run": "round1-native",
+      "case": "delivery",
+      "phase": "draft",
+      "elapsed_ms": 8196.36,
+      "parsed": {
+        "decision": "no",
+        "evidence": [
+          "A1"
+        ],
+        "explanation": "The evidence provided does not confirm that all 384 document jobs returned correct results. Only one run completed 384/384 tasks correctly."
+      },
+      "usage": {
+        "prompt_tokens": 115,
+        "completion_tokens": 53,
+        "total_tokens": 168
+      },
+      "prompt_sha256": "c609b3d55e05c6d1a60033972afa88ce63266a84e1964c79c29bf74294d5f062"
+    },
+    {
+      "node": "A",
+      "run": "round1-native",
+      "case": "internet",
+      "phase": "draft",
+      "elapsed_ms": 11069.754,
+      "parsed": {
+        "decision": "no",
+        "evidence": [
+          "A2"
+        ],
+        "explanation": "The evidence provided does not support the claim that IPvX is ready for the global public Internet. The claim relies on the number of processes and tasks completed, which is not a valid or reliable source of evidence."
+      },
+      "usage": {
+        "prompt_tokens": 114,
+        "completion_tokens": 62,
+        "total_tokens": 176
+      },
+      "prompt_sha256": "c7030a2f184439aa96a521e346842218807d6e28deb258134763bba3a91f0cd0"
+    },
+    {
+      "node": "A",
+      "run": "round1-native",
+      "case": "delivery",
+      "phase": "final",
+      "elapsed_ms": 10435.805,
+      "parsed": {
+        "decision": "no",
+        "evidence": [
+          "A1",
+          "B1"
+        ],
+        "explanation": "The evidence provided does not confirm that all 384 document jobs returned correct results. Only one run completed 384/384 tasks correctly."
+      },
+      "usage": {
+        "prompt_tokens": 199,
+        "completion_tokens": 57,
+        "total_tokens": 256
+      },
+      "prompt_sha256": "9f40e589d1c07ad4460e17a9d87c65f0a0193ce7ce81d77ad94f3def33e1b799"
+    },
+    {
+      "node": "A",
+      "run": "round1-native",
+      "case": "internet",
+      "phase": "final",
+      "elapsed_ms": 14608.131,
+      "parsed": {
+        "decision": "no",
+        "evidence": [
+          "A2",
+          "B2"
+        ],
+        "explanation": "The evidence provided does not support the claim that IPvX is ready for the global public Internet. The claim relies on the number of processes and tasks completed, which is not a valid or reliable source of evidence."
+      },
+      "usage": {
+        "prompt_tokens": 207,
+        "completion_tokens": 66,
+        "total_tokens": 273
+      },
+      "prompt_sha256": "d5d71979452b26ec9d66e8768bd808fb2907d8832b839b9963f815e04d4c288c"
+    },
+    {
+      "node": "B",
+      "run": "round1-native",
+      "case": "warmup",
+      "phase": "warmup",
+      "elapsed_ms": 9111.579,
+      "parsed": {
+        "decision": "yes",
+        "evidence": [
+          "E0"
+        ],
+        "explanation": "The claim is supported by the provided evidence."
+      },
+      "usage": {
+        "prompt_tokens": 98,
+        "completion_tokens": 29,
+        "total_tokens": 127
+      },
+      "prompt_sha256": "e5bf785fa07258ef9dae8c8a2ada05e9761422f758f328bedc310481357bdad8"
+    },
+    {
+      "node": "B",
+      "run": "round1-native",
+      "case": "delivery",
+      "phase": "review",
+      "elapsed_ms": 11491.122,
+      "parsed": {
+        "decision": "no",
+        "evidence": [
+          "A1",
+          "B1"
+        ],
+        "explanation": "The evidence provided does not confirm that all 384 document jobs returned correct results. Only one run completed 384/384 tasks correctly."
+      },
+      "usage": {
+        "prompt_tokens": 193,
+        "completion_tokens": 57,
+        "total_tokens": 250
+      },
+      "prompt_sha256": "c1e991508220ccfdb3885d6b0f9eedf2e2fb8a132eeb9f71138bc78755f890bc"
+    },
+    {
+      "node": "B",
+      "run": "round1-native",
+      "case": "internet",
+      "phase": "review",
+      "elapsed_ms": 12802.227,
+      "parsed": {
+        "decision": "no",
+        "evidence": [
+          "A2",
+          "B2"
+        ],
+        "explanation": "The evidence provided does not support the claim that IPvX is ready for the global public Internet. The claim relies on the number of processes and tasks completed, which is not a valid or reliable source of evidence."
+      },
+      "usage": {
+        "prompt_tokens": 215,
+        "completion_tokens": 66,
+        "total_tokens": 281
+      },
+      "prompt_sha256": "2404263d15cf6d0d1f50d92a7698feb8b8300bc5cf704dd647af552fed5c6470"
+    },
+    {
+      "node": "A",
+      "run": "round2-native",
+      "case": "warmup",
+      "phase": "warmup",
+      "elapsed_ms": 6621.348,
+      "parsed": {
+        "decision": "yes",
+        "evidence": [
+          "E0"
+        ],
+        "explanation": "The claim is supported by the provided evidence."
+      },
+      "usage": {
+        "prompt_tokens": 98,
+        "completion_tokens": 29,
+        "total_tokens": 127
+      },
+      "prompt_sha256": "e5bf785fa07258ef9dae8c8a2ada05e9761422f758f328bedc310481357bdad8"
+    },
+    {
+      "node": "A",
+      "run": "round2-native",
+      "case": "once",
+      "phase": "draft",
+      "elapsed_ms": 8291.661,
+      "parsed": {
+        "decision": "no",
+        "evidence": [
+          "A3"
+        ],
+        "explanation": "The evidence provided does not support the claim that duplicate delivery caused extra application executions. The claim is based on a hypothetical scenario, and the evidence given is a specific example of a replayed request."
+      },
+      "usage": {
+        "prompt_tokens": 112,
+        "completion_tokens": 59,
+        "total_tokens": 171
+      },
+      "prompt_sha256": "eebc6b8ec7bd3d9a78a0f8db17e3eba9a378e9fad1159dacfe85e7e51177ea54"
+    },
+    {
+      "node": "A",
+      "run": "round2-native",
+      "case": "speed",
+      "phase": "draft",
+      "elapsed_ms": 14316.926,
+      "parsed": {
+        "decision": "no",
+        "evidence": [
+          "A4: Accepted document-task latency p50 was 459 ms, p95 was 1321 ms."
+        ],
+        "explanation": "The provided evidence does not support the claim that native IPvX is faster than ordinary IP for language-model agents. The data shows a higher latency for IPvX, not a faster one."
+      },
+      "usage": {
+        "prompt_tokens": 124,
+        "completion_tokens": 83,
+        "total_tokens": 207
+      },
+      "prompt_sha256": "d6cc9306266b7563cdcee1666e8b377f4c25cf5a8e2ba66e6223910c8841a8f0"
+    },
+    {
+      "node": "A",
+      "run": "round2-native",
+      "case": "once",
+      "phase": "final",
+      "elapsed_ms": 10879.789,
+      "parsed": {
+        "decision": "no",
+        "evidence": [
+          "A3",
+          "B3"
+        ],
+        "explanation": "The peer review supports that duplicate delivery led to extra application executions, as evidenced by the Durable receipt checks counting exactly 384 unique executions for the 384 original tasks."
+      },
+      "usage": {
+        "prompt_tokens": 201,
+        "completion_tokens": 62,
+        "total_tokens": 263
+      },
+      "prompt_sha256": "d50aab5897987023ceeea6c2cd82334802c4e70dacfee69e1ee0606de88d0670"
+    },
+    {
+      "node": "A",
+      "run": "round2-native",
+      "case": "speed",
+      "phase": "final",
+      "elapsed_ms": 14883.204,
+      "parsed": {
+        "decision": "no",
+        "evidence": [
+          "A4",
+          "B4"
+        ],
+        "explanation": "The provided evidence does not support the claim that native IPvX is faster than ordinary IP for language-model agents. The data shows a higher latency for IPvX, not a faster one. Evidence B4 also indicates the experiment did not include language models or an ordinary-IP baseline, making it impossible to establish a comparative speed result."
+      },
+      "usage": {
+        "prompt_tokens": 241,
+        "completion_tokens": 90,
+        "total_tokens": 331
+      },
+      "prompt_sha256": "f96da042c13a1d580282d0b5431005b45c24d658acd75ac8ed3f1a0b4adfdcd0"
+    },
+    {
+      "node": "B",
+      "run": "round2-native",
+      "case": "warmup",
+      "phase": "warmup",
+      "elapsed_ms": 7378.179,
+      "parsed": {
+        "decision": "yes",
+        "evidence": [
+          "E0"
+        ],
+        "explanation": "The claim is supported by the provided evidence."
+      },
+      "usage": {
+        "prompt_tokens": 98,
+        "completion_tokens": 29,
+        "total_tokens": 127
+      },
+      "prompt_sha256": "e5bf785fa07258ef9dae8c8a2ada05e9761422f758f328bedc310481357bdad8"
+    },
+    {
+      "node": "B",
+      "run": "round2-native",
+      "case": "once",
+      "phase": "review",
+      "elapsed_ms": 11850.923,
+      "parsed": {
+        "decision": "no",
+        "evidence": [
+          "A3",
+          "B3"
+        ],
+        "explanation": "The evidence provided supports that duplicate delivery led to extra application executions, as evidenced by the Durable receipt checks counting exactly 384 unique executions for the 384 original tasks."
+      },
+      "usage": {
+        "prompt_tokens": 205,
+        "completion_tokens": 62,
+        "total_tokens": 267
+      },
+      "prompt_sha256": "8f7efc1bd6577945513238b4296856e6b770f692f18f71c3bef4b39a0744fd77"
+    },
+    {
+      "node": "B",
+      "run": "round2-native",
+      "case": "speed",
+      "phase": "review",
+      "elapsed_ms": 15306.519,
+      "parsed": {
+        "decision": "no",
+        "evidence": [
+          "A4",
+          "B4"
+        ],
+        "explanation": "The provided evidence does not support the claim that native IPvX is faster than ordinary IP for language-model agents. The data shows a higher latency for IPvX, not a faster one. Evidence B4 also indicates the experiment did not include language models or an ordinary-IP baseline, making it impossible to establish a comparative speed result."
+      },
+      "usage": {
+        "prompt_tokens": 226,
+        "completion_tokens": 90,
+        "total_tokens": 316
+      },
+      "prompt_sha256": "b8fd93000a8fc1339debbedcb55ea115b1705b3fda238c202a95f51b47cd765c"
+    }
+  ],
+  "nodes": {
+    "A": {
+      "id": "ipvx:agent:52a8b1b3318ab8586fb3afbd7ae960096baa6f69a9305b3ef4a2e35e24c88343",
+      "public_key": "6a28c9055bba947cffe09aff1e75d4709cb8216216ab478becde98f4a9721907"
+    },
+    "B": {
+      "id": "ipvx:agent:1e16222a0a94368025f835ec2063cfa277ca5303114d9cb06fa64462387d1e50",
+      "public_key": "adf0495a733bf0094b8da273b377ef94cd8963164f9906c690e9c75675c8320e"
+    },
+    "R1": {
+      "id": "ipvx:agent:f7c58b4cd0ba5969cb99d3ff9d56571c66cc5a08575769b2e6998c6cbc728c8d",
+      "public_key": "865dcb456f2f908f1b5f20d7b66d2efd214626c25890401c8d6c477aa3b4e7ff"
+    }
+  },
+  "adapter_transmissions": 6512,
+  "correct_decisions": 2,
+  "frame_observations": 13024,
+  "verification": "Private offline verification checked original frame bytes, signatures, signed receipts, stable IDs, model hashes, whole guest kernel probes and restoration. Public aliases are a projection of that result."
+}

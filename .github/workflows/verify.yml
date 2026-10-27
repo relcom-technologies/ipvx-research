@@ -18,3 +18,4 @@ jobs:
           python3 scripts/build_portal.py
           git diff --exit-code -- '*.html' data/downloads data/packet-replay.json
       - run: python3 scripts/check_site.py
+      - run: python3 scripts/check_history.py
