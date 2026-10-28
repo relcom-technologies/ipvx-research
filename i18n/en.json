@@ -2045,5 +2045,12 @@
   "e1023787c50f9462": "222.3 KiB · 11 files",
   "53be3636639d6e47": "docs/observatory-verification-2026-10-28.md",
   "c73055d8a1f9c0fe": "scripts/test_observatory.py",
-  "e68d5bde5503f8c9": "scripts/browser_observatory_check.mjs"
+  "e68d5bde5503f8c9": "scripts/browser_observatory_check.mjs",
+  "a576a94adf7649a6": "107 events through HX-0107; contributors, reasoning, checks and limitations.",
+  "38c410b9b3ffec77": "223.2 KiB · 11 files",
+  "4033504142b090da": "HX-0107 · Prepared the observatory release and public acceptance",
+  "1949865cbc645e1b": "Codex — principal assistant in this conversation · 2026-10-28T10:23:49+00:00",
+  "471bca81716bda21": "Prepared public PR 9 at revision 1d396b5b08743f3d23561568973cec63653285eb and infrastructure PR 775 at revision d8d40a5569812aba1829e16bb30f6628faef4615. The latter pins the source and adds checks for four languages, task and node disclosures and the public manifest.",
+  "e7f88fc15d1beec2": "Keep the existing protected-main prerequisite and test the exact deployed artifacts before calling the release complete.",
+  "73a6838b65a924a1": "At the time of recording, the public source requires review; no deployment or public acceptance has run. This record is a follow-up to the release snapshot through HX-0106."
 }

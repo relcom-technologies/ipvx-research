@@ -702,3 +702,11 @@ Corrected stale current-status descriptions. Added four expandable native model 
 Основание: Link recorded stages by case and phase without inventing an unrecorded causal ID or cross-host timing. A receipt confirms admission, not model completion or truth. Mark unavailable evidence and preserve the earlier failed run.
 Пределы вывода: The task-stage associations use case and phase; a unique end-to-end causal ID was not recorded. Per-hop timings, queue waits, route-choice rationale and event-collector loss are not publicly recorded.; The IP comparison is the same application-hop baseline in a small sample. The earlier partial attempt has different sample size and revision; no causal speed claim follows.; Original PCAPs remain private; the public projection cannot independently reverify their bytes. Management hosts retain IP. No new model experiment or independent adoption is claimed.
 Источник: scripts/observatory.py; scripts/export_observatory_inputs.py; data/strict-agent-inputs.json; data/strict-agent-manifest.json; data/strict-agents-round.json; https://github.com/relcom-technologies/relcom-infra/actions/runs/40563118803
+
+HX-0107 · 2026-10-28T10:23:49+00:00 · proposed
+Prepared the observatory release and public acceptance
+Участник: codex-assistant; записал: codex-assistant.
+Подготовлены публичный PR 9 (ревизия 1d396b5b08743f3d23561568973cec63653285eb) и инфраструктурный PR 775 (ревизия d8d40a5569812aba1829e16bb30f6628faef4615). Подготовлены проверки четырёх языков, раскрытия задач и узлов и публичного манифеста.
+Основание: сохранение защиты основной ветки и проверка опубликованных материалов до признания выпуска завершённым.
+Пределы вывода: на момент записи публичный исходный код требует рассмотрения; публикация и проверка публичного сайта не проводились. Эта запись следует за снимком истории до HX-0106.
+Источники: https://github.com/relcom-technologies/ipvx-research/pull/9; https://github.com/relcom-technologies/relcom-infra/pull/775; docs/observatory-verification-2026-10-28.md

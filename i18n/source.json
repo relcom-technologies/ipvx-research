@@ -947,13 +947,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "d129f8acd8522423",
-      "source": "106 событий по HX-0106; авторы, основания, проверки и ограничения.",
+      "id": "a576a94adf7649a6",
+      "source": "107 событий по HX-0107; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "e1023787c50f9462",
-      "source": "222.3 КиБ · 11 файлов",
+      "id": "38c410b9b3ffec77",
+      "source": "223.2 КиБ · 11 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4677,6 +4677,61 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "4033504142b090da",
+      "source": "HX-0107 · Prepared the observatory release and public acceptance",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "c89eba90f1d8c201",
+      "source": "Предложение",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "1949865cbc645e1b",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-28T10:23:49+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "471bca81716bda21",
+      "source": "Prepared public PR 9 at revision 1d396b5b08743f3d23561568973cec63653285eb and infrastructure PR 775 at revision d8d40a5569812aba1829e16bb30f6628faef4615. The latter pins the source and adds checks for four languages, task and node disclosures and the public manifest.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "e7f88fc15d1beec2",
+      "source": "Keep the existing protected-main prerequisite and test the exact deployed artifacts before calling the release complete.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "53be3636639d6e47",
+      "source": "docs/observatory-verification-2026-10-28.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "73a6838b65a924a1",
+      "source": "At the time of recording, the public source requires review; no deployment or public acceptance has run. This record is a follow-up to the release snapshot through HX-0106.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "ea040672d5cf77fb",
       "source": "HX-0106 · Task-centred observatory and honest recording manifest",
       "context": "history.html:text:section/details/summary"
@@ -4697,19 +4752,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "537678ef7cfed14e",
       "source": "Link recorded stages by case and phase without inventing an unrecorded causal ID or cross-host timing. A receipt confirms admission, not model completion or truth. Mark unavailable evidence and preserve the earlier failed run.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "72077a7b54ae151a",
@@ -4737,11 +4782,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "53be3636639d6e47",
-      "source": "docs/observatory-verification-2026-10-28.md",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
       "id": "c73055d8a1f9c0fe",
       "source": "scripts/test_observatory.py",
       "context": "history.html:text:ul/li/a"
@@ -4750,11 +4790,6 @@
       "id": "e68d5bde5503f8c9",
       "source": "scripts/browser_observatory_check.mjs",
       "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "acddb4b3b04c184a",
@@ -4770,11 +4805,6 @@
       "id": "5f215f19c3b59ec3",
       "source": "Original PCAPs remain private; the public projection cannot independently reverify their bytes. Management hosts retain IP. No new model experiment or independent adoption is claimed.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "38bc1852574b9b8c",
@@ -7415,11 +7445,6 @@
       "id": "5cd303f88903bae4",
       "source": "HX-0048 · Предложен строгий нативный узел без TCP/IP в ядре и план его проверки",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "c89eba90f1d8c201",
-      "source": "Предложение",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "98b6566cb0c571d4",

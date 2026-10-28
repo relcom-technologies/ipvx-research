@@ -2045,5 +2045,12 @@
   "e1023787c50f9462": "222,3 KiB · 11 archivos",
   "53be3636639d6e47": "docs/observatory-verification-2026-10-28.md",
   "c73055d8a1f9c0fe": "scripts/test_observatory.py",
-  "e68d5bde5503f8c9": "scripts/browser_observatory_check.mjs"
+  "e68d5bde5503f8c9": "scripts/browser_observatory_check.mjs",
+  "a576a94adf7649a6": "107 eventos hasta HX-0107; participantes, fundamentos, comprobaciones y límites.",
+  "38c410b9b3ffec77": "223,2 KiB · 11 archivos",
+  "4033504142b090da": "HX-0107 · Publicación del observatorio y aceptación pública preparadas",
+  "1949865cbc645e1b": "Codex — asistente principal de esta conversación · 2026-10-28T10:23:49+00:00",
+  "471bca81716bda21": "Se prepararon el PR público 9 en la revisión 1d396b5b08743f3d23561568973cec63653285eb y el PR de infraestructura 775 en la revisión d8d40a5569812aba1829e16bb30f6628faef4615. Este último fija la fuente y añade comprobaciones de cuatro idiomas, detalles de tareas y nodos y el manifiesto público.",
+  "e7f88fc15d1beec2": "Mantener el requisito de la rama principal protegida y verificar los artefactos realmente desplegados antes de dar por terminada la publicación.",
+  "73a6838b65a924a1": "Al registrarlo, la fuente pública requiere revisión; aún no se ha ejecutado el despliegue ni la aceptación pública. Este registro continúa la instantánea de publicación hasta HX-0106."
 }
