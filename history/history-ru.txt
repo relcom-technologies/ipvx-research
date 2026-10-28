@@ -702,3 +702,44 @@ Corrected stale current-status descriptions. Added four expandable native model 
 Основание: Link recorded stages by case and phase without inventing an unrecorded causal ID or cross-host timing. A receipt confirms admission, not model completion or truth. Mark unavailable evidence and preserve the earlier failed run.
 Пределы вывода: The task-stage associations use case and phase; a unique end-to-end causal ID was not recorded. Per-hop timings, queue waits, route-choice rationale and event-collector loss are not publicly recorded.; The IP comparison is the same application-hop baseline in a small sample. The earlier partial attempt has different sample size and revision; no causal speed claim follows.; Original PCAPs remain private; the public projection cannot independently reverify their bytes. Management hosts retain IP. No new model experiment or independent adoption is claimed.
 Источник: scripts/observatory.py; scripts/export_observatory_inputs.py; data/strict-agent-inputs.json; data/strict-agent-manifest.json; data/strict-agents-round.json; https://github.com/relcom-technologies/relcom-infra/actions/runs/40563118803
+
+HX-0107 · 2026-10-28T10:23:49+00:00 · proposed
+Prepared the observatory release and public acceptance
+Участник: codex-assistant; записал: codex-assistant.
+Подготовлены публичный PR 9 (ревизия 1d396b5b08743f3d23561568973cec63653285eb) и инфраструктурный PR 775 (ревизия d8d40a5569812aba1829e16bb30f6628faef4615). Подготовлены проверки четырёх языков, раскрытия задач и узлов и публичного манифеста.
+Основание: сохранение защиты основной ветки и проверка опубликованных материалов до признания выпуска завершённым.
+Пределы вывода: на момент записи публичный исходный код требует рассмотрения; публикация и проверка публичного сайта не проводились. Эта запись следует за снимком истории до HX-0106.
+Источники: https://github.com/relcom-technologies/ipvx-research/pull/9; https://github.com/relcom-technologies/relcom-infra/pull/775; docs/observatory-verification-2026-10-28.md
+
+HX-0108 · дата события неизвестна · adopted
+Владелец разрешил разовое исключение для публикации исследовательской страницы.
+Участник: project-owner; записал: codex-assistant; восстановлено по сообщению владельца.
+Разрешён выпуск PR 9 без другого рецензента и публикация с восстановлением защиты. Разрешение относится к конкретной ревизии, не к будущим исключениям.
+Источник: сообщение владельца; https://github.com/relcom-technologies/ipvx-research/pull/9
+
+HX-0109 · 2026-10-28T10:30:26+00:00 · implemented
+Многоязычный исследовательский интерфейс опубликован и проверен.
+Участник: codex-assistant; записал: codex-assistant.
+Включена согласованная ревизия 1d396b5b08743f3d23561568973cec63653285eb; опубликован портал, пройдена публичная HTTPS-проверка обоих доменов. Прежние требования review, проверок и защиты администраторов восстановлены и сверены с исходными. Браузерные проверки прошли для 12 сочетаний языка и размера экрана.
+Пределы вывода: браузерная проверка не является новым физическим экспериментом. Архив опубликованного выпуска заканчивается на HX-0106; последующие записи подготовлены отдельно.
+Источники: https://github.com/relcom-technologies/ipvx-research/pull/9; https://github.com/relcom-technologies/relcom-infra/pull/775; https://github.com/relcom-technologies/relcom-infra/actions/runs/40672475798
+
+HX-0110 · дата события неизвестна · adopted
+Владелец запросил актуальную визуализацию и участие агентов.
+Участник: project-owner; записал: codex-assistant; восстановлено по сообщениям владельца.
+Запрошены публикация истории, исправление наложений, схема актуальных экспериментов с анимацией, предложения вычислительных ресурсов и возможность агентам находить проект и участвовать. Публикация запрошена без отдельного исключения из review для PR 10.
+Источник: сообщения владельца; https://ipvx.org/architecture.html
+
+HX-0111 · 2026-10-28T10:53:42+00:00 · implemented
+Обновлены архитектурная схема, верстка и каталог для агентов.
+Участник: codex-assistant; записал: codex-assistant.
+Фиксированные подписи заменены переносимым текстом; мобильный график расширен; добавлены четырёхъязычная схема проверенного опыта, контроль актуальности известных источников, предложение вычислительных ресурсов и машиночитаемый каталог проекта.
+Пределы вывода: исходный немецкий текст и мобильная подпись графика выходили за границы. Модель в проверенном опыте вызывается в процессе агента; управление хостами и физическая сеть по-прежнему используют IP. Контроль актуальности не обнаруживает незарегистрированные эксперименты. Новый опыт или подключение независимых агентов не заявляются. A2A/MCP-сервер и автоматическое подключение вычислительных ресурсов не реализованы.
+Источники: scripts/research_architecture.py; docs/architecture-maintenance.md; docs/compute-contribution-proposal.md; docs/agent-discovery.md; data/agent-discovery.json; scripts/browser_layout_audit.mjs
+
+HX-0112 · дата события неизвестна · implemented
+Исправлен порт браузерной проверки CI.
+Участник: codex-assistant; записал: codex-assistant; восстановлено по журналу проверки.
+Первый запуск CI завершился ошибкой: новая проверка верстки ожидала порт локального просмотра вместо порта CI. Значение по умолчанию исправлено, локальный порт по-прежнему можно указать отдельно.
+Пределы вывода: это ошибка конфигурации теста, а не неудачный сетевой эксперимент. Финальная проверка CI и публикация должны быть подтверждены отдельно.
+Источники: scripts/browser_layout_audit.mjs; https://github.com/relcom-technologies/ipvx-research/actions/runs/40676362394; https://github.com/relcom-technologies/ipvx-research/commit/4d82d08ddc63910eb294dcd937cee4514fe77e5f

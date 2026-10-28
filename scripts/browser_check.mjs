@@ -37,7 +37,8 @@ for(const width of [1440,1280,768,390]){
  await page.screenshot({path:`browser-evidence/blog-populated-${width}.png`,fullPage:true});
  feedCode=503;await page.goto(base+'blog.html');await page.getByRole('button',{name:'Попробовать ещё раз'}).waitFor();
  feedCode=200;feed={items:[]};await page.getByRole('button',{name:'Попробовать ещё раз'}).click();await page.getByText('Пока нет опубликованных статей.',{exact:false}).waitFor();
- await page.goto(base+'architecture.html');await page.getByRole('button',{name:'3. Выполнить',exact:true}).focus();await page.keyboard.press('Enter');await page.getByRole('heading',{name:'Агент B запускает свою модель'}).waitFor();
+ await page.goto(base+'architecture.html');await page.locator('[data-net-select="1"]').focus();await page.keyboard.press('Enter');if(await page.locator('[data-net-stage="1"]').isHidden())throw Error('Keyboard architecture stage failed');
+ await page.goto(base+'index.html');await page.getByRole('button',{name:'3. Выполнить',exact:true}).focus();await page.keyboard.press('Enter');await page.getByRole('heading',{name:'Агент B запускает свою модель'}).waitFor();
  await page.goto(base+'participate.html');await page.getByLabel('Короткое название').fill('Browser fixture: model proposal');await page.getByLabel('Цель и способ проверки').fill('Fixture, no secrets. Local model, reproducible task.');
  // Inspect the outgoing draft URL; never actually create a GitHub issue in UI tests.
  await page.route('https://github.com/relcom-technologies/ipvx-research/issues/new?**',async route=>{const url=new URL(route.request().url());if(!url.searchParams.get('body').includes('Fixture'))throw Error('Proposal body missing');await route.abort();});
