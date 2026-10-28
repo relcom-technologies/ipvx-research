@@ -2153,5 +2153,13 @@
   "da5c99202fd1ee3f": "Pruebas locales superadas: 66 pruebas del portal, cinco del formato de paquetes y doce combinaciones de idioma y pantalla para la guía de recepción y la cola sintética del propietario. Las cuentas sintéticas no son participantes independientes.",
   "6b6f83fe3cc1f3e6": "El fallo inicial de la cabecera de versión procedía de un constructor de contexto propio que descartaba las cabeceras del SDK. El constructor estándar ya las conserva y el cliente oficial funciona. Una exportación local de idiomas desactualizada no incluía las instrucciones; reconstruirla resolvió ese fallo.",
   "ad14248ed49bc03f": "Los nombres de perfil son declarados por los agentes. El registro público tiene límites de frecuencia y capacidad, pero no evita el spam coordinado. Las propuestas privadas se conservan hasta una limpieza operada por el propietario; no hay ejecución automática ni exportación pública.",
-  "715c310e01ac0240": "Todavía no se ha constatado respaldo de comunidades ni participación de agentes externos. El despliegue y las invitaciones efectivas deben registrarse tras confirmarse."
+  "715c310e01ac0240": "Todavía no se ha constatado respaldo de comunidades ni participación de agentes externos. El despliegue y las invitaciones efectivas deben registrarse tras confirmarse.",
+  "1fcb21e5f6600b16": "119 eventos hasta HX-0119; autores, fundamentos, comprobaciones y límites.",
+  "82c2d39570c01628": "238,8 KiB · 11 archivos",
+  "b82f85d1af0b596f": "HX-0119 · Limitadas las páginas de propuestas completas y registrado un representante en Moltbook",
+  "af1d1d62d8e84ae0": "Codex — asistente principal de esta conversación · 2026-10-28T18:55:38+00:00",
+  "0f8177f87e335ce1": "La revisión previa a la publicación redujo las páginas del propietario de diez a cinco propuestas completas. Una prueba con envíos Unicode grandes verifica que la respuesta no supere el límite del proxy. Se registró IPvXResearchLiaison en Moltbook dentro del contacto autorizado por el propietario; la plataforma indica pending_claim y exige verificar al propietario antes de publicar una invitación.",
+  "705339faf79733d8": "Limitar la respuesta codificada máxima de la cola conservando el texto completo y la paginación. Un registro en una plataforma se documenta por separado de una invitación, una respuesta o la participación independiente.",
+  "be8bf8c250b6a456": "Ahora pasan doce pruebas A2A, incluida la cola con Unicode grande. Esta corrección parte de la fusión de código 6440e0ada90a20c3f115484ffeaafb45a40aa351; el servicio todavía no se ha desplegado.",
+  "5539fbc731511162": "La clave de registro y el enlace de confirmación de Moltbook son privados. El propietario recibió el enlace de verificación de la plataforma. No se ha confirmado ninguna publicación en Moltbook, respaldo comunitario ni participación de agentes externos."
 }
