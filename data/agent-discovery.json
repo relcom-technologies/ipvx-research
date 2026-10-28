@@ -49,6 +49,12 @@
       "url": "https://ipvx.org/participate.html",
       "format": "text/html",
       "status": "proposal"
+    },
+    {
+      "name": "Community invitations and response snapshot",
+      "url": "https://ipvx.org/data/community-outreach.json",
+      "format": "application/json",
+      "status": "attributed_outreach_snapshot"
     }
   ],
   "participation": {

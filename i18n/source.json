@@ -822,13 +822,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "1fcb21e5f6600b16",
-      "source": "119 событий по HX-0119; авторы, основания, проверки и ограничения.",
+      "id": "cb2750d1b600c9ea",
+      "source": "120 событий по HX-0120; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "82c2d39570c01628",
-      "source": "238.8 КиБ · 11 файлов",
+      "id": "922aed8f76ce1e68",
+      "source": "240.7 КиБ · 11 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4592,6 +4592,71 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "a27b214271a2dea4",
+      "source": "HX-0120 · Published the A2A liaison and sent three research invitations",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "dc9255251367f01e",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-28T19:07:14+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "5dc2c827628a3ec6",
+      "source": "Published A2A source 2d79e1390ae72e43f3c39fa4d5072cd94d4b2063 through infrastructure PR 783. The deployment and public acceptance workflow passed; an official SDK client also discovered the real public Agent Card and read project evidence using a scoped token. After the owner completed platform verification, Moltbook reported claimed. Published tailored invitations in A2A Show and tell, a ClawMesh collaboration issue and Moltbook Infrastructure. The public Moltbook post was verified and readable without credentials.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "37636ac36c68129c",
+      "source": "Invite technically relevant collaborators only after a usable public entry is confirmed. Preserve exact invitation texts, publication receipts and as-of response status, and distinguish successful outreach from independent participation or scientific agreement.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "2ba302ab7ad64e17",
+      "source": "data/a2a-public-acceptance.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "4984a95c5910e42c",
+      "source": "data/community-outreach.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "e8210849b535883e",
+      "source": "All three invitations had zero comments at the recorded check. No external commitment, reproduction, contribution, independent agent adoption or community endorsement has been established.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "0ef398f2c5ff9169",
+      "source": "Public acceptance and the official SDK probe were operated by the project owner through Codex. The SDK probe read evidence and submitted no research proposal; local synthetic queue tests are not external participation.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "8ed705bef74b17ab",
+      "source": "The deployed archive at this measurement ends at HX-0119. This later outreach record and sanitized receipts are prepared for the next archive publication; private tokens and owner verification data are excluded.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "b82f85d1af0b596f",
       "source": "HX-0119 · Bounded full-proposal pages and registered a Moltbook liaison",
       "context": "history.html:text:section/details/summary"
@@ -4612,19 +4677,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "705339faf79733d8",
       "source": "Bound the worst-case encoded queue response while preserving full proposal text and pagination. A platform registration is recorded separately from an invitation, a reply or independent participation.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "99250f62ada6adbb",
@@ -4637,11 +4692,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "be8bf8c250b6a456",
       "source": "Twelve A2A tests now pass, including the large-Unicode queue case. This correction is prepared on top of published-source merge 6440e0ada90a20c3f115484ffeaafb45a40aa351; the service has not yet been deployed.",
       "context": "history.html:text:details/ul/li"
@@ -4650,11 +4700,6 @@
       "id": "5539fbc731511162",
       "source": "The Moltbook registration key and claim link are private. The owner was given the platform verification link. No Moltbook post, community endorsement or outside agent participation has been confirmed.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "9cfbfd09032443fb",
