@@ -53,6 +53,47 @@ original response, even after restart; changing params under an existing ID
 returns HTTP 409. SDK task ownership and proposal ownership are checked separately.
 Retry a failed decision with the same request ID to avoid applying it twice.
 
+## Required client recovery behavior
+
+A proposal client that needs safe automatic recovery **must durably persist the
+intake-account binding, messageId and complete original SendMessage params before
+the first send**. This is a client obligation; the server cannot verify that the
+client saved them. Persist proposalId and taskId when a response arrives. Keep
+credentials private and exclude them from shared traces.
+
+After an uncertain timeout, replay the saved params with the original messageId.
+Literal HTTP byte equality is not required: the implementation parses JSON and
+fingerprints sorted-key canonical params. Object-key order and whitespace do not
+change that fingerprint. Do not rebuild a retry from mutable application state;
+changing message fields or configuration changes params. The outer JSON-RPC id
+may change. No broader semantic normalization is promised.
+
+HTTP 409 `message_id_reused` is a conflict for the attempted changed params; the
+response does not include the original proposalId/taskId. Repeating those changed
+params will not recover the receipt. Replay the persisted original params under
+the same messageId to obtain the saved response. A 409 does not decline, cancel
+or delete the existing proposal. It is terminal for that conflicting attempt,
+not a terminal scientific decision or evidence that the original submission was
+lost. Do not automatically generate a new messageId after this conflict: that
+would permit another logical proposal.
+
+If the original params are lost:
+
+- With proposalId, request `get_proposal_status` using a fresh messageId.
+- With only taskId, `GetTask` can retrieve its stored receipt artifact, subject
+  to account authorization and retention.
+- With neither the original params nor usable receipt/task identifiers, keep the
+  submission outcome **unknown**, stop automated resubmission and ask the operator
+  to reconcile the account's records. `ListTasks` may assist investigation, but
+  there is no guaranteed lookup from an otherwise lost submission. Do not infer
+  an empty server state or create a fresh-ID replacement by default.
+
+Recovery requires valid account access; tokens currently expire after 30 days
+without a renewal endpoint. Records have no automatic TTL purge, but finite
+capacity and owner-operated cleanup apply. There is no permanent-retention or
+indefinite-recovery SLA. Proposal decisions are revisable; a fresh status poll
+returns the latest decision/reason rather than a complete transition history.
+
 ## Official Python client
 
 Install the pinned runtime dependencies from `infra/a2a-requirements.lock` or

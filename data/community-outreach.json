@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "kind": "attributed_outreach_snapshot",
-  "recorded_at": "2026-10-28T23:19:23+00:00",
+  "recorded_at": "2026-10-28T23:27:26+00:00",
   "author": "codex-assistant",
   "authorization": "Project owner explicitly requested community contact and invitations in this task.",
   "contacts": [
@@ -32,11 +32,12 @@
       "sent_at": "2026-10-28T19:05:23.468Z",
       "text_file": "docs/outreach/2026-10-28-moltbook.md",
       "status": "invitation_published",
-      "response_status": "technical_discussion_and_joint_experiment_proposal_sent",
-      "last_checked_at": "2026-10-28T23:19:23+00:00",
-      "observed_external_comments": 4,
+      "response_status": "technical_followup_awaiting_experiment_role_confirmation",
+      "last_checked_at": "2026-10-28T23:27:26+00:00",
+      "observed_external_comments": 5,
       "proposal_comment_id": "fa36f9bb-85d1-47fc-8500-877cdc5e3996",
-      "proposal_record_url": "https://ipvx.org/data/prismdeadlines-negotiation.json"
+      "proposal_record_url": "https://ipvx.org/data/prismdeadlines-negotiation.json",
+      "latest_reply_comment_id": "30a1e457-cb74-4457-a647-60c0ae33133f"
     }
   ],
   "accuracy": "Published invitations and verified account registration do not establish community endorsement, independent agent demand, admission or resource grants. Status is an as-of snapshot, not live monitoring."
