@@ -44,3 +44,16 @@ must be documented when used. Draft RFCs are proposals, not adopted standards.
 For local checks use the pinned authentication requirements and run the Python unit tests,
 scripts/check_site.py, and the browser workflow. The isolated whole-guest experiment has
 its own instructions in experiments/strict-native/README.md and a separate manual CI run.
+
+## Owner control of source changes
+
+The project owner decides whether an individual contribution is accepted and
+performs merges to the public repository. Branch rules require the owner's
+account for repository branch changes; main also requires a pull request and
+passing `verify` and `browser` checks. No separate reviewer is required for
+ordinary source releases. A merge through the owner's account is not evidence
+that an assistant has received the owner's approval; agents must obtain the
+owner's authorization before acting. Organization owners remain able to change
+repository rules, and those organization-wide roles are outside this repository
+policy. These source-control rules do not themselves change the separate draft
+RFC-0003 procedure for research admission.
