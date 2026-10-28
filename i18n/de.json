@@ -2052,5 +2052,19 @@
   "1949865cbc645e1b": "Codex — Hauptassistent dieser Unterhaltung · 2026-10-28T10:23:49+00:00",
   "471bca81716bda21": "Öffentlichen PR 9 mit Revision 1d396b5b08743f3d23561568973cec63653285eb und Infrastruktur-PR 775 mit Revision d8d40a5569812aba1829e16bb30f6628faef4615 vorbereitet. Letzterer fixiert die Quelle und ergänzt Prüfungen für vier Sprachen, Aufgaben- und Knotendetails sowie das öffentliche Manifest.",
   "e7f88fc15d1beec2": "Die bestehende Voraussetzung des geschützten Hauptzweigs beibehalten und die tatsächlich veröffentlichten Artefakte prüfen, bevor die Veröffentlichung als abgeschlossen gilt.",
-  "73a6838b65a924a1": "Zum Zeitpunkt der Aufzeichnung benötigt die öffentliche Quelle eine Prüfung; es erfolgten noch keine Bereitstellung und öffentliche Abnahme. Dieser Eintrag folgt auf den Veröffentlichungssnapshot bis HX-0106."
+  "73a6838b65a924a1": "Zum Zeitpunkt der Aufzeichnung benötigt die öffentliche Quelle eine Prüfung; es erfolgten noch keine Bereitstellung und öffentliche Abnahme. Dieser Eintrag folgt auf den Veröffentlichungssnapshot bis HX-0106.",
+  "a2cf8511d7822f8f": "109 Ereignisse bis HX-0109; Beteiligte, Begründungen, Prüfungen und Grenzen.",
+  "5945dbced3fbc6c2": "225,2 KiB · 11 Dateien",
+  "e726037dafc6e358": "HX-0109 · Mehrsprachiges Observatorium veröffentlicht und geprüft",
+  "8bdeea71fcb00679": "Codex — Hauptassistent dieser Unterhaltung · 2026-10-28T10:30:26+00:00",
+  "69496825a75d2b44": "Die genehmigte öffentliche Quellrevision 1d396b5b08743f3d23561568973cec63653285eb und die separat geprüfte Infrastrukturänderung wurden zusammengeführt. Das Portal wurde über den bestehenden Bereitstellungsprozess veröffentlicht und bestand die öffentliche HTTPS-Abnahme auf beiden Portaldomains.",
+  "9523fbce7b94f7d6": "Die erforderliche Prüfung und automatischen Tests beibehalten, die genehmigte Ausnahme auf die genannte Revision beschränken und die veröffentlichten Artefakte und öffentlichen Endpunkte prüfen.",
+  "2bc18038b91950bf": "Die ursprüngliche Review-Pflicht, die erforderlichen Statusprüfungen und ihre Anwendung auf Administratoren wurden wiederhergestellt und mit der vorherigen Konfiguration verglichen.",
+  "9365e473661e41de": "Der öffentliche Browsertest bestand 12 Sprach- und Bildschirmgrößenkombinationen; er prüft die Darstellung, keine neuen physischen Experimente.",
+  "0eaf03489e341fe7": "Das veröffentlichte Geschichtsarchiv endet bei HX-0106; Einträge ab HX-0107 sind im nachfolgenden Geschichtszweig vorbereitet und noch nicht in dieser Veröffentlichung enthalten.",
+  "aebcfb9d0ddfcf95": "HX-0108 · Eigentümer genehmigt einmalige Ausnahme für die Veröffentlichung",
+  "d057e99fffaede0f": "Der Eigentümer genehmigte die einmalige Veröffentlichung des öffentlichen PR 9 ohne weiteren Reviewer und verlangte die Produktionsveröffentlichung mit Wiederherstellung des Schutzes.",
+  "c67f88f60849eb3a": "Die vorbereitete mehrsprachige Forschungsoberfläche veröffentlichen und die Anforderungen des geschützten Zweigs unmittelbar nach der konkreten Ausnahme wiederherstellen.",
+  "ede91410a4cdf9b0": "Unterhaltung: Zustimmung des Eigentümers zur einmaligen PR-9-Ausnahme und Produktionsveröffentlichung",
+  "0c53ac14282a668e": "Diese Zustimmung galt für die angegebene Quellrevision von PR 9 und nicht für spätere Ausnahmen. Der genaue Zeitpunkt der Nachricht wurde nicht unabhängig aufgezeichnet."
 }

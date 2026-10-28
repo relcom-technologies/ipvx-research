@@ -947,13 +947,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "a576a94adf7649a6",
-      "source": "107 событий по HX-0107; авторы, основания, проверки и ограничения.",
+      "id": "a2cf8511d7822f8f",
+      "source": "109 событий по HX-0109; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "38c410b9b3ffec77",
-      "source": "223.2 КиБ · 11 файлов",
+      "id": "5945dbced3fbc6c2",
+      "source": "225.2 КиБ · 11 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4677,6 +4677,111 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "e726037dafc6e358",
+      "source": "HX-0109 · Multilingual observatory published and verified",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "e078c61c3e49f21a",
+      "source": "Реализовано",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "8bdeea71fcb00679",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-28T10:30:26+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "69496825a75d2b44",
+      "source": "Merged the authorized public source revision 1d396b5b08743f3d23561568973cec63653285eb and the independently checked infrastructure release. Published the portal through the existing deployment workflow and passed HTTPS public acceptance on both portal domains.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "9523fbce7b94f7d6",
+      "source": "Retain the required review and automated checks, limiting the approved exception to the named revision, and verify the deployed artifacts and actual public endpoints.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "e68d5bde5503f8c9",
+      "source": "scripts/browser_observatory_check.mjs",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "2bc18038b91950bf",
+      "source": "The original review requirement, required status checks and administrator enforcement were restored and compared with their prior configuration.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "9365e473661e41de",
+      "source": "The public browser check passed 12 language and viewport combinations; it checks presentation, not new physical experiments.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "0eaf03489e341fe7",
+      "source": "The published history bundle ends at HX-0106; records HX-0107 onward are prepared in the following history branch and are not yet included in that release.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "aebcfb9d0ddfcf95",
+      "source": "HX-0108 · Owner authorizes a one-time observatory release exception",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "199d6db958cdb817",
+      "source": "Решение",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "d241a2daaadaae66",
+      "source": "Инициатор IPvX / пользователь этой беседы · Дата события неизвестна",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "d057e99fffaede0f",
+      "source": "The owner authorized a one-time release of public PR 9 without another reviewer and requested production publication with restoration of protection.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "c67f88f60849eb3a",
+      "source": "Publish the prepared multilingual research interface and restore the protected branch requirements immediately after the specific exception.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "ede91410a4cdf9b0",
+      "source": "Conversation: owner approval of the one-time PR 9 exception and production release",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "0c53ac14282a668e",
+      "source": "This approval applied to the specified PR 9 source revision, not future exceptions. The precise time of the owner message was not independently recorded.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "dd51bf8d6f4cd7d2",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Восстановлено по доступным источникам.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "4033504142b090da",
       "source": "HX-0107 · Prepared the observatory release and public acceptance",
       "context": "history.html:text:section/details/summary"
@@ -4697,19 +4802,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "e7f88fc15d1beec2",
       "source": "Keep the existing protected-main prerequisite and test the exact deployed artifacts before calling the release complete.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "53be3636639d6e47",
@@ -4717,29 +4812,14 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "73a6838b65a924a1",
       "source": "At the time of recording, the public source requires review; no deployment or public acceptance has run. This record is a follow-up to the release snapshot through HX-0106.",
       "context": "history.html:text:details/ul/li"
     },
     {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
-    },
-    {
       "id": "ea040672d5cf77fb",
       "source": "HX-0106 · Task-centred observatory and honest recording manifest",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "e078c61c3e49f21a",
-      "source": "Реализовано",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "8d046476a158efb1",
@@ -4787,11 +4867,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "e68d5bde5503f8c9",
-      "source": "scripts/browser_observatory_check.mjs",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
       "id": "acddb4b3b04c184a",
       "source": "The task-stage associations use case and phase; a unique end-to-end causal ID was not recorded. Per-hop timings, queue waits, route-choice rationale and event-collector loss are not publicly recorded.",
       "context": "history.html:text:details/ul/li"
@@ -4810,16 +4885,6 @@
       "id": "38bc1852574b9b8c",
       "source": "HX-0105 · Owner accepts the research-interface proposal",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "199d6db958cdb817",
-      "source": "Решение",
-      "context": "history.html:text:details/summary/span"
-    },
-    {
-      "id": "d241a2daaadaae66",
-      "source": "Инициатор IPvX / пользователь этой беседы · Дата события неизвестна",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "a9e83c1362a0606b",
@@ -4845,11 +4910,6 @@
       "id": "59dcec65b73e3392",
       "source": "The request does not explicitly waive the protected-branch review requirement. No new model results or future telemetry are implied by approval.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "dd51bf8d6f4cd7d2",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Восстановлено по доступным источникам.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "19c45cb53238182e",
