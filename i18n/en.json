@@ -2102,5 +2102,13 @@
   "73d51c12d9e19dd3": "HX-0112 · Corrected the browser CI preview port",
   "0cbf5ce50a952813": "The first browser CI for the architecture update failed because the new layout audit defaulted to a local preview port rather than the CI server port. The audit default was corrected; the local preview remains selectable through an environment setting.",
   "6e194e82d6effca8": "Run the same complete layout audit against the production-style handler in both CI and local previews without changing the site or weakening checks.",
-  "38e09d97dd94460a": "This records a test configuration failure, not a failed network experiment. Final CI and publication must be checked separately."
+  "38e09d97dd94460a": "This records a test configuration failure, not a failed network experiment. Final CI and publication must be checked separately.",
+  "aed12054056ebed3": "113 events through HX-0113; contributors, reasoning, checks and limitations.",
+  "39eec5e3fd5b63ae": "231.1 KiB · 11 files",
+  "40f63fb30a52108c": "HX-0113 · Prepared architecture and agent directory production release",
+  "a7dc7f1fe0a9af7d": "Codex — principal assistant in this conversation · 2026-10-28T17:02:26+00:00",
+  "3b5abcbcec4f79f5": "Prepared infrastructure PR 777 at revision ae1a00652ccfd608dd512b2c5db71e59bfae8dda for public source revision 17e109dae1ee2fa0d2bb899f14133c2d0b486738. Added public acceptance checks for architecture, agent and compute pages in four languages and the exact agent directory digest.",
+  "728a584e067de1b0": "Retain the requirement that protected public main contain the source before deployment, and verify actual public pages and capability limits after publication.",
+  "7051b7b8ca660afa": "Automated checks passed on both changes, but PR 10 requires another review; no new production deployment or public acceptance has run.",
+  "608dcb61eb357aed": "This record follows the proposed release archive through HX-0112 and is not yet included in that archive."
 }

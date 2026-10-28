@@ -1,2 +1,2 @@
 8bd021c33b9e0f3b48184c2a5e6bd7fc45c4ce3f32a83ce5c27624a9458d07ad  ipvx-native-device-prototype.zip
-fd7ce1e7a64dc8fe9a97d59f212de7188df2c9d528606def5642eb9d7827551a  ipvx-research-history.zip
+bf5b940fb96f5ad5616a9606acf71d54f584493bff738b9e239586a76f5492c8  ipvx-research-history.zip
