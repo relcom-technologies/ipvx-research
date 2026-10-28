@@ -40,7 +40,7 @@ TX_SECONDS = 600
 SESSION_SECONDS = 3600
 RECHECK_SECONDS = 600
 MAX_JSON = 131072
-COMMUNITY_ROUTE = re.compile(r'/community/v1/(?:session|moderation|audit|roles|members(?:/member_[a-f0-9]{24}/access)?|rfcs/rfc-000[1-7]/entries|entries/[1-9][0-9]{0,8}(?:/vote|/moderation)?)')
+COMMUNITY_ROUTE = re.compile(r'/community/v1/(?:agents/proposals(?:/page/[0-9]{1,4}|/proposal_[a-f0-9]{24}/decision)?|session|moderation|audit|roles|members(?:/member_[a-f0-9]{24}/access)?|rfcs/rfc-000[1-7]/entries|entries/[1-9][0-9]{0,8}(?:/vote|/moderation)?)')
 
 
 class AuthFailure(Exception):
@@ -220,13 +220,14 @@ class RelcomProvider:
 
 
 class AuthService:
-    def __init__(self, client_id, org_id, state_dir, *, provider=None, clock=time.time, community=None):
+    def __init__(self, client_id, org_id, state_dir, *, provider=None, clock=time.time, community=None, a2a_admin=None):
         if not client_id or not org_id or len(client_id) > 150 or len(org_id) > 150:
             raise ValueError('Relcom ID public client and pool IDs are required')
         self.provider = provider or RelcomProvider(client_id, org_id)
         self.binding = _hash(client_id + ':' + org_id)
         self.clock = clock
         self.community = community
+        self.a2a_admin = a2a_admin
         directory = Path(state_dir)
         directory.mkdir(mode=0o700, parents=True, exist_ok=True)
         if directory.is_symlink() or not directory.is_dir():
@@ -268,8 +269,10 @@ class AuthService:
             from community import CommunityService
             community = CommunityService(os.environ['IPVX_COMMUNITY_STATE_DIR'],
                 bootstrap_admin_author_id=os.environ.get('IPVX_COMMUNITY_ADMIN_AUTHOR_ID'))
+        from a2a_admin import A2AAdmin
+        credential = Path(os.environ['CREDENTIALS_DIRECTORY']) / 'ipvx-a2a-admin'
         return cls(client, org, os.environ.get('IPVX_AUTH_STATE_DIR', '/var/lib/ipvx-research/auth'),
-                   community=community)
+                   community=community, a2a_admin=A2AAdmin(credential.read_bytes()))
 
     @contextmanager
     def _db(self):
@@ -462,6 +465,16 @@ class AuthService:
                     raise ValueError('JSON object required')
             elif body:
                 return _response(400, {'error': 'unexpected_body'})
+            if target.path.startswith('/community/v1/agents/'):
+                if target.query:
+                    return _response(400, {'error': 'query_not_supported'})
+                actor = self.community.owner_identity(user)
+                if not actor:
+                    return _response(403, {'error': 'project_owner_required'})
+                if not self.a2a_admin:
+                    return _response(503, {'error': 'agent_intake_not_configured'})
+                status, result = self.a2a_admin.handle(method, target.path, actor, parsed)
+                return _response(status, result)
             result = self.community.handle(method, path, user, parsed,
                                            request_id=headers.get('Idempotency-Key'))
             return _response(result.status, result.data) if result else _response(404, {'error': 'not_found'})

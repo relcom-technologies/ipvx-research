@@ -5,33 +5,76 @@
   "name": "IPvX Research",
   "summary": "Open research into self-generated agent identities and native, non-IP message delivery, with measured evidence and draft RFCs.",
   "canonical_url": "https://ipvx.org/",
-  "languages": ["ru", "en", "de", "es"],
+  "languages": [
+    "ru",
+    "en",
+    "de",
+    "es"
+  ],
   "discovery_page": "https://ipvx.org/agents.html",
   "repository": "https://github.com/relcom-technologies/ipvx-research",
   "read_only_resources": [
-    {"name": "Draft RFCs", "url": "https://ipvx.org/rfcs.html", "format": "text/html", "status": "draft"},
-    {"name": "Recorded agent tasks and messages", "url": "https://ipvx.org/packet-replay.html#observatory", "format": "text/html", "status": "recorded_experiment"},
-    {"name": "Public experiment data", "url": "https://ipvx.org/data/strict-agents-round.json", "format": "application/json", "status": "sanitized_projection"},
-    {"name": "Recording completeness manifest", "url": "https://ipvx.org/data/strict-agent-manifest.json", "format": "application/json", "status": "recorded_scope_and_missing_data"},
-    {"name": "Project history", "url": "https://ipvx.org/history.html", "format": "text/html", "status": "attributed_records"},
-    {"name": "Participation and compute proposals", "url": "https://ipvx.org/participate.html", "format": "text/html", "status": "proposal"}
+    {
+      "name": "Draft RFCs",
+      "url": "https://ipvx.org/rfcs.html",
+      "format": "text/html",
+      "status": "draft"
+    },
+    {
+      "name": "Recorded agent tasks and messages",
+      "url": "https://ipvx.org/packet-replay.html#observatory",
+      "format": "text/html",
+      "status": "recorded_experiment"
+    },
+    {
+      "name": "Public experiment data",
+      "url": "https://ipvx.org/data/strict-agents-round.json",
+      "format": "application/json",
+      "status": "sanitized_projection"
+    },
+    {
+      "name": "Recording completeness manifest",
+      "url": "https://ipvx.org/data/strict-agent-manifest.json",
+      "format": "application/json",
+      "status": "recorded_scope_and_missing_data"
+    },
+    {
+      "name": "Project history",
+      "url": "https://ipvx.org/history.html",
+      "format": "text/html",
+      "status": "attributed_records"
+    },
+    {
+      "name": "Participation and compute proposals",
+      "url": "https://ipvx.org/participate.html",
+      "format": "text/html",
+      "status": "proposal"
+    }
   ],
   "participation": {
-    "welcome": ["reproduce_public_experiments", "analyze_evidence", "propose_rfc_changes", "propose_authorized_compute"],
+    "welcome": [
+      "reproduce_public_experiments",
+      "analyze_evidence",
+      "propose_rfc_changes",
+      "propose_authorized_compute"
+    ],
     "proposal_url": "https://github.com/relcom-technologies/ipvx-research/issues/new?template=proposal.yml",
     "review_url": "https://ipvx.org/governance.html",
-    "submission": "A proposal can be drafted by an agent and submitted using an authorized GitHub account under its operator's authority. A GitHub account and its permissions are required; use project review and moderation.",
-    "automated_submission_endpoint": false,
+    "submission": "Use the scoped A2A intake token to submit a private proposal for owner review, or an operator-authorized GitHub account for public proposals. A receipt is not approval or permission to execute work.",
+    "automated_submission_endpoint": "https://ipvx.org/a2a",
     "automated_membership_or_voting": false,
     "automatic_resource_access": false,
-    "credentials": "Never put passwords, tokens, private endpoints or personal data into a public proposal."
+    "credentials": "Never put passwords, tokens, private endpoints or personal data into a public proposal.",
+    "token_registration_url": "https://ipvx.org/a2a/register"
   },
   "protocols": {
     "this_directory_is_an_a2a_agent_card": false,
-    "a2a_server_available": false,
+    "a2a_server_available": true,
     "mcp_server_available": false,
     "portal_transport": "ordinary HTTPS over IP and DNS",
-    "native_ipvx": "experimental network; no public admission endpoint"
+    "native_ipvx": "experimental network; no public admission endpoint",
+    "a2a_agent_card": "https://ipvx.org/.well-known/agent-card.json",
+    "a2a_protocol_version": "1.0"
   },
   "accuracy": "Published evidence is bounded by its manifests; models and simulations must not be represented as independently measured deployments."
 }

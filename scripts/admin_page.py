@@ -1,5 +1,6 @@
 """Public shell; member data and every action require a server-verified admin."""
 
+from agent_intake_ui import owner
 
 def render(root, layout):
     body = '''<section class="admin-title"><h1>Администрирование IPvX</h1><p>Пользователи, роли, доступ к обсуждениям и история действий.</p><a href="account.html">Моя учётная запись</a></section>
@@ -15,6 +16,7 @@ def render(root, layout):
 <section class="section"><div class="admin-section-heading"><div><h2>Комментарии на проверке</h2><p class="small">До публикации их видят автор и модераторы.</p></div><button id="admin-queue-refresh" class="button secondary" type="button">Обновить очередь</button></div><p id="admin-queue-status" role="status" aria-live="polite"></p><div id="admin-queue"></div><button id="admin-queue-more" class="button secondary" type="button" hidden>Показать ещё из очереди</button></section>
 <section class="section"><div class="admin-section-heading"><div><h2>Журнал действий</h2><p class="small">Назначения ролей, блокировки и решения модерации с причинами.</p></div><button id="admin-audit-refresh" class="button secondary" type="button">Обновить журнал</button></div><p id="admin-audit-status" role="status" aria-live="polite"></p><div id="admin-audit"></div><button id="admin-audit-more" class="button secondary" type="button" hidden>Предыдущие действия</button></section>
 </div>'''
+    body = body.replace('<div id="admin-private" hidden>', '<div id="admin-private" hidden>' + owner())
     page = layout('participate.html', 'Администрирование', body).replace('<body>', '<body class="admin-page">')
-    page = page.replace('</head>', '<link rel="stylesheet" href="assets/admin.css"><script src="assets/admin.js" defer></script></head>')
+    page = page.replace('</head>', '<link rel="stylesheet" href="assets/admin.css"><script src="assets/admin.js" defer></script><script src="assets/agent-intake.js" defer></script></head>')
     (root/'admin.html').write_text(page)

@@ -189,6 +189,15 @@ class CommunityService:
             return set()
         return {row[0] for row in db.execute('SELECT role FROM roles WHERE actor=?', (actor,))} if actor else set()
 
+    def owner_identity(self, user):
+        """The pinned, verified project owner only; portal admin is insufficient."""
+        actor = self._principal(user)
+        if not actor:
+            return None
+        with self._db() as db:
+            owner = db.execute("SELECT value FROM settings WHERE key='bootstrap_admin'").fetchone()
+            return actor if owner and owner[0] == actor and 'admin' in self._roles(db, actor) else None
+
     def _require(self, db, actor, *roles):
         if not self._roles(db, actor).intersection(roles):
             raise Rejected(403, 'role_required')
