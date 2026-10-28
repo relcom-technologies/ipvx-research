@@ -1,6 +1,6 @@
 import {chromium} from 'playwright';
 import fs from 'node:fs/promises';
-const base=process.env.PORTAL_BASE_URL||'http://127.0.0.1:8110/';
+const base=process.env.PORTAL_BASE_URL||'http://127.0.0.1:8091/';
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE}:{})});
 const root=new URL('..',import.meta.url);const files=(await fs.readdir(root)).filter(f=>f.endsWith('.html')&&!f.startsWith('.'));
 let failed=[],total=0;await fs.mkdir('browser-evidence',{recursive:true});
