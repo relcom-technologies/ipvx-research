@@ -2096,5 +2096,11 @@
   "09fdcb078b216dfa": "data/agent-discovery.json",
   "a8b2a9407469733b": "scripts/browser_layout_audit.mjs",
   "c5f66062902aae5d": "228,9 KiB · 11 archivos",
-  "d6cb61f684a9f131": "El directorio de agentes no es una tarjeta A2A ni un servidor MCP. La incorporación automática de recursos externos, el voto, la admisión y una API de envío sin autenticar específica para agentes siguen sin implementarse."
+  "d6cb61f684a9f131": "El directorio de agentes no es una tarjeta A2A ni un servidor MCP. La incorporación automática de recursos externos, el voto, la admisión y una API de envío sin autenticar específica para agentes siguen sin implementarse.",
+  "b5e4e320858c3764": "112 eventos hasta HX-0112; participantes, fundamentos, comprobaciones y límites.",
+  "7c0a433213aa9b17": "230,0 KiB · 11 archivos",
+  "73d51c12d9e19dd3": "HX-0112 · Corregido el puerto de vista previa del navegador en CI",
+  "0cbf5ce50a952813": "La primera ejecución de CI del navegador para la actualización de arquitectura falló porque la nueva comprobación de diseño usaba por defecto el puerto de vista previa local en vez del puerto del servidor de CI. Se corrigió el valor predeterminado y el puerto local sigue siendo configurable.",
+  "6e194e82d6effca8": "Ejecutar la misma comprobación completa de diseño contra el servidor de tipo producción en CI y vistas previas locales sin cambiar el sitio ni debilitar las pruebas.",
+  "38e09d97dd94460a": "Esto documenta un fallo de configuración de la prueba, no un experimento de red fallido. La verificación final de CI y la publicación deben comprobarse por separado."
 }

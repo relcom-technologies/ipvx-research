@@ -822,13 +822,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "77ae9a7a610b3af3",
-      "source": "111 событий по HX-0111; авторы, основания, проверки и ограничения.",
+      "id": "b5e4e320858c3764",
+      "source": "112 событий по HX-0112; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "c5f66062902aae5d",
-      "source": "228.9 КиБ · 11 файлов",
+      "id": "7c0a433213aa9b17",
+      "source": "230.0 КиБ · 11 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4592,14 +4592,64 @@
       "context": "history.html:text:main/section/p"
     },
     {
-      "id": "7c9febb3df4b6aa6",
-      "source": "HX-0111 · Evidence-linked architecture, layout repairs and agent directory",
+      "id": "73d51c12d9e19dd3",
+      "source": "HX-0112 · Corrected the browser CI preview port",
       "context": "history.html:text:section/details/summary"
     },
     {
       "id": "e078c61c3e49f21a",
       "source": "Реализовано",
       "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "58cc95ee53242a3d",
+      "source": "Codex — основной ассистент этой беседы · Дата события неизвестна",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0cbf5ce50a952813",
+      "source": "The first browser CI for the architecture update failed because the new layout audit defaulted to a local preview port rather than the CI server port. The audit default was corrected; the local preview remains selectable through an environment setting.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "6e194e82d6effca8",
+      "source": "Run the same complete layout audit against the production-style handler in both CI and local previews without changing the site or weakening checks.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "a8b2a9407469733b",
+      "source": "scripts/browser_layout_audit.mjs",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "38e09d97dd94460a",
+      "source": "This records a test configuration failure, not a failed network experiment. Final CI and publication must be checked separately.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "dd51bf8d6f4cd7d2",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Восстановлено по доступным источникам.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "7c9febb3df4b6aa6",
+      "source": "HX-0111 · Evidence-linked architecture, layout repairs and agent directory",
+      "context": "history.html:text:section/details/summary"
     },
     {
       "id": "ce5c3715bbb2a14a",
@@ -4612,19 +4662,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "93ff301a2cee7c44",
       "source": "Represent the measured process and its limits, distinguish public HTTPS discovery from native IPvX, and let contributors propose work without claiming an implemented external compute pool or agent server.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "70f407e467a8b156",
@@ -4655,16 +4695,6 @@
       "id": "09fdcb078b216dfa",
       "source": "data/agent-discovery.json",
       "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "a8b2a9407469733b",
-      "source": "scripts/browser_layout_audit.mjs",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "60a31ed92b510089",
@@ -4730,11 +4760,6 @@
       "id": "f836f69e2c3599c2",
       "source": "Publication was requested; the message did not explicitly waive review requirements for PR 10 or other future revisions.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "dd51bf8d6f4cd7d2",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Восстановлено по доступным источникам.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "e726037dafc6e358",
@@ -8930,11 +8955,6 @@
       "id": "80ed2c13959276b6",
       "source": "Пояснение",
       "context": "history.html:text:details/summary/span"
-    },
-    {
-      "id": "58cc95ee53242a3d",
-      "source": "Codex — основной ассистент этой беседы · Дата события неизвестна",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "2725a5364cd85210",

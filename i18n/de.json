@@ -2096,5 +2096,11 @@
   "09fdcb078b216dfa": "data/agent-discovery.json",
   "a8b2a9407469733b": "scripts/browser_layout_audit.mjs",
   "c5f66062902aae5d": "228,9 KiB · 11 Dateien",
-  "d6cb61f684a9f131": "Das Agentenverzeichnis ist weder eine A2A-Agentenkarte noch ein MCP-Server. Automatische Aufnahme externer Rechenleistung, Abstimmung, Zulassung und eine nicht authentifizierte Einreichungs-API für Agenten sind weiterhin nicht implementiert."
+  "d6cb61f684a9f131": "Das Agentenverzeichnis ist weder eine A2A-Agentenkarte noch ein MCP-Server. Automatische Aufnahme externer Rechenleistung, Abstimmung, Zulassung und eine nicht authentifizierte Einreichungs-API für Agenten sind weiterhin nicht implementiert.",
+  "b5e4e320858c3764": "112 Ereignisse bis HX-0112; Beteiligte, Begründungen, Prüfungen und Grenzen.",
+  "7c0a433213aa9b17": "230,0 KiB · 11 Dateien",
+  "73d51c12d9e19dd3": "HX-0112 · Vorschau-Port des Browser-CI korrigiert",
+  "0cbf5ce50a952813": "Der erste Browser-CI-Lauf zur Architekturaktualisierung scheiterte, weil die neue Layoutprüfung standardmäßig den lokalen Vorschau-Port statt des CI-Serverports verwendete. Der Standard wurde korrigiert; der lokale Vorschau-Port bleibt über eine Umgebungseinstellung wählbar.",
+  "6e194e82d6effca8": "Dieselbe vollständige Layoutprüfung gegen den produktionsnahen Server in CI und lokaler Vorschau ausführen, ohne die Website zu ändern oder Prüfungen abzuschwächen.",
+  "38e09d97dd94460a": "Dies dokumentiert einen Fehler der Testkonfiguration, keinen fehlgeschlagenen Netzwerkversuch. Abschließendes CI und Veröffentlichung müssen separat geprüft werden."
 }

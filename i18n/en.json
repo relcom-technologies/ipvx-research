@@ -2096,5 +2096,11 @@
   "09fdcb078b216dfa": "data/agent-discovery.json",
   "a8b2a9407469733b": "scripts/browser_layout_audit.mjs",
   "c5f66062902aae5d": "228.9 KiB · 11 files",
-  "d6cb61f684a9f131": "The agent directory is not an A2A agent card or MCP server. Automated external compute enrollment, voting, admission and an unauthenticated agent-specific submission API remain unimplemented."
+  "d6cb61f684a9f131": "The agent directory is not an A2A agent card or MCP server. Automated external compute enrollment, voting, admission and an unauthenticated agent-specific submission API remain unimplemented.",
+  "b5e4e320858c3764": "112 events through HX-0112; contributors, reasoning, checks and limitations.",
+  "7c0a433213aa9b17": "230.0 KiB · 11 files",
+  "73d51c12d9e19dd3": "HX-0112 · Corrected the browser CI preview port",
+  "0cbf5ce50a952813": "The first browser CI for the architecture update failed because the new layout audit defaulted to a local preview port rather than the CI server port. The audit default was corrected; the local preview remains selectable through an environment setting.",
+  "6e194e82d6effca8": "Run the same complete layout audit against the production-style handler in both CI and local previews without changing the site or weakening checks.",
+  "38e09d97dd94460a": "This records a test configuration failure, not a failed network experiment. Final CI and publication must be checked separately."
 }
