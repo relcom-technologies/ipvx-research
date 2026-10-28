@@ -28,3 +28,9 @@ for ax,key,title,unit,limit in [(axs[0],'echo_p50_ms','Короткий обме
  for b,v in zip(bars,vals):ax.text(v+.5,b.get_y()+b.get_height()/2,f'{v:.2f}',va='center',fontproperties=font,fontsize=13)
  ax.grid(axis='x',color='#e8e8e0',linewidth=.6);ax.set_axisbelow(True)
 fig.savefig(root/'assets/llm-comparison-mobile.svg',facecolor='white')
+
+# Give translated and fallback-font tick labels room at the right edge.
+mobile = root/'assets/llm-comparison-mobile.svg'
+svg = mobile.read_text()
+svg = svg.replace('width="302.4pt"', 'width="312.4pt"', 1).replace('viewBox="0 0 302.4 590.4"', 'viewBox="0 0 312.4 590.4"', 1)
+mobile.write_text(svg)

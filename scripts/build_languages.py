@@ -14,6 +14,9 @@ import re
 import xml.etree.ElementTree as ET
 from i18n_sources import ROOT, SKIP, ATTRS, VOID, key, editorial
 from observatory import render as render_observatory
+from research_architecture import render as render_research_architecture
+from research_contributions import render as render_research_contributions
+from agent_directory import render as render_agent_directory
 
 LANGUAGES = {'ru': 'Русский', 'en': 'English', 'de': 'Deutsch', 'es': 'Español'}
 NOTICES = {
@@ -143,6 +146,12 @@ def localized(tree, name, language, catalog, pages):
     def walk(node, skipped=False):
         if isinstance(node, str):
             return node if skipped else translate(node)
+        if language != 'ru' and node.attr('id') == 'agent-invitation':
+            return next(child for child in Tree(render_agent_directory(language)).root.children if isinstance(child, Element))
+        if language != 'ru' and node.attr('id') == 'compute-contributions':
+            return next(child for child in Tree(render_research_contributions(language)).root.children if isinstance(child, Element))
+        if language != 'ru' and node.attr('id') == 'research-network':
+            return next(child for child in Tree(render_research_architecture(ROOT, language)).root.children if isinstance(child, Element))
         if language != 'ru' and node.attr('id') == 'observatory':
             return next(child for child in Tree(render_observatory(ROOT, language)).root.children if isinstance(child, Element))
         skip = skipped or node.tag.lower() in SKIP or node.tag == 'raw'

@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "policy": "Review the architecture and refresh these hashes whenever a listed evidence file changes. Register new experiment summaries explicitly.",
+  "records": {
+    "data/strict-agents-round.json": "3c388513d8b54b9d5df7e0da8d94a1f6e8e2c0e5c2adf9a741cb0d84a33a2ddd",
+    "data/native-summary.json": "0086c3bf241a31ebe3375d0c10a320bf2184770e80188d5f1b191d11ee906167",
+    "data/scale-summary.json": "ead5a26fac92146db3c0d59656c2b2c6b0d87db5fa8370e09322a52638c63c75"
+  }
+}

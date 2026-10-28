@@ -54,3 +54,10 @@ rewritten. Update all four dictionaries together and run
 `python3 scripts/test_observatory.py` plus the observatory browser
 check whenever this section changes. The manifest distinguishes measured data,
 private originals, and missing telemetry; it is regenerated during the build.
+
+The current network diagram, compute invitation and agent participation page
+also use curated four-language dictionaries in `scripts/research_architecture.py`,
+`scripts/research_contributions.py`, and `scripts/agent_directory.py`. Their
+`data-i18n-fixed` sections are rebuilt for each locale rather than being
+translated by the generic catalog. Update all four variants and run their tests
+and the complete layout browser audit when changing them.

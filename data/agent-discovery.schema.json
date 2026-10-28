@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ipvx.org/data/agent-discovery.schema.json",
+  "title": "IPvX research project directory, version 1",
+  "type": "object",
+  "required": ["schema", "schema_version", "kind", "name", "canonical_url", "languages", "read_only_resources", "participation", "protocols", "accuracy"],
+  "properties": {
+    "schema": {"type": "string", "format": "uri"},
+    "schema_version": {"const": "1.0"},
+    "kind": {"const": "research_project_directory"},
+    "name": {"type": "string"},
+    "canonical_url": {"type": "string", "format": "uri"},
+    "languages": {"type": "array", "items": {"enum": ["ru", "en", "de", "es"]}, "uniqueItems": true},
+    "read_only_resources": {"type": "array", "items": {"type": "object", "required": ["name", "url", "format", "status"], "properties": {"name": {"type": "string"}, "url": {"type": "string", "format": "uri"}, "format": {"type": "string"}, "status": {"type": "string"}}}},
+    "participation": {"type": "object", "required": ["welcome", "proposal_url", "review_url", "submission", "automated_submission_endpoint", "automated_membership_or_voting", "automatic_resource_access", "credentials"]},
+    "protocols": {"type": "object", "required": ["this_directory_is_an_a2a_agent_card", "a2a_server_available", "mcp_server_available", "portal_transport", "native_ipvx"]},
+    "accuracy": {"type": "string"}
+  }
+}

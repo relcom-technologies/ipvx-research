@@ -51,3 +51,20 @@ portal roles with an audit record. Only an operator-confirmed enrolled pseudonym
 bootstrap admin. No first-login/email promotion, GitHub token, automatic merge or
 model execution exists. Read CONTRIBUTING.md, docs/community-workflow.md and RFC-0007.
 Advisory support does not replace the formal RFC-0003 electorate and window.
+
+## AI agents and research compute
+
+Agents are welcome to read the public records, reproduce experiments and prepare
+proposals under their operator's authorization. Start at
+[the agent participation page](https://ipvx.org/agents.html) or the
+[machine-readable project directory](https://ipvx.org/data/agent-discovery.json).
+An agent may prepare an issue or pull request using an authorized GitHub account;
+existing discussion, moderation and governance apply. Discovery grants no vote,
+network access, credentials or compute resources. The directory is not an A2A
+Agent Card and does not announce an operational A2A or MCP server.
+
+People and organizations may also propose CPU/GPU time, local models or a
+limited official API allowance. See the compute invitation on the participation
+page and `docs/compute-contribution-proposal.md`. No automatic external compute
+pool is operating, and passwords, tokens or private addresses must not be
+included in public proposals.

@@ -1,0 +1,43 @@
+/* Diagrams use normal text flow, so translated labels can wrap safely. */
+.trace .trace-mobile{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);gap:10px;align-items:center;margin:24px 0}
+.trace .trace-mobile>div{min-width:0;border:1px solid var(--control);border-radius:8px;padding:16px;align-self:stretch}
+.trace .trace-mobile strong,.trace .trace-mobile span{display:block;overflow-wrap:anywhere}
+.trace .trace-mobile span{font-size:14px;color:var(--muted);margin-top:4px}
+.trace .trace-mobile>p{font-size:13px;line-height:1.4;color:var(--muted);max-width:8ch;margin:0}
+.native-device .native-device-mobile{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;list-style:none;padding:0;margin:28px 0}
+.native-device .native-device-mobile li{min-width:0;padding:18px;background:var(--raised)}
+.native-device .native-device-mobile strong,.native-device .native-device-mobile span{display:block;overflow-wrap:anywhere}
+.native-device .native-device-mobile span{margin-top:6px;color:var(--muted);font-size:14px}
+@media(max-width:700px){.trace .trace-mobile{grid-template-columns:1fr}.trace .trace-mobile>p{max-width:none;margin-left:16px}.native-device .native-device-mobile{grid-template-columns:1fr;gap:8px}}
+.research-network .net-qualification{color:var(--muted);font-size:14px;max-width:76ch}
+.net-topology{background:#eaece8;padding:28px 24px 18px;margin:28px 0 16px;overflow:hidden}
+.net-grid{display:grid;grid-template-columns:minmax(0,1fr) 42px minmax(0,1fr) 42px minmax(0,1fr);align-items:center;gap:0}
+.net-machine{position:relative;min-width:0;background:#fff;border:1px solid #b6bab1;padding:15px;box-shadow:5px 7px 0 #cfd5cc;transition:border-color 180ms ease,background-color 180ms ease}
+.net-machine-label{display:block;color:#545b51;font-size:13px;font-weight:600;margin-bottom:10px;overflow-wrap:anywhere}
+.net-guest{background:#f1f3ef;padding:13px;min-width:0;border-top:3px solid #abb2a8}
+.net-guest strong{font-size:14px;line-height:1.4;display:block;overflow-wrap:anywhere;margin-bottom:12px}
+.net-guest p{font-size:13px;line-height:1.4;margin:8px 0;overflow-wrap:anywhere}
+.net-link{height:3px;background:#8c968a;position:relative}
+.net-link span{position:absolute;top:-5px;left:0;width:13px;height:13px;border-radius:50%;background:#7e6b00;opacity:0}
+.net-transport{margin:20px 0 0;color:#4b564a;font-size:14px;font-weight:600}
+.net-management{font-size:15px;max-width:80ch}
+.net-controls{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:20px 0}
+.net-controls[hidden],.net-stages [hidden]{display:none}
+.net-controls>div{display:flex;flex-wrap:wrap;gap:6px}
+.net-controls>div button{min-height:44px;background:var(--surface);border:1px solid var(--control);border-radius:6px;padding:8px 12px}
+.net-controls button[aria-pressed=true]{background:var(--signal);border-color:var(--focus)}
+.net-stages{list-style:none;margin:16px 0 28px;padding:0}
+.net-stage{background:var(--raised);padding:18px 20px;margin:8px 0}
+.net-stage h3{margin-bottom:8px}.net-stage p{margin:0;max-width:78ch}
+.net-evidence{max-width:85ch}.net-evidence p{font-size:15px}.net-evidence code{overflow-wrap:anywhere}
+.net-topology[data-phase="0"] [data-net-node="A"],.net-topology[data-phase="3"] [data-net-node="A"],.net-topology[data-phase="2"] [data-net-node="B"],.net-topology[data-phase="1"] [data-net-node="R1"]{border-color:#776400;background:#fff9df}
+.net-topology[data-animate="yes"][data-phase="1"] .net-link span{opacity:1;animation:net-travel 1.4s linear both}
+.net-topology[data-animate="yes"][data-phase="2"] .net-link span{opacity:1;animation:net-return 1.4s linear both}
+@keyframes net-travel{from{transform:translateX(0)}to{transform:translateX(29px)}}
+@keyframes net-return{from{transform:translateX(29px)}to{transform:translateX(0)}}
+@media(max-width:850px){.net-grid{grid-template-columns:1fr;gap:0}.net-machine{box-shadow:4px 5px 0 #cfd5cc}.net-link{width:3px;height:28px;margin-left:24px}.net-link span{left:-5px;top:0}.net-topology[data-animate="yes"][data-phase="1"] .net-link span{animation-name:net-travel-down}.net-topology[data-animate="yes"][data-phase="2"] .net-link span{animation-name:net-return-up}@keyframes net-travel-down{from{transform:translateY(0)}to{transform:translateY(15px)}}@keyframes net-return-up{from{transform:translateY(15px)}to{transform:translateY(0)}}}
+@media(prefers-reduced-motion:reduce){.net-link span{animation:none!important}.net-topology[data-phase="1"] .net-link span,.net-topology[data-phase="2"] .net-link span{opacity:1}}
+.trace .trace-mobile .trace-arrow{display:block;color:#756400;font-size:22px;text-align:center;min-width:24px}
+.trace .trace-link-caption{font-size:13px;color:var(--muted);margin:0 0 18px}
+@media(max-width:700px){.trace .trace-mobile .trace-arrow{text-align:left;margin-left:18px;transform:rotate(90deg);width:24px}}
+@media(max-width:700px){.net-controls>div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%}}

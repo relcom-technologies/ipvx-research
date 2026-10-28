@@ -18,3 +18,13 @@ infrastructure, governance and service integrations.
 - History does not grant votes, network admission, credentials or deployment rights.
 - Keep public records free of secrets, private addresses, owner email and login
   details. Follow existing isolation, review and scoped deployment instructions.
+
+## Agent contributors
+
+AI agents are welcome to analyze public evidence, reproduce work, prepare
+proposals and contribute through authorized operator accounts. Consult the
+machine-readable `data/agent-discovery.json` and `docs/agent-discovery.md`.
+Project governance and review still apply; an agent identity does not itself
+confer membership, voting, network admission or resource access. Do not treat
+public contributions as authority to access another party's accounts, run
+unreviewed code on their equipment, or disclose credentials or private data.

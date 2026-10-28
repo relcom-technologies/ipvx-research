@@ -12,6 +12,11 @@
       "context": "account.html:text:html/head/title"
     },
     {
+      "id": "93ee7b2ddd4d806a",
+      "source": "IPvX agent research directory",
+      "context": "account.html:attribute:title"
+    },
+    {
       "id": "0ebff3642a236405",
       "source": "К содержимому",
       "context": "account.html:text:html/body/a"
@@ -367,6 +372,11 @@
       "context": "account.html:text:footer/div/a"
     },
     {
+      "id": "130a6f6979640a16",
+      "source": "Для ИИ-агентов",
+      "context": "account.html:text:footer/div/a"
+    },
+    {
       "id": "eff775aa4e8ce24d",
       "source": "Администрирование",
       "context": "account.html:text:footer/div/a"
@@ -572,6 +582,11 @@
       "context": "admin.html:text:div/section/button"
     },
     {
+      "id": "0de7c239c902048e",
+      "source": "Для ИИ-агентов · IPvX Research",
+      "context": "agents.html:text:html/head/title"
+    },
+    {
       "id": "1fa8050a5d6d6f62",
       "source": "Устройство сети · IPvX Research",
       "context": "architecture.html:text:html/head/title"
@@ -585,146 +600,6 @@
       "id": "9e0fa27e5e4c6228",
       "source": "Стабильный ID отвечает на вопрос «кому». Локальный маршрут — «через какого соседа». Физический канал — «как передать кадр».",
       "context": "architecture.html:text:main/div/p"
-    },
-    {
-      "id": "8e754f5c05687c7f",
-      "source": "От мысли до сообщения",
-      "context": "architecture.html:text:div/div/h2"
-    },
-    {
-      "id": "539ecf0c408039df",
-      "source": "Объяснение протокола",
-      "context": "architecture.html:text:div/div/span"
-    },
-    {
-      "id": "0b4e2343170588d6",
-      "source": "Модель работает на своей машине. По сети уходят зашифрованная задача и результат.",
-      "context": "architecture.html:text:main/div/p"
-    },
-    {
-      "id": "b05e4da14b614f6d",
-      "source": "Агент A через маршрутизатор R1 отправляет задачу агенту B",
-      "context": "architecture.html:attribute:aria-label"
-    },
-    {
-      "id": "12a747f98d8840f7",
-      "source": "Агент A",
-      "context": "architecture.html:text:svg/g/text"
-    },
-    {
-      "id": "1ad4d6964df27267",
-      "source": "Локальная модель",
-      "context": "architecture.html:text:svg/g/text"
-    },
-    {
-      "id": "c00b0a2d4bb31993",
-      "source": "ID: public-key hash",
-      "context": "architecture.html:text:svg/g/text"
-    },
-    {
-      "id": "dd85d8ce3026eeb4",
-      "source": "Узел R1",
-      "context": "architecture.html:text:svg/g/text"
-    },
-    {
-      "id": "c5aca15bdaee7872",
-      "source": "Выбор соседа",
-      "context": "architecture.html:text:svg/g/text"
-    },
-    {
-      "id": "307729576b2a6cc9",
-      "source": "Агент B",
-      "context": "architecture.html:text:svg/g/text"
-    },
-    {
-      "id": "dc71f96673706907",
-      "source": "Своя модель",
-      "context": "architecture.html:text:svg/g/text"
-    },
-    {
-      "id": "7601badcd67cf1e0",
-      "source": "Ethernet · 0x88B5 · без IP и DNS в доставке",
-      "context": "architecture.html:text:div/svg/text"
-    },
-    {
-      "id": "21adfb820dbfe769",
-      "source": "Маршрут A через R1 к B",
-      "context": "architecture.html:attribute:aria-label"
-    },
-    {
-      "id": "0c72a0fb02cf4eab",
-      "source": "Локальная модель · устойчивый ID",
-      "context": "architecture.html:text:div/div/span"
-    },
-    {
-      "id": "37933bd8b0c48d4e",
-      "source": "↓ Кадры Ethernet 0x88B5",
-      "context": "architecture.html:text:div/div/p"
-    },
-    {
-      "id": "6f63ca7d24331fc9",
-      "source": "Посредник R1",
-      "context": "architecture.html:text:div/div/strong"
-    },
-    {
-      "id": "25a16bb154a35497",
-      "source": "Выбирает следующего соседа",
-      "context": "architecture.html:text:div/div/span"
-    },
-    {
-      "id": "b0867a48654bbb2e",
-      "source": "↓ Без IP и DNS в доставке",
-      "context": "architecture.html:text:div/div/p"
-    },
-    {
-      "id": "749d93ea9d88eb1c",
-      "source": "Своя модель · свой ID",
-      "context": "architecture.html:text:div/div/span"
-    },
-    {
-      "id": "2db2955c3b7b16af",
-      "source": "Этапы обмена",
-      "context": "architecture.html:attribute:aria-label"
-    },
-    {
-      "id": "2b9cc65da95da593",
-      "source": "1. Сформировать",
-      "context": "architecture.html:text:div/div/button"
-    },
-    {
-      "id": "61c41d2eecefcf31",
-      "source": "2. Передать",
-      "context": "architecture.html:text:div/div/button"
-    },
-    {
-      "id": "a75bc1a64f8471bf",
-      "source": "3. Выполнить",
-      "context": "architecture.html:text:div/div/button"
-    },
-    {
-      "id": "059066d2de0071b8",
-      "source": "4. Ответить",
-      "context": "architecture.html:text:div/div/button"
-    },
-    {
-      "id": "680e6230b3f7552f",
-      "source": "Агент A формирует задачу",
-      "context": "architecture.html:text:div/div/h3"
-    },
-    {
-      "id": "02506b0aa1d5c74a",
-      "source": "Получатель — устойчивый ID. Сообщение получает подпись, срок действия и уникальный номер; содержимое шифруется для B.",
-      "context": "architecture.html:text:div/div/p"
-    },
-    {
-      "id": "757361651e31c623",
-      "source": "Это интерактивное объяснение, а не живой сетевой обмен. Фактические журналы — в экспериментах.",
-      "context": "architecture.html:text:main/div/p"
-    },
-    {
-      "id": "21ac88366766526f",
-      "source": "Открыть сохранённый обмен с подписанной квитанцией →",
-      "context": "architecture.html:text:main/div/a"
     },
     {
       "id": "4ced51ed01494135",
@@ -947,13 +822,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "a2cf8511d7822f8f",
-      "source": "109 событий по HX-0109; авторы, основания, проверки и ограничения.",
+      "id": "77ae9a7a610b3af3",
+      "source": "111 событий по HX-0111; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "5945dbced3fbc6c2",
-      "source": "225.2 КиБ · 11 файлов",
+      "id": "c5f66062902aae5d",
+      "source": "228.9 КиБ · 11 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -1597,8 +1472,8 @@
       "context": "index.html:text:div/aside/p"
     },
     {
-      "id": "dc179ca2e5f089e5",
-      "source": "Пять ВМ в одной инфраструктуре. Глобальная сеть и открытый допуск пока не доказаны.",
+      "id": "c0da0de18290b229",
+      "source": "В проверенном опыте две модели и маршрутизатор работали в гостевых ОС на разных физических машинах. Глобальная сеть и открытый допуск пока не доказаны.",
       "context": "index.html:text:div/aside/p"
     },
     {
@@ -1630,6 +1505,106 @@
       "id": "823047c03b217bf4",
       "source": "Как внести вклад →",
       "context": "index.html:text:div/div/a"
+    },
+    {
+      "id": "8e754f5c05687c7f",
+      "source": "От мысли до сообщения",
+      "context": "index.html:text:div/div/h2"
+    },
+    {
+      "id": "539ecf0c408039df",
+      "source": "Объяснение протокола",
+      "context": "index.html:text:div/div/span"
+    },
+    {
+      "id": "0b4e2343170588d6",
+      "source": "Модель работает на своей машине. По сети уходят зашифрованная задача и результат.",
+      "context": "index.html:text:section/div/p"
+    },
+    {
+      "id": "21adfb820dbfe769",
+      "source": "Маршрут A через R1 к B",
+      "context": "index.html:attribute:aria-label"
+    },
+    {
+      "id": "12a747f98d8840f7",
+      "source": "Агент A",
+      "context": "index.html:text:div/div/strong"
+    },
+    {
+      "id": "0c72a0fb02cf4eab",
+      "source": "Локальная модель · устойчивый ID",
+      "context": "index.html:text:div/div/span"
+    },
+    {
+      "id": "6f63ca7d24331fc9",
+      "source": "Посредник R1",
+      "context": "index.html:text:div/div/strong"
+    },
+    {
+      "id": "25a16bb154a35497",
+      "source": "Выбирает следующего соседа",
+      "context": "index.html:text:div/div/span"
+    },
+    {
+      "id": "307729576b2a6cc9",
+      "source": "Агент B",
+      "context": "index.html:text:div/div/strong"
+    },
+    {
+      "id": "749d93ea9d88eb1c",
+      "source": "Своя модель · свой ID",
+      "context": "index.html:text:div/div/span"
+    },
+    {
+      "id": "7601badcd67cf1e0",
+      "source": "Ethernet · 0x88B5 · без IP и DNS в доставке",
+      "context": "index.html:text:section/div/p"
+    },
+    {
+      "id": "2db2955c3b7b16af",
+      "source": "Этапы обмена",
+      "context": "index.html:attribute:aria-label"
+    },
+    {
+      "id": "2b9cc65da95da593",
+      "source": "1. Сформировать",
+      "context": "index.html:text:div/div/button"
+    },
+    {
+      "id": "61c41d2eecefcf31",
+      "source": "2. Передать",
+      "context": "index.html:text:div/div/button"
+    },
+    {
+      "id": "a75bc1a64f8471bf",
+      "source": "3. Выполнить",
+      "context": "index.html:text:div/div/button"
+    },
+    {
+      "id": "059066d2de0071b8",
+      "source": "4. Ответить",
+      "context": "index.html:text:div/div/button"
+    },
+    {
+      "id": "680e6230b3f7552f",
+      "source": "Агент A формирует задачу",
+      "context": "index.html:text:div/div/h3"
+    },
+    {
+      "id": "02506b0aa1d5c74a",
+      "source": "Получатель — устойчивый ID. Сообщение получает подпись, срок действия и уникальный номер; содержимое шифруется для B.",
+      "context": "index.html:text:div/div/p"
+    },
+    {
+      "id": "757361651e31c623",
+      "source": "Это интерактивное объяснение, а не живой сетевой обмен. Фактические журналы — в экспериментах.",
+      "context": "index.html:text:section/div/p"
+    },
+    {
+      "id": "21ac88366766526f",
+      "source": "Открыть сохранённый обмен с подписанной квитанцией →",
+      "context": "index.html:text:section/div/a"
     },
     {
       "id": "0150db41088cca9c",
@@ -2429,6 +2404,11 @@
     {
       "id": "646e66ab5e1534ec",
       "source": "Свою модель",
+      "context": "participate.html:text:form/select/option"
+    },
+    {
+      "id": "854c08ad7a82b11d",
+      "source": "Вычислительные ресурсы",
       "context": "participate.html:text:form/select/option"
     },
     {
@@ -3567,94 +3547,9 @@
       "context": "rfc-0006.html:text:main/section/p"
     },
     {
-      "id": "1b62f994ff37d6ab",
-      "source": "Локальная модель передаёт задачу IPvX-службе, которая отправляет Ethernet-кадр через сетевую карту маршрутизатору",
-      "context": "rfc-0006.html:text:section/svg/title"
-    },
-    {
-      "id": "918fd34c0ed8aacf",
-      "source": "Внутри узла: модель, Unix-сокет, IPvX-служба, AF_PACKET и обычная сетевая карта. Ядро целевого образа без INET и IPv6. Снаружи: Ethernet-кабель и следующий маршрутизатор.",
-      "context": "rfc-0006.html:text:section/svg/desc"
-    },
-    {
-      "id": "b7254efa76d0ec2a",
-      "source": "Узел агента · локальная ОС",
-      "context": "rfc-0006.html:text:section/svg/text"
-    },
-    {
-      "id": "f3bdf7cce35565df",
-      "source": "Модель",
-      "context": "rfc-0006.html:text:svg/g/text"
-    },
-    {
-      "id": "57e6b898dfe77f1b",
-      "source": "локально",
-      "context": "rfc-0006.html:text:svg/g/text"
-    },
-    {
-      "id": "64ca0485e209060a",
-      "source": "Unix-сокет",
-      "context": "rfc-0006.html:text:svg/g/text"
-    },
-    {
-      "id": "e4bc564394d4be03",
-      "source": "внутри узла",
-      "context": "rfc-0006.html:text:svg/g/text"
-    },
-    {
-      "id": "45e0eab6177f1ede",
-      "source": "IPvX-служба",
-      "context": "rfc-0006.html:text:svg/g/text"
-    },
-    {
-      "id": "39cf9d0473d4243b",
-      "source": "ID и пакет",
-      "context": "rfc-0006.html:text:svg/g/text"
-    },
-    {
-      "id": "e9e0ab6a6dc324e6",
-      "source": "AF_PACKET",
-      "context": "rfc-0006.html:text:svg/g/text"
-    },
-    {
-      "id": "6440c88f1d06c82e",
-      "source": "без TCP/IP",
-      "context": "rfc-0006.html:text:svg/g/text"
-    },
-    {
-      "id": "667f74f397f21b22",
-      "source": "Сетевая карта",
-      "context": "rfc-0006.html:text:svg/g/text"
-    },
-    {
-      "id": "dee7c4d56e748150",
-      "source": "обычный NIC",
-      "context": "rfc-0006.html:text:svg/g/text"
-    },
-    {
-      "id": "938ca22e305397ce",
-      "source": "кабель",
-      "context": "rfc-0006.html:text:section/svg/text"
-    },
-    {
-      "id": "7f9a50e7fafbee40",
-      "source": "Маршрутизатор R",
-      "context": "rfc-0006.html:text:svg/g/text"
-    },
-    {
-      "id": "74303cbc5f9b906e",
-      "source": "следующий переход",
-      "context": "rfc-0006.html:text:svg/g/text"
-    },
-    {
-      "id": "fd4817d7bffd96b9",
-      "source": "CONFIG_INET выключен · CONFIG_IPV6 выключен · ключи создаются локально",
-      "context": "rfc-0006.html:text:section/svg/text"
-    },
-    {
-      "id": "9c87d5e38bca8cb4",
-      "source": "Физический канал остаётся Ethernet. Собственный IPvX определяет обмен поверх этого канала.",
-      "context": "rfc-0006.html:text:section/svg/text"
+      "id": "1ad4d6964df27267",
+      "source": "Локальная модель",
+      "context": "rfc-0006.html:text:ol/li/strong"
     },
     {
       "id": "35e8367c31013c34",
@@ -3662,14 +3557,29 @@
       "context": "rfc-0006.html:text:ol/li/span"
     },
     {
+      "id": "64ca0485e209060a",
+      "source": "Unix-сокет",
+      "context": "rfc-0006.html:text:ol/li/strong"
+    },
+    {
       "id": "593268e06edc2e6a",
       "source": "Связывает модель и службу внутри одной ОС, без TCP.",
       "context": "rfc-0006.html:text:ol/li/span"
     },
     {
+      "id": "45e0eab6177f1ede",
+      "source": "IPvX-служба",
+      "context": "rfc-0006.html:text:ol/li/strong"
+    },
+    {
       "id": "d5e0d4126b892521",
       "source": "Работает с ID, сообщениями и маршрутами.",
       "context": "rfc-0006.html:text:ol/li/span"
+    },
+    {
+      "id": "e9e0ab6a6dc324e6",
+      "source": "AF_PACKET",
+      "context": "rfc-0006.html:text:ol/li/strong"
     },
     {
       "id": "0ef243db651936df",
@@ -3685,6 +3595,11 @@
       "id": "a98a56860c045d31",
       "source": "Выводит кадр в Ethernet-кабель.",
       "context": "rfc-0006.html:text:ol/li/span"
+    },
+    {
+      "id": "7f9a50e7fafbee40",
+      "source": "Маршрутизатор R",
+      "context": "rfc-0006.html:text:ol/li/strong"
     },
     {
       "id": "a0232f0c84d0c1a5",
@@ -4677,14 +4592,154 @@
       "context": "history.html:text:main/section/p"
     },
     {
-      "id": "e726037dafc6e358",
-      "source": "HX-0109 · Multilingual observatory published and verified",
+      "id": "7c9febb3df4b6aa6",
+      "source": "HX-0111 · Evidence-linked architecture, layout repairs and agent directory",
       "context": "history.html:text:section/details/summary"
     },
     {
       "id": "e078c61c3e49f21a",
       "source": "Реализовано",
       "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "ce5c3715bbb2a14a",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-28T10:53:42+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "4c1dc48f17d3a5c5",
+      "source": "Replaced fixed-position diagram labels with wrapping layouts; widened the mobile graph viewport; added a four-language interactive illustration of the measured three-host guest experiment, an evidence freshness guard, a compute contribution proposal and a discoverable machine-readable project directory.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "93ff301a2cee7c44",
+      "source": "Represent the measured process and its limits, distinguish public HTTPS discovery from native IPvX, and let contributors propose work without claiming an implemented external compute pool or agent server.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "70f407e467a8b156",
+      "source": "scripts/research_architecture.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "5a26dec36b7c94cb",
+      "source": "docs/architecture-motion.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "919dc2ac36e55096",
+      "source": "docs/architecture-maintenance.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "f76d1ceed6cfa9c4",
+      "source": "docs/compute-contribution-proposal.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "8fa6a36784648db2",
+      "source": "docs/agent-discovery.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "09fdcb078b216dfa",
+      "source": "data/agent-discovery.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "a8b2a9407469733b",
+      "source": "scripts/browser_layout_audit.mjs",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "60a31ed92b510089",
+      "source": "The original German diagram labels overflowed their fixed boxes; the mobile graph clipped an axis label. Both are corrected in this proposed revision.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "3c28517d3eadfef4",
+      "source": "The measured model runs in the agent process; the target RFC diagram may describe a Unix socket, but the new measured diagram does not claim one. Host and physical-network management still carry IP.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "600256f5260c005c",
+      "source": "The architecture guard covers registered evidence files; contributors must register new experiment summaries and review the page. It does not discover unknown experiments automatically.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "27cb72e7c723c767",
+      "source": "Automated browser checks covered 276 page and viewport combinations plus eight graph editions; no new network experiment or agent adoption is claimed.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "d6cb61f684a9f131",
+      "source": "The agent directory is not an A2A agent card or MCP server. Automated external compute enrollment, voting, admission and an unauthenticated agent-specific submission API remain unimplemented.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "c4d80d263175cfc6",
+      "source": "HX-0110 · Owner requests updated visual explanations and agent participation",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "199d6db958cdb817",
+      "source": "Решение",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "d241a2daaadaae66",
+      "source": "Инициатор IPvX / пользователь этой беседы · Дата события неизвестна",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "e8e1b4e2f9faa2cd",
+      "source": "The owner requested publication of the release history, repair of overlapping text and graphics, an architecture explanation reflecting current experiments with animation, a way to propose compute resources and an invitation for AI agents to discover and contribute.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "01f7ac1c1ade477c",
+      "source": "Make the research legible and current to researchers and the public, while welcoming participation from people and agents.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "abc97e83ac0625cd",
+      "source": "Conversation: owner requests layout fixes, architecture updates, compute contributions and agent participation",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "f836f69e2c3599c2",
+      "source": "Publication was requested; the message did not explicitly waive review requirements for PR 10 or other future revisions.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "dd51bf8d6f4cd7d2",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Восстановлено по доступным источникам.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "e726037dafc6e358",
+      "source": "HX-0109 · Multilingual observatory published and verified",
+      "context": "history.html:text:section/details/summary"
     },
     {
       "id": "8bdeea71fcb00679",
@@ -4697,29 +4752,14 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "9523fbce7b94f7d6",
       "source": "Retain the required review and automated checks, limiting the approved exception to the named revision, and verify the deployed artifacts and actual public endpoints.",
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "e68d5bde5503f8c9",
       "source": "scripts/browser_observatory_check.mjs",
       "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "2bc18038b91950bf",
@@ -4737,24 +4777,9 @@
       "context": "history.html:text:details/ul/li"
     },
     {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
-    },
-    {
       "id": "aebcfb9d0ddfcf95",
       "source": "HX-0108 · Owner authorizes a one-time observatory release exception",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "199d6db958cdb817",
-      "source": "Решение",
-      "context": "history.html:text:details/summary/span"
-    },
-    {
-      "id": "d241a2daaadaae66",
-      "source": "Инициатор IPvX / пользователь этой беседы · Дата события неизвестна",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "d057e99fffaede0f",
@@ -4775,11 +4800,6 @@
       "id": "0c53ac14282a668e",
       "source": "This approval applied to the specified PR 9 source revision, not future exceptions. The precise time of the owner message was not independently recorded.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "dd51bf8d6f4cd7d2",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Восстановлено по доступным источникам.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "4033504142b090da",
