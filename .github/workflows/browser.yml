@@ -22,6 +22,7 @@ jobs:
           node scripts/browser_replay_check.mjs
           node scripts/browser_agents_check.mjs
           node scripts/browser_admin_check.mjs
+          node scripts/browser_intake_check.mjs
           node scripts/browser_languages_check.mjs
           node scripts/browser_observatory_check.mjs
           node scripts/browser_layout_audit.mjs

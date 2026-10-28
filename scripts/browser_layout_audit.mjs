@@ -49,7 +49,7 @@ try{
   if(await page.locator('link[rel="alternate"][type="application/json"][href="data/agent-discovery.json"]').count()!==1)throw Error('agent discovery link missing '+suffix);
   if(await page.locator('#agent-invitation a[href="data/agent-discovery.json"]').count()!==1)throw Error('agent directory unavailable '+suffix);
   const descriptor=await page.evaluate(async()=>await (await fetch('data/agent-discovery.json')).json());
-  if(descriptor.protocols.a2a_server_available||descriptor.participation.automatic_resource_access)throw Error('nonexistent capability advertised');
+  if(!descriptor.protocols.a2a_server_available||descriptor.participation.automatic_resource_access)throw Error('nonexistent capability advertised');
   await page.goto(base+'participate'+suffix+'.html#compute-contributions');
   if(await page.locator('#compute-contributions a[href="#join-form"]').count()!==1)throw Error('compute proposal link missing '+suffix);
   await page.locator('#compute-contributions a[href="#join-form"]').click();

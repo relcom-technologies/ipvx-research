@@ -17,6 +17,7 @@ from observatory import render as render_observatory
 from research_architecture import render as render_research_architecture
 from research_contributions import render as render_research_contributions
 from agent_directory import render as render_agent_directory
+from agent_intake_ui import owner as render_agent_owner
 
 LANGUAGES = {'ru': 'Русский', 'en': 'English', 'de': 'Deutsch', 'es': 'Español'}
 NOTICES = {
@@ -146,6 +147,8 @@ def localized(tree, name, language, catalog, pages):
     def walk(node, skipped=False):
         if isinstance(node, str):
             return node if skipped else translate(node)
+        if language != 'ru' and node.attr('id') == 'agent-intake-owner':
+            return next(child for child in Tree(render_agent_owner(language)).root.children if isinstance(child, Element))
         if language != 'ru' and node.attr('id') == 'agent-invitation':
             return next(child for child in Tree(render_agent_directory(language)).root.children if isinstance(child, Element))
         if language != 'ru' and node.attr('id') == 'compute-contributions':

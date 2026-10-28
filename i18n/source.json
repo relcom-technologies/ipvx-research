@@ -822,13 +822,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "ccf6dde99635ee72",
-      "source": "116 событий по HX-0116; авторы, основания, проверки и ограничения.",
+      "id": "c961a80956bc0ff4",
+      "source": "118 событий по HX-0118; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "9d0fd4eec5d9d2e6",
-      "source": "234.1 КиБ · 11 файлов",
+      "id": "3c941d7d13c17251",
+      "source": "237.4 КиБ · 11 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4592,14 +4592,139 @@
       "context": "history.html:text:main/section/p"
     },
     {
-      "id": "c1ad1d008ed44030",
-      "source": "HX-0116 · Published updated architecture and agent participation",
+      "id": "9cfbfd09032443fb",
+      "source": "HX-0118 · Prepared a bounded A2A research intake and owner review queue",
       "context": "history.html:text:section/details/summary"
     },
     {
       "id": "e078c61c3e49f21a",
       "source": "Реализовано",
       "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "2f45b222cfcf49da",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-28T18:47:54+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "bd84221e590a4dd7",
+      "source": "The owner authorized invitations to relevant communities and a working A2A participation interface. Implemented a deterministic A2A 1.0 JSON-RPC liaison using official Python SDK 1.3.0, separate scoped intake accounts, durable private proposal receipts and owner decisions. Added four-language instructions and an expandable owner queue. This record describes local implementation and checks before publication and outreach.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "058fc8fa9c80e6d4",
+      "source": "Provide a usable way for external researchers and agents to read evidence and propose work without granting membership, votes, code execution or infrastructure access. HTTPS discovery is explicitly separate from native non-IP experiments. Only the verified pinned project owner may decide proposals; another portal admin is insufficient.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "0e6b7c5bfd1623aa",
+      "source": "infra/a2a_service.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "99250f62ada6adbb",
+      "source": "infra/a2a_store.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "9bac0de4102d2201",
+      "source": "infra/a2a_admin.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "72b502c2211fbcd6",
+      "source": "docs/a2a-interface.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "f08d0227f2e2ef92",
+      "source": "scripts/test_a2a.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "89eaeef5159238bb",
+      "source": "scripts/browser_intake_check.mjs",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "09fdcb078b216dfa",
+      "source": "data/agent-discovery.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "da5c99202fd1ee3f",
+      "source": "Local tests passed: 66 portal tests, five wire-format tests and 12 language/viewport combinations for the intake guide and synthetic owner queue. Synthetic accounts are not independent participants.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "6b6f83fe3cc1f3e6",
+      "source": "An initial version-header mismatch was traced to a custom context builder that dropped SDK request headers; the standard context builder now preserves them and the official client succeeds. A stale local language export initially lacked instructions; rebuilding the test export resolved that failure.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "ad14248ed49bc03f",
+      "source": "Agent profile names are self-asserted. Public registration is rate-limited and capacity-limited but does not prevent coordinated spam. Private proposals remain stored until owner-operated cleanup; no automatic execution or public export occurs.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "715c310e01ac0240",
+      "source": "No community endorsement or external agent participation has yet been established. Deployment and actual invitations must be recorded after confirmation.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "541c77ea4f87f09a",
+      "source": "HX-0117 · Published owner-control clarification and verified release",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "19fc546ffb468702",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-28T17:28:46+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "b7c8d3c2cc1f2fc8",
+      "source": "After the owner’s approval, merged PR 11 through the owner-controlled repository rules with required checks passing, merged infrastructure PR 779, deployed the resulting release and passed public HTTPS acceptance. The published history snapshot contains records through HX-0116.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "70dc2a4c07a9b957",
+      "source": "Verify that the owner can publish through the protected pull request path without another reviewer, while preserving required checks and recording the rule correction.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "8a476ada16f333cb",
+      "source": "The required checks and owner branch controls remained active after the merge; other organization owners can still modify repository rules.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "af3551714992596f",
+      "source": "The deployed snapshot ends at HX-0116; this later release record is prepared separately and has not yet been published.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "c1ad1d008ed44030",
+      "source": "HX-0116 · Published updated architecture and agent participation",
+      "context": "history.html:text:section/details/summary"
     },
     {
       "id": "b1886c86eb109c48",
@@ -4612,24 +4737,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "e2bc5660a7e2a385",
       "source": "Publish the owner-requested release only after automated checks and verify the actual public pages, archive and machine-readable directory.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "d83b7f3a4899313a",
@@ -4640,11 +4750,6 @@
       "id": "e6b2f99716024dce",
       "source": "The release archive ends at HX-0112; later history records are subsequent updates.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "3cdcb024ba888fdb",
@@ -4824,11 +4929,6 @@
     {
       "id": "8fa6a36784648db2",
       "source": "docs/agent-discovery.md",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "09fdcb078b216dfa",
-      "source": "data/agent-discovery.json",
       "context": "history.html:text:ul/li/a"
     },
     {

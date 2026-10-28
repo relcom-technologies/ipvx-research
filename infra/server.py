@@ -10,7 +10,7 @@ from urllib.parse import unquote, urlsplit
 
 CSP = "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://press.relcom.com; object-src 'none'; base-uri 'none'; form-action 'self' https://github.com https://id.relcom.com; frame-ancestors 'none'"
 AUTH_PATHS = {'/auth/login', '/auth/callback', '/auth/session', '/auth/logout'}
-COMMUNITY_PATH = re.compile(r'/community/v1/(?:session|moderation|audit|roles|members(?:/member_[a-f0-9]{24}/access)?|rfcs/rfc-000[1-7]/entries|entries/[1-9][0-9]{0,8}(?:/vote|/moderation)?)')
+COMMUNITY_PATH = re.compile(r'/community/v1/(?:agents/proposals(?:/page/[0-9]{1,4}|/proposal_[a-f0-9]{24}/decision)?|session|moderation|audit|roles|members(?:/member_[a-f0-9]{24}/access)?|rfcs/rfc-000[1-7]/entries|entries/[1-9][0-9]{0,8}(?:/vote|/moderation)?)')
 
 
 class PublicFiles(BaseHTTPRequestHandler):
@@ -37,6 +37,12 @@ class PublicFiles(BaseHTTPRequestHandler):
             path = unquote(urlsplit(self.path).path, errors='strict')
         except (ValueError, UnicodeError):
             self.send_error(400)
+            return
+        if path == '/.well-known/agent-card.json':
+            if self.path != path:
+                self.send_error(404)
+                return
+            self.proxy_a2a('HEAD' if head else 'GET')
             return
         if path in AUTH_PATHS or COMMUNITY_PATH.fullmatch(path):
             if path != urlsplit(self.path).path:
@@ -67,10 +73,53 @@ class PublicFiles(BaseHTTPRequestHandler):
 
     def do_POST(self):
         path = urlsplit(self.path).path
+        if path in ('/a2a', '/a2a/register'):
+            if self.path != path:
+                self.send_error(404)
+                return
+            self.proxy_a2a('POST')
+            return
         if path != '/auth/logout' and not COMMUNITY_PATH.fullmatch(path):
             self.send_error(404)
             return
         self.proxy_auth('POST')
+
+    def proxy_a2a(self, method):
+        """Only the public card, scoped registration and JSON-RPC; no internal admin."""
+        if not self.server.a2a_port:
+            self.send_error(503, 'Agent intake is available on the production portal')
+            return
+        try:
+            lengths = self.headers.get_all('Content-Length', [])
+            size = int(lengths[0]) if lengths else 0
+            if len(lengths) > 1 or size < 0 or size > 16384 or self.headers.get('Transfer-Encoding'):
+                raise ValueError('Unsupported body')
+            if self.headers.get('Host', '').lower() not in ('ipvx.org', 'www.ipvx.org'):
+                raise ValueError('Unexpected host')
+            body = self.rfile.read(size) if size else b''
+            headers = {name: self.headers[name] for name in ('Content-Type', 'Authorization', 'A2A-Version') if name in self.headers}
+            conn = HTTPConnection('127.0.0.1', self.server.a2a_port, timeout=20)
+            try:
+                conn.request(method, self.path, body=body, headers=headers)
+                response = conn.getresponse()
+                data = response.read(131073)
+                if len(data) > 131072:
+                    raise OSError('Bound exceeded')
+                self.auth_response = True
+                self.send_response(response.status)
+                for name, value in response.getheaders():
+                    if name.lower() in ('content-type', 'cache-control', 'www-authenticate', 'retry-after'):
+                        self.send_header(name, value)
+                self.send_header('Content-Length', str(len(data)))
+                self.end_headers()
+                if method != 'HEAD':
+                    self.wfile.write(data)
+            finally:
+                conn.close()
+        except ValueError:
+            self.send_error(400)
+        except OSError:
+            self.send_error(503, 'Agent intake temporarily unavailable')
 
     def proxy_auth(self, method):
         """Only the fixed, loopback authentication process receives these requests."""
@@ -117,7 +166,7 @@ class PublicFiles(BaseHTTPRequestHandler):
             conn.close()
 
 
-def make_server(root, bind, port, revision, auth_port=None):
+def make_server(root, bind, port, revision, auth_port=None, a2a_port=None):
     root = Path(root).resolve()
     files = set()
     for file in root.rglob('*'):
@@ -129,7 +178,7 @@ def make_server(root, bind, port, revision, auth_port=None):
         raise ValueError('Incomplete or unversioned public release')
     server = ThreadingHTTPServer((bind, port), PublicFiles)
     server.root, server.public_files, server.revision = root, files, revision
-    server.auth_port = auth_port
+    server.auth_port, server.a2a_port = auth_port, a2a_port
     return server
 
 
@@ -140,5 +189,6 @@ if __name__ == '__main__':
     parser.add_argument('--port', type=int, default=8092)
     parser.add_argument('--revision', required=True)
     parser.add_argument('--auth-port', type=int, choices=[8094])
+    parser.add_argument('--a2a-port', type=int, choices=[8095])
     args = parser.parse_args()
-    make_server(args.root, args.bind, args.port, args.revision, args.auth_port).serve_forever()
+    make_server(args.root, args.bind, args.port, args.revision, args.auth_port, args.a2a_port).serve_forever()
