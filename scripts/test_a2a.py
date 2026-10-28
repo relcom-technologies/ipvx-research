@@ -120,6 +120,15 @@ class ServiceTests(unittest.IsolatedAsyncioTestCase):
   self.assertEqual((await self.call(bad)).status_code,400)
   bad=self.rpc(PAYLOAD);bad['params']['configuration']={'pushNotificationConfig':{'url':'https://example.invalid/'}}
   self.assertEqual((await self.call(bad)).status_code,400)
+ async def test_worst_case_unicode_queue_stays_within_proxy_bound(self):
+  for i in range(6):
+   payload={**PAYLOAD,'summary':'🧬'*3000}
+   r=await self.call(self.rpc(payload,'unicode-message-'+str(i),i))
+   self.assertIn('result',r.json())
+  stamp=str(int(time.time()));nonce=secrets.token_hex(16);path='/internal/proposals'
+  r=await self.http.get(path,headers={'X-IPvX-Time':stamp,'X-IPvX-Nonce':nonce,'X-IPvX-Signature':admin_signature(self.key,'GET',path,b'',stamp,nonce)})
+  self.assertEqual(r.status_code,200);self.assertEqual(len(r.json()['proposals']),5)
+  self.assertEqual(r.json()['nextOffset'],5);self.assertLess(len(r.content),131072)
  async def test_owner_private_queue_and_decision(self):
   response=(await self.call(self.rpc(PAYLOAD))).json();p=response['result']['task']['artifacts'][0]['parts'][0]['data']
   async def admin(method,path,body=None):

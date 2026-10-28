@@ -95,7 +95,7 @@ Decision requests also require the canonical same origin. The owner bridge signs
 fixed loopback requests with a private shared systemd credential and short-lived,
 replay-protected HMAC. Internal paths are absent from public proxy/ingress
 allowlists. Inbound text is untrusted, rendered as text, and not promoted to model
-instructions or executed. Queue pages contain at most 10 full proposals.
+instructions or executed. Queue pages contain at most five full proposals.
 
 Pilot limits: 16 KiB request, 128 KiB response, 30 registrations/hour globally,
 40 RPCs/minute/account and 200/minute globally, 10 proposals/day/account and

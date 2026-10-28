@@ -131,9 +131,9 @@ class IntakeStore:
    db.execute('INSERT INTO nonces VALUES(?,?)',(nonce,int(self.clock())))
  def owner_list(self,offset=0):
   with self.db() as db:
-   rows=db.execute('SELECT p.*,c.name AS agent_name FROM proposals p JOIN clients c ON c.id=p.client ORDER BY created DESC,id DESC LIMIT 10 OFFSET ?',(offset,)).fetchall()
+   rows=db.execute('SELECT p.*,c.name AS agent_name FROM proposals p JOIN clients c ON c.id=p.client ORDER BY created DESC,id DESC LIMIT 5 OFFSET ?',(offset,)).fetchall()
    counts={r[0]:r[1] for r in db.execute('SELECT status,count(*) FROM proposals GROUP BY status')}
-   return {'proposals':[self._proposal(r,True) for r in rows],'counts':counts,'visibility':'owner-private','limit':10,'offset':offset,'nextOffset':offset+10 if offset+10<sum(counts.values()) else None}
+   return {'proposals':[self._proposal(r,True) for r in rows],'counts':counts,'visibility':'owner-private','limit':5,'offset':offset,'nextOffset':offset+5 if offset+5<sum(counts.values()) else None}
  def decide(self,identifier,body):
   if not isinstance(body,dict) or set(body)!={'decision','reason','requestId','actor'} or body['decision'] not in ('approved_for_discussion','declined'):raise IntakeError(400,'invalid_decision')
   reason=text(body['reason'],3,1000);actor=text(body['actor'],1,100);request_id=text(body['requestId'],8,128);fingerprint=digest(identifier+canonical(body))

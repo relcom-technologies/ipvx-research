@@ -822,13 +822,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "c961a80956bc0ff4",
-      "source": "118 событий по HX-0118; авторы, основания, проверки и ограничения.",
+      "id": "1fcb21e5f6600b16",
+      "source": "119 событий по HX-0119; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "3c941d7d13c17251",
-      "source": "237.4 КиБ · 11 файлов",
+      "id": "82c2d39570c01628",
+      "source": "238.8 КиБ · 11 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4592,14 +4592,74 @@
       "context": "history.html:text:main/section/p"
     },
     {
-      "id": "9cfbfd09032443fb",
-      "source": "HX-0118 · Prepared a bounded A2A research intake and owner review queue",
+      "id": "b82f85d1af0b596f",
+      "source": "HX-0119 · Bounded full-proposal pages and registered a Moltbook liaison",
       "context": "history.html:text:section/details/summary"
     },
     {
       "id": "e078c61c3e49f21a",
       "source": "Реализовано",
       "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "af1d1d62d8e84ae0",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-28T18:55:38+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0f8177f87e335ce1",
+      "source": "Pre-publication review reduced owner queue pages from ten to five full proposals. A test with large Unicode submissions verifies the response remains below the proxy limit. Registered IPvXResearchLiaison on Moltbook under the owner-authorized outreach scope; the platform reports pending_claim and requires owner verification before a public invitation can be posted.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "705339faf79733d8",
+      "source": "Bound the worst-case encoded queue response while preserving full proposal text and pagination. A platform registration is recorded separately from an invitation, a reply or independent participation.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "99250f62ada6adbb",
+      "source": "infra/a2a_store.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "f08d0227f2e2ef92",
+      "source": "scripts/test_a2a.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "be8bf8c250b6a456",
+      "source": "Twelve A2A tests now pass, including the large-Unicode queue case. This correction is prepared on top of published-source merge 6440e0ada90a20c3f115484ffeaafb45a40aa351; the service has not yet been deployed.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "5539fbc731511162",
+      "source": "The Moltbook registration key and claim link are private. The owner was given the platform verification link. No Moltbook post, community endorsement or outside agent participation has been confirmed.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "9cfbfd09032443fb",
+      "source": "HX-0118 · Prepared a bounded A2A research intake and owner review queue",
+      "context": "history.html:text:section/details/summary"
     },
     {
       "id": "2f45b222cfcf49da",
@@ -4612,28 +4672,13 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "058fc8fa9c80e6d4",
       "source": "Provide a usable way for external researchers and agents to read evidence and propose work without granting membership, votes, code execution or infrastructure access. HTTPS discovery is explicitly separate from native non-IP experiments. Only the verified pinned project owner may decide proposals; another portal admin is insufficient.",
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "0e6b7c5bfd1623aa",
       "source": "infra/a2a_service.py",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "99250f62ada6adbb",
-      "source": "infra/a2a_store.py",
       "context": "history.html:text:ul/li/a"
     },
     {
@@ -4647,11 +4692,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "f08d0227f2e2ef92",
-      "source": "scripts/test_a2a.py",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
       "id": "89eaeef5159238bb",
       "source": "scripts/browser_intake_check.mjs",
       "context": "history.html:text:ul/li/a"
@@ -4660,11 +4700,6 @@
       "id": "09fdcb078b216dfa",
       "source": "data/agent-discovery.json",
       "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "da5c99202fd1ee3f",
@@ -4685,11 +4720,6 @@
       "id": "715c310e01ac0240",
       "source": "No community endorsement or external agent participation has yet been established. Deployment and actual invitations must be recorded after confirmation.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "541c77ea4f87f09a",

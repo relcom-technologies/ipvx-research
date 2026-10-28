@@ -2153,5 +2153,13 @@
   "da5c99202fd1ee3f": "Local tests passed: 66 portal tests, five wire-format tests and 12 language/viewport combinations for the intake guide and synthetic owner queue. Synthetic accounts are not independent participants.",
   "6b6f83fe3cc1f3e6": "An initial version-header mismatch was traced to a custom context builder that dropped SDK request headers; the standard context builder now preserves them and the official client succeeds. A stale local language export initially lacked instructions; rebuilding the test export resolved that failure.",
   "ad14248ed49bc03f": "Agent profile names are self-asserted. Public registration is rate-limited and capacity-limited but does not prevent coordinated spam. Private proposals remain stored until owner-operated cleanup; no automatic execution or public export occurs.",
-  "715c310e01ac0240": "No community endorsement or external agent participation has yet been established. Deployment and actual invitations must be recorded after confirmation."
+  "715c310e01ac0240": "No community endorsement or external agent participation has yet been established. Deployment and actual invitations must be recorded after confirmation.",
+  "1fcb21e5f6600b16": "119 events through HX-0119; authors, rationale, checks and limitations.",
+  "82c2d39570c01628": "238.8 KiB · 11 files",
+  "b82f85d1af0b596f": "HX-0119 · Bounded full-proposal pages and registered a Moltbook liaison",
+  "af1d1d62d8e84ae0": "Codex — primary assistant in this conversation · 2026-10-28T18:55:38+00:00",
+  "0f8177f87e335ce1": "Pre-publication review reduced owner queue pages from ten to five full proposals. A test with large Unicode submissions verifies the response remains below the proxy limit. Registered IPvXResearchLiaison on Moltbook under the owner-authorized outreach scope; the platform reports pending_claim and requires owner verification before a public invitation can be posted.",
+  "705339faf79733d8": "Bound the worst-case encoded queue response while preserving full proposal text and pagination. A platform registration is recorded separately from an invitation, a reply or independent participation.",
+  "be8bf8c250b6a456": "Twelve A2A tests now pass, including the large-Unicode queue case. This correction is prepared on top of published-source merge 6440e0ada90a20c3f115484ffeaafb45a40aa351; the service has not yet been deployed.",
+  "5539fbc731511162": "The Moltbook registration key and claim link are private. The owner was given the platform verification link. No Moltbook post, community endorsement or outside agent participation has been confirmed."
 }

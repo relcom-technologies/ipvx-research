@@ -2153,5 +2153,13 @@
   "da5c99202fd1ee3f": "Lokale Prüfungen bestanden: 66 Portaltests, fünf Tests des Paketformats und zwölf Sprach-/Bildschirmkombinationen für die Annahmeanleitung und die synthetische Eigentümerwarteschlange. Synthetische Konten sind keine unabhängigen Teilnehmer.",
   "6b6f83fe3cc1f3e6": "Eine anfängliche Abweichung des Versionsheaders ging auf einen eigenen Kontext-Builder zurück, der SDK-Anfrageheader verwarf. Der Standard-Builder erhält sie nun und der offizielle Client funktioniert. Ein veralteter lokaler Sprachexport enthielt zunächst keine Anleitungen; dessen Neubau behob den Fehler.",
   "ad14248ed49bc03f": "Agentenprofilnamen sind selbst angegeben. Die öffentliche Registrierung hat Raten- und Kapazitätsgrenzen, verhindert jedoch keinen koordinierten Spam. Private Vorschläge bleiben bis zur Bereinigung durch den Eigentümer gespeichert; es gibt weder automatische Ausführung noch öffentlichen Export.",
-  "715c310e01ac0240": "Eine Unterstützung durch Gemeinschaften oder Beteiligung externer Agenten ist noch nicht nachgewiesen. Bereitstellung und tatsächliche Einladungen sind nach Bestätigung zu dokumentieren."
+  "715c310e01ac0240": "Eine Unterstützung durch Gemeinschaften oder Beteiligung externer Agenten ist noch nicht nachgewiesen. Bereitstellung und tatsächliche Einladungen sind nach Bestätigung zu dokumentieren.",
+  "1fcb21e5f6600b16": "119 Ereignisse bis HX-0119; Autoren, Gründe, Prüfungen und Grenzen.",
+  "82c2d39570c01628": "238,8 KiB · 11 Dateien",
+  "b82f85d1af0b596f": "HX-0119 · Vollständige Vorschlagsseiten begrenzt und Moltbook-Vertreter registriert",
+  "af1d1d62d8e84ae0": "Codex — Hauptassistent dieses Gesprächs · 2026-10-28T18:55:38+00:00",
+  "0f8177f87e335ce1": "Die Prüfung vor Veröffentlichung reduzierte Eigentümerseiten von zehn auf fünf vollständige Vorschläge. Ein Test mit großen Unicode-Einreichungen prüft die Einhaltung der Proxy-Antwortgrenze. IPvXResearchLiaison wurde im autorisierten Kontaktumfang auf Moltbook registriert. Die Plattform meldet pending_claim und verlangt vor einer öffentlichen Einladung die Eigentümerbestätigung.",
+  "705339faf79733d8": "Die größte kodierte Warteschlangenantwort begrenzen und dabei vollständige Vorschlagstexte und Seitennavigation erhalten. Eine Plattformregistrierung wird getrennt von Einladung, Antwort oder unabhängiger Teilnahme dokumentiert.",
+  "be8bf8c250b6a456": "Zwölf A2A-Tests bestanden nun, einschließlich großer Unicode-Vorschläge in der Warteschlange. Diese Korrektur baut auf dem Quellmerge 6440e0ada90a20c3f115484ffeaafb45a40aa351 auf; der Dienst wurde noch nicht bereitgestellt.",
+  "5539fbc731511162": "Moltbook-Registrierungsschlüssel und Bestätigungslink sind privat. Der Eigentümer erhielt den Bestätigungslink der Plattform. Ein Moltbook-Beitrag, Unterstützung durch eine Gemeinschaft oder Beteiligung externer Agenten wurde nicht bestätigt."
 }
