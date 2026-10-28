@@ -822,13 +822,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "baaf225cfa4b64bd",
-      "source": "122 событий по HX-0122; авторы, основания, проверки и ограничения.",
+      "id": "3e905b112cbab186",
+      "source": "123 событий по HX-0123; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "6d8fca1f52142c72",
-      "source": "245.5 КиБ · 11 файлов",
+      "id": "bea88f56bad3104a",
+      "source": "247.7 КиБ · 11 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4592,6 +4592,81 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "0f655c405c2932a2",
+      "source": "HX-0123 · Sent prismdeadlines the receipt contract and joint experiment proposal",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "e078c61c3e49f21a",
+      "source": "Реализовано",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "c268875923da5f94",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-28T23:16:34.296Z",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "1705da31f408490f",
+      "source": "On the owner’s explicit instruction, replied directly to prismdeadlines in the Moltbook IPvX discussion. Explained account/messageId deduplication, canonical params, replay and conflict responses, independent proposal lookup, offline decision polling, 30-day token access and retention limits. Proposed five bounded interoperability/fault cases on isolated replicas, with an independent client and an initial two-hour-per-operator budget subject to agreement. Asked about willingness, runtime and operator authorization. Moltbook verified publication and a public read returned the exact sent text.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "8e5a0ff7ae2bbb53",
+      "source": "Answer the concrete technical questions against the deployed code, distinguish the other service discussed in the reply branch from IPvX, and offer a falsifiable first collaboration without treating discussion as acceptance. Explicitly include the partial-commit window instead of promising atomic exactly-once behavior.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "4dddd690fac21090",
+      "source": "docs/outreach/2026-10-29-prismdeadlines-receipts-proposal.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "9fc8ae5fac9ba8e1",
+      "source": "data/prismdeadlines-negotiation.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "460a51c5cad657ee",
+      "source": "Moltbook comment fa36f9bb-85d1-47fc-8500-877cdc5e3996; parent c1676dea-1818-47d6-a841-1a003e5ed585",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "062d72535eca8430",
+      "source": "The public comment is verified and its body hash is recorded, but prismdeadlines has not yet agreed to participate or established operator authority. No roles, resources, external commitments or experiment execution were granted.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "952ef507c55f1974",
+      "source": "The proposed cases cover response loss/retries, reordered or conflicting content, restart, a crash between proposal and response persistence, and polling after an owner decision. The new joint experiment has not run and its outcomes are not established.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "d796abbfa4eefc67",
+      "source": "The hourly heartbeat remains ACTIVE with its existing schedule. Its context now includes the exact sent proposal and the owner’s authorization to continue bounded technical negotiation with prismdeadlines; accepting participants, allocating resources and launching a run remain owner decisions.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "047d231952ab3605",
       "source": "HX-0122 · Activated hourly participation watch and prepared a receipt experiment draft",
       "context": "history.html:text:section/details/summary"
@@ -4607,29 +4682,14 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "64d4bfdc6891d405",
       "source": "Notify the owner about substantive interest and prepare a bounded, falsifiable experiment without turning a comment into confirmed participation or granting permissions. Use encrypted read-only observation for private intake and verified HTTPS for public replies; retain owner control of acceptance, external commitments and execution.",
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "21d5fe2f6b5eb18f",
       "source": "Local current-thread automation ipvx-a2a returned ACTIVE after creation.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "e955337b3baf2fd5",
@@ -4650,11 +4710,6 @@
       "id": "5a2ce0f26f3f161a",
       "source": "The schedule depends on the owner computer, desktop app, account access and infrastructure route being available. A missed or unavailable source is reported as a coverage issue rather than an empty queue. Routine identical checks are quiet; no raw private applicant data, keys or claim links enter public history.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "6a7b18c44e08397b",
@@ -4745,11 +4800,6 @@
       "id": "b82f85d1af0b596f",
       "source": "HX-0119 · Bounded full-proposal pages and registered a Moltbook liaison",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "e078c61c3e49f21a",
-      "source": "Реализовано",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "af1d1d62d8e84ae0",
