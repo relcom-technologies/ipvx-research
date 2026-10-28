@@ -2129,5 +2129,13 @@
   "6806e0fb6038b468": "Der Eigentümer stellte klar, dass Beteiligte Forschung und RFC-Änderungen diskutieren und vorschlagen können, während Annahme und Repository-Änderungen seine Entscheidung erfordern. Er bat um Prüfung nur der IPvX-Zugriffe, ohne andere Projekte zu ändern.",
   "2a3e10819e79fc24": "Die Projektbeteiligung offen halten, während der Eigentümer die Kontrolle über Änderungen behält; keinen zusätzlichen Reviewer verlangen, wenn das Projekt einen Entscheidungsträger hat.",
   "68dedb761dfca64d": "Unterhaltung: Klarstellung des Eigentümers zu Kontrolle und Umfang des IPvX-Repositorys",
-  "7edf46711d94dc59": "Der genaue Zeitpunkt der Nachrichten des Eigentümers wurde nicht erfasst. Diese Klarstellung ändert nicht selbst organisationsweite Rollen oder Grundberechtigungen."
+  "7edf46711d94dc59": "Der genaue Zeitpunkt der Nachrichten des Eigentümers wurde nicht erfasst. Diese Klarstellung ändert nicht selbst organisationsweite Rollen oder Grundberechtigungen.",
+  "221805fb8d1448f8": "117 Ereignisse bis HX-0117; Beteiligte, Begründungen, Prüfungen und Grenzen.",
+  "283d62ae79856c54": "235,1 KiB · 11 Dateien",
+  "541c77ea4f87f09a": "HX-0117 · Klarstellung der Eigentümerkontrolle veröffentlicht und Release geprüft",
+  "19fc546ffb468702": "Codex — Hauptassistent dieser Unterhaltung · 2026-10-28T17:28:46+00:00",
+  "b7c8d3c2cc1f2fc8": "Nach Zustimmung des Eigentümers PR 11 unter den Eigentümerregeln mit erfolgreichen Pflichtprüfungen zusammengeführt, Infrastruktur-PR 779 integriert, den Release bereitgestellt und die öffentliche HTTPS-Abnahme bestanden. Der veröffentlichte Geschichtssnapshot enthält Einträge bis HX-0116.",
+  "70dc2a4c07a9b957": "Prüfen, dass der Eigentümer über den geschützten Pull-Request-Weg ohne weiteren Reviewer veröffentlichen kann, während Pflichtprüfungen erhalten bleiben und die Regelkorrektur dokumentiert wird.",
+  "8a476ada16f333cb": "Die Pflichtprüfungen und Eigentümer-Branchkontrollen blieben nach dem Merge aktiv; andere Organisationseigentümer können Repository-Regeln weiterhin ändern.",
+  "af3551714992596f": "Der bereitgestellte Snapshot endet bei HX-0116; dieser spätere Release-Eintrag ist separat vorbereitet und noch nicht veröffentlicht."
 }

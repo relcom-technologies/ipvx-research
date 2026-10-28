@@ -822,13 +822,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "ccf6dde99635ee72",
-      "source": "116 событий по HX-0116; авторы, основания, проверки и ограничения.",
+      "id": "221805fb8d1448f8",
+      "source": "117 событий по HX-0117; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "9d0fd4eec5d9d2e6",
-      "source": "234.1 КиБ · 11 файлов",
+      "id": "283d62ae79856c54",
+      "source": "235.1 КиБ · 11 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4592,8 +4592,8 @@
       "context": "history.html:text:main/section/p"
     },
     {
-      "id": "c1ad1d008ed44030",
-      "source": "HX-0116 · Published updated architecture and agent participation",
+      "id": "541c77ea4f87f09a",
+      "source": "HX-0117 · Published owner-control clarification and verified release",
       "context": "history.html:text:section/details/summary"
     },
     {
@@ -4602,13 +4602,13 @@
       "context": "history.html:text:details/summary/span"
     },
     {
-      "id": "b1886c86eb109c48",
-      "source": "Codex — основной ассистент этой беседы · 2026-10-28T17:19:31+00:00",
+      "id": "19fc546ffb468702",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-28T17:28:46+00:00",
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "fa39eae5288760dd",
-      "source": "Merged public PR 10 at source revision 17e109dae1ee2fa0d2bb899f14133c2d0b486738 and infrastructure PR 777, deployed the release and passed HTTPS public acceptance. The release contains corrected layouts, the evidence-linked network diagram, agent directory and history through HX-0112.",
+      "id": "b7c8d3c2cc1f2fc8",
+      "source": "After the owner’s approval, merged PR 11 through the owner-controlled repository rules with required checks passing, merged infrastructure PR 779, deployed the resulting release and passed public HTTPS acceptance. The published history snapshot contains records through HX-0116.",
       "context": "history.html:text:section/details/p"
     },
     {
@@ -4617,8 +4617,8 @@
       "context": "history.html:text:section/details/h3"
     },
     {
-      "id": "e2bc5660a7e2a385",
-      "source": "Publish the owner-requested release only after automated checks and verify the actual public pages, archive and machine-readable directory.",
+      "id": "70dc2a4c07a9b957",
+      "source": "Verify that the owner can publish through the protected pull request path without another reviewer, while preserving required checks and recording the rule correction.",
       "context": "history.html:text:section/details/p"
     },
     {
@@ -4632,6 +4632,41 @@
       "context": "history.html:text:section/details/h3"
     },
     {
+      "id": "8a476ada16f333cb",
+      "source": "The required checks and owner branch controls remained active after the merge; other organization owners can still modify repository rules.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "af3551714992596f",
+      "source": "The deployed snapshot ends at HX-0116; this later release record is prepared separately and has not yet been published.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "c1ad1d008ed44030",
+      "source": "HX-0116 · Published updated architecture and agent participation",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "b1886c86eb109c48",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-28T17:19:31+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "fa39eae5288760dd",
+      "source": "Merged public PR 10 at source revision 17e109dae1ee2fa0d2bb899f14133c2d0b486738 and infrastructure PR 777, deployed the release and passed HTTPS public acceptance. The release contains corrected layouts, the evidence-linked network diagram, agent directory and history through HX-0112.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "e2bc5660a7e2a385",
+      "source": "Publish the owner-requested release only after automated checks and verify the actual public pages, archive and machine-readable directory.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "d83b7f3a4899313a",
       "source": "The public acceptance checks establish availability and expected release bytes, not a new network experiment or independent agent adoption.",
       "context": "history.html:text:details/ul/li"
@@ -4640,11 +4675,6 @@
       "id": "e6b2f99716024dce",
       "source": "The release archive ends at HX-0112; later history records are subsequent updates.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "3cdcb024ba888fdb",

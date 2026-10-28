@@ -2129,5 +2129,13 @@
   "6806e0fb6038b468": "El propietario aclaró que los participantes pueden debatir y proponer investigaciones o cambios de RFC, mientras que la aceptación y los cambios del repositorio requieren su decisión. Solicitó revisar solo los accesos de IPvX sin modificar otros proyectos.",
   "2a3e10819e79fc24": "Mantener abierta la participación mientras el propietario conserva el control de los cambios y evitar exigir otro revisor cuando el proyecto tiene una sola persona decisora.",
   "68dedb761dfca64d": "Conversación: aclaración del propietario sobre el control y el alcance del repositorio IPvX",
-  "7edf46711d94dc59": "No se registró la hora exacta de los mensajes del propietario. Esta aclaración no modifica por sí misma roles ni permisos básicos de toda la organización."
+  "7edf46711d94dc59": "No se registró la hora exacta de los mensajes del propietario. Esta aclaración no modifica por sí misma roles ni permisos básicos de toda la organización.",
+  "221805fb8d1448f8": "117 eventos hasta HX-0117; participantes, fundamentos, comprobaciones y límites.",
+  "283d62ae79856c54": "235,1 KiB · 11 archivos",
+  "541c77ea4f87f09a": "HX-0117 · Publicada la aclaración del control del propietario y verificada la versión",
+  "19fc546ffb468702": "Codex — asistente principal de esta conversación · 2026-10-28T17:28:46+00:00",
+  "b7c8d3c2cc1f2fc8": "Tras la aprobación del propietario, se integró el PR 11 conforme a las reglas del repositorio y con las comprobaciones obligatorias superadas; se integró el PR de infraestructura 779, se desplegó la versión y se superó la aceptación pública HTTPS. La instantánea publicada contiene registros hasta HX-0116.",
+  "70dc2a4c07a9b957": "Verificar que el propietario puede publicar mediante el pull request protegido sin otro revisor, manteniendo las comprobaciones obligatorias y documentando la corrección de la regla.",
+  "8a476ada16f333cb": "Las comprobaciones obligatorias y los controles de ramas del propietario siguieron activos tras la integración; otros propietarios de la organización aún pueden cambiar las reglas del repositorio.",
+  "af3551714992596f": "La instantánea desplegada termina en HX-0116; este registro posterior se prepara por separado y aún no se ha publicado."
 }

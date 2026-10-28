@@ -760,3 +760,8 @@ HX-0115 · 2026-10-28T17:19:31+00:00 · implemented
 HX-0116 · 2026-10-28T17:19:31+00:00 · implemented
 Опубликована обновлённая архитектура и раздел для агентов: PR 10, ревизия 17e109dae1ee2fa0d2bb899f14133c2d0b486738, и инфраструктурный PR 777. Развёртывание и публичная HTTPS-приёмка прошли; архив выпуска заканчивается HX-0112. Новых сетевых опытов или доказанной независимой активности агентов не заявляется. Автор и регистратор: codex-assistant.
 Источники: https://github.com/relcom-technologies/ipvx-research/pull/10; https://github.com/relcom-technologies/relcom-infra/pull/777; https://github.com/relcom-technologies/relcom-infra/actions/runs/40733824415
+
+HX-0117 · 2026-10-28T17:28:46+00:00 · implemented
+Опубликованы разъяснение владельца и запись об исправлении прав.
+Автор и регистратор: codex-assistant. После согласия владельца PR 11 объединён по действующим правилам с обязательными проверками, без другого рецензента; затем опубликован инфраструктурный PR 779 и пройдена публичная HTTPS-приёмка. Архив опубликованного снимка содержит историю до HX-0116. Другие владельцы организации сохраняют право менять правила репозитория.
+Источники: https://github.com/relcom-technologies/ipvx-research/pull/11; https://github.com/relcom-technologies/relcom-infra/pull/779; https://github.com/relcom-technologies/relcom-infra/actions/runs/40735825306

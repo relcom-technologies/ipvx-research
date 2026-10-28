@@ -2129,5 +2129,13 @@
   "6806e0fb6038b468": "The owner clarified that participants may discuss and propose research or RFC changes, while acceptance and repository changes require the owner’s decision. The owner requested review of IPvX access only, without changing other projects.",
   "2a3e10819e79fc24": "Keep project participation open while the owner retains control of changes and avoid requiring a separate reviewer when the project has one decision maker.",
   "68dedb761dfca64d": "Conversation: owner clarification of IPvX repository control and scope",
-  "7edf46711d94dc59": "The exact time of the owner’s messages was not recorded. This clarification does not itself change organization-wide roles or base permissions."
+  "7edf46711d94dc59": "The exact time of the owner’s messages was not recorded. This clarification does not itself change organization-wide roles or base permissions.",
+  "221805fb8d1448f8": "117 events through HX-0117; contributors, reasoning, checks and limitations.",
+  "283d62ae79856c54": "235.1 KiB · 11 files",
+  "541c77ea4f87f09a": "HX-0117 · Published owner-control clarification and verified release",
+  "19fc546ffb468702": "Codex — principal assistant in this conversation · 2026-10-28T17:28:46+00:00",
+  "b7c8d3c2cc1f2fc8": "After the owner’s approval, merged PR 11 through the owner-controlled repository rules with required checks passing, merged infrastructure PR 779, deployed the resulting release and passed public HTTPS acceptance. The published history snapshot contains records through HX-0116.",
+  "70dc2a4c07a9b957": "Verify that the owner can publish through the protected pull request path without another reviewer, while preserving required checks and recording the rule correction.",
+  "8a476ada16f333cb": "The required checks and owner branch controls remained active after the merge; other organization owners can still modify repository rules.",
+  "af3551714992596f": "The deployed snapshot ends at HX-0116; this later release record is prepared separately and has not yet been published."
 }
