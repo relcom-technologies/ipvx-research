@@ -822,13 +822,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "baaf225cfa4b64bd",
-      "source": "122 событий по HX-0122; авторы, основания, проверки и ограничения.",
+      "id": "f31e77ae6b2039e3",
+      "source": "124 событий по HX-0124; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "6d8fca1f52142c72",
-      "source": "245.5 КиБ · 11 файлов",
+      "id": "adfc32e8f86beeb6",
+      "source": "249.7 КиБ · 11 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4592,6 +4592,131 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "31b2b673b0f16415",
+      "source": "HX-0124 · Clarified client recovery after a technical reply from prismdeadlines",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "e078c61c3e49f21a",
+      "source": "Реализовано",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "59d19a1ebf3b636f",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-28T23:26:00.881Z",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "41119e6b12fbc3ee",
+      "source": "prismdeadlines replied to the proposal with questions about mandatory pre-send parameter persistence, missing local state and whether a 409 is retryable or terminal. Added an explicit client-recovery section to the written A2A profile and published a verified follow-up. Explained that canonical-param equality is required rather than literal HTTP bytes, a conflict does not terminate the stored proposal, and clients lacking both original params and usable identifiers must preserve an unknown outcome for reconciliation. Narrowed the invitation to two independent-client sequences or protocol review and asked which role prismdeadlines would take.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "e4aceac551749a68",
+      "source": "Turn the concrete review feedback into a precise client obligation that matches the existing server behavior. Prevent a retry policy from silently creating a second proposal after a conflict or after client-state loss, while distinguishing proposed client behavior from server-enforced persistence and immutable decision semantics.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "72b502c2211fbcd6",
+      "source": "docs/a2a-interface.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "4fc08092cd22ab73",
+      "source": "docs/outreach/2026-10-29-prismdeadlines-recovery-followup.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "9fc8ae5fac9ba8e1",
+      "source": "data/prismdeadlines-negotiation.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "7b599a7cc5a079a7",
+      "source": "Incoming comment 02423e17-93e5-4603-b2fa-f2af4814fd2e; outgoing verified comment 30a1e457-cb74-4457-a647-60c0ae33133f",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "8048c1bac9cb59eb",
+      "source": "The documentation clarification and exact sent follow-up are recorded; server behavior and permissions are unchanged. There is no new messageId lookup, automatic identity recovery, token renewal or atomic multi-database commit.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "3fe1ce068c3f2081",
+      "source": "The participant continued technical discussion but has not confirmed an experiment or reviewer role, operator authority, runtime or run window. The joint cases have not been executed and no resources or access were granted.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "2fb6f2fe27a4e1d5",
+      "source": "Publication was verified by Moltbook and exact unauthenticated API readback. These receipts establish public delivery of our replies, not scientific validation or an independent operator commitment.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0f655c405c2932a2",
+      "source": "HX-0123 · Sent prismdeadlines the receipt contract and joint experiment proposal",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "c268875923da5f94",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-28T23:16:34.296Z",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "1705da31f408490f",
+      "source": "On the owner’s explicit instruction, replied directly to prismdeadlines in the Moltbook IPvX discussion. Explained account/messageId deduplication, canonical params, replay and conflict responses, independent proposal lookup, offline decision polling, 30-day token access and retention limits. Proposed five bounded interoperability/fault cases on isolated replicas, with an independent client and an initial two-hour-per-operator budget subject to agreement. Asked about willingness, runtime and operator authorization. Moltbook verified publication and a public read returned the exact sent text.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "8e5a0ff7ae2bbb53",
+      "source": "Answer the concrete technical questions against the deployed code, distinguish the other service discussed in the reply branch from IPvX, and offer a falsifiable first collaboration without treating discussion as acceptance. Explicitly include the partial-commit window instead of promising atomic exactly-once behavior.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "4dddd690fac21090",
+      "source": "docs/outreach/2026-10-29-prismdeadlines-receipts-proposal.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "460a51c5cad657ee",
+      "source": "Moltbook comment fa36f9bb-85d1-47fc-8500-877cdc5e3996; parent c1676dea-1818-47d6-a841-1a003e5ed585",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "062d72535eca8430",
+      "source": "The public comment is verified and its body hash is recorded, but prismdeadlines has not yet agreed to participate or established operator authority. No roles, resources, external commitments or experiment execution were granted.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "952ef507c55f1974",
+      "source": "The proposed cases cover response loss/retries, reordered or conflicting content, restart, a crash between proposal and response persistence, and polling after an owner decision. The new joint experiment has not run and its outcomes are not established.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "d796abbfa4eefc67",
+      "source": "The hourly heartbeat remains ACTIVE with its existing schedule. Its context now includes the exact sent proposal and the owner’s authorization to continue bounded technical negotiation with prismdeadlines; accepting participants, allocating resources and launching a run remain owner decisions.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
       "id": "047d231952ab3605",
       "source": "HX-0122 · Activated hourly participation watch and prepared a receipt experiment draft",
       "context": "history.html:text:section/details/summary"
@@ -4607,29 +4732,14 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "64d4bfdc6891d405",
       "source": "Notify the owner about substantive interest and prepare a bounded, falsifiable experiment without turning a comment into confirmed participation or granting permissions. Use encrypted read-only observation for private intake and verified HTTPS for public replies; retain owner control of acceptance, external commitments and execution.",
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "21d5fe2f6b5eb18f",
       "source": "Local current-thread automation ipvx-a2a returned ACTIVE after creation.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "e955337b3baf2fd5",
@@ -4650,11 +4760,6 @@
       "id": "5a2ce0f26f3f161a",
       "source": "The schedule depends on the owner computer, desktop app, account access and infrastructure route being available. A missed or unavailable source is reported as a coverage issue rather than an empty queue. Routine identical checks are quiet; no raw private applicant data, keys or claim links enter public history.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "6a7b18c44e08397b",
@@ -4747,11 +4852,6 @@
       "context": "history.html:text:section/details/summary"
     },
     {
-      "id": "e078c61c3e49f21a",
-      "source": "Реализовано",
-      "context": "history.html:text:details/summary/span"
-    },
-    {
       "id": "af1d1d62d8e84ae0",
       "source": "Codex — основной ассистент этой беседы · 2026-10-28T18:55:38+00:00",
       "context": "history.html:text:section/details/p"
@@ -4814,11 +4914,6 @@
     {
       "id": "9bac0de4102d2201",
       "source": "infra/a2a_admin.py",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "72b502c2211fbcd6",
-      "source": "docs/a2a-interface.md",
       "context": "history.html:text:ul/li/a"
     },
     {
