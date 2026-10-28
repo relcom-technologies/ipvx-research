@@ -802,19 +802,24 @@
       "context": "architecture.html:text:section/p/a"
     },
     {
-      "id": "3b6c629d68ffc055",
-      "source": "Следующий шаг: узел без TCP/IP",
+      "id": "c82c21600e9b4d03",
+      "source": "Узел без TCP/IP: проверенный опыт",
       "context": "architecture.html:text:main/section/h2"
     },
     {
-      "id": "090319a2d6f70aa8",
-      "source": "В нынешнем стенде нативная доставка отделена от управления по IP. Для следующего опыта предлагаем образ, в котором само ядро не поддерживает TCP/IP: локальная модель общается с IPvX-службой через Unix-сокет, а служба передаёт собственные кадры через обычную сетевую карту.",
+      "id": "bd6043181e469d17",
+      "source": "В завершённом опыте локальные модели работали в целых гостевых ОС без INET и IPv6 на разных физических хостах. Нативные кадры шли через Ethernet, а управление внешними машинами сохраняло IP.",
       "context": "architecture.html:text:main/section/p"
     },
     {
-      "id": "ea2cd092904b1932",
-      "source": "Строгая ОС, работа модели и физические устройства проверяются отдельными этапами.",
+      "id": "7cfe154cf49dc848",
+      "source": "Физический сервер без IP на bare metal и глобальная сеть остаются отдельными непроверенными задачами.",
       "context": "architecture.html:text:main/section/p"
+    },
+    {
+      "id": "6e3ca4b9efacf41a",
+      "source": "Раскрыть задачу и процессы →",
+      "context": "architecture.html:text:section/p/a"
     },
     {
       "id": "f9618fab92c1d965",
@@ -942,13 +947,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "58d527133b14d43d",
-      "source": "104 событий по HX-0104; авторы, основания, проверки и ограничения.",
+      "id": "d129f8acd8522423",
+      "source": "106 событий по HX-0106; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "0088127d8659d6d1",
-      "source": "218.5 КиБ · 11 файлов",
+      "id": "e1023787c50f9462",
+      "source": "222.3 КиБ · 11 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -982,28 +987,38 @@
       "context": "experiments.html:text:main/div/p"
     },
     {
-      "id": "ad3bda03062c6945",
-      "source": "Следующий опыт: машины проверены",
+      "id": "cd95901d0d216a75",
+      "source": "Завершённый опыт: модели в гостевых ОС без TCP/IP",
       "context": "experiments.html:text:main/section/h2"
     },
     {
-      "id": "df1c3f4b156afeb7",
-      "source": "Проверка готовности подтвердила размещение A, B и R на трёх разных хостах и одинаковые локальные веса модели на A и B. Устройства KVM видны, но запуск строгой ОС с LLM и новое сравнение с IP ещё не выполнены.",
+      "id": "fd6608972fa22fb9",
+      "source": "A, B и R работали внутри трёх гостевых ОС на разных физических хостах. Две локальные модели выполнили четыре совместные задачи через IPvX и через IP-контроль. Внешнее управление сохраняло IP.",
       "context": "experiments.html:text:main/section/p"
     },
     {
-      "id": "e99509448696a15c",
-      "source": "Результат проверки готовности",
+      "id": "8634bacc44eb89be",
+      "source": "Исследовать задачи и узлы",
       "context": "experiments.html:text:section/p/a"
     },
     {
-      "id": "60e7af84efaffd5f",
-      "source": "Обмен по кадрам",
+      "id": "82222caf97d59f4b",
+      "source": "Манифест записи",
+      "context": "experiments.html:text:section/p/a"
+    },
+    {
+      "id": "42e2edef630840be",
+      "source": "Предшествующая проверка готовности",
+      "context": "experiments.html:text:section/p/a"
+    },
+    {
+      "id": "c4bdf20d41d2362c",
+      "source": "Ранее: обмен по кадрам на одном CI-хосте",
       "context": "experiments.html:text:main/section/h2"
     },
     {
-      "id": "3fa336764fc4d8bf",
-      "source": "Три целые ОС без INET/IPv6: все 90 кадров успешного опыта и все 10 кадров опыта с остановленным посредником. Задачи SHA-256, один CI-хост; работа LLM в строгой ОС ещё не подтверждена.",
+      "id": "7cda2c69ff59a9c5",
+      "source": "В отдельном предыдущем опыте три гостевые ОС без INET/IPv6 выполняли задачи SHA-256 на одном CI-хосте. Сохранены 90 кадров успешного опыта и 10 кадров опыта с остановленным посредником. Этот опыт не использовал LLM.",
       "context": "experiments.html:text:main/section/p"
     },
     {
@@ -1792,8 +1807,13 @@
       "context": "packet-replay.html:text:html/head/title"
     },
     {
-      "id": "e33d493a92521293",
-      "source": "Воспроизведение полного захвата: A отправляет задачу через R, B вычисляет SHA-256 и возвращает результат.",
+      "id": "60e7af84efaffd5f",
+      "source": "Обмен по кадрам",
+      "context": "packet-replay.html:text:main/div/h1"
+    },
+    {
+      "id": "38cc3c5bb2b1a0a3",
+      "source": "Исследуйте сохранённые задачи агентов и отдельный покадровый опыт SHA-256; условия и ограничения каждого запуска указаны рядом.",
       "context": "packet-replay.html:text:main/div/p"
     },
     {
@@ -4657,6 +4677,151 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "ea040672d5cf77fb",
+      "source": "HX-0106 · Task-centred observatory and honest recording manifest",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "e078c61c3e49f21a",
+      "source": "Реализовано",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "8d046476a158efb1",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-28T10:13:29.498771+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "314486f8e7cfa745",
+      "source": "Corrected stale current-status descriptions. Added four expandable native model tasks with original claim and evidence, three measured model calls, two separately identified messages, receipt boundaries and decision/reference comparison. Added expandable A, R1 and B node passports, explicit missing route/queue/hop data, same-hop IP comparison, earlier failed attempt and a machine-readable completeness manifest. Original claims and model JSON remain unchanged.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "537678ef7cfed14e",
+      "source": "Link recorded stages by case and phase without inventing an unrecorded causal ID or cross-host timing. A receipt confirms admission, not model completion or truth. Mark unavailable evidence and preserve the earlier failed run.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "72077a7b54ae151a",
+      "source": "scripts/observatory.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "316afe42103cf5a8",
+      "source": "scripts/export_observatory_inputs.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "56e96861af3f79a2",
+      "source": "data/strict-agent-inputs.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "c4085658d6484e06",
+      "source": "data/strict-agent-manifest.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "a809c27d9ce93ce7",
+      "source": "data/strict-agents-round.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "53be3636639d6e47",
+      "source": "docs/observatory-verification-2026-10-28.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "c73055d8a1f9c0fe",
+      "source": "scripts/test_observatory.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "e68d5bde5503f8c9",
+      "source": "scripts/browser_observatory_check.mjs",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "acddb4b3b04c184a",
+      "source": "The task-stage associations use case and phase; a unique end-to-end causal ID was not recorded. Per-hop timings, queue waits, route-choice rationale and event-collector loss are not publicly recorded.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "fca99cab4d45a30e",
+      "source": "The IP comparison is the same application-hop baseline in a small sample. The earlier partial attempt has different sample size and revision; no causal speed claim follows.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "5f215f19c3b59ec3",
+      "source": "Original PCAPs remain private; the public projection cannot independently reverify their bytes. Management hosts retain IP. No new model experiment or independent adoption is claimed.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "38bc1852574b9b8c",
+      "source": "HX-0105 · Owner accepts the research-interface proposal",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "199d6db958cdb817",
+      "source": "Решение",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "d241a2daaadaae66",
+      "source": "Инициатор IPvX / пользователь этой беседы · Дата события неизвестна",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "a9e83c1362a0606b",
+      "source": "The owner approved correcting stale statuses, opening a complete existing agent task, adding a recording-completeness manifest and implementing the proposed research interface. The owner also requested publication of the prepared language editions, leaving release sequencing to the implementer.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "be0cf10247deb059",
+      "source": "A researcher should be able to inspect nodes, processes, information flows, evidence and changes between experiments on desktop and mobile.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0690f2835b83af56",
+      "source": "Conversation: owner acceptance of the visualization review and request to publish languages",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "997b66bd4955442e",
+      "source": "docs/visualization-review-2026-10-28.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "59dcec65b73e3392",
+      "source": "The request does not explicitly waive the protected-branch review requirement. No new model results or future telemetry are implied by approval.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "dd51bf8d6f4cd7d2",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Восстановлено по доступным источникам.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "19c45cb53238182e",
       "source": "HX-0104 · Read-only review proposes a task-centered research visualization",
       "context": "history.html:text:section/details/summary"
@@ -4677,39 +4842,14 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "10553586d440e5b2",
       "source": "A researcher needs causal links and traceable sources, not an animation that appears more complete than the recorded data. Preserve clock uncertainty, failed results, privacy boundaries and the distinction between queue admission, model completion and answer correctness.",
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
-      "id": "997b66bd4955442e",
-      "source": "docs/visualization-review-2026-10-28.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
       "id": "497a15396cbfb45c",
       "source": "assets/agent-replay.js",
       "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "a809c27d9ce93ce7",
-      "source": "data/strict-agents-round.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "9f2888d38f8f7b18",
@@ -4732,19 +4872,9 @@
       "context": "history.html:text:details/ul/li"
     },
     {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
-    },
-    {
       "id": "11ea829b269aef82",
       "source": "HX-0103 · Four-language portal implemented with adjacent source records",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "e078c61c3e49f21a",
-      "source": "Реализовано",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "c8946c4b8b56f30d",
@@ -4992,16 +5122,6 @@
       "context": "history.html:text:section/details/summary"
     },
     {
-      "id": "199d6db958cdb817",
-      "source": "Решение",
-      "context": "history.html:text:details/summary/span"
-    },
-    {
-      "id": "d241a2daaadaae66",
-      "source": "Инициатор IPvX / пользователь этой беседы · Дата события неизвестна",
-      "context": "history.html:text:section/details/p"
-    },
-    {
       "id": "3ee52adec1fc524c",
       "source": "The owner requested three additional portal languages, explicitly selected translation of every RFC and all attributed history with originals alongside, and authorized three parallel translation agents, one per language.",
       "context": "history.html:text:section/details/p"
@@ -5020,11 +5140,6 @@
       "id": "25c89f7c6f78984c",
       "source": "Exact request timestamps are not reconstructed. This language request does not authorize a permanent review bypass, change votes or grant infrastructure access.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "dd51bf8d6f4cd7d2",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Восстановлено по доступным источникам.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "907a4799a4433190",

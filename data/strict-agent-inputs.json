@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "source_revision": "643ddc695f9d24384b945fca61faf9e130f49cfc",
+  "source_run": "https://github.com/relcom-technologies/relcom-infra/actions/runs/40563118803",
+  "cases": [
+    {
+      "case": "delivery",
+      "claim": "All 384 document jobs in the accepted native experiment returned correct results.",
+      "expected": "yes",
+      "evidence_a": [
+        "A1: Accepted native run completed 384/384 document tasks correctly."
+      ],
+      "evidence_b": [
+        "B1: Correctness was checked against deterministic expected document answers. This claim concerns that accepted run only."
+      ],
+      "run": "round1-native"
+    },
+    {
+      "case": "internet",
+      "claim": "The accepted experiment proves IPvX is ready for the global public Internet.",
+      "expected": "no",
+      "evidence_a": [
+        "A2: The real experiment used 16 processes and completed all 384 tasks."
+      ],
+      "evidence_b": [
+        "B2: All 16 processes ran on a single VM in isolated namespaces. Admission was fixed. No WAN, independent operators, hostile peers or large routing table was tested."
+      ],
+      "run": "round1-native"
+    },
+    {
+      "case": "once",
+      "claim": "Duplicate delivery caused extra application executions in the accepted run.",
+      "expected": "no",
+      "evidence_a": [
+        "A3: The accepted run deliberately replayed 23 identical requests and logged 80 retries."
+      ],
+      "evidence_b": [
+        "B3: Durable receipt checks counted exactly 384 unique executions for the 384 original tasks. Replayed requests returned the saved receipt."
+      ],
+      "run": "round2-native"
+    },
+    {
+      "case": "speed",
+      "claim": "Existing measurements show native IPvX is faster than ordinary IP for language-model agents.",
+      "expected": "insufficient",
+      "evidence_a": [
+        "A4: Accepted document-task latency p50 was 459 ms, p95 was 1321 ms."
+      ],
+      "evidence_b": [
+        "B4: That experiment contained no language models and no ordinary-IP baseline. It cannot establish a comparative speed result."
+      ],
+      "run": "round2-native"
+    }
+  ],
+  "scope": "Only task claims and supplied evidence; private logs and network identifiers excluded."
+}

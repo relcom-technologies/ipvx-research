@@ -25,9 +25,16 @@ class Sources(HTMLParser):
     def __init__(self, add):
         super().__init__(convert_charrefs=True)
         self.stack = []
+        self.ignored = 0
         self.add = add
 
     def handle_starttag(self, tag, attrs):
+        if self.ignored:
+            if tag not in VOID: self.ignored += 1
+            return
+        if 'data-i18n-fixed' in dict(attrs):
+            self.ignored = 1
+            return
         for name, value in attrs:
             if name in ATTRS and value and (name != 'content' or dict(attrs).get('name') == 'description'):
                 self.add(value, 'attribute:' + name)
@@ -40,11 +47,14 @@ class Sources(HTMLParser):
             self.handle_endtag(tag)
 
     def handle_endtag(self, tag):
+        if self.ignored:
+            self.ignored -= 1
+            return
         if tag in self.stack:
             self.stack = self.stack[:len(self.stack)-1-self.stack[::-1].index(tag)]
 
     def handle_data(self, value):
-        if not set(self.stack) & SKIP:
+        if not self.ignored and not set(self.stack) & SKIP:
             self.add(value, 'text:' + '/'.join(self.stack[-3:]))
 
 
