@@ -16,6 +16,7 @@ jobs:
           python3 scripts/build_downloads.py
           python3 scripts/export_packet_replay.py
           python3 scripts/build_portal.py
-          git diff --exit-code -- '*.html' data/downloads data/packet-replay.json
+          git diff --exit-code -- '*.html' assets/en assets/de assets/es data/downloads data/packet-replay.json 'data/llm-summary.*.json'
       - run: python3 scripts/check_site.py
       - run: python3 scripts/check_history.py
+      - run: python3 scripts/check_languages.py

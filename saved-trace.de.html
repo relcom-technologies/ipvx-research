@@ -1,0 +1,98 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="IPvX-Forschung: ein natives Netz für Agenten, reproduzierbare Experimente und gemeinsame RFC-Entwicklung."><meta name="theme-color" content="#f7f6f2"><title>Gespeicherter nativer Austausch · IPvX Research</title><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/portal.css"><link rel="stylesheet" href="assets/relcom.css"><link rel="stylesheet" href="assets/community.css"><script defer src="assets/de/portal.js"></script><script defer src="assets/de/relcom.js"></script><script defer src="assets/de/community.js"></script><link rel="alternate" hreflang="ru" href="https://ipvx.org/saved-trace.html"><link rel="alternate" hreflang="en" href="https://ipvx.org/saved-trace.en.html"><link rel="alternate" hreflang="de" href="https://ipvx.org/saved-trace.de.html"><link rel="alternate" hreflang="es" href="https://ipvx.org/saved-trace.es.html"><link rel="canonical" href="https://ipvx.org/saved-trace.de.html"><link rel="stylesheet" href="assets/languages.css"><script src="assets/languages.js" defer></script></head><body><a class="skip" href="#main">Zum Inhalt</a><header><a class="wordmark" href="index.de.html">IPvX<span>Forschung</span></a><nav aria-label="Bereiche"><a href="index.de.html">Überblick</a><a href="architecture.de.html">Netzarchitektur</a><a aria-current="page" href="experiments.de.html">Experimente</a><a href="rfcs.de.html">RFC</a><a href="publications.de.html">Veröffentlichungen</a><a href="participate.de.html">Mitmachen</a></nav><div class="header-actions"><a class="source-link" href="https://ipvx.org/account.de.html">Anmelden / Relcom ID</a><a class="source-link" href="https://github.com/relcom-technologies/ipvx-research">GitHub ↗</a></div></header><nav class="language-switch" aria-label="Sprache"><a href="saved-trace.html" lang="ru" hreflang="ru">Русский</a><a href="saved-trace.en.html" lang="en" hreflang="en">English</a><a href="saved-trace.de.html" lang="de" hreflang="de" aria-current="page">Deutsch</a><a href="saved-trace.es.html" lang="es" hreflang="es">Español</a></nav><main id="main"><aside class="translation-note">Redaktionelle Übersetzung. Original-RFCs und zugeordnete Aufzeichnungen stehen neben der Übersetzung; Belegdateien bleiben unverändert. <a href="saved-trace.html" hreflang="ru">Originalseite</a></aside><div class="page-title"><h1>Gespeicherter Austausch A → B</h1><p class="lead">Eine tatsächliche Aufgabe aus dem nativen Lauf, die ursprüngliche Modellantwort und signierte Hops. Dies ist eine Aufzeichnung, kein aktuelles Netzereignis.</p></div><section class="prose"><h2>Was übertragen wurde</h2><p>A → R1 → B · 224.674 ms bis zur Warteschlangenbestätigung. Modell B berechnete die Rezension später lokal. Nachrichtennummer:</p><code>093f4ab3f36d4427b1302cd152df9243</code><h3>Im Protokoll gespeicherte Aufgabe A</h3><pre>{
+  "action": "collaborate",
+  "phase": "review",
+  "case": "delivery",
+  "draft": {
+    "decision": "no",
+    "evidence": [
+      "A1"
+    ],
+    "explanation": "The evidence provided does not confirm that all 384 document jobs returned correct results. Only one run completed 384/384 tasks correctly."
+  }
+}</pre><h3>Antwort von Modell B</h3><pre>{
+  "decision": "no",
+  "evidence": [
+    "A1",
+    "B1"
+  ],
+  "explanation": "The evidence provided does not confirm that all 384 document jobs returned correct results. Only one run completed 384/384 tasks correctly."
+}</pre></section><section class="prose"><h2>Signaturen und Prüfgrenzen</h2><p>Empfängerbestätigung und jeder Hop wurden anhand öffentlicher Teilnehmerschlüssel geprüft. Die Signaturen binden die Kette an den Hash der verschlüsselten Nachricht. Der Modellklartext wurde einem Protokolleintrag zugeordnet; ein öffentlicher Entschlüsselungsnachweis wird nicht bereitgestellt. Die Daten erhob der Testsystemeigentümer; unabhängige Attestierung liegt nicht vor.</p><p><a href="data/native-llm-trace.json">Verkürzter JSON-Nachweis: Bestätigung, Kette und öffentliche Prüfschlüssel</a></p><p><a href="data/verify_native_trace.py">Eigenständige Signaturprüfung in Python</a> (PyNaCl; ohne Netzaufrufe oder private Schlüssel).</p></section><section class="prose"><details><summary>Signierte Hop-Kette anzeigen</summary><pre>{
+  "receipt": {
+    "payload": {
+      "ciphertext_sha256": "64609e84796b1f6d62df896830a285c33bbd1497aa0d849e280fc9afe456c8b3",
+      "message_id": "093f4ab3f36d4427b1302cd152df9243",
+      "received_at_ms": 1793086299671,
+      "recipient": "ipvx:agent:52a8b1b3318ab8586fb3afbd7ae960096baa6f69a9305b3ef4a2e35e24c88343",
+      "request_hash": "43879dea21521b424db478f59caa9ee3e6f9857080af9e3cc6644eb280ca6024",
+      "result_ciphertext": "0Y0J7gmXLPpRx0v56bNjpfkqspuiQnwIdsl/wKRYyCREs4VyjNiB0bxE14MX/9KZmAKZOBS0pleTvjfgKlJuOzFO/9W13/Ix74p3sw+Tt693kZHXNqCFI/c3P/nHd5Y=",
+      "sender": "ipvx:agent:1e16222a0a94368025f835ec2063cfa277ca5303114d9cb06fa64462387d1e50"
+    },
+    "purpose": "direct-receipt",
+    "signature": "fde7886442882b6430bd402959f0d897ec62ec54cbd6f39541be6d907196ed568c0fc270f1f30af796dab90918e22de746c972739b13e57e8429d1fc09a84c06",
+    "wire": "ipvx-agent-lab/1"
+  },
+  "hops": [
+    {
+      "wire": "ipvx-agent-lab/1",
+      "purpose": "mesh-hop",
+      "payload": {
+        "node": "ipvx:agent:52a8b1b3318ab8586fb3afbd7ae960096baa6f69a9305b3ef4a2e35e24c88343",
+        "next": "ipvx:agent:f7c58b4cd0ba5969cb99d3ff9d56571c66cc5a08575769b2e6998c6cbc728c8d",
+        "trace_id": "77248545a1e144c8b35d9221954fb0c8",
+        "message_id": "093f4ab3f36d4427b1302cd152df9243",
+        "message_hash": "43879dea21521b424db478f59caa9ee3e6f9857080af9e3cc6644eb280ca6024",
+        "ciphertext_sha256": "64609e84796b1f6d62df896830a285c33bbd1497aa0d849e280fc9afe456c8b3",
+        "receipt_hash": "f8263af3e75a64cdab18af203ab1bf91885a9f7c8143fbba3c65b784faae758a",
+        "network": {
+          "transport": "ethernet",
+          "ethertype": "0x88b5",
+          "source_mac": "bc:24:11:99:f9:dd",
+          "destination_mac": "bc:24:11:26:7e:e7",
+          "interface": "eth0",
+          "rpc_id": "69b2c9d5d1da4a9db28eeba98df5f94e",
+          "tx_frames": 3,
+          "rx_frames": 2
+        },
+        "incoming": null,
+        "remaining_hops": 7,
+        "at_ms": 1793086299855
+      },
+      "signature": "72c5caa9d5ca32803716bc27fed473b2fddb7c56fd4e5d0ce481e05fc87ab44c85908e7d92b4a64965e8b90aeff7a7609f0ed616c949b2a21f5a19b9b0173c08"
+    },
+    {
+      "payload": {
+        "at_ms": 1793086299683,
+        "ciphertext_sha256": "64609e84796b1f6d62df896830a285c33bbd1497aa0d849e280fc9afe456c8b3",
+        "incoming": {
+          "destination_mac": "bc:24:11:26:7e:e7",
+          "ethertype": "0x88b5",
+          "interface": "eth0",
+          "rpc_id": "69b2c9d5d1da4a9db28eeba98df5f94e",
+          "rx_frames": 3,
+          "source_mac": "bc:24:11:99:f9:dd",
+          "transport": "ethernet"
+        },
+        "message_hash": "43879dea21521b424db478f59caa9ee3e6f9857080af9e3cc6644eb280ca6024",
+        "message_id": "093f4ab3f36d4427b1302cd152df9243",
+        "network": {
+          "destination_mac": "bc:24:11:dd:73:38",
+          "ethertype": "0x88b5",
+          "interface": "eth0",
+          "rpc_id": "1818791b37754d14b15aee4b618b0407",
+          "rx_frames": 2,
+          "source_mac": "bc:24:11:26:7e:e7",
+          "transport": "ethernet",
+          "tx_frames": 3
+        },
+        "next": "ipvx:agent:1e16222a0a94368025f835ec2063cfa277ca5303114d9cb06fa64462387d1e50",
+        "node": "ipvx:agent:f7c58b4cd0ba5969cb99d3ff9d56571c66cc5a08575769b2e6998c6cbc728c8d",
+        "receipt_hash": "f8263af3e75a64cdab18af203ab1bf91885a9f7c8143fbba3c65b784faae758a",
+        "remaining_hops": 6,
+        "trace_id": "77248545a1e144c8b35d9221954fb0c8"
+      },
+      "purpose": "mesh-hop",
+      "signature": "60da5355048b3eeb99e6549b4aaff64ea3e282460b4e9b416da65f3dcb744f0b869d6f3a9ef2bc48feb2a63307b43e8291585707cddfb0708e83ae51903d8300",
+      "wire": "ipvx-agent-lab/1"
+    }
+  ]
+}</pre></details></section></main><footer><a class="wordmark" href="index.de.html">IPvX<span>Forschung</span></a><p>Forschen. Messen. RFCs diskutieren.</p><div><a href="blog.de.html">Forschungsblog</a><a href="history.de.html">Projektgeschichte</a><a href="governance.de.html">Teilnahmeregeln</a><a href="reproduce.de.html">Reproduzieren</a><a href="downloads.de.html">Material herunterladen</a><a href="admin.de.html">Verwaltung</a><a href="data/provenance.json">Datenherkunft</a></div><p class="small">Experimentelles Projekt · ein Infrastrukturbetreiber · Datenstand 27. Oktober 2026. Dieses öffentliche Webportal verwendet gewöhnliches IP, DNS und HTTPS.</p></footer></body></html>

@@ -1,6 +1,6 @@
 """Buildless static export: no private service, credential or management address."""
 from pathlib import Path
-import html,json,re
+import html,json,re,sys
 ROOT=Path(__file__).resolve().parents[1]
 NAV=[('index.html','Обзор'),('architecture.html','Устройство сети'),('experiments.html','Эксперименты'),('rfcs.html','RFC'),('publications.html','Публикации'),('participate.html','Участвовать')]
 REPO='https://github.com/relcom-technologies/ipvx-research'
@@ -166,4 +166,8 @@ render_replay(ROOT, layout, heading)
 from admin_page import render as render_admin
 render_admin(ROOT, layout)
 
-print('Built',len(list(ROOT.glob('*.html'))),'static pages')
+print('Built',len([p for p in ROOT.glob('*.html') if not re.search(r'\.(en|de|es)\.html$',p.name)]),'canonical pages')
+
+if '--source-only' not in sys.argv and all((ROOT/'i18n'/f'{language}.json').exists() for language in ('en','de','es')):
+ from build_languages import build as build_languages
+ build_languages()
