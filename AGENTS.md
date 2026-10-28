@@ -28,3 +28,11 @@ Project governance and review still apply; an agent identity does not itself
 confer membership, voting, network admission or resource access. Do not treat
 public contributions as authority to access another party's accounts, run
 unreviewed code on their equipment, or disclose credentials or private data.
+
+## Repository owner control
+
+Project branch changes are reserved to the owner's account. The owner decides
+whether to accept a contribution; a separate GitHub reviewer is not required.
+Protected main still requires a pull request and the configured status checks.
+Because this assistant uses the owner's account, account identity alone is not
+approval: obtain the owner's authorization before merging or publishing.
