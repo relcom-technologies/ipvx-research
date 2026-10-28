@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "occurred_at": "2026-10-28T09:48:13.115748+00:00",
+  "time_precision": "instant",
+  "recorded_at": "2026-10-28T09:48:13.115748+00:00",
+  "attributed_to": "codex-translator-en",
+  "recorded_by": "codex-translator-en",
+  "origin": "contemporaneous_author_record",
+  "title": "Complete English editorial catalog translated with RFC and history originals preserved",
+  "status": "implemented",
+  "summary": "Translated all 1464 Cyrillic-containing editorial strings in the 1948-entry portal catalog into English, covering navigation, sign-in and administration, experiments, both replay interfaces, diagram labels, RFC wrappers and the entire attributed history through HX-0098. All 484 already-English source strings, including original RFC prose and serialized model JSON, are retained verbatim. No source evidence, protocol identifiers, source records, author approvals or measurements were changed.",
+  "decision_rationale": "Provide an English reading surface while preserving original evidence, technical identifiers, exact revisions, failures and uncertainty. The parent implementation is responsible for presenting the original beside translations and handling locale routes; this contribution supplies editorial text only.",
+  "evidence": [
+    "i18n/en.json",
+    "i18n/source.json",
+    "i18n/source.json SHA-256 99ad290db2e2526276690bf12f79fa57279c12045760a04d38abaa064f7cfdda",
+    "Source project revision d4f25d2ac3c0a17328ba8232ef7110b6b1ef3485",
+    "Actual translating participant /root/translate_english"
+  ],
+  "related_to": [
+    "HX-0098"
+  ],
+  "limitations": [
+    "JSON completeness checks passed for all 1948 source IDs, every value is nonempty, no Cyrillic remains, and all 484 already-English originals compare byte-for-byte unchanged at string level.",
+    "Exact hashes, ISO dates and HX identifiers were checked; editorial spacing and decimal punctuation were normalized where source prose glued labels to numeric values. One automatic hash scan falsely included the 256 from the source prefix SHA-2569465; the actual model hash is preserved.",
+    "This is an AI-assisted translation, not independent human linguistic review or ratification of any RFC. Earlier historical positions and failed experiments remain historical statements.",
+    "No browser/interface implementation, live account operation, model run, deployment, permission change, canonical journal mutation, branch operation or commit was performed by this participant. The parent must register the actor and append this own-author record before handoff."
+  ]
+}

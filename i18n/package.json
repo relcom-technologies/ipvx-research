@@ -1,0 +1,5 @@
+{
+  "private": true,
+  "description": "Build-time editorial-string extraction only; no runtime dependency",
+  "dependencies": {"acorn": "8.15.0"}
+}

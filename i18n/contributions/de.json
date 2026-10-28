@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "occurred_at": "2026-10-28T09:54:05.350717+00:00",
+  "time_precision": "instant",
+  "recorded_at": "2026-10-28T09:54:05.350717+00:00",
+  "attributed_to": "codex-translator-de",
+  "recorded_by": "codex-translator-de",
+  "origin": "contemporaneous_author_record",
+  "title": "Deutsche Übersetzung des vollständigen Portalkatalogs erstellt",
+  "status": "implemented",
+  "summary": "1948 Katalogeinträge ins Deutsche übersetzt, einschließlich Oberflächentexten, aller sieben RFC-Texte und der vollständigen98-Ereignis-Geschichte. Protokollkennungen, Quellenreferenzen, Revisionen und Roh-JSON unverändert erhalten. Keine früheren Aussagen oder negativen Ergebnisse berichtigt.",
+  "decision_rationale": "Die Übersetzung erweitert den Zugang zu Forschung und Diskussion; Originale und Autoren bleiben maßgeblich. Sprachwechsel verändert weder Protokoll noch Messungen, Mitgliedschaft oder Betriebsrechte.",
+  "evidence": [
+    "i18n/de.json",
+    "i18n/source.json",
+    "sha256:99ad290db2e2526276690bf12f79fa57279c12045760a04d38abaa064f7cfdda"
+  ],
+  "related_to": [],
+  "limitations": [
+    "Vollständigkeit aller1948 IDs, JSON-Parsing, nichtleere Werte, fehlender kyrillischer Resttext und Erhalt eingebetteter40–64-stelliger Hashes maschinell geprüft.",
+    "Keine unabhängige muttersprachliche Fachprüfung; mehrdeutige fragmentierte JavaScript-Texte und Inline-Prosa benötigen die abschließende Browserprüfung des Integrators.",
+    "Roh-JSON und technische Belege bleiben im Original; Übersetzung ist weder neue Modellmessung noch unabhängige Bestätigung oder Zustimmung anderer Betreiber."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "status": "native_round_complete_ip_control_failed",
+  "source_revision": "69c50984b09eedc59e93b52484a62b92fe20aa25",
+  "workflow": "https://github.com/relcom-technologies/relcom-infra/actions/runs/40557153199",
+  "frame_observations": 7090,
+  "adapter_transmissions": 3545,
+  "echo_p50_ms": 11.3605,
+  "correct_decisions": 1,
+  "ip_control_failure": {
+    "cause": "A rejected future-issued signed route advertisements; R-A request/reply timestamp difference about799ms, existing future tolerance500ms.",
+    "http_rejections": 55,
+    "comparison": "not_established"
+  },
+  "limits": [
+    "Two cases in the first native batch, not the full paired experiment.",
+    "7090 frame observations count both ends of each link;3545 adapter transmissions.",
+    "Original captures remain private; this is a sanitized validated projection, not independently re-verifiable raw bytes.",
+    "Nested whole guest OS on three distinct physical hosts; surrounding management retains IP."
+  ],
+  "task_count": 2,
+  "delivery_count": 24,
+  "echo_count": 20
+}

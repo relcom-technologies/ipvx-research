@@ -2,6 +2,7 @@
 import html
 import json
 from agent_replay import render as render_agent_replay
+from observatory import render as render_observatory
 
 
 def render(root, layout, heading):
@@ -12,7 +13,8 @@ def render(root, layout, heading):
     downloads += '</div><p><a href="data/downloads/SHA256SUMS.txt">Все контрольные суммы</a> · <a href="data/downloads/manifest.json">Состав снимков</a> · <a href="history.html">Читать историю на сайте</a></p></section>'
     (root/'downloads.html').write_text(layout('experiments.html', 'Материалы для скачивания', heading('Материалы проекта', 'Исходный код, инструкции, измерения и история решений в двух открытых архивах.')+downloads))
 
-    body = heading('Обмен по кадрам', 'Воспроизведение полного захвата: A отправляет задачу через R, B вычисляет SHA-256 и возвращает результат.')
+    body = heading('Обмен по кадрам', 'Исследуйте сохранённые задачи агентов и отдельный покадровый опыт SHA-256; условия и ограничения каждого запуска указаны рядом.')
+    body += render_observatory(root)
     body += '''<section class="section replay" aria-labelledby="replay-heading"><div class="replay-top"><div><h2 id="replay-heading">Три ОС без TCP/IP</h2><p class="small">Сохранённый опыт · 27 октября 2026 · один физический CI-хост</p></div><label for="replay-scenario">Сценарий<select id="replay-scenario" disabled><option value="baseline">Посредник работает · 16 / 16</option><option value="relay-down">Посредник остановлен · 0 / 16</option></select></label></div>
 <p class="note">Запись настоящего опыта SHA-256: три гостя на одном CI-хосте, без LLM. Новый опыт на разных физических машинах ещё не подтверждён.</p>
 <div class="replay-map" aria-label="Физические каналы A — R — B; прямого канала A — B нет"><div class="replay-node" data-node="A"><strong>A</strong><span>Отправитель</span><small>Linux · INET отсутствует</small></div><div class="replay-link" aria-hidden="true"><span>Ethernet</span><i></i></div><div class="replay-node" data-node="R"><strong>R</strong><span>Посредник</span><small>Два порта</small></div><div class="replay-link" aria-hidden="true"><span>Ethernet</span><i></i></div><div class="replay-node" data-node="B"><strong>B</strong><span>Исполнитель</span><small>SHA-256 локально</small></div><span id="replay-packet" hidden aria-hidden="true"></span></div>
@@ -29,5 +31,5 @@ def render(root, layout, heading):
     body += agents
     body += downloads
     page = layout('experiments.html', 'Обмен по кадрам', body).replace('<body>', '<body class="replay-page">')
-    page = page.replace('</head>', '<link rel="stylesheet" href="assets/replay.css"><script src="assets/replay.js" defer></script><link rel="stylesheet" href="assets/agent-replay.css"><script src="assets/agent-replay.js" defer></script></head>')
+    page = page.replace('</head>', '<link rel="stylesheet" href="assets/replay.css"><script src="assets/replay.js" defer></script><link rel="stylesheet" href="assets/agent-replay.css"><script src="assets/agent-replay.js" defer></script><link rel="stylesheet" href="assets/observatory.css"><script src="assets/observatory.js" defer></script></head>')
     (root/'packet-replay.html').write_text(page)

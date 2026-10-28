@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "status": "recorded_projection",
+  "source_revision": "643ddc695f9d24384b945fca61faf9e130f49cfc",
+  "source_run": "https://github.com/relcom-technologies/relcom-infra/actions/runs/40563118803",
+  "public_record_sha256": "3c388513d8b54b9d5df7e0da8d94a1f6e8e2c0e5c2adf9a741cb0d84a33a2ddd",
+  "public_inputs_sha256": "6b52cdac3953041fbb0e9b54366f9c4231bf69d7b2305fccb63f6cb5c62e8877",
+  "declared_scope": {
+    "nodes": [
+      "A",
+      "R1",
+      "B"
+    ],
+    "native_tasks": 4,
+    "native_deliveries": 48,
+    "native_echoes": 40,
+    "native_measured_inferences": 12,
+    "native_warmups": 4,
+    "native_frame_observations": 13024,
+    "frame_observations_count_both_ends": true
+  },
+  "coverage": {
+    "task_records": "present",
+    "signed_receipts": "verified_in_private_lab",
+    "original_pcap": "private",
+    "public_reverification_of_original_pcap": "unavailable",
+    "causal_task_id": "not_recorded",
+    "per_hop_timing": "not_recorded_publicly",
+    "queue_waiting_time": "not_recorded_publicly",
+    "route_selection_reason": "not_recorded_publicly",
+    "event_collector_loss": "not_established",
+    "sampling_policy": "not_established",
+    "cross_host_clock_alignment": "uncertain"
+  },
+  "comparison": {
+    "native": "recorded",
+    "ip": "recorded_same_application_hops",
+    "direct_ip": "not_part_of_this_run",
+    "arbitrary_versions": "not_established",
+    "native_tasks": 4,
+    "ip_tasks": 4
+  },
+  "limitations": [
+    "Four collaborative cases per mode; no statistical global speed conclusion.",
+    "Guest capture is complete for its one NIC; surrounding host and physical wire also carry management IP.",
+    "Model correctness and transport integrity are separate outcomes. No independent operator preference was tested.",
+    "Control uses the same application hops A–R–B over TCP/IP; this is not direct IP or kernel-only routing.",
+    "Raw captures and signed hop objects retain infrastructure addresses and remain private. This public projection cannot independently re-verify their original bytes.",
+    "Guest UTC is initialized from a local read-only host virtual device; no guest IP time client. Timings use monotonic clocks.",
+    "Fixed three-key admission, two CPU models and four cases per mode do not establish Internet scale or autonomous network adoption."
+  ]
+}

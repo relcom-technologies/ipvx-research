@@ -1,0 +1,2414 @@
+[
+  {
+    "start": 28,
+    "end": 54,
+    "source": "Агент A формирует задачу",
+    "kind": "literal",
+    "file": "assets/portal.js",
+    "context": "assets/portal.js:28",
+    "sha256": "33c6b302c9602cbd78100383cd90a70bae78a42c955730b5277aa8bac55d573b"
+  },
+  {
+    "start": 55,
+    "end": 174,
+    "source": "Получатель — устойчивый ID. Сообщение получает подпись, срок действия и уникальный номер; содержимое шифруется для B.",
+    "kind": "literal",
+    "file": "assets/portal.js",
+    "context": "assets/portal.js:55",
+    "sha256": "33c6b302c9602cbd78100383cd90a70bae78a42c955730b5277aa8bac55d573b"
+  },
+  {
+    "start": 177,
+    "end": 206,
+    "source": "Каждый узел выбирает соседа",
+    "kind": "literal",
+    "file": "assets/portal.js",
+    "context": "assets/portal.js:177",
+    "sha256": "33c6b302c9602cbd78100383cd90a70bae78a42c955730b5277aa8bac55d573b"
+  },
+  {
+    "start": 207,
+    "end": 376,
+    "source": "A находит следующий переход в своей таблице. R1 принимает кадр от допущенного соседа, проверяет подпись и передаёт дальше. DNS-запросов и центрального выбора пути нет.",
+    "kind": "literal",
+    "file": "assets/portal.js",
+    "context": "assets/portal.js:207",
+    "sha256": "33c6b302c9602cbd78100383cd90a70bae78a42c955730b5277aa8bac55d573b"
+  },
+  {
+    "start": 379,
+    "end": 410,
+    "source": "Агент B запускает свою модель",
+    "kind": "literal",
+    "file": "assets/portal.js",
+    "context": "assets/portal.js:379",
+    "sha256": "33c6b302c9602cbd78100383cd90a70bae78a42c955730b5277aa8bac55d573b"
+  },
+  {
+    "start": 411,
+    "end": 563,
+    "source": "B проверяет адресата, подпись и срок. Очередь подтверждает приём сразу. Модель читает задачу и свои факты локально; посредник не видит открытый текст.",
+    "kind": "literal",
+    "file": "assets/portal.js",
+    "context": "assets/portal.js:411",
+    "sha256": "33c6b302c9602cbd78100383cd90a70bae78a42c955730b5277aa8bac55d573b"
+  },
+  {
+    "start": 566,
+    "end": 592,
+    "source": "Результат возвращается A",
+    "kind": "literal",
+    "file": "assets/portal.js",
+    "context": "assets/portal.js:566",
+    "sha256": "33c6b302c9602cbd78100383cd90a70bae78a42c955730b5277aa8bac55d573b"
+  },
+  {
+    "start": 593,
+    "end": 728,
+    "source": "B отправляет новый зашифрованный ответ. A проверяет квитанцию и цепочку переходов, затем использует рецензию в своём итоговом выводе.",
+    "kind": "literal",
+    "file": "assets/portal.js",
+    "context": "assets/portal.js:593",
+    "sha256": "33c6b302c9602cbd78100383cd90a70bae78a42c955730b5277aa8bac55d573b"
+  },
+  {
+    "start": 1555,
+    "end": 1572,
+    "source": "## Вид вклада\n",
+    "kind": "literal",
+    "file": "assets/portal.js",
+    "context": "assets/portal.js:1555",
+    "sha256": "33c6b302c9602cbd78100383cd90a70bae78a42c955730b5277aa8bac55d573b"
+  },
+  {
+    "start": 1578,
+    "end": 1611,
+    "source": "\n\n## Предложение и проверка\n",
+    "kind": "literal",
+    "file": "assets/portal.js",
+    "context": "assets/portal.js:1578",
+    "sha256": "33c6b302c9602cbd78100383cd90a70bae78a42c955730b5277aa8bac55d573b"
+  },
+  {
+    "start": 1617,
+    "end": 1763,
+    "source": "\n\n## Допуск\nТребуется обсуждение, большинство действующего состава и отдельная техническая проверка. Секретов и закрытых данных в заявке нет.",
+    "kind": "literal",
+    "file": "assets/portal.js",
+    "context": "assets/portal.js:1617",
+    "sha256": "33c6b302c9602cbd78100383cd90a70bae78a42c955730b5277aa8bac55d573b"
+  },
+  {
+    "start": 1996,
+    "end": 2105,
+    "source": "Заявка слишком длинная для ссылки. Текст сохранён в форме: откройте шаблон GitHub и перенесите его целиком.",
+    "kind": "literal",
+    "file": "assets/portal.js",
+    "context": "assets/portal.js:1996",
+    "sha256": "33c6b302c9602cbd78100383cd90a70bae78a42c955730b5277aa8bac55d573b"
+  },
+  {
+    "start": 2132,
+    "end": 2155,
+    "source": "Открыть пустой шаблон",
+    "kind": "literal",
+    "file": "assets/portal.js",
+    "context": "assets/portal.js:2132",
+    "sha256": "33c6b302c9602cbd78100383cd90a70bae78a42c955730b5277aa8bac55d573b"
+  },
+  {
+    "start": 2354,
+    "end": 2397,
+    "source": "Перейти к подготовленной публичной заявке",
+    "kind": "literal",
+    "file": "assets/portal.js",
+    "context": "assets/portal.js:2354",
+    "sha256": "33c6b302c9602cbd78100383cd90a70bae78a42c955730b5277aa8bac55d573b"
+  },
+  {
+    "start": 2885,
+    "end": 2895,
+    "source": "Измерено",
+    "kind": "literal",
+    "file": "assets/portal.js",
+    "context": "assets/portal.js:2885",
+    "sha256": "33c6b302c9602cbd78100383cd90a70bae78a42c955730b5277aa8bac55d573b"
+  },
+  {
+    "start": 3010,
+    "end": 3087,
+    "source": "Таблица прокручивается по горизонтали: справа оценка ответа и время модели.",
+    "kind": "literal",
+    "file": "assets/portal.js",
+    "context": "assets/portal.js:3010",
+    "sha256": "33c6b302c9602cbd78100383cd90a70bae78a42c955730b5277aa8bac55d573b"
+  },
+  {
+    "start": 3221,
+    "end": 3267,
+    "source": "Результаты при одинаковых моделях и вопросах",
+    "kind": "literal",
+    "file": "assets/portal.js",
+    "context": "assets/portal.js:3221",
+    "sha256": "33c6b302c9602cbd78100383cd90a70bae78a42c955730b5277aa8bac55d573b"
+  },
+  {
+    "start": 3351,
+    "end": 3399,
+    "source": "Результаты сравнения, прокрутка по горизонтали",
+    "kind": "literal",
+    "file": "assets/portal.js",
+    "context": "assets/portal.js:3351",
+    "sha256": "33c6b302c9602cbd78100383cd90a70bae78a42c955730b5277aa8bac55d573b"
+  },
+  {
+    "start": 3495,
+    "end": 3505,
+    "source": "Доставка",
+    "kind": "literal",
+    "file": "assets/portal.js",
+    "context": "assets/portal.js:3495",
+    "sha256": "33c6b302c9602cbd78100383cd90a70bae78a42c955730b5277aa8bac55d573b"
+  },
+  {
+    "start": 3506,
+    "end": 3521,
+    "source": "Эхо p50 / p95",
+    "kind": "literal",
+    "file": "assets/portal.js",
+    "context": "assets/portal.js:3506",
+    "sha256": "33c6b302c9602cbd78100383cd90a70bae78a42c955730b5277aa8bac55d573b"
+  },
+  {
+    "start": 3522,
+    "end": 3530,
+    "source": "Задачи",
+    "kind": "literal",
+    "file": "assets/portal.js",
+    "context": "assets/portal.js:3522",
+    "sha256": "33c6b302c9602cbd78100383cd90a70bae78a42c955730b5277aa8bac55d573b"
+  },
+  {
+    "start": 3531,
+    "end": 3551,
+    "source": "Совпадение рубрики",
+    "kind": "literal",
+    "file": "assets/portal.js",
+    "context": "assets/portal.js:3531",
+    "sha256": "33c6b302c9602cbd78100383cd90a70bae78a42c955730b5277aa8bac55d573b"
+  },
+  {
+    "start": 3552,
+    "end": 3573,
+    "source": "LLM, медиана вызова",
+    "kind": "literal",
+    "file": "assets/portal.js",
+    "context": "assets/portal.js:3552",
+    "sha256": "33c6b302c9602cbd78100383cd90a70bae78a42c955730b5277aa8bac55d573b"
+  },
+  {
+    "start": 3824,
+    "end": 3827,
+    "source": " мс",
+    "kind": "quasi",
+    "file": "assets/portal.js",
+    "context": "assets/portal.js:3824",
+    "sha256": "33c6b302c9602cbd78100383cd90a70bae78a42c955730b5277aa8bac55d573b"
+  },
+  {
+    "start": 3955,
+    "end": 3957,
+    "source": " с",
+    "kind": "quasi",
+    "file": "assets/portal.js",
+    "context": "assets/portal.js:3955",
+    "sha256": "33c6b302c9602cbd78100383cd90a70bae78a42c955730b5277aa8bac55d573b"
+  },
+  {
+    "start": 4119,
+    "end": 4145,
+    "source": "Скачать данные сравнения",
+    "kind": "literal",
+    "file": "assets/portal.js",
+    "context": "assets/portal.js:4119",
+    "sha256": "33c6b302c9602cbd78100383cd90a70bae78a42c955730b5277aa8bac55d573b"
+  },
+  {
+    "start": 4583,
+    "end": 4741,
+    "source": "Не удалось загрузить файл данных. Показан сохранённый отчёт: результаты, вывод и ограничения остаются доступны. Обновите страницу, чтобы повторить загрузку.",
+    "kind": "literal",
+    "file": "assets/portal.js",
+    "context": "assets/portal.js:4583",
+    "sha256": "33c6b302c9602cbd78100383cd90a70bae78a42c955730b5277aa8bac55d573b"
+  },
+  {
+    "start": 4768,
+    "end": 4784,
+    "source": "Открыть данные",
+    "kind": "literal",
+    "file": "assets/portal.js",
+    "context": "assets/portal.js:4768",
+    "sha256": "33c6b302c9602cbd78100383cd90a70bae78a42c955730b5277aa8bac55d573b"
+  },
+  {
+    "start": 809,
+    "end": 862,
+    "source": "Сервис входа временно недоступен. Попробуйте позже.",
+    "kind": "literal",
+    "file": "assets/relcom.js",
+    "context": "assets/relcom.js:809",
+    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
+  },
+  {
+    "start": 883,
+    "end": 929,
+    "source": "Вход не подтверждён. Попробуйте войти снова.",
+    "kind": "literal",
+    "file": "assets/relcom.js",
+    "context": "assets/relcom.js:883",
+    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
+  },
+  {
+    "start": 1339,
+    "end": 1367,
+    "source": "Проверяем состояние входа…",
+    "kind": "literal",
+    "file": "assets/relcom.js",
+    "context": "assets/relcom.js:1339",
+    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
+  },
+  {
+    "start": 1639,
+    "end": 1724,
+    "source": "Вы не вошли. Можно использовать существующую учётную запись или зарегистрироваться.",
+    "kind": "literal",
+    "file": "assets/relcom.js",
+    "context": "assets/relcom.js:1639",
+    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
+  },
+  {
+    "start": 1949,
+    "end": 2012,
+    "source": "Сеанс истёк. Войдите снова, чтобы подтвердить учётную запись.",
+    "kind": "literal",
+    "file": "assets/relcom.js",
+    "context": "assets/relcom.js:1949",
+    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
+  },
+  {
+    "start": 2131,
+    "end": 2146,
+    "source": "Участник IPvX",
+    "kind": "literal",
+    "file": "assets/relcom.js",
+    "context": "assets/relcom.js:2131",
+    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
+  },
+  {
+    "start": 2236,
+    "end": 2259,
+    "source": "Адрес не предоставлен",
+    "kind": "literal",
+    "file": "assets/relcom.js",
+    "context": "assets/relcom.js:2236",
+    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
+  },
+  {
+    "start": 2337,
+    "end": 2379,
+    "source": "Электронная почта подтверждена Relcom ID",
+    "kind": "literal",
+    "file": "assets/relcom.js",
+    "context": "assets/relcom.js:2337",
+    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
+  },
+  {
+    "start": 2380,
+    "end": 2425,
+    "source": "Подтверждение электронной почты не получено",
+    "kind": "literal",
+    "file": "assets/relcom.js",
+    "context": "assets/relcom.js:2380",
+    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
+  },
+  {
+    "start": 2779,
+    "end": 2842,
+    "source": "Сеанс истёк. Войдите снова, чтобы подтвердить учётную запись.",
+    "kind": "literal",
+    "file": "assets/relcom.js",
+    "context": "assets/relcom.js:2779",
+    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
+  },
+  {
+    "start": 2902,
+    "end": 2969,
+    "source": "Вход выполнен. Права участия и голосования определяются отдельно.",
+    "kind": "literal",
+    "file": "assets/relcom.js",
+    "context": "assets/relcom.js:2902",
+    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
+  },
+  {
+    "start": 3060,
+    "end": 3151,
+    "source": "Не удалось проверить вход. Попробуйте ещё раз; материалы исследования доступны без входа.",
+    "kind": "literal",
+    "file": "assets/relcom.js",
+    "context": "assets/relcom.js:3060",
+    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
+  },
+  {
+    "start": 3559,
+    "end": 3593,
+    "source": "Загружаем опубликованные статьи…",
+    "kind": "literal",
+    "file": "assets/relcom.js",
+    "context": "assets/relcom.js:3559",
+    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
+  },
+  {
+    "start": 4663,
+    "end": 4676,
+    "source": " мин чтения",
+    "kind": "literal",
+    "file": "assets/relcom.js",
+    "context": "assets/relcom.js:4663",
+    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
+  },
+  {
+    "start": 5083,
+    "end": 5122,
+    "source": "Опубликованные статьи в Relcom Press.",
+    "kind": "literal",
+    "file": "assets/relcom.js",
+    "context": "assets/relcom.js:5083",
+    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
+  },
+  {
+    "start": 5123,
+    "end": 5220,
+    "source": "Пока нет опубликованных статей. Новые материалы появятся здесь после публикации в Relcom Press.",
+    "kind": "literal",
+    "file": "assets/relcom.js",
+    "context": "assets/relcom.js:5123",
+    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
+  },
+  {
+    "start": 5261,
+    "end": 5351,
+    "source": "Не удалось загрузить список статей. Откройте блог в Relcom Press или попробуйте ещё раз.",
+    "kind": "literal",
+    "file": "assets/relcom.js",
+    "context": "assets/relcom.js:5261",
+    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
+  },
+  {
+    "start": 647,
+    "end": 657,
+    "source": "Участник",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:647",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 668,
+    "end": 679,
+    "source": "Модератор",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:668",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 691,
+    "end": 707,
+    "source": "Сопровождающий",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:691",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 714,
+    "end": 729,
+    "source": "Администратор",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:714",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 760,
+    "end": 797,
+    "source": "На модерации · пока не опубликовано",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:760",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 808,
+    "end": 822,
+    "source": "Опубликовано",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:808",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 830,
+    "end": 850,
+    "source": "Скрыто модератором",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:830",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 883,
+    "end": 956,
+    "source": "Ваше участие заблокировано администратором. Вход в аккаунт сохраняется.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:883",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 974,
+    "end": 1027,
+    "source": "Сеанс участия истёк. Войдите снова через Relcom ID.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:974",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 1054,
+    "end": 1114,
+    "source": "Для отправки нужна учётная запись с подтверждённой почтой.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:1054",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 1129,
+    "end": 1182,
+    "source": "Эта роль больше недоступна. Обновите права участия.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:1129",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 1203,
+    "end": 1264,
+    "source": "Слишком много действий за короткое время. Попробуйте позже.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:1203",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 1287,
+    "end": 1364,
+    "source": "Достигнут предел сообщений на модерации. Дождитесь рассмотрения предыдущих.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:1287",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 1380,
+    "end": 1473,
+    "source": "Текст слишком большой для одной записи. Сократите его или разделите на отдельные сообщения.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:1380",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 1487,
+    "end": 1517,
+    "source": "Проверьте текст и его длину.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:1487",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 1542,
+    "end": 1574,
+    "source": "Укажите заголовок предложения.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:1542",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 1591,
+    "end": 1638,
+    "source": "Запись недоступна или больше не опубликована.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:1591",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 1661,
+    "end": 1711,
+    "source": "Участник с таким номером ещё не зарегистрирован.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:1661",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 1756,
+    "end": 1836,
+    "source": "Начального администратора можно изменить только отдельным действием оператора.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:1756",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 1883,
+    "end": 1960,
+    "source": "Запрос изменился при повторной отправке. Обновите страницу, сохранив текст.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:1883",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 1981,
+    "end": 2026,
+    "source": "Проверьте номер участника, роль и действие.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:1981",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 2092,
+    "end": 2136,
+    "source": "Войдите через Relcom ID, чтобы продолжить.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:2092",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 2156,
+    "end": 2203,
+    "source": "Действие не разрешено. Проверьте вход и роль.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:2156",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 2223,
+    "end": 2278,
+    "source": "Временно достигнут предел действий. Попробуйте позже.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:2223",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 2298,
+    "end": 2343,
+    "source": "Сообщение слишком большое. Сократите текст.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:2298",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 2344,
+    "end": 2428,
+    "source": "Сервис обсуждения временно недоступен. Текст сохранён в форме; попробуйте ещё раз.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:2344",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 4517,
+    "end": 4534,
+    "source": "Дата не указана",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:4517",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 5590,
+    "end": 5681,
+    "source": "Права участия изменились или сеанс завершился. Проверьте вход и загрузите права повторно.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:5590",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 6616,
+    "end": 6626,
+    "source": "Участник",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:6616",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 6809,
+    "end": 6828,
+    "source": "Статус уточняется",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:6809",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 7041,
+    "end": 7051,
+    "source": "Открыть ",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:7041",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 7650,
+    "end": 7671,
+    "source": "Консультативно: за ",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:7650",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 7718,
+    "end": 7729,
+    "source": ", против ",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:7718",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 7774,
+    "end": 7791,
+    "source": ", воздержались ",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:7774",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 7846,
+    "end": 7870,
+    "source": ". Это не принятие RFC.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:7846",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 8122,
+    "end": 8135,
+    "source": "Поддерживаю",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:8122",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 8143,
+    "end": 8151,
+    "source": "Против",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:8143",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 8164,
+    "end": 8179,
+    "source": "Воздерживаюсь",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:8164",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 8193,
+    "end": 8210,
+    "source": "Отозвать мнение",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:8193",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 8558,
+    "end": 8577,
+    "source": "Сохраняем мнение…",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:8558",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 8742,
+    "end": 8760,
+    "source": "Мнение отозвано.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:8742",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 8761,
+    "end": 8774,
+    "source": "Сохранено: ",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:8761",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 8795,
+    "end": 8834,
+    "source": ". Можно изменить или отозвать мнение.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:8795",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 9203,
+    "end": 9252,
+    "source": "Войдите, чтобы оставить консультативное мнение.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:9203",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 9493,
+    "end": 9510,
+    "source": "Причина решения",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:9493",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 9859,
+    "end": 9880,
+    "source": "Опубликовать запись",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:9859",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 9890,
+    "end": 9905,
+    "source": "Скрыть запись",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:9890",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 10387,
+    "end": 10417,
+    "source": "Сохраняем решение модерации…",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:10387",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 10682,
+    "end": 10693,
+    "source": "Запись № ",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:10682",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 10723,
+    "end": 10739,
+    "source": " опубликована.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:10723",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 10740,
+    "end": 10750,
+    "source": " скрыта.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:10740",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 10752,
+    "end": 10785,
+    "source": " Исходный текст RFC не изменён.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:10752",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 11039,
+    "end": 11070,
+    "source": "Обсуждение на основном адресе",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:11039",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 11081,
+    "end": 11178,
+    "source": "Для входа и участия откройте основной адрес проекта. Публичные тексты доступны здесь без входа.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:11081",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 11204,
+    "end": 11233,
+    "source": "Открыть участие на ipvx.org",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:11204",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 12171,
+    "end": 12209,
+    "source": "Загружаем опубликованное обсуждение…",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:12171",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 12601,
+    "end": 12639,
+    "source": "Опубликованных предложений пока нет.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:12601",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 12640,
+    "end": 12679,
+    "source": "Опубликованных комментариев пока нет.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:12640",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 12865,
+    "end": 12953,
+    "source": "Не удалось загрузить обсуждение. Текст RFC и исходники доступны независимо от сервиса.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:12865",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 13145,
+    "end": 13172,
+    "source": "Проверяем ваши сообщения…",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:13145",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 13548,
+    "end": 13580,
+    "source": "Сообщений этого типа пока нет.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:13548",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 14830,
+    "end": 14856,
+    "source": "Отправляем на модерацию…",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:14830",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 15061,
+    "end": 15075,
+    "source": "Сообщение № ",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:15061",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 15090,
+    "end": 15139,
+    "source": " на модерации. Пока его видите вы и модераторы.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:15090",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 15398,
+    "end": 15442,
+    "source": " · можно отправить сообщение на модерацию.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:15398",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 15513,
+    "end": 15552,
+    "source": "Чтение обсуждения доступно без входа.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:15513",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 15628,
+    "end": 15702,
+    "source": "Не удалось проверить вход. Опубликованное обсуждение остаётся доступным.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:15628",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 16257,
+    "end": 16287,
+    "source": "Загружаем приватную очередь…",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:16257",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 16806,
+    "end": 16827,
+    "source": "Загружено записей: ",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:16806",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 16859,
+    "end": 16877,
+    "source": "Это вся очередь.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:16859",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 16878,
+    "end": 16915,
+    "source": "Нет сообщений, ожидающих модерации.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:16878",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 17204,
+    "end": 17233,
+    "source": "Загружаем приватный журнал…",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:17204",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 17270,
+    "end": 17304,
+    "source": "Настроен начальный администратор",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:17270",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 17320,
+    "end": 17343,
+    "source": "Отправлен комментарий",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:17320",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 17360,
+    "end": 17384,
+    "source": "Отправлено предложение",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:17360",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 17393,
+    "end": 17414,
+    "source": "Запись опубликована",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:17393",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 17420,
+    "end": 17435,
+    "source": "Запись скрыта",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:17420",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 17450,
+    "end": 17483,
+    "source": "Изменено консультативное мнение",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:17450",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 17495,
+    "end": 17511,
+    "source": "Назначена роль",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:17495",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 17524,
+    "end": 17539,
+    "source": "Роль отозвана",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:17524",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 17901,
+    "end": 17919,
+    "source": "Действие портала",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:17901",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 17996,
+    "end": 18008,
+    "source": "Участник: ",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:17996",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 18021,
+    "end": 18034,
+    "source": " · объект: ",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:18021",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 18170,
+    "end": 18181,
+    "source": "Причина: ",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:18170",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 18251,
+    "end": 18259,
+    "source": "Роль: ",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:18251",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 18371,
+    "end": 18391,
+    "source": "Действий пока нет.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:18371",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 18743,
+    "end": 18771,
+    "source": "Проверяем роли на сервере…",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:18743",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 18851,
+    "end": 18933,
+    "source": "Участие в обсуждениях заблокировано администратором. Вход в аккаунт сохраняется.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:18851",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 18982,
+    "end": 19084,
+    "source": "Войдите выше через Relcom ID. Публичное чтение и подготовка предложения в GitHub доступны без входа.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:18982",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 19361,
+    "end": 19432,
+    "source": "Учётная запись подтверждена. Роли портала показаны по данным сервера.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:19361",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 19623,
+    "end": 19720,
+    "source": "Не удалось загрузить роли. Вход и публичные материалы проверяются отдельно; попробуйте ещё раз.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:19623",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 20444,
+    "end": 20463,
+    "source": "Загружаем запись…",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:20444",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 21204,
+    "end": 21231,
+    "source": "Сохраняем изменение роли…",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:21204",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 21369,
+    "end": 21395,
+    "source": "Изменение сохранено для ",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:21369",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 21410,
+    "end": 21420,
+    "source": ". Роли: ",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:21410",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 21469,
+    "end": 21479,
+    "source": "участник",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:21469",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 21481,
+    "end": 21526,
+    "source": ". Право голоса и доступ к сети не изменены.",
+    "kind": "literal",
+    "file": "assets/community.js",
+    "context": "assets/community.js:21481",
+    "sha256": "c51fe1d8f0a6c1e2fbbac3ea080f76a8221eee044b94aea7e09bc5b2f84591ce"
+  },
+  {
+    "start": 209,
+    "end": 219,
+    "source": "Участник",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:209",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 230,
+    "end": 241,
+    "source": "Модератор",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:230",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 253,
+    "end": 269,
+    "source": "Сопровождающий",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:253",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 276,
+    "end": 291,
+    "source": "Администратор",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:276",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 326,
+    "end": 351,
+    "source": "Начальный администратор",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:326",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 363,
+    "end": 379,
+    "source": "Роль назначена",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:363",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 392,
+    "end": 404,
+    "source": "Роль снята",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:392",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 418,
+    "end": 441,
+    "source": "Участие заблокировано",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:418",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 457,
+    "end": 478,
+    "source": "Доступ восстановлен",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:457",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 487,
+    "end": 512,
+    "source": "Комментарий опубликован",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:487",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 518,
+    "end": 533,
+    "source": "Запись скрыта",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:518",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 549,
+    "end": 572,
+    "source": "Комментарий отправлен",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:549",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 589,
+    "end": 613,
+    "source": "Предложение отправлено",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:589",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 628,
+    "end": 652,
+    "source": "Рекомендательный голос",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:628",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 688,
+    "end": 746,
+    "source": "Нельзя заблокировать себя или начального администратора.",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:688",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 767,
+    "end": 810,
+    "source": "Сначала восстановите доступ пользователя.",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:767",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 855,
+    "end": 897,
+    "source": "Роль начального администратора защищена.",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:855",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 920,
+    "end": 962,
+    "source": "Пользователь не найден. Обновите список.",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:920",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 983,
+    "end": 1027,
+    "source": "Слишком много изменений. Попробуйте позже.",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:983",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 1041,
+    "end": 1089,
+    "source": "Укажите причину длиной от 3 до 1 000 символов.",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:1041",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 1105,
+    "end": 1144,
+    "source": "Ваше участие в портале заблокировано.",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:1105",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 1649,
+    "end": 1661,
+    "source": "Нет данных",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:1649",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 1719,
+    "end": 1751,
+    "source": "Сеанс завершён. Войдите снова.",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:1719",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 1767,
+    "end": 1807,
+    "source": "Действие недоступно: права изменились.",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:1767",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 1808,
+    "end": 1890,
+    "source": "Не удалось получить подтверждение сервера. Повторите действие с теми же данными.",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:1808",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 4128,
+    "end": 4151,
+    "source": "Участие заблокировано",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:4128",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 4152,
+    "end": 4167,
+    "source": "Доступ открыт",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:4152",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 4169,
+    "end": 4191,
+    "source": " · Последний визит: ",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:4169",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 4303,
+    "end": 4325,
+    "source": "Восстановить участие",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:4303",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 4326,
+    "end": 4349,
+    "source": "Заблокировать участие",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:4326",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 4505,
+    "end": 4543,
+    "source": "Доступ этого администратора защищён.",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:4505",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 4999,
+    "end": 5013,
+    "source": "Заблокирован",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:4999",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 5014,
+    "end": 5029,
+    "source": "Доступ открыт",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:5014",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 5775,
+    "end": 5801,
+    "source": "Загружаем пользователей…",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:5775",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 6368,
+    "end": 6377,
+    "source": "Найдено: ",
+    "kind": "quasi",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:6368",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 6390,
+    "end": 6402,
+    "source": ". Показано: ",
+    "kind": "quasi",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:6390",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 6422,
+    "end": 6465,
+    "source": "Пользователи по этому запросу не найдены.",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:6422",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 7060,
+    "end": 7080,
+    "source": "Загружаем очередь…",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:7060",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 7556,
+    "end": 7571,
+    "source": "Комментарий №",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:7556",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 7922,
+    "end": 7936,
+    "source": "Опубликовать",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:7922",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 7946,
+    "end": 7954,
+    "source": "Скрыть",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:7946",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 8037,
+    "end": 8046,
+    "source": "Решение",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:8037",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 8061,
+    "end": 8070,
+    "source": "Причина",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:8061",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 8129,
+    "end": 8140,
+    "source": "Применить",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:8129",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 8428,
+    "end": 8448,
+    "source": "Сохраняем решение…",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:8428",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 8634,
+    "end": 8654,
+    "source": "Решение сохранено.",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:8634",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 9042,
+    "end": 9058,
+    "source": "Очередь пуста.",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:9042",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 9059,
+    "end": 9079,
+    "source": "Очередь загружена.",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:9059",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 9287,
+    "end": 9306,
+    "source": "Загружаем журнал…",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:9287",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 9987,
+    "end": 9998,
+    "source": "Причина: ",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:9987",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 10066,
+    "end": 10074,
+    "source": "Роль: ",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:10066",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 10344,
+    "end": 10362,
+    "source": "Журнал загружен.",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:10344",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 10363,
+    "end": 10383,
+    "source": "Действий пока нет.",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:10363",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 10627,
+    "end": 10686,
+    "source": "Войдите через Relcom ID, чтобы открыть администрирование.",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:10627",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 10844,
+    "end": 10873,
+    "source": "Ваше участие заблокировано.",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:10844",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 10874,
+    "end": 10943,
+    "source": "Вход подтверждён. Для этой страницы нужна роль администратора IPvX.",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:10874",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 11090,
+    "end": 11156,
+    "source": "Вы вошли как администратор IPvX. Действия сохраняются в журнале.",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:11090",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 11235,
+    "end": 11284,
+    "source": "Не удалось проверить права. Попробуйте ещё раз.",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:11235",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 11931,
+    "end": 11948,
+    "source": "Сохраняем роль…",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:11931",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 12110,
+    "end": 12127,
+    "source": "Роль сохранена.",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:12110",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 12632,
+    "end": 12651,
+    "source": "Сохраняем доступ…",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:12632",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 12870,
+    "end": 12894,
+    "source": "Участие заблокировано.",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:12870",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 12895,
+    "end": 12917,
+    "source": "Доступ восстановлен.",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:12895",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 13738,
+    "end": 13765,
+    "source": "Повторно проверяем права…",
+    "kind": "literal",
+    "file": "assets/admin.js",
+    "context": "assets/admin.js:13738",
+    "sha256": "4f2a82a43159757bbfed90cb9b151145681a9866e06550eb43156e3533809a1f"
+  },
+  {
+    "start": 598,
+    "end": 610,
+    "source": "все соседи",
+    "kind": "literal",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:598",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 2952,
+    "end": 2963,
+    "source": "Повторить",
+    "kind": "literal",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:2952",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 2966,
+    "end": 2981,
+    "source": "Воспроизвести",
+    "kind": "literal",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:2966",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 3396,
+    "end": 3400,
+    "source": " из ",
+    "kind": "quasi",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:3396",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 3501,
+    "end": 3506,
+    "source": "Кадр ",
+    "kind": "quasi",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:3501",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 3543,
+    "end": 3546,
+    "source": " к ",
+    "kind": "quasi",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:3543",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 3714,
+    "end": 3738,
+    "source": " мс от начала этого PCAP",
+    "kind": "quasi",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:3714",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 3769,
+    "end": 3776,
+    "source": "Канал",
+    "kind": "literal",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:3769",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 3817,
+    "end": 3825,
+    "source": " · кадр ",
+    "kind": "quasi",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:3817",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 3843,
+    "end": 3850,
+    "source": " в PCAP",
+    "kind": "quasi",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:3843",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 3861,
+    "end": 3883,
+    "source": "Конечный отправитель",
+    "kind": "literal",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:3861",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 3937,
+    "end": 3955,
+    "source": "Конечный адресат",
+    "kind": "literal",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:3937",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 4033,
+    "end": 4062,
+    "source": "HELLO: все соседи на канале",
+    "kind": "literal",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:4033",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 4072,
+    "end": 4082,
+    "source": "Доставка",
+    "kind": "literal",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:4072",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 4085,
+    "end": 4120,
+    "source": "EtherType 0x88B5 · лимит переходов ",
+    "kind": "quasi",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:4085",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 4145,
+    "end": 4155,
+    "source": "Проверка",
+    "kind": "literal",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:4145",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 4157,
+    "end": 4217,
+    "source": "Ed25519, ID и CRC проверены экспортёром; это не шифрование",
+    "kind": "literal",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:4157",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 4227,
+    "end": 4246,
+    "source": "Полезная нагрузка",
+    "kind": "literal",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:4227",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 4274,
+    "end": 4279,
+    "source": " байт",
+    "kind": "quasi",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:4274",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 4463,
+    "end": 4479,
+    "source": "Ethernet\n14 Б",
+    "kind": "literal",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:4463",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 4493,
+    "end": 4506,
+    "source": "XNS1\n188 Б",
+    "kind": "literal",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:4493",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 4521,
+    "end": 4529,
+    "source": "Данные\n",
+    "kind": "quasi",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:4521",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 4554,
+    "end": 4556,
+    "source": " Б",
+    "kind": "quasi",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:4554",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 4627,
+    "end": 4710,
+    "source": "Точные 1 024 байта задачи в HEX. Это детерминированные данные, а не запрос к LLM.",
+    "kind": "literal",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:4627",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 4741,
+    "end": 4812,
+    "source": "64 ASCII-символа SHA-256, вычисленного ОС B. Данные переданы открыто.",
+    "kind": "literal",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:4741",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 4815,
+    "end": 4924,
+    "source": "Подписанное объявление HELLO: подтверждает владение ключом; не является разрешением независимого оператора.",
+    "kind": "literal",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:4815",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 5726,
+    "end": 5745,
+    "source": "Пауза. Выбран кадр ",
+    "kind": "quasi",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:5726",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 5755,
+    "end": 5759,
+    "source": " из ",
+    "kind": "quasi",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:5755",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 6512,
+    "end": 6518,
+    "source": " мс · ",
+    "kind": "quasi",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:6512",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 6584,
+    "end": 6586,
+    "source": " Б",
+    "kind": "quasi",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:6584",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 6879,
+    "end": 6926,
+    "source": "Запись готова: все 90 кадров, 16 из 16 задач.",
+    "kind": "literal",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:6879",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 6935,
+    "end": 7028,
+    "source": "Отрицательный прогон: все 10 кадров, 0 из 16 задач. Время остановки R в кадрах не отмечено.",
+    "kind": "literal",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:6935",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 7954,
+    "end": 8035,
+    "source": "Просмотр завершён. Все кадры показаны; подробности доступны по строкам журнала.",
+    "kind": "literal",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:7954",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 8194,
+    "end": 8225,
+    "source": "Загружаем проверенный захват…",
+    "kind": "literal",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:8194",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 8474,
+    "end": 8558,
+    "source": "Запись не загружена или повреждена. Исходные PCAP и архивы ниже остаются доступны.",
+    "kind": "literal",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:8474",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 8679,
+    "end": 8691,
+    "source": "Пауза. Кадр ",
+    "kind": "quasi",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:8679",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 8701,
+    "end": 8705,
+    "source": " из ",
+    "kind": "quasi",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:8701",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 8837,
+    "end": 8844,
+    "source": "Пауза",
+    "kind": "literal",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:8837",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 8871,
+    "end": 8959,
+    "source": "Воспроизводим сохранённые кадры. Интервал показа условный; исходное время — в журнале.",
+    "kind": "literal",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:8871",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 9298,
+    "end": 9361,
+    "source": "Скорость изменена. Нажмите «Воспроизвести», чтобы продолжить.",
+    "kind": "literal",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:9298",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 9497,
+    "end": 9552,
+    "source": "Воспроизведение приостановлено при уходе со страницы.",
+    "kind": "literal",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:9497",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 9616,
+    "end": 9653,
+    "source": "Пауза после изменения размера окна.",
+    "kind": "literal",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:9616",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 9717,
+    "end": 9760,
+    "source": "Пауза после изменения настройки движения.",
+    "kind": "literal",
+    "file": "assets/replay.js",
+    "context": "assets/replay.js:9717",
+    "sha256": "3735a7174dc5ac0d88cf0fa73183c0ebaf96591ef51c0712d98603fd9a43d5d2"
+  },
+  {
+    "start": 377,
+    "end": 400,
+    "source": "Эхо · проверка канала",
+    "kind": "literal",
+    "file": "assets/agent-replay.js",
+    "context": "assets/agent-replay.js:377",
+    "sha256": "1836f99dc017213dae7d8195b34a8e8a9ebc879b155000afaadfd38dc6f37355"
+  },
+  {
+    "start": 410,
+    "end": 441,
+    "source": "A просит B проверить черновик",
+    "kind": "literal",
+    "file": "assets/agent-replay.js",
+    "context": "assets/agent-replay.js:410",
+    "sha256": "1836f99dc017213dae7d8195b34a8e8a9ebc879b155000afaadfd38dc6f37355"
+  },
+  {
+    "start": 450,
+    "end": 485,
+    "source": "B возвращает рецензию для итога A",
+    "kind": "literal",
+    "file": "assets/agent-replay.js",
+    "context": "assets/agent-replay.js:450",
+    "sha256": "1836f99dc017213dae7d8195b34a8e8a9ebc879b155000afaadfd38dc6f37355"
+  },
+  {
+    "start": 747,
+    "end": 762,
+    "source": "Показать путь",
+    "kind": "literal",
+    "file": "assets/agent-replay.js",
+    "context": "assets/agent-replay.js:747",
+    "sha256": "1836f99dc017213dae7d8195b34a8e8a9ebc879b155000afaadfd38dc6f37355"
+  },
+  {
+    "start": 1165,
+    "end": 1180,
+    "source": " из 4 переходов",
+    "kind": "quasi",
+    "file": "assets/agent-replay.js",
+    "context": "assets/agent-replay.js:1165",
+    "sha256": "1836f99dc017213dae7d8195b34a8e8a9ebc879b155000afaadfd38dc6f37355"
+  },
+  {
+    "start": 1238,
+    "end": 1285,
+    "source": "Отправитель подготовил зашифрованное задание.",
+    "kind": "literal",
+    "file": "assets/agent-replay.js",
+    "context": "assets/agent-replay.js:1238",
+    "sha256": "1836f99dc017213dae7d8195b34a8e8a9ebc879b155000afaadfd38dc6f37355"
+  },
+  {
+    "start": 1357,
+    "end": 1386,
+    "source": "подписанный конверт задания",
+    "kind": "literal",
+    "file": "assets/agent-replay.js",
+    "context": "assets/agent-replay.js:1357",
+    "sha256": "1836f99dc017213dae7d8195b34a8e8a9ebc879b155000afaadfd38dc6f37355"
+  },
+  {
+    "start": 1389,
+    "end": 1419,
+    "source": "подписанная квитанция приёма",
+    "kind": "literal",
+    "file": "assets/agent-replay.js",
+    "context": "assets/agent-replay.js:1389",
+    "sha256": "1836f99dc017213dae7d8195b34a8e8a9ebc879b155000afaadfd38dc6f37355"
+  },
+  {
+    "start": 1482,
+    "end": 1518,
+    "source": " · Отправитель проверил квитанцию.",
+    "kind": "literal",
+    "file": "assets/agent-replay.js",
+    "context": "assets/agent-replay.js:1482",
+    "sha256": "1836f99dc017213dae7d8195b34a8e8a9ebc879b155000afaadfd38dc6f37355"
+  },
+  {
+    "start": 1792,
+    "end": 1803,
+    "source": "Сообщение",
+    "kind": "literal",
+    "file": "assets/agent-replay.js",
+    "context": "assets/agent-replay.js:1792",
+    "sha256": "1836f99dc017213dae7d8195b34a8e8a9ebc879b155000afaadfd38dc6f37355"
+  },
+  {
+    "start": 1831,
+    "end": 1846,
+    "source": "Данные задачи",
+    "kind": "literal",
+    "file": "assets/agent-replay.js",
+    "context": "assets/agent-replay.js:1831",
+    "sha256": "1836f99dc017213dae7d8195b34a8e8a9ebc879b155000afaadfd38dc6f37355"
+  },
+  {
+    "start": 1864,
+    "end": 1883,
+    "source": " байт до шифрования",
+    "kind": "quasi",
+    "file": "assets/agent-replay.js",
+    "context": "assets/agent-replay.js:1864",
+    "sha256": "1836f99dc017213dae7d8195b34a8e8a9ebc879b155000afaadfd38dc6f37355"
+  },
+  {
+    "start": 1897,
+    "end": 1915,
+    "source": "Проверенный путь",
+    "kind": "literal",
+    "file": "assets/agent-replay.js",
+    "context": "assets/agent-replay.js:1897",
+    "sha256": "1836f99dc017213dae7d8195b34a8e8a9ebc879b155000afaadfd38dc6f37355"
+  },
+  {
+    "start": 1953,
+    "end": 1972,
+    "source": "Приём и квитанция",
+    "kind": "literal",
+    "file": "assets/agent-replay.js",
+    "context": "assets/agent-replay.js:1953",
+    "sha256": "1836f99dc017213dae7d8195b34a8e8a9ebc879b155000afaadfd38dc6f37355"
+  },
+  {
+    "start": 2019,
+    "end": 2043,
+    "source": " мс на часах отправителя",
+    "kind": "quasi",
+    "file": "assets/agent-replay.js",
+    "context": "assets/agent-replay.js:2019",
+    "sha256": "1836f99dc017213dae7d8195b34a8e8a9ebc879b155000afaadfd38dc6f37355"
+  },
+  {
+    "start": 2057,
+    "end": 2066,
+    "source": "Попытки",
+    "kind": "literal",
+    "file": "assets/agent-replay.js",
+    "context": "assets/agent-replay.js:2057",
+    "sha256": "1836f99dc017213dae7d8195b34a8e8a9ebc879b155000afaadfd38dc6f37355"
+  },
+  {
+    "start": 3337,
+    "end": 3344,
+    "source": "Пауза",
+    "kind": "literal",
+    "file": "assets/agent-replay.js",
+    "context": "assets/agent-replay.js:3337",
+    "sha256": "1836f99dc017213dae7d8195b34a8e8a9ebc879b155000afaadfd38dc6f37355"
+  },
+  {
+    "start": 5244,
+    "end": 5249,
+    "source": "Эхо",
+    "kind": "literal",
+    "file": "assets/agent-replay.js",
+    "context": "assets/agent-replay.js:5244",
+    "sha256": "1836f99dc017213dae7d8195b34a8e8a9ebc879b155000afaadfd38dc6f37355"
+  },
+  {
+    "start": 5921,
+    "end": 6015,
+    "source": "Не удалось загрузить запись. Результаты и JSON доступны ниже; обновите страницу для повтора.",
+    "kind": "literal",
+    "file": "assets/agent-replay.js",
+    "context": "assets/agent-replay.js:5921",
+    "sha256": "1836f99dc017213dae7d8195b34a8e8a9ebc879b155000afaadfd38dc6f37355"
+  }
+]
