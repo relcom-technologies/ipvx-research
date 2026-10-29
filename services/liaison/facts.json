@@ -17,7 +17,9 @@
     "started": false,
     "local_preflight": "Passed only on our own in-process ASGI fixture. Not an independent client run, native transport test or LLM evaluation.",
     "proposed_limits": "Two hours/operator, ordinary CPU, no model/GPU, isolated replicas only, two accounts and at most five logical proposals.",
-    "pending": "Partner role, environment, resource authority, scope, retention, timing and exact scope-hash acknowledgements; then separate owner launch decision."
+    "pending": "No authorized independent client runner. A new execution candidate would require that separate runner's environment, authority, scope, retention and timing, exact scope-hash acknowledgements and a separate owner launch decision. These execution questions do not apply to the review-only account.",
+    "review_only": "In public comment 651b962b-391d-4ba1-8dca-8f679cdfb91b, prismdeadlines explicitly selected only asynchronous review of public text. No runner authority, fixed slot or execution-scope ACK. Do not repeat runner/OS/resources/retention/window questions or the former 29 October deadline to this reviewer. The review and its date are not yet received.",
+    "current_review_question": "Can any A/B/R text turn UNKNOWN or unavailable into never-accepted and automatically create a fresh messageId? Review wording only; do not claim an independent execution."
   },
   "identity": {
     "account": "IPvXResearchLiaison",

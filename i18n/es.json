@@ -2351,5 +2351,17 @@
   "7e77d980c345f941": "Se confirmaron la aceptación SMTP y la recepción del correo de prueba; no hubo ejecuciones de Actions en el commit de fusión.",
   "dcc861cbfa0f8165": "La aceptación SMTP no demuestra la entrega de todos los correos futuros; se confirmó la recepción de un correo de prueba. Un fallo entre la aceptación SMTP y el guardado del estado puede duplicar el mismo Message-ID. Durante una caída completa del servidor o relay, ese mismo canal no puede informar inmediatamente de su propio fallo.",
   "875e4279c9659453": "En GitHub A2A se comprueban el contador público de comentarios y el marcador de actividad de la página, no la integridad de los textos de la API. Los cambios de formato se tratan como fallos de cobertura. Moltbook conserva su límite conocido de profundidad del árbol de 5.",
-  "f3acb0de4495d54b": "No se sustituyeron el observador original, su registro ni sus claves. No se iniciaron publicaciones automáticas de respuestas, llamadas a modelos, admisiones de participantes, cambios de permisos, asignaciones de recursos ni experimentos conjuntos."
+  "f3acb0de4495d54b": "No se sustituyeron el observador original, su registro ni sus claves. No se iniciaron publicaciones automáticas de respuestas, llamadas a modelos, admisiones de participantes, cambios de permisos, asignaciones de recursos ni experimentos conjuntos.",
+  "cfd936b3be03f2ba": "135 eventos hasta HX-0135; autores, fundamentos, comprobaciones y limitaciones.",
+  "df1abc6cdd478850": "281.9 KiB · 12 archivos",
+  "52202c35cc1ff9cb": "HX-0135 · Preparado el análisis autónomo de respuestas públicas con Claude/GPT",
+  "53bf5587e41a76f8": "Codex — asistente principal de esta conversación · 2026-10-29T23:56:02.812026+00:00",
+  "a6ff9329a041edf1": "Se prepararon tres lectores públicos, propuestas estructuradas, la revisión de GPT tras Claude, un presupuesto diario compartido y la validación de ambos modelos. Se conservan los fallos y reservas; la versión probada no se vuelve a procesar.",
+  "0afd4ca5cc3412a8": "El análisis debe funcionar en el servidor sin Actions ni el ordenador del propietario. Los modelos solo preparan borradores privados, sin herramientas de publicación o ejecución.",
+  "23a6cb6fd90c72f2": "services/liaison/public_sources.py",
+  "1e12d0c20b037489": "infra/activate_liaison.py",
+  "d574ff4deb68bd63": "scripts/test_autonomous_liaison.py",
+  "e09a89f4b8351ea4": "Pasaron 95 pruebas locales y 5 pruebas wire.",
+  "b561151ba4c7f9c4": "La nueva versión aún no está instalada; la prueba de pago de ambos modelos y la activación no se han verificado. El propietario confirmó la resolución del problema de saldo de la API de Claude.",
+  "36b713dc793c7c3b": "Las solicitudes privadas A2A no se envían a los modelos. Se indican expresamente las lagunas de cobertura del HTML de GitHub y del árbol de Moltbook."
 }

@@ -73,7 +73,7 @@ class LiaisonTests(unittest.TestCase):
             def __init__(self, config): self.config=config;self.name=config['provider'];self.model=config['model']
             def count(self, prompt): return 100
             def generate(self, prompt, maximum):
-                return json.dumps(dict(decision='reply',reply='The profile has no minimum retention guarantee.',evidence=['profile'],reason='Matches supplied profile.')), self.model, dict(input_tokens=100, output_tokens=30)
+                return json.dumps(dict(decision='reply',reply='The profile has no minimum retention guarantee.',evidence=['profile'],reason='Matches supplied profile.',classification='question',proposal=None)), self.model, dict(input_tokens=100, output_tokens=30)
         config=json.loads((ROOT/'services/liaison/config.example.json').read_text());config['billing_authorized']=True
         for role in ('writer','reviewer'):config[role]['pricing_valid_until']='2999-01-01'
         comment=dict(id='fixture-comment',text='How long are receipts retained?',project_account=False,source_url='https://www.moltbook.com/post/fixture')
@@ -120,7 +120,7 @@ class LiaisonTests(unittest.TestCase):
         (release/'facts.json').write_text('{}');(release/'baseline-snapshot.json').write_text('{"comments":[]}')
         worker.__file__=str(release/'worker.py')
         state=root/'observer';state.mkdir();config=json.loads((ROOT/'services/liaison/config.example.json').read_text())
-        config.update(billing_authorized=True,generation_enabled=False);(state/'config.json').write_text(json.dumps(config))
+        config.update(billing_authorized=True,generation_enabled=False,extra_public_sources_enabled=False);(state/'config.json').write_text(json.dumps(config))
         raw={'comments':[dict(id='observed',author={'name':'external-fixture'},content='A new question',created_at='2026-10-29T08:00:00Z')]}
         def source(url):return raw if '/comments?' in url else {'post':{'comment_count':1}}
         with patch.object(worker,'read',side_effect=source),patch.object(worker,'draft',side_effect=AssertionError('no model call')),contextlib.redirect_stdout(io.StringIO()):

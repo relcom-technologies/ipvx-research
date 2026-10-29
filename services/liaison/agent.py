@@ -26,10 +26,26 @@ invent results, agreement, access, membership or resource commitments. Escalate
 questions needing an owner's decision. Return only a concise JSON object with
 keys decision (reply, needs_owner, or skip), reply, evidence (array of exact keys
 from allowed_evidence_keys, never file paths or invented citations), and reason
-(brief decision summary, not private reasoning).
+(brief decision summary, not private reasoning), classification (question,
+experiment_interest, review_interest, or irrelevant), and proposal (null or the
+structured draft below).
 Never request credentials. Do not repeat questions already answered by the project.
 Use the external author's language. A reviewer must challenge the draft against
-the supplied evidence and may replace it; approval here is only editorial review.'''
+the supplied evidence and may replace it; approval here is only editorial review.
+For concrete experiment_interest or review_interest, prepare one bounded proposal
+with these exact keys: hypothesis, roles, resources, versions, shared_task, control,
+failure_scenarios, success_metrics, failure_metrics, time_compute_limits, artifacts,
+owner_decisions, consent_status. failure_scenarios, success_metrics, failure_metrics,
+artifacts and owner_decisions are short arrays of strings; other fields are short
+strings. Include one falsifiable hypothesis and explicit negative/inconclusive
+outcomes. Mark every unknown version, resource, permission and commitment as
+unconfirmed. A review-only participant must never be asked again to be a runner,
+deploy a server, grant resources, or ACK an execution scope. Keep the whole JSON
+concise. Drafts do not authorize publication or execution.'''
+
+PROPOSAL_LISTS = {'failure_scenarios','success_metrics','failure_metrics','artifacts','owner_decisions'}
+PROPOSAL_TEXT = {'hypothesis','roles','resources','versions','shared_task','control',
+    'time_compute_limits','consent_status'}
 
 
 def digest(value):
@@ -56,6 +72,8 @@ class Ledger:
         if not 0 < self.limit <= 3_000_000:
             raise BudgetError('daily_limit_exceeds_owner_authorization')
         self.zone = ZoneInfo(zone)
+        if zone != 'Europe/Berlin':
+            raise BudgetError('budget_timezone_not_authorized')
         with self.connect() as db:
             db.execute('CREATE TABLE IF NOT EXISTS reservations(id TEXT PRIMARY KEY, day TEXT, amount INTEGER, provider TEXT, model TEXT)')
             db.execute('CREATE TABLE IF NOT EXISTS jobs(id TEXT PRIMARY KEY, source_hash TEXT, state TEXT, result TEXT)')
@@ -150,9 +168,11 @@ class Provider:
         return data['message']['content'], data.get('model', self.model), dict(input_tokens=data.get('prompt_eval_count'), output_tokens=data.get('eval_count'))
 
 
-def parse_reply(raw, evidence_names):
+def parse_reply(raw, evidence_names, schema_version=1):
     result = json.loads(raw)
-    if set(result) != {'decision','reply','evidence','reason'} or result['decision'] not in ('reply','needs_owner','skip'):
+    keys={'decision','reply','evidence','reason'}
+    if schema_version == 2: keys |= {'classification','proposal'}
+    if set(result) != keys or result['decision'] not in ('reply','needs_owner','skip'):
         raise ValueError('invalid_model_decision')
     if not all(isinstance(result[k],str) for k in ('reply','reason')) or len(result['reply']) > 6000 or len(result['reason']) > 1000:
         raise ValueError('model_text_limit')
@@ -160,7 +180,35 @@ def parse_reply(raw, evidence_names):
         raise ValueError('unknown_model_evidence')
     if result['decision'] == 'reply' and (not result['reply'].strip() or not result['evidence']):
         raise ValueError('reply_without_evidence')
+    if schema_version == 2:
+        if result['classification'] not in ('question','experiment_interest','review_interest','irrelevant'):
+            raise ValueError('invalid_classification')
+        proposal=result['proposal']
+        if proposal is not None:
+            if not isinstance(proposal,dict) or set(proposal) != PROPOSAL_TEXT | PROPOSAL_LISTS:
+                raise ValueError('proposal_fields')
+            for key in PROPOSAL_TEXT:
+                if not isinstance(proposal[key],str) or not 1 <= len(proposal[key]) <= 800:
+                    raise ValueError('proposal_text')
+            for key in PROPOSAL_LISTS:
+                if (not isinstance(proposal[key],list) or not 1 <= len(proposal[key]) <= 6
+                        or any(not isinstance(x,str) or not 1 <= len(x) <= 500 for x in proposal[key])):
+                    raise ValueError('proposal_list')
+        elif result['classification'] in ('experiment_interest','review_interest') and result['decision'] != 'skip':
+            raise ValueError('interest_requires_bounded_proposal')
     return result
+
+
+def validate_config(config):
+    if (config.get('publication_mode') != 'draft_only' or not 0 < config['daily_budget_usd'] <= 3
+            or not 1 <= config['max_output_tokens'] <= 2400):
+        raise BudgetError('configuration_exceeds_owner_scope')
+    for role in ('writer','reviewer'):
+        pricing=config[role]
+        if pricing['provider'] != 'local':
+            if (datetime.now(timezone.utc).date().isoformat() > pricing['pricing_valid_until']
+                    or pricing['input_usd_per_million'] <= 0 or pricing['output_usd_per_million'] <= 0):
+                raise BudgetError('pricing_review_required')
 
 
 def call(provider, prompt, ledger, identifier, config):
@@ -189,31 +237,37 @@ def draft(comment, snapshot, facts, config, ledger, provider_factory=Provider, o
         raise ValueError('do_not_reply_to_ourselves')
     if config.get('billing_authorized') is not True:
         raise BudgetError('billing_not_enabled')
+    validate_config(config)
     if not ledger.pair_available(config):raise BudgetError('budget_deferred_no_job_created')
     job = job_key(comment,operator_retry_id)
-    with ledger.connect() as db:
-        try:
-            db.execute('INSERT INTO jobs VALUES(?,?,?,?)', (job,digest(comment),'started',None))
-        except sqlite3.IntegrityError:
-            raise ValueError('comment_version_already_processed')
-    recent=[row|dict(text=row['text'][:2000],text_truncated=len(row['text'])>2000,full_text_sha256=digest(row['text'])) for row in snapshot['comments'][-5:]]
+    recent=[row|dict(text=row['text'][:2000],text_truncated=len(row['text'])>2000,full_text_sha256=digest(row['text']))
+        for row in [x for x in snapshot['comments'] if x.get('source') == comment.get('source')][-5:]]
     context = dict(source=comment, recent_discussion=recent, project_evidence=facts, allowed_evidence_keys=list(facts),
         source_coverage=snapshot['coverage'], owner_daily_budget_usd=config['daily_budget_usd'])
     prompt = json.dumps(context, ensure_ascii=False)
     if len(prompt) > 50000:
         raise ValueError('context_limit')
+    with ledger.connect() as db:
+        try:
+            db.execute('INSERT INTO jobs VALUES(?,?,?,?)', (job,digest(comment),'started',None))
+        except sqlite3.IntegrityError:
+            raise ValueError('comment_version_already_processed')
     traces = []
     transcripts = []
     try:
         raw, trace = call(provider_factory(config['writer']), prompt, ledger, job+':writer', config)
         traces.append(trace)
         transcripts.append(dict(stage='writer',input=prompt,output=raw,metadata=trace))
-        first = parse_reply(raw, facts)
+        if trace['actual_model'] != trace['requested_model']:
+            raise ValueError('provider_model_mismatch')
+        first = parse_reply(raw, facts, config.get('analysis_schema_version',1))
         review_prompt = json.dumps(dict(context=context, draft_to_review=first),ensure_ascii=False)
         raw, trace = call(provider_factory(config['reviewer']), review_prompt, ledger, job+':reviewer', config)
         traces.append(trace)
         transcripts.append(dict(stage='reviewer',input=review_prompt,output=raw,metadata=trace))
-        result = parse_reply(raw, facts)
+        if trace['actual_model'] != trace['requested_model']:
+            raise ValueError('provider_model_mismatch')
+        result = parse_reply(raw, facts, config.get('analysis_schema_version',1))
         output = dict(schema_version=1, project_account='IPvXResearchLiaison', job_id=job, source_comment_id=comment['id'],
             source_url=comment['source_url'], source_sha256=digest(comment), draft=result,
             models=traces, provider_transcripts=transcripts, operator_retry_id=operator_retry_id,

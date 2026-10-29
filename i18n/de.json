@@ -2351,5 +2351,17 @@
   "7e77d980c345f941": "SMTP-Annahme und Empfang der Testmail wurden bestätigt; auf dem Merge-Commit gab es keine Actions-Läufe.",
   "dcc861cbfa0f8165": "SMTP-Annahme beweist nicht die Zustellung jeder zukünftigen E-Mail; bestätigt wurde der Empfang einer Testmail. Ein Ausfall zwischen SMTP-Annahme und Speicherung des Kontrollstands kann dieselbe Message-ID erneut senden. Bei vollständigem Ausfall des Servers oder Relays kann derselbe Kanal seinen eigenen Ausfall nicht sofort melden.",
   "875e4279c9659453": "Bei GitHub A2A werden der öffentliche Kommentarzähler und die Aktivitätsmarkierung der Seite geprüft, nicht die Vollständigkeit der API-Kommentartexte. Formatänderungen werden zu Abdeckungsfehlern. Für Moltbook bleibt die bekannte Baumtiefengrenze von 5 bestehen.",
-  "f3acb0de4495d54b": "Der ursprüngliche Beobachter, sein Journal und seine Schlüssel wurden nicht ersetzt. Es wurden keine automatischen Antworten, Modellaufrufe, Teilnehmeraufnahmen, Berechtigungsänderungen, Ressourcenzuweisungen oder gemeinsamen Experimente gestartet."
+  "f3acb0de4495d54b": "Der ursprüngliche Beobachter, sein Journal und seine Schlüssel wurden nicht ersetzt. Es wurden keine automatischen Antworten, Modellaufrufe, Teilnehmeraufnahmen, Berechtigungsänderungen, Ressourcenzuweisungen oder gemeinsamen Experimente gestartet.",
+  "cfd936b3be03f2ba": "135 Ereignisse bis HX-0135; Autoren, Begründungen, Prüfungen und Einschränkungen.",
+  "df1abc6cdd478850": "281.9 KiB · 12 Dateien",
+  "52202c35cc1ff9cb": "HX-0135 · Autonome Claude/GPT-Analyse öffentlicher Antworten vorbereitet",
+  "53bf5587e41a76f8": "Codex — Hauptassistent dieses Gesprächs · 2026-10-29T23:56:02.812026+00:00",
+  "a6ff9329a041edf1": "Drei öffentliche Quellenleser, strukturierte Versuchsentwürfe, GPT-Prüfung nach Claude, gemeinsames Tagesbudget und eine Freigabe nach Prüfung beider Modelle sind vorbereitet. Frühere Fehler und Reservierungen bleiben erhalten; die geprüfte Smoke-Version wird nicht erneut verarbeitet.",
+  "0afd4ca5cc3412a8": "Die Analyse soll ohne Actions oder den Computer des Eigentümers auf dem Server laufen. Modelle erstellen nur private Entwürfe und erhalten keine Veröffentlichungs- oder Ausführungswerkzeuge.",
+  "23a6cb6fd90c72f2": "services/liaison/public_sources.py",
+  "1e12d0c20b037489": "infra/activate_liaison.py",
+  "d574ff4deb68bd63": "scripts/test_autonomous_liaison.py",
+  "e09a89f4b8351ea4": "95 lokale Tests und 5 Wire-Tests waren erfolgreich.",
+  "b561151ba4c7f9c4": "Die neue Version ist noch nicht installiert; das kostenpflichtige Modellpaar und die Aktivierung sind ungeprüft. Der Eigentümer hat die Behebung des Claude-API-Guthabenproblems bestätigt.",
+  "36b713dc793c7c3b": "Private A2A-Anträge werden nicht an Modelle gesendet. Abdeckungslücken im GitHub-HTML und im Moltbook-Baum sind ausdrücklich dokumentiert."
 }

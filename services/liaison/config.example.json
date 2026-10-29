@@ -2,8 +2,10 @@
   "agent_name": "IPvXResearchLiaison",
   "billing_authorized": false,
   "generation_enabled": false,
+  "analysis_schema_version": 2,
+  "extra_public_sources_enabled": true,
   "daily_budget_usd": 3,
-  "max_output_tokens": 1400,
+  "max_output_tokens": 2200,
   "publication_mode": "draft_only",
   "writer": {
     "provider": "anthropic",

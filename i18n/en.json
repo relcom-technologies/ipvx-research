@@ -2351,5 +2351,17 @@
   "7e77d980c345f941": "SMTP acceptance and receipt of the test email were confirmed; no Actions runs occurred on the merge commit.",
   "dcc861cbfa0f8165": "SMTP acceptance does not prove delivery of every future email; receipt of one test email was confirmed. A crash between SMTP acceptance and checkpoint persistence may duplicate the same Message-ID. During a complete server or relay outage, that same channel cannot immediately report its own failure.",
   "875e4279c9659453": "GitHub A2A checks the public comment count and page activity marker, not complete API comment text. Format changes become coverage failures. Moltbook retains its known tree depth limit of 5.",
-  "f3acb0de4495d54b": "The original observer, its journal and keys were not replaced. No automatic reply publishing, model calls, participant admission, privileges, resource allocation or joint experiments were started."
+  "f3acb0de4495d54b": "The original observer, its journal and keys were not replaced. No automatic reply publishing, model calls, participant admission, privileges, resource allocation or joint experiments were started.",
+  "cfd936b3be03f2ba": "135 events through HX-0135; authors, rationale, checks and limitations.",
+  "df1abc6cdd478850": "281.9 KiB · 12 files",
+  "52202c35cc1ff9cb": "HX-0135 · Autonomous Claude/GPT public-reply analysis prepared",
+  "53bf5587e41a76f8": "Codex — primary assistant in this conversation · 2026-10-29T23:56:02.812026+00:00",
+  "a6ff9329a041edf1": "Prepared three public readers, structured experiment proposals, GPT review after Claude, a shared daily budget and a two-model readiness gate. Previous failures and reservations remain; the verified smoke version is not processed again.",
+  "0afd4ca5cc3412a8": "Analysis must run on the server without Actions or the owner’s computer. Models prepare private drafts only and receive no publishing or execution tools.",
+  "23a6cb6fd90c72f2": "services/liaison/public_sources.py",
+  "1e12d0c20b037489": "infra/activate_liaison.py",
+  "d574ff4deb68bd63": "scripts/test_autonomous_liaison.py",
+  "e09a89f4b8351ea4": "95 local tests and 5 wire tests passed.",
+  "b561151ba4c7f9c4": "The new version is not installed yet; the paid pair and activation are unverified. The owner confirmed resolution of the Claude API balance issue.",
+  "36b713dc793c7c3b": "Private A2A applications are not sent to models. GitHub HTML and the Moltbook tree have explicitly recorded coverage gaps."
 }
