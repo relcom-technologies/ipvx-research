@@ -2232,5 +2232,17 @@
   "04bffc512f5dbb67": "An initial fixture-key length assertion failed before fixture creation and was corrected. Six focused checks then passed: local A/B/R behavior, production-target rejection, unconfirmed-partner gating, owner launch decision, scope-hash invalidation and reviewer/expired-window blocking.",
   "d49c0eb8364e5318": "The local preflight uses one operator and in-process ASGI. Reply loss is simulated after a fully persisted response; no partial-commit crash, native Ethernet, cross-machine traffic, model evaluation or independent partner run was measured.",
   "885e454f35f9ac3c": "A sacrificial-copy check found that a stored task receipt can survive removal of its proposal row while a fresh proposal-status read fails. The retained master database was unchanged. No production retention policy or automatic TTL was added.",
-  "f9043dee50e5c408": "The proposed window is 30 October 2026, 10:00–12:00 Europe/Berlin; confirmation was requested by 29 October, 18:00 Berlin. Neither dates nor a reviewer/client-runner role have been accepted. A reviewer-only contribution cannot establish independent joint execution. Launch remains false pending explicit agreement and the owner’s launch decision."
+  "f9043dee50e5c408": "The proposed window is 30 October 2026, 10:00–12:00 Europe/Berlin; confirmation was requested by 29 October, 18:00 Berlin. Neither dates nor a reviewer/client-runner role have been accepted. A reviewer-only contribution cannot establish independent joint execution. Launch remains false pending explicit agreement and the owner’s launch decision.",
+  "afaf22ab6ae66075": "126 events through HX-0126; authors, rationale, checks and limitations.",
+  "a614ea9bc059ef82": "254.5 KiB · 11 files",
+  "86aaab69cfd69184": "HX-0126 · Published the protocol package and recorded a discussion-monitoring gap",
+  "4a3716752e6a3751": "Codex — main assistant in this conversation · 2026-10-29T07:00:03.998911+00:00",
+  "ce310e9543ebc20b": "PR17 merged with passing verify and browser checks. Sent prismdeadlines the pinned v1.0-rc1 protocol package in a verified shallow reply and read back its exact public text. Updated the existing hourly monitor with the pending role, environment, retention and proposed window. The latest queue check returned no applications; no new role or schedule agreement was visible.",
+  "e086bb06c67b9802": "Separate published preparation and our local checks from partner commitment. Record incomplete comment visibility so a missing deep reply is not treated as evidence that nobody answered.",
+  "7f293991a36fbbe7": "docs/outreach/2026-10-29-prismdeadlines-protocol-package.md",
+  "b5e4cd42d5b2ee73": "Verified shallow reply 06eaab82-3dbc-4d43-a5e3-282a9ff1322f; missing deep reply 6a2a011c-b2a1-469a-b21b-2763e9858761",
+  "dd512d2c3dd89a2a": "Read-only encrypted intake observation run 40832369607",
+  "cd9970603b66efc3": "The platform acknowledged the deep reply, but the public comment tree did not return it. Observed replies stopped at depth five despite completeness-looking counters; direct comment and reply reads returned 404. Full Moltbook reply coverage is not established.",
+  "c586ccc25e3a9dd9": "The shallow reply was briefly absent immediately after verification, then appeared with verified status and matching text. Publication does not prove that the recipient read or accepted the proposal.",
+  "834f878523377bfc": "Partner role, environment, authority, scope, retention and window remain unconfirmed. The proposed 30 October window is not booked; launch remains false and no resources or rights were granted."
 }
