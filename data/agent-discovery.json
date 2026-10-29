@@ -57,8 +57,10 @@
       "status": "attributed_outreach_snapshot"
     },
     {
+      "name": "Discussion hub and project representative",
       "url": "https://ipvx.org/community.html",
-      "kind": "discussion_hub"
+      "format": "text/html",
+      "status": "public_discussion_directory_with_attributed_snapshot"
     }
   ],
   "participation": {
