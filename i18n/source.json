@@ -837,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "86973959816a7f02",
-      "source": "131 событий по HX-0131; авторы, основания, проверки и ограничения.",
+      "id": "3fd2b033aaa33ff3",
+      "source": "132 событий по HX-0132; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "0c92743ca48c76f8",
-      "source": "267.1 КиБ · 11 файлов",
+      "id": "c6eb56bf49bb4c03",
+      "source": "275.0 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4642,14 +4642,84 @@
       "context": "history.html:text:main/section/p"
     },
     {
-      "id": "d6756f2e52ce9924",
-      "source": "HX-0131 · На странице экспериментов появилась ссылка на живой стенд lab.ipvx.org",
+      "id": "10e7a0dc13e0f49b",
+      "source": "HX-0132 · Мониторинг A2A перенесён на сервер без GitHub Actions",
       "context": "history.html:text:section/details/summary"
     },
     {
       "id": "e078c61c3e49f21a",
       "source": "Реализовано",
       "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "f04e13e6ebd26b32",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-29T20:52:55.470271+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0bf4c8f82f6f14d8",
+      "source": "На существующей машине запущен пятиминутный таймер: он читает БД A2A только для чтения и сохраняет версии заявок в приватном журнале. Владелец получает только подписанный зашифрованный экспорт; ключ расшифровки остаётся локально. Реальный HTTPS, подпись, расшифровка и таймер проверены. 12 production-workflows IPvX заменены одной проверкой PR без SSH, секретов и production-доступа. Уведомитель переведён на новый клиент; новые заявки при проверке отсутствовали.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "7f12b899c99102e2",
+      "source": "Наблюдение за заявками не должно зависеть от очередей CI. Журнал сохраняет события до обработки, а курсор подтверждается после неё. Actions используются для проверки изменений в PR; production-операции вынесены за пределы CI. Ранее опубликованное событие другого участника HX-0131 сохранено; конфликтующие draft/local идентификаторы архивированы с указанием исходного контекста.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "91adad2ad095306a",
+      "source": "docs/monitoring-operations.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "4845fcefdbf8ec21",
+      "source": "history/draft-records-2026-10-29.jsonl",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "f5707ff14704a8bc",
+      "source": "35 локальных тестов; успешная реальная проверка серверного таймера, HTTPS, подписи и расшифровки",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "8a4779a993f2b4d0",
+      "source": "Сбор A2A работает на сервере; доставка в этот чат и публичные GitHub-discussion чтения используют существующий локальный планировщик. Пределы журнала: 10 000 событий и 8 МиБ; при заполнении покрытие явно помечается неполным без автоматического удаления.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "105c972338932f97",
+      "source": "Настройка PR-only двух прикладных репозиториев подготовлена, но ещё не слита. Общий выключатель Actions в relcom-infra не включался; GitHub отклонил отмену прежнего зависшего запуска без задач. Вход, приём A2A и существующий сборщик остались активны.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "805004a3cf239915",
+      "source": "Платные модели, новые участники и совместный эксперимент не запускались. Оригиналы незавершённых записей сохранены отдельно; их старые идентификаторы не считаются новыми каноническими номерами main.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "d6756f2e52ce9924",
+      "source": "HX-0131 · На странице экспериментов появилась ссылка на живой стенд lab.ipvx.org",
+      "context": "history.html:text:section/details/summary"
     },
     {
       "id": "a097379d1e5b6307",
@@ -4662,29 +4732,14 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "d636670365049d27",
       "source": "Сайт по-прежнему отдаёт только статичные файлы и не получает API лаборатории: вместо встраивания используется обычная ссылка, которую допускает текущая CSP. Стенд вынесен на поддомен, чтобы не делить origin и cookie входа Relcom ID с ipvx.org. Управление стендом остаётся за операторским SSH-туннелем.",
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "9eff48ba802739a9",
       "source": "scripts/build_portal.py",
       "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "3fdcb33114758eae",
@@ -4760,11 +4815,6 @@
       "id": "afe07222faf0cc35",
       "source": "Дополнительно проверены английская, немецкая и испанская статьи блога на 390, 768 и 1440 px: коды языков целые, горизонтального переполнения нет. Частные заявки и тексты моделей не опубликованы.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "599ff99f7c6ee852",

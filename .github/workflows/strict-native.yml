@@ -1,6 +1,7 @@
 name: Strict native Linux guests
 on:
-  workflow_dispatch:
+  pull_request:
+    paths: ['experiments/strict-native/**']
 permissions:
   contents: read
 jobs:

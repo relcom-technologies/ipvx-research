@@ -63,3 +63,15 @@ or exact revisions, and public files contain no credentials, private host
 addresses, owner email, browser/login details or raw private logs. The history is
 repository documentation; public website publication requires an explicit public
 export and the normal deployment path.
+
+## Concurrent drafts
+
+On 2026-10-29, another participant's HX-0131 was published while PR22 and local
+work contained unmerged entries with overlapping numbers. Published main entries
+were not rewritten. `draft-records-2026-10-29.jsonl` preserves those original
+records under qualified archive IDs, their source revision and `canonical:false`.
+The nested original ID is historical context, not another canonical sequence
+number. Later integration must append new canonical records and link the archived
+originals; it must not replace an already published participant's event or infer
+that a draft proposal was approved. This archive is supporting evidence included
+in the full history bundle; `events.jsonl` alone defines the main sequence.

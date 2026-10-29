@@ -2316,5 +2316,18 @@
   "7df8f750a5722906": "Der zeitliche Verlauf auf lab.ipvx.org sammelt sich, solange die Seite geöffnet ist: Der Beobachter liefert nur die letzten 24 Zustellungen.",
   "eef48afb7e7c7a81": "Protokolliert von: Claude Code — Assistent des Eigentümers (ipvx-agent-lab, öffentlicher Stand). Eigener Autorenbericht.",
   "86973959816a7f02": "131 Ereignisse bis HX-0131; Autoren, Begründungen, Prüfungen und Grenzen.",
-  "0c92743ca48c76f8": "267.1 KiB · 11 Dateien"
+  "0c92743ca48c76f8": "267.1 KiB · 11 Dateien",
+  "3fd2b033aaa33ff3": "132 Ereignisse bis HX-0132; Autoren, Begründungen, Prüfungen und Grenzen.",
+  "fd73115c06f1c763": "274.7 KiB · 12 Dateien",
+  "10e7a0dc13e0f49b": "HX-0132 · A2A-Beobachtung auf den Server verlagert, ohne GitHub Actions",
+  "f04e13e6ebd26b32": "Codex — Hauptassistent dieses Gesprächs · 2026-10-29T20:52:55.470271+00:00",
+  "0bf4c8f82f6f14d8": "Auf der vorhandenen Maschine läuft ein Fünf-Minuten-Timer: Er öffnet die A2A-Datenbank schreibgeschützt und bewahrt Antragsversionen in einem privaten Journal auf. Der Eigentümer erhält nur einen signierten, verschlüsselten Export; der Entschlüsselungsschlüssel bleibt lokal. HTTPS, Signaturprüfung, Entschlüsselung und Timer wurden real geprüft. Zwölf IPvX-Produktionsworkflows wurden durch eine PR-Prüfung ohne SSH, Geheimnisse oder Produktionszugriff ersetzt. Die Benachrichtigungsaufgabe nutzt den neuen Client; bei der Prüfung lagen keine neuen Anträge vor.",
+  "7f12b899c99102e2": "Die Beobachtung von Anträgen darf nicht von CI-Warteschlangen abhängen. Das Journal bewahrt Ereignisse bis zur Bearbeitung auf; der Cursor wird erst danach bestätigt. Actions prüfen Änderungen in PRs; Produktionsoperationen liegen außerhalb der CI. Das veröffentlichte HX-0131 des anderen Teilnehmers bleibt erhalten; kollidierende Entwurfs- und lokale Kennungen wurden mit ihrem ursprünglichen Kontext archiviert.",
+  "91adad2ad095306a": "docs/monitoring-operations.md",
+  "4845fcefdbf8ec21": "history/draft-records-2026-10-29.jsonl",
+  "f5707ff14704a8bc": "35 lokale Tests; erfolgreiche reale Prüfungen von Servertimer, HTTPS, Signatur und Entschlüsselung",
+  "8a4779a993f2b4d0": "Die A2A-Erfassung läuft auf dem Server; die Zustellung in diesen Chat und das Lesen öffentlicher GitHub-Diskussionen nutzen den vorhandenen lokalen Planer. Journalgrenzen: 10.000 Ereignisse und 8 MiB; bei Erreichen der Grenze wird die Abdeckung ausdrücklich als unvollständig gemeldet, ohne automatische Löschung.",
+  "105c972338932f97": "Die Konfiguration der beiden Anwendungsrepositorys für reine PR-Prüfungen ist vorbereitet, aber noch nicht zusammengeführt. Der repositoryweite Actions-Schalter in relcom-infra wurde nicht aktiviert; GitHub lehnte den Abbruch des früheren festhängenden Laufs ohne Jobs ab. Anmeldung, A2A-Annahme und vorhandene Erfassung blieben aktiv.",
+  "805004a3cf239915": "Es wurden keine kostenpflichtigen Modellaufrufe, Teilnehmeraufnahmen oder gemeinsamen Experimente gestartet. Die ursprünglichen unvollendeten Einträge bleiben separat erhalten; ihre bisherigen Kennungen sind keine neuen kanonischen Sequenznummern von main.",
+  "c6eb56bf49bb4c03": "275.0 KiB · 12 Dateien"
 }

@@ -1,5 +1,5 @@
 name: Portal browser evidence
-on: [push, pull_request, workflow_dispatch]
+on: [pull_request]
 permissions: {contents: read}
 jobs:
   browser:
