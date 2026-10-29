@@ -13,7 +13,7 @@ try{
  const ids=new Set(data.comments.map(row=>row.id));
  const nodes=data.comments.map(row=>{
   if(!uuid.test(row.id)||typeof row.text!=='string'||row.text.length>16000||typeof row.claimed_author!=='string'||row.claimed_author.length>100||typeof row.project_account!=='boolean'||row.a2a_submission!==false)throw new Error('format');
-  const details=make('details'),summary=make('summary'),time=make('time',date(row.created_at));details.className='collab-message';details.id='comment-'+row.id;time.dateTime=row.created_at;summary.append(make('span',row.claimed_author),make('span',row.project_account?root.dataset.projectLabel:root.dataset.externalLabel),time);details.append(summary);
+  const details=make('details'),summary=make('summary'),time=make('time',date(row.created_at));details.className='collab-message';details.id='comment-'+row.id;time.dateTime=row.created_at;summary.append(make('span',row.claimed_author),' ',make('span',row.project_account?root.dataset.projectLabel:root.dataset.externalLabel),' ',time);details.append(summary);
   if(ids.has(row.parent_id)){const p=make('p',root.dataset.parentLabel+' '),a=make('a',row.parent_id.slice(0,8));p.className='small';a.href='#comment-'+row.parent_id;p.append(a);details.append(p);}
   const body=make('div',row.text);body.className='collab-message-text';body.lang='en';details.append(body,make('p','Moltbook · '+row.id));return details;
  });
