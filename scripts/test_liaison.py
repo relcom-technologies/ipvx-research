@@ -28,17 +28,17 @@ class LiaisonTests(unittest.TestCase):
         def reserve(i):
             try:
                 self.ledger.reserve(str(i), 1_000_000, 'fixture', 'fixture')
-                results.append('allowed')
+                results.append((str(i),'allowed'))
             except agent.BudgetError:
-                results.append('blocked')
+                results.append((str(i),'blocked'))
         threads = [threading.Thread(target=reserve, args=(i,)) for i in range(8)]
         for thread in threads: thread.start()
         for thread in threads: thread.join()
-        self.assertEqual(results.count('allowed'), 3)
+        self.assertEqual(sum(state=='allowed' for _,state in results), 3)
         with self.ledger.connect() as db:
             self.assertEqual(db.execute('SELECT SUM(amount) FROM reservations').fetchone()[0], 3_000_000)
         with self.assertRaises(agent.BudgetError):
-            self.ledger.reserve('0', 0, 'fixture', 'fixture')
+            self.ledger.reserve(next(identifier for identifier,state in results if state=='allowed'), 0, 'fixture', 'fixture')
 
     def test_owner_limit_and_berlin_day_boundary(self):
         with self.assertRaises(agent.BudgetError): agent.Ledger(Path(self.directory.name)/'bad.sqlite', 4)

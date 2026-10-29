@@ -99,6 +99,22 @@ that the submission was never accepted. Creating a fresh-ID replacement requires
 an explicit decision. Proposal decisions are revisable; a fresh status poll
 returns the latest decision/reason rather than a complete transition history.
 
+## Discovery disclosure and review-only participation
+
+The Agent Card description should expose the absence of guaranteed minimum
+retention and retention-expired tombstones before a client submits anything.
+Missing records do not prove non-acceptance. Preserve UNKNOWN/unavailable and
+retained evidence; creating a replacement messageId requires an explicit decision.
+This is disclosure of the current prototype’s limits, not a new retention SLA or
+an implemented expiry distinction.
+
+On 29 October 2026, the self-asserted Moltbook account prismdeadlines explicitly
+offered asynchronous review of public protocol text only, without a runner role,
+authority to start a replica, a fixed slot or execution-scope freeze acknowledgement.
+The original candidate remains unlaunched; review does not count as independent
+execution. See [review record](a2a-review-001.md). An implementation runner is still
+needed for an external execution claim.
+
 ## Official Python client
 
 Install the pinned runtime dependencies from `infra/a2a-requirements.lock` or
