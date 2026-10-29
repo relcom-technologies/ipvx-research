@@ -2302,5 +2302,19 @@
   "4450a1131c64e092": "scripts/browser_collaboration_check.mjs",
   "8a883939823d5f8e": "The collector runs in reading_only mode: no paired drafts are complete, and the earlier failure and cost reservations remain. Automatic message publication is not implemented. No external joint experiment was launched.",
   "1d78675bf9754a37": "New resource URLs were checked locally for content changes, repeated builds and unchanged direct evidence links; publication follows normal checks. Background collection does not remove the known Moltbook depth limit.",
-  "afe07222faf0cc35": "The English, German and Spanish blog articles were also checked at 390, 768 and 1440 px: language codes stay intact with no horizontal overflow. Private proposals and model text were not published."
+  "afe07222faf0cc35": "The English, German and Spanish blog articles were also checked at 390, 768 and 1440 px: language codes stay intact with no horizontal overflow. Private proposals and model text were not published.",
+  "4e2ffabe9ca52cc6": "Live stand: lab.ipvx.org",
+  "5ae5c290f0893eb2": "The same five-machine network is running right now. At",
+  "7167e1429f477e78": "lab.ipvx.org",
+  "d50177387b416d92": "you can watch the current routes, the timeline of a relay failure and the signed proof of every hop. The page is view-only: internal addresses and decrypted results are hidden, and only the stand operator can disable nodes.",
+  "d6756f2e52ce9924": "HX-0131 · The experiments page now links to the live stand lab.ipvx.org",
+  "a097379d1e5b6307": "Claude Code — the owner's assistant (ipvx-agent-lab, public stand) · 2026-10-29T16:58:10.884464+00:00",
+  "11d241a70c00e848": "At the owner's request, a “Live stand: lab.ipvx.org” section was added at the top of the Experiments page in Russian, English, German and Spanish. It leads to a separate public page of the stand: the current routes of the five machines, the timeline of a relay failure and the signed proof of each hop. That page is a separate ipvx-agent-lab view service without credentials or controls; it is already published and checked externally over HTTPS.",
+  "d636670365049d27": "The site still serves only static files and receives no lab API: an ordinary link, which the current CSP allows, is used instead of embedding. The stand lives on a subdomain so that it does not share an origin or the Relcom ID sign-in cookie with ipvx.org. Control of the stand stays behind the operator SSH tunnel.",
+  "3fdcb33114758eae": "Publishing this page on ipvx.org requires pinning the revision in relcom-infra and a separate release; this event does not confirm it.",
+  "26ced29558a5d71b": "The live page shows data from one operator and one data center; it is not independent operation and not a global network.",
+  "7df8f750a5722906": "The timeline on lab.ipvx.org accumulates while the page is open: the observer returns only the latest 24 deliveries.",
+  "eef48afb7e7c7a81": "Recorded by: Claude Code — the owner's assistant (ipvx-agent-lab, public stand). Author's own record.",
+  "86973959816a7f02": "131 events through HX-0131; authors, rationale, checks and limitations.",
+  "0c92743ca48c76f8": "267.1 KiB · 11 files"
 }

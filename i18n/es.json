@@ -2302,5 +2302,19 @@
   "4450a1131c64e092": "scripts/browser_collaboration_check.mjs",
   "8a883939823d5f8e": "El recopilador funciona en modo reading_only: no hay borradores completos de ambos modelos y se conservan el fallo anterior y las reservas de gasto. No está implementada la publicación automática de mensajes. No se inició ningún experimento conjunto externo.",
   "1d78675bf9754a37": "Las nuevas URL se comprobaron localmente frente a cambios de contenido, compilaciones repetidas y conservación de enlaces directos a evidencias; la publicación sigue las comprobaciones habituales. La recopilación en segundo plano no elimina el límite de profundidad conocido de Moltbook.",
-  "afe07222faf0cc35": "También se comprobaron los artículos inglés, alemán y español a 390, 768 y 1440 px: los códigos de idioma permanecen enteros y no hay desbordamiento horizontal. No se publicaron propuestas privadas ni textos de modelos."
+  "afe07222faf0cc35": "También se comprobaron los artículos inglés, alemán y español a 390, 768 y 1440 px: los códigos de idioma permanecen enteros y no hay desbordamiento horizontal. No se publicaron propuestas privadas ni textos de modelos.",
+  "4e2ffabe9ca52cc6": "Banco de pruebas en vivo: lab.ipvx.org",
+  "5ae5c290f0893eb2": "La misma red de cinco máquinas está funcionando ahora mismo. En",
+  "7167e1429f477e78": "lab.ipvx.org",
+  "d50177387b416d92": "se ven las rutas actuales, la cronología de un fallo del relé y la prueba firmada de cada salto. La página es solo de lectura: las direcciones internas y los resultados descifrados están ocultos, y solo el operador del banco puede desactivar nodos.",
+  "d6756f2e52ce9924": "HX-0131 · La página de experimentos enlaza ahora con el banco en vivo lab.ipvx.org",
+  "a097379d1e5b6307": "Claude Code — asistente del propietario (ipvx-agent-lab, banco público) · 2026-10-29T16:58:10.884464+00:00",
+  "11d241a70c00e848": "A petición del propietario, se añadió al principio de la página «Experimentos» una sección «Banco de pruebas en vivo: lab.ipvx.org» en ruso, inglés, alemán y español. Lleva a una página pública separada del banco: las rutas actuales de las cinco máquinas, la cronología de un fallo del relé y la prueba firmada de cada salto. Esa página es un servicio de visualización separado de ipvx-agent-lab sin credenciales ni controles; ya está publicada y comprobada desde fuera por HTTPS.",
+  "d636670365049d27": "El sitio sigue sirviendo solo archivos estáticos y no recibe la API del laboratorio: en lugar de incrustarla se usa un enlace normal, que la CSP actual permite. El banco está en un subdominio para no compartir el origen ni la cookie de inicio de sesión de Relcom ID con ipvx.org. El control del banco sigue detrás del túnel SSH del operador.",
+  "3fdcb33114758eae": "Publicar esta página en ipvx.org requiere fijar la revisión en relcom-infra y un lanzamiento aparte; este evento no lo confirma.",
+  "26ced29558a5d71b": "La página en vivo muestra datos de un operador y un centro de datos; no es una operación independiente ni una red global.",
+  "7df8f750a5722906": "La cronología en lab.ipvx.org se acumula mientras la página está abierta: el observador devuelve solo las últimas 24 entregas.",
+  "eef48afb7e7c7a81": "Registrado por: Claude Code — asistente del propietario (ipvx-agent-lab, banco público). Registro del propio autor.",
+  "86973959816a7f02": "131 eventos hasta HX-0131; autores, motivos, comprobaciones y limitaciones.",
+  "0c92743ca48c76f8": "267.1 KiB · 11 archivos"
 }
