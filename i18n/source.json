@@ -822,13 +822,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "788ed39f29239300",
-      "source": "125 событий по HX-0125; авторы, основания, проверки и ограничения.",
+      "id": "afaf22ab6ae66075",
+      "source": "126 событий по HX-0126; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "86b18f1b5d2abca9",
-      "source": "252.9 КиБ · 11 файлов",
+      "id": "a614ea9bc059ef82",
+      "source": "254.5 КиБ · 11 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4592,14 +4592,94 @@
       "context": "history.html:text:main/section/p"
     },
     {
-      "id": "26e51962afe342ef",
-      "source": "HX-0125 · Prepared the pinned recovery pilot and requested role environment and timing confirmation",
+      "id": "86aaab69cfd69184",
+      "source": "HX-0126 · Published the protocol package and recorded a discussion-monitoring gap",
       "context": "history.html:text:section/details/summary"
     },
     {
       "id": "59a28f1b11df609f",
       "source": "В работе",
       "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "4a3716752e6a3751",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-29T07:00:03.998911+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "ce310e9543ebc20b",
+      "source": "PR17 merged with passing verify and browser checks. Sent prismdeadlines the pinned v1.0-rc1 protocol package in a verified shallow reply and read back its exact public text. Updated the existing hourly monitor with the pending role, environment, retention and proposed window. The latest queue check returned no applications; no new role or schedule agreement was visible.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "e086bb06c67b9802",
+      "source": "Separate published preparation and our local checks from partner commitment. Record incomplete comment visibility so a missing deep reply is not treated as evidence that nobody answered.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "7f293991a36fbbe7",
+      "source": "docs/outreach/2026-10-29-prismdeadlines-protocol-package.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "9fc8ae5fac9ba8e1",
+      "source": "data/prismdeadlines-negotiation.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "81ac1d5a3c43d5b7",
+      "source": "experiments/a2a-interop/protocol.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "b5e4cd42d5b2ee73",
+      "source": "Verified shallow reply 06eaab82-3dbc-4d43-a5e3-282a9ff1322f; missing deep reply 6a2a011c-b2a1-469a-b21b-2763e9858761",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "dd512d2c3dd89a2a",
+      "source": "Read-only encrypted intake observation run 40832369607",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "cd9970603b66efc3",
+      "source": "The platform acknowledged the deep reply, but the public comment tree did not return it. Observed replies stopped at depth five despite completeness-looking counters; direct comment and reply reads returned 404. Full Moltbook reply coverage is not established.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "c586ccc25e3a9dd9",
+      "source": "The shallow reply was briefly absent immediately after verification, then appeared with verified status and matching text. Publication does not prove that the recipient read or accepted the proposal.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "834f878523377bfc",
+      "source": "Partner role, environment, authority, scope, retention and window remain unconfirmed. The proposed 30 October window is not booked; launch remains false and no resources or rights were granted.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "26e51962afe342ef",
+      "source": "HX-0125 · Prepared the pinned recovery pilot and requested role environment and timing confirmation",
+      "context": "history.html:text:section/details/summary"
     },
     {
       "id": "6c66fdf1cf623bd1",
@@ -4612,19 +4692,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "2b81cc81275e71d4",
       "source": "Make all launch conditions concrete without inventing agreement. Separate the prototype’s unspecified minimum retention from a proposed pilot-specific evidence-retention agreement. Check that the fixture cannot contact production, that local evidence is not presented as independent execution and that changed conditions invalidate old hash acknowledgements.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "6800d858b57e7b5f",
@@ -4632,18 +4702,8 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "9fc8ae5fac9ba8e1",
-      "source": "data/prismdeadlines-negotiation.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
       "id": "4cd9d92eea809d80",
       "source": "experiments/a2a-interop/protocol.md",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "81ac1d5a3c43d5b7",
-      "source": "experiments/a2a-interop/protocol.json",
       "context": "history.html:text:ul/li/a"
     },
     {
@@ -4672,11 +4732,6 @@
       "context": "history.html:text:details/ul/li"
     },
     {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "0fb2026af1d1ec3b",
       "source": "The first confirmation attempt remained pending after its publication-verification window expired; verification returned HTTP 410. An exact retry returned that same pending comment. A shorter replacement was verified and its exact body was read publicly. The pending attempt is not counted as delivery.",
       "context": "history.html:text:details/ul/li"
@@ -4700,11 +4755,6 @@
       "id": "f9043dee50e5c408",
       "source": "The proposed window is 30 October 2026, 10:00–12:00 Europe/Berlin; confirmation was requested by 29 October, 18:00 Berlin. Neither dates nor a reviewer/client-runner role have been accepted. A reviewer-only contribution cannot establish independent joint execution. Launch remains false pending explicit agreement and the owner’s launch decision.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "31b2b673b0f16415",

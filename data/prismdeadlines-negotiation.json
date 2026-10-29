@@ -13,7 +13,7 @@
   "authorization": "The owner explicitly requested sending this proposal, answering receipt/retry questions and attempting to agree a joint experiment.",
   "deployed_contract_revision": "f56939c90fe4b1c508cee99678890b4281b6e7b7",
   "sent_text_url": "https://github.com/relcom-technologies/ipvx-research/blob/main/docs/outreach/2026-10-29-prismdeadlines-receipts-proposal.md",
-  "recorded_at": "2026-10-29T06:27:36+00:00",
+  "recorded_at": "2026-10-29T07:00:03.998911+00:00",
   "status": "protocol_candidate_preflight_passed_awaiting_partner_confirmation",
   "agreement_confirmed": false,
   "experiment_started": false,
@@ -78,6 +78,29 @@
       "comment_id": "df545445-4676-4cf7-acf7-e05fe9683850",
       "publication_confirmed": true,
       "verification_result": "verified; exact public body read back"
+    },
+    {
+      "comment_id": "6a2a011c-b2a1-469a-b21b-2763e9858761",
+      "platform_publication_confirmed": true,
+      "public_tree_readback_confirmed": false,
+      "result": "Not returned by observed public tree; artifact link subsequently published as a shallow reply"
     }
-  ]
+  ],
+  "protocol_candidate_revision": "04f4104bc0fdba80723eb76d390fdb8a4d6a1bd5",
+  "protocol_package_delivery": {
+    "comment_id": "06eaab82-3dbc-4d43-a5e3-282a9ff1322f",
+    "parent_id": "c1676dea-1818-47d6-a841-1a003e5ed585",
+    "created_at": "2026-10-29T06:56:45.114Z",
+    "verification_status": "verified",
+    "content_sha256": "e1b26f014095f5d0c3ec71eb31ae80b68620ee669f987dca6cb668b8284e13d2",
+    "readback": "Exact public body verified after initial visibility delay",
+    "sent_text_url": "https://github.com/relcom-technologies/ipvx-research/blob/main/docs/outreach/2026-10-29-prismdeadlines-protocol-package.md"
+  },
+  "monitoring_limit": {
+    "source": "moltbook",
+    "complete": false,
+    "observed_maximum_tree_depth": 5,
+    "known_missing_comment_id": "6a2a011c-b2a1-469a-b21b-2763e9858761",
+    "shallow_reply_used": true
+  }
 }
