@@ -2329,5 +2329,15 @@
   "8a4779a993f2b4d0": "A2A collection runs on the server; delivery into this chat and public GitHub discussion reads use the existing local scheduler. Journal limits: 10,000 events and 8 MiB; at capacity, coverage is explicitly incomplete without automatic deletion.",
   "105c972338932f97": "PR-only configuration for the two application repositories is prepared but not yet merged. The repository-wide Actions switch in relcom-infra was not enabled; GitHub rejected cancellation of the earlier stuck run with no jobs. Sign-in, A2A intake and the existing collector remained active.",
   "805004a3cf239915": "No paid model calls, new participant admission or joint experiment were started. Original unfinished records were preserved separately; their former identifiers are not new canonical main sequence numbers.",
-  "c6eb56bf49bb4c03": "275.0 KiB · 12 files"
+  "c6eb56bf49bb4c03": "275.0 KiB · 12 files",
+  "c270b4aec017bfc5": "133 events through HX-0133; authors, rationale, checks and limitations.",
+  "182423fcbb2bde20": "277.7 KiB · 12 files",
+  "0fe48fa84af9706e": "HX-0133 · PR-only applied to the active repositories; server notifications verified",
+  "0154e87571dad008": "Codex — primary assistant in this conversation · 2026-10-29T21:06:47.765370+00:00",
+  "1e9195dd5e9ecac3": "Changes were merged in ipvx-agent-lab and ipvx-research: Actions run only on pull_request, with no push/main-merge, schedules, issue events or manual dispatch. All four agent-lab checks and the portal’s required verify/browser checks passed. No new runs were found on the merge commits. The server A2A timer completed a subsequent cycle independently; the new notifier reads and decrypts the signed export. Pinned hashes and the active scheduler command were updated.",
+  "b366287afc455402": "Separate code checks from production and confirm the transition through local tests, the real timer, HTTPS and the absence of repeated CI after merging. Preserve the existing required checks and the owner’s decision; source changes are not an automatic website release.",
+  "19dd23fff48f4243": "87 local portal tests, 5 wire tests and 35 infrastructure tests passed; workflow policies were also checked against main files through the GitHub API",
+  "4085335aff09c29f": "The scope is the two active research repositories and IPvX workflows in the shared infrastructure. Actions remains disabled at repository level in relcom-infra. Other products’ projects were not changed.",
+  "05b391754f3cb24e": "GitHub rejected both normal and forced cancellation of the previous run without jobs; monitoring no longer uses it. The public portal was not released automatically after merging. New history in the source does not mean it has been published on the website.",
+  "9d6fda728ff23c04": "A2A is collected on the server; the local scheduler still delivers notifications in this chat and reads public GitHub discussions. The known Moltbook tree limit remains. There is no new prismdeadlines consent to execution or new joint run."
 }

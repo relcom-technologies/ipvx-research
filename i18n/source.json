@@ -837,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "3fd2b033aaa33ff3",
-      "source": "132 событий по HX-0132; авторы, основания, проверки и ограничения.",
+      "id": "c270b4aec017bfc5",
+      "source": "133 событий по HX-0133; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "c6eb56bf49bb4c03",
-      "source": "275.0 КиБ · 12 файлов",
+      "id": "182423fcbb2bde20",
+      "source": "277.7 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4642,6 +4642,66 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "0fe48fa84af9706e",
+      "source": "HX-0133 · PR-only применён в рабочих репозиториях, серверные уведомления проверены",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "0154e87571dad008",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-29T21:06:47.765370+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "1e9195dd5e9ecac3",
+      "source": "В ipvx-agent-lab и ipvx-research слиты изменения: Actions запускаются только на pull_request, без push/main-merge, расписания, issue-событий и ручного dispatch. Все четыре проверки agent-lab и обязательные verify/browser портала прошли. На merge-коммитах новых запусков не обнаружено. Серверный A2A-таймер самостоятельно выполнил повторный цикл; подписанный экспорт читается и расшифровывается новым уведомителем. Обновлены закреплённые хеши и команда действующего планировщика.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "b366287afc455402",
+      "source": "Отделить проверки кода от production и подтвердить переход не только локальными тестами, но реальным таймером, HTTPS и отсутствием повторного CI после мержа. Сохранить существующие обязательные проверки и решение владельца; изменение источников не является автоматическим выпуском сайта.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "19dd23fff48f4243",
+      "source": "87 локальных тестов портала, 5 wire-тестов и 35 инфраструктурных тестов прошли; политики workflow проверены также по файлам main через GitHub API",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "4085335aff09c29f",
+      "source": "Область изменения — два рабочих репозитория исследования и workflows IPvX в общей инфраструктуре. Общий выключатель Actions в relcom-infra остаётся выключенным. Проекты других продуктов не изменялись.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "05b391754f3cb24e",
+      "source": "GitHub отклонил обычную и принудительную отмену прежнего запуска без задач; он больше не используется мониторингом. Публичный портал не выпускался автоматически после мержа. Новая история в исходниках не означает её публикацию на сайте.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "9d6fda728ff23c04",
+      "source": "A2A собирается на сервере; уведомления в этом чате и чтения публичных GitHub-дискуссий по-прежнему доставляет локальный планировщик. Известный предел дерева Moltbook сохранён. Нового согласия prismdeadlines на исполнение или нового совместного запуска нет.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "10e7a0dc13e0f49b",
       "source": "HX-0132 · Мониторинг A2A перенесён на сервер без GitHub Actions",
       "context": "history.html:text:section/details/summary"
@@ -4662,19 +4722,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "7f12b899c99102e2",
       "source": "Наблюдение за заявками не должно зависеть от очередей CI. Журнал сохраняет события до обработки, а курсор подтверждается после неё. Actions используются для проверки изменений в PR; production-операции вынесены за пределы CI. Ранее опубликованное событие другого участника HX-0131 сохранено; конфликтующие draft/local идентификаторы архивированы с указанием исходного контекста.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "91adad2ad095306a",
@@ -4692,11 +4742,6 @@
       "context": "history.html:text:details/ul/li"
     },
     {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "8a4779a993f2b4d0",
       "source": "Сбор A2A работает на сервере; доставка в этот чат и публичные GitHub-discussion чтения используют существующий локальный планировщик. Пределы журнала: 10 000 событий и 8 МиБ; при заполнении покрытие явно помечается неполным без автоматического удаления.",
       "context": "history.html:text:details/ul/li"
@@ -4710,11 +4755,6 @@
       "id": "805004a3cf239915",
       "source": "Платные модели, новые участники и совместный эксперимент не запускались. Оригиналы незавершённых записей сохранены отдельно; их старые идентификаторы не считаются новыми каноническими номерами main.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "d6756f2e52ce9924",
