@@ -8,6 +8,7 @@ import hashlib
 import json
 import math
 import os
+import re
 import sqlite3
 import urllib.parse
 import urllib.request
@@ -33,6 +34,14 @@ the supplied evidence and may replace it; approval here is only editorial review
 
 def digest(value):
     return hashlib.sha256(json.dumps(value, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
+
+
+def job_key(comment, operator_retry_id=None):
+    key=comment['id']+':'+digest(comment['text'])
+    if operator_retry_id:
+        if not re.fullmatch('[a-f0-9]{32}',operator_retry_id):raise ValueError('invalid_operator_retry_id')
+        key+=':operator-retry:'+operator_retry_id
+    return key
 
 
 class BudgetError(RuntimeError):
@@ -75,6 +84,18 @@ class Ledger:
             db.execute('INSERT INTO reservations VALUES(?,?,?,?,?)', (identifier, day, amount, provider, model))
         # Reservations remain charged after timeouts or crashes: do not assume a
         # provider failed to bill merely because its reply was lost.
+
+    def pair_available(self, config):
+        """A conservative preflight: defer work before creating a job or calling APIs."""
+        maximum=0
+        for role in ('writer','reviewer'):
+            price=config[role]
+            if price['provider']!='local':
+                maximum+=math.ceil(((24000+1024)*price['input_usd_per_million']+config['max_output_tokens']*price['output_usd_per_million'])*1.10)
+        day=datetime.now(timezone.utc).astimezone(self.zone).date().isoformat()
+        with self.connect() as db:
+            spent,calls=db.execute('SELECT COALESCE(SUM(amount),0),COUNT(*) FROM reservations WHERE day=?',(day,)).fetchone()
+        return spent+maximum<=self.limit and calls<=6
 
 
 class Provider:
@@ -158,44 +179,52 @@ def call(provider, prompt, ledger, identifier, config):
     ledger.reserve(identifier, amount, provider.name, provider.model)
     raw, actual_model, usage = provider.generate(prompt, config['max_output_tokens'])
     return raw, dict(provider=provider.name, requested_model=provider.model, actual_model=actual_model, usage=usage,
-        reserved_usd=amount/1_000_000, prompt_sha256=hashlib.sha256(prompt.encode()).hexdigest(), timestamp=datetime.now(timezone.utc).isoformat())
+        reserved_usd=amount/1_000_000, output_token_limit=config['max_output_tokens'],
+        pricing_used={k:provider.config[k] for k in ('input_usd_per_million','output_usd_per_million','pricing_valid_until') if k in provider.config},
+        prompt_sha256=hashlib.sha256(prompt.encode()).hexdigest(), timestamp=datetime.now(timezone.utc).isoformat())
 
 
-def draft(comment, snapshot, facts, config, ledger, provider_factory=Provider):
+def draft(comment, snapshot, facts, config, ledger, provider_factory=Provider, operator_retry_id=None):
     if comment['project_account']:
         raise ValueError('do_not_reply_to_ourselves')
     if config.get('billing_authorized') is not True:
         raise BudgetError('billing_not_enabled')
-    job = comment['id']+':'+digest(comment['text'])
+    if not ledger.pair_available(config):raise BudgetError('budget_deferred_no_job_created')
+    job = job_key(comment,operator_retry_id)
     with ledger.connect() as db:
         try:
             db.execute('INSERT INTO jobs VALUES(?,?,?,?)', (job,digest(comment),'started',None))
         except sqlite3.IntegrityError:
             raise ValueError('comment_version_already_processed')
-    context = dict(source=comment, recent_discussion=snapshot['comments'][-5:], project_evidence=facts, allowed_evidence_keys=list(facts),
+    recent=[row|dict(text=row['text'][:2000],text_truncated=len(row['text'])>2000,full_text_sha256=digest(row['text'])) for row in snapshot['comments'][-5:]]
+    context = dict(source=comment, recent_discussion=recent, project_evidence=facts, allowed_evidence_keys=list(facts),
         source_coverage=snapshot['coverage'], owner_daily_budget_usd=config['daily_budget_usd'])
     prompt = json.dumps(context, ensure_ascii=False)
     if len(prompt) > 50000:
         raise ValueError('context_limit')
     traces = []
+    transcripts = []
     try:
         raw, trace = call(provider_factory(config['writer']), prompt, ledger, job+':writer', config)
         traces.append(trace)
+        transcripts.append(dict(stage='writer',input=prompt,output=raw,metadata=trace))
         first = parse_reply(raw, facts)
         review_prompt = json.dumps(dict(context=context, draft_to_review=first),ensure_ascii=False)
         raw, trace = call(provider_factory(config['reviewer']), review_prompt, ledger, job+':reviewer', config)
         traces.append(trace)
+        transcripts.append(dict(stage='reviewer',input=review_prompt,output=raw,metadata=trace))
         result = parse_reply(raw, facts)
         output = dict(schema_version=1, project_account='IPvXResearchLiaison', job_id=job, source_comment_id=comment['id'],
             source_url=comment['source_url'], source_sha256=digest(comment), draft=result,
-            models=traces, project_facts_sha256=digest(facts), status='draft_only', published=False,
+            models=traces, provider_transcripts=transcripts, operator_retry_id=operator_retry_id,
+            project_facts_sha256=digest(facts), status='draft_only', published=False,
             independent_operator=False, source_coverage=snapshot['coverage'])
         with ledger.connect() as db:
             db.execute('UPDATE jobs SET state=?,result=? WHERE id=?', ('draft',json.dumps(output,ensure_ascii=False),job))
         return output
     except Exception as error:
         with ledger.connect() as db:
-            db.execute('UPDATE jobs SET state=?,result=? WHERE id=?', ('failed',json.dumps(dict(error_type=type(error).__name__,models=traces)),job))
+            db.execute('UPDATE jobs SET state=?,result=? WHERE id=?', ('failed',json.dumps(dict(error_type=type(error).__name__,http_status=getattr(error,'status_code',None),models=traces,provider_transcripts=transcripts)),job))
         raise
 
 

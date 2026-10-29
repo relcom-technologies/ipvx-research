@@ -1,6 +1,7 @@
 {
   "agent_name": "IPvXResearchLiaison",
   "billing_authorized": false,
+  "generation_enabled": false,
   "daily_budget_usd": 3,
   "max_output_tokens": 1400,
   "publication_mode": "draft_only",

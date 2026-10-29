@@ -17,6 +17,14 @@ pricing is outside this default configuration. This ledger is not a provider
 billing statement. No tools, browsing, model execution or resource grants are
 exposed to a model.
 
+Collection is independent of generation. `generation_enabled=false` keeps the
+public mirror refreshed and leaves new questions unprocessed for later model
+work. Only the reviewed release snapshot is baselined as historical. Budget
+preflight defers a new question before allocating its job or calling a provider;
+it is not marked as answered. Two successful model responses are required before
+the operator enables scheduled generation. The timer can therefore keep reading
+discussion while a provider prerequisite is being resolved.
+
 ## Credentials
 
 The owner's dedicated GitHub Actions secrets in `relcom-infra` are
@@ -44,6 +52,13 @@ prompt/evidence hashes, source ID, coverage and editorial decision. It remains
 outbox/receipt; this module does not send social messages. A process crash after
 reservation is an uncertain call, not permission to retry it automatically. Job
 versions are unique and earlier project replies are not re-posted.
+
+Both model input and output texts are preserved in private transcripts, including
+invalid JSON output. These contain public discussion and the supplied project
+context, not credential values or hidden reasoning. A manual smoke retry uses
+`IPVX_LIAISON_RETRY_ID`, a distinct 32-character hex operator nonce; the original
+failed job and its cost reservation remain intact. Scheduled polling does not
+invent retry nonces or repeat uncertain provider calls automatically.
 
 ## Evidence and implementation boundaries
 
