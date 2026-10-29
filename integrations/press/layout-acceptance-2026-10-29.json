@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-29T09:03:47.900498+00:00",
+  "origin": "https://ipvx.press.relcom.org",
+  "article": "https://ipvx.press.relcom.org/host-identity-protocol-rfc-7401-lessons-for-ipvx",
+  "custom_css_sha256": "f432eae24ac9af3c98c84f6103e1e10c2b4fb0f8fd4c66137693a70959c8b371",
+  "method": "Direct browser DOM measurements after saving site-scoped custom CSS in Relcom Press.",
+  "checks": [
+    {
+      "viewport": 320,
+      "document_scroll_width": 320,
+      "ru_width": 40,
+      "ru_height": 44,
+      "ru_white_space": "nowrap",
+      "toc_right": 304
+    },
+    {
+      "viewport": 390,
+      "document_scroll_width": 390,
+      "ru_width": 40,
+      "ru_height": 44,
+      "ru_white_space": "nowrap",
+      "toc_right": 374
+    },
+    {
+      "viewport": 768,
+      "document_scroll_width": 768,
+      "ru_width": 40,
+      "ru_height": 44,
+      "ru_white_space": "nowrap",
+      "toc_right": 752
+    },
+    {
+      "viewport": 1152,
+      "document_scroll_width": 1152,
+      "ru_width": 40,
+      "ru_height": 44,
+      "ru_white_space": "nowrap",
+      "toc_right": 1040
+    },
+    {
+      "viewport": 1200,
+      "document_scroll_width": 1200,
+      "ru_width": 40,
+      "ru_height": 44,
+      "ru_white_space": "nowrap",
+      "toc_right": 1064
+    },
+    {
+      "viewport": 1440,
+      "document_scroll_width": 1440,
+      "ru_width": 40,
+      "ru_height": 44,
+      "ru_white_space": "nowrap",
+      "toc_right": 1184
+    },
+    {
+      "viewport": 1920,
+      "document_scroll_width": 1920,
+      "ru_width": 40,
+      "ru_height": 44,
+      "ru_white_space": "nowrap",
+      "toc_right": 1424
+    }
+  ],
+  "limits": [
+    "One published Russian article and the shared header were inspected. This is not a full audit of all Press themes or all content.",
+    "Chrome viewport override did not change the observed viewport; responsive measurements were made in the in-app browser instead."
+  ]
+}

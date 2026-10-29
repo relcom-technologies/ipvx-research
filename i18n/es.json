@@ -2281,5 +2281,15 @@
   "609ba2bf207fe259": "La primera prueba conjunta se detuvo con BadRequestError. El diagnóstico confirmó una respuesta corta de gpt-5.5-2026-04-23 con 228 tokens de entrada y 16 de salida; es una comprobación de API, no una tarea de investigación ni un experimento independiente. El otro proveedor no devolvió una respuesta satisfactoria.",
   "e00de734d3909a01": "No están habilitadas la generación programada ni la publicación social automática. El intento fallido original permanece en el registro privado de trabajos. Se excluyen del registro público los datos de cuentas y credenciales.",
   "4b7afe6de92249e1": "El registro del primer error conservó tipo y metadatos, pero no una respuesta íntegra del proveedor. El proceso actualizado conserva en privado los textos del modelo, incluidas salidas inválidas, y registra reintentos explícitos del operador sin borrar el primero.",
-  "6cd687b578c821f1": "El inspector mecánico no pudo iniciar Chrome local. La inspección directa en móvil, tableta y escritorio, junto a las pruebas de navegador de CI, verificó recorridos publicados, texto original, conservación tras fallo de actualización y diseño. La cobertura de respuestas profundas de Moltbook sigue incompleta."
+  "6cd687b578c821f1": "El inspector mecánico no pudo iniciar Chrome local. La inspección directa en móvil, tableta y escritorio, junto a las pruebas de navegador de CI, verificó recorridos publicados, texto original, conservación tras fallo de actualización y diseño. La cobertura de respuestas profundas de Moltbook sigue incompleta.",
+  "728446907c38a93b": "129 eventos hasta HX-0129; autores, motivos, comprobaciones y limitaciones.",
+  "957bb8f4c2b593bf": "261,6 KiB · 11 archivos",
+  "599ff99f7c6ee852": "HX-0129 · Corregidos el salto de RU y el desbordamiento del índice en el blog de IPvX",
+  "81d3db7353041afe": "Codex — asistente principal de esta conversación · 2026-10-29T09:03:47.900498+00:00",
+  "20b676cc0e66fe56": "La captura del propietario reveló que el menú de idiomas se comprimía en el blog independiente de Relcom Press. Se publicó CSS solo para IPvX Research para mantener enteros los códigos de idioma y permitir varias filas cuando falta espacio en la cabecera. También se reservó espacio para el índice lateral, que sobresalía de la página. El CSS original se conserva en el repositorio.",
+  "245e307f60dce106": "Corregir la causa del desbordamiento sin ocultar texto ni añadir desplazamiento horizontal. Mantener el estilo actual del blog y usar la configuración de esta publicación en lugar de modificar la plataforma compartida.",
+  "79dd032528222231": "integrations/press/custom.css",
+  "ec12eb315997a83d": "integrations/press/layout-acceptance-2026-10-29.json",
+  "7cda02d13c252321": "Se comprobó el artículo ruso con anchuras de 320, 390, 768, 1152, 1200, 1440 y 1920 px: el documento se ajusta a la pantalla y RU ocupa una sola línea en un área de 40 × 44 px. Se comprobaron la cabecera común y un artículo, no todo el contenido de Press.",
+  "66c50b46ddcf86a1": "El ajuste de tamaño de Chrome no cambió la pantalla observada; las mediciones adaptables se realizaron en el navegador integrado. Se verificaron por separado el guardado del tema y la aplicación pública del CSS."
 }

@@ -837,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "28e01558223b3fb0",
-      "source": "128 событий по HX-0128; авторы, основания, проверки и ограничения.",
+      "id": "728446907c38a93b",
+      "source": "129 событий по HX-0129; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "f4ada6f51095986e",
-      "source": "258.9 КиБ · 11 файлов",
+      "id": "957bb8f4c2b593bf",
+      "source": "261.6 КиБ · 11 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4622,6 +4622,71 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "599ff99f7c6ee852",
+      "source": "HX-0129 · Исправлен перенос RU и выход оглавления в блоге IPvX",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "e078c61c3e49f21a",
+      "source": "Реализовано",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "81d3db7353041afe",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-29T09:03:47.900498+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "20b676cc0e66fe56",
+      "source": "По снимку владельца найдено сжатие языкового меню в отдельном блоге Relcom Press. В настройках только IPvX Research опубликован CSS, сохраняющий коды языков целыми и переносящий тесную шапку на несколько строк. Дополнительно зарезервировано место для бокового оглавления, которое выходило за край страницы. Исходник CSS сохранён в репозитории.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "245e307f60dce106",
+      "source": "Исправить причину переполнения без скрытия текста и горизонтальной прокрутки. Сохранить существующий стиль блога; использовать настройку конкретного издания вместо изменения общей платформы.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "79dd032528222231",
+      "source": "integrations/press/custom.css",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "ec12eb315997a83d",
+      "source": "integrations/press/layout-acceptance-2026-10-29.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "7cda02d13c252321",
+      "source": "На русской статье проверены ширины 320, 390, 768, 1152, 1200, 1440 и 1920 px: ширина документа равна экрану, RU занимает одну строку в области 40 × 44 px. Это проверка общей шапки и одной статьи, а не аудит всех материалов Press.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "66c50b46ddcf86a1",
+      "source": "Переопределение размеров в Chrome не изменило наблюдаемый экран; адаптивные измерения выполнены во встроенном браузере. Сохранение темы и публичное применение CSS проверены отдельно.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "d75bf16c570e3c5b",
       "source": "HX-0128 · Published the discussion flow and separated collection from model readiness",
       "context": "history.html:text:section/details/summary"
@@ -4642,19 +4707,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "655a39a84fb132e1",
       "source": "Keep comments available while model access is unavailable. Distinguish deployed UI, source synchronization, successful provider access and a fully working paired agent. Preserve failed attempts and their reservations instead of deleting history or resetting the daily budget.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "41431af847b82e31",
@@ -4682,11 +4737,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "609ba2bf207fe259",
       "source": "The first paired smoke stopped with BadRequestError. The diagnostic confirmed a short gpt-5.5-2026-04-23 response with 228 input and 16 output tokens; this is an API readiness check, not a research task or an independent experiment. The other provider did not produce a successful response.",
       "context": "history.html:text:details/ul/li"
@@ -4705,11 +4755,6 @@
       "id": "6cd687b578c821f1",
       "source": "The mechanical browser inspector could not start local Chrome. Direct browser inspection at phone, tablet and desktop widths plus passing CI browser checks verified the deployed paths, original text, refresh fallback and layout. Deep-reply coverage on Moltbook remains incomplete.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "68849fc0e3befa8f",
@@ -4920,11 +4965,6 @@
       "id": "31b2b673b0f16415",
       "source": "HX-0124 · Clarified client recovery after a technical reply from prismdeadlines",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "e078c61c3e49f21a",
-      "source": "Реализовано",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "59d19a1ebf3b636f",

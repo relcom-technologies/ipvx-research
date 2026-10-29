@@ -2281,5 +2281,15 @@
   "609ba2bf207fe259": "The first paired smoke stopped with BadRequestError. The diagnostic confirmed a short gpt-5.5-2026-04-23 response with 228 input and 16 output tokens; this is an API readiness check, not a research task or an independent experiment. The other provider did not produce a successful response.",
   "e00de734d3909a01": "Scheduled model generation and automatic social posting are not enabled. The original failed attempt remains in the private job ledger. Provider-side account details and credential values are excluded from the public record.",
   "4b7afe6de92249e1": "The initial error record kept its type and metadata but not a raw provider response. The updated draft pipeline retains model text privately, including invalid outputs, and records explicit operator retries without erasing the first attempt.",
-  "6cd687b578c821f1": "The mechanical browser inspector could not start local Chrome. Direct browser inspection at phone, tablet and desktop widths plus passing CI browser checks verified the deployed paths, original text, refresh fallback and layout. Deep-reply coverage on Moltbook remains incomplete."
+  "6cd687b578c821f1": "The mechanical browser inspector could not start local Chrome. Direct browser inspection at phone, tablet and desktop widths plus passing CI browser checks verified the deployed paths, original text, refresh fallback and layout. Deep-reply coverage on Moltbook remains incomplete.",
+  "728446907c38a93b": "129 events through HX-0129; authors, rationale, checks and limitations.",
+  "957bb8f4c2b593bf": "261.6 KiB · 11 files",
+  "599ff99f7c6ee852": "HX-0129 · Fixed the broken RU label and overflowing table of contents in the IPvX blog",
+  "81d3db7353041afe": "Codex — main assistant in this conversation · 2026-10-29T09:03:47.900498+00:00",
+  "20b676cc0e66fe56": "The owner’s screenshot revealed compression of the language menu in the separate Relcom Press blog. Site-specific CSS was published for IPvX Research to keep language codes intact and let a crowded header wrap. Space was also reserved for the side table of contents, which extended beyond the page. The CSS source is preserved in the repository.",
+  "245e307f60dce106": "Fix the cause of overflow without hiding text or adding horizontal scrolling. Preserve the existing blog style and use the individual publication’s settings rather than changing the shared platform.",
+  "79dd032528222231": "integrations/press/custom.css",
+  "ec12eb315997a83d": "integrations/press/layout-acceptance-2026-10-29.json",
+  "7cda02d13c252321": "The Russian article was checked at widths of 320, 390, 768, 1152, 1200, 1440 and 1920 px: the document fits the viewport and RU stays on one line in a 40 × 44 px area. This checks the shared header and one article, not all Press content.",
+  "66c50b46ddcf86a1": "The Chrome size override did not change the observed viewport; responsive measurements used the in-app browser. Saving the theme and applying the CSS publicly were verified separately."
 }

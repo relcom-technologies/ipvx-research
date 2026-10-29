@@ -1,0 +1,18 @@
+/* IPvX Research blog: keep language codes intact at every header width. */
+:root { --c-primary:#171916; --c-on-primary:#ffffff; --c-accent:#807000; --c-on-accent:#ffffff; --c-bg:#f7f6f2; --c-surface:#ffffff; --c-text:#171916; --c-muted:#62645b; --c-border:#e8e8e0; --radius:6px; --radius-btn:6px; }
+.site-header .site-bar { display:flex; flex-wrap:wrap; align-items:center; column-gap:1.5rem; row-gap:.75rem; }
+.site-header .brand { flex:0 0 auto; }
+.site-header .site-nav { flex:1 1 28rem; min-inline-size:0; }
+.site-header .site-nav ul { flex-wrap:wrap; gap:.5rem 1.25rem; }
+.site-header .languages { flex:0 0 auto; min-inline-size:max-content; margin-inline-start:auto; }
+.site-header .languages ul { display:flex; flex-wrap:nowrap; gap:.25rem; }
+.site-header .languages li { flex:0 0 auto; }
+.site-header .languages a { display:inline-flex; align-items:center; justify-content:center; box-sizing:border-box; min-inline-size:2.5rem; min-block-size:2.75rem; padding:.35rem .5rem; line-height:1.3; white-space:nowrap; word-break:normal; overflow-wrap:normal; }
+@media (max-width:40rem) {
+  .site-header .site-nav { flex-basis:100%; }
+  .site-header .languages { flex-basis:100%; min-inline-size:0; margin-inline-start:0; }
+  .site-header .languages ul { justify-content:flex-start; }
+}
+@media (min-width:72rem) {
+  .article.has-toc { max-inline-size:min(46rem, calc(100% - 16rem)); margin-inline:0 16rem; }
+}
