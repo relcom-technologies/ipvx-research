@@ -127,6 +127,7 @@ class LiaisonTests(unittest.TestCase):
             worker.cycle(state,root/'public');worker.cycle(state,root/'public')
         status=json.loads((root/'public/liaison-status.json').read_text())
         self.assertEqual(status['state'],'reading_only');self.assertFalse(status['generation_enabled'])
+        self.assertFalse(status['smoke_verified_current'])
         self.assertEqual(json.loads((root/'public/community-discussions.json').read_text())['mirrored_comment_count'],1)
         with agent.Ledger(state/'ledger.sqlite').connect() as db:
             self.assertEqual(db.execute('SELECT COUNT(*) FROM jobs').fetchone()[0],0)

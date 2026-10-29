@@ -38,7 +38,8 @@ def cycle(base, public, smoke=False):
         updated_at=now,code_revision=os.environ.get('IPVX_LIAISON_REVISION'),
         billing_authorized_usd_per_day=config['daily_budget_usd'],budget_timezone='Europe/Berlin',
         automatic_publication=False,generation_enabled=generation,operator_independent=False,local_inference_verified=False,
-        models={role:dict(provider=config[role]['provider'],model=config[role]['model']) for role in ('writer','reviewer')})
+        models={role:dict(provider=config[role]['provider'],model=config[role]['model']) for role in ('writer','reviewer')},
+        smoke_verified_current=False)
     try:
         raw=read(BASE+'/comments?sort=new&limit=100');post=read(BASE)
         snapshot=sanitize(raw,(post.get('post')or{}).get('comment_count'))
@@ -61,13 +62,21 @@ def cycle(base, public, smoke=False):
             for comment in rows[:1] if smoke else rows:
                 identifier=job_key(comment,retry_id)
                 with ledger.connect() as db:
-                    if db.execute('SELECT 1 FROM jobs WHERE id=?',(identifier,)).fetchone():continue
+                    if db.execute('SELECT 1 FROM jobs WHERE id=?',(identifier,)).fetchone():
+                        if smoke:raise ValueError('smoke_attempt_already_recorded_use_explicit_new_retry')
+                        continue
                 if not ledger.pair_available(config):
                     status['budget_paused']=True
                     break
                 result=draft(comment,snapshot,facts,config,ledger,operator_retry_id=retry_id)
                 folder=base/'drafts';folder.mkdir(mode=0o700,exist_ok=True)
                 atomic_json(folder/(digest(identifier)+'.json'),result)
+                if smoke:
+                    status['smoke_verified_current']=(result['status']=='draft_only' and result['published'] is False and
+                        len(result['models'])==2 and all(trace['provider']==config[role]['provider'] and
+                        trace['requested_model']==config[role]['model'] and trace['actual_model']==config[role]['model']
+                        for role,trace in zip(('writer','reviewer'),result['models'],strict=True)))
+                    status['smoke_attempt_sha256']=digest(retry_id)
                 # One new technical response per cycle; no social publication.
                 break
         with ledger.connect() as db:
