@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "project_account": "IPvXResearchLiaison",
+  "state": "prepared_not_running",
+  "updated_at": "2026-10-29T07:36:26.644497+00:00",
+  "credential_names_present": true,
+  "credentials_validated": false,
+  "billing_authorized_usd_per_day": 3,
+  "budget_timezone": "Europe/Berlin",
+  "paid_api_run_verified": false,
+  "automatic_publication": false,
+  "local_inference_verified": false,
+  "operator_independent": false,
+  "code": "services/liaison/README.md"
+}

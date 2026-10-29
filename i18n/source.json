@@ -67,6 +67,11 @@
       "context": "account.html:text:header/nav/a"
     },
     {
+      "id": "d23e4a0352080936",
+      "source": "Обсуждения",
+      "context": "account.html:text:header/nav/a"
+    },
+    {
       "id": "c8b71789f6a63720",
       "source": "Вход / Relcom ID",
       "context": "account.html:text:header/div/a"
@@ -377,6 +382,11 @@
       "context": "account.html:text:footer/div/a"
     },
     {
+      "id": "48bf25316504dcff",
+      "source": "Обсуждения и площадки",
+      "context": "account.html:text:footer/div/a"
+    },
+    {
       "id": "eff775aa4e8ce24d",
       "source": "Администрирование",
       "context": "account.html:text:footer/div/a"
@@ -387,8 +397,8 @@
       "context": "account.html:text:footer/div/a"
     },
     {
-      "id": "54de40c1122dc30f",
-      "source": "Экспериментальный проект · один оператор инфраструктуры · снимок данных 27 октября 2026. Этот публичный веб-портал работает через обычные IP, DNS и HTTPS.",
+      "id": "fc46836d26106da0",
+      "source": "Экспериментальный проект · один оператор инфраструктуры. Даты измерений и снимков указаны рядом с данными. Этот публичный веб-портал работает через обычные IP, DNS и HTTPS.",
       "context": "account.html:text:body/footer/p"
     },
     {
@@ -772,6 +782,11 @@
       "context": "blog.html:text:section/p/a"
     },
     {
+      "id": "7bea628d0070af04",
+      "source": "Обсуждения и участие · IPvX Research",
+      "context": "community.html:text:html/head/title"
+    },
+    {
       "id": "451a8d0dc3075f73",
       "source": "Материалы для скачивания · IPvX Research",
       "context": "downloads.html:text:html/head/title"
@@ -822,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "afaf22ab6ae66075",
-      "source": "126 событий по HX-0126; авторы, основания, проверки и ограничения.",
+      "id": "b3f61a99c79ae4c7",
+      "source": "127 событий по HX-0127; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "a614ea9bc059ef82",
-      "source": "254.5 КиБ · 11 файлов",
+      "id": "6151c074295b103e",
+      "source": "256.4 КиБ · 11 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -2787,6 +2802,21 @@
       "context": "rfc-0001.html:text:main/p/a"
     },
     {
+      "id": "4c86b8323ed83092",
+      "source": "Это комментарии к данному документу на ipvx.org.",
+      "context": "rfc-0001.html:text:main/section/p"
+    },
+    {
+      "id": "1dd2d8cbb40fcd6d",
+      "source": "Внешние дискуссии и ответы проекта",
+      "context": "rfc-0001.html:text:section/p/a"
+    },
+    {
+      "id": "d0b09096e073f27b",
+      "source": "собраны отдельно.",
+      "context": "rfc-0001.html:text:main/section/p"
+    },
+    {
       "id": "d75fa3c456038ede",
       "source": "Опубликованные комментарии доступны всем. Новое сообщение сначала видят его автор и модераторы. Консультативный опрос предложений не принимает RFC и не заменяет голосование по",
       "context": "rfc-0001.html:text:main/section/p"
@@ -4592,14 +4622,114 @@
       "context": "history.html:text:main/section/p"
     },
     {
-      "id": "86aaab69cfd69184",
-      "source": "HX-0126 · Published the protocol package and recorded a discussion-monitoring gap",
+      "id": "68849fc0e3befa8f",
+      "source": "HX-0127 · Connected external discussion to the portal and prepared the project model liaison",
       "context": "history.html:text:section/details/summary"
     },
     {
       "id": "59a28f1b11df609f",
       "source": "В работе",
       "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "2aafedb4455e9328",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-29T07:36:26.644497+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "8057416db575e362",
+      "source": "The owner requested a coherent participation flow, visibility of external comments and a dedicated Claude/GPT liaison with future local inference. Added a four-language discussion hub, public Moltbook snapshot and explicit separation of comments, A2A submissions and agreed experiments. Prepared pinned model adapters, an attributed two-model draft pipeline and a shared 3 USD/day ledger, as authorized by the owner. The two dedicated secret names exist; their values were not read or published.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "a31f76081f565cc8",
+      "source": "Make the actual collaboration visible without manufacturing applications or partner commitments. Keep one project representative with interchangeable model backends, distinguish it from an independent participant and record evidence and costs per draft.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "a3a0eb10a2035969",
+      "source": "scripts/collaboration.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "921ad1f8a2d82c16",
+      "source": "scripts/export_community.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "391da75c4fb08b30",
+      "source": "assets/discussions.js",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "80ff6d1d9f05a423",
+      "source": "data/community-discussions.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "b33f5d775b9fb5b1",
+      "source": "services/liaison/agent.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "5ff36f455e208b4a",
+      "source": "services/liaison/config.example.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "feef60509df50319",
+      "source": "services/liaison/requirements.lock",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "dbc59a9b48a5ecbb",
+      "source": "services/liaison/README.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "c63684094f7a2eae",
+      "source": "scripts/test_liaison.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "360ee030461b271c",
+      "source": "The snapshot observed 13 comments in the platform counter, 11 returned records and 10 mirrored messages after excluding pending verification. Deep-reply coverage remains incomplete; missing messages are not evidence of no response.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "fe38b2a8a5744ea9",
+      "source": "Six focused checks passed after correcting an overbroad test assertion that mistook a coverage-field name for leaked metadata. No paid API call, live liaison service, automatic posting or local-model inference has yet been validated.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "3252724255f8b9bc",
+      "source": "Earlier project messages were prepared by Codex; their exact backend revision is unknown. Claude and GPT do not create two independent participants or votes. Roles, environment and timing for the prismdeadlines test remain unconfirmed.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "86aaab69cfd69184",
+      "source": "HX-0126 · Published the protocol package and recorded a discussion-monitoring gap",
+      "context": "history.html:text:section/details/summary"
     },
     {
       "id": "4a3716752e6a3751",
@@ -4612,19 +4742,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "e086bb06c67b9802",
       "source": "Separate published preparation and our local checks from partner commitment. Record incomplete comment visibility so a missing deep reply is not treated as evidence that nobody answered.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "7f293991a36fbbe7",
@@ -4652,11 +4772,6 @@
       "context": "history.html:text:details/ul/li"
     },
     {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "cd9970603b66efc3",
       "source": "The platform acknowledged the deep reply, but the public comment tree did not return it. Observed replies stopped at depth five despite completeness-looking counters; direct comment and reply reads returned 404. Full Moltbook reply coverage is not established.",
       "context": "history.html:text:details/ul/li"
@@ -4670,11 +4785,6 @@
       "id": "834f878523377bfc",
       "source": "Partner role, environment, authority, scope, retention and window remain unconfirmed. The proposed 30 October window is not booked; launch remains false and no resources or rights were granted.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "26e51962afe342ef",

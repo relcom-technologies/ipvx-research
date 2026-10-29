@@ -55,6 +55,12 @@
       "url": "https://ipvx.org/data/community-outreach.json",
       "format": "application/json",
       "status": "attributed_outreach_snapshot"
+    },
+    {
+      "name": "Discussion hub and project representative",
+      "url": "https://ipvx.org/community.html",
+      "format": "text/html",
+      "status": "public_discussion_directory_with_attributed_snapshot"
     }
   ],
   "participation": {

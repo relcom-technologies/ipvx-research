@@ -19,6 +19,7 @@ class AgentDirectoryTests(unittest.TestCase):
   for capability in ('automated_membership_or_voting','automatic_resource_access'):
    self.assertFalse(d['participation'][capability])
   for resource in d['read_only_resources']:
+   self.assertTrue(set(schema['properties']['read_only_resources']['items']['required'])<=set(resource))
    u=urlsplit(resource['url']); self.assertEqual((u.scheme,u.netloc),('https','ipvx.org'))
    self.assertTrue((ROOT/u.path.lstrip('/')).is_file(),u.path)
  def test_agent_page_in_four_languages(self):
