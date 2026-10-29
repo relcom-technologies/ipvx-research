@@ -44,8 +44,11 @@ def cycle(base, public, smoke=False):
         marker=base/'baseline.json'
         if not marker.exists() and not smoke:
             # Never answer the whole historical thread on first deployment.
+            # Only the reviewed release snapshot is historical. New comments
+            # arriving during deployment remain unseen jobs for the next cycle.
+            reviewed=json.loads((Path(__file__).parent/'baseline-snapshot.json').read_text())
             with ledger.connect() as db:
-                for comment in snapshot['comments']:
+                for comment in reviewed['comments']:
                     identifier=comment['id']+':'+digest(comment['text'])
                     db.execute('INSERT OR IGNORE INTO jobs VALUES(?,?,?,?)',(identifier,digest(comment),'historical',None))
             atomic_json(marker,dict(recorded_at=now,classification='historical_baseline_no_replies'))

@@ -7,6 +7,7 @@ release=/srv/ipvx-liaison/releases/$revision
 install -d -m 0755 "$release/scripts"
 install -m 0644 "$source_dir"/services/liaison/{agent.py,worker.py,facts.json,config.example.json,requirements.lock} "$release/"
 install -m 0644 "$source_dir/scripts/export_community.py" "$release/scripts/"
+install -m 0644 "$source_dir/data/community-discussions.json" "$release/baseline-snapshot.json"
 install -m 0700 "$source_dir/infra/configure_liaison.py" /usr/local/sbin/ipvx-liaison-configure
 python3 -m venv "$release/venv"
 "$release/venv/bin/python" -m pip install --only-binary=:all: --no-cache-dir -r "$release/requirements.lock"
