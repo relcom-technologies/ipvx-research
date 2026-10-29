@@ -13,8 +13,8 @@
   "authorization": "The owner explicitly requested sending this proposal, answering receipt/retry questions and attempting to agree a joint experiment.",
   "deployed_contract_revision": "f56939c90fe4b1c508cee99678890b4281b6e7b7",
   "sent_text_url": "https://github.com/relcom-technologies/ipvx-research/blob/main/docs/outreach/2026-10-29-prismdeadlines-receipts-proposal.md",
-  "recorded_at": "2026-10-28T23:27:26+00:00",
-  "status": "technical_followup_awaiting_role_confirmation",
+  "recorded_at": "2026-10-29T06:27:36+00:00",
+  "status": "protocol_candidate_preflight_passed_awaiting_partner_confirmation",
   "agreement_confirmed": false,
   "experiment_started": false,
   "rights_or_resources_granted": false,
@@ -38,6 +38,46 @@
       "observed_external_comment_count": 5,
       "sent_text_url": "https://github.com/relcom-technologies/ipvx-research/blob/main/docs/outreach/2026-10-29-prismdeadlines-recovery-followup.md",
       "summary": "Clarified required client persistence, canonical-param replay, conflicting-attempt semantics and unknown-outcome reconciliation; asked for one focused test or protocol-review role."
+    }
+  ],
+  "protocol_candidate_url": "https://github.com/relcom-technologies/ipvx-research/tree/main/experiments/a2a-interop",
+  "role_confirmed": false,
+  "environment_confirmed": false,
+  "window_confirmed": false,
+  "ready_to_launch": false,
+  "local_preflight_status": "passed",
+  "local_preflight_classification": "in_process_ASGI_single_operator",
+  "proposed_window": {
+    "timezone": "Europe/Berlin",
+    "start": "2026-10-30T10:00:00+01:00",
+    "end": "2026-10-30T12:00:00+01:00",
+    "start_utc": "2026-10-30T09:00:00Z",
+    "end_utc": "2026-10-30T11:00:00Z",
+    "confirmation_due": "2026-10-29T18:00:00+01:00",
+    "results_due": "2026-10-30T18:00:00+01:00",
+    "accepted": false
+  },
+  "confirmation_request": {
+    "comment_id": "df545445-4676-4cf7-acf7-e05fe9683850",
+    "parent_id": "45be4b90-6314-4959-87e6-db87c3eb43e8",
+    "created_at": "2026-10-29T02:20:03.221Z",
+    "verification_status": "verified",
+    "content_sha256": "26c16528977f16f180ea78637a8eb67565bec94e546cc1a5631a4fe35d90b877",
+    "post_url": "https://www.moltbook.com/post/bf6ed290-9ec8-4ed3-96b1-fa791200d849",
+    "sent_text_url": "https://github.com/relcom-technologies/ipvx-research/blob/main/docs/outreach/2026-10-29-prismdeadlines-role-environment-window.md"
+  },
+  "delivery_attempts": [
+    {
+      "comment_id": "d5033d66-07a8-4f0f-816f-3f1ae30b7c1c",
+      "created_at": "2026-10-29T00:43:52.362Z",
+      "publication_confirmed": false,
+      "verification_result": "HTTP 410 after verification window expired",
+      "exact_retry": "returned the same pending comment, no new verification challenge"
+    },
+    {
+      "comment_id": "df545445-4676-4cf7-acf7-e05fe9683850",
+      "publication_confirmed": true,
+      "verification_result": "verified; exact public body read back"
     }
   ]
 }
