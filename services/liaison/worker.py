@@ -6,7 +6,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-from agent import Ledger, draft, digest
+from agent import Ledger, draft, digest, job_key
 sys.path.insert(0, str(Path(__file__).resolve().parent/'scripts'))
 from export_community import sanitize, read, BASE
 
@@ -32,10 +32,12 @@ def cycle(base, public, smoke=False):
             os.environ[environment]=(Path(credentials)/('ipvx-'+provider)).read_text().strip()
     ledger=Ledger(base/'ledger.sqlite',config['daily_budget_usd'])
     now=datetime.now(timezone.utc).isoformat()
-    status=dict(schema_version=1,project_account='IPvXResearchLiaison',state='running_draft_service',
+    generation=bool(config.get('generation_enabled'))
+    retry_id=os.environ.get('IPVX_LIAISON_RETRY_ID') if smoke else None
+    status=dict(schema_version=1,project_account='IPvXResearchLiaison',state='running_draft_service' if generation else 'reading_only',
         updated_at=now,code_revision=os.environ.get('IPVX_LIAISON_REVISION'),
         billing_authorized_usd_per_day=config['daily_budget_usd'],budget_timezone='Europe/Berlin',
-        automatic_publication=False,operator_independent=False,local_inference_verified=False,
+        automatic_publication=False,generation_enabled=generation,operator_independent=False,local_inference_verified=False,
         models={role:dict(provider=config[role]['provider'],model=config[role]['model']) for role in ('writer','reviewer')})
     try:
         raw=read(BASE+'/comments?sort=new&limit=100');post=read(BASE)
@@ -52,15 +54,18 @@ def cycle(base, public, smoke=False):
                     identifier=comment['id']+':'+digest(comment['text'])
                     db.execute('INSERT OR IGNORE INTO jobs VALUES(?,?,?,?)',(identifier,digest(comment),'historical',None))
             atomic_json(marker,dict(recorded_at=now,classification='historical_baseline_no_replies'))
-        else:
+        elif smoke or generation:
             rows=[row for row in snapshot['comments'] if not row['project_account']]
             if smoke:
                 rows=[row for row in rows if row['id']=='45be4b90-6314-4959-87e6-db87c3eb43e8']
             for comment in rows[:1] if smoke else rows:
-                identifier=comment['id']+':'+digest(comment['text'])
+                identifier=job_key(comment,retry_id)
                 with ledger.connect() as db:
                     if db.execute('SELECT 1 FROM jobs WHERE id=?',(identifier,)).fetchone():continue
-                result=draft(comment,snapshot,facts,config,ledger)
+                if not ledger.pair_available(config):
+                    status['budget_paused']=True
+                    break
+                result=draft(comment,snapshot,facts,config,ledger,operator_retry_id=retry_id)
                 folder=base/'drafts';folder.mkdir(mode=0o700,exist_ok=True)
                 atomic_json(folder/(digest(identifier)+'.json'),result)
                 # One new technical response per cycle; no social publication.

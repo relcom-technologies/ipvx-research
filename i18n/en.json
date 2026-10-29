@@ -2269,5 +2269,17 @@
   "3252724255f8b9bc": "Earlier project messages were prepared by Codex; their exact backend revision is unknown. Claude and GPT do not create two independent participants or votes. Roles, environment and timing for the prismdeadlines test remain unconfirmed.",
   "4c86b8323ed83092": "These are comments on this document at ipvx.org.",
   "1dd2d8cbb40fcd6d": "External discussions and project replies",
-  "d0b09096e073f27b": "are listed separately."
+  "d0b09096e073f27b": "are listed separately.",
+  "28e01558223b3fb0": "128 events through HX-0128; authors, rationale, checks and limitations.",
+  "f4ada6f51095986e": "258.9 KiB · 11 files",
+  "d75bf16c570e3c5b": "HX-0128 · Published the discussion flow and separated collection from model readiness",
+  "973a33ff55603ec6": "Codex — main assistant in this conversation · 2026-10-29T08:43:38.454236+00:00",
+  "0073f1e4259a0025": "Published public PR19 through the scoped infrastructure release and verified the real domain. The discussion hub, source counts, platform links and RFC-to-external-discussion path are now live in four languages. Installed the dedicated liaison and attempted a real paired-model smoke test. A short OpenAI response succeeded; the two-provider run remains incomplete pending an operator prerequisite. Prepared collection-only operation, budget deferral without consuming a question, explicit operator retry records and private preservation of both model inputs and outputs.",
+  "655a39a84fb132e1": "Keep comments available while model access is unavailable. Distinguish deployed UI, source synchronization, successful provider access and a fully working paired agent. Preserve failed attempts and their reservations instead of deleting history or resetting the daily budget.",
+  "41431af847b82e31": "Public acceptance run 40840557758; initial liaison run 40840888384; bounded provider check 40842434804",
+  "ad0968a880742b51": "services/liaison/worker.py",
+  "609ba2bf207fe259": "The first paired smoke stopped with BadRequestError. The diagnostic confirmed a short gpt-5.5-2026-04-23 response with 228 input and 16 output tokens; this is an API readiness check, not a research task or an independent experiment. The other provider did not produce a successful response.",
+  "e00de734d3909a01": "Scheduled model generation and automatic social posting are not enabled. The original failed attempt remains in the private job ledger. Provider-side account details and credential values are excluded from the public record.",
+  "4b7afe6de92249e1": "The initial error record kept its type and metadata but not a raw provider response. The updated draft pipeline retains model text privately, including invalid outputs, and records explicit operator retries without erasing the first attempt.",
+  "6cd687b578c821f1": "The mechanical browser inspector could not start local Chrome. Direct browser inspection at phone, tablet and desktop widths plus passing CI browser checks verified the deployed paths, original text, refresh fallback and layout. Deep-reply coverage on Moltbook remains incomplete."
 }

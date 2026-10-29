@@ -24,6 +24,17 @@ fd=os.open(p,os.O_WRONLY|os.O_CREAT|os.O_EXCL,0o600)
 with os.fdopen(fd,'w') as out:json.dump(d,out)
 PY
 fi
+# Preserve the existing ledger, credentials and explicit operator settings.
+# Older installations had no generation switch; migrate them to collection only.
+python3 - <<'PY'
+import json,os
+p='/var/lib/ipvx-liaison/state/config.json'
+d=json.load(open(p))
+if 'generation_enabled' not in d:
+    d['generation_enabled']=False
+    with open(p,'w') as out:json.dump(d,out)
+    os.chmod(p,0o600)
+PY
 # A fixed unprivileged account owns only its state/public JSON, no portal roles.
 id ipvx-liaison >/dev/null 2>&1 || useradd --system --no-create-home --shell /usr/sbin/nologin ipvx-liaison
 chown -R ipvx-liaison:ipvx-liaison /var/lib/ipvx-liaison
@@ -40,6 +51,7 @@ Group=ipvx-liaison
 LoadCredential=ipvx-openai:/etc/ipvx-liaison/openai.key
 LoadCredential=ipvx-anthropic:/etc/ipvx-liaison/anthropic.key
 Environment=IPVX_LIAISON_REVISION=$revision
+EnvironmentFile=-/run/ipvx-liaison-smoke.env
 ExecStart=$release/venv/bin/python $release/worker.py --state-dir /var/lib/ipvx-liaison/state --public-dir /var/lib/ipvx-liaison/public $extra
 NoNewPrivileges=yes
 ProtectSystem=strict

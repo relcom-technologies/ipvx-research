@@ -837,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "b3f61a99c79ae4c7",
-      "source": "127 событий по HX-0127; авторы, основания, проверки и ограничения.",
+      "id": "28e01558223b3fb0",
+      "source": "128 событий по HX-0128; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "6151c074295b103e",
-      "source": "256.4 КиБ · 11 файлов",
+      "id": "f4ada6f51095986e",
+      "source": "258.9 КиБ · 11 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4622,14 +4622,99 @@
       "context": "history.html:text:main/section/p"
     },
     {
-      "id": "68849fc0e3befa8f",
-      "source": "HX-0127 · Connected external discussion to the portal and prepared the project model liaison",
+      "id": "d75bf16c570e3c5b",
+      "source": "HX-0128 · Published the discussion flow and separated collection from model readiness",
       "context": "history.html:text:section/details/summary"
     },
     {
       "id": "59a28f1b11df609f",
       "source": "В работе",
       "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "973a33ff55603ec6",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-29T08:43:38.454236+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0073f1e4259a0025",
+      "source": "Published public PR19 through the scoped infrastructure release and verified the real domain. The discussion hub, source counts, platform links and RFC-to-external-discussion path are now live in four languages. Installed the dedicated liaison and attempted a real paired-model smoke test. A short OpenAI response succeeded; the two-provider run remains incomplete pending an operator prerequisite. Prepared collection-only operation, budget deferral without consuming a question, explicit operator retry records and private preservation of both model inputs and outputs.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "655a39a84fb132e1",
+      "source": "Keep comments available while model access is unavailable. Distinguish deployed UI, source synchronization, successful provider access and a fully working paired agent. Preserve failed attempts and their reservations instead of deleting history or resetting the daily budget.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "41431af847b82e31",
+      "source": "Public acceptance run 40840557758; initial liaison run 40840888384; bounded provider check 40842434804",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "b33f5d775b9fb5b1",
+      "source": "services/liaison/agent.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "ad0968a880742b51",
+      "source": "services/liaison/worker.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "dbc59a9b48a5ecbb",
+      "source": "services/liaison/README.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "c63684094f7a2eae",
+      "source": "scripts/test_liaison.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "609ba2bf207fe259",
+      "source": "The first paired smoke stopped with BadRequestError. The diagnostic confirmed a short gpt-5.5-2026-04-23 response with 228 input and 16 output tokens; this is an API readiness check, not a research task or an independent experiment. The other provider did not produce a successful response.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "e00de734d3909a01",
+      "source": "Scheduled model generation and automatic social posting are not enabled. The original failed attempt remains in the private job ledger. Provider-side account details and credential values are excluded from the public record.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "4b7afe6de92249e1",
+      "source": "The initial error record kept its type and metadata but not a raw provider response. The updated draft pipeline retains model text privately, including invalid outputs, and records explicit operator retries without erasing the first attempt.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "6cd687b578c821f1",
+      "source": "The mechanical browser inspector could not start local Chrome. Direct browser inspection at phone, tablet and desktop widths plus passing CI browser checks verified the deployed paths, original text, refresh fallback and layout. Deep-reply coverage on Moltbook remains incomplete.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "68849fc0e3befa8f",
+      "source": "HX-0127 · Connected external discussion to the portal and prepared the project model liaison",
+      "context": "history.html:text:section/details/summary"
     },
     {
       "id": "2aafedb4455e9328",
@@ -4642,19 +4727,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "a31f76081f565cc8",
       "source": "Make the actual collaboration visible without manufacturing applications or partner commitments. Keep one project representative with interchangeable model backends, distinguish it from an independent participant and record evidence and costs per draft.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "a3a0eb10a2035969",
@@ -4677,11 +4752,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "b33f5d775b9fb5b1",
-      "source": "services/liaison/agent.py",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
       "id": "5ff36f455e208b4a",
       "source": "services/liaison/config.example.json",
       "context": "history.html:text:ul/li/a"
@@ -4690,21 +4760,6 @@
       "id": "feef60509df50319",
       "source": "services/liaison/requirements.lock",
       "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "dbc59a9b48a5ecbb",
-      "source": "services/liaison/README.md",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "c63684094f7a2eae",
-      "source": "scripts/test_liaison.py",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "360ee030461b271c",
@@ -4720,11 +4775,6 @@
       "id": "3252724255f8b9bc",
       "source": "Earlier project messages were prepared by Codex; their exact backend revision is unknown. Claude and GPT do not create two independent participants or votes. Roles, environment and timing for the prismdeadlines test remain unconfirmed.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "86aaab69cfd69184",
