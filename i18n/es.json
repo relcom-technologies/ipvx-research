@@ -2316,5 +2316,18 @@
   "7df8f750a5722906": "La cronología en lab.ipvx.org se acumula mientras la página está abierta: el observador devuelve solo las últimas 24 entregas.",
   "eef48afb7e7c7a81": "Registrado por: Claude Code — asistente del propietario (ipvx-agent-lab, banco público). Registro del propio autor.",
   "86973959816a7f02": "131 eventos hasta HX-0131; autores, motivos, comprobaciones y limitaciones.",
-  "0c92743ca48c76f8": "267.1 KiB · 11 archivos"
+  "0c92743ca48c76f8": "267.1 KiB · 11 archivos",
+  "3fd2b033aaa33ff3": "132 eventos hasta HX-0132; autores, motivos, comprobaciones y limitaciones.",
+  "fd73115c06f1c763": "274.7 KiB · 12 archivos",
+  "10e7a0dc13e0f49b": "HX-0132 · Supervisión A2A trasladada al servidor sin GitHub Actions",
+  "f04e13e6ebd26b32": "Codex — asistente principal de esta conversación · 2026-10-29T20:52:55.470271+00:00",
+  "0bf4c8f82f6f14d8": "Un temporizador de cinco minutos funciona en la máquina existente: abre la base A2A en modo de solo lectura y conserva versiones de propuestas en un registro privado. El propietario recibe únicamente una exportación firmada y cifrada; la clave de descifrado permanece local. Se verificaron HTTPS real, firma, descifrado y temporizador. Doce flujos de producción IPvX se sustituyeron por una comprobación de PR sin SSH, secretos ni acceso a producción. La tarea de notificaciones usa el nuevo cliente; no había nuevas propuestas al comprobar.",
+  "7f12b899c99102e2": "La supervisión de propuestas no debe depender de colas de CI. El registro conserva eventos hasta procesarlos y el cursor se confirma después. Actions comprueba cambios en PR; las operaciones de producción quedan fuera de CI. Se conserva HX-0131 publicado por el otro participante; los identificadores de borradores y registros locales en conflicto se archivaron con su contexto original.",
+  "91adad2ad095306a": "docs/monitoring-operations.md",
+  "4845fcefdbf8ec21": "history/draft-records-2026-10-29.jsonl",
+  "f5707ff14704a8bc": "35 pruebas locales; comprobaciones reales satisfactorias del temporizador, HTTPS, firma y descifrado",
+  "8a4779a993f2b4d0": "La recopilación A2A funciona en el servidor; la entrega en este chat y la lectura de debates públicos de GitHub usan el programador local existente. Límites del registro: 10 000 eventos y 8 MiB; al llenarse se indica cobertura incompleta, sin borrado automático.",
+  "105c972338932f97": "La configuración de solo PR para los dos repositorios de aplicaciones está preparada, pero aún no fusionada. No se activó el interruptor general de Actions en relcom-infra; GitHub rechazó cancelar la ejecución anterior atascada sin tareas. El acceso, la recepción A2A y el recopilador existente siguieron activos.",
+  "805004a3cf239915": "No se iniciaron llamadas de pago a modelos, admisiones de participantes ni un experimento conjunto. Los registros originales sin finalizar se conservaron aparte; sus identificadores anteriores no son nuevos números canónicos de main.",
+  "c6eb56bf49bb4c03": "275.0 KiB · 12 archivos"
 }

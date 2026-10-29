@@ -1,13 +1,9 @@
-name: Research proposal majority
-on:
-  issues: {types: [opened, labeled, reopened]}
-  issue_comment: {types: [created, edited, deleted]}
-  schedule: [{cron: '17 * * * *'}]
-  workflow_dispatch:
-permissions: {contents: read, issues: write}
+name: Research proposal checks
+on: [pull_request]
+permissions: {contents: read}
 concurrency:
-  group: research-majority
-  cancel-in-progress: false
+  group: research-checks-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
 jobs:
   tally:
     runs-on: ubuntu-latest
@@ -15,8 +11,5 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: '3.13'}
-      - name: Count authenticated votes on proposals
-        env:
-          GH_TOKEN: ${{ github.token }}
-          REPO: ${{ github.repository }}
-        run: python3 scripts/review_proposals.py
+      - name: Check vote rules using local fixtures only
+        run: python3 -m unittest discover -s scripts -p test_majority.py
