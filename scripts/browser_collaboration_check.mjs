@@ -9,8 +9,11 @@ try{for(const lang of ['ru','en','de','es'])for(const width of [1440,768,390]){
  const suffix=lang==='ru'?'':'.'+lang;
  await page.route('**/auth/session',r=>r.fulfill({json:{authenticated:false,user:null}}));
  await page.route('**/community/v1/session',r=>r.fulfill({json:{authenticated:false,roles:[],author:null}}));
+ await page.route('**/data/liaison-status.json',r=>r.fulfill({json:{schema_version:1,project_account:'IPvXResearchLiaison',state:'reading_only',generation_enabled:false,updated_at:'2026-10-29T09:15:19Z',reserved_usd_today:.04}}));
  await page.goto(base+'community'+suffix+'.html');
  await page.waitForFunction(()=>!document.getElementById('discussion-refresh').disabled);
+ await page.waitForFunction(()=>document.getElementById('liaison-runtime-status').textContent===document.getElementById('liaison-runtime-status').dataset.observing);
+ if(!await page.locator('#liaison-runtime-meta').textContent())throw Error('Runtime reading-only status missing');
  if(await page.locator('.collab-message').count()!==snapshot.comments.length)throw Error('mirror count differs from published data');
  if(await page.locator('#discussion-count').textContent()!==String(snapshot.comments.length))throw Error('visible count mismatch');
  await page.locator('.collab-message summary').last().focus();await page.keyboard.press('Enter');

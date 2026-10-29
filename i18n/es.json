@@ -2291,5 +2291,16 @@
   "79dd032528222231": "integrations/press/custom.css",
   "ec12eb315997a83d": "integrations/press/layout-acceptance-2026-10-29.json",
   "7cda02d13c252321": "Se comprobó el artículo ruso con anchuras de 320, 390, 768, 1152, 1200, 1440 y 1920 px: el documento se ajusta a la pantalla y RU ocupa una sola línea en un área de 40 × 44 px. Se comprobaron la cabecera común y un artículo, no todo el contenido de Press.",
-  "66c50b46ddcf86a1": "El ajuste de tamaño de Chrome no cambió la pantalla observada; las mediciones adaptables se realizaron en el navegador integrado. Se verificaron por separado el guardado del tema y la aplicación pública del CSS."
+  "66c50b46ddcf86a1": "El ajuste de tamaño de Chrome no cambió la pantalla observada; las mediciones adaptables se realizaron en el navegador integrado. Se verificaron por separado el guardado del tema y la aplicación pública del CSS.",
+  "af7ddd5c7ae83109": "130 eventos hasta HX-0130; autores, motivos, comprobaciones y limitaciones.",
+  "00b2066a69b558ad": "264,8 KiB · 11 archivos",
+  "276f4e743f02df50": "HX-0130 · Recopilación de debates activa; corregida la causa de recursos de interfaz obsoletos",
+  "11e0c8d619de595e": "Codex — asistente principal de esta conversación · 2026-10-29T09:55:28.492771+00:00",
+  "7c5d3acf6744861f": "PR20 se publicó y verificó en ipvx.org; el archivo contiene el historial hasta HX-0129. La máquina existente recopila comentarios públicos cada 15 minutos sin generar respuestas ni efectuar nuevas llamadas de pago. El primer inicio falló porque SSH omitió un argumento vacío; PR792 lo corrigió y el siguiente intento funcionó. La comprobación de la interfaz detectó que el JavaScript antiguo se almacenaba en caché durante cuatro horas. Se prepararon URL con hash del contenido para CSS, JavaScript, imágenes y archivos, incluidos los recursos localizados.",
+  "d1ec8a418b933cdf": "Separar la disponibilidad del debate de la disponibilidad de los modelos. Exigir una nueva respuesta de ambos modelos antes de habilitar la generación y conservar los fallos anteriores. Cambiar la URL al cambiar los bytes para entregar estilos, estados y archivos actuales tras cada publicación.",
+  "2e56110510d00624": "scripts/test_asset_versions.py",
+  "4450a1131c64e092": "scripts/browser_collaboration_check.mjs",
+  "8a883939823d5f8e": "El recopilador funciona en modo reading_only: no hay borradores completos de ambos modelos y se conservan el fallo anterior y las reservas de gasto. No está implementada la publicación automática de mensajes. No se inició ningún experimento conjunto externo.",
+  "1d78675bf9754a37": "Las nuevas URL se comprobaron localmente frente a cambios de contenido, compilaciones repetidas y conservación de enlaces directos a evidencias; la publicación sigue las comprobaciones habituales. La recopilación en segundo plano no elimina el límite de profundidad conocido de Moltbook.",
+  "afe07222faf0cc35": "También se comprobaron los artículos inglés, alemán y español a 390, 768 y 1440 px: los códigos de idioma permanecen enteros y no hay desbordamiento horizontal. No se publicaron propuestas privadas ni textos de modelos."
 }

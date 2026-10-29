@@ -2291,5 +2291,16 @@
   "79dd032528222231": "integrations/press/custom.css",
   "ec12eb315997a83d": "integrations/press/layout-acceptance-2026-10-29.json",
   "7cda02d13c252321": "Der russische Artikel wurde bei 320, 390, 768, 1152, 1200, 1440 und 1920 px geprüft: Die Dokumentbreite entspricht dem Bildschirm, RU bleibt in einer Fläche von 40 × 44 px einzeilig. Geprüft wurden die gemeinsame Kopfzeile und ein Artikel, nicht sämtliche Press-Inhalte.",
-  "66c50b46ddcf86a1": "Die Größenüberschreibung in Chrome änderte den beobachteten Bildschirm nicht; die responsiven Messungen erfolgten im integrierten Browser. Das Speichern der Gestaltung und die öffentliche Anwendung des CSS wurden separat geprüft."
+  "66c50b46ddcf86a1": "Die Größenüberschreibung in Chrome änderte den beobachteten Bildschirm nicht; die responsiven Messungen erfolgten im integrierten Browser. Das Speichern der Gestaltung und die öffentliche Anwendung des CSS wurden separat geprüft.",
+  "af7ddd5c7ae83109": "130 Ereignisse bis HX-0130; Autoren, Begründungen, Prüfungen und Grenzen.",
+  "00b2066a69b558ad": "264,8 KiB · 11 Dateien",
+  "276f4e743f02df50": "HX-0130 · Diskussionserfassung läuft; Ursache veralteter Oberflächenressourcen behoben",
+  "11e0c8d619de595e": "Codex — Hauptassistent dieses Gesprächs · 2026-10-29T09:55:28.492771+00:00",
+  "7c5d3acf6744861f": "PR20 wurde auf ipvx.org veröffentlicht und geprüft; das Archiv enthält die Geschichte bis HX-0129. Auf der bestehenden Maschine werden öffentliche Kommentare alle 15 Minuten erfasst, ohne Antwortgenerierung oder neue kostenpflichtige Aufrufe. Der erste Start scheiterte an einem von SSH ausgelassenen leeren Parameter; PR792 korrigierte dies, der nächste Lauf war erfolgreich. Bei der Oberflächenprüfung wurde ein vierstündiger Cache für altes JavaScript erkannt. Inhaltsabhängige URLs wurden für CSS, JavaScript, Bilder und Archive einschließlich lokalisierter Ressourcen vorbereitet.",
+  "d1ec8a418b933cdf": "Die Verfügbarkeit der Diskussion von der Modellverfügbarkeit trennen. Vor Aktivierung der Generierung eine neue Antwort beider Modelle verlangen und frühere Fehler bewahren. Ressourcenadressen bei geänderten Bytes ändern, damit Nutzer nach einem Release aktuelle Stile, Status und Archive erhalten.",
+  "2e56110510d00624": "scripts/test_asset_versions.py",
+  "4450a1131c64e092": "scripts/browser_collaboration_check.mjs",
+  "8a883939823d5f8e": "Der Sammler läuft im Modus reading_only: Es gibt keine fertigen Entwürfe beider Modelle; der frühere Fehler und die Kostenreservierungen bleiben erhalten. Automatischer Nachrichtenversand ist nicht implementiert. Kein externes gemeinsames Experiment wurde gestartet.",
+  "1d78675bf9754a37": "Die neuen Ressourcenadressen wurden lokal auf Inhaltsänderungen, wiederholte Erstellung und unveränderte direkte Beleglinks geprüft; die Veröffentlichung durchläuft die üblichen Prüfungen. Die Hintergrundsammlung beseitigt die bekannte Tiefenbegrenzung von Moltbook nicht.",
+  "afe07222faf0cc35": "Die englischen, deutschen und spanischen Blogartikel wurden zusätzlich bei 390, 768 und 1440 px geprüft: Sprachcodes bleiben zusammen, ohne horizontalen Überlauf. Private Anträge und Modelltexte wurden nicht veröffentlicht."
 }

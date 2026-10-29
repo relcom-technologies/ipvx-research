@@ -165,6 +165,9 @@ def localized(tree, name, language, catalog, pages):
         skip = skipped or node.tag.lower() in SKIP or node.tag == 'raw'
         for attr, value in list(node.attrs):
             lower = attr.lower()
+            if lower in ('href', 'src') and value and value.startswith(('assets/', 'data/downloads/')):
+                value = re.sub(r'\?v=[a-f0-9]{16}$', '', value)
+                node.set(lower, value)
             if lower in ATTRS and value and (lower != 'content' or node.attr('name') == 'description'):
                 node.set(lower, translate(value))
             if language != 'ru' and lower in ('href', 'src', 'action') and value:
@@ -217,6 +220,19 @@ def localized(tree, name, language, catalog, pages):
     return walk(tree)
 
 
+def fingerprint_assets(root):
+    """Change cached resource URLs only when their actual bytes change."""
+    pattern = re.compile(r'(?P<prefix>\b(?:src|href)=")(?P<path>(?:assets/[^"?#]+|data/downloads/[^"?#]+\.zip))(?:\?v=[a-f0-9]{16})?(?P<end>")')
+    for page in root.glob('*.html'):
+        def replace(match):
+            path = root/match['path']
+            if not path.is_file() or path.is_symlink() or not path.resolve().is_relative_to(root.resolve()):
+                raise ValueError('Invalid fingerprint input: '+match['path'])
+            version = hashlib.sha256(path.read_bytes()).hexdigest()[:16]
+            return match['prefix']+match['path']+'?v='+version+match['end']
+        page.write_text(pattern.sub(replace, page.read_text()))
+
+
 def build(languages=LANGUAGES):
     sources = {p.name: p.read_text() for p in ROOT.glob('*.html') if not re.search(r'\.(en|de|es)\.html$', p.name)}
     spans = json.loads((ROOT/'i18n/js-sources.json').read_text())
@@ -263,6 +279,7 @@ def build(languages=LANGUAGES):
             return translate(value) if isinstance(value, str) and re.search('[А-Яа-яЁё]', value) else value
         summary = data_translate(json.loads((ROOT/'data/llm-summary.json').read_text()))
         (ROOT/'data'/f'llm-summary.{language}.json').write_text(json.dumps(summary, ensure_ascii=False, indent=2)+'\n')
+    fingerprint_assets(ROOT)
     print(len(sources)*len(languages), 'static language pages; originals and evidence preserved')
 
 
