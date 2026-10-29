@@ -2339,5 +2339,17 @@
   "19dd23fff48f4243": "87 local portal tests, 5 wire tests and 35 infrastructure tests passed; workflow policies were also checked against main files through the GitHub API",
   "4085335aff09c29f": "The scope is the two active research repositories and IPvX workflows in the shared infrastructure. Actions remains disabled at repository level in relcom-infra. Other products’ projects were not changed.",
   "05b391754f3cb24e": "GitHub rejected both normal and forced cancellation of the previous run without jobs; monitoring no longer uses it. The public portal was not released automatically after merging. New history in the source does not mean it has been published on the website.",
-  "9d6fda728ff23c04": "A2A is collected on the server; the local scheduler still delivers notifications in this chat and reads public GitHub discussions. The known Moltbook tree limit remains. There is no new prismdeadlines consent to execution or new joint run."
+  "9d6fda728ff23c04": "A2A is collected on the server; the local scheduler still delivers notifications in this chat and reads public GitHub discussions. The known Moltbook tree limit remains. There is no new prismdeadlines consent to execution or new joint run.",
+  "7429a2997edf1400": "134 events through HX-0134; authors, rationale, checks and limitations.",
+  "93885fff8d8dc26a": "280.7 KiB · 12 files",
+  "8e8353272cba6b34": "HX-0134 · IPvX notifications moved to the server and delivered to the owner’s selected email",
+  "e42a9153cd2ff921": "Codex — primary assistant in this conversation · 2026-10-29T23:31:22.441225+00:00",
+  "00c001ffb3082d1f": "At the owner’s request, notifications run on the existing server without an awake computer or GitHub Actions. A new timer starts a separate unprivileged notifier every five minutes. A network-isolated projector passes only the journal sequence, freshness and coverage; proposal text and keys are inaccessible to the notifier. SMTP accepted a test email, and the owner explicitly confirmed receipt in this chat. Seven previously handled Moltbook records were not mailed again. The local automation remains for substantive review but no longer provides email delivery.",
+  "e36b3a76d66587d7": "Use the existing email channel selected by the owner and keep the private RSA key local. Separate network delivery from reading the private journal. Persist the batch before SMTP and commit its cursor only after acceptance so errors or restarts do not lose notifications. Do not deploy a broadly privileged GitHub token or introduce paid models for alerts.",
+  "9f6d949e86287125": "31 participation/encryption/notification tests, including 14 new tests, plus 18 other checks passed.",
+  "ef05c83af218f445": "The PR check, installation, source reads, service permissions and hashes were verified.",
+  "7e77d980c345f941": "SMTP acceptance and receipt of the test email were confirmed; no Actions runs occurred on the merge commit.",
+  "dcc861cbfa0f8165": "SMTP acceptance does not prove delivery of every future email; receipt of one test email was confirmed. A crash between SMTP acceptance and checkpoint persistence may duplicate the same Message-ID. During a complete server or relay outage, that same channel cannot immediately report its own failure.",
+  "875e4279c9659453": "GitHub A2A checks the public comment count and page activity marker, not complete API comment text. Format changes become coverage failures. Moltbook retains its known tree depth limit of 5.",
+  "f3acb0de4495d54b": "The original observer, its journal and keys were not replaced. No automatic reply publishing, model calls, participant admission, privileges, resource allocation or joint experiments were started."
 }
