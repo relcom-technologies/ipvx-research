@@ -837,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "af7ddd5c7ae83109",
-      "source": "130 событий по HX-0130; авторы, основания, проверки и ограничения.",
+      "id": "3fd2b033aaa33ff3",
+      "source": "132 событий по HX-0132; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "00b2066a69b558ad",
-      "source": "264.8 КиБ · 11 файлов",
+      "id": "92f64cf1dc5fd55f",
+      "source": "269.6 КиБ · 11 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4622,6 +4622,156 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "3451f7e4ee282fac",
+      "source": "HX-0132 · Сохранён закреплённый сервер кандидата; исправлена гонка в проверке бюджета",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "e078c61c3e49f21a",
+      "source": "Реализовано",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "e20d45f182b6b09b",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-29T12:28:18.384889+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "34c37b965c6985bc",
+      "source": "Первый прогон подготовки выявил два отрицательных результата: изменение описания карточки нарушило хеш закреплённого сервера, а тест конкурентного бюджета ошибочно предполагал, что поток с ID 0 обязательно получит резерв. Сервер восстановлен без изменения старого кандидата; уточнение карточки сохранено как неприменённый патч. Тест теперь проверяет повтор реально выданного резерва. Полный повторный прогон: 85 тестов прошли.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "35e85e2c26372b77",
+      "source": "Не менять научный baseline под видом редактирования текста. Проверять фактический результат конкурентного распределения вместо недоказанного порядка потоков; поведение рабочего бюджета не меняется.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "95e444860ced1a3d",
+      "source": "docs/proposals/a2a-retention-disclosure.patch",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "ecfd57b55dd5afb4",
+      "source": "docs/a2a-review-001.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "81ac1d5a3c43d5b7",
+      "source": "experiments/a2a-interop/protocol.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "c63684094f7a2eae",
+      "source": "scripts/test_liaison.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "0e6b7c5bfd1623aa",
+      "source": "infra/a2a_service.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "9062d831d8573156",
+      "source": "Патч карточки не применён и не опубликован. Его применение требует отдельного решения о версии кандидата или закреплённой оснастке.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "a50928b6afaa5e3d",
+      "source": "Проверки синтетические и локальные; успешный прогон не доказывает независимое исполнение, реальную работу обеих моделей или готовность совместного запуска.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "42e53a0d4849c3b8",
+      "source": "HX-0131 · prismdeadlines выбрал только рецензирование публичного протокола",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "c89eba90f1d8c201",
+      "source": "Предложение",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "663b42d809fb4375",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-29T12:24:30.072787+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "6450cdd1425bd31f",
+      "source": "Получен явный ответ учётной записи prismdeadlines: только асинхронная текстовая рецензия, без исполнения, полномочий разворачивать копию, фиксированного слота и подтверждения замороженного объёма запуска. Codex подготовил отдельное предложение владельцу для такого review-этапа и ответил в разрешённой ветке. Ответ проекта подтверждён площадкой и прочитан публично с точным совпадением текста. Подготовлено уточнение Agent Card об отсутствии гарантированного срока хранения и tombstone; обновлены предлагаемые статусы обсуждения и факты для агента.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "55050b3ecee70088",
+      "source": "Принять ограничение предложенной роли как наблюдаемый факт, не превращая рецензию в независимое выполнение. Раскрыть ограничение хранения ещё на discovery-этапе: отсутствие записи не доказывает, что заявку никогда не принимали. Не запрашивать у рецензента ненужные ресурсы, среду исполнения или ACK, подразумевающий запуск.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "37d74816cfd0a61f",
+      "source": "Входящий комментарий 651b962b-391d-4ba1-8dca-8f679cdfb91b, время площадки 2026-10-29T11:19:03.938Z",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "d30b70f6f711f13f",
+      "source": "Ответ проекта 16001872-a37e-4a8f-ab76-ca07e47ff392; SHA-256 точного текста 715bb543b3a1e4f698fd3271f92f125af3201cc6e991b8341955d040e53e39ca",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "72b502c2211fbcd6",
+      "source": "docs/a2a-interface.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "a3a0eb10a2035969",
+      "source": "scripts/collaboration.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "0e7b1d308430da33",
+      "source": "services/liaison/facts.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "80ff6d1d9f05a423",
+      "source": "data/community-discussions.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "fd44076898228153",
+      "source": "Личность и независимость оператора не подтверждены. Выбор роли принадлежит публичной учётной записи; итоговая рецензия и срок её завершения не получены. Членство, права, ресурсы и полномочия не выдавались.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "d40519aa564fd0f8",
+      "source": "Исходный кандидат IPVX-A2A-INTEROP-001 v1.0-rc1 сохранён. Отдельный уполномоченный исполнитель клиента по-прежнему отсутствует; прежнее окно не принято рецензентом, совместного запуска нет.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "9cf3ef40b5b548e8",
+      "source": "Уточнение карточки и статусов подготовлено для рассмотрения владельцем, не опубликовано в production. Оно не добавляет TTL, tombstone, гарантию хранения или автоматическое восстановление. Платные модели не вызывались.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
       "id": "276f4e743f02df50",
       "source": "HX-0130 · Работает сбор обсуждений; устранена причина устаревших ресурсов интерфейса",
       "context": "history.html:text:section/details/summary"
@@ -4642,19 +4792,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "d1ec8a418b933cdf",
       "source": "Отделить доступность обсуждений от доступности моделей. Проверять свежий парный ответ до включения генерации и сохранять прежние неудачи. Менять адрес ресурса при изменении байтов, чтобы пользователи получали актуальные стили, статусы и архивы после выпуска.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "26559b4eb7796811",
@@ -4672,11 +4812,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "8a883939823d5f8e",
       "source": "Сборщик работает в режиме reading_only: завершённых парных черновиков нет, прежняя неудача и резервы расходов сохранены. Автоматическая отправка сообщений не реализована. Внешний совместный эксперимент не запускался.",
       "context": "history.html:text:details/ul/li"
@@ -4692,19 +4827,9 @@
       "context": "history.html:text:details/ul/li"
     },
     {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
-    },
-    {
       "id": "599ff99f7c6ee852",
       "source": "HX-0129 · Исправлен перенос RU и выход оглавления в блоге IPvX",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "e078c61c3e49f21a",
-      "source": "Реализовано",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "81d3db7353041afe",
@@ -4782,11 +4907,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "c63684094f7a2eae",
-      "source": "scripts/test_liaison.py",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
       "id": "609ba2bf207fe259",
       "source": "The first paired smoke stopped with BadRequestError. The diagnostic confirmed a short gpt-5.5-2026-04-23 response with 228 input and 16 output tokens; this is an API readiness check, not a research task or an independent experiment. The other provider did not produce a successful response.",
       "context": "history.html:text:details/ul/li"
@@ -4827,11 +4947,6 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "a3a0eb10a2035969",
-      "source": "scripts/collaboration.py",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
       "id": "921ad1f8a2d82c16",
       "source": "scripts/export_community.py",
       "context": "history.html:text:ul/li/a"
@@ -4839,11 +4954,6 @@
     {
       "id": "391da75c4fb08b30",
       "source": "assets/discussions.js",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "80ff6d1d9f05a423",
-      "source": "data/community-discussions.json",
       "context": "history.html:text:ul/li/a"
     },
     {
@@ -4899,11 +5009,6 @@
     {
       "id": "9fc8ae5fac9ba8e1",
       "source": "data/prismdeadlines-negotiation.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "81ac1d5a3c43d5b7",
-      "source": "experiments/a2a-interop/protocol.json",
       "context": "history.html:text:ul/li/a"
     },
     {
@@ -5030,11 +5135,6 @@
       "id": "e4aceac551749a68",
       "source": "Turn the concrete review feedback into a precise client obligation that matches the existing server behavior. Prevent a retry policy from silently creating a second proposal after a conflict or after client-state loss, while distinguishing proposed client behavior from server-enforced persistence and immutable decision semantics.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "72b502c2211fbcd6",
-      "source": "docs/a2a-interface.md",
-      "context": "history.html:text:ul/li/a"
     },
     {
       "id": "4fc08092cd22ab73",
@@ -5292,11 +5392,6 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0e6b7c5bfd1623aa",
-      "source": "infra/a2a_service.py",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
       "id": "9bac0de4102d2201",
       "source": "infra/a2a_admin.py",
       "context": "history.html:text:ul/li/a"
@@ -5465,11 +5560,6 @@
       "id": "40f63fb30a52108c",
       "source": "HX-0113 · Prepared architecture and agent directory production release",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "c89eba90f1d8c201",
-      "source": "Предложение",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "a7dc7f1fe0a9af7d",

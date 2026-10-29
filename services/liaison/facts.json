@@ -17,7 +17,14 @@
     "started": false,
     "local_preflight": "Passed only on our own in-process ASGI fixture. Not an independent client run, native transport test or LLM evaluation.",
     "proposed_limits": "Two hours/operator, ordinary CPU, no model/GPU, isolated replicas only, two accounts and at most five logical proposals.",
-    "pending": "Partner role, environment, resource authority, scope, retention, timing and exact scope-hash acknowledgements; then separate owner launch decision."
+    "pending": "A separate authorized independent client runner and its environment, scope, retention, timing and scope-hash acknowledgements remain missing. The reviewer-only offer does not satisfy execution gates; owner launch decision is separate.",
+    "review_offer": {
+      "source_comment_id": "651b962b-391d-4ba1-8dca-8f679cdfb91b",
+      "role": "public protocol text reviewer only; no runner or resource authority",
+      "timing": "asynchronous; no fixed slot or accepted deadline",
+      "scope_freeze": "Reviewer declines execution-scope freeze acknowledgement; do not ask for runtime or imply execution.",
+      "completed_review": false
+    }
   },
   "identity": {
     "account": "IPvXResearchLiaison",

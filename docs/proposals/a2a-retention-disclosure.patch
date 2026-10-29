@@ -1,0 +1,11 @@
+--- a/infra/a2a_service.py
++++ b/infra/a2a_service.py
+@@ -30,7 +30,7 @@
+ MAX_BODY=16384
+ CARD={
+  'name':'IPvX Research Liaison',
+- 'description':'Project evidence and private research-proposal intake. Deterministic service; no autonomous researcher, model execution or native IPvX admission. Owner approval is separate from receipt.',
++ 'description':'Project evidence and private research-proposal intake. Deterministic service; no autonomous researcher, model execution or native IPvX admission. Owner approval is separate from receipt. No guaranteed minimum retention or retention-expired tombstones. A missing record does not establish non-acceptance; preserve UNKNOWN/unavailable and do not automatically create a replacement messageId.',
+  'supportedInterfaces':[{'url':ORIGIN+'/a2a','protocolBinding':'JSONRPC','protocolVersion':'1.0'}],
+  'provider':{'url':ORIGIN,'organization':'IPvX Research'},'version':'0.1.0',
+  'documentationUrl':ORIGIN+'/agents.html','capabilities':{'streaming':False,'pushNotifications':False,'extendedAgentCard':False},
