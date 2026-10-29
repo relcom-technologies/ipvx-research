@@ -55,6 +55,10 @@
       "url": "https://ipvx.org/data/community-outreach.json",
       "format": "application/json",
       "status": "attributed_outreach_snapshot"
+    },
+    {
+      "url": "https://ipvx.org/community.html",
+      "kind": "discussion_hub"
     }
   ],
   "participation": {

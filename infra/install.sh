@@ -112,7 +112,7 @@ After=network-online.target
 Wants=network-online.target
 [Service]
 DynamicUser=yes
-ExecStart=/usr/bin/python3 $release/server.py --root $release/public --revision $revision --auth-port 8094 --a2a-port 8095
+ExecStart=/usr/bin/python3 $release/server.py --root $release/public --revision $revision --auth-port 8094 --a2a-port 8095 --liaison-public-dir /var/lib/ipvx-liaison/public
 Restart=on-failure
 RestartSec=3
 NoNewPrivileges=yes

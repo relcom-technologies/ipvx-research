@@ -12,6 +12,22 @@ module=importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
 
 class PublicBoundary(unittest.TestCase):
+    def test_only_whitelisted_liaison_exports_can_refresh(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory)/'public';root.mkdir();(root/'index.html').write_text('published');(root/'data').mkdir()
+            (root/'data/liaison-status.json').write_text('{"state":"prepared"}')
+            live=Path(directory)/'live';live.mkdir();(live/'liaison-status.json').write_text('{"state":"running"}')
+            (live/'ledger.sqlite').write_text('private ledger')
+            server=module.make_server(root,'127.0.0.1',0,'a'*40,liaison_public_dir=live)
+            thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start()
+            base='http://127.0.0.1:'+str(server.server_port)
+            try:
+                with urllib.request.urlopen(base+'/data/liaison-status.json') as response:self.assertIn(b'running',response.read())
+                with self.assertRaises(urllib.error.HTTPError):urllib.request.urlopen(base+'/data/ledger.sqlite')
+                (live/'liaison-status.json').unlink();(live/'liaison-status.json').symlink_to(live/'ledger.sqlite')
+                with urllib.request.urlopen(base+'/data/liaison-status.json') as response:self.assertIn(b'prepared',response.read())
+            finally:server.shutdown();thread.join();server.server_close()
+
     def test_public_file_and_private_routes(self):
         with tempfile.TemporaryDirectory() as directory:
             root=Path(directory)/'public';root.mkdir()

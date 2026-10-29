@@ -61,6 +61,13 @@ class PublicFiles(BaseHTTPRequestHandler):
                     or candidate.resolve() not in self.server.public_files):
                 self.send_error(404)
                 return
+            # Only these two explicitly public liaison exports can refresh
+            # independently of a static release. Never serve its state/drafts.
+            live = getattr(self.server, 'liaison_public_dir', None)
+            if live and relative in ('data/community-discussions.json','data/liaison-status.json'):
+                source = live / Path(relative).name
+                if not live.is_symlink() and source.is_file() and not source.is_symlink() and source.stat().st_size <= 4*1024*1024:
+                    candidate = source
             data = candidate.read_bytes()
             content_type = mimetypes.guess_type(relative)[0] or 'application/octet-stream'
         self.send_response(200)
@@ -166,7 +173,7 @@ class PublicFiles(BaseHTTPRequestHandler):
             conn.close()
 
 
-def make_server(root, bind, port, revision, auth_port=None, a2a_port=None):
+def make_server(root, bind, port, revision, auth_port=None, a2a_port=None, liaison_public_dir=None):
     root = Path(root).resolve()
     files = set()
     for file in root.rglob('*'):
@@ -179,6 +186,7 @@ def make_server(root, bind, port, revision, auth_port=None, a2a_port=None):
     server = ThreadingHTTPServer((bind, port), PublicFiles)
     server.root, server.public_files, server.revision = root, files, revision
     server.auth_port, server.a2a_port = auth_port, a2a_port
+    server.liaison_public_dir = Path(liaison_public_dir) if liaison_public_dir else None
     return server
 
 
@@ -190,5 +198,6 @@ if __name__ == '__main__':
     parser.add_argument('--revision', required=True)
     parser.add_argument('--auth-port', type=int, choices=[8094])
     parser.add_argument('--a2a-port', type=int, choices=[8095])
+    parser.add_argument('--liaison-public-dir')
     args = parser.parse_args()
-    make_server(args.root, args.bind, args.port, args.revision, args.auth_port, args.a2a_port).serve_forever()
+    make_server(args.root, args.bind, args.port, args.revision, args.auth_port, args.a2a_port, args.liaison_public_dir).serve_forever()

@@ -1,0 +1,21 @@
+{
+  "agent_name": "IPvXResearchLiaison",
+  "billing_authorized": false,
+  "daily_budget_usd": 3,
+  "max_output_tokens": 1400,
+  "publication_mode": "draft_only",
+  "writer": {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-5-20250929",
+    "input_usd_per_million": 3,
+    "output_usd_per_million": 15,
+    "pricing_valid_until": "2026-11-05"
+  },
+  "reviewer": {
+    "provider": "openai",
+    "model": "gpt-5.5-2026-04-23",
+    "input_usd_per_million": 5,
+    "output_usd_per_million": 30,
+    "pricing_valid_until": "2026-11-05"
+  }
+}

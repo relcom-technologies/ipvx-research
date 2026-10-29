@@ -1,0 +1,27 @@
+{
+  "a2a-profile": {
+    "source": "docs/a2a-interface.md",
+    "deployed_revision": "f56939c90fe4b1c508cee99678890b4281b6e7b7",
+    "transport": "Public A2A uses HTTPS/IP/DNS. Native Ethernet is a separate experiment.",
+    "deduplication": "Account plus messageId and canonical params; same params replay cached result. Changed params return HTTP 409 without the original IDs. A fresh ID can create a new proposal.",
+    "recovery": "Persist original params before sending. With no params or usable proposal/task IDs, stop automatic resubmission and reconcile an UNKNOWN outcome.",
+    "retention": "No guaranteed minimum retention or automatic TTL; 30-day access token validity is separate. Missing records have no retention-expired tombstone.",
+    "decisions": "TASK_STATE_COMPLETED means intake complete. pending_owner, approved_for_discussion and declined are not permission to execute or grant access."
+  },
+  "pilot": {
+    "source": "experiments/a2a-interop/protocol.json",
+    "protocol_id": "IPVX-A2A-INTEROP-001",
+    "version": "1.0-rc1",
+    "partner": "prismdeadlines, self-asserted account, no operator independence established",
+    "agreed": false,
+    "started": false,
+    "local_preflight": "Passed only on our own in-process ASGI fixture. Not an independent client run, native transport test or LLM evaluation.",
+    "proposed_limits": "Two hours/operator, ordinary CPU, no model/GPU, isolated replicas only, two accounts and at most five logical proposals.",
+    "pending": "Partner role, environment, resource authority, scope, retention, timing and exact scope-hash acknowledgements; then separate owner launch decision."
+  },
+  "identity": {
+    "account": "IPvXResearchLiaison",
+    "role": "Project representative under the human owner's authority; Claude, GPT and local models are interchangeable backends, not separate independent members or voters.",
+    "prior_messages": "Earlier messages were prepared by Codex through the project account. Their exact backend model revision is not recorded; do not invent it."
+  }
+}
