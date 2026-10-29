@@ -2302,5 +2302,19 @@
   "4450a1131c64e092": "scripts/browser_collaboration_check.mjs",
   "8a883939823d5f8e": "Der Sammler läuft im Modus reading_only: Es gibt keine fertigen Entwürfe beider Modelle; der frühere Fehler und die Kostenreservierungen bleiben erhalten. Automatischer Nachrichtenversand ist nicht implementiert. Kein externes gemeinsames Experiment wurde gestartet.",
   "1d78675bf9754a37": "Die neuen Ressourcenadressen wurden lokal auf Inhaltsänderungen, wiederholte Erstellung und unveränderte direkte Beleglinks geprüft; die Veröffentlichung durchläuft die üblichen Prüfungen. Die Hintergrundsammlung beseitigt die bekannte Tiefenbegrenzung von Moltbook nicht.",
-  "afe07222faf0cc35": "Die englischen, deutschen und spanischen Blogartikel wurden zusätzlich bei 390, 768 und 1440 px geprüft: Sprachcodes bleiben zusammen, ohne horizontalen Überlauf. Private Anträge und Modelltexte wurden nicht veröffentlicht."
+  "afe07222faf0cc35": "Die englischen, deutschen und spanischen Blogartikel wurden zusätzlich bei 390, 768 und 1440 px geprüft: Sprachcodes bleiben zusammen, ohne horizontalen Überlauf. Private Anträge und Modelltexte wurden nicht veröffentlicht.",
+  "4e2ffabe9ca52cc6": "Live-Stand: lab.ipvx.org",
+  "5ae5c290f0893eb2": "Dasselbe Netz aus fünf Maschinen läuft gerade jetzt. Unter",
+  "7167e1429f477e78": "lab.ipvx.org",
+  "d50177387b416d92": "sind die aktuellen Routen, der zeitliche Verlauf eines Relay-Ausfalls und der signierte Nachweis jedes Hops zu sehen. Die Seite dient nur zur Ansicht: Interne Adressen und entschlüsselte Ergebnisse sind ausgeblendet, Knoten abschalten kann nur der Betreiber des Stands.",
+  "d6756f2e52ce9924": "HX-0131 · Die Experimentseite verlinkt jetzt den Live-Stand lab.ipvx.org",
+  "a097379d1e5b6307": "Claude Code — Assistent des Eigentümers (ipvx-agent-lab, öffentlicher Stand) · 2026-10-29T16:58:10.884464+00:00",
+  "11d241a70c00e848": "Auf Wunsch des Eigentümers wurde oben auf der Seite „Experimente“ ein Abschnitt „Live-Stand: lab.ipvx.org“ auf Russisch, Englisch, Deutsch und Spanisch ergänzt. Er führt zu einer separaten öffentlichen Seite des Stands: die aktuellen Routen der fünf Maschinen, der zeitliche Verlauf eines Relay-Ausfalls und der signierte Nachweis jedes Hops. Diese Seite ist ein eigener Ansichtsdienst von ipvx-agent-lab ohne Zugangsdaten und Steuerung; sie ist bereits veröffentlicht und von außen per HTTPS geprüft.",
+  "d636670365049d27": "Die Website liefert weiterhin nur statische Dateien und erhält keine Labor-API: Statt einer Einbettung wird ein gewöhnlicher Link verwendet, den die aktuelle CSP erlaubt. Der Stand liegt auf einer Subdomain, damit er weder Origin noch das Relcom-ID-Anmelde-Cookie mit ipvx.org teilt. Die Steuerung des Stands bleibt hinter dem SSH-Tunnel des Betreibers.",
+  "3fdcb33114758eae": "Die Veröffentlichung dieser Seite auf ipvx.org erfordert das Festschreiben der Revision in relcom-infra und ein eigenes Release; dieses Ereignis bestätigt sie nicht.",
+  "26ced29558a5d71b": "Die Live-Seite zeigt Daten eines Betreibers und eines Rechenzentrums; das ist kein unabhängiger Betrieb und kein globales Netz.",
+  "7df8f750a5722906": "Der zeitliche Verlauf auf lab.ipvx.org sammelt sich, solange die Seite geöffnet ist: Der Beobachter liefert nur die letzten 24 Zustellungen.",
+  "eef48afb7e7c7a81": "Protokolliert von: Claude Code — Assistent des Eigentümers (ipvx-agent-lab, öffentlicher Stand). Eigener Autorenbericht.",
+  "86973959816a7f02": "131 Ereignisse bis HX-0131; Autoren, Begründungen, Prüfungen und Grenzen.",
+  "0c92743ca48c76f8": "267.1 KiB · 11 Dateien"
 }

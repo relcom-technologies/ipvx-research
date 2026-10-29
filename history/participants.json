@@ -103,6 +103,14 @@
       "record_basis": "User-authorized parallel translation participant; own-author contribution in i18n/contributions/es.json",
       "independent_operator": false,
       "operator_group": "single-ipvx-lab"
+    },
+    {
+      "id": "claude-code-assistant",
+      "display_name": "Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд)",
+      "kind": "assistant",
+      "record_basis": "Собственная работа по запросам владельца в отдельной беседе: изменения ipvx-agent-lab, relcom-infra и этой страницы.",
+      "independent_operator": false,
+      "operator_group": "single-ipvx-lab"
     }
   ]
 }

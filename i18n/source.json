@@ -837,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "af7ddd5c7ae83109",
-      "source": "130 событий по HX-0130; авторы, основания, проверки и ограничения.",
+      "id": "86973959816a7f02",
+      "source": "131 событий по HX-0131; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "00b2066a69b558ad",
-      "source": "264.8 КиБ · 11 файлов",
+      "id": "0c92743ca48c76f8",
+      "source": "267.1 КиБ · 11 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -875,6 +875,26 @@
       "id": "a5c63c36a0f01b80",
       "source": "Показываем, что именно запускали, что измерили и какой вывод эти данные допускают.",
       "context": "experiments.html:text:main/div/p"
+    },
+    {
+      "id": "4e2ffabe9ca52cc6",
+      "source": "Живой стенд: lab.ipvx.org",
+      "context": "experiments.html:text:main/section/h2"
+    },
+    {
+      "id": "5ae5c290f0893eb2",
+      "source": "Та же сеть из пяти машин работает прямо сейчас. На",
+      "context": "experiments.html:text:main/section/p"
+    },
+    {
+      "id": "7167e1429f477e78",
+      "source": "lab.ipvx.org",
+      "context": "experiments.html:text:section/p/a"
+    },
+    {
+      "id": "d50177387b416d92",
+      "source": "видны текущие маршруты, хронология отказа посредника и подписанные доказательства каждого перехода. Страница только для просмотра: внутренние адреса и расшифрованные результаты скрыты, отключать узлы может только оператор стенда.",
+      "context": "experiments.html:text:main/section/p"
     },
     {
       "id": "cd95901d0d216a75",
@@ -4622,6 +4642,71 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "d6756f2e52ce9924",
+      "source": "HX-0131 · На странице экспериментов появилась ссылка на живой стенд lab.ipvx.org",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "e078c61c3e49f21a",
+      "source": "Реализовано",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "a097379d1e5b6307",
+      "source": "Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд) · 2026-10-29T16:58:10.884464+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "11d241a70c00e848",
+      "source": "По запросу владельца в начало страницы «Эксперименты» добавлен раздел «Живой стенд: lab.ipvx.org» на русском, английском, немецком и испанском. Он ведёт на отдельную публичную страницу стенда: текущие маршруты пяти машин, хронология отказа посредника и подписанные доказательства переходов. Эта страница — отдельный сервис просмотра ipvx-agent-lab без учётных данных и управления; она уже опубликована и проверена снаружи по HTTPS.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "d636670365049d27",
+      "source": "Сайт по-прежнему отдаёт только статичные файлы и не получает API лаборатории: вместо встраивания используется обычная ссылка, которую допускает текущая CSP. Стенд вынесен на поддомен, чтобы не делить origin и cookie входа Relcom ID с ipvx.org. Управление стендом остаётся за операторским SSH-туннелем.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "9eff48ba802739a9",
+      "source": "scripts/build_portal.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "3fdcb33114758eae",
+      "source": "Публикация этой страницы на ipvx.org требует закрепления ревизии в relcom-infra и отдельного выпуска; это событие её не подтверждает.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "26ced29558a5d71b",
+      "source": "Живая страница показывает данные одного оператора и одного дата-центра; это не независимая эксплуатация и не глобальная сеть.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "7df8f750a5722906",
+      "source": "Хронология на lab.ipvx.org накапливается, пока страница открыта: наблюдатель отдаёт только последние 24 доставки.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "eef48afb7e7c7a81",
+      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "276f4e743f02df50",
       "source": "HX-0130 · Работает сбор обсуждений; устранена причина устаревших ресурсов интерфейса",
       "context": "history.html:text:section/details/summary"
@@ -4642,19 +4727,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "d1ec8a418b933cdf",
       "source": "Отделить доступность обсуждений от доступности моделей. Проверять свежий парный ответ до включения генерации и сохранять прежние неудачи. Менять адрес ресурса при изменении байтов, чтобы пользователи получали актуальные стили, статусы и архивы после выпуска.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "26559b4eb7796811",
@@ -4670,11 +4745,6 @@
       "id": "4450a1131c64e092",
       "source": "scripts/browser_collaboration_check.mjs",
       "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "8a883939823d5f8e",
@@ -4700,11 +4770,6 @@
       "id": "599ff99f7c6ee852",
       "source": "HX-0129 · Исправлен перенос RU и выход оглавления в блоге IPvX",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "e078c61c3e49f21a",
-      "source": "Реализовано",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "81d3db7353041afe",
@@ -7950,11 +8015,6 @@
       "id": "e9e0467bbc71940e",
       "source": "Показать новый результат без переноса на него ещё не проверенных свойств: постоянного ID, шифрования, открытого допуска, динамической маршрутизации, LLM, физических устройств или преимущества перед IP. По замечаниям рецензента серверный nextBefore принят как единственный источник пагинации; ключ повторной мутации сохраняется до разбора и проверки ответа, а смена payload того же endpoint создаёт новое намерение вместо повтора устаревшего эффекта.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "9eff48ba802739a9",
-      "source": "scripts/build_portal.py",
-      "context": "history.html:text:ul/li/a"
     },
     {
       "id": "7f049cf799f8e95a",
