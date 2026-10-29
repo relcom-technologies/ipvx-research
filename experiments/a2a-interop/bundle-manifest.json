@@ -1,0 +1,13 @@
+{
+  "protocol_id": "IPVX-A2A-INTEROP-001",
+  "version": "1.0-rc1",
+  "status": "candidate_not_jointly_confirmed",
+  "files": {
+    "protocol.md": "6c85cf340b0d804f631b516b0ab5e4d1c7d8958ef330ee7511dc1f18c0f3aa27",
+    "protocol.json": "1668bf7170291a7313831bdbcd01db0a9cff24dc218c625d83436a6d5e2d9f4e",
+    "preflight.py": "4c079ea858f36ccf970e4380053138067d739ea6413f60f6e270aa996bfb2de1",
+    "readiness.py": "67f46c93240ecb5f0845df5e20cff28c8816e7d08f5e00f36ffff368801bc402",
+    "README.md": "53fed44dd2b06bdfa9a3036abe4b98b978f15a78f379681d17c9ab2bdd61e4b3",
+    "local-preflight.json": "c1554354a8846d25c1a8fbc1d5a01b702c39bdd98bff151fd82f4eb91bf9b3d0"
+  }
+}

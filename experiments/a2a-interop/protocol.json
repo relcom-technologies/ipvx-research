@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "protocol_id": "IPVX-A2A-INTEROP-001",
+  "version": "1.0-rc1",
+  "status": "awaiting_partner_confirmation",
+  "scope": "A2A intake recovery over HTTPS/JSON-RPC; native Ethernet and model quality are outside this pilot",
+  "server_revision": "f56939c90fe4b1c508cee99678890b4281b6e7b7",
+  "source_sha256": {
+    "infra/a2a_service.py": "a46ed590ed1b935bc387d0077a455de65de164661496e38454baf87db0783624",
+    "infra/a2a_store.py": "f67d6da96dcfbc51772cb36fe29653165147dfb38aa18f0640ca865475af7545",
+    "infra/a2a-requirements.lock": "add5122c39b0f62bb8aa2512c40c7d8146b88a4d057b7074932d3c4e7ac06feb"
+  },
+  "control_environment": {
+    "python": "3.13.1",
+    "a2a_sdk": "1.3.0",
+    "protocol": "1.0",
+    "binding": "JSONRPC",
+    "os": "Darwin",
+    "architecture": "arm64"
+  },
+  "partner": {
+    "account": "prismdeadlines",
+    "identity": "self-asserted Moltbook account",
+    "role": null,
+    "environment": null,
+    "resource_authority_confirmed": false,
+    "scope_confirmed": false,
+    "retention_confirmed": false,
+    "window_confirmed": false,
+    "agreement_comment_id": null
+  },
+  "proposed_window": {
+    "timezone": "Europe/Berlin",
+    "start": "2026-10-30T10:00:00+01:00",
+    "end": "2026-10-30T12:00:00+01:00",
+    "start_utc": "2026-10-30T09:00:00Z",
+    "end_utc": "2026-10-30T11:00:00Z",
+    "confirmation_due": "2026-10-29T18:00:00+01:00",
+    "results_due": "2026-10-30T18:00:00+01:00",
+    "accepted": false
+  },
+  "limits": {
+    "hours_per_operator": 2,
+    "accounts_per_run": 2,
+    "logical_proposals_per_run_max": 5,
+    "rpc_per_minute_per_account_max": 10,
+    "models": 0,
+    "gpu": 0,
+    "production_fault_injection": false
+  },
+  "retention": {
+    "pilot_evidence_days_proposed": 7,
+    "agreed": false,
+    "production_guaranteed_minimum": null,
+    "production_automatic_ttl": false,
+    "token_access_days": 30,
+    "intentional_removal_only_in_sacrificial_copy": true
+  },
+  "cases": [
+    "A_saved_outbox_lost_reply_conflict_original_replay",
+    "B_lost_local_identifiers_unknown_no_resubmission",
+    "R_missing_record_in_sacrificial_copy"
+  ],
+  "launch_gates": [
+    "explicit_partner_role",
+    "partner_environment_or_review_only",
+    "resource_authority_if_running",
+    "scope_and_retention_acceptance",
+    "window_or_async_deadline_acceptance",
+    "frozen_protocol_hash_acknowledged",
+    "local_preflight_passed",
+    "owner_launch_decision"
+  ],
+  "ready_to_launch": false,
+  "joint_experiment_started": false,
+  "independent_execution_established": false,
+  "protocol_document_sha256": "6c85cf340b0d804f631b516b0ab5e4d1c7d8958ef330ee7511dc1f18c0f3aa27",
+  "local_preflight_passed": true,
+  "owner_launch_decision": false,
+  "protocol_hash_acknowledged": {
+    "owner": null,
+    "partner": null
+  },
+  "local_preflight_evidence": "local-preflight.json",
+  "harness_sha256": {
+    "preflight.py": "4c079ea858f36ccf970e4380053138067d739ea6413f60f6e270aa996bfb2de1",
+    "readiness.py": "67f46c93240ecb5f0845df5e20cff28c8816e7d08f5e00f36ffff368801bc402"
+  }
+}

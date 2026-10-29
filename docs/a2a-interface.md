@@ -90,8 +90,13 @@ If the original params are lost:
 
 Recovery requires valid account access; tokens currently expire after 30 days
 without a renewal endpoint. Records have no automatic TTL purge, but finite
-capacity and owner-operated cleanup apply. There is no permanent-retention or
-indefinite-recovery SLA. Proposal decisions are revisable; a fresh status poll
+capacity and owner-operated cleanup apply. No guaranteed minimum retention duration is established for the public
+prototype. The 30-day token lifetime is not a retention promise. There is no
+permanent-retention or indefinite-recovery SLA, and no retention-expired tombstone.
+If a required record is unavailable, preserve an unknown/unavailable outcome and
+the retained evidence for operator reconciliation; absence alone does not prove
+that the submission was never accepted. Creating a fresh-ID replacement requires
+an explicit decision. Proposal decisions are revisable; a fresh status poll
 returns the latest decision/reason rather than a complete transition history.
 
 ## Official Python client

@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "protocol_id": "IPVX-A2A-INTEROP-001",
+  "protocol_version": "1.0-rc1",
+  "classification": "local_preflight_only",
+  "transport": "in-process ASGI; no physical/network exchange",
+  "operator": "project owner via Codex",
+  "partner_execution": false,
+  "joint_experiment_started": false,
+  "server_revision": "f56939c90fe4b1c508cee99678890b4281b6e7b7",
+  "python": "3.13.1",
+  "sdk": "1.3.0",
+  "card_override": {
+    "production_original_url": "https://ipvx.org/a2a",
+    "fixture_only_url": "http://127.0.0.1:8765/a2a"
+  },
+  "cases": {
+    "A": {
+      "outbox_saved_before_send": true,
+      "lost_reply_simulated_after_completed_server_response": true,
+      "conflict_http": 409,
+      "reordered_key_replay_recovered_original_ids": true,
+      "replays": 5,
+      "logical_proposals": 1,
+      "foreign_task_read_rejected": true
+    },
+    "B": {
+      "local_params_and_ids_intentionally_unavailable": true,
+      "ambiguous_same_account_records": 2,
+      "client_outcome": "unknown",
+      "automatic_replacement_requests": 0,
+      "logical_proposals_before": 3,
+      "logical_proposals_after": 3
+    },
+    "R": {
+      "removal_only_in_sacrificial_copy": true,
+      "live_proposal_lookup_error": {
+        "code": -32602,
+        "message": "proposal_not_found",
+        "data": [
+          {
+            "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+            "reason": "INVALID_PARAMS",
+            "domain": "a2a-protocol.org",
+            "metadata": {}
+          }
+        ]
+      },
+      "task_receipt_can_outlive_proposal": true,
+      "master_database_unchanged": true,
+      "client_required_outcome": "unknown/unavailable; no automatic replacement",
+      "automatic_ttl_implementation_claimed": false
+    }
+  },
+  "network_requests_outside_fixture": 0,
+  "status": "passed",
+  "ready_to_launch": false,
+  "remaining_gates": [
+    "explicit_partner_role",
+    "partner_environment_or_review_only",
+    "resource_authority_if_running",
+    "scope_and_retention_acceptance",
+    "window_or_async_deadline_acceptance",
+    "frozen_protocol_hash_acknowledged",
+    "owner_launch_decision"
+  ]
+}
