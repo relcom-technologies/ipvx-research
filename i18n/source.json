@@ -837,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "728446907c38a93b",
-      "source": "129 событий по HX-0129; авторы, основания, проверки и ограничения.",
+      "id": "af7ddd5c7ae83109",
+      "source": "130 событий по HX-0130; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "957bb8f4c2b593bf",
-      "source": "261.6 КиБ · 11 файлов",
+      "id": "00b2066a69b558ad",
+      "source": "264.8 КиБ · 11 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4622,6 +4622,81 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "276f4e743f02df50",
+      "source": "HX-0130 · Работает сбор обсуждений; устранена причина устаревших ресурсов интерфейса",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "59a28f1b11df609f",
+      "source": "В работе",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "11e0c8d619de595e",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-29T09:55:28.492771+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "7c5d3acf6744861f",
+      "source": "Выпуск PR20 опубликован и проверен на ipvx.org; архив содержит историю по HX-0129. На существующей машине запущен сбор публичных комментариев каждые 15 минут без генерации ответов и новых платных вызовов. Первоначальный запуск остановился из-за отсутствующего пустого параметра SSH; исправление PR792 прошло проверку, повторный запуск успешен. При проверке интерфейса обнаружено четырёхчасовое кеширование старого JavaScript. Подготовлены адреса CSS, JavaScript, изображений и архивов с хешем содержимого, включая локализованные ресурсы.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "d1ec8a418b933cdf",
+      "source": "Отделить доступность обсуждений от доступности моделей. Проверять свежий парный ответ до включения генерации и сохранять прежние неудачи. Менять адрес ресурса при изменении байтов, чтобы пользователи получали актуальные стили, статусы и архивы после выпуска.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "26559b4eb7796811",
+      "source": "scripts/build_languages.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "2e56110510d00624",
+      "source": "scripts/test_asset_versions.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "4450a1131c64e092",
+      "source": "scripts/browser_collaboration_check.mjs",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "8a883939823d5f8e",
+      "source": "Сборщик работает в режиме reading_only: завершённых парных черновиков нет, прежняя неудача и резервы расходов сохранены. Автоматическая отправка сообщений не реализована. Внешний совместный эксперимент не запускался.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "1d78675bf9754a37",
+      "source": "Новые адреса ресурсов проверены локально на изменении содержимого, повторной сборке и сохранении прямых ссылок на доказательства; их публикация проходит обычные проверки. Фоновый сбор не устраняет известное ограничение глубины Moltbook.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "afe07222faf0cc35",
+      "source": "Дополнительно проверены английская, немецкая и испанская статьи блога на 390, 768 и 1440 px: коды языков целые, горизонтального переполнения нет. Частные заявки и тексты моделей не опубликованы.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "599ff99f7c6ee852",
       "source": "HX-0129 · Исправлен перенос RU и выход оглавления в блоге IPvX",
       "context": "history.html:text:section/details/summary"
@@ -4642,19 +4717,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "245e307f60dce106",
       "source": "Исправить причину переполнения без скрытия текста и горизонтальной прокрутки. Сохранить существующий стиль блога; использовать настройку конкретного издания вместо изменения общей платформы.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "79dd032528222231",
@@ -4667,11 +4732,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "7cda02d13c252321",
       "source": "На русской статье проверены ширины 320, 390, 768, 1152, 1200, 1440 и 1920 px: ширина документа равна экрану, RU занимает одну строку в области 40 × 44 px. Это проверка общей шапки и одной статьи, а не аудит всех материалов Press.",
       "context": "history.html:text:details/ul/li"
@@ -4682,19 +4742,9 @@
       "context": "history.html:text:details/ul/li"
     },
     {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
-    },
-    {
       "id": "d75bf16c570e3c5b",
       "source": "HX-0128 · Published the discussion flow and separated collection from model readiness",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "59a28f1b11df609f",
-      "source": "В работе",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "973a33ff55603ec6",
@@ -5825,11 +5875,6 @@
       "id": "26cfd9a9bd79d126",
       "source": "Use static flat sibling URLs within the existing HTML route boundary, preserve the reading design, and fail builds on missing translations or stale JavaScript spans. Keep measured evidence and author records separate from editorial translations.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "26559b4eb7796811",
-      "source": "scripts/build_languages.py",
-      "context": "history.html:text:ul/li/a"
     },
     {
       "id": "f6820f7e6234de73",

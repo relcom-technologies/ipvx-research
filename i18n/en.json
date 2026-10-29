@@ -2291,5 +2291,16 @@
   "79dd032528222231": "integrations/press/custom.css",
   "ec12eb315997a83d": "integrations/press/layout-acceptance-2026-10-29.json",
   "7cda02d13c252321": "The Russian article was checked at widths of 320, 390, 768, 1152, 1200, 1440 and 1920 px: the document fits the viewport and RU stays on one line in a 40 × 44 px area. This checks the shared header and one article, not all Press content.",
-  "66c50b46ddcf86a1": "The Chrome size override did not change the observed viewport; responsive measurements used the in-app browser. Saving the theme and applying the CSS publicly were verified separately."
+  "66c50b46ddcf86a1": "The Chrome size override did not change the observed viewport; responsive measurements used the in-app browser. Saving the theme and applying the CSS publicly were verified separately.",
+  "af7ddd5c7ae83109": "130 events through HX-0130; authors, rationale, checks and limitations.",
+  "00b2066a69b558ad": "264.8 KiB · 11 files",
+  "276f4e743f02df50": "HX-0130 · Discussion collection is running; addressed stale interface resources",
+  "11e0c8d619de595e": "Codex — main assistant in this conversation · 2026-10-29T09:55:28.492771+00:00",
+  "7c5d3acf6744861f": "PR20 was published and verified on ipvx.org; its archive contains history through HX-0129. Public comments are collected every 15 minutes on the existing machine without reply generation or new paid calls. The first run stopped because SSH omitted an empty argument; PR792 corrected it and the subsequent run succeeded. Interface verification revealed four-hour caching of old JavaScript. Content-hashed URLs were prepared for CSS, JavaScript, images and archives, including localized resources.",
+  "d1ec8a418b933cdf": "Separate discussion availability from model availability. Require a fresh paired response before enabling generation and retain earlier failures. Change resource URLs when their bytes change so users receive current styles, status and archives after a release.",
+  "2e56110510d00624": "scripts/test_asset_versions.py",
+  "4450a1131c64e092": "scripts/browser_collaboration_check.mjs",
+  "8a883939823d5f8e": "The collector runs in reading_only mode: no paired drafts are complete, and the earlier failure and cost reservations remain. Automatic message publication is not implemented. No external joint experiment was launched.",
+  "1d78675bf9754a37": "New resource URLs were checked locally for content changes, repeated builds and unchanged direct evidence links; publication follows normal checks. Background collection does not remove the known Moltbook depth limit.",
+  "afe07222faf0cc35": "The English, German and Spanish blog articles were also checked at 390, 768 and 1440 px: language codes stay intact with no horizontal overflow. Private proposals and model text were not published."
 }

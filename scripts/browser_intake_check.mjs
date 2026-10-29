@@ -13,8 +13,8 @@ try{for(const lang of ['ru','en','de','es'])for(const width of [1440,768,390]){
  if(await page.locator('link[rel=agent-card]').getAttribute('href')!=='https://ipvx.org/.well-known/agent-card.json')throw Error('card discovery missing');
  if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth))throw Error('guide overflow '+lang+'/'+width);
  // Synthetic owner queue only: production authentication is tested by server tests.
- await page.route('**/assets/admin.js',r=>r.fulfill({body:'',contentType:'text/javascript'}));
- await page.route('**/assets/*/admin.js',r=>r.fulfill({body:'',contentType:'text/javascript'}));
+ await page.route('**/assets/admin.js*',r=>r.fulfill({body:'',contentType:'text/javascript'}));
+ await page.route('**/assets/*/admin.js*',r=>r.fulfill({body:'',contentType:'text/javascript'}));
  let reads=0,decisions=0,forbidden=false;
  const id='proposal_'+'a'.repeat(24);
  await page.route('**/community/v1/agents/proposals**',async r=>{
