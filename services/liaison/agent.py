@@ -274,7 +274,8 @@ def draft(comment, snapshot, facts, config, ledger, provider_factory=Provider, o
             project_facts_sha256=digest(facts), status='draft_only', published=False,
             independent_operator=False, source_coverage=snapshot['coverage'])
         with ledger.connect() as db:
-            db.execute('UPDATE jobs SET state=?,result=? WHERE id=?', ('draft',json.dumps(output,ensure_ascii=False),job))
+            db.execute('UPDATE jobs SET state=?,result=? WHERE id=?',
+                ('skipped' if result['decision']=='skip' else 'draft',json.dumps(output,ensure_ascii=False),job))
         return output
     except Exception as error:
         with ledger.connect() as db:

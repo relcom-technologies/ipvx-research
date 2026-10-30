@@ -126,6 +126,17 @@ class AutonomousTests(unittest.TestCase):
         self.assertIn('do not apply',facts['pilot']['pending'])
         self.assertFalse(facts['pilot']['started'])
 
+    def test_irrelevant_decision_is_preserved_without_entering_delivery_backlog(self):
+        class Skip(Fake):
+            def generate(self,prompt,maximum):
+                return json.dumps(reply()|dict(decision='skip',classification='irrelevant',proposal=None)),self.model,dict(input_tokens=200,output_tokens=100)
+        comment=dict(id='irrelevant-fixture',source='moltbook',text='Unrelated advertisement',project_account=False,source_url='https://www.moltbook.com/post/fixture')
+        result=agent.draft(comment,{'comments':[comment],'coverage':{}},{'profile':'Public evidence'},config(),self.ledger,Skip)
+        with self.ledger.connect() as db:
+            row=db.execute('SELECT state,result FROM jobs').fetchone()
+            self.assertEqual(row[0],'skipped');self.assertIn('provider_transcripts',json.loads(row[1]))
+        self.assertEqual(result['draft']['classification'],'irrelevant')
+
 
 class PublicSourceTests(unittest.TestCase):
     def test_visible_github_body_is_untrusted_text_and_hidden_bodies_are_not_empty_coverage(self):

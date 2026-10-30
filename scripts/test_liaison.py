@@ -37,8 +37,9 @@ class LiaisonTests(unittest.TestCase):
         self.assertEqual(results.count('allowed'), 3)
         with self.ledger.connect() as db:
             self.assertEqual(db.execute('SELECT SUM(amount) FROM reservations').fetchone()[0], 3_000_000)
+            reserved_id=db.execute('SELECT id FROM reservations ORDER BY id LIMIT 1').fetchone()[0]
         with self.assertRaises(agent.BudgetError):
-            self.ledger.reserve('0', 0, 'fixture', 'fixture')
+            self.ledger.reserve(reserved_id, 0, 'fixture', 'fixture')
 
     def test_owner_limit_and_berlin_day_boundary(self):
         with self.assertRaises(agent.BudgetError): agent.Ledger(Path(self.directory.name)/'bad.sqlite', 4)
