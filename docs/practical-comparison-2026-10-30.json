@@ -1,0 +1,322 @@
+{
+  "schema_version": 1,
+  "attributed_to": "codex-assistant",
+  "recorded_by": "codex-assistant",
+  "recorded_at": "2026-10-30T17:28:31.747609+00:00",
+  "status": "measured_development_candidate_not_merged_or_deployed",
+  "measured_revision": "532f5f00aa83744180ec97680c477141f88f41b8",
+  "base_revision": "59f7f1f8b430301b33dc1943a35cbb394f391ee9",
+  "PR": "https://github.com/relcom-technologies/ipvx-agent-lab/pull/29",
+  "run": "https://github.com/relcom-technologies/ipvx-agent-lab/actions/runs/41098099745",
+  "job_window_UTC": {
+    "started": "2026-10-30T17:21:25Z",
+    "completed": "2026-10-30T17:24:24Z"
+  },
+  "protocol_sha256": "be1a0f08545afa160843701829fd8600f68f4f8f967f77468bd90fcbf1f1469b",
+  "source_sha256": "6f7a0735f70a5ad6dc07fe937bded1942b4b3c05485296f65f0756cceaabc8d3",
+  "question": "Does native transport improve completed deterministic document work or its cost over the same signed path-vector application over numeric TCP/HTTP?",
+  "design": {
+    "arms": 2,
+    "scenarios": 2,
+    "pairs_per_scenario": 5,
+    "workload_jobs_per_arm": 40,
+    "total_jobs": 800,
+    "correct": 800,
+    "duplicate_executions": 0,
+    "five_processes_and_distinct_network_namespaces_each_arm": true,
+    "one_runner_and_operator": true,
+    "same_routing_application_crypto_and_workload": true,
+    "baseline": "Existing numeric TCP/plain HTTP harness with the same signed path-vector routing, encryption and durable receipts; no TLS. Not libp2p, conventional A2A or all IP deployments."
+  },
+  "CI_operator": {
+    "public_key": "571d4886f78ce364c3f8d57c6295b433e3517036cb927b151ce9b50c9d0ce00d",
+    "identity": "Temporary in-memory key of our isolated PR CI; not an independently verified operator"
+  },
+  "comparison": [
+    {
+      "all_pairs_eligible": true,
+      "median_ratios_ppm": {
+        "cpu_us": 997221,
+        "p95_us": 990910,
+        "recovery_us": null,
+        "sum_peak_rss_kib": 946638,
+        "work_us": 1010787,
+        "work_wire_bytes": 1008029
+      },
+      "p95_native_wins_ties_losses": [
+        3,
+        0,
+        2
+      ],
+      "pairs": [
+        {
+          "complete_and_deduplicated": true,
+          "cpu_us_ratio_ppm": 997221,
+          "p95_us_ratio_ppm": 990910,
+          "pair": 0,
+          "recovery_us_ratio_ppm": null,
+          "sum_peak_rss_kib_ratio_ppm": 945273,
+          "work_us_ratio_ppm": 985690,
+          "work_wire_bytes_ratio_ppm": 1017026
+        },
+        {
+          "complete_and_deduplicated": true,
+          "cpu_us_ratio_ppm": 1009990,
+          "p95_us_ratio_ppm": 692960,
+          "pair": 1,
+          "recovery_us_ratio_ppm": null,
+          "sum_peak_rss_kib_ratio_ppm": 946638,
+          "work_us_ratio_ppm": 991745,
+          "work_wire_bytes_ratio_ppm": 1046879
+        },
+        {
+          "complete_and_deduplicated": true,
+          "cpu_us_ratio_ppm": 1019175,
+          "p95_us_ratio_ppm": 1057024,
+          "pair": 2,
+          "recovery_us_ratio_ppm": null,
+          "sum_peak_rss_kib_ratio_ppm": 935845,
+          "work_us_ratio_ppm": 1046281,
+          "work_wire_bytes_ratio_ppm": 991204
+        },
+        {
+          "complete_and_deduplicated": true,
+          "cpu_us_ratio_ppm": 956217,
+          "p95_us_ratio_ppm": 1028155,
+          "pair": 3,
+          "recovery_us_ratio_ppm": null,
+          "sum_peak_rss_kib_ratio_ppm": 960986,
+          "work_us_ratio_ppm": 1010787,
+          "work_wire_bytes_ratio_ppm": 952733
+        },
+        {
+          "complete_and_deduplicated": true,
+          "cpu_us_ratio_ppm": 955694,
+          "p95_us_ratio_ppm": 829467,
+          "pair": 4,
+          "recovery_us_ratio_ppm": null,
+          "sum_peak_rss_kib_ratio_ppm": 951842,
+          "work_us_ratio_ppm": 1011699,
+          "work_wire_bytes_ratio_ppm": 1008029
+        }
+      ],
+      "practical_superiority": "not_established",
+      "scenario": "healthy",
+      "screening_signal": false
+    },
+    {
+      "all_pairs_eligible": true,
+      "median_ratios_ppm": {
+        "cpu_us": 1025848,
+        "p95_us": 899475,
+        "recovery_us": 8014071,
+        "sum_peak_rss_kib": 991919,
+        "work_us": 1385759,
+        "work_wire_bytes": 1127195
+      },
+      "p95_native_wins_ties_losses": [
+        3,
+        0,
+        2
+      ],
+      "pairs": [
+        {
+          "complete_and_deduplicated": true,
+          "cpu_us_ratio_ppm": 1047443,
+          "p95_us_ratio_ppm": 595033,
+          "pair": 0,
+          "recovery_us_ratio_ppm": 8076141,
+          "sum_peak_rss_kib_ratio_ppm": 988696,
+          "work_us_ratio_ppm": 1385759,
+          "work_wire_bytes_ratio_ppm": 1167615
+        },
+        {
+          "complete_and_deduplicated": true,
+          "cpu_us_ratio_ppm": 1010933,
+          "p95_us_ratio_ppm": 618273,
+          "pair": 1,
+          "recovery_us_ratio_ppm": 8014071,
+          "sum_peak_rss_kib_ratio_ppm": 991919,
+          "work_us_ratio_ppm": 1380238,
+          "work_wire_bytes_ratio_ppm": 1127195
+        },
+        {
+          "complete_and_deduplicated": true,
+          "cpu_us_ratio_ppm": 1039200,
+          "p95_us_ratio_ppm": 899475,
+          "pair": 2,
+          "recovery_us_ratio_ppm": 7843145,
+          "sum_peak_rss_kib_ratio_ppm": 973892,
+          "work_us_ratio_ppm": 1375954,
+          "work_wire_bytes_ratio_ppm": 1121508
+        },
+        {
+          "complete_and_deduplicated": true,
+          "cpu_us_ratio_ppm": 987016,
+          "p95_us_ratio_ppm": 1067288,
+          "pair": 3,
+          "recovery_us_ratio_ppm": 8035275,
+          "sum_peak_rss_kib_ratio_ppm": 1006555,
+          "work_us_ratio_ppm": 1393410,
+          "work_wire_bytes_ratio_ppm": 1062221
+        },
+        {
+          "complete_and_deduplicated": true,
+          "cpu_us_ratio_ppm": 1025848,
+          "p95_us_ratio_ppm": 1105005,
+          "pair": 4,
+          "recovery_us_ratio_ppm": 7624769,
+          "sum_peak_rss_kib_ratio_ppm": 1024184,
+          "work_us_ratio_ppm": 1400538,
+          "work_wire_bytes_ratio_ppm": 1143208
+        }
+      ],
+      "practical_superiority": "not_established",
+      "scenario": "relay-outage",
+      "screening_signal": false
+    }
+  ],
+  "per_arm_medians": {
+    "healthy": {
+      "native": {
+        "correct": 40,
+        "cpu_us": 2841541,
+        "duplicate_executions": 0,
+        "first_call_us": 15947,
+        "jobs": 40,
+        "missing": 0,
+        "p50_us": 11279,
+        "p95_us": 21984,
+        "recovery_us": null,
+        "retries": 0,
+        "sum_peak_rss_kib": 265536,
+        "unacknowledged_executions": 0,
+        "warmup_us": 1346550,
+        "work_frames": 1238,
+        "work_us": 4664791,
+        "work_wire_bytes": 1566548,
+        "wrong": 0
+      },
+      "tcp-http": {
+        "correct": 40,
+        "cpu_us": 2823366,
+        "duplicate_executions": 0,
+        "first_call_us": 24021,
+        "jobs": 40,
+        "missing": 0,
+        "p50_us": 10997,
+        "p95_us": 28993,
+        "recovery_us": null,
+        "retries": 0,
+        "sum_peak_rss_kib": 280504,
+        "unacknowledged_executions": 0,
+        "warmup_us": 1344223,
+        "work_frames": 2709,
+        "work_us": 4639130,
+        "work_wire_bytes": 1551122,
+        "wrong": 0
+      }
+    },
+    "relay-outage": {
+      "native": {
+        "correct": 40,
+        "cpu_us": 2882442,
+        "duplicate_executions": 0,
+        "first_call_us": 11290,
+        "jobs": 40,
+        "missing": 0,
+        "p50_us": 13940,
+        "p95_us": 24678,
+        "recovery_us": 2618174,
+        "retries": 1,
+        "sum_peak_rss_kib": 262016,
+        "unacknowledged_executions": 0,
+        "warmup_us": 1324138,
+        "work_frames": 1422,
+        "work_us": 7471364,
+        "work_wire_bytes": 1781876,
+        "wrong": 0
+      },
+      "tcp-http": {
+        "correct": 40,
+        "cpu_us": 2818049,
+        "duplicate_executions": 0,
+        "first_call_us": 16890,
+        "jobs": 40,
+        "missing": 0,
+        "p50_us": 14327,
+        "p95_us": 27436,
+        "recovery_us": 326484,
+        "retries": 3,
+        "sum_peak_rss_kib": 263984,
+        "unacknowledged_executions": 0,
+        "warmup_us": 1304567,
+        "work_frames": 2990,
+        "work_us": 5382536,
+        "work_wire_bytes": 1580805,
+        "wrong": 0
+      }
+    }
+  },
+  "conclusions": [
+    "Neither scenario crosses the predeclared 20% paired median p95/wire screening threshold. Practical superiority is not established.",
+    "Both transports correctly completed all 800 tasks, including 200 exact duplicate replays, without duplicate execution.",
+    "In the relay-outage scenario, paired median native/TCP ratios are 1.385759 for total work duration, 1.127195 for captured work-phase bytes and 8.014071 for recovery. These are descriptive ratios from one host, not statistical or WAN claims.",
+    "Median absolute recovery was 2618174 us native and 326484 us TCP/HTTP. The first post-fault request in pair 0 records one native TimeoutError (2617038 us) versus three TCP ConnectionRefusedError retries (322069 us). This is consistent with the existing 2.5-second native hop timeout and TCP fail-fast behavior; a new controlled ablation is needed for causal attribution.",
+    "p95 alone hides the single outage stall. Keep completion time and recovery alongside per-request latency. Median paired ratios are not ratios of unpaired medians."
+  ],
+  "artifacts": {
+    "public_projection": "docs/evidence/practical-comparison-41098099745",
+    "JSON_files": [
+      {
+        "name": "protocol.json",
+        "sha256": "f1a1a5517e00906641c43cb90432f1ed4c8e1108f88663272bded0f72eb38af9",
+        "bytes": 1161
+      },
+      {
+        "name": "report.json",
+        "sha256": "35a1efbe0500baf408ce966928f15de42ced3b1efa95c76b3ac95e4499fa2d09",
+        "bytes": 15339
+      },
+      {
+        "name": "session.json",
+        "sha256": "6005c9892846f07c944dd83fcd45f34a9e9d2ef693fdffc1d743642491bcff93",
+        "bytes": 5650
+      }
+    ],
+    "GitHub_artifact_id": 12995779659,
+    "GitHub_artifact_name": "practical-benefit-public",
+    "archive_bytes": 6010446,
+    "archive_sha256": "159dfd7db1542a4547b12edebf52a02865670fff4f568a5d68f58225a87436d5",
+    "archive_digest_verified": true,
+    "complete_files_retained_privately": 42,
+    "complete_archive_and_captures_retained_locally": true,
+    "CI_retention_days": 7,
+    "raw_captures_in_public_projection": false,
+    "node_private_keys_or_databases_exported": false
+  },
+  "checks": [
+    "All six app PR checks green: verify, audit, container-pilot, native-ethernet, reproduction-reference, practical-comparison",
+    "196 local pytest tests passed; 9 Linux-only skipped; 13 preserved strict tests passed",
+    "20 full observations and pcaps independently reverified locally against the pinned CI public key; paired metrics, receipts/hops and frame counts recomputed",
+    "53 frozen files, 26 strict commits, five signed historical bundles and prior 147 canonical history events preserved",
+    "104 research/history/auth/A2A tests passed in the existing complete interop environment; three new projection tests reject tamper, wrong key and wrong domain; 96 pages and 2393 editorial strings in each of three translations checked"
+  ],
+  "negative_results": [
+    "First local suite found the old exact-nine experiment count; the new track makes ten. Scoped loopback permission resolved the other sandbox-only local failures.",
+    "Both comparison scenarios miss the preregistered benefit threshold; native outage completion and wire costs are worse. No threshold, retry, timeout or result was altered after observing the data.",
+    "The first research test environment lacked httpx/PyYAML and the sandbox denied local sockets; the existing complete interop environment and scoped loopback execution passed all 104 tests."
+  ],
+  "remaining_questions": [
+    "Preregister a separate fixed-timeout/fail-fast ablation before changing native recovery behavior; retain this original comparison as the control.",
+    "Repeat on a dedicated runner and independent hosts/operators, with transport security parity and a power/uncertainty plan before broader performance claims.",
+    "Real LLM answer quality, paid model cost, WAN behavior, human setup effort, governance and business value remain unmeasured."
+  ],
+  "operational_limits": [
+    "No merge, production deployment, production Actions, live-server experiment, model invocation, foreign code, operator admission or resource allocation",
+    "Signatures authenticate statements and packet bindings, not operator independence, external time or the truth of plaintext answers; the committed runner checks deterministic answers at runtime",
+    "The public projection checks signed scope and paired summaries. Full receipt/hop/capture reanalysis also needs the retained complete artifact; its raw pcaps are not in this public projection",
+    "Five pairs per scenario on one CI host, fixed virtual topology, static neighbor admission, sequential paced tasks and trusted reference code; not a hostile-code sandbox",
+    "Native has signed link framing; the TCP/plain HTTP baseline has no TLS. CPU excludes the parent capture process; peak RSS is a sum of per-process peaks. EtherType absence by itself is not practical benefit"
+  ]
+}

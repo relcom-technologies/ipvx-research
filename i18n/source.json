@@ -862,13 +862,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "66cbed4ea6b732cb",
-      "source": "147 событий по HX-0147; авторы, основания, проверки и ограничения.",
+      "id": "0134082925f80dcb",
+      "source": "149 событий по HX-0149; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "debf62453aea5618",
-      "source": "300.9 КиБ · 12 файлов",
+      "id": "408b9d83678c1bde",
+      "source": "303.6 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4667,6 +4667,111 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "a7d71cb183cbcbc9",
+      "source": "HX-0149 · Первое сравнение не установило практического преимущества IPvX",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "b6ea6158f436ae9a",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-30T17:28:31.747609+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "903472712ceb44fe",
+      "source": "Все шесть PR-проверок прошли. В двадцати прогонах получены 800 правильных ответов без повторного выполнения. Оба сценария не достигли заданного порога выигрыша. При отказе посредника медиана восстановления составила 2,62 с у нативного транспорта и 0,33 с у TCP/HTTP.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "f008349bb84051c8",
+      "source": "Сохранить исходные данные и проигрыш восстановления, а не менять критерии после измерения. Следующий опыт должен отдельно проверить механизм отказа и тайм-аут.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "be2e3f2f9522895f",
+      "source": "docs/practical-comparison-2026-10-30.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "3f14a32cb3144eb1",
+      "source": "docs/evidence/practical-comparison-41098099745/session.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "2c4e83dd08fb02ce",
+      "source": "docs/evidence/practical-comparison-41098099745/report.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "813e35f45d683556",
+      "source": "Один CI-хост и один оператор; пять пар на сценарий. Нет вывода о статистической значимости, WAN, качестве моделей или независимых участниках.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "866b6a82694c61d5",
+      "source": "Полный архив и захваты сохранены приватно, хеш архива проверен. Публичная проекция подтверждает подписанные заявления и сводку; полная сверка кадров требует исходного архива.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "afd3dc17516fb6bf",
+      "source": "Начальные локальные отказы из-за старого счётчика экспериментов и запрета loopback устранены. Прежние 53 файла, 26 коммитов, пять пакетов и история сохранены.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "4ac836f2887dfcb5",
+      "source": "Код остаётся кандидатом в PR. Слияние, production-выкатка и изменение действующих таймеров не выполнялись.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "c03de1c29e366efe",
+      "source": "HX-0148 · Подготовлен парный контроль практической пользы транспорта",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "e078c61c3e49f21a",
+      "source": "Реализовано",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "37ca39ba7352e473",
+      "source": "Зафиксирован протокол одинаковой документной нагрузки по нативному Ethernet и TCP/HTTP: пять пар в двух сценариях, отдельные процессы и сетевые пространства, подписанная сессия до запуска. Создан PR29 с проверками; слияния и выкатки нет.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "c1c7d878421c871c",
+      "source": "Сравнивать полезную завершённую работу и затраты при одинаковом прикладном протоколе; сохранять нейтральные и проигрышные исходы.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "576a2f720088ae7b",
+      "source": "Контроль использует тот же протокол по TCP/HTTP без TLS. Это не сравнение со всеми IP-системами, A2A или libp2p.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "1e267501bbddb3d8",
+      "source": "Модели, production Actions, живой сервер, допуск чужого кода и выдача ресурсов не использовались.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
       "id": "dd26a5bd4a4dedb8",
       "source": "HX-0147 · Третий этап развёрнут вручную; установленный проверяющий модуль прошёл приёмку",
       "context": "history.html:text:section/details/summary"
@@ -4682,29 +4787,14 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "f858d11555e85cde",
       "source": "Проверить установленную сборку и целостность существующих доказательств офлайн, сохранив данные и работающие таймеры.",
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "6b1e1c4bbca82263",
       "source": "docs/reproduction-rollout-2026-10-30.json",
       "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "9957b19a43d12b4c",
@@ -4725,11 +4815,6 @@
       "id": "86844e9dfe4eba87",
       "source": "Два пустых начальных health-ответа преодолены ограниченным повтором. Публичный выпуск содержит историю через HX-0145; эти записи фиксируют последующую приёмку.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "b3559b77b1fe2aa0",
@@ -4760,11 +4845,6 @@
       "id": "d797c21fbb358f20",
       "source": "HX-0145 · Подготовлен пакет повторения зарегистрированного опыта для другого оператора",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "e078c61c3e49f21a",
-      "source": "Реализовано",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "2c720674bcaf7d6e",
