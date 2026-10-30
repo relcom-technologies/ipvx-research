@@ -1,0 +1,776 @@
+{
+ "kind": "ipvx-trial-report/1",
+ "trial": "detour-around-relay",
+ "spec_sha256": "6f14dda80e384a36b3460bf299197954b7ea5ef53068c4442c514ac2bca30ddb",
+ "spec": {
+  "kind": "ipvx-trial/1",
+  "trial": "detour-around-relay",
+  "hypothesis": "With the stand's topology (A-R1-B short path, A-R2-R3-B detour), closing R1's data plane for 10 s makes A and B deliver over the detour within 12 s, and every task still completes correctly exactly once.",
+  "author": "IPvX Agent Lab",
+  "seed": 7,
+  "topology": {
+   "kind": "edges",
+   "nodes": [
+    "A",
+    "R1",
+    "R2",
+    "R3",
+    "B"
+   ],
+   "edges": [
+    [
+     "A",
+     "R1"
+    ],
+    [
+     "R1",
+     "B"
+    ],
+    [
+     "A",
+     "R2"
+    ],
+    [
+     "R2",
+     "R3"
+    ],
+    [
+     "R3",
+     "B"
+    ]
+   ]
+  },
+  "link": {
+   "delay_ms": 2,
+   "jitter_ms": 1,
+   "loss_ppm": 0
+  },
+  "workload": {
+   "jobs": 40,
+   "pairs": [
+    [
+     "A",
+     "B"
+    ],
+    [
+     "B",
+     "A"
+    ]
+   ],
+   "interval_ms": 800,
+   "duplicate_every": 8
+  },
+  "faults": [
+   {
+    "at_s": 3,
+    "action": "disable",
+    "node": "R1",
+    "for_s": 10
+   }
+  ],
+  "success": {
+   "delivered_ratio": ">= 1",
+   "convergence_s": "<= 12",
+   "duplicate_executions": "== 0",
+   "ip_frames": "== 0"
+  },
+  "budget": {
+   "wall_s": 90
+  }
+ },
+ "revision": "5d22e3d91d4e7a0310ea68b63fa73843fbb072ba",
+ "at": 1793377135,
+ "wall_seconds": 31.5,
+ "verdict": "pass",
+ "criteria": [
+  {
+   "metric": "delivered_ratio",
+   "title": "Доля заданий с правильным результатом",
+   "expected": ">= 1",
+   "observed": 1.0,
+   "ok": true
+  },
+  {
+   "metric": "convergence_s",
+   "title": "Время до первой доставки в обход после отключения, с",
+   "expected": "<= 12",
+   "observed": 5.82,
+   "ok": true
+  },
+  {
+   "metric": "duplicate_executions",
+   "title": "Лишние выполнения одного задания",
+   "expected": "== 0",
+   "observed": 0,
+   "ok": true
+  },
+  {
+   "metric": "ip_frames",
+   "title": "Кадров IPv4, IPv6 и ARP в сети опыта",
+   "expected": "== 0",
+   "observed": 0,
+   "ok": true
+  }
+ ],
+ "metrics": {
+  "jobs": 40,
+  "correct": 40,
+  "delivered_ratio": 1.0,
+  "p50_ms": 29,
+  "p95_ms": 5641,
+  "max_ms": 5669,
+  "convergence_s": 5.82,
+  "convergence": [
+   {
+    "node": "R1",
+    "disabled_at_ms": 1793377115901,
+    "first_detour_at_ms": 1793377121724,
+    "seconds": 5.82
+   }
+  ],
+  "retries": 4,
+  "duplicate_executions": 0,
+  "ip_frames": 0,
+  "frames": {
+   "88b5": 12804
+  },
+  "no_ip_addresses": true
+ },
+ "faults": [
+  {
+   "at_ms": 1793377115705,
+   "at_s": 3.0,
+   "phase": "start",
+   "action": "disable",
+   "node": "R1"
+  },
+  {
+   "at_ms": 1793377125715,
+   "at_s": 13.01,
+   "phase": "end",
+   "action": "disable",
+   "node": "R1"
+  }
+ ],
+ "independent_os_processes": 5,
+ "capture_sha256": "3f59252c6122d9c5507b6c85b294d641af43cb843cfca6eac3f1e77ee4a7993e",
+ "jobs": [
+  {
+   "job": "00000000000000000000000000000000",
+   "destination": "B",
+   "path": [
+    "A",
+    "R1",
+    "B"
+   ],
+   "action": "index",
+   "attempts": 1,
+   "elapsed_ms": 45,
+   "delivered_at_ms": 1793377112787,
+   "failed": null,
+   "result_sha256": "e5df7800d1b615951c14850da23f644e5d9eaaca0547ea440b051ced0b552635"
+  },
+  {
+   "job": "00000000000000000000000000000002",
+   "destination": "B",
+   "path": [
+    "A",
+    "R1",
+    "B"
+   ],
+   "action": "fingerprint",
+   "attempts": 1,
+   "elapsed_ms": 41,
+   "delivered_at_ms": 1793377113630,
+   "failed": null,
+   "result_sha256": "c5576cb0744dcfa83cd13913464751275a664be51c3db383121587fd6d235899"
+  },
+  {
+   "job": "00000000000000000000000000000004",
+   "destination": "B",
+   "path": [
+    "A",
+    "R1",
+    "B"
+   ],
+   "action": "query",
+   "attempts": 1,
+   "elapsed_ms": 22,
+   "delivered_at_ms": 1793377114453,
+   "failed": null,
+   "result_sha256": "45217e962dc1f5215f865320004f6e232e01803248b492075ede27b7d47e9a65"
+  },
+  {
+   "job": "00000000000000000000000000000006",
+   "destination": "B",
+   "path": [
+    "A",
+    "R1",
+    "B"
+   ],
+   "action": "index",
+   "attempts": 1,
+   "elapsed_ms": 31,
+   "delivered_at_ms": 1793377115285,
+   "failed": null,
+   "result_sha256": "18ccb653f05419ba03effb95c0f260b4cec294d7883cf00a17b9c66a663c9575"
+  },
+  {
+   "job": "00000000000000000000000000000008",
+   "destination": "B",
+   "path": [
+    "A",
+    "R2",
+    "R3",
+    "B"
+   ],
+   "action": "fingerprint",
+   "attempts": 3,
+   "elapsed_ms": 5669,
+   "delivered_at_ms": 1793377121756,
+   "failed": null,
+   "result_sha256": "0c1c43756f8e87d5c703e4981c4e002df35d04261a400841da99ab55fc006979"
+  },
+  {
+   "job": "0000000000000000000000000000000a",
+   "destination": "B",
+   "path": [
+    "A",
+    "R2",
+    "R3",
+    "B"
+   ],
+   "action": "query",
+   "attempts": 1,
+   "elapsed_ms": 35,
+   "delivered_at_ms": 1793377122591,
+   "failed": null,
+   "result_sha256": "45217e962dc1f5215f865320004f6e232e01803248b492075ede27b7d47e9a65"
+  },
+  {
+   "job": "0000000000000000000000000000000c",
+   "destination": "B",
+   "path": [
+    "A",
+    "R2",
+    "R3",
+    "B"
+   ],
+   "action": "index",
+   "attempts": 1,
+   "elapsed_ms": 44,
+   "delivered_at_ms": 1793377123437,
+   "failed": null,
+   "result_sha256": "49e3affd427c5a38e39bd33274f948dad7d5d1a42b351e8f3545c804e61ec4ee"
+  },
+  {
+   "job": "0000000000000000000000000000000e",
+   "destination": "B",
+   "path": [
+    "A",
+    "R2",
+    "R3",
+    "B"
+   ],
+   "action": "fingerprint",
+   "attempts": 1,
+   "elapsed_ms": 29,
+   "delivered_at_ms": 1793377124267,
+   "failed": null,
+   "result_sha256": "8c72e19b09ed26b21ccc2f617224de2c135d38cd3522f52cec8241b0cecd4dba"
+  },
+  {
+   "job": "00000000000000000000000000000010",
+   "destination": "B",
+   "path": [
+    "A",
+    "R2",
+    "R3",
+    "B"
+   ],
+   "action": "query",
+   "attempts": 1,
+   "elapsed_ms": 60,
+   "delivered_at_ms": 1793377125129,
+   "failed": null,
+   "result_sha256": "6193b4304956dd12b2ded7db8610c27ddb98b4b92786dd748ea83a1eaa3f74d4"
+  },
+  {
+   "job": "00000000000000000000000000000012",
+   "destination": "B",
+   "path": [
+    "A",
+    "R2",
+    "R3",
+    "B"
+   ],
+   "action": "index",
+   "attempts": 1,
+   "elapsed_ms": 37,
+   "delivered_at_ms": 1793377125966,
+   "failed": null,
+   "result_sha256": "49e3affd427c5a38e39bd33274f948dad7d5d1a42b351e8f3545c804e61ec4ee"
+  },
+  {
+   "job": "00000000000000000000000000000014",
+   "destination": "B",
+   "path": [
+    "A",
+    "R1",
+    "B"
+   ],
+   "action": "fingerprint",
+   "attempts": 1,
+   "elapsed_ms": 24,
+   "delivered_at_ms": 1793377126791,
+   "failed": null,
+   "result_sha256": "f390fcc1f83da93ada898a82674621f2f19f19e3df372f7cc29b5d104888027c"
+  },
+  {
+   "job": "00000000000000000000000000000016",
+   "destination": "B",
+   "path": [
+    "A",
+    "R1",
+    "B"
+   ],
+   "action": "query",
+   "attempts": 1,
+   "elapsed_ms": 29,
+   "delivered_at_ms": 1793377127621,
+   "failed": null,
+   "result_sha256": "45217e962dc1f5215f865320004f6e232e01803248b492075ede27b7d47e9a65"
+  },
+  {
+   "job": "00000000000000000000000000000018",
+   "destination": "B",
+   "path": [
+    "A",
+    "R1",
+    "B"
+   ],
+   "action": "index",
+   "attempts": 1,
+   "elapsed_ms": 43,
+   "delivered_at_ms": 1793377128465,
+   "failed": null,
+   "result_sha256": "655ab5d419183b39abe1e94469ba2d3cadf046b90d78aaa7135d45c26ff71590"
+  },
+  {
+   "job": "0000000000000000000000000000001a",
+   "destination": "B",
+   "path": [
+    "A",
+    "R1",
+    "B"
+   ],
+   "action": "fingerprint",
+   "attempts": 1,
+   "elapsed_ms": 22,
+   "delivered_at_ms": 1793377129289,
+   "failed": null,
+   "result_sha256": "3bb056bfb60f67194b02e16e9099a3ea74c81a5da0cb05a150cb77596e22fe2f"
+  },
+  {
+   "job": "0000000000000000000000000000001c",
+   "destination": "B",
+   "path": [
+    "A",
+    "R1",
+    "B"
+   ],
+   "action": "query",
+   "attempts": 1,
+   "elapsed_ms": 26,
+   "delivered_at_ms": 1793377130117,
+   "failed": null,
+   "result_sha256": "a426bfe92f2a5e9a9a2f3911bbbc7f2e0c3ff8452b0a3124592bd1500daaba72"
+  },
+  {
+   "job": "0000000000000000000000000000001e",
+   "destination": "B",
+   "path": [
+    "A",
+    "R1",
+    "B"
+   ],
+   "action": "index",
+   "attempts": 1,
+   "elapsed_ms": 22,
+   "delivered_at_ms": 1793377130940,
+   "failed": null,
+   "result_sha256": "f9314a7c859f4d7eb40982965c76d8460af7988f63c787687f19efe93f7b01e8"
+  },
+  {
+   "job": "00000000000000000000000000000020",
+   "destination": "B",
+   "path": [
+    "A",
+    "R1",
+    "B"
+   ],
+   "action": "fingerprint",
+   "attempts": 1,
+   "elapsed_ms": 53,
+   "delivered_at_ms": 1793377131794,
+   "failed": null,
+   "result_sha256": "c5576cb0744dcfa83cd13913464751275a664be51c3db383121587fd6d235899"
+  },
+  {
+   "job": "00000000000000000000000000000022",
+   "destination": "B",
+   "path": [
+    "A",
+    "R1",
+    "B"
+   ],
+   "action": "query",
+   "attempts": 1,
+   "elapsed_ms": 22,
+   "delivered_at_ms": 1793377132617,
+   "failed": null,
+   "result_sha256": "1d201bc2fbc74b22d7bc622d82c0ee972ed07f42ababe0054ab26791d9bf5f1f"
+  },
+  {
+   "job": "00000000000000000000000000000024",
+   "destination": "B",
+   "path": [
+    "A",
+    "R1",
+    "B"
+   ],
+   "action": "index",
+   "attempts": 1,
+   "elapsed_ms": 27,
+   "delivered_at_ms": 1793377133448,
+   "failed": null,
+   "result_sha256": "18ccb653f05419ba03effb95c0f260b4cec294d7883cf00a17b9c66a663c9575"
+  },
+  {
+   "job": "00000000000000000000000000000026",
+   "destination": "B",
+   "path": [
+    "A",
+    "R1",
+    "B"
+   ],
+   "action": "fingerprint",
+   "attempts": 1,
+   "elapsed_ms": 25,
+   "delivered_at_ms": 1793377134274,
+   "failed": null,
+   "result_sha256": "3007a69dba161d84631ba44dbcac3d2688a4411e3dbbfcfbea2ff0081901f7de"
+  },
+  {
+   "job": "00000000000000000000000000000001",
+   "destination": "A",
+   "path": [
+    "B",
+    "R1",
+    "A"
+   ],
+   "action": "query",
+   "attempts": 1,
+   "elapsed_ms": 33,
+   "delivered_at_ms": 1793377112802,
+   "failed": null,
+   "result_sha256": "0b12a1c479688a42b8981f20a0b98ac3ee0adf04c902215476fd8c1dc262b7cb"
+  },
+  {
+   "job": "00000000000000000000000000000003",
+   "destination": "A",
+   "path": [
+    "B",
+    "R1",
+    "A"
+   ],
+   "action": "index",
+   "attempts": 1,
+   "elapsed_ms": 28,
+   "delivered_at_ms": 1793377113633,
+   "failed": null,
+   "result_sha256": "afa272e7cecdc26a86e83736f18867ff6d48fe305ee1dbbc0e9fbcf5c320c0db"
+  },
+  {
+   "job": "00000000000000000000000000000005",
+   "destination": "A",
+   "path": [
+    "B",
+    "R1",
+    "A"
+   ],
+   "action": "fingerprint",
+   "attempts": 1,
+   "elapsed_ms": 22,
+   "delivered_at_ms": 1793377114456,
+   "failed": null,
+   "result_sha256": "8c72e19b09ed26b21ccc2f617224de2c135d38cd3522f52cec8241b0cecd4dba"
+  },
+  {
+   "job": "00000000000000000000000000000007",
+   "destination": "A",
+   "path": [
+    "B",
+    "R1",
+    "A"
+   ],
+   "action": "query",
+   "attempts": 1,
+   "elapsed_ms": 25,
+   "delivered_at_ms": 1793377115282,
+   "failed": null,
+   "result_sha256": "95d9483fabadfde68c36c44f8ff3219a5f04364a8329d974081b6d6fe1d2d3d5"
+  },
+  {
+   "job": "00000000000000000000000000000009",
+   "destination": "A",
+   "path": [
+    "B",
+    "R3",
+    "R2",
+    "A"
+   ],
+   "action": "index",
+   "attempts": 3,
+   "elapsed_ms": 5641,
+   "delivered_at_ms": 1793377121724,
+   "failed": null,
+   "result_sha256": "f9314a7c859f4d7eb40982965c76d8460af7988f63c787687f19efe93f7b01e8"
+  },
+  {
+   "job": "0000000000000000000000000000000b",
+   "destination": "A",
+   "path": [
+    "B",
+    "R3",
+    "R2",
+    "A"
+   ],
+   "action": "fingerprint",
+   "attempts": 1,
+   "elapsed_ms": 31,
+   "delivered_at_ms": 1793377122556,
+   "failed": null,
+   "result_sha256": "f390fcc1f83da93ada898a82674621f2f19f19e3df372f7cc29b5d104888027c"
+  },
+  {
+   "job": "0000000000000000000000000000000d",
+   "destination": "A",
+   "path": [
+    "B",
+    "R3",
+    "R2",
+    "A"
+   ],
+   "action": "query",
+   "attempts": 1,
+   "elapsed_ms": 31,
+   "delivered_at_ms": 1793377123388,
+   "failed": null,
+   "result_sha256": "45217e962dc1f5215f865320004f6e232e01803248b492075ede27b7d47e9a65"
+  },
+  {
+   "job": "0000000000000000000000000000000f",
+   "destination": "A",
+   "path": [
+    "B",
+    "R3",
+    "R2",
+    "A"
+   ],
+   "action": "index",
+   "attempts": 1,
+   "elapsed_ms": 43,
+   "delivered_at_ms": 1793377124232,
+   "failed": null,
+   "result_sha256": "21fa0a9b2e04a7c9595ac4fc3715d12c5e07b4273266b7b7cfe631e7bd8746dc"
+  },
+  {
+   "job": "00000000000000000000000000000011",
+   "destination": "A",
+   "path": [
+    "B",
+    "R3",
+    "R2",
+    "A"
+   ],
+   "action": "fingerprint",
+   "attempts": 1,
+   "elapsed_ms": 40,
+   "delivered_at_ms": 1793377125074,
+   "failed": null,
+   "result_sha256": "8c72e19b09ed26b21ccc2f617224de2c135d38cd3522f52cec8241b0cecd4dba"
+  },
+  {
+   "job": "00000000000000000000000000000013",
+   "destination": "A",
+   "path": [
+    "B",
+    "R3",
+    "R2",
+    "A"
+   ],
+   "action": "query",
+   "attempts": 1,
+   "elapsed_ms": 29,
+   "delivered_at_ms": 1793377125904,
+   "failed": null,
+   "result_sha256": "95d9483fabadfde68c36c44f8ff3219a5f04364a8329d974081b6d6fe1d2d3d5"
+  },
+  {
+   "job": "00000000000000000000000000000015",
+   "destination": "A",
+   "path": [
+    "B",
+    "R1",
+    "A"
+   ],
+   "action": "index",
+   "attempts": 1,
+   "elapsed_ms": 26,
+   "delivered_at_ms": 1793377126732,
+   "failed": null,
+   "result_sha256": "21fa0a9b2e04a7c9595ac4fc3715d12c5e07b4273266b7b7cfe631e7bd8746dc"
+  },
+  {
+   "job": "00000000000000000000000000000017",
+   "destination": "A",
+   "path": [
+    "B",
+    "R1",
+    "A"
+   ],
+   "action": "fingerprint",
+   "attempts": 1,
+   "elapsed_ms": 21,
+   "delivered_at_ms": 1793377127554,
+   "failed": null,
+   "result_sha256": "7002fd5631b6384e4910e1e521c7d5eda0687b65a5ed010842d987be001d420a"
+  },
+  {
+   "job": "00000000000000000000000000000019",
+   "destination": "A",
+   "path": [
+    "B",
+    "R1",
+    "A"
+   ],
+   "action": "query",
+   "attempts": 1,
+   "elapsed_ms": 22,
+   "delivered_at_ms": 1793377128378,
+   "failed": null,
+   "result_sha256": "1d201bc2fbc74b22d7bc622d82c0ee972ed07f42ababe0054ab26791d9bf5f1f"
+  },
+  {
+   "job": "0000000000000000000000000000001b",
+   "destination": "A",
+   "path": [
+    "B",
+    "R1",
+    "A"
+   ],
+   "action": "index",
+   "attempts": 1,
+   "elapsed_ms": 27,
+   "delivered_at_ms": 1793377129207,
+   "failed": null,
+   "result_sha256": "afa272e7cecdc26a86e83736f18867ff6d48fe305ee1dbbc0e9fbcf5c320c0db"
+  },
+  {
+   "job": "0000000000000000000000000000001d",
+   "destination": "A",
+   "path": [
+    "B",
+    "R1",
+    "A"
+   ],
+   "action": "fingerprint",
+   "attempts": 1,
+   "elapsed_ms": 23,
+   "delivered_at_ms": 1793377130030,
+   "failed": null,
+   "result_sha256": "8426539f59742900290eac74ee92419415f9a717f415ee80e8b0799dfc837814"
+  },
+  {
+   "job": "0000000000000000000000000000001f",
+   "destination": "A",
+   "path": [
+    "B",
+    "R1",
+    "A"
+   ],
+   "action": "query",
+   "attempts": 1,
+   "elapsed_ms": 23,
+   "delivered_at_ms": 1793377130855,
+   "failed": null,
+   "result_sha256": "a426bfe92f2a5e9a9a2f3911bbbc7f2e0c3ff8452b0a3124592bd1500daaba72"
+  },
+  {
+   "job": "00000000000000000000000000000021",
+   "destination": "A",
+   "path": [
+    "B",
+    "R1",
+    "A"
+   ],
+   "action": "index",
+   "attempts": 1,
+   "elapsed_ms": 39,
+   "delivered_at_ms": 1793377131699,
+   "failed": null,
+   "result_sha256": "c03e132b77e696024e26af6a847fc986c5aeffcc99d826956be4425500d2705f"
+  },
+  {
+   "job": "00000000000000000000000000000023",
+   "destination": "A",
+   "path": [
+    "B",
+    "R1",
+    "A"
+   ],
+   "action": "fingerprint",
+   "attempts": 1,
+   "elapsed_ms": 26,
+   "delivered_at_ms": 1793377132526,
+   "failed": null,
+   "result_sha256": "8426539f59742900290eac74ee92419415f9a717f415ee80e8b0799dfc837814"
+  },
+  {
+   "job": "00000000000000000000000000000025",
+   "destination": "A",
+   "path": [
+    "B",
+    "R1",
+    "A"
+   ],
+   "action": "query",
+   "attempts": 1,
+   "elapsed_ms": 20,
+   "delivered_at_ms": 1793377133347,
+   "failed": null,
+   "result_sha256": "0b12a1c479688a42b8981f20a0b98ac3ee0adf04c902215476fd8c1dc262b7cb"
+  },
+  {
+   "job": "00000000000000000000000000000027",
+   "destination": "A",
+   "path": [
+    "B",
+    "R1",
+    "A"
+   ],
+   "action": "index",
+   "attempts": 1,
+   "elapsed_ms": 21,
+   "delivered_at_ms": 1793377134169,
+   "failed": null,
+   "result_sha256": "21fa0a9b2e04a7c9595ac4fc3715d12c5e07b4273266b7b7cfe631e7bd8746dc"
+  }
+ ],
+ "limits": [
+  "One host and one virtual Ethernet segment; not a WAN or independent operators",
+  "Every node runs this repository's MeshNode; no participant code ran in this trial",
+  "Deterministic document tools, no language model"
+ ]
+}

@@ -1,0 +1,97 @@
+{
+  "kind": "ipvx-reproduction-comparison/1",
+  "kit_sha256": "7d3c4f888b6cfed9d276368fcc3e889709425f8e071bf815e3352093aad525ff",
+  "operator_key": "6f275b33b36e2a2a825090a0745d0a6bdb8d16b681097556d80f9eb981007c4d",
+  "distinct_signing_key": true,
+  "independent_operator": "not_established",
+  "requires_owner_review": true,
+  "new_log_entry_appended": false,
+  "scope": "Fixed reference code; signatures authenticate claims, not independent execution or result truth",
+  "status": "verified_submission",
+  "matches_reference_criteria": true,
+  "baseline_verdict": "pass",
+  "repeated_verdict": "pass",
+  "baseline_metrics": {
+    "jobs": 40,
+    "correct": 40,
+    "delivered_ratio": 1.0,
+    "p50_ms": 25,
+    "p95_ms": 5639,
+    "max_ms": 5664,
+    "convergence_s": 5.75,
+    "convergence": [
+      {
+        "node": "R1",
+        "disabled_at_ms": 1793347854111,
+        "first_detour_at_ms": 1793347859857,
+        "seconds": 5.75
+      }
+    ],
+    "retries": 4,
+    "duplicate_executions": 0,
+    "ip_frames": 0,
+    "frames": {
+      "88b5": 12804
+    },
+    "no_ip_addresses": true
+  },
+  "repeated_metrics": {
+    "jobs": 40,
+    "correct": 40,
+    "delivered_ratio": 1.0,
+    "p50_ms": 29,
+    "p95_ms": 5641,
+    "max_ms": 5669,
+    "convergence_s": 5.82,
+    "convergence": [
+      {
+        "node": "R1",
+        "disabled_at_ms": 1793377115901,
+        "first_detour_at_ms": 1793377121724,
+        "seconds": 5.82
+      }
+    ],
+    "retries": 4,
+    "duplicate_executions": 0,
+    "ip_frames": 0,
+    "frames": {
+      "88b5": 12804
+    },
+    "no_ip_addresses": true
+  },
+  "environment_claim": {
+    "dependencies": {
+      "PyNaCl": "1.6.2",
+      "annotated-doc": "0.0.5",
+      "annotated-types": "0.8.0",
+      "anyio": "4.15.1",
+      "certifi": "2026.10.23",
+      "cffi": "2.1.1",
+      "click": "8.5.0",
+      "fastapi": "0.162.0",
+      "h11": "0.16.0",
+      "httpcore": "1.0.9",
+      "httpx": "0.28.1",
+      "idna": "3.20",
+      "opentelemetry-api": "1.45.1",
+      "pycparser": "3.12",
+      "pydantic": "2.14.1",
+      "pydantic_core": "2.50.1",
+      "setuptools": "84.2.1",
+      "starlette": "1.10.0",
+      "typing-inspection": "0.4.4",
+      "typing_extensions": "4.16.0",
+      "uvicorn": "0.54.0"
+    },
+    "kernel": "7.0.0",
+    "machine": "x86_64",
+    "os": "Linux",
+    "python": "3.13.17"
+  },
+  "timing_values_required_equal": false,
+  "limits": [
+    "Baseline counters are preserved historical claims; raw baseline capture is not included",
+    "Repeat metrics are recomputed from the submitted task rows, counters, address samples and bounded pcap",
+    "Two keys or hosts do not verify separate operators; H12 remains open pending independent operator and owner review"
+  ]
+}

@@ -862,13 +862,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "bff13be6b33cb6fb",
-      "source": "144 событий по HX-0144; авторы, основания, проверки и ограничения.",
+      "id": "64960f68ae2c759c",
+      "source": "145 событий по HX-0145; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "87ae3778068ca830",
-      "source": "296.8 КиБ · 12 файлов",
+      "id": "15ec621dfdb95356",
+      "source": "299.0 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4667,6 +4667,86 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "d797c21fbb358f20",
+      "source": "HX-0145 · Подготовлен пакет повторения зарегистрированного опыта для другого оператора",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "e078c61c3e49f21a",
+      "source": "Реализовано",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "2c720674bcaf7d6e",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-30T16:27:03.298413+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "75abbc2ede222134",
+      "source": "Созданы фиксированный пакет исходников и входных данных, подписи оператора и проверка сопоставимости отчётов. В изолированном PR CI повторены 40 задач: все результаты правильные, повторных выполнений и IP-кадров нет. Это проверка инструмента нашим CI; независимый оператор ещё не подтверждён.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "4eea5e0b76754d4e",
+      "source": "Сопоставлять исходники, спецификацию и наблюдения, сохраняя исходную регистрацию и пять подписанных пакетов. Разные ключи или процессы не считать независимыми операторами. Сторонний код блокировать до отдельных решений об изоляции.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "556fffb958f5f3fb",
+      "source": "docs/reproduction-kit-2026-10-30.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "66c0bae93d90e486",
+      "source": "docs/evidence/reproduction-reference-41088614695/result.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "6ff4fdf59aa06843",
+      "source": "Независимое повторение и H12 не объявлены выполненными. Оба новых прогона относятся к автоматизации одного лабораторного оператора.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "bf372d2a83fc8937",
+      "source": "Подписи удостоверяют целостность заявлений, но не истину результата, независимость владельца ключа или внешне подтверждённое время.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "0d14be9d4cfb0f56",
+      "source": "Исходные критерии не ослаблены. Отчёты, захваты и неудачные попытки сохраняются; архивы с неподдерживаемым сжатием или нарушениями структуры отвергаются.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "9a19ac992330cd85",
+      "source": "Песочница допускает только эталонный код. Изоляция VM, внешние фильтры и отдельная сеть для чужого кода остаются отдельными решениями владельца.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "b5a8bffb54d03725",
+      "source": "В прод не выкатывалось, PR не слиты. Production Actions, модели, внешние сообщения, допуск участников и выдача ресурсов не выполнялись. Полные новые захваты сохранены приватно.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "556d71717866366d",
       "source": "HX-0144 · Второй этап выкачен вручную и проверен на существующем сервере",
       "context": "history.html:text:section/details/summary"
@@ -4682,29 +4762,14 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "d4bfbe1657edb759",
       "source": "Сделать согласованные приватные копии перед обновлением и проверить установленную сборку через существующий ручной маршрут.",
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "f5ea8f6886199d0c",
       "source": "docs/participant-lifecycle-rollout-2026-10-30.json",
       "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "7c0558b23896dc8c",
@@ -4725,11 +4790,6 @@
       "id": "7ff3c2b304b5351b",
       "source": "Публичный выпуск содержит историю через HX-0142; эти последующие записи фиксируют фактическую выкатку. Начальный пустой health-ответ преодолён ограниченным повтором.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "3baf0303a16bc650",
@@ -4790,11 +4850,6 @@
       "id": "1bb723356dd1e6ce",
       "source": "HX-0141 · Подготовлен отдельный кандидат полного сценария участника",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "e078c61c3e49f21a",
-      "source": "Реализовано",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "3791f2c2df144d22",

@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "attributed_to": "codex-assistant",
+  "recorded_by": "codex-assistant",
+  "recorded_at": "2026-10-30T16:24:58.388912+00:00",
+  "status": "prepared_reference_reproduction_candidate_not_deployed",
+  "agreed_item": "Prepare independent repetition of a preregistered experiment; close sandbox boundaries before admitting unknown code",
+  "code_PR": "https://github.com/relcom-technologies/ipvx-agent-lab/pull/28",
+  "measurement_code_revision": "b86abc2e071322a2fb4f46c44eb486f455f4f336",
+  "checker_revision": "df5f2d080176e32124c78412a35620933304ad05",
+  "original_execution_revision": "5d22e3d91d4e7a0310ea68b63fa73843fbb072ba",
+  "evidence_input_revision": "c9152c834a600b3264dbe9c50f2ffecc93d19e80",
+  "kit_sha256": "7d3c4f888b6cfed9d276368fcc3e889709425f8e071bf815e3352093aad525ff",
+  "kit_bytes": 132667,
+  "original_spec_sha256": "6f14dda80e384a36b3460bf299197954b7ea5ef53068c4442c514ac2bca30ddb",
+  "original_evidence": {
+    "entries": 5,
+    "root_sha256": "cd5e8793714982a44ed6e5beab84a90019846ce4e528438ba85ef668cc9964b6",
+    "modified": false
+  },
+  "validation": {
+    "local_full_suite_before_final_compression_guard": {
+      "passed": 184,
+      "skipped": 8
+    },
+    "new_negative_cases_after_guard": 34,
+    "CI_run": "https://github.com/relcom-technologies/ipvx-agent-lab/actions/runs/41088614695",
+    "CI_artifact_id": 12993051115,
+    "CI_artifact_sha256": "f8119f84de64403d88ef3944c30feb8555a8080719b31f1ff5b4ae14b67a7045",
+    "repeat_metrics": {
+      "jobs": 40,
+      "correct": 40,
+      "delivered_ratio": 1.0,
+      "p50_ms": 29,
+      "p95_ms": 5641,
+      "max_ms": 5669,
+      "convergence_s": 5.82,
+      "convergence": [
+        {
+          "node": "R1",
+          "disabled_at_ms": 1793377115901,
+          "first_detour_at_ms": 1793377121724,
+          "seconds": 5.82
+        }
+      ],
+      "retries": 4,
+      "duplicate_executions": 0,
+      "ip_frames": 0,
+      "frames": {
+        "88b5": 12804
+      },
+      "no_ip_addresses": true
+    },
+    "independent_operator": "not_established",
+    "requires_owner_review": true,
+    "final_revision_validation": {
+      "revision": "df5f2d080176e32124c78412a35620933304ad05",
+      "run": "https://github.com/relcom-technologies/ipvx-agent-lab/actions/runs/41089427982",
+      "artifact_id": 12993237090,
+      "artifact_sha256": "5cd8768c6e63318feb36650e51a37ddd51698b54e1cc2f5b234a92bff110d578",
+      "submission_sha256": "79115b4c244c66e565807eafd1f87fa5aed8ec906e59256854dc6906bcc95ede",
+      "repeat_metrics": {
+        "jobs": 40,
+        "correct": 40,
+        "delivered_ratio": 1.0,
+        "p50_ms": 25,
+        "p95_ms": 5644,
+        "max_ms": 5667,
+        "convergence_s": 5.85,
+        "convergence": [
+          {
+            "node": "R1",
+            "disabled_at_ms": 1793377435830,
+            "first_detour_at_ms": 1793377441683,
+            "seconds": 5.85
+          }
+        ],
+        "retries": 4,
+        "duplicate_executions": 0,
+        "ip_frames": 0,
+        "frames": {
+          "88b5": 12772
+        },
+        "no_ip_addresses": true
+      },
+      "independent_operator": "not_established",
+      "verified_offline": true
+    }
+  },
+  "CI_operator": {
+    "public_key": "6f275b33b36e2a2a825090a0745d0a6bdb8d16b681097556d80f9eb981007c4d",
+    "status": "temporary lab CI key; not a verified independent operator"
+  },
+  "artifacts": {
+    "full_submission_sha256": "b60856b9ba85e41452e74315f1c2efd08fd94f979327e9fbc5463c38fa1aaa89",
+    "full_submission_and_pcap": "private durable copy retained; not published by this PR",
+    "public_projection": "docs/evidence/reproduction-reference-41088614695",
+    "JSON_files": [
+      {
+        "name": "comparison.json",
+        "sha256": "0baceb1d49f111862694aef19681dbb9a8fe6e86650a8e809c4a7b0e5790dec5"
+      },
+      {
+        "name": "observations.json",
+        "sha256": "dbb54a8c4e33619b0db199197274311ee830716797343d6cefa6f10d69498709"
+      },
+      {
+        "name": "report.json",
+        "sha256": "6bd6f39dd2e5bec9462a47483c4a7378cd04bf26dc421451290e7152c472ca4a"
+      },
+      {
+        "name": "result.json",
+        "sha256": "ce4032ba40cba1d8e4afffd57d9722d1355dc252f70b7ff552786ebe366e52e3"
+      },
+      {
+        "name": "session.json",
+        "sha256": "7a7b51f5bb75c60f3d285e6c77761f41fc8219518cad197d5fff3a65e2203b91"
+      }
+    ]
+  },
+  "checks": [
+    "Reviewed pins bind exact source/spec/dependencies/documents and 40 expected task hashes",
+    "Existing lab signatures and five-entry root checked",
+    "Downloaded CI operator signatures, artifact hashes and metrics independently re-verified offline",
+    "Only exact signed JSON and sanitized comparison projected; no private key or node directory opened"
+  ],
+  "negative_results": [
+    "Final review restricted archive decoding to stored/deflate to keep external compression dictionaries outside the bounded parser. A new rejection test passed."
+  ],
+  "limits": [
+    "One lab-operated hosted CI run, not an independent operator or joint experiment; H12 and older partial verdicts remain unchanged",
+    "The independent repetition milestone stays open until an authorized other operator executes and owner reviews separation/artifacts",
+    "Signatures authenticate claims and local ordering, not execution truth or independently witnessed time",
+    "The JSON projection permits signature/hash checks; full capture verification needs the privately preserved submission",
+    "The original baseline capture and all private project keys remain private",
+    "Network namespace and wall timeout do not sandbox hostile root code; VM isolation, external filters and data VLAN still need separate decisions",
+    "No production deployment, production Actions, model calls, social messages, admission or resource changes"
+  ]
+}
