@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "attributed_to": "codex-assistant",
+  "recorded_by": "codex-assistant",
+  "status": "deployed_and_publicly_verified",
+  "recorded_at": "2026-10-30T12:19:56.186587+00:00",
+  "lab_source": "6c0f3f1115e652cf1768aee17431a174204d41b4",
+  "portal_source": "65cf23d70b526a813562845327ba73fa63fd3f6b",
+  "infra_merge": "7c2155f9d4cb665f3ab64e2f299e8be9318bd341",
+  "infra_PR": "https://github.com/relcom-technologies/relcom-infra/pull/818",
+  "portal_archive_sha256": "ea0fb0d5caad032663834aa7c6c3719887a23242f01a4f7a05d6826dc2366ff4",
+  "method": "Existing owner-authorized manual SSH path and reviewed installers; no production Actions",
+  "preserved": [
+    "Both accepted Git histories, all frozen source and published evidence",
+    "Seven existing laboratory data volumes, backed up consistently before publication",
+    "Private auth/session/A2A state and encryption keys, backed up consistently before publication",
+    "Existing observer, notifier and model analysis timers; budgets and delivery state not reset"
+  ],
+  "verification": [
+    "HTTPS lab health exact revision and all six protocol nodes up",
+    "All eight existing lab containers healthy",
+    "HTTPS portal health exact revision; anonymous session unprivileged",
+    "Public community, RFC-0007, Agent Card and history through HX-0139 return HTTP 200",
+    "Observer, notifier and liaison timers remain active",
+    "No Actions runs associated with infra merge SHA"
+  ],
+  "negative_results": [
+    {
+      "run": "https://github.com/relcom-technologies/relcom-infra/actions/runs/41051509039",
+      "observation": "Existing shared PR workflow unexpectedly executed Terraform Plan using production state; Apply was skipped. No authorization for that production-state read was inferred.",
+      "correction": "Exact IPvX-only scope guard skips whole Terraform job; Resources historical fixture normalizes only this exact independent guard. Other production commands untouched. Latest PR scope job succeeded and Terraform skipped."
+    },
+    "First portal health polls during service restart briefly returned empty responses; bounded installer retry succeeded, followed by independent public HTTPS verification."
+  ],
+  "limits": [
+    "No new live native experiment, model invocation, network membership or resources",
+    "Historical measurements remain tied to their original revisions",
+    "New participant candidate is separate and not deployed",
+    "Current public history ends at HX-0139; these later records await ordinary PR acceptance/publication"
+  ]
+}
