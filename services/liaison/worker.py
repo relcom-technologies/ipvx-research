@@ -3,6 +3,7 @@ import argparse
 import fcntl
 import json
 import os
+import stat
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -79,6 +80,7 @@ def cycle(base, public, smoke=False):
                 if (base/'provider-block.json').exists():
                     raise BudgetError('provider_prerequisite_requires_owner')
             validate_config(config)
+            if undelivered_count(ledger)>=50:raise BudgetError('proposal_delivery_backpressure')
             rows=[row for row in snapshot['comments'] if not row['project_account']]
             if smoke:
                 rows=[row for row in rows if row['id']=='651b962b-391d-4ba1-8dca-8f679cdfb91b']
@@ -142,11 +144,33 @@ def model_config_hash(config):
     return digest({k:config[k] for k in ('writer','reviewer','max_output_tokens','daily_budget_usd','analysis_schema_version') if k in config})
 
 
+def acknowledged():
+    path=Path('/var/lib/ipvx-agent-mail-ack/ack.json')
+    if not path.exists():return set()
+    info=path.lstat()
+    if (not stat.S_ISREG(info.st_mode) or info.st_uid!=0
+            or stat.S_IMODE(info.st_mode)!=0o640 or info.st_size>16*1024*1024):
+        raise ValueError('mail_ack_permissions')
+    value=json.loads(path.read_text())
+    if value.get('schema_version')!=1 or not isinstance(value.get('accepted_ids'),list):raise ValueError('mail_ack_schema')
+    return set(value['accepted_ids'])
+
+
+def undelivered_count(ledger):
+    accepted=acknowledged()
+    with ledger.connect() as db:
+        return sum(digest(row[0]) not in accepted for row in db.execute("SELECT id FROM jobs WHERE state='draft'"))
+
+
 def export_notifications(base,ledger,status,facts,config):
     """Private validated drafts only; no raw prompts, keys or private A2A input."""
-    ready=[]
+    ready=[];accepted=acknowledged()
     with ledger.connect() as db:
-        rows=db.execute("SELECT id,result FROM jobs WHERE state='draft' ORDER BY rowid DESC LIMIT 20").fetchall()
+        rows=[]
+        for row in db.execute("SELECT id,result FROM jobs WHERE state='draft' ORDER BY rowid"):
+            if digest(row[0]) not in accepted:
+                rows.append(row)
+                if len(rows)>=50:break
     folder=base/'drafts';folder.mkdir(mode=0o700,exist_ok=True)
     for identifier,raw in reversed(rows):
         result=json.loads(raw)

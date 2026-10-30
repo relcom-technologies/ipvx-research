@@ -103,6 +103,11 @@ Private transcripts and validated drafts persist in the existing ledger/drafts
 directory. A separate private notification feed omits prompts, raw source text,
 keys and transcripts; it is intended for the existing owner-only mail notifier.
 A committed SQLite draft is rematerialized after a file-write interruption.
+The server mail projection returns only SMTP-accepted draft IDs through a separate
+root-owned read-only acknowledgement file. Up to 50 undelivered drafts remain in
+the feed; further paid analysis pauses before creating a job at that bound.
+Accepted IDs remove items from the delivery feed, never from the private draft
+archive or ledger. The mailer stages at most eight drafts per batch.
 The successful explicit smoke version is marked handled to avoid another paid
 analysis of the same comment on the next timer tick. Historical failures and
 reservations remain unchanged.

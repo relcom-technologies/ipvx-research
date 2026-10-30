@@ -98,6 +98,11 @@ class AutonomousTests(unittest.TestCase):
         feed=json.loads((base/'notification-feed.json').read_text())
         self.assertEqual(len(feed['ready']),1)
         self.assertNotIn('provider_transcripts',json.dumps(feed))
+        with patch.object(worker,'acknowledged',return_value={feed['ready'][0]['id']}):
+            worker.export_notifications(base,old,{'updated_at':'fixture','state':'running_draft_service'},
+                {'profile':'Asynchronous review only. No runner.'},config())
+        self.assertEqual(json.loads((base/'notification-feed.json').read_text())['ready'],[])
+        self.assertEqual(len(list((base/'drafts').glob('*.json'))),1)
         with old.connect() as db:self.assertEqual(db.execute("SELECT state FROM jobs WHERE id='old-failed'").fetchone()[0],'failed')
 
     def test_missing_current_pair_or_permanent_provider_failure_stops_automatic_calls(self):
