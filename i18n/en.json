@@ -2594,5 +2594,19 @@
   "13f9b6a7627c480e": "The reviewer is another assistant context under the same operator. The final ship verdict covers one corrected location reference.",
   "a1d5d44e5c423b17": "The change remains in a PR. No merge, deployment or production Actions.",
   "139ac43c8f7ee0c5": "Codex — primary assistant in this conversation · 2026-10-31T00:09:01.773961+01:00",
-  "f0fe022ad67932ad": "docs/claims-visual-review-2026-10-31.json"
+  "f0fe022ad67932ad": "docs/claims-visual-review-2026-10-31.json",
+  "cfda74cede4d6b48": "162 events through HX-0162; authors, rationale, checks and limits.",
+  "a54f46c206cd02ec": "317.6 KiB · 12 files",
+  "871c136dcba305f1": "HX-0162 · Corrections deployed and verified on public sites",
+  "428834c03479f449": "Installed the accepted Lab and portal revisions. All 96 HTML files match source; Agent Card 0.1.1 discloses retention limits. Checked four languages and eight Lab views.",
+  "be7315d7c995a532": "Use client SSH installers after consistent backups; verify installed revisions, public wording and signatures of preserved evidence.",
+  "ec3a9d47817e8d15": "Preserved seven volumes, two private portal state areas, prior configuration, old releases and five signed bundles. Services and timers are active.",
+  "e3ee72077c003a79": "No production Actions, models or new experiments ran. Website history ends at HX-0160; the new record does not trigger a deployment.",
+  "1985f9c320e24d2d": "HX-0161 · Claim corrections accepted with ordinary merge commits",
+  "67dd90170fbf7fef": "Merged Lab PR31 and portal PR38 as instructed by the owner. Both parents and tested commit trees are preserved; nine PR checks passed.",
+  "3f6e0c6ef837cd88": "Accept six corrections without squash or rebase, preserving original experiments and prior history.",
+  "e429d477a38156b2": "The regular portal merge was rejected by the owner-controlled main update rule. After checking CI, used the existing admin path; branch protection was unchanged.",
+  "a4e16df4e0628191": "Codex — primary assistant in this conversation · 2026-10-31T00:22:27.647731+01:00",
+  "8d6a30e0098e31f0": "docs/claims-rollout-2026-10-31.json",
+  "ca5f9aa20c7b0ba2": "Codex — primary assistant in this conversation · 2026-10-31T00:17:10+01:00"
 }

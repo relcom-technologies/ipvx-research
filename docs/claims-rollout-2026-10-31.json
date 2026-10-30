@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "attributed_to": "codex-assistant",
+  "recorded_by": "codex-assistant",
+  "recorded_at": "2026-10-31T00:22:27.647731+01:00",
+  "owner_authorized": true,
+  "status": "merged_deployed_and_verified",
+  "lab_pr": 31,
+  "portal_pr": 38,
+  "lab_merge": "93ddbfe905f77036c45d976e96e5c95efc3f2264",
+  "lab_parents": [
+    "0176498c6cd9c5ac1ae97567531d0684503232fa",
+    "ebf6b134a818cba9946d2672a9395306d7712096"
+  ],
+  "portal_merge": "e034dd494bbf60a77ab7fdb3ec23f05a9446f6b0",
+  "portal_parents": [
+    "29ff858755a5280a8474224c5551e617576afa05",
+    "e12e2186c1aa7a1984b8b8fe7ec1111239ea84cf"
+  ],
+  "lab_checked_head": "ebf6b134a818cba9946d2672a9395306d7712096",
+  "portal_checked_head": "e12e2186c1aa7a1984b8b8fe7ec1111239ea84cf",
+  "merge_trees_equal_checked_heads": true,
+  "merge_strategy": "ordinary two-parent merge commits; no squash or rebase",
+  "owner_controlled_merge_note": "Regular PR38 CLI merge was rejected by the owner-controlled main update rule. Required CI passed, required reviews were zero and linear history was not required. Explicit owner authorization was executed using the existing admin merge path without changing protection.",
+  "method": "Accepted client-repository installers over SSH on the existing IPvX server. relcom-infra was not changed.",
+  "source_archive": {
+    "revision": "e034dd494bbf60a77ab7fdb3ec23f05a9446f6b0",
+    "sha256": "5bb2040a44f963b9b1213b191124b7aa01ddfefccb7a93163dd275279b609f30",
+    "bytes": 3167302
+  },
+  "backups": {
+    "laboratory_volumes": 7,
+    "portal_private_state_archives": 2,
+    "old_releases_retained": true,
+    "private_configuration_preserved": true,
+    "automatic_database_restore": false
+  },
+  "postflight": {
+    "lab": "93ddbfe905f77036c45d976e96e5c95efc3f2264",
+    "portal": "e034dd494bbf60a77ab7fdb3ec23f05a9446f6b0",
+    "healthy_containers": 8,
+    "units": {
+      "ipvx-research.service": "active",
+      "ipvx-research-auth.service": "active",
+      "ipvx-research-a2a.service": "active",
+      "ipvx-notifier.timer": "active",
+      "ipvx-participation-watch.timer": "active",
+      "ipvx-liaison.timer": "active"
+    },
+    "installed_sdk_bytes_match": true,
+    "a2a_disclosure_source_matches": true,
+    "private_lab_configuration_preserved": true,
+    "rescue_timers_remaining": 0
+  },
+  "public_acceptance": {
+    "HTML_read": 96,
+    "HTML_exact_source_matches": 96,
+    "lab_HTML_matches_versioned_source": true,
+    "private_address_matches": 0,
+    "portal_revision": "e034dd494bbf60a77ab7fdb3ec23f05a9446f6b0",
+    "lab_revision": "93ddbfe905f77036c45d976e96e5c95efc3f2264",
+    "TLS_and_hostname_verification": true,
+    "browser_languages": 4,
+    "browser_viewports": [
+      1440,
+      390
+    ],
+    "lab_views_read": 8,
+    "browser_network_writes": 0,
+    "experiment_controls_clicked": false,
+    "canonical_history_deployed_through": "HX-0160"
+  },
+  "preserved_evidence": {
+    "agent_card_version": "0.1.1",
+    "retention_disclosure_present": true,
+    "signed_heads_verified": 5,
+    "signed_entries_preserved": 5,
+    "key": "5a82caff57edd5d040232c1ea0aaf97f20ea1bd4695016f8396afa985736e693",
+    "root": "cd5e8793714982a44ed6e5beab84a90019846ce4e528438ba85ef668cc9964b6",
+    "read_only": true
+  },
+  "a2a": {
+    "descriptor_version": "0.1.1",
+    "storage_and_retry_semantics_changed": false,
+    "token_lifetime_changed": false,
+    "original_rc1_candidate_unchanged": true,
+    "new_joint_scope_or_launch_approved": false
+  },
+  "Actions": {
+    "lab_post_merge_runs": 0,
+    "portal_post_merge_runs": 0,
+    "production_Actions": false,
+    "workflow_dispatch": false
+  },
+  "temporary_staging": {
+    "release_unchanged": "e034dd494bbf60a77ab7fdb3ec23f05a9446f6b0",
+    "own_staging_removed": true,
+    "backups_and_evidence_retained": true
+  },
+  "negative_results": [
+    "The regular portal merge command was rejected by the owner-controlled main rule, resolved with existing admin rights after checking all required gates. No protection setting changed.",
+    "The first signature-check attempt used a Python environment without PyNaCl. Rechecked successfully using the existing Lab environment; this was a local acceptance-harness dependency issue."
+  ],
+  "limits": [
+    "Release acceptance by the project assistant; not an independent operator or a new interoperability/native-network experiment.",
+    "No paid model call, SMTP test, R1 outage, address migration, registration, private-intake content read, access grant or new resource commitment.",
+    "Backups remain private on the server. No private key, token or owner contact is included in this record.",
+    "HX-0161/HX-0162 are source-history additions after the deployed HX-0160; this record does not trigger another deployment."
+  ]
+}

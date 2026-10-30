@@ -837,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "70abab3f266abc24",
-      "source": "160 событий по HX-0160; авторы, основания, проверки и ограничения.",
+      "id": "cfda74cede4d6b48",
+      "source": "162 событий по HX-0162; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "1c1fa39d598e7e34",
-      "source": "316.2 КиБ · 12 файлов",
+      "id": "a54f46c206cd02ec",
+      "source": "317.6 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4642,14 +4642,94 @@
       "context": "history.html:text:main/section/p"
     },
     {
-      "id": "cb069e99cb441282",
-      "source": "HX-0160 · Исправлена навигационная оговорка после визуальной рецензии",
+      "id": "871c136dcba305f1",
+      "source": "HX-0162 · Исправления выкачены и проверены на публичных площадках",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "a4e16df4e0628191",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-31T00:22:27.647731+01:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "428834c03479f449",
+      "source": "Установлены принятые версии Lab и портала. Все 96 HTML совпали с исходниками; Agent Card 0.1.1 раскрывает ограничения хранения. Проверены четыре языка и восемь разделов Lab.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "be7315d7c995a532",
+      "source": "Использовать клиентские SSH-installers после согласованных резервных копий; сверить установленные версии, публичный текст и подписи прежних доказательств.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "8d6a30e0098e31f0",
+      "source": "docs/claims-rollout-2026-10-31.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "ec3a9d47817e8d15",
+      "source": "Сохранены семь томов, две приватные области портала, прежняя конфигурация, старые releases и пять подписанных бандлов. Службы и таймеры активны.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "e3ee72077c003a79",
+      "source": "Production Actions, модели и новые эксперименты не запускались. История на сайте заканчивается HX-0160; новая запись сама не запускает выкатку.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "1985f9c320e24d2d",
+      "source": "HX-0161 · Исправления утверждений приняты обычными merge commit",
       "context": "history.html:text:section/details/summary"
     },
     {
       "id": "e078c61c3e49f21a",
       "source": "Реализовано",
       "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "ca5f9aa20c7b0ba2",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-31T00:17:10+01:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "67dd90170fbf7fef",
+      "source": "По поручению владельца слиты PR31 Lab и PR38 портала. Сохранены оба родителя и деревья проверенных коммитов; девять PR-проверок пройдены.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "3f6e0c6ef837cd88",
+      "source": "Принять исправления шести пунктов без squash и rebase, сохранив исходные эксперименты и прежнюю историю.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "e429d477a38156b2",
+      "source": "Обычный merge портала отклонён владельческим правилом обновления main. После проверки CI использован существующий административный путь; защита ветки не менялась.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "cb069e99cb441282",
+      "source": "HX-0160 · Исправлена навигационная оговорка после визуальной рецензии",
+      "context": "history.html:text:section/details/summary"
     },
     {
       "id": "139ac43c8f7ee0c5",
@@ -4662,29 +4742,14 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "9e02b7473e9242ca",
       "source": "Проверять исправленный текст в отрисованной сборке; не принимать устаревший preview за подтверждение новой версии.",
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "f0fe022ad67932ad",
       "source": "docs/claims-visual-review-2026-10-31.json",
       "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "13f9b6a7627c480e",
@@ -4695,11 +4760,6 @@
       "id": "a1d5d44e5c423b17",
       "source": "Изменение остаётся в PR. Слияние, выкатка и production Actions не выполнялись.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "f44bd69a1e67b162",

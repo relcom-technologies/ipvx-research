@@ -2594,5 +2594,19 @@
   "13f9b6a7627c480e": "El revisor es otro contexto de asistente del mismo operador. El veredicto ship final cubre una referencia de ubicación corregida.",
   "a1d5d44e5c423b17": "El cambio sigue en un PR. Sin fusión, despliegue ni Actions de producción.",
   "139ac43c8f7ee0c5": "Codex — asistente principal de esta conversación · 2026-10-31T00:09:01.773961+01:00",
-  "f0fe022ad67932ad": "docs/claims-visual-review-2026-10-31.json"
+  "f0fe022ad67932ad": "docs/claims-visual-review-2026-10-31.json",
+  "cfda74cede4d6b48": "162 eventos hasta HX-0162; autores, motivos, comprobaciones y límites.",
+  "a54f46c206cd02ec": "317,6 KiB · 12 archivos",
+  "871c136dcba305f1": "HX-0162 · Correcciones desplegadas y verificadas en los sitios públicos",
+  "428834c03479f449": "Instaladas las versiones aceptadas de Lab y portal. Los 96 HTML coinciden con el código; Agent Card 0.1.1 declara los límites de retención. Verificados cuatro idiomas y ocho vistas Lab.",
+  "be7315d7c995a532": "Usar instaladores SSH del cliente tras copias coherentes; verificar versiones instaladas, textos públicos y firmas de las pruebas conservadas.",
+  "ec3a9d47817e8d15": "Conservados siete volúmenes, dos áreas privadas del portal, configuración anterior, versiones anteriores y cinco paquetes firmados. Servicios y temporizadores activos.",
+  "e3ee72077c003a79": "No se ejecutaron Actions de producción, modelos ni experimentos nuevos. La historia del sitio termina en HX-0160; el nuevo registro no inicia un despliegue.",
+  "1985f9c320e24d2d": "HX-0161 · Correcciones aceptadas con commits de fusión normales",
+  "67dd90170fbf7fef": "Fusionados PR31 Lab y PR38 portal por instrucción del propietario. Conservados ambos padres y los árboles de los commits probados; nueve comprobaciones PR superadas.",
+  "3f6e0c6ef837cd88": "Aceptar seis correcciones sin squash ni rebase, conservando experimentos originales e historia anterior.",
+  "e429d477a38156b2": "La fusión normal del portal fue rechazada por la regla de actualización de main controlada por el propietario. Tras comprobar CI se usó la vía administrativa existente; no se cambió la protección.",
+  "a4e16df4e0628191": "Codex — asistente principal de esta conversación · 2026-10-31T00:22:27.647731+01:00",
+  "8d6a30e0098e31f0": "docs/claims-rollout-2026-10-31.json",
+  "ca5f9aa20c7b0ba2": "Codex — asistente principal de esta conversación · 2026-10-31T00:17:10+01:00"
 }
