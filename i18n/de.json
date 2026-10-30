@@ -2435,5 +2435,20 @@
   "4912dda89a6101a8": "docs/lab-integration-rollout-2026-10-30.json",
   "84fb813c5440a067": "Die erste gemeinsame PR-CI führte unerwartet Terraform Plan mit Produktionszustand aus; Apply wurde übersprungen. Diese Verletzung der Isolation wurde dokumentiert und dem Eigentümer gemeldet. Eine exakte IPvX-only-Sperre wurde ergänzt: Bei der abschließenden Prüfung wurde Terraform vollständig übersprungen; nach dem Merge gab es keine Läufe.",
   "68cd171702af2a07": "Kurze leere Health-Antworten beim Portalneustart wurden durch begrenzte Wiederholung überwunden; anschließend wurde externes HTTPS geprüft.",
-  "a4fe4ccea9381d59": "Es wurden keine Modelle, laufenden nativen Versuche oder neuen Ressourcen gestartet; historische Messungen wurden nicht zu Ergebnissen des neuen Builds. Die öffentliche Release-Historie endet bei HX-0139."
+  "a4fe4ccea9381d59": "Es wurden keine Modelle, laufenden nativen Versuche oder neuen Ressourcen gestartet; historische Messungen wurden nicht zu Ergebnissen des neuen Builds. Die öffentliche Release-Historie endet bei HX-0139.",
+  "bff13be6b33cb6fb": "144 Ereignisse bis HX-0144; Autoren, Begründungen, Prüfungen und Grenzen.",
+  "87ae3778068ca830": "296.8 KiB · 12 Dateien",
+  "556d71717866366d": "HX-0144 · Zweite Stufe manuell auf dem bestehenden Server bereitgestellt und geprüft",
+  "3d0581d353a162d5": "Codex — Hauptassistent dieses Gesprächs · 2026-10-30T15:47:15.649063+00:00",
+  "5a30ded38b94e8a7": "Die angenommenen Labor- und Portalversionen sind installiert. Acht SDK-Prüfungen bestanden: synthetische CPU-Aufgabe über Loopback-HTTP, neuer Prozess mit derselben ID und Quittung, Endpunktwechsel und Sperrung der alten Instanz. Die Hashes der installierten Module stimmen mit dem Quellcode überein.",
+  "d4bfbe1657edb759": "Vor dem Update konsistente private Sicherungen erstellen und den installierten Build über den bestehenden manuellen Zugangsweg prüfen.",
+  "f5ea8f6886199d0c": "docs/participant-lifecycle-rollout-2026-10-30.json",
+  "7c0558b23896dc8c": "Terraform wurde vollständig übersprungen; nach dem Merge liefen keine IPvX Actions. Zeitpläne anderer Projekte im gemeinsamen Repository blieben unverändert.",
+  "7bf9275750c2b610": "Sieben Volumes, privater auth/A2A-Zustand, Schlüssel, die Wurzel der fünf Pakete und aktive Timer blieben erhalten. Budget und Zustellzustand wurden nicht zurückgesetzt.",
+  "39d5ba041e6cec3f": "Das SDK bleibt optional. Eine Loopback-Prüfung durch einen Betreiber ist weder ein neuer gemeinsamer nativer Versuch noch verteiltes exactly-once.",
+  "7ff3c2b304b5351b": "Das öffentliche Release enthält die Historie bis HX-0142; diese späteren Einträge dokumentieren die tatsächliche Bereitstellung. Eine anfänglich leere Health-Antwort wurde durch begrenzte Wiederholung überwunden.",
+  "3baf0303a16bc650": "HX-0143 · Teilnehmerablauf und Historie mit regulären Merge-Commits angenommen",
+  "eb0a17e26f291dca": "Auf ausdrücklichen Auftrag des Eigentümers wurden PR27 und PR31 gemergt. Beide Eltern jedes Merge-Commits und die Übereinstimmung mit den geprüften Dateibäumen wurden bestätigt. Frühere Einträge, Versuche und signierte Pakete blieben erhalten.",
+  "f5e9bfd59b9f92f9": "Beide Quellcodehistorien erhalten und Annahme von Bereitstellung trennen.",
+  "d4f460bc7b9901cf": "Ein Merge allein belegt weder Bereitstellung noch Teilnehmerunabhängigkeit."
 }

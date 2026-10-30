@@ -862,13 +862,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "ef116e0b94966aca",
-      "source": "142 событий по HX-0142; авторы, основания, проверки и ограничения.",
+      "id": "bff13be6b33cb6fb",
+      "source": "144 событий по HX-0144; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "dd87a7d60e0a2805",
-      "source": "294.6 КиБ · 12 файлов",
+      "id": "87ae3778068ca830",
+      "source": "296.8 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4667,6 +4667,96 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "556d71717866366d",
+      "source": "HX-0144 · Второй этап выкачен вручную и проверен на существующем сервере",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "3d0581d353a162d5",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-30T15:47:15.649063+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "5a30ded38b94e8a7",
+      "source": "Установлены принятые версии лаборатории и портала. Восемь проверок SDK прошли: синтетическая CPU-задача по loopback HTTP, новый процесс с тем же ID и квитанцией, перенос адреса и блокировка старого экземпляра. Хеши установленных модулей совпали с исходниками.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "d4bfbe1657edb759",
+      "source": "Сделать согласованные приватные копии перед обновлением и проверить установленную сборку через существующий ручной маршрут.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "f5ea8f6886199d0c",
+      "source": "docs/participant-lifecycle-rollout-2026-10-30.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "7c0558b23896dc8c",
+      "source": "Terraform целиком пропущен; запусков IPvX Actions после merge нет. Чужое расписание в общем репозитории не изменялось.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "7bf9275750c2b610",
+      "source": "Сохранены семь томов, приватное состояние auth/A2A, ключи, корень пяти пакетов и активные таймеры. Бюджет и состояния доставки не сбрасывались.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "39d5ba041e6cec3f",
+      "source": "SDK остаётся opt-in. Проверка одним оператором на loopback не является новым совместным нативным опытом или распределённым exactly-once.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "7ff3c2b304b5351b",
+      "source": "Публичный выпуск содержит историю через HX-0142; эти последующие записи фиксируют фактическую выкатку. Начальный пустой health-ответ преодолён ограниченным повтором.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "3baf0303a16bc650",
+      "source": "HX-0143 · Сценарий участника и история приняты обычными merge commit",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "199d6db958cdb817",
+      "source": "Решение",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "eb0a17e26f291dca",
+      "source": "По прямому поручению владельца слиты PR27 и PR31. Проверены оба родителя каждого merge commit и совпадение деревьев с проверенными версиями. Ранние записи, эксперименты и подписанные пакеты сохранены.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "f5e9bfd59b9f92f9",
+      "source": "Сохранить обе истории исходников и отделить принятие от выкатки.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "d4f460bc7b9901cf",
+      "source": "Слияние само по себе не доказывает выкатку или независимость участника.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
       "id": "83b1c6d6f25e1ba2",
       "source": "HX-0142 · Четыре проверки кандидата участника прошли после исправления CI",
       "context": "history.html:text:section/details/summary"
@@ -4682,24 +4772,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "32e7ca9219fe2d8a",
       "source": "Первый CI выявил неверную сверку свежего ответа со старым proof и отсутствие нового отчёта в индексе. Тест теперь намеренно использует другой свежий proof; синтетический отчёт внесён как кандидат разработки, без нового релиза или записи Merkle.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "925d8631e0dcc29a",
@@ -4710,11 +4785,6 @@
       "id": "f7d7ad5d25e8fa99",
       "source": "Первый CI истории PR31 остановился из-за отсутствующих переводов новых записей; старые события и исходные тексты не переписывались.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "1bb723356dd1e6ce",
@@ -4810,11 +4880,6 @@
       "id": "5264deb9147c8d99",
       "source": "HX-0139 · Интеграция платформы и strict-LLM принята обычным merge commit",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "199d6db958cdb817",
-      "source": "Решение",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "57377a71566a9726",

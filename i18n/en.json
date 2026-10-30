@@ -2435,5 +2435,20 @@
   "4912dda89a6101a8": "docs/lab-integration-rollout-2026-10-30.json",
   "84fb813c5440a067": "The initial shared PR CI unexpectedly ran Terraform Plan against production state; Apply was skipped. This isolation violation was recorded and reported to the owner. An exact IPvX-only guard was added: the final check skipped Terraform entirely, and no runs followed the merge.",
   "68cd171702af2a07": "Brief empty health responses during portal restart were resolved by bounded retry, followed by external HTTPS verification.",
-  "a4fe4ccea9381d59": "No models, live native experiment or new resources were started; historical measurements did not become results of the new build. The release’s public history ends at HX-0139."
+  "a4fe4ccea9381d59": "No models, live native experiment or new resources were started; historical measurements did not become results of the new build. The release’s public history ends at HX-0139.",
+  "bff13be6b33cb6fb": "144 events through HX-0144; authors, rationale, checks and limitations.",
+  "87ae3778068ca830": "296.8 KiB · 12 files",
+  "556d71717866366d": "HX-0144 · Second stage manually deployed and verified on the existing server",
+  "3d0581d353a162d5": "Codex — primary assistant in this conversation · 2026-10-30T15:47:15.649063+00:00",
+  "5a30ded38b94e8a7": "The accepted lab and portal versions are installed. Eight SDK checks passed: a synthetic CPU task over loopback HTTP, a new process retaining the same ID and receipt, endpoint migration and fencing of the old instance. Installed module hashes match the source.",
+  "d4bfbe1657edb759": "Make consistent private backups before updating and verify the installed build through the existing manual access path.",
+  "f5ea8f6886199d0c": "docs/participant-lifecycle-rollout-2026-10-30.json",
+  "7c0558b23896dc8c": "Terraform was skipped entirely; no IPvX Actions ran after merge. Other projects’ schedules in the shared repository were not changed.",
+  "7bf9275750c2b610": "Seven volumes, private auth/A2A state, keys, the five-bundle root and active timers were preserved. Budget and delivery state were not reset.",
+  "39d5ba041e6cec3f": "The SDK remains opt-in. A loopback check by one operator is not a new joint native experiment or distributed exactly-once.",
+  "7ff3c2b304b5351b": "The public release contains history through HX-0142; these later records document the actual deployment. An initial empty health response was resolved with bounded retry.",
+  "3baf0303a16bc650": "HX-0143 · Participant lifecycle and history accepted with normal merge commits",
+  "eb0a17e26f291dca": "At the owner’s explicit request, PR27 and PR31 were merged. Both parents of each merge commit and equality with the checked trees were verified. Earlier records, experiments and signed bundles were preserved.",
+  "f5e9bfd59b9f92f9": "Preserve both source histories and separate acceptance from deployment.",
+  "d4f460bc7b9901cf": "A merge alone does not establish deployment or participant independence."
 }

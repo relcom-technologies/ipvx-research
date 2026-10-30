@@ -2435,5 +2435,20 @@
   "4912dda89a6101a8": "docs/lab-integration-rollout-2026-10-30.json",
   "84fb813c5440a067": "El CI compartido inicial del PR ejecutó inesperadamente Terraform Plan contra el estado de producción; se omitió Apply. Se registró esta infracción del aislamiento y se informó al propietario. Se añadió una guarda exacta para IPvX: la comprobación final omitió Terraform por completo y no hubo ejecuciones tras la fusión.",
   "68cd171702af2a07": "Las respuestas vacías breves de salud durante el reinicio del portal se resolvieron con reintentos limitados, seguidos de verificación HTTPS externa.",
-  "a4fe4ccea9381d59": "No se iniciaron modelos, experimentos nativos en vivo ni recursos nuevos; las mediciones históricas no pasaron a ser resultados de la nueva compilación. El historial público de la versión termina en HX-0139."
+  "a4fe4ccea9381d59": "No se iniciaron modelos, experimentos nativos en vivo ni recursos nuevos; las mediciones históricas no pasaron a ser resultados de la nueva compilación. El historial público de la versión termina en HX-0139.",
+  "bff13be6b33cb6fb": "144 eventos hasta HX-0144; autores, fundamentos, comprobaciones y límites.",
+  "87ae3778068ca830": "296.8 KiB · 12 archivos",
+  "556d71717866366d": "HX-0144 · Segunda etapa desplegada manualmente y verificada en el servidor existente",
+  "3d0581d353a162d5": "Codex — asistente principal de esta conversación · 2026-10-30T15:47:15.649063+00:00",
+  "5a30ded38b94e8a7": "Se instalaron las versiones aceptadas del laboratorio y el portal. Pasaron ocho comprobaciones del SDK: tarea sintética de CPU por HTTP loopback, proceso nuevo con el mismo ID y recibo, migración del punto de acceso y bloqueo de la instancia anterior. Los hashes de los módulos instalados coinciden con el código.",
+  "d4bfbe1657edb759": "Crear copias privadas consistentes antes de actualizar y verificar la compilación instalada mediante la vía manual existente.",
+  "f5ea8f6886199d0c": "docs/participant-lifecycle-rollout-2026-10-30.json",
+  "7c0558b23896dc8c": "Se omitió Terraform por completo; no se ejecutaron IPvX Actions tras la fusión. No se modificaron los horarios de otros proyectos del repositorio compartido.",
+  "7bf9275750c2b610": "Se conservaron siete volúmenes, el estado privado de auth/A2A, las claves, la raíz de los cinco paquetes y los temporizadores activos. No se reiniciaron el presupuesto ni el estado de entrega.",
+  "39d5ba041e6cec3f": "El SDK sigue siendo opcional. La prueba loopback de un solo operador no es un nuevo experimento nativo conjunto ni exactly-once distribuido.",
+  "7ff3c2b304b5351b": "La versión pública contiene el historial hasta HX-0142; estos registros posteriores documentan el despliegue real. Una respuesta de salud inicialmente vacía se resolvió con reintentos limitados.",
+  "3baf0303a16bc650": "HX-0143 · Ciclo del participante e historial aceptados mediante commits de fusión normales",
+  "eb0a17e26f291dca": "Por solicitud expresa del propietario se fusionaron PR27 y PR31. Se verificaron ambos padres de cada commit de fusión y la igualdad con los árboles comprobados. Se conservaron los registros, experimentos y paquetes firmados anteriores.",
+  "f5e9bfd59b9f92f9": "Conservar ambos historiales del código y separar la aceptación del despliegue.",
+  "d4f460bc7b9901cf": "Una fusión por sí sola no acredita el despliegue ni la independencia del participante."
 }
