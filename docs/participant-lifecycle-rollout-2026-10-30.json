@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "attributed_to": "codex-assistant",
+  "recorded_by": "codex-assistant",
+  "recorded_at": "2026-10-30T15:47:15.649063+00:00",
+  "status": "accepted_deployed_and_verified",
+  "owner_authorized": true,
+  "lab_merge": "c9152c834a600b3264dbe9c50f2ffecc93d19e80",
+  "lab_parents": [
+    "6c0f3f1115e652cf1768aee17431a174204d41b4",
+    "dacf4ecb60cf1ab7f6234e6f4c4657017d3f780c"
+  ],
+  "research_merge": "bcecefa349267ef681280d890ba151bee186fe57",
+  "research_parents": [
+    "65cf23d70b526a813562845327ba73fa63fd3f6b",
+    "8d1a52e7decc8625f02a4900d5305f2027e802a8"
+  ],
+  "infrastructure_pin_merge": "1799c0e50fc5cfe69ecbd060a71a4269f9aa7c9d",
+  "source_archive_sha256": "f7e1261ca77aa6fcaea0271880836ef3d9322136847272636a83398a3d18f76c",
+  "deployment_method": "Existing owner SSH route and reviewed installers on existing guest",
+  "backups": {
+    "consistent_laboratory_volumes": 7,
+    "consistent_auth_A2A_state_archives": 2,
+    "old_releases_retained": true,
+    "databases_automatically_restored": false
+  },
+  "runtime_check": {
+    "kind": "ipvx-participant-deployed-release-check/1",
+    "revision": "c9152c834a600b3264dbe9c50f2ffecc93d19e80",
+    "checks": {
+      "completed": true,
+      "function_result": true,
+      "fresh_process_same_identity": true,
+      "fresh_process_no_execution": true,
+      "same_receipt_after_restart_and_move": true,
+      "move_same_identity_and_new_version": true,
+      "move_no_execution": true,
+      "old_endpoint_fenced": true
+    },
+    "identity": "ipvx:agent:d464ac2be2d8d1e28b81a571c2320693adfa3bb72ddb2cd0a402316639d000e7",
+    "receipt_sha256": "48788d91b23cae72095c74d1c078495e6874c216846552318daff435e4541b2a",
+    "installed_source_sha256": {
+      "participant.py": "0018c26e35c5edf8e88300c54ad4f1fc22be23ead04cafd00787fbcb6bf6c0c6",
+      "participant_native.py": "6987b5c3ee9637d34cefbd253e90efe3b58b6c2f69ce855746b943009d55a08b"
+    },
+    "scope": "Synthetic CPU word count on loopback in the existing controller; one operator, no model or live native experiment",
+    "verdict": "pass"
+  },
+  "public_verification": [
+    {
+      "path": "/data/strict-agents-round.json",
+      "sha256": "3c388513d8b54b9d5df7e0da8d94a1f6e8e2c0e5c2adf9a741cb0d84a33a2ddd",
+      "verified": true
+    },
+    {
+      "path": "/data/agent-discovery.json",
+      "sha256": "d124851149f093f703f0bf0855561de9ec84bfcd16664a82136800078e42c0f5",
+      "verified": true
+    },
+    {
+      "path": "/data/downloads/ipvx-native-device-prototype.zip",
+      "sha256": "8bd021c33b9e0f3b48184c2a5e6bd7fc45c4ce3f32a83ce5c27624a9458d07ad",
+      "verified": true
+    },
+    {
+      "path": "/data/downloads/ipvx-research-history.zip",
+      "sha256": "7f16ce8f38dbca3b055b11da72991bd6d403772f86edd5cd01f4194191ef3e71",
+      "verified": true
+    },
+    {
+      "path": "/history.html",
+      "verified": true
+    },
+    {
+      "path": "/downloads.html",
+      "verified": true
+    },
+    {
+      "path": "/history.en.html",
+      "verified": true
+    },
+    {
+      "path": "/downloads.en.html",
+      "verified": true
+    },
+    {
+      "path": "/history.de.html",
+      "verified": true
+    },
+    {
+      "path": "/downloads.de.html",
+      "verified": true
+    },
+    {
+      "path": "/history.es.html",
+      "verified": true
+    },
+    {
+      "path": "/downloads.es.html",
+      "verified": true
+    },
+    {
+      "path": "/community/v1/agents/proposals",
+      "anonymous_status": 403
+    },
+    {
+      "repository": "ipvx-agent-lab",
+      "merge": "c9152c834a600b3264dbe9c50f2ffecc93d19e80",
+      "merge_triggered_Actions": 0,
+      "IPvX_Actions": 0,
+      "unrelated_scheduled_runs": 0,
+      "other_projects_modified": false
+    },
+    {
+      "repository": "ipvx-research",
+      "merge": "bcecefa349267ef681280d890ba151bee186fe57",
+      "merge_triggered_Actions": 0,
+      "IPvX_Actions": 0,
+      "unrelated_scheduled_runs": 0,
+      "other_projects_modified": false
+    },
+    {
+      "repository": "relcom-infra",
+      "merge": "1799c0e50fc5cfe69ecbd060a71a4269f9aa7c9d",
+      "merge_triggered_Actions": 0,
+      "IPvX_Actions": 0,
+      "unrelated_scheduled_runs": 1,
+      "other_projects_modified": false
+    }
+  ],
+  "preserved_evidence": {
+    "frozen_files": 53,
+    "historical_strict_commits": 26,
+    "signed_bundles": 5,
+    "root_sha256": "cd5e8793714982a44ed6e5beab84a90019846ce4e528438ba85ef668cc9964b6"
+  },
+  "operational_verification": [
+    "Eight existing containers healthy",
+    "Observer, notifier and liaison timers active; delivery states and model budget not reset",
+    "Exact accepted revisions returned over public HTTPS",
+    "Installed participant modules match accepted source bytes"
+  ],
+  "negative_results": [
+    "Initial empty health response during portal restart recovered through bounded installer retry; external HTTPS then passed.",
+    "First acceptance incorrectly required zero runs for the shared infrastructure merge SHA. It included an existing unrelated scheduled run; corrected scope verifies no merge-triggered or IPvX Actions. No other project was changed."
+  ],
+  "limits": [
+    "SDK is opt-in; no new invocation service, external participant admission or resource grant",
+    "Synthetic CPU loopback check on one existing server; no models or live native mesh trial",
+    "Public portal release contains history through HX-0142; these source records follow deployment",
+    "Native Ethernet contract checked in isolated PR CI; not a new joint physical experiment",
+    "UNKNOWN and local endpoint fencing do not provide distributed exactly-once external effects"
+  ]
+}
