@@ -1,0 +1,354 @@
+{
+  "schema_version": 1,
+  "attributed_to": "codex-assistant",
+  "recorded_by": "codex-assistant",
+  "recorded_at": "2026-10-30T18:42:29.563356+00:00",
+  "status": "accepted_deployed_verified_with_recorded_CI_violation",
+  "owner_authorized": true,
+  "lab_merge": "4aa0d8500826abbc368feb316bb9f74eefda9cf5",
+  "lab_parents": [
+    "59f7f1f8b430301b33dc1943a35cbb394f391ee9",
+    "532f5f00aa83744180ec97680c477141f88f41b8"
+  ],
+  "research_merge": "8bf63c64cdcb19b4b506dd59ed5a0cb56796d71f",
+  "research_parents": [
+    "819edaa47795b4c727ab810bf171483c96875fce",
+    "70732751867eea5f3d2a9c515a54768df36b2220"
+  ],
+  "infra_pin_merge": "3a2d01b5e9f34eb68be8e011d893e30adc26c2d5",
+  "source_archive_sha256": "f06310d4ddbe7e2b9b516ed5d0b46b62f82f7c5ad24a3f02086ba50865c4d326",
+  "method": "Existing reviewed installers through SSH on the existing guest; installed-code offline verification only",
+  "backups": {
+    "laboratory_volumes": 7,
+    "auth_A2A_archives": 2,
+    "old_releases_and_private_configuration_retained": true,
+    "automatic_database_restore": false
+  },
+  "installed_checker": {
+    "kind": "ipvx-installed-comparison-check/1",
+    "revision": "4aa0d8500826abbc368feb316bb9f74eefda9cf5",
+    "CI_revision": "532f5f00aa83744180ec97680c477141f88f41b8",
+    "checks": {
+      "accepted_revision": true,
+      "reviewed_protocol_source": true,
+      "installed_source_bytes": true,
+      "locked_runtime_dependencies": true,
+      "full_signed_comparison": true,
+      "all_800_correct_no_duplicates": true,
+      "negative_outcome_preserved": true,
+      "invalid_inputs_rejected": true
+    },
+    "passed": 8,
+    "total": 8,
+    "correct": 800,
+    "duplicate_executions": 0,
+    "comparison": [
+      {
+        "all_pairs_eligible": true,
+        "median_ratios_ppm": {
+          "cpu_us": 997221,
+          "p95_us": 990910,
+          "recovery_us": null,
+          "sum_peak_rss_kib": 946638,
+          "work_us": 1010787,
+          "work_wire_bytes": 1008029
+        },
+        "p95_native_wins_ties_losses": [
+          3,
+          0,
+          2
+        ],
+        "pairs": [
+          {
+            "complete_and_deduplicated": true,
+            "cpu_us_ratio_ppm": 997221,
+            "p95_us_ratio_ppm": 990910,
+            "pair": 0,
+            "recovery_us_ratio_ppm": null,
+            "sum_peak_rss_kib_ratio_ppm": 945273,
+            "work_us_ratio_ppm": 985690,
+            "work_wire_bytes_ratio_ppm": 1017026
+          },
+          {
+            "complete_and_deduplicated": true,
+            "cpu_us_ratio_ppm": 1009990,
+            "p95_us_ratio_ppm": 692960,
+            "pair": 1,
+            "recovery_us_ratio_ppm": null,
+            "sum_peak_rss_kib_ratio_ppm": 946638,
+            "work_us_ratio_ppm": 991745,
+            "work_wire_bytes_ratio_ppm": 1046879
+          },
+          {
+            "complete_and_deduplicated": true,
+            "cpu_us_ratio_ppm": 1019175,
+            "p95_us_ratio_ppm": 1057024,
+            "pair": 2,
+            "recovery_us_ratio_ppm": null,
+            "sum_peak_rss_kib_ratio_ppm": 935845,
+            "work_us_ratio_ppm": 1046281,
+            "work_wire_bytes_ratio_ppm": 991204
+          },
+          {
+            "complete_and_deduplicated": true,
+            "cpu_us_ratio_ppm": 956217,
+            "p95_us_ratio_ppm": 1028155,
+            "pair": 3,
+            "recovery_us_ratio_ppm": null,
+            "sum_peak_rss_kib_ratio_ppm": 960986,
+            "work_us_ratio_ppm": 1010787,
+            "work_wire_bytes_ratio_ppm": 952733
+          },
+          {
+            "complete_and_deduplicated": true,
+            "cpu_us_ratio_ppm": 955694,
+            "p95_us_ratio_ppm": 829467,
+            "pair": 4,
+            "recovery_us_ratio_ppm": null,
+            "sum_peak_rss_kib_ratio_ppm": 951842,
+            "work_us_ratio_ppm": 1011699,
+            "work_wire_bytes_ratio_ppm": 1008029
+          }
+        ],
+        "practical_superiority": "not_established",
+        "scenario": "healthy",
+        "screening_signal": false
+      },
+      {
+        "all_pairs_eligible": true,
+        "median_ratios_ppm": {
+          "cpu_us": 1025848,
+          "p95_us": 899475,
+          "recovery_us": 8014071,
+          "sum_peak_rss_kib": 991919,
+          "work_us": 1385759,
+          "work_wire_bytes": 1127195
+        },
+        "p95_native_wins_ties_losses": [
+          3,
+          0,
+          2
+        ],
+        "pairs": [
+          {
+            "complete_and_deduplicated": true,
+            "cpu_us_ratio_ppm": 1047443,
+            "p95_us_ratio_ppm": 595033,
+            "pair": 0,
+            "recovery_us_ratio_ppm": 8076141,
+            "sum_peak_rss_kib_ratio_ppm": 988696,
+            "work_us_ratio_ppm": 1385759,
+            "work_wire_bytes_ratio_ppm": 1167615
+          },
+          {
+            "complete_and_deduplicated": true,
+            "cpu_us_ratio_ppm": 1010933,
+            "p95_us_ratio_ppm": 618273,
+            "pair": 1,
+            "recovery_us_ratio_ppm": 8014071,
+            "sum_peak_rss_kib_ratio_ppm": 991919,
+            "work_us_ratio_ppm": 1380238,
+            "work_wire_bytes_ratio_ppm": 1127195
+          },
+          {
+            "complete_and_deduplicated": true,
+            "cpu_us_ratio_ppm": 1039200,
+            "p95_us_ratio_ppm": 899475,
+            "pair": 2,
+            "recovery_us_ratio_ppm": 7843145,
+            "sum_peak_rss_kib_ratio_ppm": 973892,
+            "work_us_ratio_ppm": 1375954,
+            "work_wire_bytes_ratio_ppm": 1121508
+          },
+          {
+            "complete_and_deduplicated": true,
+            "cpu_us_ratio_ppm": 987016,
+            "p95_us_ratio_ppm": 1067288,
+            "pair": 3,
+            "recovery_us_ratio_ppm": 8035275,
+            "sum_peak_rss_kib_ratio_ppm": 1006555,
+            "work_us_ratio_ppm": 1393410,
+            "work_wire_bytes_ratio_ppm": 1062221
+          },
+          {
+            "complete_and_deduplicated": true,
+            "cpu_us_ratio_ppm": 1025848,
+            "p95_us_ratio_ppm": 1105005,
+            "pair": 4,
+            "recovery_us_ratio_ppm": 7624769,
+            "sum_peak_rss_kib_ratio_ppm": 1024184,
+            "work_us_ratio_ppm": 1400538,
+            "work_wire_bytes_ratio_ppm": 1143208
+          }
+        ],
+        "practical_superiority": "not_established",
+        "scenario": "relay-outage",
+        "screening_signal": false
+      }
+    ],
+    "verdict": "pass",
+    "mode": "offline retained CI evidence only; no new native/model experiment"
+  },
+  "public_acceptance": [
+    {
+      "host": "lab.ipvx.org",
+      "path": "/health",
+      "revision": "4aa0d8500826abbc368feb316bb9f74eefda9cf5",
+      "verified": true
+    },
+    {
+      "host": "ipvx.org",
+      "path": "/healthz",
+      "revision": "8bf63c64cdcb19b4b506dd59ed5a0cb56796d71f",
+      "verified": true
+    },
+    {
+      "path": "/data/strict-agents-round.json",
+      "sha256": "3c388513d8b54b9d5df7e0da8d94a1f6e8e2c0e5c2adf9a741cb0d84a33a2ddd",
+      "verified": true
+    },
+    {
+      "path": "/data/agent-discovery.json",
+      "sha256": "d124851149f093f703f0bf0855561de9ec84bfcd16664a82136800078e42c0f5",
+      "verified": true
+    },
+    {
+      "path": "/data/downloads/ipvx-native-device-prototype.zip",
+      "sha256": "8bd021c33b9e0f3b48184c2a5e6bd7fc45c4ce3f32a83ce5c27624a9458d07ad",
+      "verified": true
+    },
+    {
+      "path": "/data/downloads/ipvx-research-history.zip",
+      "sha256": "bdceef8e136e694012cb13b58f8c332d46c93d008807b1e47dcff3662026b86c",
+      "verified": true
+    },
+    {
+      "path": "/history/events.jsonl",
+      "events": 149,
+      "last": "HX-0149",
+      "sha256": "dc9d80ebafa5d9b8018daadb03164b5508765d52ed90dfe8309eabc6beed2b9b"
+    },
+    {
+      "path": "/history.html",
+      "verified": true
+    },
+    {
+      "path": "/downloads.html",
+      "verified": true
+    },
+    {
+      "path": "/history.en.html",
+      "verified": true
+    },
+    {
+      "path": "/downloads.en.html",
+      "verified": true
+    },
+    {
+      "path": "/history.de.html",
+      "verified": true
+    },
+    {
+      "path": "/downloads.de.html",
+      "verified": true
+    },
+    {
+      "path": "/history.es.html",
+      "verified": true
+    },
+    {
+      "path": "/downloads.es.html",
+      "verified": true
+    },
+    {
+      "path": "/auth/session",
+      "anonymous": true,
+      "owner_queue_unauthorized_status": 403
+    },
+    {
+      "signed_evidence": {
+        "entries": 5,
+        "root_sha256": "cd5e8793714982a44ed6e5beab84a90019846ce4e528438ba85ef668cc9964b6",
+        "key": "5a82caff57edd5d040232c1ea0aaf97f20ea1bd4695016f8396afa985736e693"
+      },
+      "public_view_matches_accepted_source": true
+    },
+    {
+      "repository": "ipvx-agent-lab",
+      "merge": "4aa0d8500826abbc368feb316bb9f74eefda9cf5",
+      "IPvX_or_merge_triggered_Actions": 0,
+      "unrelated_scheduled_runs": 0,
+      "other_projects_changed": false
+    },
+    {
+      "repository": "ipvx-research",
+      "merge": "8bf63c64cdcb19b4b506dd59ed5a0cb56796d71f",
+      "IPvX_or_merge_triggered_Actions": 0,
+      "unrelated_scheduled_runs": 0,
+      "other_projects_changed": false
+    },
+    {
+      "repository": "relcom-infra",
+      "merge": "3a2d01b5e9f34eb68be8e011d893e30adc26c2d5",
+      "IPvX_or_merge_triggered_Actions": 0,
+      "unrelated_scheduled_runs": 0,
+      "other_projects_changed": false
+    }
+  ],
+  "server": {
+    "healthy_containers": 8,
+    "active_timers": {
+      "ipvx-notifier.timer": "active",
+      "ipvx-participation-watch.timer": "active",
+      "ipvx-liaison.timer": "active"
+    },
+    "private_state_keys_delivery_cursors_budget_preserved": true,
+    "own_temporary_verification_directories_remaining": 0
+  },
+  "complete_comparison_evidence": {
+    "artifact_sha256": "159dfd7db1542a4547b12edebf52a02865670fff4f568a5d68f58225a87436d5",
+    "files": 43,
+    "bytes": 45729634,
+    "contents_verified": true,
+    "private_keys_transferred": false
+  },
+  "scope_gate_failure_and_correction": {
+    "unexpected_production_job_occurred": true,
+    "original_head": "ae79a5426159fac752397ccce71adec1beddf495",
+    "advanced_base": "f59712f6412a7ccc00dab69102a356b504374735",
+    "original_run": "https://github.com/relcom-technologies/relcom-infra/actions/runs/41106561417",
+    "observed": "Shared Terraform init/plan ran because a two-endpoint diff included reversed base-only commits. Terraform reported No changes; no apply executed. This violated the requested production-Action prohibition.",
+    "fix": "Dedicated IPvX gate compares from git merge-base; unchanged allowlists still reject actual mixed Terraform changes. Shared workflow definitions and other project policy were not edited.",
+    "checks": "8 dedicated scope tests and 2 IPvX PR-only policy tests passed; regression reproduces actual stale-head SHA pair and a temporary concurrent Git history",
+    "corrected_head": "425b34919828f4ca4f5f67387f197cd8c0aba83e",
+    "corrected_run": "https://github.com/relcom-technologies/relcom-infra/actions/runs/41107901710",
+    "corrected_terraform_job": "SKIPPED",
+    "merged_PR": "https://github.com/relcom-technologies/relcom-infra/pull/829",
+    "deployment_or_apply_through_Actions": false,
+    "post_merge_IPvX_Actions": 0
+  },
+  "preserved": {
+    "prior_history_events": 149,
+    "frozen_files": 53,
+    "strict_commits": 26,
+    "signed_bundles": 5,
+    "signed_root": "cd5e8793714982a44ed6e5beab84a90019846ce4e528438ba85ef668cc9964b6"
+  },
+  "negative_results": [
+    "First laboratory backup SSH attempt timed out without a receipt; all eight old containers and absence of active rescue timers verified, then backup retry completed successfully.",
+    "Portal installer initially received two empty health replies during restart; bounded retries recovered and installer completed.",
+    "Initial offline acceptance exceeded the existing /tmp tmpfs limit. Retry uses an exclusive temporary directory under the existing /data volume, with automatic removal; no container limits changed.",
+    "The ordinary Python HTTPS client had an incomplete default trust store and its default user agent received 403. Final acceptance used the existing IPvX Acceptance identifier and a valid CA bundle, with certificate and hostname verification enabled; curl independently confirmed both revisions."
+  ],
+  "limits": [
+    "Only retained CI evidence was reanalyzed: no new native experiment, paid model invocation, participant admission, resource allocation or claim of independent operator/practical superiority",
+    "The executor remains a reviewed Git-source-checkout and fresh-Linux-namespace tool; the deployed package is used here only as an offline verifier, without an automated benchmark service",
+    "The original unexpected production plan is explicitly retained as a violation; it is not described as absent. Corrected PR CI skipped Terraform and merges did not start IPvX jobs. Deployment itself used SSH.",
+    "Public portal release contains history through HX-0149. These later acceptance/correction records update source history and do not cause another runtime deployment"
+  ],
+  "confirmed_merge_times_UTC": {
+    "lab": "2026-10-30T18:17:55Z",
+    "research": "2026-10-30T18:18:03Z",
+    "infrastructure": "2026-10-30T18:34:27Z"
+  }
+}
