@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-30T11:33:19.498760+00:00",
+  "occurred_at": "2026-10-30T12:31:28+01:00",
+  "attributed_to": "codex-assistant",
+  "recorded_by": "codex-assistant",
+  "origin": "contemporaneous_author_record",
+  "status": "source_integration_merged",
+  "authorization": "Owner explicitly instructed this chat to merge PR26 and PR30 after successful CI, using normal merge commits; production deployment excluded.",
+  "source_PR": "https://github.com/relcom-technologies/ipvx-agent-lab/pull/26",
+  "source_merge": "6c0f3f1115e652cf1768aee17431a174204d41b4",
+  "parents": [
+    "e8f89e139f06fee4215a1f0a9f7f8a0092412523",
+    "035a309aa862a75247fc041d4b8f16b8cccc0b70"
+  ],
+  "feature_tip_preserved": "3ee1f3f553b17f380b8b84beda02f05e3e9a207f",
+  "feature_commits_preserved": 26,
+  "source_tree_identical_to_checked_head": true,
+  "CI": {
+    "verified_head": "035a309aa862a75247fc041d4b8f16b8cccc0b70",
+    "all_six_successful": [
+      "verify",
+      "audit",
+      "container-pilot",
+      "native-ethernet",
+      "build (native)",
+      "build (ip)"
+    ],
+    "protocol_run": "https://github.com/relcom-technologies/ipvx-agent-lab/actions/runs/41047518797",
+    "kernel_run": "https://github.com/relcom-technologies/ipvx-agent-lab/actions/runs/41047518798"
+  },
+  "preservation": {
+    "published_reports_trials_bundles_and_frozen_workload_unchanged": true,
+    "frozen_files": 53,
+    "signed_log_entries": 5,
+    "old_preparation_record_preserved": "docs/lab-integration-2026-10-30.json"
+  },
+  "production_deployment": false,
+  "live_experiment_run": false,
+  "model_calls": 0,
+  "signing_keys_read_or_copied": false,
+  "history_PR": "https://github.com/relcom-technologies/ipvx-research/pull/30"
+}

@@ -2396,5 +2396,14 @@
   "abb603ec41738c7c": "Se comprobaron 53 archivos y cinco entradas del registro; el hash de la captura recuperada coincidió con el informe.",
   "ddaffccdc61627c3": "No se realizaron inferencias nuevas, experimentos en vivo ni despliegues. Las comprobaciones Linux y de arranque del núcleo quedan para el CI aislado del PR; Actions solo se permite con pull_request.",
   "8f4b6d025ebf86ee": "El primer intento se detuvo por falta de espacio; después, el entorno restringido impidió abrir sockets loopback. Tras recuperar la escritura y permitir sockets locales, pasó todo el conjunto de pruebas.",
-  "0fb1a2ef91fb56c8": "No se publicaron capturas originales ni claves. El inventario privado abarca 132 archivos conservados. El SDK HTTP, las pruebas de relés nativos y los experimentos LLM históricos siguen siendo líneas separadas."
+  "0fb1a2ef91fb56c8": "No se publicaron capturas originales ni claves. El inventario privado abarca 132 archivos conservados. El SDK HTTP, las pruebas de relés nativos y los experimentos LLM históricos siguen siendo líneas separadas.",
+  "e23092116803f890": "139 eventos hasta HX-0139; autores, fundamentos, comprobaciones y límites.",
+  "4cc2bfc74159ba33": "289.3 KiB · 12 archivos",
+  "5264deb9147c8d99": "HX-0139 · Integración de la plataforma y strict-LLM aceptada mediante un commit de fusión normal",
+  "57377a71566a9726": "Codex — asistente principal de esta conversación · 2026-10-30T12:31:28+01:00",
+  "de17312030431c87": "Por instrucción expresa del propietario, se aceptó PR26 tras seis comprobaciones CI correctas. Se verificaron ambos padres del commit de fusión, los 26 commits conservados de la rama LLM y la igualdad del árbol con la revisión comprobada. Se mantuvo el registro de preparación HX-0138.",
+  "a634b78e7f669ee2": "Conservar ambos historiales originales y distinguir la preparación, la aceptación del código y el despliegue. No se reescribieron los informes, paquetes ni resultados anteriores.",
+  "796b6e1c716e1262": "docs/lab-integration-acceptance-2026-10-30.json",
+  "3972b1d87ed27d96": "No se desplegó en producción ni se ejecutaron modelos o experimentos en vivo. No se actualizó el sitio público.",
+  "d2e177d806c6447c": "Las mediciones históricas corresponden a sus revisiones anteriores exactas. Fusionar código no constituye un resultado experimental nuevo."
 }

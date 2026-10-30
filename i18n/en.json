@@ -2396,5 +2396,14 @@
   "abb603ec41738c7c": "53 files and five log entries were checked; the recovered capture hash matched the report.",
   "ddaffccdc61627c3": "No new model inference, live experiment or deployment was performed. Linux and kernel-boot checks remain for isolated PR CI; Actions are permitted only on pull_request.",
   "8f4b6d025ebf86ee": "The first test attempt stopped because the disk was full; the sandbox then refused loopback bind. After writes resumed and local sockets were permitted, the full suite passed.",
-  "0fb1a2ef91fb56c8": "Raw captures and keys were not published. The private inventory covers 132 preserved files. The HTTP SDK, native relay trials and historical LLM runs remain separate tracks."
+  "0fb1a2ef91fb56c8": "Raw captures and keys were not published. The private inventory covers 132 preserved files. The HTTP SDK, native relay trials and historical LLM runs remain separate tracks.",
+  "e23092116803f890": "139 events through HX-0139; authors, rationale, checks and limitations.",
+  "4cc2bfc74159ba33": "289.3 KiB · 12 files",
+  "5264deb9147c8d99": "HX-0139 · Platform and strict-LLM integration accepted with a normal merge commit",
+  "57377a71566a9726": "Codex — primary assistant in this conversation · 2026-10-30T12:31:28+01:00",
+  "de17312030431c87": "At the owner’s explicit instruction, PR26 was accepted after six successful CI checks. Both merge parents, preservation of all 26 LLM-branch commits and tree equality with the verified revision were checked. The HX-0138 preparation record remains intact.",
+  "a634b78e7f669ee2": "Preserve both original histories and distinguish preparation, source acceptance and deployment. Earlier reports, bundles and results were not rewritten.",
+  "796b6e1c716e1262": "docs/lab-integration-acceptance-2026-10-30.json",
+  "3972b1d87ed27d96": "No production deployment, model inference or live experiment was performed. The public website was not updated.",
+  "d2e177d806c6447c": "Historical measurements apply to their earlier exact revisions. Merging source is not a new experimental result."
 }

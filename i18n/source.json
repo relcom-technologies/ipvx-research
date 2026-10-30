@@ -837,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "3243240f70d08eb0",
-      "source": "138 событий по HX-0138; авторы, основания, проверки и ограничения.",
+      "id": "e23092116803f890",
+      "source": "139 событий по HX-0139; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "e3bf6b8dc7491d67",
-      "source": "288.2 КиБ · 12 файлов",
+      "id": "4cc2bfc74159ba33",
+      "source": "289.3 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4642,6 +4642,66 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "5264deb9147c8d99",
+      "source": "HX-0139 · Интеграция платформы и strict-LLM принята обычным merge commit",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "199d6db958cdb817",
+      "source": "Решение",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "57377a71566a9726",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-30T12:31:28+01:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "de17312030431c87",
+      "source": "По прямому поручению владельца после шести успешных CI принят PR26. Проверены два родителя merge commit, сохранение всех 26 коммитов LLM-ветки и совпадение дерева с проверенной ревизией. Запись о подготовке HX-0138 сохранена.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "a634b78e7f669ee2",
+      "source": "Сохранить обе исходные истории и различать подготовку, принятие исходников и выкатку. Старые отчёты, пакеты и результаты не переписывались.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "796b6e1c716e1262",
+      "source": "docs/lab-integration-acceptance-2026-10-30.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "3972b1d87ed27d96",
+      "source": "Прод не выкатывался; модели и живые эксперименты не запускались. Публичный сайт не обновлялся.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "d2e177d806c6447c",
+      "source": "Исторические измерения относятся к прежним точным ревизиям. Слияние исходников не является новым экспериментальным результатом.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "18a4aa1e84ee7f3d",
       "source": "HX-0138 · Подготовлена интеграция платформы испытаний и strict-LLM ветки",
       "context": "history.html:text:section/details/summary"
@@ -4662,19 +4722,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "4a009e2fcef4285d",
       "source": "Связать новую платформу с уже выполненными экспериментами, сохранив точные ревизии, неудачные попытки и границы доказанного. Исторические измерения не становятся измерениями новой сборки; для принятия нужен merge commit, сохраняющий родительские истории.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "de745684b9bafae7",
@@ -4692,11 +4742,6 @@
       "context": "history.html:text:details/ul/li"
     },
     {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "ddaffccdc61627c3",
       "source": "Новый запуск моделей, живой эксперимент и выкатка не выполнялись. Проверки Linux и загрузки ядер остаются для изолированного PR CI; Actions разрешены только на pull_request.",
       "context": "history.html:text:details/ul/li"
@@ -4710,11 +4755,6 @@
       "id": "0fb1a2ef91fb56c8",
       "source": "Сырые трассы и ключи не опубликованы. Приватный реестр охватывает 132 сохранённых файла. HTTP SDK, нативные relay-испытания и прежние LLM-прогоны остаются отдельными треками.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "08ec67e547a9c544",
@@ -5820,11 +5860,6 @@
       "id": "aa9237d4d00f699c",
       "source": "HX-0114 · Owner clarifies control of IPvX changes",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "199d6db958cdb817",
-      "source": "Решение",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "d241a2daaadaae66",
