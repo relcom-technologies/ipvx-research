@@ -2608,5 +2608,14 @@
   "e429d477a38156b2": "Der normale Portal-Merge wurde von der eigentümerkontrollierten main-Aktualisierungsregel abgelehnt. Nach CI-Prüfung bestehenden Adminpfad genutzt; Branchschutz unverändert.",
   "a4e16df4e0628191": "Codex — Hauptassistent dieser Unterhaltung · 2026-10-31T00:22:27.647731+01:00",
   "8d6a30e0098e31f0": "docs/claims-rollout-2026-10-31.json",
-  "ca5f9aa20c7b0ba2": "Codex — Hauptassistent dieser Unterhaltung · 2026-10-31T00:17:10+01:00"
+  "ca5f9aa20c7b0ba2": "Codex — Hauptassistent dieser Unterhaltung · 2026-10-31T00:17:10+01:00",
+  "0d2d56b50302d8dd": "163 Ereignisse bis HX-0163; Autoren, Gründe, Prüfungen und Grenzen.",
+  "2b74ad09acd1a85c": "318,6 KiB · 12 Dateien",
+  "556c141d7130fee6": "HX-0163 · Mobile Rollout-Abnahme korrigiert und wiederholt",
+  "c773d097bc04f612": "Festgestellt, dass die ersten mit 390 px beschrifteten Bilder tatsächlich 1440 px breit waren. Bewahrt, Abnahmeskript korrigiert und Prüfungen bei tatsächlichen 1440 und 390 px wiederholt.",
+  "ac61b1730376b247": "Tatsächliche Browser- und Bildbreite prüfen; fehlerhafte Bestätigung mit neuem Eintrag korrigieren und ursprünglichen Beleg bewahren.",
+  "cf84227714960f7d": "Wiederholte Prüfungen ohne Überlauf, Netzwerkschreibzugriffe oder Versuchssteuerung bestanden. Production-Code unverändert.",
+  "a76d562cdb91a8f2": "Interne Abnahme durch den Assistenten, kein unabhängiger Betreiber oder neuer Netzwerkversuch.",
+  "874c3b89bfb89200": "Codex — Hauptassistent dieser Unterhaltung · 2026-10-31T00:28:57.024683+01:00",
+  "8f6632b6783b0ca3": "docs/claims-rollout-mobile-verification-2026-10-31.json"
 }

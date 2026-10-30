@@ -2608,5 +2608,14 @@
   "e429d477a38156b2": "The regular portal merge was rejected by the owner-controlled main update rule. After checking CI, used the existing admin path; branch protection was unchanged.",
   "a4e16df4e0628191": "Codex — primary assistant in this conversation · 2026-10-31T00:22:27.647731+01:00",
   "8d6a30e0098e31f0": "docs/claims-rollout-2026-10-31.json",
-  "ca5f9aa20c7b0ba2": "Codex — primary assistant in this conversation · 2026-10-31T00:17:10+01:00"
+  "ca5f9aa20c7b0ba2": "Codex — primary assistant in this conversation · 2026-10-31T00:17:10+01:00",
+  "0d2d56b50302d8dd": "163 events through HX-0163; authors, rationale, checks and limits.",
+  "2b74ad09acd1a85c": "318.6 KiB · 12 files",
+  "556c141d7130fee6": "HX-0163 · Corrected and repeated mobile rollout acceptance",
+  "c773d097bc04f612": "Found that the first captures labelled 390 px were actually 1440 px wide. Preserved them, corrected the acceptance harness and repeated checks at actual 1440 and 390 px.",
+  "ac61b1730376b247": "Check actual browser and capture width; correct a mistaken confirmation with a new record while preserving original evidence.",
+  "cf84227714960f7d": "Repeated checks passed without overflow, network writes or experimental controls. Production code did not change.",
+  "a76d562cdb91a8f2": "This is internal assistant acceptance, not an independent operator or a new network experiment.",
+  "874c3b89bfb89200": "Codex — primary assistant in this conversation · 2026-10-31T00:28:57.024683+01:00",
+  "8f6632b6783b0ca3": "docs/claims-rollout-mobile-verification-2026-10-31.json"
 }

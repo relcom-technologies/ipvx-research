@@ -106,5 +106,6 @@
     "No paid model call, SMTP test, R1 outage, address migration, registration, private-intake content read, access grant or new resource commitment.",
     "Backups remain private on the server. No private key, token or owner contact is included in this record.",
     "HX-0161/HX-0162 are source-history additions after the deployed HX-0160; this record does not trigger another deployment."
-  ]
+  ],
+  "acceptance_correction": "docs/claims-rollout-mobile-verification-2026-10-31.json"
 }

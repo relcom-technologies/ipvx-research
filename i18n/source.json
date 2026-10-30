@@ -837,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "cfda74cede4d6b48",
-      "source": "162 событий по HX-0162; авторы, основания, проверки и ограничения.",
+      "id": "0d2d56b50302d8dd",
+      "source": "163 событий по HX-0163; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "a54f46c206cd02ec",
-      "source": "317.6 КиБ · 12 файлов",
+      "id": "2b74ad09acd1a85c",
+      "source": "318.6 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4642,6 +4642,71 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "556c141d7130fee6",
+      "source": "HX-0163 · Уточнена и повторена мобильная приёмка выкатки",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "2ccdb3e3ca5897bf",
+      "source": "Уточнение",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "874c3b89bfb89200",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-31T00:28:57.024683+01:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "c773d097bc04f612",
+      "source": "Обнаружил, что первые снимки с меткой 390 px фактически имели ширину 1440 px. Сохранил их, исправил приёмочный скрипт и повторил проверку при реальных 1440 и 390 px.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "ac61b1730376b247",
+      "source": "Проверять фактическую ширину браузера и снимка; исправлять ошибочное подтверждение новой записью, сохраняя исходное свидетельство.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "8f6632b6783b0ca3",
+      "source": "docs/claims-rollout-mobile-verification-2026-10-31.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "8d6a30e0098e31f0",
+      "source": "docs/claims-rollout-2026-10-31.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "cf84227714960f7d",
+      "source": "Повторная проверка прошла без переполнения, сетевых записей и управления экспериментом. Код production не менялся.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "a76d562cdb91a8f2",
+      "source": "Это внутренняя приёмка ассистента, не независимый оператор и не новый сетевой опыт.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "871c136dcba305f1",
       "source": "HX-0162 · Исправления выкачены и проверены на публичных площадках",
       "context": "history.html:text:section/details/summary"
@@ -4657,29 +4722,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "be7315d7c995a532",
       "source": "Использовать клиентские SSH-installers после согласованных резервных копий; сверить установленные версии, публичный текст и подписи прежних доказательств.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
-      "id": "8d6a30e0098e31f0",
-      "source": "docs/claims-rollout-2026-10-31.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "ec3a9d47817e8d15",
@@ -4690,11 +4735,6 @@
       "id": "e3ee72077c003a79",
       "source": "Production Actions, модели и новые эксперименты не запускались. История на сайте заканчивается HX-0160; новая запись сама не запускает выкатку.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "1985f9c320e24d2d",
@@ -4925,11 +4965,6 @@
       "id": "5307fc9f84314c6d",
       "source": "HX-0155 · SDK-экзамен повторяет исходный подписанный запрос",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "2ccdb3e3ca5897bf",
-      "source": "Уточнение",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "38935be497d5b296",

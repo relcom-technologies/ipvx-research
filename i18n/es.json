@@ -2608,5 +2608,14 @@
   "e429d477a38156b2": "La fusión normal del portal fue rechazada por la regla de actualización de main controlada por el propietario. Tras comprobar CI se usó la vía administrativa existente; no se cambió la protección.",
   "a4e16df4e0628191": "Codex — asistente principal de esta conversación · 2026-10-31T00:22:27.647731+01:00",
   "8d6a30e0098e31f0": "docs/claims-rollout-2026-10-31.json",
-  "ca5f9aa20c7b0ba2": "Codex — asistente principal de esta conversación · 2026-10-31T00:17:10+01:00"
+  "ca5f9aa20c7b0ba2": "Codex — asistente principal de esta conversación · 2026-10-31T00:17:10+01:00",
+  "0d2d56b50302d8dd": "163 eventos hasta HX-0163; autores, motivos, comprobaciones y límites.",
+  "2b74ad09acd1a85c": "318,6 KiB · 12 archivos",
+  "556c141d7130fee6": "HX-0163 · Corregida y repetida la aceptación móvil del despliegue",
+  "c773d097bc04f612": "Se detectó que las primeras capturas etiquetadas como 390 px tenían en realidad 1440 px. Se conservaron, se corrigió el script y se repitieron las comprobaciones a 1440 y 390 px reales.",
+  "ac61b1730376b247": "Comprobar el ancho real del navegador y la captura; corregir una confirmación errónea con un nuevo registro conservando la prueba original.",
+  "cf84227714960f7d": "Las comprobaciones repetidas pasaron sin desbordamiento, escrituras de red ni controles experimentales. No cambió el código de producción.",
+  "a76d562cdb91a8f2": "Es una aceptación interna del asistente, no un operador independiente ni un experimento de red nuevo.",
+  "874c3b89bfb89200": "Codex — asistente principal de esta conversación · 2026-10-31T00:28:57.024683+01:00",
+  "8f6632b6783b0ca3": "docs/claims-rollout-mobile-verification-2026-10-31.json"
 }
