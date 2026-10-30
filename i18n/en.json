@@ -2450,5 +2450,18 @@
   "3baf0303a16bc650": "HX-0143 · Participant lifecycle and history accepted with normal merge commits",
   "eb0a17e26f291dca": "At the owner’s explicit request, PR27 and PR31 were merged. Both parents of each merge commit and equality with the checked trees were verified. Earlier records, experiments and signed bundles were preserved.",
   "f5e9bfd59b9f92f9": "Preserve both source histories and separate acceptance from deployment.",
-  "d4f460bc7b9901cf": "A merge alone does not establish deployment or participant independence."
+  "d4f460bc7b9901cf": "A merge alone does not establish deployment or participant independence.",
+  "64960f68ae2c759c": "145 events through HX-0145; authors, rationale, checks and limitations.",
+  "15ec621dfdb95356": "299.0 KiB · 12 files",
+  "d797c21fbb358f20": "HX-0145 · Registered experiment reproduction kit prepared for another operator",
+  "2c720674bcaf7d6e": "Codex — primary assistant in this conversation · 2026-10-30T16:27:03.298413+00:00",
+  "75abbc2ede222134": "Created a fixed source/input kit, operator signatures and report-comparability verification. Isolated PR CI repeated 40 tasks: all results correct, with no duplicate executions or IP frames. This validates the tool in our CI; an independent operator is still unconfirmed.",
+  "4eea5e0b76754d4e": "Compare source, specification and observations while preserving the original registration and five signed bundles. Different keys or processes are not independent operators. Block foreign code until separate isolation decisions are made.",
+  "556fffb958f5f3fb": "docs/reproduction-kit-2026-10-30.json",
+  "66c0bae93d90e486": "docs/evidence/reproduction-reference-41088614695/result.json",
+  "6ff4fdf59aa06843": "Independent reproduction and H12 are not declared complete. Both new runs belong to automation controlled by one lab operator.",
+  "bf372d2a83fc8937": "Signatures establish the integrity of claims, not result truth, independence of the key owner or externally confirmed time.",
+  "0d14be9d4cfb0f56": "The original criteria were not weakened. Reports, captures and failed attempts are preserved; archives with unsupported compression or structural violations are rejected.",
+  "9a19ac992330cd85": "The sandbox admits only reference code. VM isolation, external filters and a separate network for foreign code remain separate owner decisions.",
+  "b5a8bffb54d03725": "No production deployment or PR merges. No production Actions, models, external messages, participant admission or resource allocation. Full new captures are preserved privately."
 }

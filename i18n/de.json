@@ -2450,5 +2450,18 @@
   "3baf0303a16bc650": "HX-0143 · Teilnehmerablauf und Historie mit regulären Merge-Commits angenommen",
   "eb0a17e26f291dca": "Auf ausdrücklichen Auftrag des Eigentümers wurden PR27 und PR31 gemergt. Beide Eltern jedes Merge-Commits und die Übereinstimmung mit den geprüften Dateibäumen wurden bestätigt. Frühere Einträge, Versuche und signierte Pakete blieben erhalten.",
   "f5e9bfd59b9f92f9": "Beide Quellcodehistorien erhalten und Annahme von Bereitstellung trennen.",
-  "d4f460bc7b9901cf": "Ein Merge allein belegt weder Bereitstellung noch Teilnehmerunabhängigkeit."
+  "d4f460bc7b9901cf": "Ein Merge allein belegt weder Bereitstellung noch Teilnehmerunabhängigkeit.",
+  "64960f68ae2c759c": "145 Ereignisse bis HX-0145; Autoren, Begründungen, Prüfungen und Grenzen.",
+  "15ec621dfdb95356": "299.0 KiB · 12 Dateien",
+  "d797c21fbb358f20": "HX-0145 · Reproduktionspaket eines registrierten Versuchs für einen anderen Betreiber vorbereitet",
+  "2c720674bcaf7d6e": "Codex — Hauptassistent dieses Gesprächs · 2026-10-30T16:27:03.298413+00:00",
+  "75abbc2ede222134": "Ein festes Quellcode-/Eingabepaket, Betreibersignaturen und eine Prüfung der Berichtsvergleichbarkeit wurden erstellt. In isolierter PR-CI wurden 40 Aufgaben wiederholt: alle Ergebnisse korrekt, keine Doppelausführungen oder IP-Frames. Dies prüft das Werkzeug in unserer CI; ein unabhängiger Betreiber ist noch nicht bestätigt.",
+  "4eea5e0b76754d4e": "Quellcode, Spezifikation und Beobachtungen vergleichen; die ursprüngliche Registrierung und fünf signierte Pakete erhalten. Unterschiedliche Schlüssel oder Prozesse sind keine unabhängigen Betreiber. Fremdcode bis zu gesonderten Isolationsentscheidungen sperren.",
+  "556fffb958f5f3fb": "docs/reproduction-kit-2026-10-30.json",
+  "66c0bae93d90e486": "docs/evidence/reproduction-reference-41088614695/result.json",
+  "6ff4fdf59aa06843": "Unabhängige Reproduktion und H12 werden nicht als abgeschlossen erklärt. Beide neuen Läufe gehören zur Automatisierung eines Laborbetreibers.",
+  "bf372d2a83fc8937": "Signaturen belegen die Integrität von Aussagen, nicht die Wahrheit des Ergebnisses, die Unabhängigkeit des Schlüsselinhabers oder extern bestätigte Zeit.",
+  "0d14be9d4cfb0f56": "Die ursprünglichen Kriterien wurden nicht gelockert. Berichte, Mitschnitte und fehlgeschlagene Versuche bleiben erhalten; Archive mit nicht unterstützter Kompression oder Strukturverletzungen werden abgewiesen.",
+  "9a19ac992330cd85": "Die Sandbox lässt nur Referenzcode zu. VM-Isolation, externe Filter und ein separates Netz für Fremdcode bleiben gesonderte Entscheidungen des Eigentümers.",
+  "b5a8bffb54d03725": "Keine Produktionsbereitstellung oder PR-Merges. Keine Produktions-Actions, Modelle, externen Nachrichten, Teilnehmerzulassungen oder Ressourcenzuteilung. Vollständige neue Mitschnitte werden privat aufbewahrt."
 }
