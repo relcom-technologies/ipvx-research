@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "attributed_to": "codex-assistant",
+  "recorded_by": "codex-assistant",
+  "recorded_at": "2026-10-30T17:01:24.420329+00:00",
+  "status": "accepted_deployed_and_verified",
+  "owner_authorized": true,
+  "lab_merge": "59f7f1f8b430301b33dc1943a35cbb394f391ee9",
+  "lab_parents": [
+    "c9152c834a600b3264dbe9c50f2ffecc93d19e80",
+    "df5f2d080176e32124c78412a35620933304ad05"
+  ],
+  "research_merge": "2558267660c8a192a7e10b9ff65f11b311efe057",
+  "research_parents": [
+    "265ebaf5a5cba3596230c73e8c23edcd60a4f22f",
+    "dc89d08eeb2cd77f16eca37e18adaa94b9ae89a2"
+  ],
+  "infrastructure_pin_merge": "921a82f602aab9d4cbf807f0e29b2e4817cedeaa",
+  "source_archive_sha256": "5abae2c61a3fac175c64b86190ffc9662f973957a7efca0f99fdae0bb6f98717",
+  "method": "Existing SSH route and reviewed installers on existing guest; offline verification only",
+  "backups": {
+    "consistent_laboratory_volumes": 7,
+    "consistent_auth_A2A_state_archives": 2,
+    "old_releases_retained": true,
+    "automatic_database_restore": false
+  },
+  "installed_checker": {
+    "kind": "ipvx-installed-reproduction-check/1",
+    "revision": "59f7f1f8b430301b33dc1943a35cbb394f391ee9",
+    "checks": {
+      "accepted_revision": true,
+      "module_bytes": true,
+      "pins_bytes": true,
+      "reference_kit": true,
+      "original_evidence_root": true,
+      "two_signed_submissions": true,
+      "independence_not_inferred": true,
+      "invalid_inputs_rejected": true
+    },
+    "passed": 8,
+    "total": 8,
+    "runs": [
+      {
+        "run": "41088614695",
+        "correct": 40,
+        "jobs": 40,
+        "duplicate_executions": 0,
+        "ip_frames": 0,
+        "convergence_s": 5.82,
+        "matched": true,
+        "independent_operator": "not_established"
+      },
+      {
+        "run": "41089427982",
+        "correct": 40,
+        "jobs": 40,
+        "duplicate_executions": 0,
+        "ip_frames": 0,
+        "convergence_s": 5.85,
+        "matched": true,
+        "independent_operator": "not_established"
+      }
+    ],
+    "module_sha256": "f5177537dd3a114ad610a7839e9424dfc61241b096462343699b922311bfcb99",
+    "pins_sha256": "2c77dc39145f5154a84177df96cf4373e17e056cbd96674f16c5aa3fd3b82db4",
+    "verdict": "pass",
+    "mode": "offline comparison only; no native trial or model execution"
+  },
+  "public_acceptance": [
+    {
+      "host": "lab.ipvx.org",
+      "path": "/health",
+      "revision": "59f7f1f8b430301b33dc1943a35cbb394f391ee9",
+      "verified": true
+    },
+    {
+      "host": "ipvx.org",
+      "path": "/healthz",
+      "revision": "2558267660c8a192a7e10b9ff65f11b311efe057",
+      "verified": true
+    },
+    {
+      "path": "/data/strict-agents-round.json",
+      "sha256": "3c388513d8b54b9d5df7e0da8d94a1f6e8e2c0e5c2adf9a741cb0d84a33a2ddd",
+      "verified": true
+    },
+    {
+      "path": "/data/agent-discovery.json",
+      "sha256": "d124851149f093f703f0bf0855561de9ec84bfcd16664a82136800078e42c0f5",
+      "verified": true
+    },
+    {
+      "path": "/data/downloads/ipvx-native-device-prototype.zip",
+      "sha256": "8bd021c33b9e0f3b48184c2a5e6bd7fc45c4ce3f32a83ce5c27624a9458d07ad",
+      "verified": true
+    },
+    {
+      "path": "/data/downloads/ipvx-research-history.zip",
+      "sha256": "2aeebd42841d5d5f3bfbb1c484f1e37cf11f9dca28ffdaffad9f8a0689b5ee8a",
+      "verified": true
+    },
+    {
+      "path": "/history/events.jsonl",
+      "events": 145,
+      "last": "HX-0145",
+      "sha256": "219d527fb0c6b85d9dd29c3d3e1a946b2ba98602fe707f3eb7d16ca4f8581b27"
+    },
+    {
+      "path": "/history.html",
+      "verified": true
+    },
+    {
+      "path": "/downloads.html",
+      "verified": true
+    },
+    {
+      "path": "/history.en.html",
+      "verified": true
+    },
+    {
+      "path": "/downloads.en.html",
+      "verified": true
+    },
+    {
+      "path": "/history.de.html",
+      "verified": true
+    },
+    {
+      "path": "/downloads.de.html",
+      "verified": true
+    },
+    {
+      "path": "/history.es.html",
+      "verified": true
+    },
+    {
+      "path": "/downloads.es.html",
+      "verified": true
+    },
+    {
+      "path": "/auth/session",
+      "anonymous": true,
+      "owner_queue_unauthorized_status": 403
+    },
+    {
+      "signed_evidence": {
+        "entries": 5,
+        "root_sha256": "cd5e8793714982a44ed6e5beab84a90019846ce4e528438ba85ef668cc9964b6",
+        "key": "5a82caff57edd5d040232c1ea0aaf97f20ea1bd4695016f8396afa985736e693"
+      },
+      "public_view_matches_accepted_source": true
+    },
+    {
+      "repository": "ipvx-agent-lab",
+      "merge": "59f7f1f8b430301b33dc1943a35cbb394f391ee9",
+      "IPvX_or_merge_triggered_Actions": 0,
+      "unrelated_scheduled_runs": 0,
+      "other_projects_changed": false
+    },
+    {
+      "repository": "ipvx-research",
+      "merge": "2558267660c8a192a7e10b9ff65f11b311efe057",
+      "IPvX_or_merge_triggered_Actions": 0,
+      "unrelated_scheduled_runs": 0,
+      "other_projects_changed": false
+    },
+    {
+      "repository": "relcom-infra",
+      "merge": "921a82f602aab9d4cbf807f0e29b2e4817cedeaa",
+      "IPvX_or_merge_triggered_Actions": 0,
+      "unrelated_scheduled_runs": 1,
+      "other_projects_changed": false
+    }
+  ],
+  "retained_reference_artifacts": {
+    "private_server_copy": true,
+    "private_local_copy": true,
+    "runs": 2,
+    "files": 8,
+    "bytes": 2430409,
+    "hashes_verified": true,
+    "private_key_transferred": false
+  },
+  "preserved_evidence": {
+    "frozen_files": 53,
+    "historical_strict_commits": 26,
+    "signed_bundles": 5,
+    "root_sha256": "cd5e8793714982a44ed6e5beab84a90019846ce4e528438ba85ef668cc9964b6"
+  },
+  "operations": [
+    "Eight existing containers healthy",
+    "Observer, notifier and liaison timers remain active",
+    "Private state, keys, delivery cursors and model budget preserved",
+    "Actual source kit on server matches reviewed digest"
+  ],
+  "negative_results": [
+    "Two initial empty health replies during portal restart recovered through bounded installer retries; external HTTPS then passed."
+  ],
+  "limits": [
+    "Offline comparison authenticates retained CI submissions; it is not a new native run or independent reproduction",
+    "Independent operator remains not established; foreign code admission still needs separate isolation and owner decisions",
+    "No model invocation, resource allocation, participant admission or new public invocation service",
+    "Public release contains history through HX-0145; these post-deployment records are a later source-history update"
+  ]
+}

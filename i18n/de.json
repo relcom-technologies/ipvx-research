@@ -2463,5 +2463,20 @@
   "bf372d2a83fc8937": "Signaturen belegen die Integrität von Aussagen, nicht die Wahrheit des Ergebnisses, die Unabhängigkeit des Schlüsselinhabers oder extern bestätigte Zeit.",
   "0d14be9d4cfb0f56": "Die ursprünglichen Kriterien wurden nicht gelockert. Berichte, Mitschnitte und fehlgeschlagene Versuche bleiben erhalten; Archive mit nicht unterstützter Kompression oder Strukturverletzungen werden abgewiesen.",
   "9a19ac992330cd85": "Die Sandbox lässt nur Referenzcode zu. VM-Isolation, externe Filter und ein separates Netz für Fremdcode bleiben gesonderte Entscheidungen des Eigentümers.",
-  "b5a8bffb54d03725": "Keine Produktionsbereitstellung oder PR-Merges. Keine Produktions-Actions, Modelle, externen Nachrichten, Teilnehmerzulassungen oder Ressourcenzuteilung. Vollständige neue Mitschnitte werden privat aufbewahrt."
+  "b5a8bffb54d03725": "Keine Produktionsbereitstellung oder PR-Merges. Keine Produktions-Actions, Modelle, externen Nachrichten, Teilnehmerzulassungen oder Ressourcenzuteilung. Vollständige neue Mitschnitte werden privat aufbewahrt.",
+  "66cbed4ea6b732cb": "147 Ereignisse bis HX-0147; Autoren, Begründungen, Prüfungen und Grenzen.",
+  "debf62453aea5618": "300.9 KiB · 12 Dateien",
+  "dd26a5bd4a4dedb8": "HX-0147 · Dritte Stufe manuell bereitgestellt; installierter Prüfer hat Abnahme bestanden",
+  "5f6217b9f7854c5e": "Codex — Hauptassistent dieses Gesprächs · 2026-10-30T17:01:24.420329+00:00",
+  "4046b3194231e9fb": "Die angenommenen Labor- und Portalversionen sind auf dem bestehenden Server installiert. Alle acht Prüfungen bestanden: Modul- und Pin-Bytes, Paket, zwei aufbewahrte signierte Berichte, ursprüngliche Wurzel sowie Ablehnung eines beschädigten Archivs oder falschen Schlüssels. Vollständige CI-Pakete werden auch privat auf dem Server aufbewahrt.",
+  "f858d11555e85cde": "Den installierten Build und die Integrität vorhandener Belege offline prüfen; Daten und aktive Timer erhalten.",
+  "6b1e1c4bbca82263": "docs/reproduction-rollout-2026-10-30.json",
+  "9957b19a43d12b4c": "Aufbewahrte CI-Läufe wurden offline verglichen. Kein neuer nativer Versuch und kein Modell wurden gestartet; ein unabhängiger Betreiber ist weiterhin nicht bestätigt.",
+  "1241719d82eb7025": "Terraform wurde vollständig übersprungen; keine Produktions-IPvX-Actions oder Post-Merge-Läufe wurden ausgeführt. Andere Projekte blieben unverändert.",
+  "7460af9c13a88811": "Sieben Volumes, privater auth/A2A-Zustand, Schlüssel, Zustellzustand, Budget und aktive Timer blieben erhalten. Keine privaten Schlüssel wurden auf den Server übertragen.",
+  "86844e9dfe4eba87": "Zwei anfänglich leere Health-Antworten wurden durch begrenzte Wiederholung überwunden. Das öffentliche Release enthält die Historie bis HX-0145; diese Einträge dokumentieren die anschließende Abnahme.",
+  "b3559b77b1fe2aa0": "HX-0146 · Reproduktionspaket und Historie mit regulären Merge-Commits angenommen",
+  "884790e808cc4b86": "Auf ausdrücklichen Auftrag des Eigentümers wurden PR28 und PR33 nach erfolgreichen Prüfungen gemergt. Beide Eltern jedes Merge-Commits und die Übereinstimmung mit den geprüften Dateibäumen wurden bestätigt. Frühere Einträge und ursprüngliche Belege blieben erhalten.",
+  "9afca2c0ea7f6254": "Elternhistorie erhalten und Annahme sowie Bereitstellung getrennt dokumentieren.",
+  "c571eeb572f33387": "Die Annahme des Werkzeugs bestätigt keine Betreiberunabhängigkeit und gewährt keine Zulassungsrechte für Fremdcode."
 }
