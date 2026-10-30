@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-30T08:15:43.563923+00:00",
+  "status": "measured_active",
+  "source_revision": "801adde12a011a505ae26225e5176ddccba18779",
+  "notifier_revision": "ab18310542332bd08c16a4f06463a90ceb747fa9",
+  "runtime": "existing server; systemd; no GitHub Actions runtime or owner computer dependency",
+  "generation_enabled": true,
+  "publication_mode": "draft_only",
+  "daily_budget_usd": 3,
+  "budget_timezone": "Europe/Berlin",
+  "maximum_generation_calls_per_day": 8,
+  "reserved_usd_on_2026_10_30": 0.234922,
+  "reservation_is_invoice": false,
+  "models": {
+    "writer": "claude-sonnet-4-5-20250929",
+    "reviewer": "gpt-5.5-2026-04-23"
+  },
+  "measured_pair": {
+    "source_comment_id": "651b962b-391d-4ba1-8dca-8f679cdfb91b",
+    "result": "skip: already addressed public review-only message; no new commitment or proposal",
+    "claude_input_tokens": 5259,
+    "claude_output_tokens": 334,
+    "gpt_input_tokens": 4587,
+    "gpt_output_tokens": 101,
+    "requested_models_match_actual": true,
+    "private_transcripts_preserved": true
+  },
+  "delivery": {
+    "recipient": "existing owner-only Relcom notification destination; private configuration",
+    "projection_checked": true,
+    "new_proposal_email_sent": false,
+    "reason": "No new proposal was generated; no duplicate test email sent. The owner confirmed receipt of the existing transport test in the preceding migration.",
+    "native_timer_cycle": {
+      "start_utc": "2026-10-30T08:15:42+00:00",
+      "finish_utc": "2026-10-30T08:15:45+00:00",
+      "result": "success",
+      "delivery": "no_changes",
+      "analysis_checked": true
+    }
+  },
+  "ledger": {
+    "prior_reservations_and_failed_jobs_unchanged": true,
+    "first_empty_writer_attempt_preserved": true,
+    "diagnostic_reservation_preserved": true
+  },
+  "local_heartbeat": "ipvx-a2a deleted after server activation; prompt backed up privately",
+  "checks": {
+    "source_tests": 99,
+    "wire_tests": 5,
+    "infra_tests": 53,
+    "PR28_verify": "https://github.com/relcom-technologies/ipvx-research/actions/runs/40979595769",
+    "PR28_browser": "https://github.com/relcom-technologies/ipvx-research/actions/runs/40979595780"
+  },
+  "limits": [
+    "Only three authorized public threads enter model inputs. Private A2A content remains excluded; existing intake notifications remain autonomous.",
+    "GitHub visible HTML and Moltbook depth-five trees are incomplete coverage.",
+    "New experiment/review interest must contain all thirteen proposal fields; this real no-op pair did not generate an experiment proposal. That branch and the mail projection were checked with synthetic fixtures.",
+    "Public paid_api_run_verified counts non-skipped completed drafts and remains false until one exists. The separate private paired-readiness receipt records both successful paid responses.",
+    "Price metadata expires after 2026-11-05; generation pauses until a reviewed pricing update. Claude Sonnet 4.5 retirement is announced for 2026-11-30.",
+    "No automatic social publication, participant acceptance, permissions, resource allocation or experiment execution."
+  ],
+  "native_timer_cycle": {
+    "start_utc": "2026-10-30T08:15:17.878165+00:00",
+    "finished_utc": "2026-10-30T08:15:19+00:00",
+    "result": "success",
+    "generation_enabled": true,
+    "reserved_usd_after": 0.234922,
+    "generation_calls_after": 4,
+    "additional_paid_calls": 0
+  }
+}
