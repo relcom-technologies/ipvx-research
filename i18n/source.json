@@ -837,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "c79c9c615570d952",
-      "source": "137 событий по HX-0137; авторы, основания, проверки и ограничения.",
+      "id": "3243240f70d08eb0",
+      "source": "138 событий по HX-0138; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "7ac91764a6af2b2a",
-      "source": "285.8 КиБ · 12 файлов",
+      "id": "e3bf6b8dc7491d67",
+      "source": "288.2 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4642,6 +4642,81 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "18a4aa1e84ee7f3d",
+      "source": "HX-0138 · Подготовлена интеграция платформы испытаний и strict-LLM ветки",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "e078c61c3e49f21a",
+      "source": "Реализовано",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "e7658facc15a1c9c",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-30T11:22:27.265972+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "91ed619f010cf504",
+      "source": "В отдельной ветке сохранены обе истории Git и все 26 коммитов LLM-экспериментов. Добавлены общий реестр девяти треков, хеши исходников и проверки сохранности. Отчёты, пять подписанных пакетов и прежние результаты не изменены. Подготовлен PR без слияния и выкатки.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "4a009e2fcef4285d",
+      "source": "Связать новую платформу с уже выполненными экспериментами, сохранив точные ревизии, неудачные попытки и границы доказанного. Исторические измерения не становятся измерениями новой сборки; для принятия нужен merge commit, сохраняющий родительские истории.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "de745684b9bafae7",
+      "source": "docs/lab-integration-2026-10-30.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "627e588118ea4558",
+      "source": "142 теста прошли, 7 Linux-проверок пропущены на macOS; ещё 13 strict-OS тестов прошли.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "abb603ec41738c7c",
+      "source": "Проверены 53 файла и пять записей журнала; хеш найденной трассы совпал с отчётом.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "ddaffccdc61627c3",
+      "source": "Новый запуск моделей, живой эксперимент и выкатка не выполнялись. Проверки Linux и загрузки ядер остаются для изолированного PR CI; Actions разрешены только на pull_request.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "8f4b6d025ebf86ee",
+      "source": "Первый запуск тестов остановился из-за заполненного диска; затем песочница запретила loopback bind. После восстановления записи и разрешения локальных сокетов полный набор прошёл.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "0fb1a2ef91fb56c8",
+      "source": "Сырые трассы и ключи не опубликованы. Приватный реестр охватывает 132 сохранённых файла. HTTP SDK, нативные relay-испытания и прежние LLM-прогоны остаются отдельными треками.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "08ec67e547a9c544",
       "source": "HX-0137 · Серверный разбор Claude/GPT включён после успешной пары",
       "context": "history.html:text:section/details/summary"
@@ -4657,19 +4732,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "74fbea16dd6c2cad",
       "source": "Автономный сервер готовит приватные предложения при новом содержательном интересе и передаёт их существующему почтовому сервису. Повторное письмо или фиктивное новое согласие не создавались; общий лимит 3 USD в день Europe/Berlin сохраняется.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "261eaf0aa98555f1",
@@ -4687,11 +4752,6 @@
       "context": "history.html:text:details/ul/li"
     },
     {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "c7e508a99ba315c5",
       "source": "Новый проект эксперимента не создавался: реальная пара корректно пропустила старый ответ. Полная схема предложения и почтовая проекция проверены синтетическими фикстурами; повторного SMTP-теста не было.",
       "context": "history.html:text:details/ul/li"
@@ -4705,11 +4765,6 @@
       "id": "1ffc7c670db936d3",
       "source": "Проверка тарифов действует до 5 ноября 2026 включительно; затем генерация приостанавливается до пересмотра цен. Автопубликации, приёма участников и запуска экспериментов нет.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "318e868495115b92",
@@ -4765,11 +4820,6 @@
       "id": "52202c35cc1ff9cb",
       "source": "HX-0135 · Подготовлен автономный разбор публичных ответов Claude/GPT",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "e078c61c3e49f21a",
-      "source": "Реализовано",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "53bf5587e41a76f8",
