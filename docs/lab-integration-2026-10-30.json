@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-30T11:15:04.683474+00:00",
+  "attributed_to": "codex-assistant",
+  "recorded_by": "codex-assistant",
+  "origin": "contemporaneous_author_record",
+  "status": "implemented_for_PR_review",
+  "summary": "Combined the trial platform with all 26 strict-LLM branch commits using a two-parent merge; preserved historical sources and published evidence; added a common nine-track registry and offline preservation checks.",
+  "revisions": {
+    "main": "e8f89e139f06fee4215a1f0a9f7f8a0092412523",
+    "feature": "3ee1f3f553b17f380b8b84beda02f05e3e9a207f",
+    "merge": "182cea92e41239228c62eb553e9d6dec88128548"
+  },
+  "checks": {
+    "pytest_passed": 142,
+    "pytest_skipped_linux_only": 7,
+    "strict_unit_passed": 13,
+    "frozen_files": 53,
+    "signed_log_entries_verified": 5,
+    "signed_log_root": "cd5e8793714982a44ed6e5beab84a90019846ce4e528438ba85ef668cc9964b6",
+    "existing_reports_trials_bundles_and_frozen_workload_changed": false,
+    "original_feature_ancestry_preserved": true
+  },
+  "negative_results": [
+    "The initial test attempt could not write temporary files because the local disk was full. Recording resumed after write space became available; no experiment data was removed.",
+    "A sandboxed test run refused loopback bind. The same full suite passed with local loopback permitted.",
+    "Historical model errors, partial runs and untested hypotheses remain unchanged."
+  ],
+  "private_archive": {
+    "inventoried_existing_files": 132,
+    "first_trial_capture_recovered": true,
+    "first_trial_capture_bytes": 16604298,
+    "first_trial_capture_sha256": "b2f7bcda51f5d0d95c9903bb9d1ef34c2b9dbc996a68e612470b6dbaaad87b47",
+    "raw_data_committed": false,
+    "signing_keys_read_or_copied": false
+  },
+  "canonical_history": {
+    "repository": "relcom-technologies/ipvx-research",
+    "event": "HX-0138",
+    "companion_PR": "prepared separately; review together"
+  },
+  "limitations": [
+    "No new model inference, native live experiment or production deployment.",
+    "Original results apply to their exact historical source/runtime revisions, not this integrated tree.",
+    "Seven Linux-only checks and hosted kernel probes require PR CI.",
+    "No independent operator, SDK/native adapter unification or new participant admission is established.",
+    "Use a merge commit for acceptance; squash/rebase would discard the original branch ancestry from main."
+  ],
+  "source_PR": "https://github.com/relcom-technologies/ipvx-agent-lab/pull/26",
+  "source_head": "035a309aa862a75247fc041d4b8f16b8cccc0b70",
+  "publication_scope": "Sanitized integration receipt only; private implementation and raw traces stay outside this public repository.",
+  "production_deployment": false,
+  "source_PR_merged": false
+}
