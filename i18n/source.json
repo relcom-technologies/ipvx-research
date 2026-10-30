@@ -837,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "84b9a79460787eba",
-      "source": "136 событий по HX-0136; авторы, основания, проверки и ограничения.",
+      "id": "c79c9c615570d952",
+      "source": "137 событий по HX-0137; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "7954eaed4ac28574",
-      "source": "283.6 КиБ · 12 файлов",
+      "id": "7ac91764a6af2b2a",
+      "source": "285.8 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4642,6 +4642,76 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "08ec67e547a9c544",
+      "source": "HX-0137 · Серверный разбор Claude/GPT включён после успешной пары",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "7b21fd3520d9a86f",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-30T08:15:43.563923+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "37b865a4a2cc10b7",
+      "source": "Установлены проверенные версии разбора и почтовой проекции. Обе модели дали валидный результат: старый review-only комментарий уже обработан, повтор пропущен. Генерация включена; штатный цикл таймера прошёл без новых платных вызовов. Локальная автоматизация удалена.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "74fbea16dd6c2cad",
+      "source": "Автономный сервер готовит приватные предложения при новом содержательном интересе и передаёт их существующему почтовому сервису. Повторное письмо или фиктивное новое согласие не создавались; общий лимит 3 USD в день Europe/Berlin сохраняется.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "261eaf0aa98555f1",
+      "source": "services/liaison/deployment-record.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "99e41b0b3961bdc9",
+      "source": "Claude: 5259 входных, 334 выходных токена; GPT: 4587 входных, 101 выходной. Версии моделей совпали с запрошенными.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "7a4126f7bd5e2ce9",
+      "source": "Штатный цикл 30 октября 08:15:17–08:15:19 UTC успешен. Дневной резерв 0,234922 USD, четыре вызова; прежние строки бюджета и ошибок не изменены.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "c7e508a99ba315c5",
+      "source": "Новый проект эксперимента не создавался: реальная пара корректно пропустила старый ответ. Полная схема предложения и почтовая проекция проверены синтетическими фикстурами; повторного SMTP-теста не было.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "9d4e9efafc8fdcef",
+      "source": "Приватные A2A-заявки не отправляются моделям. Полнота GitHub HTML и глубины Moltbook не гарантируется; прежние уведомления о заявках сохраняются.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "1ffc7c670db936d3",
+      "source": "Проверка тарифов действует до 5 ноября 2026 включительно; затем генерация приостанавливается до пересмотра цен. Автопубликации, приёма участников и запуска экспериментов нет.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "318e868495115b92",
       "source": "HX-0136 · Первый ответ Claude оказался пустым; подготовлена строгая схема API",
       "context": "history.html:text:section/details/summary"
@@ -4662,19 +4732,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "5e8cb263eb9d905a",
       "source": "Генерация остаётся выключенной до успешной пары. Подготовлен режим JSON Schema обоих API; счёт входных токенов включает ту же схему. Причина остановки сохраняется в приватной трассе.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "b33f5d775b9fb5b1",
@@ -4692,11 +4752,6 @@
       "context": "history.html:text:details/ul/li"
     },
     {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "bfa614402f9fcbd3",
       "source": "Парный черновик пока не получен. Новая схема ещё не установлена; нужен новый явный операторский запуск после проверок.",
       "context": "history.html:text:details/ul/li"
@@ -4705,11 +4760,6 @@
       "id": "d44774f494a78043",
       "source": "Резерв — консервативный учёт приложения, а не счёт провайдера. Старые записи не удалялись; новых внешних обязательств нет.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "52202c35cc1ff9cb",

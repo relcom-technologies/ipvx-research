@@ -2372,5 +2372,17 @@
   "5e8cb263eb9d905a": "Die Generierung bleibt bis zu einem erfolgreichen Modellpaar deaktiviert. Der JSON-Schema-Modus ist für beide APIs vorbereitet; die Eingabetokenzählung umfasst dasselbe Schema. Abbruchmetadaten bleiben in der privaten Spur erhalten.",
   "02caeff8ede2e8e4": "99 lokale Tests waren erfolgreich, darunter 3 Schema- und Tokenabrechnungsprüfungen.",
   "bfa614402f9fcbd3": "Noch kein Entwurf beider Modelle. Das neue Schema ist nicht installiert; nach den Prüfungen ist ein neuer ausdrücklicher Operatorlauf erforderlich.",
-  "d44774f494a78043": "Reservierungen sind konservative Anwendungsabrechnung, keine Providerrechnung. Alte Einträge bleiben erhalten; es gibt keine neuen externen Zusagen."
+  "d44774f494a78043": "Reservierungen sind konservative Anwendungsabrechnung, keine Providerrechnung. Alte Einträge bleiben erhalten; es gibt keine neuen externen Zusagen.",
+  "c79c9c615570d952": "137 Ereignisse bis HX-0137; Autoren, Begründungen, Prüfungen und Grenzen.",
+  "7ac91764a6af2b2a": "285.8 KiB · 12 Dateien",
+  "08ec67e547a9c544": "HX-0137 · Claude/GPT-Auswertung auf dem Server nach erfolgreichem Paar aktiviert",
+  "7b21fd3520d9a86f": "Codex — Hauptassistent dieses Gesprächs · 2026-10-30T08:15:43.563923+00:00",
+  "37b865a4a2cc10b7": "Geprüfte Versionen der Auswertung und E-Mail-Projektion wurden installiert. Beide Modelle lieferten gültige Ergebnisse: Der alte Kommentar zur reinen Textprüfung war bereits bearbeitet und wurde übersprungen. Die Generierung ist aktiviert; ein regulärer Timerlauf endete ohne weitere kostenpflichtige Aufrufe. Die lokale Automatisierung wurde gelöscht.",
+  "74fbea16dd6c2cad": "Der autonome Server erstellt bei neuem inhaltlichem Interesse private Vorschläge und übergibt sie dem vorhandenen E-Mail-Dienst. Es wurden weder doppelte E-Mails noch eine fiktive neue Zustimmung erzeugt; das gemeinsame Limit bleibt bei 3 USD pro Kalendertag in Europe/Berlin.",
+  "261eaf0aa98555f1": "services/liaison/deployment-record.json",
+  "99e41b0b3961bdc9": "Claude: 5259 Eingabe- und 334 Ausgabetokens; GPT: 4587 Eingabe- und 101 Ausgabetokens. Die tatsächlichen Modellversionen entsprachen den angeforderten.",
+  "7a4126f7bd5e2ce9": "Der reguläre Lauf am 30. Oktober von 08:15:17 bis 08:15:19 UTC war erfolgreich. Tagesreservierung: 0,234922 USD bei vier Aufrufen; frühere Budget- und Fehlereinträge blieben unverändert.",
+  "c7e508a99ba315c5": "Es wurde kein neuer Experimentvorschlag erstellt: Das reale Modellpaar übersprang die alte Antwort korrekt. Das vollständige Vorschlagsschema und die E-Mail-Projektion wurden mit synthetischen Testdaten geprüft; der SMTP-Test wurde nicht wiederholt.",
+  "9d4e9efafc8fdcef": "Private A2A-Anträge werden nicht an Modelle gesendet. Die Vollständigkeit von GitHub-HTML und tiefen Moltbook-Antworten ist nicht garantiert; bestehende Antragsbenachrichtigungen bleiben aktiv.",
+  "1ffc7c670db936d3": "Die Preisprüfung gilt bis einschließlich 5. November 2026; danach pausiert die Generierung bis zur erneuten Preisprüfung. Es gibt keine automatische Veröffentlichung, Teilnehmeraufnahme oder Experimentausführung."
 }

@@ -2372,5 +2372,17 @@
   "5e8cb263eb9d905a": "Generation stays disabled until a successful pair. Prepared JSON Schema mode for both APIs; input-token counting includes the same schema. Stop metadata is preserved in the private trace.",
   "02caeff8ede2e8e4": "99 local tests passed, including 3 schema and token-accounting checks.",
   "bfa614402f9fcbd3": "No paired draft yet. The new schema is not installed; a new explicit operator run is required after checks.",
-  "d44774f494a78043": "Reservations are conservative application accounting, not the provider invoice. Old records remain; no new external commitments were made."
+  "d44774f494a78043": "Reservations are conservative application accounting, not the provider invoice. Old records remain; no new external commitments were made.",
+  "c79c9c615570d952": "137 events through HX-0137; authors, rationale, checks and limitations.",
+  "7ac91764a6af2b2a": "285.8 KiB · 12 files",
+  "08ec67e547a9c544": "HX-0137 · Server-side Claude/GPT analysis enabled after a successful pair",
+  "7b21fd3520d9a86f": "Codex — primary assistant in this conversation · 2026-10-30T08:15:43.563923+00:00",
+  "37b865a4a2cc10b7": "Verified versions of analysis and mail projection were installed. Both models returned valid results: the old review-only comment had already been addressed and was skipped. Generation is enabled; a scheduled timer cycle completed without further paid calls. The local automation was deleted.",
+  "74fbea16dd6c2cad": "The autonomous server prepares private proposals for new substantive interest and passes them to the existing mail service. No duplicate email or fictitious new consent was created; the shared limit remains 3 USD per Europe/Berlin day.",
+  "261eaf0aa98555f1": "services/liaison/deployment-record.json",
+  "99e41b0b3961bdc9": "Claude: 5259 input and 334 output tokens; GPT: 4587 input and 101 output tokens. Actual model versions matched those requested.",
+  "7a4126f7bd5e2ce9": "The scheduled cycle on 30 October, 08:15:17–08:15:19 UTC, succeeded. Daily reservation: 0.234922 USD, four calls; earlier budget and failure rows remain unchanged.",
+  "c7e508a99ba315c5": "No new experiment proposal was created: the real model pair correctly skipped the old reply. The complete proposal schema and mail projection were checked with synthetic fixtures; no SMTP test was repeated.",
+  "9d4e9efafc8fdcef": "Private A2A submissions are not sent to models. Complete GitHub HTML and Moltbook depth coverage are not guaranteed; existing submission notifications remain active.",
+  "1ffc7c670db936d3": "Pricing verification is valid through 5 November 2026; generation then pauses until prices are reviewed. There is no automatic publication, participant admission or experiment execution."
 }

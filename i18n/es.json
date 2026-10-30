@@ -2372,5 +2372,17 @@
   "5e8cb263eb9d905a": "La generación sigue desactivada hasta completar ambos modelos. Se preparó el modo JSON Schema de ambas API; el conteo de entrada incluye el mismo esquema. Los metadatos de parada se conservan en la traza privada.",
   "02caeff8ede2e8e4": "Pasaron 99 pruebas locales, incluidas 3 comprobaciones de esquema y contabilidad de tokens.",
   "bfa614402f9fcbd3": "Aún no hay borrador de ambos modelos. El nuevo esquema no está instalado; requiere una nueva ejecución explícita del operador tras las comprobaciones.",
-  "d44774f494a78043": "Las reservas son contabilidad conservadora de la aplicación, no facturas del proveedor. Se conservan los registros antiguos; no se asumieron compromisos externos nuevos."
+  "d44774f494a78043": "Las reservas son contabilidad conservadora de la aplicación, no facturas del proveedor. Se conservan los registros antiguos; no se asumieron compromisos externos nuevos.",
+  "c79c9c615570d952": "137 eventos hasta HX-0137; autores, fundamentos, comprobaciones y límites.",
+  "7ac91764a6af2b2a": "285.8 KiB · 12 archivos",
+  "08ec67e547a9c544": "HX-0137 · Análisis Claude/GPT en el servidor activado tras una prueba conjunta correcta",
+  "7b21fd3520d9a86f": "Codex — asistente principal de esta conversación · 2026-10-30T08:15:43.563923+00:00",
+  "37b865a4a2cc10b7": "Se instalaron las versiones verificadas del análisis y la proyección de correo. Ambos modelos devolvieron resultados válidos: el comentario antiguo de revisión ya estaba atendido y se omitió. La generación está activada; un ciclo programado terminó sin más llamadas de pago. Se eliminó la automatización local.",
+  "74fbea16dd6c2cad": "El servidor autónomo prepara propuestas privadas ante nuevo interés sustancial y las pasa al servicio de correo existente. No se crearon correos duplicados ni un consentimiento nuevo ficticio; el límite conjunto sigue siendo de 3 USD por día de Europe/Berlin.",
+  "261eaf0aa98555f1": "services/liaison/deployment-record.json",
+  "99e41b0b3961bdc9": "Claude: 5259 tokens de entrada y 334 de salida; GPT: 4587 de entrada y 101 de salida. Las versiones reales coincidieron con las solicitadas.",
+  "7a4126f7bd5e2ce9": "El ciclo programado del 30 de octubre, 08:15:17–08:15:19 UTC, fue correcto. Reserva diaria: 0,234922 USD y cuatro llamadas; los registros anteriores de presupuesto y fallos siguen intactos.",
+  "c7e508a99ba315c5": "No se creó una propuesta de experimento nueva: los dos modelos omitieron correctamente la respuesta antigua. El esquema completo de propuesta y la proyección de correo se comprobaron con datos sintéticos; no se repitió la prueba SMTP.",
+  "9d4e9efafc8fdcef": "Las solicitudes privadas A2A no se envían a los modelos. No se garantiza la cobertura completa del HTML de GitHub ni de las respuestas profundas de Moltbook; las notificaciones de solicitudes existentes siguen activas.",
+  "1ffc7c670db936d3": "La verificación de tarifas es válida hasta el 5 de noviembre de 2026 inclusive; después se pausa la generación hasta revisar los precios. No hay publicación automática, admisión de participantes ni ejecución de experimentos."
 }
