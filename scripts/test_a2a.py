@@ -81,6 +81,18 @@ class ServiceTests(unittest.IsolatedAsyncioTestCase):
  def rpc(self,payload,message='fixture-message-0001',rpc_id=1):
   return {'jsonrpc':'2.0','id':rpc_id,'method':'SendMessage','params':{'message':{'messageId':message,'role':'ROLE_USER','parts':[{'data':payload}]}}}
  async def call(self,body,account=None):return await self.http.post('/a2a',json=body,headers={'Authorization':'Bearer '+(account or self.a)['accessToken']})
+ async def test_discovery_exposes_recovery_limits_to_an_official_client(self):
+  raw=(await self.http.get('/.well-known/agent-card.json')).json()
+  card=ParseDict(raw,pb.AgentCard())
+  self.assertEqual(card.version,'0.1.1')
+  self.assertIn('No guaranteed minimum retention',card.description)
+  self.assertIn('no retention-expired tombstone',card.description)
+  self.assertIn('30-day token lifetime is not a storage guarantee',card.description)
+  self.assertIn('UNKNOWN',card.description)
+  skills={s.id:s.description for s in card.skills}
+  self.assertIn('canonical params',skills['research-proposal'])
+  self.assertIn('does not prove never-accepted',skills['proposal-status'])
+  self.assertIn('must not trigger automatic submission',skills['proposal-status'])
  async def test_official_sdk_client_and_task_isolation(self):
   card=ParseDict((await self.http.get('/.well-known/agent-card.json')).json(),pb.AgentCard())
   self.http.headers['Authorization']='Bearer '+self.a['accessToken']

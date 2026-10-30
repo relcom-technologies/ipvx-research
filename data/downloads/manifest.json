@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "snapshot_through": "HX-0158",
+  "snapshot_through": "HX-0160",
   "bundles": [
     {
       "name": "ipvx-native-device-prototype.zip",
@@ -13,9 +13,9 @@
     {
       "name": "ipvx-research-history.zip",
       "label": "Полная доступная выгрузка истории",
-      "scope": "158 событий по HX-0158; авторы, основания, проверки и ограничения.",
-      "bytes": 321039,
-      "sha256": "6fdf4f0085d11c311b445f9680fc19f6e192794155677239b488e4c7b8a72469",
+      "scope": "160 событий по HX-0160; авторы, основания, проверки и ограничения.",
+      "bytes": 323755,
+      "sha256": "d99f59d8ee50af7bb7e619d8037384e5448305a9e22a3e1166d4c8032fc7a8af",
       "files": 12
     }
   ]

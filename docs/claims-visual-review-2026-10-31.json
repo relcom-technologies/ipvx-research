@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-31T00:09:01.773961+01:00",
+  "recorded_by": "codex-assistant",
+  "reviewer": {
+    "task": "/root/impeccable_finish_reviewer_claims",
+    "role": "assistant visual reviewer in a fresh context",
+    "independent_operator": false
+  },
+  "scope": "Six claim corrections within incumbent Read/Operate UI; no redesign.",
+  "evidence": {
+    "required_captures": 34,
+    "research_widths": [
+      1440,
+      768,
+      390
+    ],
+    "languages_captured": [
+      "ru",
+      "de"
+    ],
+    "lab_widths": [
+      1440,
+      768,
+      390
+    ],
+    "lab_scope_disclosure_open_at": 390,
+    "lab_fixture": "archived public snapshot, not a fresh live trial"
+  },
+  "initial_disposition": "fix",
+  "finding": "New Lab sentence directed readers below for an acceptance date in a section above.",
+  "correction": "Name the footer for version and the What was verified on real machines section for the acceptance date.",
+  "lab_initial_commit": "7ddb74c24eac97b6558ececeb108d6ee507944f1",
+  "lab_followup_commit": "ebf6b134a818cba9946d2672a9395306d7712096",
+  "negative_verification": "First recapture still served HTML captured when the local preview app was created. The reviewer withheld acceptance. Only that local preview was restarted; recapture asserted corrected HTML before screenshots.",
+  "final_disposition": "ship",
+  "final_scope": "The one location-reference fix was scored resolved. The original full review matched the remaining scoped changes and incumbent visual world.",
+  "source_unchanged_by_reviewer": true,
+  "detector_limits": [
+    "Four portal tonal-color advisories concern existing architecture CSS.",
+    "Lab detector could not resolve absolute asset paths; its unstyled hierarchy result is contradicted by served screenshots."
+  ],
+  "operation_limits": [
+    "No production connection, mutation or deployment in the visual checks.",
+    "Review by another assistant context is not independent external operator validation."
+  ]
+}

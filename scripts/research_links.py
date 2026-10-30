@@ -16,6 +16,9 @@ COPY = {
  'question': ('Проверяемый вопрос','Testable question','Prüfbare Frage','Pregunta comprobable'),
  'protocol': ('Протокол','Protocol','Protokoll','Protocolo'),
  'run': ('Прогон и доказательства','Run and evidence','Lauf und Belege','Ejecución y pruebas'),
+ 'public_record': ('Публичная запись проверки','Public check record','Öffentliche Prüfaufzeichnung','Registro público de la comprobación'),
+ 'private_run': ('Журнал CI — нужен доступ к закрытому репозиторию','CI log — private repository access required','CI-Protokoll — Zugriff auf privates Repository erforderlich','Registro CI — requiere acceso al repositorio privado'),
+ 'public_summary': ('Публичная сводка JSON','Public JSON summary','Öffentliche JSON-Zusammenfassung','Resumen JSON público'),
  'result': ('Результат','Result','Ergebnis','Resultado'),
  'limits': ('Границы вывода','Limits of the conclusion','Grenzen der Schlussfolgerung','Límites de la conclusión'),
  'local_preflight': ('Только локальная подготовка','Local preflight only','Nur lokale Vorprüfung','Solo comprobación local'),
@@ -102,7 +105,9 @@ def load(root, data=None):
         else: raise ValueError('Private or unsupported source')
         protocol=case['protocol']; _keys(protocol,('id','version','artifact'))
         _text(protocol['id'],100);_text(protocol['version'],100);_artifact(root,protocol['artifact'])
-        run=case['run'];_keys(run,('classification','url','artifact'));_artifact(root,run['artifact'])
+        run=case['run'];_keys(run,('classification','url','artifact','access'));_artifact(root,run['artifact'])
+        expected_access='private_repository' if run['url'].startswith('https://github.com/relcom-technologies/ipvx-agent-lab/actions/') else 'public'
+        if run['access']!=expected_access: raise ValueError('Run access label needs review')
         if case['stage']=='local_preflight':
             if run['classification']!='local_preflight' or run['url']!=artifact_url(run['artifact']): raise ValueError('Preflight cannot be a joint run')
         elif run['classification']!='single_operator' or not re.fullmatch(r'https://github\.com/relcom-technologies/(?:ipvx-research|ipvx-agent-lab)/actions/runs/[0-9]+',run['url']):
@@ -129,7 +134,7 @@ def render(root, language='ru', view='full', rfc=None):
         source_html=f'<a href="{esc(source["url"])}">{esc(source["label"])}</a>'
         for comment in source.get('comment_ids',[]): source_html+=f' <a class="research-comment-id" href="{page("community",language)}#comment-{comment}"><code>{comment}</code></a>'
         if source.get('event_ids'): source_html+=' · '+esc(', '.join(source['event_ids']))
-        rows=[('source',source_html),('question',esc(case['hypothesis'][language])),('protocol',f'<a href="{artifact_url(protocol["artifact"])}">{esc(protocol["id"])} · {esc(protocol["version"])}</a>'),('run',f'<a href="{esc(run["url"])}">{t("run")}</a> · <a href="{artifact_url(run["artifact"])}">JSON</a>'),('result',esc(case['result'][language])),('limits',esc(case['limits'][language]))]
+        rows=[('source',source_html),('question',esc(case['hypothesis'][language])),('protocol',f'<a href="{artifact_url(protocol["artifact"])}">{esc(protocol["id"])} · {esc(protocol["version"])}</a>'),('run',f'<a href="{esc(run["url"])}">{t("private_run" if run["access"]=="private_repository" else "public_record")}</a> · <a href="{artifact_url(run["artifact"])}">{t("public_summary")}</a>'),('result',esc(case['result'][language])),('limits',esc(case['limits'][language]))]
         for label,body in rows: out.append(f'<dt>{t(label)}</dt><dd>{body}</dd>')
         out.append(f'</dl><details><summary>SHA-256</summary><p><code>{protocol["artifact"]["sha256"]}</code></p><p><code>{run["artifact"]["sha256"]}</code></p></details><p><a href="{canonical}?case={identity}#experiment-draft">{t("proposal")}</a></p></article>')
     if view=='full':
