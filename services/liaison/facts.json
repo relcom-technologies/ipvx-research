@@ -1,7 +1,8 @@
 {
   "a2a-profile": {
     "source": "docs/a2a-interface.md",
-    "deployed_revision": "f56939c90fe4b1c508cee99678890b4281b6e7b7",
+    "interface_baseline_revision": "f56939c90fe4b1c508cee99678890b4281b6e7b7",
+    "deployment_scope": "The protocol baseline is not proof of the current deployment revision; verify the live release separately before asserting it.",
     "transport": "Public A2A uses HTTPS/IP/DNS. Native Ethernet is a separate experiment.",
     "deduplication": "Account plus messageId and canonical params; same params replay cached result. Changed params return HTTP 409 without the original IDs. A fresh ID can create a new proposal.",
     "recovery": "Persist original params before sending. With no params or usable proposal/task IDs, stop automatic resubmission and reconcile an UNKNOWN outcome.",
