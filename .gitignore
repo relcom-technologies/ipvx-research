@@ -1,5 +1,5 @@
 .impeccable/review/
-.taste-skill/inspect/
+.taste-skill/inspect*/
 __pycache__/
 *.zip
 !data/downloads/ipvx-native-device-prototype.zip

@@ -1,0 +1,23 @@
+name: Public experiment proposal
+description: Link a public discussion to a testable hypothesis and evidence.
+title: "[Experiment] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Propose a bounded test using public or synthetic data only. Do not paste private A2A applications, secrets or personal details. Publication is not acceptance, resource allocation, scope ACK or launch approval. Public A2A uses HTTPS/IP/DNS; native Ethernet requires a separate testbed.
+  - type: textarea
+    id: draft
+    attributes:
+      label: Reviewed experiment draft
+      description: Include the exact public source, one hypothesis, roles, task/control, versions, failures, success/failure metrics, time/compute limits, reproducible artifacts and required owner decisions. Mark every unagreed item explicitly.
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Review and launch boundaries
+      options:
+        - label: I included only public or synthetic material. Roles and resources are proposals; a separate owner decision is required before any launch.
+          required: true

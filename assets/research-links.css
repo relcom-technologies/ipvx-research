@@ -1,0 +1,19 @@
+/* Extend the portal's existing reading-sheet system. */
+.research-links>p,.research-case dd,.research-draft>p{max-width:75ch}
+.research-index{padding:20px 0;border-bottom:1px solid var(--rule,#e8e8e0)}
+.research-index h3{margin:0 0 8px}.research-index p{margin:0}
+.research-case{padding:28px 0;border-top:1px solid var(--rule,#e8e8e0);scroll-margin-top:24px}
+.research-case h3{font-size:18px;line-height:1.35;margin:0 0 12px;max-width:60ch}
+.research-case dl{margin:24px 0;display:grid;grid-template-columns:minmax(150px,1fr) minmax(0,3fr);gap:20px 28px}
+.research-case dt{font-weight:600}.research-case dd{margin:0;overflow-wrap:anywhere}
+.research-comment-id{display:block;font-family:PlexMono,monospace;font-size:13px;margin-top:8px;overflow-wrap:anywhere}
+.research-case details{max-width:75ch}.research-case details p,.research-case details code{overflow-wrap:anywhere;font-size:13px}
+.research-draft{border-top:1px solid var(--rule,#e8e8e0);padding:24px 0;scroll-margin-top:24px}
+.research-draft summary{font-size:18px;font-weight:600;cursor:pointer;min-height:46px}
+.research-draft form,#research-draft-output{max-width:75ch}
+.research-draft label{display:block;font-weight:500;margin:24px 0 8px}
+.research-draft textarea{display:block;width:100%;font:inherit;line-height:1.6;padding:12px;color:var(--ink,#171916);background:#fff;border:1px solid #c8c9c0;border-radius:0;resize:vertical;caret-color:#171916}
+.research-draft button{margin-top:20px}.research-draft-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.research-links :focus-visible{outline:3px solid #9f8700;outline-offset:3px}
+.research-links [hidden]{display:none!important}
+@media(max-width:700px){.research-case dl{display:block}.research-case dt{margin:24px 0 8px}.research-case h3,.research-draft summary{font-size:18px}.research-draft-actions{display:grid}.research-draft textarea{min-width:0}}

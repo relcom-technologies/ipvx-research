@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "kind": "curated_public_research_links",
+  "cases": [
+    {
+      "id": "a2a-recovery",
+      "rfcs": [
+        "rfc-0007"
+      ],
+      "stage": "local_preflight",
+      "title": {
+        "ru": "A2A: сохранить неизвестный исход",
+        "en": "A2A: preserve an unknown outcome",
+        "de": "A2A: unbekannten Ausgang bewahren",
+        "es": "A2A: conservar un resultado desconocido"
+      },
+      "hypothesis": {
+        "ru": "При потере ответа клиент восстанавливает исходный запрос или сохраняет UNKNOWN; отсутствие записи не разрешает автоматическую замену messageId.",
+        "en": "After a lost reply, the client recovers the original request or preserves UNKNOWN; a missing record does not authorize automatic replacement of messageId.",
+        "de": "Nach einer verlorenen Antwort stellt der Client die ursprüngliche Anfrage wieder her oder bewahrt UNKNOWN; ein fehlender Datensatz erlaubt keinen automatischen Ersatz der messageId.",
+        "es": "Tras perder una respuesta, el cliente recupera la solicitud original o conserva UNKNOWN; un registro ausente no autoriza sustituir messageId automáticamente."
+      },
+      "source": {
+        "kind": "public_comment",
+        "url": "https://www.moltbook.com/post/bf6ed290-9ec8-4ed3-96b1-fa791200d849",
+        "comment_ids": [
+          "c1676dea-1818-47d6-a841-1a003e5ed585",
+          "02423e17-93e5-4603-b2fa-f2af4814fd2e",
+          "45be4b90-6314-4959-87e6-db87c3eb43e8",
+          "651b962b-391d-4ba1-8dca-8f679cdfb91b",
+          "16001872-a37e-4a8f-ab76-ca07e47ff392"
+        ],
+        "label": "Moltbook · prismdeadlines / IPvXResearchLiaison"
+      },
+      "protocol": {
+        "id": "IPVX-A2A-INTEROP-001",
+        "version": "1.0-rc1",
+        "artifact": {
+          "path": "experiments/a2a-interop/protocol.json",
+          "revision": "04f4104bc0fdba80723eb76d390fdb8a4d6a1bd5",
+          "sha256": "1668bf7170291a7313831bdbcd01db0a9cff24dc218c625d83436a6d5e2d9f4e"
+        }
+      },
+      "run": {
+        "classification": "local_preflight",
+        "url": "https://github.com/relcom-technologies/ipvx-research/blob/04f4104bc0fdba80723eb76d390fdb8a4d6a1bd5/experiments/a2a-interop/local-preflight.json",
+        "artifact": {
+          "path": "experiments/a2a-interop/local-preflight.json",
+          "revision": "04f4104bc0fdba80723eb76d390fdb8a4d6a1bd5",
+          "sha256": "c1554354a8846d25c1a8fbc1d5a01b702c39bdd98bff151fd82f4eb91bf9b3d0"
+        }
+      },
+      "result": {
+        "ru": "A/B/R прошли только в in-process ASGI. Совместного запуска и независимого исполнения нет.",
+        "en": "A/B/R passed only in-process ASGI. No joint run or independent execution.",
+        "de": "A/B/R bestanden nur in-process ASGI. Kein gemeinsamer Lauf oder unabhängige Ausführung.",
+        "es": "A/B/R pasaron solo en ASGI dentro del proceso. Sin ejecución conjunta ni independiente."
+      },
+      "limits": {
+        "ru": "prismdeadlines выбрал только асинхронное рецензирование публичного текста; личность и независимость не проверены. Итог рецензии не получен. Уполномоченный client runner не найден. Старое окно кандидата не согласовано и истекло. Production не гарантирует минимальное хранение и tombstone; 30 дней относятся к токену.",
+        "en": "prismdeadlines chose asynchronous public-text review only; identity and independence are unverified. No final review received. No authorized client runner. The candidate’s old window was never accepted and has elapsed. Production guarantees no minimum retention or tombstone; 30 days refer to the token.",
+        "de": "prismdeadlines wählte ausschließlich asynchrone Prüfung öffentlicher Texte; Identität und Unabhängigkeit sind ungeprüft. Kein Abschlussgutachten und kein autorisierter Client-Runner. Das alte Zeitfenster war nie vereinbart und ist abgelaufen. Production garantiert weder Mindestaufbewahrung noch Tombstone; 30 Tage betreffen das Token.",
+        "es": "prismdeadlines eligió solo revisar texto público de forma asíncrona; identidad e independencia sin verificar. Sin revisión final ni client runner autorizado. El horario antiguo nunca fue aceptado y ya pasó. Production no garantiza retención mínima ni tombstone; los 30 días corresponden al token."
+      }
+    },
+    {
+      "id": "matched-transport",
+      "rfcs": [
+        "rfc-0004",
+        "rfc-0006"
+      ],
+      "stage": "measured",
+      "title": {
+        "ru": "Нативный транспорт и сопоставимый TCP",
+        "en": "Native transport and matched TCP",
+        "de": "Nativer Transport und vergleichbares TCP",
+        "es": "Transporte nativo y TCP comparable"
+      },
+      "hypothesis": {
+        "ru": "Даёт ли нативная доставка практический выигрыш при одинаковых подписанных и зашифрованных документах, маршрутах и задачах?",
+        "en": "Does native delivery offer practical benefit with the same signed and encrypted documents, routes and tasks?",
+        "de": "Bringt native Zustellung einen praktischen Vorteil bei gleichen signierten und verschlüsselten Dokumenten, Routen und Aufgaben?",
+        "es": "¿Aporta ventajas prácticas la entrega nativa con los mismos documentos firmados y cifrados, rutas y tareas?"
+      },
+      "source": {
+        "kind": "project_history",
+        "url": "https://github.com/relcom-technologies/ipvx-research/blob/8bf63c64cdcb19b4b506dd59ed5a0cb56796d71f/history/events.jsonl",
+        "event_ids": [
+          "HX-0148",
+          "HX-0149"
+        ],
+        "label": "IPvX · HX-0148 / HX-0149"
+      },
+      "protocol": {
+        "id": "matched-transport",
+        "version": "532f5f00aa83744180ec97680c477141f88f41b8",
+        "artifact": {
+          "path": "docs/evidence/practical-comparison-41098099745/protocol.json",
+          "revision": "8bf63c64cdcb19b4b506dd59ed5a0cb56796d71f",
+          "sha256": "f1a1a5517e00906641c43cb90432f1ed4c8e1108f88663272bded0f72eb38af9"
+        }
+      },
+      "run": {
+        "classification": "single_operator",
+        "url": "https://github.com/relcom-technologies/ipvx-agent-lab/actions/runs/41098099745",
+        "artifact": {
+          "path": "docs/practical-comparison-2026-10-30.json",
+          "revision": "8bf63c64cdcb19b4b506dd59ed5a0cb56796d71f",
+          "sha256": "1eb2212acd10a80bf622715d8ffec54f37a1f7278217051a90b2d5830cd89a12"
+        }
+      },
+      "result": {
+        "ru": "800 основных задач и 200 точных повторов. Порог выигрыша 20% не достигнут; преимущество не установлено. Медиана парных отношений времени восстановления native/TCP — 8,014.",
+        "en": "800 primary tasks and 200 exact replays. The 20% benefit threshold was not reached; superiority is not established. Median paired native/TCP recovery-time ratio: 8.014.",
+        "de": "800 primäre Aufgaben und 200 exakte Wiederholungen. Die 20%-Vorteilsschwelle wurde nicht erreicht; Überlegenheit ist nicht belegt. Median der gepaarten Wiederherstellungszeit-Verhältnisse native/TCP: 8,014.",
+        "es": "800 tareas principales y 200 repeticiones exactas. No se alcanzó el umbral del 20%; no se establece superioridad. Mediana de razones pareadas del tiempo de recuperación nativo/TCP: 8,014."
+      },
+      "limits": {
+        "ru": "Один CI-хост и один оператор. Контроль: числовой TCP/plain HTTP без TLS, та же защита документов. Это не WAN, не HTTPS-сравнение и не независимое воспроизведение. Новых прогонов и моделей этот реестр не запускает.",
+        "en": "One CI host and one operator. Control: numeric TCP/plain HTTP without TLS, same document protection. This is not WAN, an HTTPS comparison or independent reproduction. This registry starts no new runs or models.",
+        "de": "Ein CI-Host und ein Betreiber. Kontrolle: numerisches TCP/plain HTTP ohne TLS, gleicher Dokumentenschutz. Kein WAN-, HTTPS-Vergleich oder unabhängiger Nachbau. Das Register startet keine Läufe oder Modelle.",
+        "es": "Un host CI y un operador. Control: TCP numérico/HTTP sin TLS, misma protección de documentos. No es WAN, comparación HTTPS ni reproducción independiente. El registro no inicia ejecuciones ni modelos."
+      }
+    }
+  ]
+}

@@ -18,6 +18,7 @@ from research_architecture import render as render_research_architecture
 from research_contributions import render as render_research_contributions
 from agent_directory import render as render_agent_directory
 from agent_intake_ui import owner as render_agent_owner
+from research_links import render as render_research_links, jump as research_jump
 from collaboration import render as render_collaboration, entry_link as render_collaboration_link
 
 LANGUAGES = {'ru': 'Русский', 'en': 'English', 'de': 'Deutsch', 'es': 'Español'}
@@ -148,6 +149,10 @@ def localized(tree, name, language, catalog, pages):
     def walk(node, skipped=False):
         if isinstance(node, str):
             return node if skipped else translate(node)
+        if language != 'ru' and node.attr('id') == 'research-links-jump':
+            return next(child for child in Tree(research_jump(language)).root.children if isinstance(child, Element))
+        if language != 'ru' and node.attr('id') == 'research-links':
+            return next(child for child in Tree(render_research_links(ROOT, language, node.attr('data-view'), node.attr('data-rfc') or None)).root.children if isinstance(child, Element))
         if language != 'ru' and node.attr('id') == 'collaboration-hub':
             return next(child for child in Tree(render_collaboration(ROOT, language)).root.children if isinstance(child, Element))
         if language != 'ru' and node.attr('id') == 'collaboration-link':

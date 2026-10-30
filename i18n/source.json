@@ -862,13 +862,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "cbdf5b93622a102f",
-      "source": "152 событий по HX-0152; авторы, основания, проверки и ограничения.",
+      "id": "6acdaf8687d54078",
+      "source": "155 событий по HX-0155; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "8a1bce61d6506094",
-      "source": "306.5 КиБ · 12 файлов",
+      "id": "fb9dc5845a5b51ad",
+      "source": "310.5 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4667,6 +4667,156 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "5307fc9f84314c6d",
+      "source": "HX-0155 · SDK-экзамен повторяет исходный подписанный запрос",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "2ccdb3e3ca5897bf",
+      "source": "Уточнение",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "38935be497d5b296",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-30T20:04:34.311916+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "e2f5b1a860a4f9aa",
+      "source": "PR-проверка лаборатории обнаружила недетерминированный сбой: экзамен заново подписывал тот же nonce, и смена секунды меняла запрос. Проверка исправлена на повтор сохранённого запроса; агент по-прежнему отклоняет конфликт.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "9af2e4a16b48f24b",
+      "source": "Проверять точный повтор без ослабления подписи, срока действия или защиты от повторного исполнения.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "5944f94fcc69689f",
+      "source": "docs/research-links-checks-2026-10-30.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "2bc9897747f53b57",
+      "source": "Детерминированный тест упал до исправления и прошёл после. Локально прошли 197 тестов, 9 пропущены; Linux CI проверяется отдельно.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "44f6e1398e93df27",
+      "source": "Изменён только SDK-экзамен, не обработчик агента и не контракт публичного A2A. Исходный failed CI сохранён; production не менялся.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "abec8b1a053f1537",
+      "source": "HX-0154 · Обсуждения связаны с протоколами и сохранёнными результатами",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "e078c61c3e49f21a",
+      "source": "Реализовано",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "3e4b73c25b2bec86",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-30T19:17:21.717612+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "b2a7c67ee77f82af",
+      "source": "Подготовлен публичный реестр двух цепочек: A2A recovery и сопоставимый транспорт. Добавлены ссылки из обсуждений и RFC, локальный черновик с отдельной отправкой в GitHub и проверки четырёх языков.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "7cfe75abbeee1d37",
+      "source": "Сохранять точные источники, версии и хеши; отделять рецензирование текста, локальную подготовку, измерение одного оператора и независимое исполнение.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "61eaae94d0255f41",
+      "source": "data/research-links.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "80ff6d1d9f05a423",
+      "source": "data/community-discussions.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "36a66c2016f8ff17",
+      "source": "docs/research-links.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "31eb305825f102be",
+      "source": "scripts/test_research_links.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "d743c5932bd88856",
+      "source": "scripts/browser_research_links_check.mjs",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "1b7ee75ab68d4956",
+      "source": "prismdeadlines подтвердил только review-only; итоговая рецензия и отдельный client runner отсутствуют. Старое окно кандидата истекло; совместного опыта не было.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "55b1bcd2fcee1b5d",
+      "source": "Преимущество native над сопоставимым TCP не установлено. Отрицательный результат, исходные опыты и предыдущая история сохранены.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "117c56cf0ab727ce",
+      "source": "Новый опыт, платные модели, отправка сообщений и production не запускались. Реестр не публикует закрытые заявки и не выдаёт ресурсов.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "ccd48fb7af42071a",
+      "source": "HX-0153 · Применена новая граница проекта и общей инфраструктуры",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "9d5e14e9697aa587",
+      "source": "Инструкции IPvX и политика лаборатории уточнены по политике владельца. Проектные операции принадлежат клиентским репозиториям; relcom-infra хранит только общее инфраструктурное состояние.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "4a4208aa9dc2e2a0",
+      "source": "Существующие проектные операции в инфраструктуре считать долгом миграции; не расширять и не удалять их без согласованной рабочей замены.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "a54ff182c7e8acf5",
+      "source": "AGENTS.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "223ad6426d99f3c3",
+      "source": "Эта запись не разрешает merge или deployment. Production Actions запрещены; в relcom-infra изменений нет.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
       "id": "0a354deb3b257dd1",
       "source": "HX-0152 · Четвёртый этап выкачен через SSH и проверен офлайн",
       "context": "history.html:text:section/details/summary"
@@ -4682,29 +4832,14 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "c659c55ffad91398",
       "source": "Сверить установленный код и сохранённые наблюдения, сохранив исходные данные и отрицательный результат сравнения.",
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "caebfdd3f30d0bc5",
       "source": "docs/practical-rollout-2026-10-30.json",
       "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "08ddfe4194e4df6e",
@@ -4722,19 +4857,9 @@
       "context": "history.html:text:details/ul/li"
     },
     {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
-    },
-    {
       "id": "95b27ccb57559989",
       "source": "HX-0151 · Исправлен сбой IPvX-фильтра при продвижении базы PR",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "2ccdb3e3ca5897bf",
-      "source": "Уточнение",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "b78c381575f2fe70",
@@ -4850,11 +4975,6 @@
       "id": "c03de1c29e366efe",
       "source": "HX-0148 · Подготовлен парный контроль практической пользы транспорта",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "e078c61c3e49f21a",
-      "source": "Реализовано",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "37ca39ba7352e473",
@@ -5779,11 +5899,6 @@
     {
       "id": "391da75c4fb08b30",
       "source": "assets/discussions.js",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "80ff6d1d9f05a423",
-      "source": "data/community-discussions.json",
       "context": "history.html:text:ul/li/a"
     },
     {
@@ -9804,11 +9919,6 @@
     {
       "id": "c154f4e7c772c0fc",
       "source": "history/commit-manifest.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "a54ff182c7e8acf5",
-      "source": "AGENTS.md",
       "context": "history.html:text:ul/li/a"
     },
     {
