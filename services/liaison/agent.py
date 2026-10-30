@@ -50,6 +50,19 @@ PROPOSAL_TEXT = {'hypothesis','roles','resources','versions','shared_task','cont
     'time_compute_limits','consent_status'}
 
 
+def response_schema():
+    proposal=dict(type='object',additionalProperties=False,
+        properties={**{k:{'type':'string'} for k in sorted(PROPOSAL_TEXT)},
+            **{k:{'type':'array','items':{'type':'string'}} for k in sorted(PROPOSAL_LISTS)}},
+        required=sorted(PROPOSAL_TEXT|PROPOSAL_LISTS))
+    properties={'decision':{'type':'string','enum':['reply','needs_owner','skip']},
+        'reply':{'type':'string'},'reason':{'type':'string'},
+        'evidence':{'type':'array','items':{'type':'string'}},
+        'classification':{'type':'string','enum':['question','experiment_interest','review_interest','irrelevant']},
+        'proposal':{'anyOf':[{'type':'null'},proposal]}}
+    return dict(type='object',additionalProperties=False,properties=properties,required=sorted(properties))
+
+
 def digest(value):
     return hashlib.sha256(json.dumps(value, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
 
@@ -140,19 +153,31 @@ class Provider:
 
     def count(self, prompt):
         if self.name == 'openai':
-            return self.client.responses.input_tokens.count(model=self.model, instructions=SYSTEM, input=prompt).input_tokens
+            return self.client.responses.input_tokens.count(model=self.model, instructions=SYSTEM, input=prompt,
+                text=self.openai_format()).input_tokens
         if self.name == 'anthropic':
-            return self.client.messages.count_tokens(model=self.model, system=SYSTEM, messages=[{'role':'user','content':prompt}]).input_tokens
+            return self.client.messages.count_tokens(model=self.model, system=SYSTEM,
+                output_config=self.anthropic_format(),messages=[{'role':'user','content':prompt}]).input_tokens
         return 0
+
+    def openai_format(self):
+        return {'format':{'type':'json_schema','name':'ipvx_private_analysis','strict':True,'schema':response_schema()}}
+
+    def anthropic_format(self):
+        return {'format':{'type':'json_schema','schema':response_schema()}}
 
     def generate(self, prompt, maximum):
         if self.name == 'openai':
             response = self.client.responses.create(model=self.model, instructions=SYSTEM, input=prompt,
-                max_output_tokens=maximum, store=False, service_tier='default', reasoning={'effort':'none'})
+                max_output_tokens=maximum, store=False, service_tier='default', reasoning={'effort':'none'},text=self.openai_format())
+            self.response_meta={'status':response.status,'request_id':getattr(response,'_request_id',None),
+                'incomplete_reason':getattr(response.incomplete_details,'reason',None)}
             return response.output_text, response.model, dict(input_tokens=response.usage.input_tokens, output_tokens=response.usage.output_tokens)
         if self.name == 'anthropic':
             response = self.client.messages.create(model=self.model, system=SYSTEM, max_tokens=maximum,
-                messages=[{'role':'user','content':prompt}])
+                service_tier='standard_only',output_config=self.anthropic_format(),messages=[{'role':'user','content':prompt}])
+            self.response_meta={'stop_reason':response.stop_reason,'request_id':getattr(response,'_request_id',None),
+                'content_types':[x.type for x in response.content]}
             return ''.join(x.text for x in response.content if x.type == 'text'), response.model, dict(input_tokens=response.usage.input_tokens, output_tokens=response.usage.output_tokens)
         request = urllib.request.Request(self.config['url'].rstrip('/')+'/api/chat', method='POST',
             data=json.dumps(dict(model=self.model, stream=False, format='json',
@@ -229,6 +254,7 @@ def call(provider, prompt, ledger, identifier, config):
     ledger.reserve(identifier, amount, provider.name, provider.model)
     raw, actual_model, usage = provider.generate(prompt, config['max_output_tokens'])
     return raw, dict(provider=provider.name, requested_model=provider.model, actual_model=actual_model, usage=usage,
+        provider_response=getattr(provider,'response_meta',{}),
         reserved_usd=amount/1_000_000, output_token_limit=config['max_output_tokens'],
         pricing_used={k:provider.config[k] for k in ('input_usd_per_million','output_usd_per_million','pricing_valid_until') if k in provider.config},
         prompt_sha256=hashlib.sha256(prompt.encode()).hexdigest(), timestamp=datetime.now(timezone.utc).isoformat())

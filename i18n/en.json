@@ -2363,5 +2363,14 @@
   "d574ff4deb68bd63": "scripts/test_autonomous_liaison.py",
   "e09a89f4b8351ea4": "95 local tests and 5 wire tests passed.",
   "b561151ba4c7f9c4": "The new version is not installed yet; the paid pair and activation are unverified. The owner confirmed resolution of the Claude API balance issue.",
-  "36b713dc793c7c3b": "Private A2A applications are not sent to models. GitHub HTML and the Moltbook tree have explicitly recorded coverage gaps."
+  "36b713dc793c7c3b": "Private A2A applications are not sent to models. GitHub HTML and the Moltbook tree have explicitly recorded coverage gaps.",
+  "84b9a79460787eba": "136 events through HX-0136; authors, rationale, checks and limitations.",
+  "7954eaed4ac28574": "283.6 KiB · 12 files",
+  "318e868495115b92": "HX-0136 · First Claude response was empty; strict API schema prepared",
+  "cbf4a9202fd9ba3e": "Codex — primary assistant in this conversation · 2026-10-30T00:24:08.619214+00:00",
+  "f26d292221356883": "Server installation passed. The first full Claude request returned 4469 input and 0 output tokens without text; GPT was not called. The failure and USD 0.054427 reservation remain. One Claude control request returned valid JSON and 13 output tokens; the shared daily reservation is USD 0.074427.",
+  "5e8cb263eb9d905a": "Generation stays disabled until a successful pair. Prepared JSON Schema mode for both APIs; input-token counting includes the same schema. Stop metadata is preserved in the private trace.",
+  "02caeff8ede2e8e4": "99 local tests passed, including 3 schema and token-accounting checks.",
+  "bfa614402f9fcbd3": "No paired draft yet. The new schema is not installed; a new explicit operator run is required after checks.",
+  "d44774f494a78043": "Reservations are conservative application accounting, not the provider invoice. Old records remain; no new external commitments were made."
 }
