@@ -862,13 +862,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "0134082925f80dcb",
-      "source": "149 событий по HX-0149; авторы, основания, проверки и ограничения.",
+      "id": "cbdf5b93622a102f",
+      "source": "152 событий по HX-0152; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "408b9d83678c1bde",
-      "source": "303.6 КиБ · 12 файлов",
+      "id": "8a1bce61d6506094",
+      "source": "306.5 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4667,6 +4667,131 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "0a354deb3b257dd1",
+      "source": "HX-0152 · Четвёртый этап выкачен через SSH и проверен офлайн",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "64aeba15a4707a1e",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-30T18:40:45.021950+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "4c0398ca5d39bddc",
+      "source": "Установлены принятые версии лаборатории и портала. Все восемь проверок модуля прошли, подтверждены 800 сохранённых результатов и отказы на неверных входах. HTTPS, 149 публичных записей, восемь контейнеров и три таймера проверены.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "c659c55ffad91398",
+      "source": "Сверить установленный код и сохранённые наблюдения, сохранив исходные данные и отрицательный результат сравнения.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "caebfdd3f30d0bc5",
+      "source": "docs/practical-rollout-2026-10-30.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "08ddfe4194e4df6e",
+      "source": "Это офлайн-сверка прежнего CI. Новый нативный опыт и модели не запускались; практическое преимущество и независимый оператор не установлены.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "23a03fe7922a36d1",
+      "source": "После merge новых IPvX Actions нет. Само развёртывание выполнено по SSH; предшествующий непреднамеренный production-план описан в HX-0151.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "1bb0e0894ba2eb70",
+      "source": "Резервные копии, ключи, состояние доставки и бюджет сохранены. Технические отказы приёмки и их устранение отражены в отдельной записи.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "95b27ccb57559989",
+      "source": "HX-0151 · Исправлен сбой IPvX-фильтра при продвижении базы PR",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "2ccdb3e3ca5897bf",
+      "source": "Уточнение",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "b78c381575f2fe70",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-30T18:34:27Z",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "c8c4bb08f3274b88",
+      "source": "Первый release CI ошибочно запустил общий Terraform init/plan: фильтр включил чужие коммиты продвинувшейся базы. План сообщил No changes, применения не было. После исправления повторный CI полностью пропустил Terraform.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "7bfb6046f0749dc7",
+      "source": "Считать изменения от общей базы Git; сохранить строгую проверку реальных смешанных изменений.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "cf33e82ac3e6ab90",
+      "source": "Первый production-план нарушил указанный владельцем запрет и сохранён в записи. Его нельзя представить отсутствующим.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "707b430ff4576130",
+      "source": "Исправлен только выделенный IPvX-фильтр; определения общих workflows и политика других проектов не менялись.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "bdea3e0639803d6b",
+      "source": "HX-0150 · Четвёртый этап принят с сохранением обеих историй",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "199d6db958cdb817",
+      "source": "Решение",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "9c2bc610a1a757a0",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-30T18:18:03Z",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "a76f40201f33a1eb",
+      "source": "По поручению владельца PR29 и PR35 слиты обычными merge commit. Проверены родители и равенство деревьев проверенным версиям. Исходный проигрыш сравнения и ранние доказательства сохранены.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "1fee58509a10b5bc",
+      "source": "Разделить принятие исходников, ручную выкатку и проверку результатов.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "18e69999eb9a9644",
+      "source": "Принятие инструмента не доказывает практическую пользу или независимость оператора.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
       "id": "a7d71cb183cbcbc9",
       "source": "HX-0149 · Первое сравнение не установило практического преимущества IPvX",
       "context": "history.html:text:section/details/summary"
@@ -4682,19 +4807,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "f008349bb84051c8",
       "source": "Сохранить исходные данные и проигрыш восстановления, а не менять критерии после измерения. Следующий опыт должен отдельно проверить механизм отказа и тайм-аут.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "be2e3f2f9522895f",
@@ -4710,11 +4825,6 @@
       "id": "2c4e83dd08fb02ce",
       "source": "docs/evidence/practical-comparison-41098099745/report.json",
       "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "813e35f45d683556",
@@ -4735,11 +4845,6 @@
       "id": "4ac836f2887dfcb5",
       "source": "Код остаётся кандидатом в PR. Слияние, production-выкатка и изменение действующих таймеров не выполнялись.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "c03de1c29e366efe",
@@ -4820,11 +4925,6 @@
       "id": "b3559b77b1fe2aa0",
       "source": "HX-0146 · Пакет повторения и история приняты обычными merge commit",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "199d6db958cdb817",
-      "source": "Решение",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "884790e808cc4b86",
@@ -9330,11 +9430,6 @@
       "id": "9c43d8d7d04e8b57",
       "source": "HX-0046 · Исправлен каталог сессий DynamicUser до production-развёртывания",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "2ccdb3e3ca5897bf",
-      "source": "Уточнение",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "2c468afd5b5cc2bd",
