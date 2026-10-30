@@ -82,31 +82,6 @@
       "context": "account.html:text:header/div/a"
     },
     {
-      "id": "5bd57038dbadd651",
-      "source": "Язык",
-      "context": "account.html:attribute:aria-label"
-    },
-    {
-      "id": "6da140fdd4be0189",
-      "source": "Русский",
-      "context": "account.html:text:body/nav/a"
-    },
-    {
-      "id": "ba118bf7fc9c1aed",
-      "source": "English",
-      "context": "account.html:text:body/nav/a"
-    },
-    {
-      "id": "801cfe0fa1182664",
-      "source": "Deutsch",
-      "context": "account.html:text:body/nav/a"
-    },
-    {
-      "id": "94b382b61b9dde0f",
-      "source": "Español",
-      "context": "account.html:text:body/nav/a"
-    },
-    {
       "id": "20f6203b19297010",
       "source": "Участник исследования",
       "context": "account.html:text:main/div/h1"
@@ -862,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "6acdaf8687d54078",
-      "source": "155 событий по HX-0155; авторы, основания, проверки и ограничения.",
+      "id": "70abab3f266abc24",
+      "source": "160 событий по HX-0160; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "fb9dc5845a5b51ad",
-      "source": "310.5 КиБ · 12 файлов",
+      "id": "1c1fa39d598e7e34",
+      "source": "316.2 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -907,8 +882,8 @@
       "context": "experiments.html:text:main/section/h2"
     },
     {
-      "id": "5ae5c290f0893eb2",
-      "source": "Та же сеть из пяти машин работает прямо сейчас. На",
+      "id": "bfcbf2bd726faf80",
+      "source": "Отдельный живой стенд использует пять ВМ на трёх физических хостах, синтетических агентов без LLM и административный IP. Это другая конфигурация, чем записанный strict-LLM-опыт с тремя гостями без INET/IPv6. На",
       "context": "experiments.html:text:main/section/p"
     },
     {
@@ -1477,8 +1452,8 @@
       "context": "governance.html:text:main/section/p"
     },
     {
-      "id": "2b62ad3362dee64b",
-      "source": "Автоматическая метка сообщает результат подсчёта. Она не объединяет код и не выдаёт ключи. Принятие изменения и подключение выполняются отдельным проверяемым действием.",
+      "id": "d8572114bb35ca45",
+      "source": "Сейчас CI запускается только на PR и проверяет правила подсчёта на тестовых данных. Автоматическая разметка реальных голосований не включена. Метка сама по себе не подтверждает решение, не объединяет код и не выдаёт ключи; нужны проверяемые голоса, состав и отдельное действие владельца.",
       "context": "governance.html:text:main/section/p"
     },
     {
@@ -2702,8 +2677,8 @@
       "context": "reproduce.html:text:main/section/p"
     },
     {
-      "id": "ae1c3f43c764e60b",
-      "source": "Полная реализация лаборатории и сырые захваты пока находятся в отдельном закрытом репозитории владельца. Для независимого воспроизведения запросите доступ через публичное предложение; эта страница не объявляет закрытые исходники общедоступными.",
+      "id": "12ac7249178d8ea5",
+      "source": "Публичный архив раннего нативного прототипа содержит исходники и четыре PCAP: три гостя на одном CI-хосте, SHA-256 без LLM. Полная платформа Lab и исходные захваты физического strict-LLM-опыта остаются в закрытом репозитории. Его очищенная публичная проекция не позволяет заново проверить исходные байты. Доступ можно предложить обсудить через публичную заявку; он не предоставляется автоматически.",
       "context": "reproduce.html:text:main/section/p"
     },
     {
@@ -3092,8 +3067,8 @@
       "context": "rfc-0003.html:text:main/article/h2"
     },
     {
-      "id": "9dfae1810b062523",
-      "source": "Eligible people comment exactly /vote yes, /vote no or /vote abstain on a proposal issue. Only authenticated GitHub User comments count; the latest valid comment per person within the window is used. Late comments, bots, prose and ineligible accounts do not count. The scheduled workflow labels the current vote result; comments and membership are publicly inspectable. A failed workflow is not an approval.",
+      "id": "68fd497f68d10cde",
+      "source": "Eligible people comment exactly /vote yes, /vote no or /vote abstain on a proposal issue. Only authenticated GitHub User comments count; the latest valid comment per person within the window is used. Late comments, bots, prose and ineligible accounts do not count. Operational status (2026-10-30): CI runs only on pull requests with read-only permissions and tests tally rules on fixtures. Automatic labelling of real votes is not enabled. Comments and membership are publicly inspectable; a label alone or a passed test is not evidence of approval. The voting procedure above remains a draft; this correction does not establish a new operational voting service.",
       "context": "rfc-0003.html:text:main/article/p"
     },
     {
@@ -3102,8 +3077,8 @@
       "context": "rfc-0003.html:text:main/article/h2"
     },
     {
-      "id": "3b1d209862702fd7",
-      "source": "A majority-approved label authorizes research admission in principle. It does not merge code, publish an RFC, run a model or issue a credential. A maintainer still reviews reproducibility, licensing, resource limits and isolation, then performs the scoped deployment through a reviewed change. RFC status remains Draft until the accepted revision and decision record are committed. An external machine can run an experiment locally without being admitted into this private lab.",
+      "id": "e99311a2e9332ced",
+      "source": "An explicitly recorded majority decision authorizes research admission in principle; a label alone does not establish that decision. It does not merge code, publish an RFC, run a model or issue a credential. A maintainer still reviews reproducibility, licensing, resource limits and isolation, then performs the scoped deployment through a reviewed change. RFC status remains Draft until the accepted revision and decision record are committed. An external machine can run an experiment locally without being admitted into this private lab.",
       "context": "rfc-0003.html:text:main/article/p"
     },
     {
@@ -4667,6 +4642,226 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "cb069e99cb441282",
+      "source": "HX-0160 · Исправлена навигационная оговорка после визуальной рецензии",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "e078c61c3e49f21a",
+      "source": "Реализовано",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "139ac43c8f7ee0c5",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-31T00:09:01.773961+01:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "444181f83c993993",
+      "source": "Уточнил, где на странице Lab находятся версия стенда и дата приёмки. Сохранил замечание рецензента, отказ по устаревшему снимку и окончательное подтверждение правки.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "9e02b7473e9242ca",
+      "source": "Проверять исправленный текст в отрисованной сборке; не принимать устаревший preview за подтверждение новой версии.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "f0fe022ad67932ad",
+      "source": "docs/claims-visual-review-2026-10-31.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "13f9b6a7627c480e",
+      "source": "Рецензент — другой контекст ассистента того же оператора. Итоговый ship относится к одной исправленной ссылке на расположение данных.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "a1d5d44e5c423b17",
+      "source": "Изменение остаётся в PR. Слияние, выкатка и production Actions не выполнялись.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "f44bd69a1e67b162",
+      "source": "HX-0159 · Исправлены шесть расхождений публичных утверждений",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "3f2ecb1f7b3d0408",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-31T00:05:50.132566+01:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "9458030c0dabcd59",
+      "source": "Согласованы голосование, доступность PCAP, охват ленты, ограничения A2A, режимы стендов и доступ к CI. Подготовлены изменения портала на четырёх языках и отдельный PR Lab.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "7a06c90eac57ce63",
+      "source": "Уточнить готовность и границы доказательств, сохранив исходный аудит, неудачные результаты, закреплённый A2A-кандидат и прежнюю историю.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "f4ed8e033bc9980b",
+      "source": "docs/claims-fixes-2026-10-31.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "ac8c36783c735508",
+      "source": "docs/claims-fixes-2026-10-31.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "a096c4d3b5e48a81",
+      "source": "docs/a2a-descriptor-0.1.1.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "60b0738a694447df",
+      "source": "Изменения подготовлены в PR; слияние и выкатка не выполнялись. Production Actions и платные модели не запускались.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "c1771b95094f8391",
+      "source": "Пройдены 114 тестов портала, 5 wire-проверок, 197 тестов Lab и 13 strict-LLM-проверок; на macOS пропущены 9 платформенных тестов.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "171a1e96d113c9bb",
+      "source": "Браузер: 75 сочетаний страниц, языков и ширины, 12 сценариев реестра и 288 проверок вёрстки. Lab использует сохранённый публичный снимок.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "7b81a90111844560",
+      "source": "Новая Agent Card меняет хеш исходника. Исходный протокол rc1 сохранён; его проверка использует отдельные закреплённые исходники и не подтверждает новый совместный опыт.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "e4a7a40fc73c4e49",
+      "source": "HX-0158 · Сверены публичные утверждения портала и лаборатории",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "a5079e121a2ac236",
+      "source": "Рецензия",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "f52e9d896692e402",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-30T20:59:07.891833+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "687aa9f074a84376",
+      "source": "Сопоставлены 24 страницы в четырёх языках, восемь разделов Lab и три статьи. Две указанные схемы описывают разные опыты и технически совместимы. Найдены шесть разрывов в готовности, оговорках, охвате и доступности доказательств.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "45531f253fac6052",
+      "source": "Сравнивать утверждения с их режимом, датой, источником и текущей политикой; сохранять исторические ошибки и отделять их от сегодняшней позиции.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "f691178e730348a7",
+      "source": "docs/claims-consistency-2026-10-30.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "5c087a840972028a",
+      "source": "docs/claims-consistency-2026-10-30.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "415cbe6fec0d03c8",
+      "source": "Это анализ проекта собственным ассистентом, не независимое исполнение и не сертификация. Тексты production не исправлялись.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "85aa9f49f12d0af3",
+      "source": "Неполный retention-disclosure A2A не означает обнаруженную потерю заявки; строка Message expired в живой ленте не доказывает постоянный отказ.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "922b9fef40ea7e71",
+      "source": "HX-0157 · Пятый этап выкачен через SSH и проверен по HTTPS",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "1ae7161341697051",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-30T20:39:06.800630+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "9fdbf037206747cf",
+      "source": "Установлены принятые версии. Все 96 HTML совпали с исходниками; реестр и локальный черновик проверены на четырёх языках. Восемь контейнеров и три таймера активны; ключ, корень пяти бандлов и приватная конфигурация сохранены.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "301e216719987bdf",
+      "source": "Использовать закреплённые клиентские installers и согласованные резервные копии; проверить установленный код и публичные страницы без повторного опыта.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "ffffff4e2062a405",
+      "source": "docs/stage5-rollout-2026-10-30.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "7b6cd2e5f52220d6",
+      "source": "Merge-коммиты не инициировали Actions. Production Actions, платные модели, SMTP-тесты и экспериментальные переключения в этой выкладке не запускались.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "e50764cfd516944c",
+      "source": "Сохранены семь томов, две приватные области портала и старые releases. Удалён только собственный временный staging.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "a92bf60d7b18aa78",
+      "source": "HX-0156 · Пятый этап принят обычными merge commit",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "3c7535f3889bbda8",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-30T20:24:12Z",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "b37fb9d16118344c",
+      "source": "По поручению владельца слиты PR30 лаборатории и PR37 портала. Сохранены оба родителя, проверенные деревья, исходные эксперименты и предыдущая история.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "90353a0ea52569c0",
+      "source": "Принять проверенные версии без squash и rebase; не запускать production Actions.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "04afec96ff49c1db",
+      "source": "Для PR37 обычный CLI был заблокирован правилом владельческого обновления main. После проверки девяти зелёных CI использован существующий административный путь; защита ветки не менялась.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
       "id": "5307fc9f84314c6d",
       "source": "HX-0155 · SDK-экзамен повторяет исходный подписанный запрос",
       "context": "history.html:text:section/details/summary"
@@ -4687,29 +4882,14 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "9af2e4a16b48f24b",
       "source": "Проверять точный повтор без ослабления подписи, срока действия или защиты от повторного исполнения.",
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "5944f94fcc69689f",
       "source": "docs/research-links-checks-2026-10-30.json",
       "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "2bc9897747f53b57",
@@ -4722,19 +4902,9 @@
       "context": "history.html:text:details/ul/li"
     },
     {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
-    },
-    {
       "id": "abec8b1a053f1537",
       "source": "HX-0154 · Обсуждения связаны с протоколами и сохранёнными результатами",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "e078c61c3e49f21a",
-      "source": "Реализовано",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "3e4b73c25b2bec86",
@@ -6865,11 +7035,6 @@
       "id": "19c45cb53238182e",
       "source": "HX-0104 · Read-only review proposes a task-centered research visualization",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "a5079e121a2ac236",
-      "source": "Рецензия",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "7e162c7fdf223404",

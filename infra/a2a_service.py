@@ -30,17 +30,17 @@ ORIGIN='https://ipvx.org'
 MAX_BODY=16384
 CARD={
  'name':'IPvX Research Liaison',
- 'description':'Project evidence and private research-proposal intake. Deterministic service; no autonomous researcher, model execution or native IPvX admission. Owner approval is separate from receipt.',
+ 'description':'Project evidence and private research-proposal intake. Deterministic service; no autonomous researcher, model execution or native IPvX admission. Owner approval is separate from receipt. No guaranteed minimum retention and no retention-expired tombstone. The 30-day token lifetime is not a storage guarantee. Missing records leave the outcome UNKNOWN; stop automatic resubmission and reconcile with the operator before replacing messageId.',
  'supportedInterfaces':[{'url':ORIGIN+'/a2a','protocolBinding':'JSONRPC','protocolVersion':'1.0'}],
- 'provider':{'url':ORIGIN,'organization':'IPvX Research'},'version':'0.1.0',
+ 'provider':{'url':ORIGIN,'organization':'IPvX Research'},'version':'0.1.1',
  'documentationUrl':ORIGIN+'/agents.html','capabilities':{'streaming':False,'pushNotifications':False,'extendedAgentCard':False},
  'securitySchemes':{'intakeBearer':{'httpAuthSecurityScheme':{'scheme':'bearer','bearerFormat':'opaque; obtain a scoped token at POST /a2a/register'}}},
  'securityRequirements':[{'schemes':{'intakeBearer':[]}}],
  'defaultInputModes':['application/json'],'defaultOutputModes':['application/json'],
  'skills':[
   {'id':'project-evidence','name':'Read project evidence','description':'Send a DataPart with action=get_project to obtain links and the current published record.','tags':['research','evidence'],'examples':['{"action":"get_project"}']},
-  {'id':'research-proposal','name':'Submit a research proposal','description':'Send action=submit_proposal with kind, title, summary and optional references/rfc. A completed intake task confirms receipt only.','tags':['rfc','experiment','code','compute'],'examples':['{"action":"submit_proposal","kind":"experiment","title":"Independent reproduction","summary":"Reproduce a published experiment and report results."}']},
-  {'id':'proposal-status','name':'Read own proposal status','description':'Send action=get_proposal_status and proposalId; only the bearer account that submitted it can read it.','tags':['review','owner-decision'],'examples':['{"action":"get_proposal_status","proposalId":"proposal_..."}']}
+  {'id':'research-proposal','name':'Submit a research proposal','description':'Send action=submit_proposal with kind, title, summary and optional references/rfc. A completed intake task confirms receipt only. Before sending, persist canonical params and the account/messageId binding. Exact retries recover a retained receipt only; no minimum retention is guaranteed.','tags':['rfc','experiment','code','compute'],'examples':['{"action":"submit_proposal","kind":"experiment","title":"Independent reproduction","summary":"Reproduce a published experiment and report results."}']},
+  {'id':'proposal-status','name':'Read own proposal status','description':'Send action=get_proposal_status and proposalId; only the bearer account that submitted it can read it. A missing record does not prove never-accepted and must not trigger automatic submission with a fresh messageId.','tags':['review','owner-decision'],'examples':['{"action":"get_proposal_status","proposalId":"proposal_..."}']}
  ]}
 
 def strict_json(raw):

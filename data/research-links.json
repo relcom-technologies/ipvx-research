@@ -48,7 +48,8 @@
           "path": "experiments/a2a-interop/local-preflight.json",
           "revision": "04f4104bc0fdba80723eb76d390fdb8a4d6a1bd5",
           "sha256": "c1554354a8846d25c1a8fbc1d5a01b702c39bdd98bff151fd82f4eb91bf9b3d0"
-        }
+        },
+        "access": "public"
       },
       "result": {
         "ru": "A/B/R прошли только в in-process ASGI. Совместного запуска и независимого исполнения нет.",
@@ -107,7 +108,8 @@
           "path": "docs/practical-comparison-2026-10-30.json",
           "revision": "8bf63c64cdcb19b4b506dd59ed5a0cb56796d71f",
           "sha256": "1eb2212acd10a80bf622715d8ffec54f37a1f7278217051a90b2d5830cd89a12"
-        }
+        },
+        "access": "private_repository"
       },
       "result": {
         "ru": "800 основных задач и 200 точных повторов. Порог выигрыша 20% не достигнут; преимущество не установлено. Медиана парных отношений времени восстановления native/TCP — 8,014.",

@@ -1,5 +1,5 @@
 """Joint-protocol preflight must not be mistaken for partner readiness or external traffic."""
-import copy,importlib.util,json,sys,unittest
+import copy,hashlib,importlib.util,json,shutil,subprocess,sys,tempfile,unittest
 from datetime import datetime,timezone
 from pathlib import Path
 import httpx
@@ -9,11 +9,29 @@ def load(name,file):
 preflight=load('ipvx_interop_preflight','preflight.py');readiness=load('ipvx_interop_readiness','readiness.py')
 class Interop(unittest.IsolatedAsyncioTestCase):
  async def test_local_preflight_reports_cases_without_joint_execution(self):
-  r=await preflight.run()
+  # Execute the immutable candidate against its own hashed source in a fresh
+  # interpreter; imports from the current descriptor must not leak into it.
+  plan=json.loads((HERE/'protocol.json').read_text())
+  with tempfile.TemporaryDirectory(prefix='ipvx-frozen-regression-') as tmp:
+   root=Path(tmp);candidate=root/'experiments/a2a-interop';candidate.mkdir(parents=True)
+   manifest=json.loads((HERE/'bundle-manifest.json').read_text())
+   for name,digest in manifest['files'].items():
+    raw=(HERE/name).read_bytes();self.assertEqual(hashlib.sha256(raw).hexdigest(),digest)
+    (candidate/name).write_bytes(raw)
+   for name,digest in plan['source_sha256'].items():
+    source=HERE/'frozen-source'/plan['server_revision']/name
+    self.assertEqual(hashlib.sha256(source.read_bytes()).hexdigest(),digest)
+    target=root/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(source,target)
+   code='import asyncio,json,runpy,sys; m=runpy.run_path(sys.argv[1]); print(json.dumps(asyncio.run(m["run"]())))'
+   process=subprocess.run([sys.executable,'-c',code,str(candidate/'preflight.py')],capture_output=True,text=True,check=True,timeout=60)
+   r=json.loads(process.stdout)
   self.assertEqual(r['status'],'passed');self.assertEqual(set(r['cases']),{'A','B','R'})
   self.assertFalse(r['partner_execution']);self.assertFalse(r['ready_to_launch'])
   self.assertEqual(r['cases']['B']['automatic_replacement_requests'],0)
   self.assertTrue(r['cases']['R']['task_receipt_can_outlive_proposal'])
+ async def test_original_candidate_rejects_the_new_descriptor(self):
+  with self.assertRaisesRegex(ValueError,'Pinned source mismatch: infra/a2a_service.py'):
+   preflight.verify_source()
  async def test_guard_rejects_production_discovery_before_transport(self):
   async def must_not_run(scope,receive,send):raise AssertionError('Untrusted endpoint reached app')
   transport=preflight.LocalOnly(must_not_run)

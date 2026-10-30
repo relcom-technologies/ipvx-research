@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "status": "implemented_in_pr_not_deployed",
+  "recorded_at": "2026-10-31T00:05:50.132566+01:00",
+  "author": "codex-assistant",
+  "audit": "docs/claims-consistency-2026-10-30.json",
+  "audit_sha256": "624661ba4a5c2b148fd907622575574f624413c7de86e33da54e318959383aff",
+  "portal_deployed_base": "29ff858755a5280a8474224c5551e617576afa05",
+  "portal_prior_audit_head": "2731267e08bb2ca2b951d3b70d29145de5daa862",
+  "lab_deployed_base": "0176498c6cd9c5ac1ae97567531d0684503232fa",
+  "lab_fix_revision": "7ddb74c24eac97b6558ececeb108d6ee507944f1",
+  "resolutions": [
+    {
+      "id": "CLM-001",
+      "change": "PR-only tally fixtures are distinguished from inactive real-vote labelling; a label alone is not majority approval.",
+      "files": [
+        "scripts/build_portal.py",
+        "rfc/0003-participation-and-voting.md"
+      ]
+    },
+    {
+      "id": "CLM-002",
+      "change": "Public early prototype source/four PCAPs are distinguished from private full Lab and original physical strict-LLM captures.",
+      "files": [
+        "scripts/build_portal.py"
+      ]
+    },
+    {
+      "id": "CLM-003",
+      "change": "Latest24 observer, three-minute chart, at most15-minute tab history, loss on close and signature/completeness boundary are explicit; enabled count no longer asserts transmission.",
+      "files": [
+        "src/ipvx_agent_lab/static/index.html",
+        "src/ipvx_agent_lab/static/mesh.js"
+      ],
+      "repository": "ipvx-agent-lab",
+      "revision": "7ddb74c24eac97b6558ececeb108d6ee507944f1"
+    },
+    {
+      "id": "CLM-004",
+      "change": "Agent Card0.1.1 and four-language guide disclose existing no-minimum-retention/no-tombstone/UNKNOWN limits; token30days is not storage retention. Frozen rc1 remains unchanged.",
+      "files": [
+        "infra/a2a_service.py",
+        "scripts/agent_intake_ui.py",
+        "docs/a2a-interface.md",
+        "docs/a2a-descriptor-0.1.1.md"
+      ]
+    },
+    {
+      "id": "CLM-005",
+      "change": "Reciprocal architecture/mesh links distinguish recorded three-guest/three-host/two-model/noINET scope from live five-VM/three-host/noLLM/managementIP scope.",
+      "files": [
+        "scripts/research_architecture.py",
+        "scripts/build_portal.py"
+      ],
+      "companion_lab_revision": "7ddb74c24eac97b6558ececeb108d6ee507944f1"
+    },
+    {
+      "id": "CLM-006",
+      "change": "Validated explicit run access labels distinguish private CI log from adjacent public pinned JSON in all four languages; permissions unchanged.",
+      "files": [
+        "data/research-links.json",
+        "scripts/research_links.py",
+        "docs/research-links.md"
+      ]
+    }
+  ],
+  "preserved_public_evidence_sha256": {
+    "data/a2a-public-acceptance.json": "37a2ca557f49e754dd3ff2d8115ed9afb54224dc8af716e1d0aebf3f97280434",
+    "data/admin-validation.json": "4e0c460ff641f7af4e344fa7e6cc54049b72ec7903362b68d3f8caac8d9dfaea",
+    "data/agent-discovery.json": "d124851149f093f703f0bf0855561de9ec84bfcd16664a82136800078e42c0f5",
+    "data/agent-discovery.schema.json": "eda361aad42983d9be2f5b01763ade73699a5db95d2874d7c0376a383e5ed6db",
+    "data/architecture-evidence.json": "a0473dbe578b3faaaf9f7a5e1f72590fc4381b70a79b826adc1b703d8ed2782b",
+    "data/branch-protection-2026-10-27.json": "b71c5b08fbb87167e677294a524c69c2a161eb38bceba5c4f2cc0c3049b5dc1b",
+    "data/community-discussions.json": "82ea9065da884f3a173c3ef6573dbac74efa6caaf97e7236a7ea2060c6aeed57",
+    "data/community-live-acceptance.json": "cad7f8771de014abcc3fe1a00d452120a7fa727c868d98da5acb200b3fbc0e8c",
+    "data/community-outreach.json": "ae179b74f52732e17d10251828689fafad33f023678a2ce8202e93773485dcac",
+    "data/downloads/ipvx-native-device-prototype.zip": "8bd021c33b9e0f3b48184c2a5e6bd7fc45c4ce3f32a83ce5c27624a9458d07ad",
+    "data/liaison-status.json": "0f88530dbabc1f29e6ffbbbc66dd10f05622d65296bd1c0cdc6b85db0f3d3e8f",
+    "data/llm-protocol.txt": "423c7ec2fd82ed682d3550a2a75fc729adae9f4c50aab193044d6064cd0505e1",
+    "data/llm-summary.de.json": "8bf56c04507cdef514528df12be96303c6ff230a4f616d8d7b16067adc65a65a",
+    "data/llm-summary.en.json": "2bb4afebf8ed318bfb1e9cc116c78f028243a3ca99658d476ebe13c588ead934",
+    "data/llm-summary.es.json": "4b25c61ddebc98d4eb26808bf53e86e83f91a075de58d1d4536e2f998dbd6631",
+    "data/llm-summary.json": "64b33df83eaa3fbd3ec00436a775368252479b3b4536d332a51b339c3a0f28a6",
+    "data/native-llm-trace.json": "4739d917b10492b6ead848b127f644db9dbfe6d2bbd96311fdf9708cc68ed28b",
+    "data/native-summary.json": "0086c3bf241a31ebe3375d0c10a320bf2184770e80188d5f1b191d11ee906167",
+    "data/packet-replay.json": "c2ce22098aae15f4514c1169215b5492de75ac70bef8404ede514a80a893a12d",
+    "data/prismdeadlines-negotiation.json": "a00c08c126fbe4bde6353b8552077b30419dadc35a431febdee0ca98a2f560eb",
+    "data/provenance.json": "5df10dd8e63a1e010d31ed8f042ba493eb39abb98a37f7dbe67cbf2227e943e9",
+    "data/public-community-acceptance.json": "973a79dc80eca4ed38a3327d0cd6f020fff574a6f3936b98bb6af0b5404d8f45",
+    "data/public-identity-acceptance.json": "fed2ecdc233cea392657b6750fc165e84d950b5925b705795dc234cd9446dee0",
+    "data/scale-summary.json": "ead5a26fac92146db3c0d59656c2b2c6b0d87db5fa8370e09322a52638c63c75",
+    "data/strict-agent-inputs.json": "6b52cdac3953041fbb0e9b54366f9c4231bf69d7b2305fccb63f6cb5c62e8877",
+    "data/strict-agent-manifest.json": "57f0da817324ca88997ac493cde025e2c574e4f17c435df4ae1336ab5a07fde4",
+    "data/strict-agents-round.json": "3c388513d8b54b9d5df7e0da8d94a1f6e8e2c0e5c2adf9a741cb0d84a33a2ddd",
+    "data/strict-native-2026-10-27/README.txt": "e7ab8d0e489d8cd7e6cc265474045db4387bad2514d00352c83ca9ce983b4e6f",
+    "data/strict-native-2026-10-27/baseline/A.console.log": "865d400d5c4c150fe6e187bba40b59a428bb4cd44fe45aa1c052c4fb28e67070",
+    "data/strict-native-2026-10-27/baseline/A.qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/strict-native-2026-10-27/baseline/B.console.log": "ca48d05c77677211bc5b8d843901927f34e9febe78016dbfae5cd2c016b9362e",
+    "data/strict-native-2026-10-27/baseline/B.qemu.log": "f0345d3ea90dd2c39be538108bf5a181fedd9a53ff6d5005d849290f6d80cf3f",
+    "data/strict-native-2026-10-27/baseline/R.console.log": "769ba88dba562609f2bc7136ebe930b625b0c637d4785645d1c93643c5470cdb",
+    "data/strict-native-2026-10-27/baseline/R.qemu.log": "f0345d3ea90dd2c39be538108bf5a181fedd9a53ff6d5005d849290f6d80cf3f",
+    "data/strict-native-2026-10-27/baseline/ar.pcap": "7d1823059e88cc1a07eafcb7f99ef9609566b61da1d6b5696e0587b557713567",
+    "data/strict-native-2026-10-27/baseline/commands.json": "22fafa26827323ff6ddbf13689417f3d9fecdbb058efd532c3408ee13b0095b1",
+    "data/strict-native-2026-10-27/baseline/rb.pcap": "43b20eea7ccf29d75e3157fc730ae4eb4cf2a6e091df28a6ef08974ebd7710e9",
+    "data/strict-native-2026-10-27/baseline/receipt.json": "e4182bf2bbcda085ba6263a9ab7537fd0e926119bc569f0ee9d153d9103c3709",
+    "data/strict-native-2026-10-27/build-packages.txt": "7f33c73e78837c8de2cce1c7b193fd9936416a9b6306baebab8ee379dae83528",
+    "data/strict-native-2026-10-27/build-sha256.txt": "a54f9abb80e0f5fa6825aa4fa3bc99032afc1e19cc07ee19bacfbf55dc904ef1",
+    "data/strict-native-2026-10-27/kernel.config": "257184ed11c156bc74da593c4e550dbf16fcb7939c937db2edfe212832de1569",
+    "data/strict-native-2026-10-27/openssl-version.txt": "270715594d38062672bfc2f5c849db600fa7b8aa098523f8b510a1b1f310d358",
+    "data/strict-native-2026-10-27/relay-down/A.console.log": "867ebe00ddd718269ead1c848924e38bdb84b0fc16bbc57af3eebaeeaa772ca6",
+    "data/strict-native-2026-10-27/relay-down/A.qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/strict-native-2026-10-27/relay-down/B.console.log": "24620e96da3d4d3b28e91402d04f0ab25679001af5d54755bb4f37c02fcd2ca2",
+    "data/strict-native-2026-10-27/relay-down/B.qemu.log": "f0345d3ea90dd2c39be538108bf5a181fedd9a53ff6d5005d849290f6d80cf3f",
+    "data/strict-native-2026-10-27/relay-down/R.console.log": "4176dc935d47b166f90d7b92981b45f2d0dc92a397b0ae8adf30bb14207cceb7",
+    "data/strict-native-2026-10-27/relay-down/R.qemu.log": "f0345d3ea90dd2c39be538108bf5a181fedd9a53ff6d5005d849290f6d80cf3f",
+    "data/strict-native-2026-10-27/relay-down/ar.pcap": "454a3b2564482d6993f87f0ad6638a7bc655a6d56ee5e26b4d2aab578e94ea73",
+    "data/strict-native-2026-10-27/relay-down/commands.json": "6515b636cbb899dbdc7b457d52531af5605a78c4b850076739d29c766f8b8a1c",
+    "data/strict-native-2026-10-27/relay-down/rb.pcap": "ef3b05b49489510713fad7e2303136f6bd5cfd4bd1561c32a7a3737b096965f6",
+    "data/strict-native-2026-10-27/relay-down/receipt.json": "9e0802984f4209d39b6facf728f2e44db6326ddd5325cb1fbb60cb8f9b253e6f",
+    "data/strict-native-2026-10-27/summary.json": "38498687a4421f6cfb46cfad583af6c86436a9d217a3afd37bc07b60b5467828",
+    "data/strict-native-partial.json": "5ff22ce5e1779bfc59c0e98cf4e2152618c51d13d2ff9d4e2b1435166fa6e172",
+    "data/strict-readiness-2026-10-27.json": "cdbbf99807b4a1941bc183465f2253cbd867167983708955072b4cac6f6bd15a",
+    "data/verify_native_trace.py": "c78c066fcac309ace0ac37c7c39acdc80c39c2538c3725370cd2c3a84494061c",
+    "docs/evidence/practical-comparison-41098099745/protocol.json": "f1a1a5517e00906641c43cb90432f1ed4c8e1108f88663272bded0f72eb38af9",
+    "docs/evidence/practical-comparison-41098099745/report.json": "35a1efbe0500baf408ce966928f15de42ced3b1efa95c76b3ac95e4499fa2d09",
+    "docs/evidence/practical-comparison-41098099745/session.json": "6005c9892846f07c944dd83fcd45f34a9e9d2ef693fdffc1d743642491bcff93",
+    "docs/evidence/reproduction-reference-41088614695/comparison.json": "0baceb1d49f111862694aef19681dbb9a8fe6e86650a8e809c4a7b0e5790dec5",
+    "docs/evidence/reproduction-reference-41088614695/observations.json": "dbb54a8c4e33619b0db199197274311ee830716797343d6cefa6f10d69498709",
+    "docs/evidence/reproduction-reference-41088614695/report.json": "6bd6f39dd2e5bec9462a47483c4a7378cd04bf26dc421451290e7152c472ca4a",
+    "docs/evidence/reproduction-reference-41088614695/result.json": "ce4032ba40cba1d8e4afffd57d9722d1355dc252f70b7ff552786ebe366e52e3",
+    "docs/evidence/reproduction-reference-41088614695/session.json": "7a7b51f5bb75c60f3d285e6c77761f41fc8219518cad197d5fff3a65e2203b91",
+    "experiments/a2a-interop/README.md": "53fed44dd2b06bdfa9a3036abe4b98b978f15a78f379681d17c9ab2bdd61e4b3",
+    "experiments/a2a-interop/bundle-manifest.json": "cb6b2a42f0ddd6f338f04d2ee90fa578f9547f8daab05d0f50fbebdcf32ab97d",
+    "experiments/a2a-interop/local-preflight.json": "c1554354a8846d25c1a8fbc1d5a01b702c39bdd98bff151fd82f4eb91bf9b3d0",
+    "experiments/a2a-interop/preflight.py": "4c079ea858f36ccf970e4380053138067d739ea6413f60f6e270aa996bfb2de1",
+    "experiments/a2a-interop/protocol.json": "1668bf7170291a7313831bdbcd01db0a9cff24dc218c625d83436a6d5e2d9f4e",
+    "experiments/a2a-interop/protocol.md": "6c85cf340b0d804f631b516b0ab5e4d1c7d8958ef330ee7511dc1f18c0f3aa27",
+    "experiments/a2a-interop/readiness.py": "67f46c93240ecb5f0845df5e20cff28c8816e7d08f5e00f36ffff368801bc402",
+    "experiments/strict-native/README.md": "2a20c0a43bfccd9788587ac0d24bc9f4b879fba906671d0aea9cfbe955d7d9e1",
+    "experiments/strict-native/config/strict.config": "aace42d6d1c92b8e59c373401ee122efdcdd041fb1a32ed6275f38dad222d373",
+    "experiments/strict-native/scripts/build.sh": "0d7545c6472f5948e355624a49c84cc9fbc57eb7b720a4f94fe7aacdb869e263",
+    "experiments/strict-native/scripts/check_config.py": "76b3168d1f2fcf8d03aebec414ecfd9603704613c2aa82a785592aafce9e59d9",
+    "experiments/strict-native/scripts/run.py": "d3ed205681214c6939d10e7fec95b175f4e40dfe61ae3256762a1f0661be3b29",
+    "experiments/strict-native/scripts/test_wire.py": "09eda5ebd7277bda2af75ecf7d5adce15551f42b1867671b8203ef5467cc3ee7",
+    "experiments/strict-native/scripts/verify.py": "aa87320eaaf9b68d37f5f5d3fa2e29eabdac817d28f58553be96658b703ffd0c",
+    "experiments/strict-native/src/native-smoke.c": "367c26e926a765087ac3463cd27eb61e977a22e6799ee908c9e017bed05f1af9"
+  },
+  "frozen_candidate": {
+    "id": "IPVX-A2A-INTEROP-001",
+    "version": "1.0-rc1",
+    "server_revision": "f56939c90fe4b1c508cee99678890b4281b6e7b7",
+    "bundle_files": {
+      "protocol.md": "6c85cf340b0d804f631b516b0ab5e4d1c7d8958ef330ee7511dc1f18c0f3aa27",
+      "protocol.json": "1668bf7170291a7313831bdbcd01db0a9cff24dc218c625d83436a6d5e2d9f4e",
+      "preflight.py": "4c079ea858f36ccf970e4380053138067d739ea6413f60f6e270aa996bfb2de1",
+      "readiness.py": "67f46c93240ecb5f0845df5e20cff28c8816e7d08f5e00f36ffff368801bc402",
+      "README.md": "53fed44dd2b06bdfa9a3036abe4b98b978f15a78f379681d17c9ab2bdd61e4b3",
+      "local-preflight.json": "c1554354a8846d25c1a8fbc1d5a01b702c39bdd98bff151fd82f4eb91bf9b3d0"
+    },
+    "archived_source": {
+      "infra/a2a_service.py": "a46ed590ed1b935bc387d0077a455de65de164661496e38454baf87db0783624",
+      "infra/a2a_store.py": "f67d6da96dcfbc51772cb36fe29653165147dfb38aa18f0640ca865475af7545",
+      "infra/a2a-requirements.lock": "add5122c39b0f62bb8aa2512c40c7d8146b88a4d057b7074932d3c4e7ac06feb"
+    },
+    "new_descriptor_service_sha256": "fdbc94d37f5965befaeaf6045e16364eba1cae0b6f7ed0489dfa99dffd8e2cb0",
+    "new_descriptor_version": "0.1.1",
+    "candidate_rewritten": false,
+    "new_joint_measurement": false
+  },
+  "history_prefix_sha256": "0a9a4e386682c14e431540ff30fcae8877c9dda1be7aa2418ad9a4e9220589c1",
+  "checks": {
+    "research_unittest": {
+      "passed": 114
+    },
+    "strict_wire": {
+      "passed": 5
+    },
+    "lab_pytest": {
+      "passed": 197,
+      "skipped_macos": 9
+    },
+    "lab_strict_llm_unit": {
+      "passed": 13
+    },
+    "lab_integration": {
+      "frozen_files": 53,
+      "experiments": 10,
+      "prior_log_entries": 5,
+      "live_host_or_model_calls": 0
+    },
+    "local_browser_claims": {
+      "page_language_width_checks": 75,
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "service_writes": 0,
+      "lab_data": "previously captured public snapshot"
+    },
+    "browser_registry": {
+      "passed_combinations": 12,
+      "static_fallback": true
+    },
+    "browser_layout": {
+      "pages_and_widths": 288,
+      "failed": []
+    },
+    "hosted_pr_checks": "consult the current exact-head PR check suite"
+  },
+  "limits": [
+    "Source and PR checks only; no merge or production update.",
+    "No production Actions, paid model calls, live native trial, SMTP test, account registration or new resource commitment.",
+    "Original A2A candidate rejects the changed descriptor. Frozen-source regression is not a new interoperability experiment or scope ACK.",
+    "First sandbox test attempt was denied loopback binding; both suites passed with scoped localhost permission.",
+    "macOS skips do not substitute for Linux PR checks.",
+    "Historical audit and original negative experiment conclusions remain preserved."
+  ],
+  "lab_followup_revision": "ebf6b134a818cba9946d2672a9395306d7712096",
+  "visual_review": "docs/claims-visual-review-2026-10-31.json",
+  "companion_lab_pr": "https://github.com/relcom-technologies/ipvx-agent-lab/pull/31"
+}

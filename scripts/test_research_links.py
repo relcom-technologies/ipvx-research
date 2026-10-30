@@ -16,6 +16,15 @@ class ResearchLinksTests(unittest.TestCase):
         data=load(ROOT);self.assertEqual([c['stage'] for c in data['cases']],['local_preflight','measured'])
         self.assertIn('8.014',data['cases'][1]['result']['en'])
         self.assertIn('No final review',data['cases'][0]['limits']['en'])
+    def test_access_labels_are_explicit_and_cannot_hide_a_private_ci_log(self):
+        self.reject(lambda d:d['cases'][1]['run'].update(access='public'))
+        self.reject(lambda d:d['cases'][0]['run'].update(access='private_repository'))
+        self.reject(lambda d:d['cases'][1]['run'].pop('access'))
+        for lang in LANGS:
+            output=render(ROOT,lang)
+            from research_links import COPY
+            self.assertIn(COPY['private_run'][LANGS.index(lang)],output)
+            self.assertIn(COPY['public_summary'][LANGS.index(lang)],output)
     def test_missing_or_duplicate_references(self):
         self.reject(lambda d:d['cases'].append(d['cases'][0]))
         self.reject(lambda d:d['cases'][0]['source']['comment_ids'].append('missing'))

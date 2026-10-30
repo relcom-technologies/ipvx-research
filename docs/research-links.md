@@ -5,6 +5,11 @@ on `experiments.html#research-links`, their discussion links and RFC indexes.
 `scripts/research_links.py` validates and renders it in Russian, English, German
 and Spanish. Browser rendering does not read the private intake or submit drafts.
 
+Each run carries an explicit `access` value: `public` or `private_repository`.
+The private Lab CI journal is labelled as requiring repository access in all four
+languages. Its adjacent pinned JSON summary remains public; the label does not
+change repository permissions or publish private artifacts.
+
 Each case preserves its source IDs, a testable question, pinned protocol and run
 artifacts, result and limitations. Artifact SHA-256 is over the stored file bytes;
 it is distinct from a protocol's own canonical scope hash. Exact Git revisions

@@ -1,4 +1,10 @@
-# IPvX A2A research liaison, version 0.1
+# IPvX A2A research liaison, descriptor version 0.1.1
+
+Descriptor 0.1.1 adds recovery-limit disclosures; it does not change persistence,
+retry handling, token lifetime or decision semantics. Publication of the PR does
+not update production. The frozen 1.0-rc1 interoperability candidate remains
+pinned to its original service; see
+[the version boundary](a2a-descriptor-0.1.1.md).
 
 The public entry points are:
 
