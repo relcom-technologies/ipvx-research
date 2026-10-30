@@ -2363,5 +2363,14 @@
   "d574ff4deb68bd63": "scripts/test_autonomous_liaison.py",
   "e09a89f4b8351ea4": "95 lokale Tests und 5 Wire-Tests waren erfolgreich.",
   "b561151ba4c7f9c4": "Die neue Version ist noch nicht installiert; das kostenpflichtige Modellpaar und die Aktivierung sind ungeprüft. Der Eigentümer hat die Behebung des Claude-API-Guthabenproblems bestätigt.",
-  "36b713dc793c7c3b": "Private A2A-Anträge werden nicht an Modelle gesendet. Abdeckungslücken im GitHub-HTML und im Moltbook-Baum sind ausdrücklich dokumentiert."
+  "36b713dc793c7c3b": "Private A2A-Anträge werden nicht an Modelle gesendet. Abdeckungslücken im GitHub-HTML und im Moltbook-Baum sind ausdrücklich dokumentiert.",
+  "84b9a79460787eba": "136 Ereignisse bis HX-0136; Autoren, Begründungen, Prüfungen und Einschränkungen.",
+  "7954eaed4ac28574": "283.6 KiB · 12 Dateien",
+  "318e868495115b92": "HX-0136 · Erste Claude-Antwort war leer; striktes API-Schema vorbereitet",
+  "cbf4a9202fd9ba3e": "Codex — Hauptassistent dieses Gesprächs · 2026-10-30T00:24:08.619214+00:00",
+  "f26d292221356883": "Die Serverinstallation war erfolgreich. Der erste vollständige Claude-Aufruf lieferte 4469 Eingabe- und 0 Ausgabetokens ohne Text; GPT wurde nicht aufgerufen. Fehler und Reservierung von 0,054427 USD bleiben erhalten. Ein Claude-Kontrollaufruf lieferte gültiges JSON und 13 Ausgabetokens; insgesamt sind täglich 0,074427 USD reserviert.",
+  "5e8cb263eb9d905a": "Die Generierung bleibt bis zu einem erfolgreichen Modellpaar deaktiviert. Der JSON-Schema-Modus ist für beide APIs vorbereitet; die Eingabetokenzählung umfasst dasselbe Schema. Abbruchmetadaten bleiben in der privaten Spur erhalten.",
+  "02caeff8ede2e8e4": "99 lokale Tests waren erfolgreich, darunter 3 Schema- und Tokenabrechnungsprüfungen.",
+  "bfa614402f9fcbd3": "Noch kein Entwurf beider Modelle. Das neue Schema ist nicht installiert; nach den Prüfungen ist ein neuer ausdrücklicher Operatorlauf erforderlich.",
+  "d44774f494a78043": "Reservierungen sind konservative Anwendungsabrechnung, keine Providerrechnung. Alte Einträge bleiben erhalten; es gibt keine neuen externen Zusagen."
 }

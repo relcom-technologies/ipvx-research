@@ -2363,5 +2363,14 @@
   "d574ff4deb68bd63": "scripts/test_autonomous_liaison.py",
   "e09a89f4b8351ea4": "Pasaron 95 pruebas locales y 5 pruebas wire.",
   "b561151ba4c7f9c4": "La nueva versión aún no está instalada; la prueba de pago de ambos modelos y la activación no se han verificado. El propietario confirmó la resolución del problema de saldo de la API de Claude.",
-  "36b713dc793c7c3b": "Las solicitudes privadas A2A no se envían a los modelos. Se indican expresamente las lagunas de cobertura del HTML de GitHub y del árbol de Moltbook."
+  "36b713dc793c7c3b": "Las solicitudes privadas A2A no se envían a los modelos. Se indican expresamente las lagunas de cobertura del HTML de GitHub y del árbol de Moltbook.",
+  "84b9a79460787eba": "136 eventos hasta HX-0136; autores, fundamentos, comprobaciones y limitaciones.",
+  "7954eaed4ac28574": "283.6 KiB · 12 archivos",
+  "318e868495115b92": "HX-0136 · Primera respuesta Claude vacía; preparado un esquema estricto de API",
+  "cbf4a9202fd9ba3e": "Codex — asistente principal de esta conversación · 2026-10-30T00:24:08.619214+00:00",
+  "f26d292221356883": "La instalación del servidor pasó. La primera solicitud completa a Claude devolvió 4469 tokens de entrada y 0 de salida sin texto; no se llamó a GPT. Se conservan el fallo y la reserva de 0,054427 USD. Un control de Claude devolvió JSON válido y 13 tokens de salida; la reserva diaria compartida suma 0,074427 USD.",
+  "5e8cb263eb9d905a": "La generación sigue desactivada hasta completar ambos modelos. Se preparó el modo JSON Schema de ambas API; el conteo de entrada incluye el mismo esquema. Los metadatos de parada se conservan en la traza privada.",
+  "02caeff8ede2e8e4": "Pasaron 99 pruebas locales, incluidas 3 comprobaciones de esquema y contabilidad de tokens.",
+  "bfa614402f9fcbd3": "Aún no hay borrador de ambos modelos. El nuevo esquema no está instalado; requiere una nueva ejecución explícita del operador tras las comprobaciones.",
+  "d44774f494a78043": "Las reservas son contabilidad conservadora de la aplicación, no facturas del proveedor. Se conservan los registros antiguos; no se asumieron compromisos externos nuevos."
 }

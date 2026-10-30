@@ -8,6 +8,8 @@ import sys
 import tempfile
 import unittest
 from unittest.mock import patch
+from unittest.mock import Mock
+from types import SimpleNamespace
 
 from test_liaison import agent, ROOT
 sys.path.insert(0,str(ROOT/'services/liaison'))
@@ -155,6 +157,42 @@ class PublicSourceTests(unittest.TestCase):
             rows,coverage=public_sources.collect()
         self.assertEqual(rows,[]);self.assertFalse(coverage['a2a-community']['checked'])
         self.assertTrue(coverage['clawmesh']['checked'])
+
+
+class ProviderFormatTests(unittest.TestCase):
+    def provider(self,name):
+        p=object.__new__(agent.Provider);p.name=name;p.model='fixture'
+        p.config=config()['writer' if name=='anthropic' else 'reviewer'];p.client=Mock()
+        return p
+
+    def test_claude_counts_and_generates_with_the_same_strict_schema(self):
+        p=self.provider('anthropic');p.client.messages.count_tokens.return_value.input_tokens=500
+        p.client.messages.create.return_value=SimpleNamespace(content=[SimpleNamespace(type='text',text=json.dumps(reply()))],
+            model='fixture',usage=SimpleNamespace(input_tokens=500,output_tokens=200),stop_reason='end_turn')
+        self.assertEqual(p.count('fixture'),500);raw,model,usage=p.generate('fixture',2200)
+        self.assertEqual(p.client.messages.count_tokens.call_args.kwargs['output_config'],p.client.messages.create.call_args.kwargs['output_config'])
+        self.assertEqual(json.loads(raw)['classification'],'review_interest')
+        self.assertEqual(p.response_meta['stop_reason'],'end_turn')
+
+    def test_gpt_counts_and_generates_with_identical_schema_without_tools_or_storage(self):
+        p=self.provider('openai');p.client.responses.input_tokens.count.return_value.input_tokens=500
+        p.client.responses.create.return_value=SimpleNamespace(output_text=json.dumps(reply()),model='fixture',
+            usage=SimpleNamespace(input_tokens=500,output_tokens=200),status='completed',incomplete_details=None)
+        p.count('fixture');p.generate('fixture',2200)
+        count=p.client.responses.input_tokens.count.call_args.kwargs;request=p.client.responses.create.call_args.kwargs
+        self.assertEqual(count['text'],request['text']);self.assertFalse(request['store']);self.assertNotIn('tools',request)
+
+    def test_empty_provider_text_keeps_diagnostic_metadata_and_reservation(self):
+        p=self.provider('anthropic');p.model=p.config['model']
+        p.client.messages.count_tokens.return_value.input_tokens=500
+        p.client.messages.create.return_value=SimpleNamespace(content=[],model=p.model,
+            usage=SimpleNamespace(input_tokens=500,output_tokens=0),stop_reason='end_turn')
+        with tempfile.TemporaryDirectory() as d:
+            ledger=agent.Ledger(Path(d)/'ledger.sqlite')
+            raw,trace=agent.call(p,'fixture',ledger,'empty-fixture',config())
+            self.assertEqual(raw,'');self.assertEqual(trace['provider_response']['content_types'],[])
+            with self.assertRaises(ValueError):agent.parse_reply(raw,['profile'],2)
+            with ledger.connect() as db:self.assertGreater(db.execute('SELECT SUM(amount) FROM reservations').fetchone()[0],0)
 
 
 if __name__=='__main__':unittest.main()

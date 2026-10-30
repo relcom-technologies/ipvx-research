@@ -837,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "cfd936b3be03f2ba",
-      "source": "135 событий по HX-0135; авторы, основания, проверки и ограничения.",
+      "id": "84b9a79460787eba",
+      "source": "136 событий по HX-0136; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "df1abc6cdd478850",
-      "source": "281.9 КиБ · 12 файлов",
+      "id": "7954eaed4ac28574",
+      "source": "283.6 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4642,6 +4642,76 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "318e868495115b92",
+      "source": "HX-0136 · Первый ответ Claude оказался пустым; подготовлена строгая схема API",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "633c2da56c895398",
+      "source": "Неудачная попытка",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "cbf4a9202fd9ba3e",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-30T00:24:08.619214+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "f26d292221356883",
+      "source": "Серверная установка прошла. Первый полный запрос Claude вернул 4469 входных и 0 выходных токенов без текста; GPT не вызывался. Сбой и резерв 0,054427 USD сохранены. Один контрольный запрос Claude дал корректный JSON и 13 выходных токенов; с ним общий дневной резерв равен 0,074427 USD.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "5e8cb263eb9d905a",
+      "source": "Генерация остаётся выключенной до успешной пары. Подготовлен режим JSON Schema обоих API; счёт входных токенов включает ту же схему. Причина остановки сохраняется в приватной трассе.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "b33f5d775b9fb5b1",
+      "source": "services/liaison/agent.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "d574ff4deb68bd63",
+      "source": "scripts/test_autonomous_liaison.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02caeff8ede2e8e4",
+      "source": "99 локальных тестов прошли, включая 3 проверки схемы и учёта токенов.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "bfa614402f9fcbd3",
+      "source": "Парный черновик пока не получен. Новая схема ещё не установлена; нужен новый явный операторский запуск после проверок.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "d44774f494a78043",
+      "source": "Резерв — консервативный учёт приложения, а не счёт провайдера. Старые записи не удалялись; новых внешних обязательств нет.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "52202c35cc1ff9cb",
       "source": "HX-0135 · Подготовлен автономный разбор публичных ответов Claude/GPT",
       "context": "history.html:text:section/details/summary"
@@ -4662,28 +4732,13 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "0afd4ca5cc3412a8",
       "source": "Разбор должен работать на сервере без Actions и компьютера владельца. Модели готовят только приватный черновик и не получают инструментов публикации или исполнения.",
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "dbc59a9b48a5ecbb",
       "source": "services/liaison/README.md",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "b33f5d775b9fb5b1",
-      "source": "services/liaison/agent.py",
       "context": "history.html:text:ul/li/a"
     },
     {
@@ -4702,19 +4757,9 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "d574ff4deb68bd63",
-      "source": "scripts/test_autonomous_liaison.py",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
       "id": "e09a89f4b8351ea4",
       "source": "95 локальных тестов и 5 wire-тестов прошли.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "b561151ba4c7f9c4",
@@ -4725,11 +4770,6 @@
       "id": "36b713dc793c7c3b",
       "source": "Приватные A2A-заявки не передаются моделям. GitHub HTML и дерево Moltbook имеют явно отмеченные пробелы покрытия.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "8e8353272cba6b34",
@@ -6970,11 +7010,6 @@
       "id": "29148b2fd899a4f7",
       "source": "HX-0083 · Повтор остановлен до гостей: широкий SSH-интервал не даёт вывода о часах",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "633c2da56c895398",
-      "source": "Неудачная попытка",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "a1261bdd1d3c11b4",

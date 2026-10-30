@@ -118,3 +118,10 @@ until a successful explicitly authorized new smoke; old failure evidence is
 archived, never erased. Exhausted daily budget defers unstarted versions, and
 expired prices stop before job allocation or provider requests. A single process
 lock prevents overlapping smoke/timer workers. No SDK retry is enabled.
+
+Both providers now receive the same bounded JSON Schema through their native
+structured-output APIs. Input-token counting includes that exact schema, so its
+formatting overhead is reserved before generation. Local semantic validation
+still checks evidence, lengths, role boundaries and the complete proposal. Empty,
+refused or incomplete responses never enable readiness; provider stop/status and
+request metadata remain in the private trace. SDK retries remain disabled.
