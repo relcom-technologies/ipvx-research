@@ -837,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "7429a2997edf1400",
-      "source": "134 событий по HX-0134; авторы, основания, проверки и ограничения.",
+      "id": "cfd936b3be03f2ba",
+      "source": "135 событий по HX-0135; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "93885fff8d8dc26a",
-      "source": "280.7 КиБ · 12 файлов",
+      "id": "df1abc6cdd478850",
+      "source": "281.9 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4642,6 +4642,96 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "52202c35cc1ff9cb",
+      "source": "HX-0135 · Подготовлен автономный разбор публичных ответов Claude/GPT",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "e078c61c3e49f21a",
+      "source": "Реализовано",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "53bf5587e41a76f8",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-29T23:56:02.812026+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "a6ff9329a041edf1",
+      "source": "Подготовлены три публичных reader, структурированный проект эксперимента, проверка GPT после Claude, общий дневной бюджет и гейт двух моделей. Прежние ошибки и резервы сохраняются; повторный разбор проверенной smoke-версии исключён.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "0afd4ca5cc3412a8",
+      "source": "Разбор должен работать на сервере без Actions и компьютера владельца. Модели готовят только приватный черновик и не получают инструментов публикации или исполнения.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "dbc59a9b48a5ecbb",
+      "source": "services/liaison/README.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "b33f5d775b9fb5b1",
+      "source": "services/liaison/agent.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "ad0968a880742b51",
+      "source": "services/liaison/worker.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "23a6cb6fd90c72f2",
+      "source": "services/liaison/public_sources.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "1e12d0c20b037489",
+      "source": "infra/activate_liaison.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "d574ff4deb68bd63",
+      "source": "scripts/test_autonomous_liaison.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "e09a89f4b8351ea4",
+      "source": "95 локальных тестов и 5 wire-тестов прошли.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "b561151ba4c7f9c4",
+      "source": "Новая версия ещё не установлена; платная пара и активация не проверены. Владелец подтвердил устранение проблемы API-баланса Claude.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "36b713dc793c7c3b",
+      "source": "Приватные A2A-заявки не передаются моделям. GitHub HTML и дерево Moltbook имеют явно отмеченные пробелы покрытия.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "8e8353272cba6b34",
       "source": "HX-0134 · Уведомления IPvX перенесены на сервер и доставлены на выбранную владельцем почту",
       "context": "history.html:text:section/details/summary"
@@ -4657,19 +4747,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "e36b3a76d66587d7",
       "source": "Использовать выбранный владельцем существующий почтовый канал и сохранить приватный ключ RSA локально. Отделить сетевую доставку от чтения закрытого журнала. Сохранять батч до SMTP и фиксировать курсор только после приёма, чтобы ошибка или перезапуск не теряли уведомления. Не переносить широкий GitHub-токен и не вводить платные модели ради уведомлений.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "91adad2ad095306a",
@@ -4692,11 +4772,6 @@
       "context": "history.html:text:details/ul/li"
     },
     {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "dcc861cbfa0f8165",
       "source": "SMTP приём не доказывает доставку каждого будущего письма; подтверждено получение одного тестового письма. Сбой между приёмом SMTP и фиксацией состояния может дать повтор с тем же Message-ID. При полной недоступности этого сервера или relay тот же канал не может немедленно сообщить о собственной аварии.",
       "context": "history.html:text:details/ul/li"
@@ -4710,11 +4785,6 @@
       "id": "f3acb0de4495d54b",
       "source": "Исходный наблюдатель, его журнал и ключи не заменялись. Автопубликация ответов, вызовы моделей, приём участников, права, ресурсы и совместные эксперименты не запускались.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "0fe48fa84af9706e",
@@ -4760,11 +4830,6 @@
       "id": "10e7a0dc13e0f49b",
       "source": "HX-0132 · Мониторинг A2A перенесён на сервер без GitHub Actions",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "e078c61c3e49f21a",
-      "source": "Реализовано",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "f04e13e6ebd26b32",
@@ -4970,21 +5035,6 @@
       "id": "41431af847b82e31",
       "source": "Public acceptance run 40840557758; initial liaison run 40840888384; bounded provider check 40842434804",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "b33f5d775b9fb5b1",
-      "source": "services/liaison/agent.py",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "ad0968a880742b51",
-      "source": "services/liaison/worker.py",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "dbc59a9b48a5ecbb",
-      "source": "services/liaison/README.md",
-      "context": "history.html:text:ul/li/a"
     },
     {
       "id": "c63684094f7a2eae",
