@@ -36,3 +36,18 @@ whether to accept a contribution; a separate GitHub reviewer is not required.
 Protected main still requires a pull request and the configured status checks.
 Because this assistant uses the owner's account, account identity alone is not
 approval: obtain the owner's authorization before merging or publishing.
+
+## Project and infrastructure boundary (owner, 2026-10-30)
+
+- Building, checking, releasing, deploying, migrating and monitoring IPvX belong
+  in the IPvX client repositories. GitHub Actions remain PR-only, isolated and
+  without production credentials; owner-authorized production operations stay
+  outside Actions. A merge is not a deployment authorization.
+- `relcom-infra` declares shared infrastructure state only. Do not add or extend
+  project workflows, playbooks, scripts, release pins or project exceptions there.
+  Existing project operations there are migration debt; do not delete them before
+  an owner-approved project migration has a working replacement.
+- A reference implementation/work package is pending. Do not invent its pattern
+  in the infrastructure repository. This boundary does not migrate running services
+  or grant new rights. Source: owner policy at
+  https://github.com/relcom-technologies/relcom-infra/blob/5cf6e7b311b38586d6ee1ba7d1366f96bff6cc91/CLAUDE.md

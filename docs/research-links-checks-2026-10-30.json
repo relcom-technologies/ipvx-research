@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "attributed_to": "codex-assistant",
+  "recorded_by": "codex-assistant",
+  "base_revision": "55a75256a3375e59fb51aa0e08df20d044845866",
+  "policy_source_revision": "5cf6e7b311b38586d6ee1ba7d1366f96bff6cc91",
+  "policy_companion_PR": "https://github.com/relcom-technologies/ipvx-agent-lab/pull/30",
+  "scope": "curated public discussion-to-experiment registry and local drafts",
+  "status": "development_candidate_no_merge_or_deployment",
+  "local_checks": {
+    "unit_tests": 111,
+    "registry_adversarial_tests_included": 7,
+    "new_browser_language_width_combinations": 12,
+    "existing_browser_regression_scripts": 10,
+    "languages": [
+      "ru",
+      "en",
+      "de",
+      "es"
+    ],
+    "widths": [
+      1440,
+      768,
+      390
+    ],
+    "static_no_javascript_evidence_links": true,
+    "exact_markdown_download": true,
+    "public_rfc_source_only_draft_links": true,
+    "no_browser_service_mutations": true,
+    "artifacts_match_pinned_Git_bytes": true,
+    "lab_integration_preservation_tests": 4,
+    "local_browser": "Playwright 1.62.1, installed Chrome with isolated profiles",
+    "PR_browser": "Pinned Playwright 1.56.1 Chromium; CI conclusions remain on the PR",
+    "lab_full_suite_passed": 197,
+    "lab_full_suite_skipped": 9,
+    "sdk_and_preservation_tests_passed": 7,
+    "sdk_regression_failed_before_fix": true,
+    "visual_preview_fix_rescored_resolved": true
+  },
+  "preservation": {
+    "prior_history_events": 152,
+    "prior_events_retained_byte_for_byte": true,
+    "experiments_and_evidence_unchanged": true,
+    "original_five_signed_bundles_unchanged": true,
+    "frozen_a2a_candidate_unchanged": true,
+    "private_A2A_payload_exported": false,
+    "models_called": false,
+    "live_experiment_started": false,
+    "resources_allocated": false,
+    "production_operations": false,
+    "production_Actions": false,
+    "infrastructure_repository_changes": false
+  },
+  "negative_results_and_corrections": [
+    "Sandbox initially denied loopback binds in ten existing unit tests. The authorized local-server rerun passed all 111 tests.",
+    "First browser pass detected an omitted community-registry inclusion; corrected. Navigation checks now await deferred scripts.",
+    "Initial lab unittest filename matched no tests. The actual four pytest integration-preservation tests passed.",
+    "Frontend inspection found an unpadded new mobile jump link and off-system font choices. Corrected to the existing sheet, loaded PlexMono and documented type sizes.",
+    "Generic photo, hero, motion and thin-rule checks conflict with the explicitly retained DESIGN.md reading system; legacy navigation/table warnings remain outside this extension. Hashes and comment IDs use code semantics.",
+    "No independent client runner or joint A2A execution. Review-only is not execution. Matched transport superiority remains not established.",
+    "Companion PR30 verify initially failed: SDK exam re-signed the same nonce across an issued-second boundary. Deterministic regression failed before the fix and passed after replaying the saved signed request. Agent validation and receipt storage are unchanged; original failed CI is retained."
+  ],
+  "limits": [
+    "Moltbook depth-five coverage is incomplete. Registry uses the already-published public snapshot, not private intake.",
+    "Curated relationships require reviewed Git changes. Comment, email, model output or issue publication does not allocate a role, resources or launch authorization.",
+    "These checks verify UI and existing evidence integrity, not a new experiment or independent reproduction.",
+    "No merge or production rollout is part of this change."
+  ],
+  "policy_companion_revision": "6b11237a231e4317aa8aa103342f9bcafe68cc48"
+}
