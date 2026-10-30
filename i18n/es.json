@@ -2463,5 +2463,20 @@
   "bf372d2a83fc8937": "Las firmas acreditan la integridad de las declaraciones, no la verdad del resultado, la independencia del titular de la clave ni un tiempo confirmado externamente.",
   "0d14be9d4cfb0f56": "No se debilitaron los criterios originales. Se conservan informes, capturas e intentos fallidos; se rechazan archivos con compresión no admitida o estructuras inválidas.",
   "9a19ac992330cd85": "El entorno aislado admite solo código de referencia. El aislamiento de VM, los filtros externos y una red separada para código ajeno siguen requiriendo decisiones separadas del propietario.",
-  "b5a8bffb54d03725": "Sin despliegue en producción ni fusiones de PR. No se ejecutaron Actions de producción, modelos, mensajes externos, admisiones ni asignaciones de recursos. Las capturas nuevas completas se conservan de forma privada."
+  "b5a8bffb54d03725": "Sin despliegue en producción ni fusiones de PR. No se ejecutaron Actions de producción, modelos, mensajes externos, admisiones ni asignaciones de recursos. Las capturas nuevas completas se conservan de forma privada.",
+  "66cbed4ea6b732cb": "147 eventos hasta HX-0147; autores, fundamentos, comprobaciones y límites.",
+  "debf62453aea5618": "300.9 KiB · 12 archivos",
+  "dd26a5bd4a4dedb8": "HX-0147 · Tercera etapa desplegada manualmente; el verificador instalado pasó la aceptación",
+  "5f6217b9f7854c5e": "Codex — asistente principal de esta conversación · 2026-10-30T17:01:24.420329+00:00",
+  "4046b3194231e9fb": "Las versiones aceptadas del laboratorio y el portal están instaladas en el servidor existente. Pasaron las ocho comprobaciones: bytes del módulo y los pins, paquete, dos informes firmados conservados, raíz original y rechazo de un archivo dañado o una clave incorrecta. Los paquetes completos de CI también se conservan de forma privada en el servidor.",
+  "f858d11555e85cde": "Verificar sin conexión la compilación instalada y la integridad de las pruebas existentes, conservando datos y temporizadores activos.",
+  "6b1e1c4bbca82263": "docs/reproduction-rollout-2026-10-30.json",
+  "9957b19a43d12b4c": "Se compararon sin conexión las ejecuciones de CI conservadas. No se inició ningún experimento nativo ni modelo nuevo; sigue sin establecerse un operador independiente.",
+  "1241719d82eb7025": "Se omitió Terraform por completo; no se ejecutaron Actions de producción de IPvX ni ejecuciones posteriores a la fusión. Los demás proyectos permanecieron sin cambios.",
+  "7460af9c13a88811": "Se conservaron siete volúmenes, el estado privado de auth/A2A, las claves, el estado de entrega, el presupuesto y los temporizadores activos. No se transfirieron claves privadas al servidor.",
+  "86844e9dfe4eba87": "Dos respuestas de salud inicialmente vacías se resolvieron con reintentos limitados. La versión pública contiene el historial hasta HX-0145; estos registros documentan la aceptación posterior.",
+  "b3559b77b1fe2aa0": "HX-0146 · Paquete de repetición e historial aceptados mediante commits de fusión normales",
+  "884790e808cc4b86": "Por solicitud expresa del propietario se fusionaron PR28 y PR33 tras pasar las comprobaciones. Se verificaron ambos padres de cada commit de fusión y la igualdad con los árboles comprobados. Se conservaron los registros anteriores y las pruebas originales.",
+  "9afca2c0ea7f6254": "Conservar el historial de los padres y registrar por separado la aceptación y el despliegue.",
+  "c571eeb572f33387": "La aceptación de la herramienta no establece la independencia del operador ni otorga derechos para admitir código ajeno."
 }

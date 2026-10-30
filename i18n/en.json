@@ -2463,5 +2463,20 @@
   "bf372d2a83fc8937": "Signatures establish the integrity of claims, not result truth, independence of the key owner or externally confirmed time.",
   "0d14be9d4cfb0f56": "The original criteria were not weakened. Reports, captures and failed attempts are preserved; archives with unsupported compression or structural violations are rejected.",
   "9a19ac992330cd85": "The sandbox admits only reference code. VM isolation, external filters and a separate network for foreign code remain separate owner decisions.",
-  "b5a8bffb54d03725": "No production deployment or PR merges. No production Actions, models, external messages, participant admission or resource allocation. Full new captures are preserved privately."
+  "b5a8bffb54d03725": "No production deployment or PR merges. No production Actions, models, external messages, participant admission or resource allocation. Full new captures are preserved privately.",
+  "66cbed4ea6b732cb": "147 events through HX-0147; authors, rationale, checks and limitations.",
+  "debf62453aea5618": "300.9 KiB · 12 files",
+  "dd26a5bd4a4dedb8": "HX-0147 · Third stage manually deployed; installed verifier passed acceptance",
+  "5f6217b9f7854c5e": "Codex — primary assistant in this conversation · 2026-10-30T17:01:24.420329+00:00",
+  "4046b3194231e9fb": "The accepted lab and portal versions are installed on the existing server. All eight checks passed: module and pin bytes, kit, two retained signed reports, the original root and rejection of a damaged archive or wrong key. Complete CI envelopes are also retained privately on the server.",
+  "f858d11555e85cde": "Verify the installed build and integrity of existing evidence offline while preserving data and active timers.",
+  "6b1e1c4bbca82263": "docs/reproduction-rollout-2026-10-30.json",
+  "9957b19a43d12b4c": "Retained CI runs were compared offline. No new native experiment or model was started; an independent operator is still not established.",
+  "1241719d82eb7025": "Terraform was skipped entirely; no production IPvX Actions or post-merge runs were performed. Other projects were unchanged.",
+  "7460af9c13a88811": "Seven volumes, private auth/A2A state, keys, delivery state, budget and active timers were preserved. No private keys were transferred to the server.",
+  "86844e9dfe4eba87": "Two initial empty health responses were resolved through bounded retry. The public release contains history through HX-0145; these entries record the subsequent acceptance.",
+  "b3559b77b1fe2aa0": "HX-0146 · Reproduction kit and history accepted with normal merge commits",
+  "884790e808cc4b86": "At the owner’s explicit request, PR28 and PR33 were merged after passing checks. Both parents of each merge commit and equality with the checked trees were verified. Earlier records and original evidence were preserved.",
+  "9afca2c0ea7f6254": "Preserve parent history and record acceptance and deployment separately.",
+  "c571eeb572f33387": "Acceptance of the tool does not establish operator independence or grant admission rights for foreign code."
 }

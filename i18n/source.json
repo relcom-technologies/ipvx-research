@@ -862,13 +862,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "64960f68ae2c759c",
-      "source": "145 событий по HX-0145; авторы, основания, проверки и ограничения.",
+      "id": "66cbed4ea6b732cb",
+      "source": "147 событий по HX-0147; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "15ec621dfdb95356",
-      "source": "299.0 КиБ · 12 файлов",
+      "id": "debf62453aea5618",
+      "source": "300.9 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4667,6 +4667,96 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "dd26a5bd4a4dedb8",
+      "source": "HX-0147 · Третий этап развёрнут вручную; установленный проверяющий модуль прошёл приёмку",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "5f6217b9f7854c5e",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-30T17:01:24.420329+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "4046b3194231e9fb",
+      "source": "На существующем сервере установлены принятые версии лаборатории и портала. Все восемь проверок прошли: байты модуля и pins, пакет, два сохранённых подписанных отчёта, прежний корень и отказ на повреждённом архиве или неверном ключе. Полные CI-конверты сохранены приватно также на сервере.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "f858d11555e85cde",
+      "source": "Проверить установленную сборку и целостность существующих доказательств офлайн, сохранив данные и работающие таймеры.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "6b1e1c4bbca82263",
+      "source": "docs/reproduction-rollout-2026-10-30.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "9957b19a43d12b4c",
+      "source": "Выполнена офлайн-сверка прежних CI-прогонов. Новый нативный опыт и модели не запускались; независимый оператор ещё не установлен.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "1241719d82eb7025",
+      "source": "Terraform пропущен целиком, production IPvX Actions и post-merge запуски не выполнялись. Чужие проекты не менялись.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "7460af9c13a88811",
+      "source": "Семь томов, приватное состояние auth/A2A, ключи, состояния доставки, бюджет и активные таймеры сохранены. Приватные ключи на сервер не переносились.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "86844e9dfe4eba87",
+      "source": "Два пустых начальных health-ответа преодолены ограниченным повтором. Публичный выпуск содержит историю через HX-0145; эти записи фиксируют последующую приёмку.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "b3559b77b1fe2aa0",
+      "source": "HX-0146 · Пакет повторения и история приняты обычными merge commit",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "199d6db958cdb817",
+      "source": "Решение",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "884790e808cc4b86",
+      "source": "По прямому поручению владельца слиты PR28 и PR33 после зелёных проверок. Проверены оба родителя каждого merge commit и совпадение с проверенными деревьями. Ранние записи и исходные доказательства сохранены.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "9afca2c0ea7f6254",
+      "source": "Сохранить родительскую историю и отдельно зафиксировать принятие и выкатку.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "c571eeb572f33387",
+      "source": "Принятие инструмента не подтверждает независимость оператора и не предоставляет права допуска чужого кода.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
       "id": "d797c21fbb358f20",
       "source": "HX-0145 · Подготовлен пакет повторения зарегистрированного опыта для другого оператора",
       "context": "history.html:text:section/details/summary"
@@ -4687,19 +4777,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "4eea5e0b76754d4e",
       "source": "Сопоставлять исходники, спецификацию и наблюдения, сохраняя исходную регистрацию и пять подписанных пакетов. Разные ключи или процессы не считать независимыми операторами. Сторонний код блокировать до отдельных решений об изоляции.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "556fffb958f5f3fb",
@@ -4710,11 +4790,6 @@
       "id": "66c0bae93d90e486",
       "source": "docs/evidence/reproduction-reference-41088614695/result.json",
       "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "6ff4fdf59aa06843",
@@ -4740,11 +4815,6 @@
       "id": "b5a8bffb54d03725",
       "source": "В прод не выкатывалось, PR не слиты. Production Actions, модели, внешние сообщения, допуск участников и выдача ресурсов не выполнялись. Полные новые захваты сохранены приватно.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "556d71717866366d",
@@ -4795,11 +4865,6 @@
       "id": "3baf0303a16bc650",
       "source": "HX-0143 · Сценарий участника и история приняты обычными merge commit",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "199d6db958cdb817",
-      "source": "Решение",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "eb0a17e26f291dca",
