@@ -56,7 +56,7 @@ def cycle(base, public, smoke=False):
             source_coverage['moltbook']=dict(checked=False,complete=False,code='public_source_unavailable')
         extra=[]
         if config.get('extra_public_sources_enabled'):
-            extra,coverage=public_sources.collect();source_coverage.update(coverage)
+            extra,coverage=public_sources.collect(config.get('github_project_account'));source_coverage.update(coverage)
         snapshot=dict(comments=sorted(mirror['comments']+extra,key=lambda x:(x.get('created_at') or '',x['id'])),coverage=source_coverage)
         atomic_json(base/'source-snapshot.json',snapshot)
         marker=base/('baseline-v2.json' if config.get('analysis_schema_version')==2 else 'baseline.json')

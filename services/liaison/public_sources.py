@@ -47,7 +47,7 @@ class Page(HTMLParser):
     def handle_data(self,data):self.stack[-1].children.append(data)
 
 
-def discussion(html=None):
+def discussion(html=None,owner=None):
     page=Page();page.feed(fetch(DISCUSSION) if html is None else html)
     nodes=list(page.root.walk())
     headers=[n for n in nodes if n.attrs.get('id')=='discussion-comment-count']
@@ -68,7 +68,7 @@ def discussion(html=None):
         actor=authors[0].attrs['href'][1:]
         times=[n.attrs['datetime'] for n in children if n.tag=='relative-time' and 'datetime' in n.attrs]
         rows.append(dict(id='a2a-community:'+identifier,source='a2a-community',source_url=DISCUSSION+'#'+identifier,
-            claimed_author=actor,project_account=actor.lower()=='ashkitt',text=text,
+            claimed_author=actor,project_account=actor.lower()==(owner or '').lower(),text=text,
             created_at=times[0] if times else None,updated_at=None,a2a_submission=False))
         seen.add(identifier)
     if count and not rows:raise ValueError('github_comment_bodies_unavailable')
@@ -76,7 +76,7 @@ def discussion(html=None):
         returned_comments=len(rows),known_limit='Hidden/paginated replies are not proven complete; no authenticated GitHub API token is deployed.')
 
 
-def claw():
+def claw(owner=None):
     result=[]
     for page in range(1,21):
         rows=fetch(f'https://api.github.com/repos/eliswedtlv/ClawMesh/issues/1/comments?per_page=100&page={page}',True)
@@ -87,15 +87,15 @@ def claw():
             if not isinstance(text,str) or len(text)>16000:raise ValueError('github_body_limit')
             if not re.fullmatch(re.escape(ISSUE)+r'#issuecomment-\d+',row['html_url']):raise ValueError('github_permalink')
             result.append(dict(id='clawmesh:'+str(row['id']),source='clawmesh',source_url=row['html_url'],
-                claimed_author=actor,project_account=actor.lower()=='ashkitt',text=text,
+                claimed_author=actor,project_account=actor.lower()==(owner or '').lower(),text=text,
                 created_at=row['created_at'],updated_at=row['updated_at'],a2a_submission=False))
         if len(rows)<100:return result,dict(checked=True,complete=True,returned_comments=len(result))
     raise ValueError('github_issue_pagination_limit')
 
 
-def collect():
+def collect(owner=None):
     rows=[];coverage={}
-    for name,reader in [('a2a-community',discussion),('clawmesh',claw)]:
+    for name,reader in [('a2a-community',lambda:discussion(owner=owner)),('clawmesh',lambda:claw(owner))]:
         try:
             found,status=reader();rows+=found;coverage[name]=status
         except Exception:coverage[name]=dict(checked=False,complete=False,code='public_source_unavailable')

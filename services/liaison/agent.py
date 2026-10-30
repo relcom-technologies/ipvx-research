@@ -32,6 +32,8 @@ structured draft below).
 Never request credentials. Do not repeat questions already answered by the project.
 Use the external author's language. A reviewer must challenge the draft against
 the supplied evidence and may replace it; approval here is only editorial review.
+Use the external author's language for the suggested reply; write the proposal
+and owner-facing decision summary in Russian.
 For concrete experiment_interest or review_interest, prepare one bounded proposal
 with these exact keys: hypothesis, roles, resources, versions, shared_task, control,
 failure_scenarios, success_metrics, failure_metrics, time_compute_limits, artifacts,

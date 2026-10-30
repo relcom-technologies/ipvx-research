@@ -45,6 +45,7 @@ target='/etc/ipvx-liaison/config.json'
 if not os.path.exists(target):shutil.copyfile(p,'/etc/ipvx-liaison/config.before-autonomous.json')
 current=json.load(open(sys.argv[1]));current['billing_authorized']=True
 current['generation_enabled']=False
+current['github_project_account']=json.load(open('/etc/ipvx-notifier/notification.json'))['github_owner']
 fd=os.open(target,os.O_WRONLY|os.O_CREAT|os.O_TRUNC,0o600)
 with os.fdopen(fd,'w') as out:json.dump(current,out)
 os.chmod(target,0o600)
