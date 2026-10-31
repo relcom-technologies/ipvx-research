@@ -1,0 +1,307 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-31T10:53:05.720028+01:00",
+  "attributed_to": "codex-assistant",
+  "recorded_by": "codex-assistant",
+  "status": "draft_specification_not_implemented",
+  "specification": "docs/proposals/bcp-minimal-0.1.md",
+  "research_base": {
+    "repository": "relcom-technologies/ipvx-research",
+    "revision": "e42938c67180b6c9e26a5dbeaf0a4ae665d90b60",
+    "tree": "3c3f015a8ef9f9f38bddd8e1d7de9ed083790f27",
+    "history_events": 164,
+    "history_prefix_sha256": "9285a51d28271ab45fbac21240a481e63ee74f49081c699d416f503b369a7c70"
+  },
+  "original_sources": [
+    {
+      "title": "IPvX Ecosystem",
+      "authors": [
+        "Alexey Shkittin",
+        "Nikolay Labaznikov"
+      ],
+      "original_url": "https://archive.org/details/ipv-x-ecosystem_202405/IPvX_Ecosystem.pdf",
+      "consulted_copy": {
+        "repository": "relcom-technologies/ipvx-agent-lab",
+        "revision": "93ddbfe905f77036c45d976e96e5c95efc3f2264",
+        "path": "fixtures/documents/IPvX_Ecosystem.txt",
+        "sha256": "2a1ddabc2103669dbe7f1a95ea112504b782d31f3eb36d2ce6446b6e1071c6de"
+      },
+      "relevant_sections": "14–15; 18–22"
+    },
+    {
+      "title": "Rapid distributed IPvX resolver",
+      "authors": [
+        "Alexey Shkittin",
+        "Nikolay Labaznikov"
+      ],
+      "original_url": "https://archive.org/details/rapid-distributed-ipv-x-resolver/Rapid+distributed+IPvX+resolver",
+      "consulted_copy": {
+        "repository": "relcom-technologies/ipvx-agent-lab",
+        "revision": "93ddbfe905f77036c45d976e96e5c95efc3f2264",
+        "path": "fixtures/documents/Rapid_distributed_IPvX_resolver.txt",
+        "sha256": "8a10fdce7fe09e2e88d4a44feedfecc19f1838d52305cc05260f8a7e7cb5e791"
+      },
+      "relevant_sections": "IBA/ION/IRS architecture"
+    }
+  ],
+  "lab_preservation": {
+    "repository": "relcom-technologies/ipvx-agent-lab",
+    "revision": "93ddbfe905f77036c45d976e96e5c95efc3f2264",
+    "tree": "9a8391c11e33521989b234844b311e2cbb50e878",
+    "baseline_experiment": "native-mesh",
+    "historical_measurement_revision": "7993998d96c4bd075c3db6e2ecf30f0f20505384",
+    "working_tree_clean_before_documentation": true,
+    "strict_llm_feature_tip": "3ee1f3f553b17f380b8b84beda02f05e3e9a207f",
+    "preserved_feature_commits": 26,
+    "all_feature_commits_are_ancestors": true,
+    "integration_exact_files_checked": 51,
+    "files": [
+      {
+        "path": "evidence/README.md",
+        "bytes": 3535,
+        "sha256": "8dbed8e560718d50c27e6a9aadafdf19b0ff8fff790dcde22e48d856f6aab39b"
+      },
+      {
+        "path": "evidence/anchors/head-0005.json",
+        "bytes": 319,
+        "sha256": "eca662c3592fb32cf2e8f40c960d64519d735bd5b2b49c4c3576fd4257e1e09d"
+      },
+      {
+        "path": "evidence/anchors/head-0005.json.ots",
+        "bytes": 635,
+        "sha256": "6f04e475effe1301fcbc1e099a27d93893b625bed513904a0c78565f9bfb3a6a"
+      },
+      {
+        "path": "evidence/bundles/0000-v0.1.0.json",
+        "bytes": 2493,
+        "sha256": "fe1467c8d5901bcbfec4d0e6368d5a9ba8cf5ae640a7b70dc9ae0051688eb6d5"
+      },
+      {
+        "path": "evidence/bundles/0001-v0.2.0.json",
+        "bytes": 3050,
+        "sha256": "325f674694b92d80d87838c538b189d13a83e261c9c5f984821959048a71f95f"
+      },
+      {
+        "path": "evidence/bundles/0002-v0.3.0.json",
+        "bytes": 2525,
+        "sha256": "84f378913df51de75ccb4d207adf0199e0c54590235be81c81f41551b38120f9"
+      },
+      {
+        "path": "evidence/bundles/0003-trial-detour-around-relay.json",
+        "bytes": 1051,
+        "sha256": "dd3749b67fc3c94d60c3f431520d058fc02c36ae20a343ae192f334b2823f117"
+      },
+      {
+        "path": "evidence/bundles/0004-trial-detour-around-relay-result.json",
+        "bytes": 1298,
+        "sha256": "5de66e4bf750483887b996a7e8bb304bd982104e7f83679bacc3eba67d16a55a"
+      },
+      {
+        "path": "evidence/lab-key.json",
+        "bytes": 174,
+        "sha256": "dce46ddf09a116b0e3fe792205e556166e2639eeb0da9fa11b5670caf1d658fc"
+      },
+      {
+        "path": "evidence/log.json",
+        "bytes": 3421,
+        "sha256": "e0bc947d6f95a19267fe596d35d8f48cdbede55fc289434c1b5dad33ebc8e1f5"
+      },
+      {
+        "path": "experiments/integration-manifest.json",
+        "bytes": 19226,
+        "sha256": "9400984bd0ebd094d70aa0b2f7264d52e3f295a01402d426db5d1d5d84b806d4"
+      },
+      {
+        "path": "experiments/integration-record.json",
+        "bytes": 2451,
+        "sha256": "8a30ff66334acd4e63fab615420351b1974556a5227724631466c324d71ea189"
+      },
+      {
+        "path": "experiments/registry.json",
+        "bytes": 4381,
+        "sha256": "ef9e7e4b29663375985d94b0ad518c5fce826933497ca5bf6266de2c37eb9313"
+      },
+      {
+        "path": "reports/README.md",
+        "bytes": 2767,
+        "sha256": "a9a666e4fcbc3b3d30a7621cc6adf9fed4441de3426b7597d2c4219b064e75a1"
+      },
+      {
+        "path": "reports/agent-survey.json",
+        "bytes": 2150,
+        "sha256": "1c6d691e95d73d75417daa7a5df09209cffbfb8053ad5827a70b51eecc95da41"
+      },
+      {
+        "path": "reports/direct-a.pcap",
+        "bytes": 134685,
+        "sha256": "a7a228a8eae0d698014180ead6a8fab43205d861b645d30f13fc35b6419aca6f"
+      },
+      {
+        "path": "reports/direct-acceptance.json",
+        "bytes": 1016716,
+        "sha256": "5f4d8e560db988be3d28c7827a6a3d4c8bef1d4ed6488fb3a261def3359fd609"
+      },
+      {
+        "path": "reports/direct-acceptance.md",
+        "bytes": 2423,
+        "sha256": "3609f9bfb4fa2c45f873220aa2e9bf07224f2f62945d9f9e222b26ad90c09dd4"
+      },
+      {
+        "path": "reports/direct-b.pcap",
+        "bytes": 153398,
+        "sha256": "a4a79d0f65904db6f253c3b492d9e3aa182f3e845f24f90d82c42b759c4b51a7"
+      },
+      {
+        "path": "reports/direct-release-manifest.json",
+        "bytes": 3610,
+        "sha256": "8111cbfb5499f03219e4a581ac1bf6a8d078d8408b4ff081754a4d421cab16ef"
+      },
+      {
+        "path": "reports/direct-ui-checks.json",
+        "bytes": 890,
+        "sha256": "e579fe9109cfa193550931889eee8437c7d602c54e420032e3cc9df35c51effe"
+      },
+      {
+        "path": "reports/index.json",
+        "bytes": 4936,
+        "sha256": "247a1d981355cad921e2a901b0c37f2037e4cef5b9c0597c4a832d129a05db70"
+      },
+      {
+        "path": "reports/infrastructure-audit.json",
+        "bytes": 596,
+        "sha256": "d927edc54cb5645ee08c00dc2fffd18771227ad842f9c5ad831c5ffe054fe02e"
+      },
+      {
+        "path": "reports/manifest.json",
+        "bytes": 794,
+        "sha256": "4626619df3b7fd4adfb8ff68077bde99bd981945f06bc0b513d7514457ee67f2"
+      },
+      {
+        "path": "reports/mesh-acceptance.json",
+        "bytes": 59975,
+        "sha256": "dec8af12b7f1e8ac659634cb264ba58f6575955e4a8a0e7f0a0547af2046ed58"
+      },
+      {
+        "path": "reports/mesh-acceptance.md",
+        "bytes": 2454,
+        "sha256": "14932b9e519052ed87f89c8583c8750bcf977e8c1a3f34d6f7f6b0b0e328365b"
+      },
+      {
+        "path": "reports/native-workload-initial.json.gz",
+        "bytes": 245933,
+        "sha256": "25f066bfc68cd77b79ebcf5d3ef855844e0a3b4037c78299e368100d99f9ec23"
+      },
+      {
+        "path": "reports/native-workload-run2.json.gz",
+        "bytes": 389393,
+        "sha256": "3a895876f0e2aa0e51d94bff64de962bacdc7d700094e9ab6dfb01c2123250cd"
+      },
+      {
+        "path": "reports/native-workload.json.gz",
+        "bytes": 310305,
+        "sha256": "3852b7ba96ac15977d2cdb5d1410e9dcbca02349360c43700f6b988c85521fa9"
+      },
+      {
+        "path": "reports/participant-lifecycle/loopback.json",
+        "bytes": 17898,
+        "sha256": "63e3b73ca99a037821ff9b7cf2e0e473189787da965fc74d487959a737bcea08"
+      },
+      {
+        "path": "reports/relcom-full.json",
+        "bytes": 35069,
+        "sha256": "98ddbeb566363e74d18d39c8ca7dbd79ad654a5b91857754ed0af792f15e1ca3"
+      },
+      {
+        "path": "reports/relcom-full.md",
+        "bytes": 10788,
+        "sha256": "d7cfd9e8903545a57723c23226c5ab46650650fa34f2867269d00f413491eda9"
+      },
+      {
+        "path": "reports/relcom-operations.json",
+        "bytes": 656,
+        "sha256": "fd34071544c98702a8771bbae99d9504eff455e19d2ccd8fbcc8767ecd674674"
+      },
+      {
+        "path": "reports/relcom-resilience.json",
+        "bytes": 20033,
+        "sha256": "a911abcabf5a3169c41efa08bc6d2207dd4ff5c741edea2675365a63b6d23ddd"
+      },
+      {
+        "path": "reports/relcom-resilience.md",
+        "bytes": 5600,
+        "sha256": "d0dd20e1a141c5df3020cbba521145d55a00355ee8b04408e5a39d1fde898aa0"
+      },
+      {
+        "path": "reports/scale-model.json.gz",
+        "bytes": 622125,
+        "sha256": "e21a57405352cdff5e4262ed53d28eb7f58df3544fabdc0eaf3dba229c719b14"
+      },
+      {
+        "path": "src/ipvx_agent_lab/ethernet.py",
+        "bytes": 10106,
+        "sha256": "30624fd6ba5b7458d6861a46fbd1323b9ea52d89df7e3192989e33300039f309"
+      },
+      {
+        "path": "src/ipvx_agent_lab/mesh.py",
+        "bytes": 33388,
+        "sha256": "595c580a4c2332133ce5acfec1c823d4531e35bc2099e1e28484a6f70f147621"
+      }
+    ],
+    "raw_capture_release_hashes": {
+      "mesh-a.pcap": "f2d6034c4148da64024c64bb8298f8f0b38983a6eddeaf91bb2c280c4a838457",
+      "mesh-b.pcap": "16bff538222831c360fc6ffb81d77cff2b26e42a9cc5fe667ed69336ee204a89",
+      "mesh-r1.pcap": "24138185b3b002f5e692b0f52eccebf37175329c30c5c56ed02666d5c9349c9d",
+      "mesh-r2.pcap": "19337a58787ee35cea859afdb291a5fb9ea37df695aebc4b10c9b5b2d4797500",
+      "mesh-r3.pcap": "63f746346f59955ea2365f5515edf07d2fef506c8be4051b9c7fc2d1e1ae0c78"
+    },
+    "local_raw_captures_verified": [
+      "mesh-a.pcap",
+      "mesh-b.pcap",
+      "mesh-r1.pcap",
+      "mesh-r2.pcap",
+      "mesh-r3.pcap"
+    ],
+    "signed_evidence_notice": "Original signed objects are retained unchanged. This documentation check compared bytes/hashes; it did not mint a new signature or independently reverify a signer identity.",
+    "original_evidence_log_sha256": "e0bc947d6f95a19267fe596d35d8f48cdbede55fc289434c1b5dad33ebc8e1f5"
+  },
+  "underlay_assessment": {
+    "documented_topology": "Ethernet VLAN 50 with physical switching",
+    "hypervisor_live_uplink_verified": false,
+    "vxlan_absence_proven": false,
+    "scope": "Guest Ethernet configuration and historical guest captures do not establish the hypervisor underlay."
+  },
+  "technical_references": [
+    "https://eips.ethereum.org/EIPS/eip-721",
+    "https://eips.ethereum.org/EIPS/eip-1186",
+    "https://www.rfc-editor.org/rfc/rfc8949.html#section-4.2.1",
+    "https://www.rfc-editor.org/rfc/rfc9180.html",
+    "https://www.rfc-editor.org/rfc/rfc8032.html",
+    "https://ethereum.org/developers/docs/networking-layer/"
+  ],
+  "operational_changes": {
+    "code": false,
+    "mesh": false,
+    "contracts_deployed": false,
+    "chain_transactions": false,
+    "experiments": false,
+    "models": false,
+    "production": false,
+    "github_actions": false
+  },
+  "limitations": [
+    "Only a logical draft: contract ABI/storage layout, exact wire types, transcript and vectors remain approval gates.",
+    "BCP-T explicitly retains IP for blockchain synchronization. BCP-N consensus/bootstrap transport is not specified or implemented.",
+    "No new measurement, owner protocol ratification, independent operator, resource grant or public publication."
+  ],
+  "specification_sha256": "e9d4c1a40ccac0921f06ddffb386d750106bdab2da15a4bf5cb286ec8f9124f0",
+  "documentation_checks": {
+    "history_events_validated": 165,
+    "existing_site_pages_validated": 96,
+    "relative_spec_links_checked": 5,
+    "history_base_prefix_unchanged": true,
+    "lab_working_tree_unchanged": true,
+    "code_and_workflows_changed": false,
+    "protocol_or_experiment_tests_executed": false,
+    "wire_conformance_vectors_exist": false
+  }
+}
