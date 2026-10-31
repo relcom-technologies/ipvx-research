@@ -2719,5 +2719,13 @@
   "dc7424175ff9c6d4": "La revisión propia de PR42 añadió una nueva comprobación del estado reciente, épocas, roles y consentimientos bilaterales antes de que el iniciador complete localmente una sesión. La revocación después de CHALLENGE impide ahora crear la sesión. El escenario de regresión está incluido en una prueba existente; pasan las 23 pruebas sin conexión.",
   "6926f8a75e01dea4": "No trasladar una autorización comprobada en CHALLENGE a través de una posible actualización del registro sin volver a comprobarla. Mantener sin cambios la especificación, los vectores y el historial anteriores; actualizar el núcleo comprobado y los hashes del informe reproducible.",
   "83944609a8769ac3": "Es una comprobación local con instantáneas sintéticas, sin EL/CL real, experimento de red ni operador independiente. La nueva revisión debe superar por separado el CI del PR.",
-  "e5dc44a446e4906c": "La implementación sigue siendo parcial. Se conservan el mesh, las pruebas anteriores y los 171 eventos previos; no se realizan fusión, despliegue ni Actions de producción."
+  "e5dc44a446e4906c": "La implementación sigue siendo parcial. Se conservan el mesh, las pruebas anteriores y los 171 eventos previos; no se realizan fusión, despliegue ni Actions de producción.",
+  "9818e3e47baffdde": "173 eventos hasta HX-0173; autores, fundamentos, comprobaciones y límites.",
+  "1dda2b37b81d3854": "334,7 KiB · 12 archivos",
+  "a43367b275befcdd": "HX-0173 · Aceptada la instrucción de fusionar PR42 conservando el historial",
+  "034433825cb41f9b": "Codex — asistente principal de esta conversación · 2026-10-31T14:49:18+01:00",
+  "ec475768961291ad": "El propietario autorizó expresamente un merge commit normal y el uso único de --admin solo para PR42, sin cambiar la protección de la rama. Pasaron las cuatro comprobaciones CI de la revisión 586c1d8; la revisión actualizada con este registro debe superar las comprobaciones del PR antes de fusionarse. Se acepta el núcleo parcial sin conexión de BCP 0.2; se conservan los vectores originales, el defecto N29 documentado, el caso corregido separado y las pruebas anteriores.",
+  "2c7ef61c8a22a67b": "Conservar los commits originales y ambos padres del merge commit, registrando la autorización y los límites de aceptación en el historial del mismo PR. Fusionar código fuente no confirma la finalidad de la blockchain, la interoperabilidad independiente ni el permiso para ejecutar en red.",
+  "b7b93fd94159038e": "Se comprobaron los hashes de la implementación y el informe, las especificaciones anteriores, 38 archivos de Lab y cinco PCAP; los 172 eventos anteriores se conservan como prefijo. El mesh sigue siendo un experimento separado.",
+  "4be27d7ac9ad8a1b": "La protección de la rama permanece sin cambios. No se realizan experimentos de red, transacciones en la cadena, modelos, despliegue ni Actions de producción."
 }

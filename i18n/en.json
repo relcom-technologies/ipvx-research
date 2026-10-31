@@ -2719,5 +2719,13 @@
   "dc7424175ff9c6d4": "Self-review of PR42 added a recheck of fresh state, epochs, roles and bilateral consents before the initiator locally completes a session. Revocation after CHALLENGE now prevents session creation. The regression scenario is included in an existing test; all 23 offline tests pass.",
   "6926f8a75e01dea4": "Do not carry authorization checked at CHALLENGE across a possible registry update without rechecking. Keep the earlier specification, vectors and history unchanged; update the tested core and reproducible report hashes.",
   "83944609a8769ac3": "This is a local check over synthetic snapshots, without live EL/CL, a network experiment or an independent operator. The new revision must pass PR CI separately.",
-  "e5dc44a446e4906c": "The implementation remains partial. Mesh, earlier evidence and the preceding 171 events are preserved; no merge, deployment or production Actions are performed."
+  "e5dc44a446e4906c": "The implementation remains partial. Mesh, earlier evidence and the preceding 171 events are preserved; no merge, deployment or production Actions are performed.",
+  "9818e3e47baffdde": "173 events through HX-0173; authors, rationale, checks and limitations.",
+  "1dda2b37b81d3854": "334.7 KiB · 12 files",
+  "a43367b275befcdd": "HX-0173 · Instruction to merge PR42 while preserving history accepted",
+  "034433825cb41f9b": "Codex — primary assistant in this conversation · 2026-10-31T14:49:18+01:00",
+  "ec475768961291ad": "The owner explicitly authorized a regular merge commit and one-time --admin for PR42 only, without changing branch protection. All four CI checks for revision 586c1d8 passed; the updated revision with this record must pass PR checks before merging. The partial offline BCP 0.2 core is being accepted; original vectors, the documented N29 defect, the separate corrected case and earlier evidence are preserved.",
+  "2c7ef61c8a22a67b": "Preserve the original commits and both parents of the merge commit, recording authorization and acceptance boundaries in the same PR's history. Merging source does not confirm blockchain finality, independent interoperability or permission for a network run.",
+  "b7b93fd94159038e": "Hashes of the implementation and report, earlier specifications, 38 Lab files and five PCAPs were checked; the preceding 172 events remain as a prefix. Mesh remains a separate experiment.",
+  "4be27d7ac9ad8a1b": "Branch protection remains unchanged. No network experiments, chain transactions, models, deployment or production Actions are performed."
 }
