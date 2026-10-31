@@ -2658,5 +2658,14 @@
   "0bdff0963ffc343f": "scripts/test_history_sources.py",
   "16e6461e72116797": "Se conserva la primera comprobación fallida del PR. La corrección se verificó localmente; el resultado del nuevo CI del PR aún no estaba disponible al registrar esta entrada.",
   "b372fed156f0a9d0": "La especificación BCP, mesh, las pruebas previas y los registros históricos no se modificaron. El protocolo no está implementado; no se realizaron experimentos ni despliegue.",
-  "243836832f65a325": "Las nuevas Actions solo están autorizadas como comprobaciones automáticas aisladas del PR actualizado; no se utilizan Actions de producción ni ejecución manual de workflows."
+  "243836832f65a325": "Las nuevas Actions solo están autorizadas como comprobaciones automáticas aisladas del PR actualizado; no se utilizan Actions de producción ni ejecución manual de workflows.",
+  "f0e31116dcbfe3af": "168 eventos hasta HX-0168; autores, fundamentos, comprobaciones y límites.",
+  "d5b1c08eb358a6dc": "326.6 KiB · 12 archivos",
+  "88317724c8b245eb": "HX-0168 · Aceptado el encargo de fusionar PR40 conservando el historial",
+  "2bd0ed0e5be598c3": "Codex — asistente principal de esta conversación · 2026-10-31T12:22:17.116890+01:00",
+  "556cd717df89164d": "Por instrucción explícita del propietario, acepto PR40 mediante un merge commit ordinario tras comprobar la revisión actualizada. Se conservan el commit original de la especificación, el historial de mesh y las pruebas anteriores. Al registrar esta entrada, las tres comprobaciones de CI de la revisión 547c849 habían pasado; el nuevo commit debe superar las comprobaciones del PR antes de fusionarse.",
+  "cdac75e5511f6234": "Incluir la autorización del propietario y los límites de la aceptación en el mismo PR antes de fusionarlo, conservando todos los commits antecesores. Se acepta documentación Draft, no un protocolo binario ratificado ni una implementación de BCP.",
+  "da6b89cbcd96ab58": "Esta entrada registra el encargo aceptado; la fusión efectiva se confirma con el merge commit exacto y un recibo separado tras completarse.",
+  "0e6ae927a5f43eb1": "Se conservan las comprobaciones de hashes de 38 archivos de Lab, cinco PCAP y los 26 commits de strict-LLM; no se realizó ningún nuevo experimento de red.",
+  "c41e0c6b76d8d87a": "Solo está autorizada la aceptación de las fuentes. No se realizan implementación de BCP, contratos, llamadas a modelos, experimentos, despliegue ni Actions de producción."
 }

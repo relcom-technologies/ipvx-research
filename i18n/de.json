@@ -2658,5 +2658,14 @@
   "0bdff0963ffc343f": "scripts/test_history_sources.py",
   "16e6461e72116797": "Die erste fehlgeschlagene PR-Prüfung bleibt erhalten. Die Korrektur wurde lokal geprüft; das Ergebnis der neuen PR-CI lag zum Zeitpunkt dieses Eintrags noch nicht vor.",
   "b372fed156f0a9d0": "BCP-Spezifikation, Mesh, frühere Belege und Verlaufseinträge bleiben unverändert. Das Protokoll ist nicht implementiert; es wurden keine Experimente oder Bereitstellungen ausgeführt.",
-  "243836832f65a325": "Neue Actions sind nur als automatische isolierte Prüfungen des aktualisierten PR autorisiert; Production Actions und manuelle Workflow-Aufrufe werden nicht verwendet."
+  "243836832f65a325": "Neue Actions sind nur als automatische isolierte Prüfungen des aktualisierten PR autorisiert; Production Actions und manuelle Workflow-Aufrufe werden nicht verwendet.",
+  "f0e31116dcbfe3af": "168 Ereignisse bis HX-0168; Autoren, Begründungen, Prüfungen und Grenzen.",
+  "d5b1c08eb358a6dc": "326.6 KiB · 12 Dateien",
+  "88317724c8b245eb": "HX-0168 · Auftrag zum Zusammenführen von PR40 unter Erhaltung des Verlaufs angenommen",
+  "2bd0ed0e5be598c3": "Codex — Hauptassistent dieses Gesprächs · 2026-10-31T12:22:17.116890+01:00",
+  "556cd717df89164d": "Auf ausdrücklichen Auftrag des Eigentümers nehme ich PR40 nach Prüfung der aktualisierten Revision mit einem regulären Merge-Commit an. Der ursprüngliche Spezifikationscommit, der Mesh-Verlauf und frühere Belege bleiben erhalten. Zum Zeitpunkt dieses Eintrags waren alle drei CI-Prüfungen für Revision 547c849 bestanden; der neue Commit muss vor dem Zusammenführen die PR-Prüfungen bestehen.",
+  "cdac75e5511f6234": "Die Genehmigung des Eigentümers und die Grenzen der Annahme vor dem Zusammenführen in denselben PR aufnehmen und alle übergeordneten Commits erhalten. Angenommen wird Draft-Dokumentation, kein ratifiziertes Wire-Protokoll und keine BCP-Implementierung.",
+  "da6b89cbcd96ab58": "Dieser Eintrag dokumentiert den angenommenen Auftrag; das tatsächliche Zusammenführen wird nach Abschluss durch den genauen Merge-Commit und einen separaten Nachweis bestätigt.",
+  "0e6ae927a5f43eb1": "Die Hash-Prüfungen für 38 Lab-Dateien, fünf PCAPs und alle 26 strict-LLM-Commits bleiben erhalten; es wurde kein neues Netzwerkexperiment durchgeführt.",
+  "c41e0c6b76d8d87a": "Autorisiert ist nur die Annahme der Quellen. Es erfolgen keine BCP-Implementierung, Verträge, Modellaufrufe, Experimente, Bereitstellung oder Production Actions."
 }

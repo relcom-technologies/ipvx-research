@@ -2658,5 +2658,14 @@
   "0bdff0963ffc343f": "scripts/test_history_sources.py",
   "16e6461e72116797": "The first failed PR check is retained. The fix was verified locally; the outcome of the new PR CI was not yet available at the time of this entry.",
   "b372fed156f0a9d0": "The BCP specification, mesh, prior evidence and history records are unchanged. The protocol is not implemented; no experiments or deployment were performed.",
-  "243836832f65a325": "New Actions are authorized only as automatic isolated checks of the updated PR; production Actions and manual workflow dispatch are not used."
+  "243836832f65a325": "New Actions are authorized only as automatic isolated checks of the updated PR; production Actions and manual workflow dispatch are not used.",
+  "f0e31116dcbfe3af": "168 events through HX-0168; authors, rationale, checks and limits.",
+  "d5b1c08eb358a6dc": "326.6 KiB · 12 files",
+  "88317724c8b245eb": "HX-0168 · Accepted the instruction to merge PR40 while preserving history",
+  "2bd0ed0e5be598c3": "Codex — main assistant in this conversation · 2026-10-31T12:22:17.116890+01:00",
+  "556cd717df89164d": "At the owner’s explicit instruction, I am accepting PR40 with a regular merge commit after checking the updated revision. The original specification commit, mesh history and prior evidence are preserved. At the time of this entry, all three CI checks for revision 547c849 had passed; the new commit must pass PR checks before merging.",
+  "cdac75e5511f6234": "Include the owner’s authorization and acceptance boundaries in the same PR before merging, preserving all parent commits. Draft documentation is being accepted, not a ratified wire protocol or BCP implementation.",
+  "da6b89cbcd96ab58": "This entry records the accepted instruction; the actual merge is confirmed by the exact merge commit and a separate receipt after completion.",
+  "0e6ae927a5f43eb1": "Hash checks for 38 Lab files, five PCAPs and all 26 strict-LLM commits are preserved; no new network experiment was performed.",
+  "c41e0c6b76d8d87a": "Only source acceptance is authorized. No BCP implementation, contracts, models, experiments, deployment or production Actions are performed."
 }
