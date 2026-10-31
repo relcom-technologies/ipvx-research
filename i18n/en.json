@@ -2778,5 +2778,22 @@
   "68416f6a982fd317": "The owner explicitly authorized a regular merge commit and one-time --admin for PR44 only, without changing branch protection. All four CI checks for revision be6182e passed; the updated history must pass PR checks before merging. The read-only BCP 0.2 EL/CL adapter is accepted with offline evidence, without an operational run.",
   "5e25cb48d9117ce2": "Preserve the original adapter commit and both parents of the merge commit, recording authorization and acceptance limits in the same PR. Acceptance of source code does not prove live Ethereum finality or authorize transactions, a network experiment or deployment.",
   "14b7ef31f06d09cd": "Verified 60 PR and existing source files, 38 Lab files and five PCAPs; the previous 176 events remain a preserved prefix. Mesh remains a separate experiment; original signatures were not reissued.",
-  "0332aa2e985c0a8e": "Branch protection remains unchanged. No transactions, network experiments, models, deployment or production Actions are performed. The adapter trusts the full CL; live clients and chain finality were not tested."
+  "0332aa2e985c0a8e": "Branch protection remains unchanged. No transactions, network experiments, models, deployment or production Actions are performed. The adapter trusts the full CL; live clients and chain finality were not tested.",
+  "9905835f3709b166": "178 events through HX-0178; authors, rationales, checks and limitations.",
+  "a0f215cd9cb04046": "343.7 KiB · 12 files",
+  "b4bbd82a82d8678f": "HX-0178 · BCP 0.2 adapter and core connected; full cycle checked offline",
+  "7adb7f6a80fed50a": "Codex — primary assistant in this conversation · 2026-10-31T16:02:12Z",
+  "f23e8f44aac6d289": "Added AdapterCore and BoundJournal: the adapter reads state before each operation, and the checkpoint comes from the core journal itself. One process completed 16 stages across three logical nodes: handshakes, ROUTE, encrypted DATA through a relay, ACCEPTED, COMPLETED and ERROR. The original request is stored before DATA returns; a late ERROR does not undo COMPLETED.",
+  "b26539ca2d0f53de": "Do not accept trust flags or a saved checkpoint from a packet or caller. Bind the ancestry assertion to the exact journal, avoid stale state after failure and preserve existing components separately. Actual contract ABI words came from an in-memory EVM with public test keys; EL/CL envelopes and clocks are synthetic.",
+  "68b2091bb207fdaf": "integration/bcp02/README.md",
+  "375d04fee846f6ca": "integration/bcp02/runtime.py",
+  "983cb5b0028413b4": "integration/bcp02/journal.py",
+  "c2825d36ab5bb929": "integration/bcp02/offline_cycle.py",
+  "d87c4ee674e93eaa": "integration/bcp02/evidence/checks.json",
+  "1f1fb581b3b07c4a": "integration/bcp02/evidence/preservation.json",
+  "0043c0b1484c0e10": "integration/bcp02/tests/contract-reads.json",
+  "478c728ac9f2d139": ".github/workflows/bcp-integration.yml",
+  "2dd1c9ba6943e0e5": "23 new integration tests passed; the existing 34 adapter tests, 23 core tests, 30 contract checks and 50-vector report were reproduced unchanged. The N29 caveat is preserved. Verified 69 previous files, a prefix of 177 events, 38 Lab files and five PCAPs; original signatures were not reissued.",
+  "dbc6ff5b448d1515": "This is one process and local byte transfer, not a network of independent operators, physical Ethernet, distributed route discovery or a measurement of benefit over IP. Receipts refer to specified test bytes, not application or model execution; fresh ciphertext need not repeat byte for byte.",
+  "cf362af126cdbca5": "The full CL remains trusted; live finality and EL/CL interoperability were not tested. Adapter and core databases are not atomic together; exactly-once application execution is unproved. Mesh remains separate. No transactions, network experiments, models, deployment or production Actions were run."
 }
