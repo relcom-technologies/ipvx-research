@@ -2711,5 +2711,13 @@
   "9a05d31123ad51e3": ".github/workflows/bcp.yml",
   "0c906e5c7841b61c": "This is a partial implementation: no contracts, validating EL/CL adapter, RPC, live Ethernet, distributed discovery or application executor. Trusted adapter fields do not prove finality. Interoperability between implementations has not been established.",
   "67c80198720b5c09": "23 local core tests and five tests of the earlier wire format passed. The initial full portal run was blocked by incomplete local dependencies and the prohibition on loopback binding; this negative result is retained. PR CI checks the full standard suite separately.",
-  "07b1fbf0b1beb280": "Hashes of 38 Lab files, five PCAPs, earlier documents and the prototype archive were checked; the preceding 170 events remain as a prefix. Earlier signatures were not reissued. No network experiments, transactions, models, deployment or production Actions were run."
+  "07b1fbf0b1beb280": "Hashes of 38 Lab files, five PCAPs, earlier documents and the prototype archive were checked; the preceding 170 events remain as a prefix. Earlier signatures were not reissued. No network experiments, transactions, models, deployment or production Actions were run.",
+  "db831ff95bd4fb8d": "172 events through HX-0172; authors, rationale, checks and limitations.",
+  "c860e8b280167b13": "333.8 KiB · 12 files",
+  "c8ddac57ed76fd38": "HX-0172 · BCP admission recheck before CONFIRM clarified",
+  "e8ac656d5d8b7393": "Codex — primary assistant in this conversation · 2026-10-31T14:40:51+01:00",
+  "dc7424175ff9c6d4": "Self-review of PR42 added a recheck of fresh state, epochs, roles and bilateral consents before the initiator locally completes a session. Revocation after CHALLENGE now prevents session creation. The regression scenario is included in an existing test; all 23 offline tests pass.",
+  "6926f8a75e01dea4": "Do not carry authorization checked at CHALLENGE across a possible registry update without rechecking. Keep the earlier specification, vectors and history unchanged; update the tested core and reproducible report hashes.",
+  "83944609a8769ac3": "This is a local check over synthetic snapshots, without live EL/CL, a network experiment or an independent operator. The new revision must pass PR CI separately.",
+  "e5dc44a446e4906c": "The implementation remains partial. Mesh, earlier evidence and the preceding 171 events are preserved; no merge, deployment or production Actions are performed."
 }

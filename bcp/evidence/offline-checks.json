@@ -380,7 +380,7 @@
     },
     {
       "path": "bcp/core.py",
-      "sha256": "edded50fe704d1616b81298572c563153d4b52b8138d74100c657e36a5dce86b"
+      "sha256": "a530db78856f784e8e975a5b2b1c9f69d7f4cb1b9e7925af09d0e63a9e4b7317"
     },
     {
       "path": "bcp/journal.py",
@@ -404,7 +404,7 @@
     },
     {
       "path": "tests/bcp/test_core.py",
-      "sha256": "49930df76775dbf704a9f0994d1679b29b997775b29a4c6cfcf814b99ac54abc"
+      "sha256": "1e09ae25362170b2b62f7e70e7102bf383eb3aa8529d999e2e3df5545d3ca566"
     },
     {
       "path": "tests/bcp/test_vectors.py",

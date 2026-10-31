@@ -2711,5 +2711,13 @@
   "9a05d31123ad51e3": ".github/workflows/bcp.yml",
   "0c906e5c7841b61c": "Dies ist eine Teilimplementierung: ohne Verträge, Adapter für prüfende EL/CL, RPC, aktives Ethernet, verteilte Erkennung oder Anwendungsausführung. Felder eines vertrauenswürdigen Adapters beweisen keine Finalität. Interoperabilität zwischen Implementierungen ist nicht nachgewiesen.",
   "67c80198720b5c09": "23 lokale Kerntests und fünf Tests des früheren Wire-Formats waren erfolgreich. Der erste vollständige Portallauf war durch unvollständige lokale Abhängigkeiten und das Verbot einer Loopback-Bindung blockiert; dieses negative Ergebnis bleibt erhalten. Die PR-CI prüft den vollständigen Standardsatz separat.",
-  "07b1fbf0b1beb280": "Die Hashes von 38 Lab-Dateien, fünf PCAPs, früheren Dokumenten und dem Prototyparchiv wurden geprüft; die vorherigen 170 Ereignisse bleiben als Präfix erhalten. Frühere Signaturen wurden nicht neu ausgestellt. Netzwerkexperimente, Transaktionen, Modelle, Bereitstellung und Production Actions wurden nicht ausgeführt."
+  "07b1fbf0b1beb280": "Die Hashes von 38 Lab-Dateien, fünf PCAPs, früheren Dokumenten und dem Prototyparchiv wurden geprüft; die vorherigen 170 Ereignisse bleiben als Präfix erhalten. Frühere Signaturen wurden nicht neu ausgestellt. Netzwerkexperimente, Transaktionen, Modelle, Bereitstellung und Production Actions wurden nicht ausgeführt.",
+  "db831ff95bd4fb8d": "172 Ereignisse bis HX-0172; Autoren, Begründungen, Prüfungen und Grenzen.",
+  "c860e8b280167b13": "333,8 KiB · 12 Dateien",
+  "c8ddac57ed76fd38": "HX-0172 · Erneute BCP-Zulassungsprüfung vor CONFIRM präzisiert",
+  "e8ac656d5d8b7393": "Codex — Hauptassistent dieses Gesprächs · 2026-10-31T14:40:51+01:00",
+  "dc7424175ff9c6d4": "Bei der Selbstprüfung von PR42 wurde vor dem lokalen Sitzungsabschluss durch den Initiator eine erneute Prüfung des aktuellen Zustands, der Epochen, Rollen und beidseitigen Zustimmungen ergänzt. Ein Widerruf nach CHALLENGE verhindert nun die Sitzungserstellung. Das Regressionsszenario ist in einem bestehenden Test enthalten; alle 23 Offline-Tests sind erfolgreich.",
+  "6926f8a75e01dea4": "Eine bei CHALLENGE geprüfte Berechtigung nicht ohne erneute Prüfung über eine mögliche Registeraktualisierung hinweg übernehmen. Die frühere Spezifikation, Vektoren und Historie unverändert lassen; den geprüften Kern und die Hashes des reproduzierbaren Berichts aktualisieren.",
+  "83944609a8769ac3": "Dies ist eine lokale Prüfung mit synthetischen Snapshots, ohne aktive EL/CL, Netzwerkexperiment oder unabhängigen Betreiber. Die neue Revision muss die PR-CI separat bestehen.",
+  "e5dc44a446e4906c": "Die Implementierung bleibt unvollständig. Mesh, frühere Nachweise und die vorherigen 171 Ereignisse bleiben erhalten; Zusammenführen, Bereitstellung und Production Actions werden nicht ausgeführt."
 }

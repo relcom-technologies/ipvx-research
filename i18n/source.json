@@ -837,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "66398da6999ffd28",
-      "source": "171 событий по HX-0171; авторы, основания, проверки и ограничения.",
+      "id": "db831ff95bd4fb8d",
+      "source": "172 событий по HX-0172; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "35e975a5756baf58",
-      "source": "332.5 КиБ · 12 файлов",
+      "id": "c860e8b280167b13",
+      "source": "333.8 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4642,6 +4642,76 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "c8ddac57ed76fd38",
+      "source": "HX-0172 · Уточнена повторная проверка допуска BCP перед CONFIRM",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "2ccdb3e3ca5897bf",
+      "source": "Уточнение",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "e8ac656d5d8b7393",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-31T14:40:51+01:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "dc7424175ff9c6d4",
+      "source": "При самопроверке PR42 добавлена повторная проверка свежего состояния, эпох, ролей и двусторонних согласий перед локальным завершением сессии инициатором. Отзыв после CHALLENGE больше не допускает создание сессии. Регрессионный сценарий включён в существующий тест; все 23 офлайн-теста проходят.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "6926f8a75e01dea4",
+      "source": "Не переносить проверенное на шаге CHALLENGE разрешение через возможное обновление реестра без повторной проверки. Не менять старую спецификацию, векторы или историю; обновить проверяемое ядро и хеши воспроизводимого отчёта.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "8741dde8fde568cb",
+      "source": "bcp/core.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "8c9ffc02672fdfd3",
+      "source": "tests/bcp/test_core.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "b1b329aac35c6d76",
+      "source": "bcp/evidence/offline-checks.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "83944609a8769ac3",
+      "source": "Это локальная проверка над синтетическими снимками, без живого EL/CL, сетевого опыта или независимого оператора. Новая ревизия должна пройти PR CI отдельно.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "e5dc44a446e4906c",
+      "source": "Реализация остаётся частичной. Mesh, старые доказательства и 171 предыдущее событие сохранены; слияние, выкатка и production Actions не выполняются.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "de7908a04644f885",
       "source": "HX-0171 · Начата минимальная офлайн-реализация BCP 0.2",
       "context": "history.html:text:section/details/summary"
@@ -4662,19 +4732,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "6183f2977554dc6a",
       "source": "Начать с проверяемого ядра без сетевого транспорта, цепочки и исполнения задач. Не ослаблять аутентификацию ради ошибочного вектора: сохранить его байты, явно описать ранний отказ и добавить отдельную коррекцию. Синтетические снимки и ожидаемые ответы остаются только во входах тестов, не в логике ядра.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "6fcf5990dbe075e8",
@@ -4684,11 +4744,6 @@
     {
       "id": "f692a9d472bd12a8",
       "source": "bcp/wire.py",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "8741dde8fde568cb",
-      "source": "bcp/core.py",
       "context": "history.html:text:ul/li/a"
     },
     {
@@ -4702,11 +4757,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "b1b329aac35c6d76",
-      "source": "bcp/evidence/offline-checks.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
       "id": "3a75e2cf8ed0403d",
       "source": "bcp/evidence/preservation.json",
       "context": "history.html:text:ul/li/a"
@@ -4714,11 +4764,6 @@
     {
       "id": "5103fd6e88713353",
       "source": "docs/proposals/bcp-0.2-implementation-notes.md",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "8c9ffc02672fdfd3",
-      "source": "tests/bcp/test_core.py",
       "context": "history.html:text:ul/li/a"
     },
     {
@@ -4730,11 +4775,6 @@
       "id": "9a05d31123ad51e3",
       "source": ".github/workflows/bcp.yml",
       "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "0c906e5c7841b61c",
@@ -4750,11 +4790,6 @@
       "id": "07b1fbf0b1beb280",
       "source": "Проверены хеши 38 файлов Lab, пяти PCAP, старых документов и архива прототипа; прежние 170 событий сохранены префиксом. Старые подписи не переиздавались. Сетевые эксперименты, транзакции, модели, выкатка и production Actions не запускались.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "294723f4f587dc52",
@@ -5100,11 +5135,6 @@
       "id": "556c141d7130fee6",
       "source": "HX-0163 · Уточнена и повторена мобильная приёмка выкатки",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "2ccdb3e3ca5897bf",
-      "source": "Уточнение",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "874c3b89bfb89200",

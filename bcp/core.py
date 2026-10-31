@@ -85,13 +85,24 @@ class Core:
         require(len(self._confirms) < 8 or frame.fields['session'] in self._confirms, 'POLICY_DENIED')
         self._confirms[frame.fields['session']] = (frame.body[:248], monotonic+5)
 
-    def sent_confirm(self, frame, monotonic, now):
+    def sent_confirm(self, frame, monotonic, now, *, clock_trusted):
         require(frame.kind == 3 and frame.profile == self.profile and frame.fields['initiator'] == self.local_nft,
                 'AUTH_FAILED')
-        old = self._challenges.pop(frame.fields['session'], None)
+        old = self._challenges.get(frame.fields['session'])
         require(old is not None and old[0] == frame.body[:248] and monotonic <= old[1], 'AUTH_FAILED')
+        self._clock(now,clock_trusted)
         require(now <= frame.fields['expires'], 'EXPIRED')
+        # The registry/policy view may have advanced since CHALLENGE was received.
+        f = frame.fields
+        self.state.check(self.profile,f['checkpoint'],now)
+        self.journal.checkpoint(self.state.latest.checkpoint,self.state.attestation.latest_extends_saved)
+        for label in ('initiator','responder'):
+            node = self.state.node(f[label],f[label+'_epoch'])
+            require(node.roles == f[label+'_roles'], 'POLICY_DENIED')
+        self.state.neighbors(f['initiator'],f['responder'])
+        verify(self.state.key(f['initiator']),f['signature'],signing_inputs(frame)['confirm'])
         self._admit(frame.fields, monotonic, now)
+        self._challenges.pop(f['session'])
 
     def _match_hello(self, f, monotonic):
         old = self._hellos.get((f['initiator'], f['initiator_nonce']))
