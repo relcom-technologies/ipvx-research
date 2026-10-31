@@ -1,0 +1,2138 @@
+{
+  "schema_version": 1,
+  "recorded_by": "codex-assistant",
+  "basis_revision": "f71032b406d82c75e17724d32b791e95b5289ea3",
+  "compiler": "0.8.38+commit.1835d247.Emscripten.clang",
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "viaIR": true,
+    "evmVersion": "cancun",
+    "metadata": {
+      "bytecodeHash": "none",
+      "appendCBOR": false
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "storageLayout",
+          "evm.bytecode.object",
+          "evm.deployedBytecode.object",
+          "evm.deployedBytecode.immutableReferences",
+          "evm.methodIdentifiers"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    }
+  },
+  "contracts": {
+    "NodeRegistry": {
+      "abi": [
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "sender",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            }
+          ],
+          "name": "ERC721IncorrectOwner",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ERC721InsufficientApproval",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "approver",
+              "type": "address"
+            }
+          ],
+          "name": "ERC721InvalidApprover",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address"
+            }
+          ],
+          "name": "ERC721InvalidOperator",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            }
+          ],
+          "name": "ERC721InvalidOwner",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "receiver",
+              "type": "address"
+            }
+          ],
+          "name": "ERC721InvalidReceiver",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "sender",
+              "type": "address"
+            }
+          ],
+          "name": "ERC721InvalidSender",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ERC721NonexistentToken",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "InactiveNode",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "InvalidKeysOrRoles",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "NotNodeOwner",
+          "type": "error"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "approved",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            }
+          ],
+          "name": "Approval",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "operator",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "bool",
+              "name": "approved",
+              "type": "bool"
+            }
+          ],
+          "name": "ApprovalForAll",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint64",
+              "name": "keyEpoch",
+              "type": "uint64"
+            },
+            {
+              "indexed": false,
+              "internalType": "bytes32",
+              "name": "signingKey",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "internalType": "bytes32",
+              "name": "encryptionKey",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint8",
+              "name": "status",
+              "type": "uint8"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint8",
+              "name": "roles",
+              "type": "uint8"
+            }
+          ],
+          "name": "NodeChanged",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            }
+          ],
+          "name": "Transfer",
+          "type": "event"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            }
+          ],
+          "name": "approve",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            }
+          ],
+          "name": "balanceOf",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            }
+          ],
+          "name": "getApproved",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address"
+            }
+          ],
+          "name": "isApprovedForAll",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "name",
+          "outputs": [
+            {
+              "internalType": "string",
+              "name": "",
+              "type": "string"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            }
+          ],
+          "name": "node",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "internalType": "uint64",
+              "name": "keyEpoch",
+              "type": "uint64"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "signingKey",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "encryptionKey",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint8",
+              "name": "status",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint8",
+              "name": "roles",
+              "type": "uint8"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ownerOf",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "signingKey",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "encryptionKey",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint8",
+              "name": "roles",
+              "type": "uint8"
+            }
+          ],
+          "name": "register",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            }
+          ],
+          "name": "revoke",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            }
+          ],
+          "name": "safeTransferFrom",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "data",
+              "type": "bytes"
+            }
+          ],
+          "name": "safeTransferFrom",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address"
+            },
+            {
+              "internalType": "bool",
+              "name": "approved",
+              "type": "bool"
+            }
+          ],
+          "name": "setApprovalForAll",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "signingKey",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "encryptionKey",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint8",
+              "name": "roles",
+              "type": "uint8"
+            }
+          ],
+          "name": "setKeys",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes4",
+              "name": "interfaceId",
+              "type": "bytes4"
+            }
+          ],
+          "name": "supportsInterface",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "symbol",
+          "outputs": [
+            {
+              "internalType": "string",
+              "name": "",
+              "type": "string"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            }
+          ],
+          "name": "tokenURI",
+          "outputs": [
+            {
+              "internalType": "string",
+              "name": "",
+              "type": "string"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            }
+          ],
+          "name": "transferFrom",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        }
+      ],
+      "method_identifiers": {
+        "approve(address,uint256)": "095ea7b3",
+        "balanceOf(address)": "70a08231",
+        "getApproved(uint256)": "081812fc",
+        "isApprovedForAll(address,address)": "e985e9c5",
+        "name()": "06fdde03",
+        "node(uint256)": "220e44d5",
+        "ownerOf(uint256)": "6352211e",
+        "register(bytes32,bytes32,uint8)": "4fe183dd",
+        "revoke(uint256)": "20c5429b",
+        "safeTransferFrom(address,address,uint256)": "42842e0e",
+        "safeTransferFrom(address,address,uint256,bytes)": "b88d4fde",
+        "setApprovalForAll(address,bool)": "a22cb465",
+        "setKeys(uint256,bytes32,bytes32,uint8)": "67bb501f",
+        "supportsInterface(bytes4)": "01ffc9a7",
+        "symbol()": "95d89b41",
+        "tokenURI(uint256)": "c87b56dd",
+        "transferFrom(address,address,uint256)": "23b872dd"
+      },
+      "creation_bytes": 5242,
+      "creation_keccak256": "0xd9475e83fa79670c376f6aa696413243492b3c74f019070cedc703ed96b8745b",
+      "runtime_template_bytes": 4420,
+      "runtime_template_keccak256": "0x84a6bd96a923d2681b9a1510c38a7f4c252b343d32141c7a0e308cfb04d8425d",
+      "immutable_references": {},
+      "storage_layout": {
+        "storage": [
+          {
+            "astId": 1735,
+            "contract": "src/NodeRegistry.sol:NodeRegistry",
+            "label": "_name",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_string_storage"
+          },
+          {
+            "astId": 1737,
+            "contract": "src/NodeRegistry.sol:NodeRegistry",
+            "label": "_symbol",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_string_storage"
+          },
+          {
+            "astId": 1741,
+            "contract": "src/NodeRegistry.sol:NodeRegistry",
+            "label": "_owners",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_mapping(t_uint256,t_address)"
+          },
+          {
+            "astId": 1745,
+            "contract": "src/NodeRegistry.sol:NodeRegistry",
+            "label": "_balances",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_mapping(t_address,t_uint256)"
+          },
+          {
+            "astId": 1749,
+            "contract": "src/NodeRegistry.sol:NodeRegistry",
+            "label": "_tokenApprovals",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_uint256,t_address)"
+          },
+          {
+            "astId": 1755,
+            "contract": "src/NodeRegistry.sol:NodeRegistry",
+            "label": "_operatorApprovals",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_bool))"
+          },
+          {
+            "astId": 1103,
+            "contract": "src/NodeRegistry.sol:NodeRegistry",
+            "label": "_nodes",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_uint256,t_struct(Record)1098_storage)"
+          },
+          {
+            "astId": 1106,
+            "contract": "src/NodeRegistry.sol:NodeRegistry",
+            "label": "_nextTokenId",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_uint256"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "encoding": "inplace",
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "encoding": "inplace",
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_bytes32": {
+            "encoding": "inplace",
+            "label": "bytes32",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "encoding": "mapping",
+            "key": "t_address",
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32",
+            "value": "t_bool"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_bool))": {
+            "encoding": "mapping",
+            "key": "t_address",
+            "label": "mapping(address => mapping(address => bool))",
+            "numberOfBytes": "32",
+            "value": "t_mapping(t_address,t_bool)"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "encoding": "mapping",
+            "key": "t_address",
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32",
+            "value": "t_uint256"
+          },
+          "t_mapping(t_uint256,t_address)": {
+            "encoding": "mapping",
+            "key": "t_uint256",
+            "label": "mapping(uint256 => address)",
+            "numberOfBytes": "32",
+            "value": "t_address"
+          },
+          "t_mapping(t_uint256,t_struct(Record)1098_storage)": {
+            "encoding": "mapping",
+            "key": "t_uint256",
+            "label": "mapping(uint256 => struct NodeRegistry.Record)",
+            "numberOfBytes": "32",
+            "value": "t_struct(Record)1098_storage"
+          },
+          "t_string_storage": {
+            "encoding": "bytes",
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Record)1098_storage": {
+            "encoding": "inplace",
+            "label": "struct NodeRegistry.Record",
+            "members": [
+              {
+                "astId": 1089,
+                "contract": "src/NodeRegistry.sol:NodeRegistry",
+                "label": "keyEpoch",
+                "offset": 0,
+                "slot": "0",
+                "type": "t_uint64"
+              },
+              {
+                "astId": 1091,
+                "contract": "src/NodeRegistry.sol:NodeRegistry",
+                "label": "signingKey",
+                "offset": 0,
+                "slot": "1",
+                "type": "t_bytes32"
+              },
+              {
+                "astId": 1093,
+                "contract": "src/NodeRegistry.sol:NodeRegistry",
+                "label": "encryptionKey",
+                "offset": 0,
+                "slot": "2",
+                "type": "t_bytes32"
+              },
+              {
+                "astId": 1095,
+                "contract": "src/NodeRegistry.sol:NodeRegistry",
+                "label": "status",
+                "offset": 0,
+                "slot": "3",
+                "type": "t_uint8"
+              },
+              {
+                "astId": 1097,
+                "contract": "src/NodeRegistry.sol:NodeRegistry",
+                "label": "roles",
+                "offset": 1,
+                "slot": "3",
+                "type": "t_uint8"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_uint256": {
+            "encoding": "inplace",
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "encoding": "inplace",
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_uint8": {
+            "encoding": "inplace",
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      },
+      "frozen_read_abi_matches": true
+    },
+    "TransitPolicy": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "nodeRegistry",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [],
+          "name": "InactiveParty",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "InvalidEndpoints",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "InvalidParameters",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "InvalidRegistry",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "MissingRule",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "NotPartyOwner",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "StaleEpoch",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "StaleVersion",
+          "type": "error"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "bytes32",
+              "name": "ruleId",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint64",
+              "name": "version",
+              "type": "uint64"
+            },
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "partyNft",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint64",
+              "name": "epoch",
+              "type": "uint64"
+            }
+          ],
+          "name": "Consented",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "bytes32",
+              "name": "ruleId",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint64",
+              "name": "version",
+              "type": "uint64"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "source",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "destination",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint64",
+              "name": "sourceEpoch",
+              "type": "uint64"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint64",
+              "name": "destinationEpoch",
+              "type": "uint64"
+            }
+          ],
+          "name": "Proposed",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "bytes32",
+              "name": "ruleId",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint64",
+              "name": "version",
+              "type": "uint64"
+            },
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "partyNft",
+              "type": "uint256"
+            }
+          ],
+          "name": "Withdrawn",
+          "type": "event"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "ruleId",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint64",
+              "name": "expectedVersion",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint256",
+              "name": "partyNft",
+              "type": "uint256"
+            }
+          ],
+          "name": "consent",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "ruleId",
+              "type": "bytes32"
+            }
+          ],
+          "name": "edge",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "fromNft",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "toNft",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint64",
+              "name": "version",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "fromEpoch",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "toEpoch",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint32",
+              "name": "cost",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint16",
+              "name": "maxCiphertext",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint32",
+              "name": "trafficMask",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint8",
+              "name": "status",
+              "type": "uint8"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "fromNft",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "toNft",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "cost",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint16",
+              "name": "maxCiphertext",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint32",
+              "name": "trafficMask",
+              "type": "uint32"
+            }
+          ],
+          "name": "propose",
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "ruleId",
+              "type": "bytes32"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "registry",
+          "outputs": [
+            {
+              "internalType": "contract INodeRegistry",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "fromNft",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "toNft",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            }
+          ],
+          "name": "ruleIdFor",
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "ruleId",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint64",
+              "name": "expectedVersion",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint256",
+              "name": "partyNft",
+              "type": "uint256"
+            }
+          ],
+          "name": "withdraw",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        }
+      ],
+      "method_identifiers": {
+        "consent(bytes32,uint64,uint256)": "3053a27d",
+        "edge(bytes32)": "7372edc9",
+        "propose(uint256,uint256,bytes32,uint32,uint16,uint32)": "a03248d8",
+        "registry()": "7b103999",
+        "ruleIdFor(uint256,uint256,bytes32)": "ca64fec0",
+        "withdraw(bytes32,uint64,uint256)": "06f86352"
+      },
+      "creation_bytes": 3709,
+      "creation_keccak256": "0x63972665eaa4d13154c05199cffdaa4187ee1a6cae4820eb1671e09bca9ab701",
+      "runtime_template_bytes": 3527,
+      "runtime_template_keccak256": "0xb35453c3cef05fc14c2001af0f084b8a60d74fe16499e937b53e3c32a26b3560",
+      "immutable_references": {
+        "7": [
+          {
+            "length": 32,
+            "start": 818
+          },
+          {
+            "length": 32,
+            "start": 1068
+          },
+          {
+            "length": 32,
+            "start": 1498
+          },
+          {
+            "length": 32,
+            "start": 2362
+          },
+          {
+            "length": 32,
+            "start": 2857
+          }
+        ]
+      },
+      "storage_layout": {
+        "storage": [
+          {
+            "astId": 25,
+            "contract": "src/TransitPolicy.sol:TransitPolicy",
+            "label": "_agreements",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_mapping(t_bytes32,t_struct(Agreement)20_storage)"
+          },
+          {
+            "astId": 1539,
+            "contract": "src/TransitPolicy.sol:TransitPolicy",
+            "label": "_terms",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_mapping(t_bytes32,t_struct(Terms)1534_storage)"
+          }
+        ],
+        "types": {
+          "t_bytes32": {
+            "encoding": "inplace",
+            "label": "bytes32",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_bytes32,t_struct(Agreement)20_storage)": {
+            "encoding": "mapping",
+            "key": "t_bytes32",
+            "label": "mapping(bytes32 => struct BilateralPolicy.Agreement)",
+            "numberOfBytes": "32",
+            "value": "t_struct(Agreement)20_storage"
+          },
+          "t_mapping(t_bytes32,t_struct(Terms)1534_storage)": {
+            "encoding": "mapping",
+            "key": "t_bytes32",
+            "label": "mapping(bytes32 => struct TransitPolicy.Terms)",
+            "numberOfBytes": "32",
+            "value": "t_struct(Terms)1534_storage"
+          },
+          "t_struct(Agreement)20_storage": {
+            "encoding": "inplace",
+            "label": "struct BilateralPolicy.Agreement",
+            "members": [
+              {
+                "astId": 9,
+                "contract": "src/TransitPolicy.sol:TransitPolicy",
+                "label": "source",
+                "offset": 0,
+                "slot": "0",
+                "type": "t_uint256"
+              },
+              {
+                "astId": 11,
+                "contract": "src/TransitPolicy.sol:TransitPolicy",
+                "label": "destination",
+                "offset": 0,
+                "slot": "1",
+                "type": "t_uint256"
+              },
+              {
+                "astId": 13,
+                "contract": "src/TransitPolicy.sol:TransitPolicy",
+                "label": "version",
+                "offset": 0,
+                "slot": "2",
+                "type": "t_uint64"
+              },
+              {
+                "astId": 15,
+                "contract": "src/TransitPolicy.sol:TransitPolicy",
+                "label": "sourceEpoch",
+                "offset": 8,
+                "slot": "2",
+                "type": "t_uint64"
+              },
+              {
+                "astId": 17,
+                "contract": "src/TransitPolicy.sol:TransitPolicy",
+                "label": "destinationEpoch",
+                "offset": 16,
+                "slot": "2",
+                "type": "t_uint64"
+              },
+              {
+                "astId": 19,
+                "contract": "src/TransitPolicy.sol:TransitPolicy",
+                "label": "consents",
+                "offset": 24,
+                "slot": "2",
+                "type": "t_uint8"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_struct(Terms)1534_storage": {
+            "encoding": "inplace",
+            "label": "struct TransitPolicy.Terms",
+            "members": [
+              {
+                "astId": 1529,
+                "contract": "src/TransitPolicy.sol:TransitPolicy",
+                "label": "cost",
+                "offset": 0,
+                "slot": "0",
+                "type": "t_uint32"
+              },
+              {
+                "astId": 1531,
+                "contract": "src/TransitPolicy.sol:TransitPolicy",
+                "label": "maxCiphertext",
+                "offset": 4,
+                "slot": "0",
+                "type": "t_uint16"
+              },
+              {
+                "astId": 1533,
+                "contract": "src/TransitPolicy.sol:TransitPolicy",
+                "label": "trafficMask",
+                "offset": 6,
+                "slot": "0",
+                "type": "t_uint32"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint16": {
+            "encoding": "inplace",
+            "label": "uint16",
+            "numberOfBytes": "2"
+          },
+          "t_uint256": {
+            "encoding": "inplace",
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint32": {
+            "encoding": "inplace",
+            "label": "uint32",
+            "numberOfBytes": "4"
+          },
+          "t_uint64": {
+            "encoding": "inplace",
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_uint8": {
+            "encoding": "inplace",
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      },
+      "frozen_read_abi_matches": true
+    },
+    "ConnectionPolicy": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "nodeRegistry",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "transitPolicy",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [],
+          "name": "InactiveParty",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "InvalidEndpoints",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "InvalidParameters",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "InvalidRegistry",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "MissingRule",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "NotPartyOwner",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "StaleEpoch",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "StaleVersion",
+          "type": "error"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "bytes32",
+              "name": "ruleId",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint64",
+              "name": "version",
+              "type": "uint64"
+            },
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "partyNft",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint64",
+              "name": "epoch",
+              "type": "uint64"
+            }
+          ],
+          "name": "Consented",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "bytes32",
+              "name": "ruleId",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint64",
+              "name": "version",
+              "type": "uint64"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "source",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "destination",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint64",
+              "name": "sourceEpoch",
+              "type": "uint64"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint64",
+              "name": "destinationEpoch",
+              "type": "uint64"
+            }
+          ],
+          "name": "Proposed",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "bytes32",
+              "name": "ruleId",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint64",
+              "name": "version",
+              "type": "uint64"
+            },
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "partyNft",
+              "type": "uint256"
+            }
+          ],
+          "name": "Withdrawn",
+          "type": "event"
+        },
+        {
+          "inputs": [],
+          "name": "MAX_ALLOWED_EDGES",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "connectionRule",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "edgeRule",
+              "type": "bytes32"
+            }
+          ],
+          "name": "allowsEdge",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "allowed",
+              "type": "bool"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "ruleId",
+              "type": "bytes32"
+            }
+          ],
+          "name": "connection",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "sourceNft",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "destinationNft",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint64",
+              "name": "version",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "sourceEpoch",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "destinationEpoch",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint32",
+              "name": "trafficMask",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint8",
+              "name": "maxHops",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint16",
+              "name": "maxCiphertext",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint8",
+              "name": "status",
+              "type": "uint8"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "ruleId",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint64",
+              "name": "expectedVersion",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint256",
+              "name": "partyNft",
+              "type": "uint256"
+            }
+          ],
+          "name": "consent",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "sourceNft",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "destinationNft",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "trafficMask",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint8",
+              "name": "maxHops",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint16",
+              "name": "maxCiphertext",
+              "type": "uint16"
+            },
+            {
+              "internalType": "bytes32[]",
+              "name": "allowedEdges",
+              "type": "bytes32[]"
+            }
+          ],
+          "name": "propose",
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "ruleId",
+              "type": "bytes32"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "registry",
+          "outputs": [
+            {
+              "internalType": "contract INodeRegistry",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "sourceNft",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "destinationNft",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            }
+          ],
+          "name": "ruleIdFor",
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "transit",
+          "outputs": [
+            {
+              "internalType": "contract TransitPolicy",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "ruleId",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint64",
+              "name": "expectedVersion",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint256",
+              "name": "partyNft",
+              "type": "uint256"
+            }
+          ],
+          "name": "withdraw",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        }
+      ],
+      "method_identifiers": {
+        "MAX_ALLOWED_EDGES()": "b0090404",
+        "allowsEdge(bytes32,bytes32)": "46303f16",
+        "connection(bytes32)": "9e56bb49",
+        "consent(bytes32,uint64,uint256)": "3053a27d",
+        "propose(uint256,uint256,bytes32,uint32,uint8,uint16,bytes32[])": "7ca18fab",
+        "registry()": "7b103999",
+        "ruleIdFor(uint256,uint256,bytes32)": "ca64fec0",
+        "transit()": "ecdd5335",
+        "withdraw(bytes32,uint64,uint256)": "06f86352"
+      },
+      "creation_bytes": 5273,
+      "creation_keccak256": "0x4d64abc20f870135c9a43e2a7aec2a322b2b3fbc9e7320c881e5fdb10794e9d0",
+      "runtime_template_bytes": 4859,
+      "runtime_template_keccak256": "0xe5774e71e2cab8d99fe04e41da5c981ebd22f3e01dd36f01cdb3339ad1682866",
+      "immutable_references": {
+        "7": [
+          {
+            "length": 32,
+            "start": 911
+          },
+          {
+            "length": 32,
+            "start": 1881
+          },
+          {
+            "length": 32,
+            "start": 2037
+          },
+          {
+            "length": 32,
+            "start": 2456
+          },
+          {
+            "length": 32,
+            "start": 3731
+          },
+          {
+            "length": 32,
+            "start": 4195
+          }
+        ],
+        "627": [
+          {
+            "length": 32,
+            "start": 144
+          },
+          {
+            "length": 32,
+            "start": 1153
+          },
+          {
+            "length": 32,
+            "start": 3084
+          }
+        ]
+      },
+      "storage_layout": {
+        "storage": [
+          {
+            "astId": 25,
+            "contract": "src/ConnectionPolicy.sol:ConnectionPolicy",
+            "label": "_agreements",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_mapping(t_bytes32,t_struct(Agreement)20_storage)"
+          },
+          {
+            "astId": 642,
+            "contract": "src/ConnectionPolicy.sol:ConnectionPolicy",
+            "label": "_terms",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_mapping(t_bytes32,t_struct(Terms)637_storage)"
+          },
+          {
+            "astId": 648,
+            "contract": "src/ConnectionPolicy.sol:ConnectionPolicy",
+            "label": "_edgeVersions",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_mapping(t_bytes32,t_mapping(t_bytes32,t_uint64))"
+          }
+        ],
+        "types": {
+          "t_array(t_bytes32)dyn_storage": {
+            "base": "t_bytes32",
+            "encoding": "dynamic_array",
+            "label": "bytes32[]",
+            "numberOfBytes": "32"
+          },
+          "t_bytes32": {
+            "encoding": "inplace",
+            "label": "bytes32",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_bytes32,t_mapping(t_bytes32,t_uint64))": {
+            "encoding": "mapping",
+            "key": "t_bytes32",
+            "label": "mapping(bytes32 => mapping(bytes32 => uint64))",
+            "numberOfBytes": "32",
+            "value": "t_mapping(t_bytes32,t_uint64)"
+          },
+          "t_mapping(t_bytes32,t_struct(Agreement)20_storage)": {
+            "encoding": "mapping",
+            "key": "t_bytes32",
+            "label": "mapping(bytes32 => struct BilateralPolicy.Agreement)",
+            "numberOfBytes": "32",
+            "value": "t_struct(Agreement)20_storage"
+          },
+          "t_mapping(t_bytes32,t_struct(Terms)637_storage)": {
+            "encoding": "mapping",
+            "key": "t_bytes32",
+            "label": "mapping(bytes32 => struct ConnectionPolicy.Terms)",
+            "numberOfBytes": "32",
+            "value": "t_struct(Terms)637_storage"
+          },
+          "t_mapping(t_bytes32,t_uint64)": {
+            "encoding": "mapping",
+            "key": "t_bytes32",
+            "label": "mapping(bytes32 => uint64)",
+            "numberOfBytes": "32",
+            "value": "t_uint64"
+          },
+          "t_struct(Agreement)20_storage": {
+            "encoding": "inplace",
+            "label": "struct BilateralPolicy.Agreement",
+            "members": [
+              {
+                "astId": 9,
+                "contract": "src/ConnectionPolicy.sol:ConnectionPolicy",
+                "label": "source",
+                "offset": 0,
+                "slot": "0",
+                "type": "t_uint256"
+              },
+              {
+                "astId": 11,
+                "contract": "src/ConnectionPolicy.sol:ConnectionPolicy",
+                "label": "destination",
+                "offset": 0,
+                "slot": "1",
+                "type": "t_uint256"
+              },
+              {
+                "astId": 13,
+                "contract": "src/ConnectionPolicy.sol:ConnectionPolicy",
+                "label": "version",
+                "offset": 0,
+                "slot": "2",
+                "type": "t_uint64"
+              },
+              {
+                "astId": 15,
+                "contract": "src/ConnectionPolicy.sol:ConnectionPolicy",
+                "label": "sourceEpoch",
+                "offset": 8,
+                "slot": "2",
+                "type": "t_uint64"
+              },
+              {
+                "astId": 17,
+                "contract": "src/ConnectionPolicy.sol:ConnectionPolicy",
+                "label": "destinationEpoch",
+                "offset": 16,
+                "slot": "2",
+                "type": "t_uint64"
+              },
+              {
+                "astId": 19,
+                "contract": "src/ConnectionPolicy.sol:ConnectionPolicy",
+                "label": "consents",
+                "offset": 24,
+                "slot": "2",
+                "type": "t_uint8"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_struct(Terms)637_storage": {
+            "encoding": "inplace",
+            "label": "struct ConnectionPolicy.Terms",
+            "members": [
+              {
+                "astId": 629,
+                "contract": "src/ConnectionPolicy.sol:ConnectionPolicy",
+                "label": "trafficMask",
+                "offset": 0,
+                "slot": "0",
+                "type": "t_uint32"
+              },
+              {
+                "astId": 631,
+                "contract": "src/ConnectionPolicy.sol:ConnectionPolicy",
+                "label": "maxHops",
+                "offset": 4,
+                "slot": "0",
+                "type": "t_uint8"
+              },
+              {
+                "astId": 633,
+                "contract": "src/ConnectionPolicy.sol:ConnectionPolicy",
+                "label": "maxCiphertext",
+                "offset": 5,
+                "slot": "0",
+                "type": "t_uint16"
+              },
+              {
+                "astId": 636,
+                "contract": "src/ConnectionPolicy.sol:ConnectionPolicy",
+                "label": "edges",
+                "offset": 0,
+                "slot": "1",
+                "type": "t_array(t_bytes32)dyn_storage"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint16": {
+            "encoding": "inplace",
+            "label": "uint16",
+            "numberOfBytes": "2"
+          },
+          "t_uint256": {
+            "encoding": "inplace",
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint32": {
+            "encoding": "inplace",
+            "label": "uint32",
+            "numberOfBytes": "4"
+          },
+          "t_uint64": {
+            "encoding": "inplace",
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_uint8": {
+            "encoding": "inplace",
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      },
+      "frozen_read_abi_matches": true
+    }
+  },
+  "sources": [
+    {
+      "path": "@openzeppelin/contracts/interfaces/draft-IERC6093.sol",
+      "sha256": "fa7068f56bc180571a6095be6eaef06d51dbe81e30cb128397d993c9599ecc30"
+    },
+    {
+      "path": "@openzeppelin/contracts/token/ERC721/ERC721.sol",
+      "sha256": "ef8e2398c78851bd2ec12bc48d923058c557889d5a3d5ee4919c17ff0fb3517e"
+    },
+    {
+      "path": "@openzeppelin/contracts/token/ERC721/IERC721.sol",
+      "sha256": "ff0eb9902bf0ac099205615fac90eacf34fae637571b05aab3ea35dea53d5f17"
+    },
+    {
+      "path": "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
+      "sha256": "eafee3ffdc7cb2fba4bf6bd16fb28f8e5b4679742e81c2ad42a1b1df5c179feb"
+    },
+    {
+      "path": "@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+      "sha256": "33223782ea652dca413702ce92f9f59d91d758a035065b24bbedb7dc60c63a78"
+    },
+    {
+      "path": "@openzeppelin/contracts/token/ERC721/utils/ERC721Utils.sol",
+      "sha256": "b48e95db8c85866c1d88af8e82f346e0d22d24b5aac5b936079d958c72e13b9f"
+    },
+    {
+      "path": "@openzeppelin/contracts/utils/Bytes.sol",
+      "sha256": "3ce9120a27934c75a074cb785d3a88868069ef6529dbe4dc6b845af0836f3c70"
+    },
+    {
+      "path": "@openzeppelin/contracts/utils/Context.sol",
+      "sha256": "847fda5460fee70f56f4200f59b82ae622bb03c79c77e67af010e31b7e2cc5b6"
+    },
+    {
+      "path": "@openzeppelin/contracts/utils/Panic.sol",
+      "sha256": "270fc8401c1a13fae6a7a4a2dd6e381b95d658896701e51f0d3e2688acab3dec"
+    },
+    {
+      "path": "@openzeppelin/contracts/utils/Strings.sol",
+      "sha256": "e318709bbe73a7831d64c1351e8bdc43780b245f25191234e361e6ab9b98c67b"
+    },
+    {
+      "path": "@openzeppelin/contracts/utils/introspection/ERC165.sol",
+      "sha256": "61a2b12c96857aaa35f48aeda67a4281637a42494c0b3795be0ae976aa7b3793"
+    },
+    {
+      "path": "@openzeppelin/contracts/utils/introspection/IERC165.sol",
+      "sha256": "9055c2994b37dea1a41b7b7926dcb510f05dbe2540b0aafc5fbee9558fffd0ca"
+    },
+    {
+      "path": "@openzeppelin/contracts/utils/math/Math.sol",
+      "sha256": "bdfdbe133991c0c78042957ff5cd97167926fcaf6d15664f3835a076cb066457"
+    },
+    {
+      "path": "@openzeppelin/contracts/utils/math/SafeCast.sol",
+      "sha256": "5779bc848bde39f1ad7bc02b4f708a0040888e0083b1a33f119cd94639350134"
+    },
+    {
+      "path": "@openzeppelin/contracts/utils/math/SignedMath.sol",
+      "sha256": "1ed50b1056af886752f0fb48a0165d381e69bb4a4b18b893b066dc144a7e08d7"
+    },
+    {
+      "path": "src/BilateralPolicy.sol",
+      "sha256": "3ada3d6f991e9dc2284d5868fba24ac2f4468aaa99deba7490a9ce3ce456fceb"
+    },
+    {
+      "path": "src/ConnectionPolicy.sol",
+      "sha256": "b41f580dffd6f3cf3a0125f1c5abb8b9ddd1bc7ad9ab259c058ab7f3f4307aa1"
+    },
+    {
+      "path": "src/INodeRegistry.sol",
+      "sha256": "6166e89deae5639b57b65fae3cae51a5c39e24b9b6722a8c3b1dbbe8c5b4fbae"
+    },
+    {
+      "path": "src/NodeRegistry.sol",
+      "sha256": "3123c93639a7cf4d91ac77ead5f8195b07ae2ec6ff477f389960d9c205b760d5"
+    },
+    {
+      "path": "src/TransitPolicy.sol",
+      "sha256": "c478b024d4bae0bcd5b872258a738d26bfd824983c8ea9dd70397ca6b3a544d1"
+    }
+  ],
+  "package_lock_sha256": "3bf567fb0f4fd5866a10a91fb4bf63d7b881f756d93ae9bb3a6fe1adbaf4e21a",
+  "note": "Runtime hashes are compiler templates with immutable placeholders, NOT deployed-code hashes or operational BCP context pins.",
+  "transactions_constructed_or_submitted": false,
+  "network_or_deployment_performed": false
+}

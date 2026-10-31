@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "recorded_by": "codex-assistant",
+  "basis_revision": "f71032b406d82c75e17724d32b791e95b5289ea3",
+  "scope": "Solidity bytecode in standalone EthereumJS EVM memory; no transaction objects, provider, live chain or RPC",
+  "test_count": 30,
+  "passed": [
+    "all ERC721 transfer paths invalidate keys before the new owner explicitly binds them",
+    "allowed edge versions are pinned; a changed or withdrawn transit rule cannot silently widen a connection",
+    "approved ERC721 operators may transfer but cannot change keys or consent to policies",
+    "compiled five-function read ABI and deterministic evidence match the frozen specification",
+    "connection endpoint epochs, router epochs and transit status are reevaluated on every view",
+    "connection withdrawal cannot be undone by stale approvals and keeps all old edge grants ineffective",
+    "connection writes reject unauthorized owners, zero/duplicate/unsorted/missing edge sets and bad limits",
+    "connections need two current owner consents and never authorize the reverse direction implicitly",
+    "constructor binding rejects absent code and a transit instance bound to another registry",
+    "direction, traffic masks, MTU and missing/inactive endpoints fail closed",
+    "either endpoint withdrawal versions the rule and cannot preserve the other old consent",
+    "inactive owners can withdraw stale policies but the previous NFT owner cannot",
+    "invalid zero/equal keys and unknown roles are rejected without consuming ids",
+    "missing views are all-zero while ERC721 ownerOf for a missing NFT reverts",
+    "network and RPC transports are blocked before tests and dependencies load",
+    "one consent never activates a rule, even when both NFTs have the same owner",
+    "open registration creates unique owned NFTs with epoch one and no transit",
+    "operational key rotation and revocation are owner-only, checked monotonic epochs",
+    "removed edge ids are cleared when proposing a new connection version",
+    "rotation after the first consent prevents second-side approval until a new proposal",
+    "rule ids bind chain, contract, directed endpoints and salt",
+    "safe mint callback sees fully initialized state and rejected transfer rolls back the epoch",
+    "safe transfer callback sees revoked keys and can only bind new keys as the new owner",
+    "seeded lifecycle invariant: no active rule or edge grant survives an unacknowledged epoch change",
+    "terms changes reset both consents and expectedVersion prevents stale approvals",
+    "the 64-edge boundary is usable and its accepted set remains exact",
+    "third parties cannot propose, consent or withdraw even with a predicted rule id",
+    "transfer, revoke and reactivation never revive old active transit consents",
+    "uint64 key epoch cannot wrap, including during transfer",
+    "uint64 policy versions cannot wrap on reproposal or withdrawal"
+  ],
+  "failed": [],
+  "compiler_evidence_sha256": "fb62683972a6252d105b4b66be17e18d4d0e754424b0416dedc5d53dc6af5ac9",
+  "source_files": [
+    {
+      "path": "package-lock.json",
+      "sha256": "3bf567fb0f4fd5866a10a91fb4bf63d7b881f756d93ae9bb3a6fe1adbaf4e21a"
+    },
+    {
+      "path": "package.json",
+      "sha256": "ca8fff98f4f8f89ab4c6fd405779a234dc2705cd7ff8a4cf22eacefca046bd1d"
+    },
+    {
+      "path": "src/BilateralPolicy.sol",
+      "sha256": "3ada3d6f991e9dc2284d5868fba24ac2f4468aaa99deba7490a9ce3ce456fceb"
+    },
+    {
+      "path": "src/ConnectionPolicy.sol",
+      "sha256": "b41f580dffd6f3cf3a0125f1c5abb8b9ddd1bc7ad9ab259c058ab7f3f4307aa1"
+    },
+    {
+      "path": "src/INodeRegistry.sol",
+      "sha256": "6166e89deae5639b57b65fae3cae51a5c39e24b9b6722a8c3b1dbbe8c5b4fbae"
+    },
+    {
+      "path": "src/NodeRegistry.sol",
+      "sha256": "3123c93639a7cf4d91ac77ead5f8195b07ae2ec6ff477f389960d9c205b760d5"
+    },
+    {
+      "path": "src/TransitPolicy.sol",
+      "sha256": "c478b024d4bae0bcd5b872258a738d26bfd824983c8ea9dd70397ca6b3a544d1"
+    },
+    {
+      "path": "test/Support.sol",
+      "sha256": "db5321e46f815c987af083e9a7121b1621247e13518af0b38599a2598d5b9315"
+    },
+    {
+      "path": "test/contracts.test.mjs",
+      "sha256": "f26a7189726322bf6866d8ebd5ede9381ac0187fecdb9e04043c82b372c003e7"
+    },
+    {
+      "path": "test/evm.mjs",
+      "sha256": "d5276e89f916802682bc8e2f0e90eb13d0730211af4a6ff6743cd51b0c33a15b"
+    },
+    {
+      "path": "test/offline.mjs",
+      "sha256": "949bf1cfc6207f2df58b3d8b3aa4413879297bb7b579f969fcd2d6770da0ce9d"
+    },
+    {
+      "path": "tools/compile.mjs",
+      "sha256": "6a264f1b50db0dd4da72f3754483b866e15047a8fe2056d9036cafb826300ec8"
+    },
+    {
+      "path": "tools/reporter.mjs",
+      "sha256": "6f849bc7155ea091fc2bd8e104bff32ef39b81e10974e6d7ca99c1c537e22891"
+    }
+  ],
+  "network_blocker_preloaded": true,
+  "transactions_constructed_or_submitted": false,
+  "on_chain_deployment": false,
+  "ethereum_finality_verified": false,
+  "independent_security_audit": false,
+  "production_actions": false
+}
