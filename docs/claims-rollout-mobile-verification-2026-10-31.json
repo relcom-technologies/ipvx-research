@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-31T00:28:57.024683+01:00",
+  "attributed_to": "codex-assistant",
+  "recorded_by": "codex-assistant",
+  "status": "corrected_and_reverified",
+  "related_event": "HX-0162",
+  "lab_revision": "93ddbfe905f77036c45d976e96e5c95efc3f2264",
+  "portal_revision": "e034dd494bbf60a77ab7fdb3ec23f05a9446f6b0",
+  "finding": "The first acceptance harness passed viewport options to BrowserContext.newPage, which ignores them. Files named 390px were actually 1440px. That first run did not establish mobile acceptance.",
+  "correction": "Explicitly call page.setViewportSize before navigation. Recheck actual innerWidth, screenshot width, overflow, four localized draft flows and eight Lab views. Preserve the initial mislabelled captures separately.",
+  "source_or_production_changed": false,
+  "final_viewports": [
+    1440,
+    390
+  ],
+  "screenshots": [
+    {
+      "name": "architecture-1440.png",
+      "initial_actual_size": [
+        1440,
+        3558
+      ],
+      "final_actual_size": [
+        1440,
+        3558
+      ],
+      "initial_sha256": "5182c52bdb08dec43ab3575722602e6e02a3c3be711894bd255259c022978cdc",
+      "final_sha256": "5182c52bdb08dec43ab3575722602e6e02a3c3be711894bd255259c022978cdc"
+    },
+    {
+      "name": "architecture-390.png",
+      "initial_actual_size": [
+        1440,
+        3558
+      ],
+      "final_actual_size": [
+        390,
+        5862
+      ],
+      "initial_sha256": "5182c52bdb08dec43ab3575722602e6e02a3c3be711894bd255259c022978cdc",
+      "final_sha256": "3aa74a1f9fc5e72b189b07819a917e5d08181139cdde207789306776e135d1c8"
+    },
+    {
+      "name": "mesh-1440.png",
+      "initial_actual_size": [
+        1440,
+        3723
+      ],
+      "final_actual_size": [
+        1440,
+        3723
+      ],
+      "initial_sha256": "d029b2d29d6b5be4370f8ca18480e6a47eed113bf54e19554f0f54feb8b4db84",
+      "final_sha256": "8514d395eaaf128e9f5d53d7b2d0f4e65595de4640f76d04fd698357762d1134"
+    },
+    {
+      "name": "mesh-390.png",
+      "initial_actual_size": [
+        1440,
+        3723
+      ],
+      "final_actual_size": [
+        390,
+        6039
+      ],
+      "initial_sha256": "1e090eccd879314c08078e3d5bd2ba0d2a8e4099198362b46973e18e0c0fd332",
+      "final_sha256": "829eea4d21f8721f9c3794a3b9982db56b95558aa0df2dd2b3290d5f36e85aff"
+    }
+  ],
+  "checks": {
+    "innerWidth_equals_requested": true,
+    "screenshot_width_equals_requested": true,
+    "overflow": false,
+    "browser_languages": 4,
+    "lab_views": 8,
+    "network_writes": 0,
+    "experiment_controls_clicked": false
+  },
+  "limits": [
+    "Read-only production release acceptance by the project assistant, not an independent operator or a new experiment.",
+    "This supplements the initial rollout record; deployed code and canonical website history through HX-0160 remain unchanged."
+  ]
+}

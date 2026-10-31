@@ -837,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "70abab3f266abc24",
-      "source": "160 событий по HX-0160; авторы, основания, проверки и ограничения.",
+      "id": "60adfe5b997ce671",
+      "source": "164 событий по HX-0164; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "1c1fa39d598e7e34",
-      "source": "316.2 КиБ · 12 файлов",
+      "id": "c365444550df1288",
+      "source": "319.8 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4642,14 +4642,174 @@
       "context": "history.html:text:main/section/p"
     },
     {
-      "id": "cb069e99cb441282",
-      "source": "HX-0160 · Исправлена навигационная оговорка после визуальной рецензии",
+      "id": "6082d681db3fa34f",
+      "source": "HX-0164 · Принято поручение слить журнал без повторной выкатки",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "199d6db958cdb817",
+      "source": "Решение",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "3669b61d4ee4cd65",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-31T09:33:07.236099+01:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "f553b371669bd79b",
+      "source": "По прямому поручению владельца принимаю PR39 обычным merge commit после проверки его финального коммита. Сохраняю прежние записи и доказательства; выкатка и production Actions запрещены этим поручением.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "5015e3264b74f9cb",
+      "source": "Внести запись о принятии в тот же PR до слияния. Подтвердить выполнение точным merge-коммитом и квитанцией, не создавая цепочку дополнительных PR истории.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "8d6a30e0098e31f0",
+      "source": "docs/claims-rollout-2026-10-31.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "8f6632b6783b0ca3",
+      "source": "docs/claims-rollout-mobile-verification-2026-10-31.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "50e5ff92e91859c3",
+      "source": "На момент записи проверены три зелёных CI прежнего коммита; обновлённый коммит должен пройти PR-проверки до слияния.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "f4e79c2ac6cebcf7",
+      "source": "Обычный CLI отклонён владельческим правилом main. При пройденных обязательных проверках разрешённое слияние использует существующий административный путь, не меняя защиту.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "fd0d3c246540c57e",
+      "source": "Эта запись фиксирует принятое поручение, не утверждает уже выполненное слияние и не разрешает deployment.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "556c141d7130fee6",
+      "source": "HX-0163 · Уточнена и повторена мобильная приёмка выкатки",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "2ccdb3e3ca5897bf",
+      "source": "Уточнение",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "874c3b89bfb89200",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-31T00:28:57.024683+01:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "c773d097bc04f612",
+      "source": "Обнаружил, что первые снимки с меткой 390 px фактически имели ширину 1440 px. Сохранил их, исправил приёмочный скрипт и повторил проверку при реальных 1440 и 390 px.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "ac61b1730376b247",
+      "source": "Проверять фактическую ширину браузера и снимка; исправлять ошибочное подтверждение новой записью, сохраняя исходное свидетельство.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "cf84227714960f7d",
+      "source": "Повторная проверка прошла без переполнения, сетевых записей и управления экспериментом. Код production не менялся.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "a76d562cdb91a8f2",
+      "source": "Это внутренняя приёмка ассистента, не независимый оператор и не новый сетевой опыт.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "871c136dcba305f1",
+      "source": "HX-0162 · Исправления выкачены и проверены на публичных площадках",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "a4e16df4e0628191",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-31T00:22:27.647731+01:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "428834c03479f449",
+      "source": "Установлены принятые версии Lab и портала. Все 96 HTML совпали с исходниками; Agent Card 0.1.1 раскрывает ограничения хранения. Проверены четыре языка и восемь разделов Lab.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "be7315d7c995a532",
+      "source": "Использовать клиентские SSH-installers после согласованных резервных копий; сверить установленные версии, публичный текст и подписи прежних доказательств.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "ec3a9d47817e8d15",
+      "source": "Сохранены семь томов, две приватные области портала, прежняя конфигурация, старые releases и пять подписанных бандлов. Службы и таймеры активны.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "e3ee72077c003a79",
+      "source": "Production Actions, модели и новые эксперименты не запускались. История на сайте заканчивается HX-0160; новая запись сама не запускает выкатку.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "1985f9c320e24d2d",
+      "source": "HX-0161 · Исправления утверждений приняты обычными merge commit",
       "context": "history.html:text:section/details/summary"
     },
     {
       "id": "e078c61c3e49f21a",
       "source": "Реализовано",
       "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "ca5f9aa20c7b0ba2",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-31T00:17:10+01:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "67dd90170fbf7fef",
+      "source": "По поручению владельца слиты PR31 Lab и PR38 портала. Сохранены оба родителя и деревья проверенных коммитов; девять PR-проверок пройдены.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "3f6e0c6ef837cd88",
+      "source": "Принять исправления шести пунктов без squash и rebase, сохранив исходные эксперименты и прежнюю историю.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "e429d477a38156b2",
+      "source": "Обычный merge портала отклонён владельческим правилом обновления main. После проверки CI использован существующий административный путь; защита ветки не менялась.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "cb069e99cb441282",
+      "source": "HX-0160 · Исправлена навигационная оговорка после визуальной рецензии",
+      "context": "history.html:text:section/details/summary"
     },
     {
       "id": "139ac43c8f7ee0c5",
@@ -4662,29 +4822,14 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "9e02b7473e9242ca",
       "source": "Проверять исправленный текст в отрисованной сборке; не принимать устаревший preview за подтверждение новой версии.",
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "f0fe022ad67932ad",
       "source": "docs/claims-visual-review-2026-10-31.json",
       "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "13f9b6a7627c480e",
@@ -4695,11 +4840,6 @@
       "id": "a1d5d44e5c423b17",
       "source": "Изменение остаётся в PR. Слияние, выкатка и production Actions не выполнялись.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "f44bd69a1e67b162",
@@ -4865,11 +5005,6 @@
       "id": "5307fc9f84314c6d",
       "source": "HX-0155 · SDK-экзамен повторяет исходный подписанный запрос",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "2ccdb3e3ca5897bf",
-      "source": "Уточнение",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "38935be497d5b296",
@@ -5060,11 +5195,6 @@
       "id": "bdea3e0639803d6b",
       "source": "HX-0150 · Четвёртый этап принят с сохранением обеих историй",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "199d6db958cdb817",
-      "source": "Решение",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "9c2bc610a1a757a0",
