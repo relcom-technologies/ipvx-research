@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-31T14:35:15.418889+01:00",
+  "attributed_to": "codex-assistant",
+  "recorded_by": "codex-assistant",
+  "research_base": "51294fd987658236b42db6211645f0f707dbe243",
+  "historical_events_preserved": 170,
+  "history_preserved_as_prefix": true,
+  "original_bcp_documents_and_vectors_unchanged": true,
+  "unchanged_files": [
+    {
+      "path": "data/downloads/ipvx-native-device-prototype.zip",
+      "sha256": "8bd021c33b9e0f3b48184c2a5e6bd7fc45c4ce3f32a83ce5c27624a9458d07ad"
+    },
+    {
+      "path": "docs/proposals/bcp-0.2/README.md",
+      "sha256": "634c72d0798d9725996133c77d809c3851acbf41a44e6825cae0d5d604a05fc9"
+    },
+    {
+      "path": "docs/proposals/bcp-0.2/contract-views.json",
+      "sha256": "fc1064835ceaa7f23ddf95dd0a74c3c4f926f090d00646b5883878a0e58986ec"
+    },
+    {
+      "path": "docs/proposals/bcp-0.2/fixture-context.json",
+      "sha256": "9ccfff3555191f25c06dd4dcc5f2748a2a24734632f136a067782dc94234066d"
+    },
+    {
+      "path": "docs/proposals/bcp-0.2/preservation.json",
+      "sha256": "bb4d9fbe0c864569934c482899c69d539938e21afbdbb291b3334f5569943f0e"
+    },
+    {
+      "path": "docs/proposals/bcp-0.2/profile.json",
+      "sha256": "dc30309d805d749d7242b784b4ab885016d6a93259f9e035cb22e75cd5a00242"
+    },
+    {
+      "path": "docs/proposals/bcp-0.2/rfc9180-reference.json",
+      "sha256": "12423c247f16a3168873d36f577dddaac62b418fec1aea45e378a8e2b8840a70"
+    },
+    {
+      "path": "docs/proposals/bcp-0.2/sources.json",
+      "sha256": "8b5607228daa0bc3970708e48bab81e97ff9ebb27c9d80240e99027506fa3fc3"
+    },
+    {
+      "path": "docs/proposals/bcp-0.2/vectors.json",
+      "sha256": "59b3b89c13e696c641c22a94f2e384786b23ebec14d7f292a310cb92e886b5d4"
+    },
+    {
+      "path": "docs/proposals/bcp-0.2/wire-format.json",
+      "sha256": "af6a8e1828259de49c7b82681596df40b5bc1e920e50e1aaa695919dd5cb4705"
+    },
+    {
+      "path": "docs/proposals/bcp-minimal-0.1.md",
+      "sha256": "e9d4c1a40ccac0921f06ddffb386d750106bdab2da15a4bf5cb286ec8f9124f0"
+    }
+  ],
+  "lab": {
+    "revision": "93ddbfe905f77036c45d976e96e5c95efc3f2264",
+    "old_manifest": "docs/proposals/bcp-minimal-evidence-2026-10-31.json",
+    "files_hash_verified": 38,
+    "pcaps_hash_verified": 5,
+    "strict_llm_feature_tip_preserved": "3ee1f3f553b17f380b8b84beda02f05e3e9a207f",
+    "feature_tip_is_ancestor": true,
+    "working_tree_clean": true,
+    "new_signatures_minted": false
+  },
+  "network_experiment": false,
+  "production_actions": false,
+  "deployment": false
+}

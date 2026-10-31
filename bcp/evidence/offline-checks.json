@@ -1,0 +1,423 @@
+{
+  "schema_version": 1,
+  "recorded_by": "codex-assistant",
+  "basis_revision": "51294fd987658236b42db6211645f0f707dbe243",
+  "scope": "offline core against synthetic trusted-state inputs; no network experiment or independent implementation",
+  "frozen_cases": 50,
+  "positive_accepted": 14,
+  "negative_rejected": 36,
+  "matches_frozen_expected": 49,
+  "fixture_errata": {
+    "id": "N29-REQUEST-HASH",
+    "frozen_file_unchanged": true,
+    "original_sha256": "0bbe49bfa23674bb2f732ac4065fcacc8483e0e240a9f1bf5b6ca4ff194bbab6",
+    "reason": "Hop sender 3 to receiver 2 is bound to session 1-3, not session 3-2. Authentication must fail before payload validation.",
+    "corrected_actual": "INVALID_PAYLOAD",
+    "corrected_bcp_hex": "424350300002050003c20000f9d781252f33c49388c00d860c809d0e4220dd9fc77f8dc39ef305eaec25435f000000000000000144444444444444444444444444444444444444444444444444444444444444445555555555555555555555555555555555555555555555555555555555555555000000006553f100a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a10000000000000000000000000000000000000000000000000000000000000001a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a200000000000000000000000000000000000000000000000000000000000000026d36c52403451bd914e6ef20937dbf7b3bb7619a51deb242b87c13f664b3a2fe00000000000000010000000000000001000000000000000182577bf00e66a05d8567b43a208a8d27778dbd55eb7222f961ee65c705e133bcc11cbb03d5953e5b9c79551ecb236787e9563560793c94b263e5bd421dbae6c30000000000000000000000000000000000000000000000000000000000000000000000006553f13c000000006553f17802000300002e000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000003000000000000000000000000000000000000000000000000000000000000000275d69f5eb7bc832301924f1572e9c7bde4194710f0ab0ced5b2bf1dc0c6adfa1000000000000000147f0633117b61b7a63a0c68905a8a4dd57827fc4a303e28b52d729cd023b1dd80000000000000001dd1b4df17440408616d2e7b46573f07acf998aa809100cf8896d789cb8b819459248e0d93d28a5221f36cf61c69c95f4b1e5e5649c6e7691e59f3521dcd117cc3557d0b37358e7da425368446aedb9ccf004f9ef437d01523c1a81730102ccec54d5cf224ce43c04721402909a8d104627dc36648d6a17eafc11ebecf65b8b45da459c273bffb95f1efbb70f280d4878a80cd5050065e7d2513efc034aabb7e9d764bb1ee7a5082773f14b53f80936435ace0ebe6aac463ec447f2082fa047e2451cca8e10437e9c1939d5d2461300000000000000010100000000000000034a09979ce4a6a8120dbf29c53af37d1c195af55c4c52685265d0cdf331a058000000000000000000000000000000000000000000000000000000000000000300000000000000000000000000000000000000000000000000000000000000022c41380a70f49f744c12177e48776ec6d6e165850517f797a7cd100cc118b1eaa3dd9a4b57320414844b580c5a344bf04efbae84978ce499276a23291d2c4b0d",
+    "corrected_sha256": "e8cbe47426f63361ecaf360b660085fa62f3f19e57364075487827f7803af785",
+    "immutable_bytes_preserved": true
+  },
+  "cases": [
+    {
+      "id": "N01-VERSION",
+      "frozen_expected": "UNSUPPORTED_VERSION",
+      "actual": "UNSUPPORTED_VERSION",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N02-FLAGS",
+      "frozen_expected": "NONCANONICAL",
+      "actual": "NONCANONICAL",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N03-LENGTH",
+      "frozen_expected": "MALFORMED_HEADER",
+      "actual": "MALFORMED_HEADER",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N04-TRUNCATED",
+      "frozen_expected": "MALFORMED_HEADER",
+      "actual": "MALFORMED_HEADER",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N05-TRAILING",
+      "frozen_expected": "MALFORMED_HEADER",
+      "actual": "MALFORMED_HEADER",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N06-OVERSIZE",
+      "frozen_expected": "PACKET_TOO_LARGE",
+      "actual": "PACKET_TOO_LARGE",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N07-PROFILE",
+      "frozen_expected": "PROFILE_MISMATCH",
+      "actual": "PROFILE_MISMATCH",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N08-HOP-SIGNATURE",
+      "frozen_expected": "AUTH_FAILED",
+      "actual": "AUTH_FAILED",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N09-SOURCE-SIGNATURE",
+      "frozen_expected": "AUTH_FAILED",
+      "actual": "AUTH_FAILED",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N10-PAYLOAD-HASH",
+      "frozen_expected": "INVALID_PAYLOAD",
+      "actual": "INVALID_PAYLOAD",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N11-AEAD",
+      "frozen_expected": "INVALID_PAYLOAD",
+      "actual": "INVALID_PAYLOAD",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N12-DOMAIN",
+      "frozen_expected": "AUTH_FAILED",
+      "actual": "AUTH_FAILED",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N13-REPLAY",
+      "frozen_expected": "SESSION_REPLAY",
+      "actual": "SESSION_REPLAY",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N14-EXPIRED",
+      "frozen_expected": "EXPIRED",
+      "actual": "EXPIRED",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N15-FUTURE",
+      "frozen_expected": "EXPIRED",
+      "actual": "EXPIRED",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N16-REVOKED",
+      "frozen_expected": "KEY_REVOKED",
+      "actual": "KEY_REVOKED",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N17-OWNER-TRANSFER",
+      "frozen_expected": "KEY_REVOKED",
+      "actual": "KEY_REVOKED",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N18-EDGE-REVOKED",
+      "frozen_expected": "POLICY_DENIED",
+      "actual": "POLICY_DENIED",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N19-STATE-UNAVAILABLE",
+      "frozen_expected": "STATE_UNAVAILABLE",
+      "actual": "STATE_UNAVAILABLE",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N20-STALE",
+      "frozen_expected": "STATE_STALE",
+      "actual": "STATE_STALE",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N21-SAFE",
+      "frozen_expected": "FINALITY_REQUIRED",
+      "actual": "FINALITY_REQUIRED",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N22-LATEST",
+      "frozen_expected": "FINALITY_REQUIRED",
+      "actual": "FINALITY_REQUIRED",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N23-EL-CL-MISMATCH",
+      "frozen_expected": "STATE_UNAVAILABLE",
+      "actual": "STATE_UNAVAILABLE",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N24-FINALITY-CONFLICT",
+      "frozen_expected": "STATE_CONFLICT",
+      "actual": "STATE_CONFLICT",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N25-TIME-UNTRUSTED",
+      "frozen_expected": "TIME_UNTRUSTED",
+      "actual": "TIME_UNTRUSTED",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N26-POLICY-DENIED",
+      "frozen_expected": "POLICY_DENIED",
+      "actual": "POLICY_DENIED",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N27-LOOP",
+      "frozen_expected": "ROUTE_INVALID",
+      "actual": "ROUTE_INVALID",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N28-HOP-INDEX",
+      "frozen_expected": "ROUTE_INVALID",
+      "actual": "ROUTE_INVALID",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N29-REQUEST-HASH",
+      "frozen_expected": "INVALID_PAYLOAD",
+      "actual": "AUTH_FAILED",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": false
+    },
+    {
+      "id": "N30-LIFETIME",
+      "frozen_expected": "EXPIRED",
+      "actual": "EXPIRED",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N31-UNKNOWN-STATE",
+      "frozen_expected": "STATE_UNAVAILABLE",
+      "actual": "STATE_UNAVAILABLE",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N32-MESSAGE-CONFLICT",
+      "frozen_expected": "MESSAGE_CONFLICT",
+      "actual": "MESSAGE_CONFLICT",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N33-ROUTE-CONTAINS-RECEIVER",
+      "frozen_expected": "ROUTE_INVALID",
+      "actual": "ROUTE_INVALID",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N34-CHAIN-IDENTITY",
+      "frozen_expected": "STATE_UNAVAILABLE",
+      "actual": "STATE_UNAVAILABLE",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N35-OPTIMISTIC",
+      "frozen_expected": "FINALITY_REQUIRED",
+      "actual": "FINALITY_REQUIRED",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "N36-SYNCING",
+      "frozen_expected": "STATE_UNAVAILABLE",
+      "actual": "STATE_UNAVAILABLE",
+      "action": "LOCAL_REJECT_NO_APPLICATION_EXECUTION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "V01-HELLO",
+      "frozen_expected": "ACCEPT",
+      "actual": "ACCEPT",
+      "action": "PENDING_CHALLENGE",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "V02-CHALLENGE",
+      "frozen_expected": "ACCEPT",
+      "actual": "ACCEPT",
+      "action": "CONFIRM_SESSION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "V03-CONFIRM",
+      "frozen_expected": "ACCEPT",
+      "actual": "ACCEPT",
+      "action": "ADMIT_SESSION",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "V04-ROUTE-ORIGIN",
+      "frozen_expected": "ACCEPT",
+      "actual": "ACCEPT",
+      "action": "CACHE_ROUTE",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "V05-ROUTE-SUFFIX",
+      "frozen_expected": "ACCEPT",
+      "actual": "ACCEPT",
+      "action": "CACHE_ROUTE",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "V06-DATA-A-R",
+      "frozen_expected": "ACCEPT",
+      "actual": "ACCEPT",
+      "action": "FORWARD",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "V07-DATA-R-B",
+      "frozen_expected": "ACCEPT",
+      "actual": "ACCEPT",
+      "action": "DELIVER",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "V08-RECEIPT-ACCEPTED",
+      "frozen_expected": "ACCEPT",
+      "actual": "ACCEPT",
+      "action": "FORWARD",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "V09-RECEIPT-COMPLETED",
+      "frozen_expected": "ACCEPT",
+      "actual": "ACCEPT",
+      "action": "FORWARD",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "V10-ERROR",
+      "frozen_expected": "ACCEPT",
+      "actual": "ACCEPT",
+      "action": "FORWARD",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "V11-DATA-MTU-1500",
+      "frozen_expected": "ACCEPT",
+      "actual": "ACCEPT",
+      "action": "FORWARD",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "V12-RECEIPT-ACCEPTED-R-A",
+      "frozen_expected": "ACCEPT",
+      "actual": "ACCEPT",
+      "action": "DELIVER",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "V13-RECEIPT-COMPLETED-R-A",
+      "frozen_expected": "ACCEPT",
+      "actual": "ACCEPT",
+      "action": "DELIVER",
+      "matches_frozen_expected": true
+    },
+    {
+      "id": "V14-ERROR-R-A",
+      "frozen_expected": "ACCEPT",
+      "actual": "ACCEPT",
+      "action": "DELIVER",
+      "matches_frozen_expected": true
+    }
+  ],
+  "source_files": [
+    {
+      "path": "bcp/__init__.py",
+      "sha256": "183223c3e23ebfafe93004b990e1613c99e9877b966b319fea59852507767476"
+    },
+    {
+      "path": "bcp/build.py",
+      "sha256": "890fcf80f3f88d8a93a44febe726de1d4cc8c9844178668f36f667459f2300bb"
+    },
+    {
+      "path": "bcp/core.py",
+      "sha256": "edded50fe704d1616b81298572c563153d4b52b8138d74100c657e36a5dce86b"
+    },
+    {
+      "path": "bcp/journal.py",
+      "sha256": "65e7a1df46c5bc51fb69749bbb02d9be3edfde1af3076f2d2fe3d7941eef2ca0"
+    },
+    {
+      "path": "bcp/requirements.lock",
+      "sha256": "6c41b5286eca34c0cffa3fbacc1f7386923f0f4ca2e10d8ae6c0aa151040fd41"
+    },
+    {
+      "path": "bcp/state.py",
+      "sha256": "5f04f57c9439706649f6e9ec912251909f75913fa7779c0c336a9efd7a5a0caa"
+    },
+    {
+      "path": "bcp/wire.py",
+      "sha256": "810d114423fd0a61e6a0079081b32f7a30b9e242f744e5cc4baa97484cf8019d"
+    },
+    {
+      "path": "tests/bcp/fixtures.py",
+      "sha256": "afff9501dc4cae2089007259c0e694cb88e64cff91258f0a43b3ec4e0ed5d4ab"
+    },
+    {
+      "path": "tests/bcp/test_core.py",
+      "sha256": "49930df76775dbf704a9f0994d1679b29b997775b29a4c6cfcf814b99ac54abc"
+    },
+    {
+      "path": "tests/bcp/test_vectors.py",
+      "sha256": "fefc5c9ae02657394320755202764f891e1f9921c1eaa583c6f9ac8ba020b964"
+    },
+    {
+      "path": "tests/bcp/vector_report.py",
+      "sha256": "5f0bc6702a6cf9071c009d4b445af4e9bbba7f6ea2ba57ca82e4b35a33c28c02"
+    }
+  ],
+  "network_used": false,
+  "chain_finality_verified": false,
+  "independent_interoperability_established": false,
+  "application_executed": false,
+  "deployed": false
+}
