@@ -1,0 +1,2 @@
+-r ../../bcp/requirements.lock
+pycryptodome==4.2.0
