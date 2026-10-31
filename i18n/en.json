@@ -2617,5 +2617,14 @@
   "cf84227714960f7d": "Repeated checks passed without overflow, network writes or experimental controls. Production code did not change.",
   "a76d562cdb91a8f2": "This is internal assistant acceptance, not an independent operator or a new network experiment.",
   "874c3b89bfb89200": "Codex — primary assistant in this conversation · 2026-10-31T00:28:57.024683+01:00",
-  "8f6632b6783b0ca3": "docs/claims-rollout-mobile-verification-2026-10-31.json"
+  "8f6632b6783b0ca3": "docs/claims-rollout-mobile-verification-2026-10-31.json",
+  "60adfe5b997ce671": "164 events through HX-0164; authors, rationale, checks and limits.",
+  "c365444550df1288": "319.8 KiB · 12 files",
+  "6082d681db3fa34f": "HX-0164 · Accepted the instruction to merge history without redeployment",
+  "f553b371669bd79b": "As directly instructed by the owner, accept PR39 with an ordinary merge commit after checking its final head. Preserve prior records and evidence; this instruction prohibits deployment and production Actions.",
+  "5015e3264b74f9cb": "Include the acceptance record in the same PR before merging. Confirm execution with the exact merge commit and receipt, avoiding a chain of additional history PRs.",
+  "50e5ff92e91859c3": "At recording time, the previous head has three successful CI checks; the updated head must pass PR checks before merging.",
+  "f4e79c2ac6cebcf7": "The regular CLI was rejected by the owner-controlled main rule. Once required checks pass, the authorized merge uses the existing admin path without changing protection.",
+  "fd0d3c246540c57e": "This records the accepted instruction, does not claim the merge is complete and does not authorize deployment.",
+  "3669b61d4ee4cd65": "Codex — primary assistant in this conversation · 2026-10-31T09:33:07.236099+01:00"
 }

@@ -2617,5 +2617,14 @@
   "cf84227714960f7d": "Las comprobaciones repetidas pasaron sin desbordamiento, escrituras de red ni controles experimentales. No cambió el código de producción.",
   "a76d562cdb91a8f2": "Es una aceptación interna del asistente, no un operador independiente ni un experimento de red nuevo.",
   "874c3b89bfb89200": "Codex — asistente principal de esta conversación · 2026-10-31T00:28:57.024683+01:00",
-  "8f6632b6783b0ca3": "docs/claims-rollout-mobile-verification-2026-10-31.json"
+  "8f6632b6783b0ca3": "docs/claims-rollout-mobile-verification-2026-10-31.json",
+  "60adfe5b997ce671": "164 eventos hasta HX-0164; autores, motivos, comprobaciones y límites.",
+  "c365444550df1288": "319,8 KiB · 12 archivos",
+  "6082d681db3fa34f": "HX-0164 · Aceptada la instrucción de fusionar la historia sin nuevo despliegue",
+  "f553b371669bd79b": "Por instrucción directa del propietario, aceptar PR39 con un commit de fusión normal tras comprobar su versión final. Conservar registros y pruebas anteriores; esta instrucción prohíbe despliegue y Actions de producción.",
+  "5015e3264b74f9cb": "Incluir el registro de aceptación en el mismo PR antes de fusionar. Confirmar la ejecución con el commit exacto y su comprobante, sin crear una cadena de PR adicionales de historia.",
+  "50e5ff92e91859c3": "Al registrar esto, la versión anterior tiene tres comprobaciones CI correctas; la actualizada debe superar las comprobaciones PR antes de fusionarse.",
+  "f4e79c2ac6cebcf7": "La CLI normal fue rechazada por la regla de main controlada por el propietario. Tras superar las comprobaciones obligatorias, la fusión autorizada usa la vía administrativa existente sin cambiar la protección.",
+  "fd0d3c246540c57e": "Esto registra la instrucción aceptada, no afirma que la fusión haya terminado ni autoriza un despliegue.",
+  "3669b61d4ee4cd65": "Codex — asistente principal de esta conversación · 2026-10-31T09:33:07.236099+01:00"
 }

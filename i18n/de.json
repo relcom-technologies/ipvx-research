@@ -2617,5 +2617,14 @@
   "cf84227714960f7d": "Wiederholte Prüfungen ohne Überlauf, Netzwerkschreibzugriffe oder Versuchssteuerung bestanden. Production-Code unverändert.",
   "a76d562cdb91a8f2": "Interne Abnahme durch den Assistenten, kein unabhängiger Betreiber oder neuer Netzwerkversuch.",
   "874c3b89bfb89200": "Codex — Hauptassistent dieser Unterhaltung · 2026-10-31T00:28:57.024683+01:00",
-  "8f6632b6783b0ca3": "docs/claims-rollout-mobile-verification-2026-10-31.json"
+  "8f6632b6783b0ca3": "docs/claims-rollout-mobile-verification-2026-10-31.json",
+  "60adfe5b997ce671": "164 Ereignisse bis HX-0164; Autoren, Gründe, Prüfungen und Grenzen.",
+  "c365444550df1288": "319,8 KiB · 12 Dateien",
+  "6082d681db3fa34f": "HX-0164 · Auftrag zur Zusammenführung der Geschichte ohne erneutes Deployment angenommen",
+  "f553b371669bd79b": "Auf direkte Anweisung des Eigentümers PR39 nach Prüfung des endgültigen Commits mit normalem Merge-Commit annehmen. Frühere Einträge und Belege bewahren; Deployment und Production Actions sind durch diesen Auftrag untersagt.",
+  "5015e3264b74f9cb": "Annahme vor dem Merge im selben PR protokollieren. Ausführung mit genauem Merge-Commit und Beleg bestätigen, ohne eine Kette weiterer Historien-PRs zu erstellen.",
+  "50e5ff92e91859c3": "Zum Aufzeichnungszeitpunkt hat der bisherige Commit drei erfolgreiche CI-Prüfungen; der aktualisierte Commit muss vor dem Merge die PR-Prüfungen bestehen.",
+  "f4e79c2ac6cebcf7": "Der normale CLI-Aufruf wurde von der eigentümerkontrollierten main-Regel abgelehnt. Nach Bestehen der Pflichtprüfungen nutzt der autorisierte Merge den bestehenden Adminpfad ohne Änderung des Schutzes.",
+  "fd0d3c246540c57e": "Dies protokolliert den angenommenen Auftrag, behauptet keinen abgeschlossenen Merge und erlaubt kein Deployment.",
+  "3669b61d4ee4cd65": "Codex — Hauptassistent dieser Unterhaltung · 2026-10-31T09:33:07.236099+01:00"
 }

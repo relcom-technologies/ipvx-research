@@ -837,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "0d2d56b50302d8dd",
-      "source": "163 событий по HX-0163; авторы, основания, проверки и ограничения.",
+      "id": "60adfe5b997ce671",
+      "source": "164 событий по HX-0164; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "2b74ad09acd1a85c",
-      "source": "318.6 КиБ · 12 файлов",
+      "id": "c365444550df1288",
+      "source": "319.8 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4642,6 +4642,76 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "6082d681db3fa34f",
+      "source": "HX-0164 · Принято поручение слить журнал без повторной выкатки",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "199d6db958cdb817",
+      "source": "Решение",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "3669b61d4ee4cd65",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-31T09:33:07.236099+01:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "f553b371669bd79b",
+      "source": "По прямому поручению владельца принимаю PR39 обычным merge commit после проверки его финального коммита. Сохраняю прежние записи и доказательства; выкатка и production Actions запрещены этим поручением.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "5015e3264b74f9cb",
+      "source": "Внести запись о принятии в тот же PR до слияния. Подтвердить выполнение точным merge-коммитом и квитанцией, не создавая цепочку дополнительных PR истории.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "8d6a30e0098e31f0",
+      "source": "docs/claims-rollout-2026-10-31.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "8f6632b6783b0ca3",
+      "source": "docs/claims-rollout-mobile-verification-2026-10-31.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "50e5ff92e91859c3",
+      "source": "На момент записи проверены три зелёных CI прежнего коммита; обновлённый коммит должен пройти PR-проверки до слияния.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "f4e79c2ac6cebcf7",
+      "source": "Обычный CLI отклонён владельческим правилом main. При пройденных обязательных проверках разрешённое слияние использует существующий административный путь, не меняя защиту.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "fd0d3c246540c57e",
+      "source": "Эта запись фиксирует принятое поручение, не утверждает уже выполненное слияние и не разрешает deployment.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "556c141d7130fee6",
       "source": "HX-0163 · Уточнена и повторена мобильная приёмка выкатки",
       "context": "history.html:text:section/details/summary"
@@ -4662,34 +4732,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "ac61b1730376b247",
       "source": "Проверять фактическую ширину браузера и снимка; исправлять ошибочное подтверждение новой записью, сохраняя исходное свидетельство.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
-      "id": "8f6632b6783b0ca3",
-      "source": "docs/claims-rollout-mobile-verification-2026-10-31.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "8d6a30e0098e31f0",
-      "source": "docs/claims-rollout-2026-10-31.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "cf84227714960f7d",
@@ -4700,11 +4745,6 @@
       "id": "a76d562cdb91a8f2",
       "source": "Это внутренняя приёмка ассистента, не независимый оператор и не новый сетевой опыт.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "871c136dcba305f1",
@@ -5155,11 +5195,6 @@
       "id": "bdea3e0639803d6b",
       "source": "HX-0150 · Четвёртый этап принят с сохранением обеих историй",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "199d6db958cdb817",
-      "source": "Решение",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "9c2bc610a1a757a0",
