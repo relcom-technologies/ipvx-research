@@ -2667,5 +2667,20 @@
   "cdac75e5511f6234": "Include the owner’s authorization and acceptance boundaries in the same PR before merging, preserving all parent commits. Draft documentation is being accepted, not a ratified wire protocol or BCP implementation.",
   "da6b89cbcd96ab58": "This entry records the accepted instruction; the actual merge is confirmed by the exact merge commit and a separate receipt after completion.",
   "0e6ae927a5f43eb1": "Hash checks for 38 Lab files, five PCAPs and all 26 strict-LLM commits are preserved; no new network experiment was performed.",
-  "c41e0c6b76d8d87a": "Only source acceptance is authorized. No BCP implementation, contracts, models, experiments, deployment or production Actions are performed."
+  "c41e0c6b76d8d87a": "Only source acceptance is authorized. No BCP implementation, contracts, models, experiments, deployment or production Actions are performed.",
+  "46a3ad45173a4904": "169 events through HX-0169; authors, rationale, checks and limits.",
+  "9ea3e9cba871361d": "328.8 KiB · 12 files",
+  "2f72857198ee5496": "HX-0169 · Proposed chain, finality and binary profile for BCP 0.2",
+  "8079ba3e5e6560b1": "Codex — main assistant in this conversation · 2026-10-31T13:48:11.838171+01:00",
+  "96be50d4f29ad487": "Prepared BCP-T profile 0.2: Sepolia L1, a validating Geth/Lighthouse pair, finalized only and one block hash per snapshot. Fixed the read ABI, binary layouts for seven kinds, signing strings, HPKE info and 50 static vectors: 14 positive and 36 negative. The previous 0.1 proposal, mesh and evidence are preserved.",
+  "98150c8244d52b2e": "Continue the previously recorded Ethereum L1/Sepolia choice, separating full EL/CL validation from agreement among public RPCs. Choose fixed encoding instead of proposed CBOR and one HPKE info binding for unambiguous bytes and an MTU budget. The new values are proposed PR decisions, not implementation or ratification.",
+  "648284ee7ecd88ce": "docs/proposals/bcp-0.2/README.md",
+  "fb7a6466dffd5597": "docs/proposals/bcp-0.2/profile.json",
+  "db6eabde6ff30ba3": "docs/proposals/bcp-0.2/wire-format.json",
+  "200b34a352c797d2": "docs/proposals/bcp-0.2/contract-views.json",
+  "0b41af836a271c50": "docs/proposals/bcp-0.2/vectors.json",
+  "180d99ccad947170": "docs/proposals/bcp-0.2/preservation.json",
+  "febe7f6db2f52008": "Only static bytes, 26 signatures and nine decryptions were checked using standard cryptographic primitives. Negative outcomes are specified for a future implementation; joint execution and independent interoperability have not been established.",
+  "086a30e9d27ff38a": "No BCP implementation, EL/CL execution, chain RPC, transactions, models, network experiments or deployment. Production Actions are forbidden; only isolated PR checks are authorized.",
+  "b2cbe0fc37eb6f64": "A future run requires real deployment values and separate owner authorization. This profile does not prove BCP-N or the hypervisor underlay."
 }

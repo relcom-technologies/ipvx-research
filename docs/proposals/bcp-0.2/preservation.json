@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-31T13:48:11.811116+01:00",
+  "attributed_to": "codex-assistant",
+  "recorded_by": "codex-assistant",
+  "status": "proposed_specification_and_static_vectors",
+  "research_base": "4f1c27480bb73624832097b63f1deeb1d2d6b249",
+  "predecessor": {
+    "path": "docs/proposals/bcp-minimal-0.1.md",
+    "sha256": "e9d4c1a40ccac0921f06ddffb386d750106bdab2da15a4bf5cb286ec8f9124f0",
+    "unchanged": true
+  },
+  "original_history": {
+    "events": 168,
+    "sha256": "420c1b71bc148281ce63a6b0da1c313532cfec359f0188a639c951be517522f0",
+    "preserved_as_prefix": true
+  },
+  "lab_preservation": {
+    "revision": "93ddbfe905f77036c45d976e96e5c95efc3f2264",
+    "evidence_manifest": "docs/proposals/bcp-minimal-evidence-2026-10-31.json",
+    "hash_checked_files": 38,
+    "working_tree_unchanged": true,
+    "feature_commits_preserved": 26,
+    "signed_bundles_preserved": 5,
+    "new_signatures_on_historical_evidence": false
+  },
+  "offline_preparation_checks": {
+    "schema_version": 1,
+    "preparation_only": true,
+    "crypto_provider": "cryptography 49.0.0",
+    "vectors": 50,
+    "positive_vectors": 14,
+    "negative_vectors": 36,
+    "signatures_verified": 26,
+    "hpke_packet_decryptions": 9,
+    "all_frame_hashes_and_lengths_match": true,
+    "immutable_payload_preserved_across_hops": true,
+    "negative_expected_outcomes_executed_by_bcp": false,
+    "actual_interoperability_or_network_experiment": false,
+    "no_runtime_encoder_decoder_or_contract_source_added": true
+  },
+  "files": [
+    {
+      "path": "docs/proposals/bcp-0.2/README.md",
+      "bytes": 27240,
+      "sha256": "634c72d0798d9725996133c77d809c3851acbf41a44e6825cae0d5d604a05fc9"
+    },
+    {
+      "path": "docs/proposals/bcp-0.2/contract-views.json",
+      "bytes": 4216,
+      "sha256": "ca05d8cb5fa06cc4dca013996baf6e273f078b6c9761101dd2b35cd2845818fc"
+    },
+    {
+      "path": "docs/proposals/bcp-0.2/fixture-context.json",
+      "bytes": 15001,
+      "sha256": "9ccfff3555191f25c06dd4dcc5f2748a2a24734632f136a067782dc94234066d"
+    },
+    {
+      "path": "docs/proposals/bcp-0.2/profile.json",
+      "bytes": 2411,
+      "sha256": "dc30309d805d749d7242b784b4ab885016d6a93259f9e035cb22e75cd5a00242"
+    },
+    {
+      "path": "docs/proposals/bcp-0.2/rfc9180-reference.json",
+      "bytes": 1913,
+      "sha256": "12423c247f16a3168873d36f577dddaac62b418fec1aea45e378a8e2b8840a70"
+    },
+    {
+      "path": "docs/proposals/bcp-0.2/sources.json",
+      "bytes": 2508,
+      "sha256": "8b5607228daa0bc3970708e48bab81e97ff9ebb27c9d80240e99027506fa3fc3"
+    },
+    {
+      "path": "docs/proposals/bcp-0.2/vectors.json",
+      "bytes": 350705,
+      "sha256": "59b3b89c13e696c641c22a94f2e384786b23ebec14d7f292a310cb92e886b5d4"
+    },
+    {
+      "path": "docs/proposals/bcp-0.2/wire-format.json",
+      "bytes": 16879,
+      "sha256": "53ab41e331ea967dd46d16a38527cf2d916227cc68370ff321b4cb1f92ab95a1"
+    }
+  ],
+  "operational_changes": {
+    "bcp_implementation": false,
+    "runtime_source_files": false,
+    "contracts": false,
+    "transactions": false,
+    "network_experiments": false,
+    "models": false,
+    "production_deployment": false,
+    "workflow_configuration": false
+  },
+  "remaining_boundary": [
+    "Actual deployment addresses/code hashes/trust pins/bootstrap checkpoint are not fabricated; they must be bound before a future authorized run.",
+    "BCP-N and hypervisor underlay verification remain separate research.",
+    "No independent implementation executed; negative outcomes are specified expectations, not measured BCP results."
+  ]
+}

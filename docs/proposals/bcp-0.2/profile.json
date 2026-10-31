@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "protocol": "BCP-T",
+  "version": "0.2",
+  "status": "Draft proposed profile, not deployed",
+  "chain": {
+    "name": "Ethereum Sepolia L1",
+    "chain_id": 11155111,
+    "execution_genesis_hash_hex": "25a5cc106eea7138acab33231d7160d69cb777ee0c2c553fcddf5138993e6dd9",
+    "consensus": "Ethereum proof-of-stake finalized checkpoint; permissioned Sepolia validator set",
+    "trust_mode": "validated-node",
+    "finality_tag": "finalized",
+    "not_finality": [
+      "latest",
+      "safe",
+      "receipt-only",
+      "confirmation-count",
+      "agreement-between-public-RPCs"
+    ],
+    "lifecycle_review_before": "2026-12-01",
+    "automatic_chain_migration": false
+  },
+  "reference_clients": {
+    "execution": {
+      "name": "Geth",
+      "version": "v1.17.10",
+      "source_commit": "1df30b18d9ed35ee9d28ffd4648442c2204554ad"
+    },
+    "consensus": {
+      "name": "Lighthouse",
+      "version": "v8.3.2",
+      "source_commit": "a376defa30470923556d91bdeb15a802e297f31f"
+    },
+    "installed_or_executed": false
+  },
+  "constants": {
+    "mtu": 1500,
+    "max_state_age_seconds": 1800,
+    "clock_skew_seconds": 5,
+    "max_packet_lifetime_seconds": 60,
+    "max_path_nodes": 8,
+    "max_neighbors": 4,
+    "dedup_retention_seconds": 604800,
+    "session_lifetime_seconds": 300,
+    "pending_handshake_seconds": 5,
+    "route_signature_lifetime_seconds": 30,
+    "local_route_lifetime_seconds": 5,
+    "max_pending_hello_per_interface": 8,
+    "max_hello_per_second": 1,
+    "control_frames_per_second": 16,
+    "control_burst": 32,
+    "max_pending_tasks": 64,
+    "data_per_session_inflight": 1,
+    "attempt_timeout_seconds": 5,
+    "max_attempts": 3
+  },
+  "crypto": {
+    "signature": "Ed25519 pure",
+    "digest": "SHA-256",
+    "hpke_mode": 0,
+    "kem_id": 32,
+    "kdf_id": 1,
+    "aead_id": 3,
+    "aad_hex": "",
+    "info_rule": "D(hpke-info) || Header || Core || Path || Edges"
+  },
+  "deployment_binding_required": [
+    "three contract addresses",
+    "three Keccak-256 runtime code hashes",
+    "authenticated state-channel pins",
+    "trusted consensus bootstrap checkpoint",
+    "exact installed binary hashes"
+  ],
+  "forbidden": [
+    "proxy contracts",
+    "unverified public RPC as finality proof",
+    "automatic fallback to another chain",
+    "IP fallback for BCP frames",
+    "BCP-N claim"
+  ],
+  "network_or_contract_actions_performed": false
+}

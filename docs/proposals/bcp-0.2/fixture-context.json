@@ -1,0 +1,341 @@
+{
+  "schema_version": 1,
+  "fixture_only": true,
+  "network_access_allowed": false,
+  "warning": "All keys and checkpoints are public synthetic test material, never operational secrets or evidence of real chain finality. Contract addresses/code hashes are fixture values, not assertions about live Sepolia state.",
+  "context_fields": {
+    "chain_id": 11155111,
+    "genesis_hash_hex": "25a5cc106eea7138acab33231d7160d69cb777ee0c2c553fcddf5138993e6dd9",
+    "node_registry_hex": "1111111111111111111111111111111111111111",
+    "transit_policy_hex": "2222222222222222222222222222222222222222",
+    "connection_policy_hex": "3333333333333333333333333333333333333333",
+    "node_registry_code_hash_hex": "a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1",
+    "transit_policy_code_hash_hex": "b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2",
+    "connection_policy_code_hash_hex": "c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3"
+  },
+  "context_hex": "495076582d4243502f302e322f636f6e74657874000000000000000000000000000000000000000000000000000000000000aa36a725a5cc106eea7138acab33231d7160d69cb777ee0c2c553fcddf5138993e6dd9111111111111111111111111111111111111111122222222222222222222222222222222222222223333333333333333333333333333333333333333a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3000105dc000007080005003c080400093a80000101",
+  "profile_id_hex": "f9d781252f33c49388c00d860c809d0e4220dd9fc77f8dc39ef305eaec25435f",
+  "now": 1700000060,
+  "checkpoint": {
+    "number": 1,
+    "block_hash_hex": "4444444444444444444444444444444444444444444444444444444444444444",
+    "state_root_hex": "5555555555555555555555555555555555555555555555555555555555555555",
+    "timestamp": 1700000000
+  },
+  "finality_assumptions": {
+    "authenticated_state_channel": true,
+    "el_synced": true,
+    "cl_synced": true,
+    "execution_optimistic": false,
+    "el_cl_execution_hash_match": true,
+    "finality_tag": "finalized",
+    "clock_trusted": true,
+    "finalized_conflict": false,
+    "chain_identity_matches": true
+  },
+  "nodes": [
+    {
+      "nft_hex": "0000000000000000000000000000000000000000000000000000000000000001",
+      "owner_hex": "a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1",
+      "key_epoch": 1,
+      "roles": 3,
+      "status": 1,
+      "signing_public_key_hex": "d75a980182b10ab7d54bfed3c964073a0ee172f3daa62325af021a68f707511a",
+      "encryption_public_key_hex": "e292a3523eb3bee3a938569602ae85b8b54b35eff3077314b2248656b0cba41d",
+      "public_test_signing_seed_hex": "9d61b19deffd5a60ba844af492ec2cc44449c5697b326919703bac031cae7f60",
+      "public_test_encryption_key_hex": "e5e9a5d19f4ac13ee0b16deb9429ceb8a758bc1f4847df6ffbba2799ac55f9c5",
+      "mac_hex": "020000000001"
+    },
+    {
+      "nft_hex": "0000000000000000000000000000000000000000000000000000000000000002",
+      "owner_hex": "a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2",
+      "key_epoch": 1,
+      "roles": 1,
+      "status": 1,
+      "signing_public_key_hex": "3d4017c3e843895a92b70aa74d1b7ebc9c982ccf2ec4968cc0cd55f12af4660c",
+      "encryption_public_key_hex": "1f8e20df04e0249a3bc81e071d8a684d50f86a1e6d7547d30a91571efdac4d5b",
+      "public_test_signing_seed_hex": "4ccd089b28ff96da9db6c346ec114e0f5b8a319f35aba624da8cf6ed4fb8a6fb",
+      "public_test_encryption_key_hex": "3f093f5a264a47ecd5fa67028300ee7f84a49a2c74e0ddcfbb5c9040894844b3",
+      "mac_hex": "020000000002"
+    },
+    {
+      "nft_hex": "0000000000000000000000000000000000000000000000000000000000000003",
+      "owner_hex": "a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3",
+      "key_epoch": 1,
+      "roles": 2,
+      "status": 1,
+      "signing_public_key_hex": "fc51cd8e6218a1a38da47ed00230f0580816ed13ba3303ac5deb911548908025",
+      "encryption_public_key_hex": "0605bd6b97ea95746e01c7733dc4284073f30c5dc581c556ffe8083dca1f244c",
+      "public_test_signing_seed_hex": "c5aa8df43f9f837bedb7442f31dcb7b166d38535076f094b85ce3a2e0b4458f7",
+      "public_test_encryption_key_hex": "85fb6ee99a46d0849c9d660c527c3396dd14b4ab4a9133152e8b78ca03ce3c04",
+      "mac_hex": "020000000003"
+    },
+    {
+      "nft_hex": "0000000000000000000000000000000000000000000000000000000000000004",
+      "owner_hex": "a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4",
+      "key_epoch": 1,
+      "roles": 2,
+      "status": 1,
+      "signing_public_key_hex": "844578fa262e8d6ef153498ed1f70b736277568da7e84c7ef4a2c9b2eb488482",
+      "encryption_public_key_hex": "d07f45dd031d8ae1590ed81dd871b03cc12e7f2a636340a794ea85a75ff6ad30",
+      "public_test_signing_seed_hex": "3a9579a08b4f9bc2337fec511a18c36a52a9ba76dd9677b53b28e4b91b315260",
+      "public_test_encryption_key_hex": "1253c483f0e1c600d6a3dbc5f8d691edd9eca0909fc2f1ee5a656e646d4c5e69",
+      "mac_hex": "020000000004"
+    },
+    {
+      "nft_hex": "0000000000000000000000000000000000000000000000000000000000000005",
+      "owner_hex": "a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "key_epoch": 1,
+      "roles": 2,
+      "status": 1,
+      "signing_public_key_hex": "eaa8fb3769681f280a0338a26faa69172af8220113b3ed5519d90927b4f527b2",
+      "encryption_public_key_hex": "141d13aae6cc89e21c59feb9443dfb80cfa24ab93537d83e9e15530e28a0081e",
+      "public_test_signing_seed_hex": "e246b09239e62bae861dae2d8d40a9f63df98cf8b00d8501880d3cd3494912f1",
+      "public_test_encryption_key_hex": "d7fa818bcf89dccbbb4eff8f6b1774d20a9212843695b2591813b60cc19f0d76",
+      "mac_hex": "020000000005"
+    },
+    {
+      "nft_hex": "0000000000000000000000000000000000000000000000000000000000000006",
+      "owner_hex": "a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6",
+      "key_epoch": 1,
+      "roles": 2,
+      "status": 1,
+      "signing_public_key_hex": "d41b75865db103b7dc3d153b1a8ce54506164815327b1c7ee76e21740007fa4e",
+      "encryption_public_key_hex": "748a54498ecc6a73231a30d83979b86bf696949ed535eb53cb2f9f61ec326e70",
+      "public_test_signing_seed_hex": "55176715f61f02cd6af12306a4a71c137a02f642f5d488fd128e3b806d35a9f5",
+      "public_test_encryption_key_hex": "0751812419273c3c71d7e10b9a3780304bd92e81a926483162965ff804089e88",
+      "mac_hex": "020000000006"
+    },
+    {
+      "nft_hex": "0000000000000000000000000000000000000000000000000000000000000007",
+      "owner_hex": "a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7",
+      "key_epoch": 1,
+      "roles": 2,
+      "status": 1,
+      "signing_public_key_hex": "c92d380212ba837785e284192c5771d803e91205c81ffff858032ac6845004c5",
+      "encryption_public_key_hex": "02ca5ada3fb24ff51c39371677086a6b076b188024c4eff150736ec924680375",
+      "public_test_signing_seed_hex": "1a8a6d37b088dada1cf9f0617dfc8975f9dac671f88a155ec595f48de47ef438",
+      "public_test_encryption_key_hex": "b2d7520f806d532fd4ff7c799e208fb019f20483e7699d00dbccc18a9c4404af",
+      "mac_hex": "020000000007"
+    },
+    {
+      "nft_hex": "0000000000000000000000000000000000000000000000000000000000000008",
+      "owner_hex": "a8a8a8a8a8a8a8a8a8a8a8a8a8a8a8a8a8a8a8a8",
+      "key_epoch": 1,
+      "roles": 2,
+      "status": 1,
+      "signing_public_key_hex": "6f094ad0d342b6b7ba012b122d7cf8acf5d80fb08bd213d650de852c8d1a7b10",
+      "encryption_public_key_hex": "3a63d6473cacc4fc2e27f760bbd0a1051abd3f2a12731d1b48426d0fbcf1c061",
+      "public_test_signing_seed_hex": "200ada65772f4f1307dcf5a010804f396b084d7c866d77794c3119ee34a31223",
+      "public_test_encryption_key_hex": "b1e3fe2fb4abf78d2855b239de776e2cec15ca22f58e187b4547fa8d369b5955",
+      "mac_hex": "020000000008"
+    }
+  ],
+  "edges": [
+    {
+      "rule_id_hex": "75d69f5eb7bc832301924f1572e9c7bde4194710f0ab0ced5b2bf1dc0c6adfa1",
+      "from_nft": 1,
+      "to_nft": 3,
+      "version": 1,
+      "from_epoch": 1,
+      "to_epoch": 1,
+      "cost": 1,
+      "max_ciphertext": 1500,
+      "traffic_mask": 7,
+      "status": 1
+    },
+    {
+      "rule_id_hex": "fcdd9e836894d3462fda75bed2b35de2df38cafbd05bc4db81abdfd5c98f2110",
+      "from_nft": 2,
+      "to_nft": 3,
+      "version": 1,
+      "from_epoch": 1,
+      "to_epoch": 1,
+      "cost": 1,
+      "max_ciphertext": 1500,
+      "traffic_mask": 7,
+      "status": 1
+    },
+    {
+      "rule_id_hex": "c4c2887c77bfe4692e7a1a8e844bdd9f9ab20c73944adb48a45ad80e3b8fcf7f",
+      "from_nft": 3,
+      "to_nft": 1,
+      "version": 1,
+      "from_epoch": 1,
+      "to_epoch": 1,
+      "cost": 1,
+      "max_ciphertext": 1500,
+      "traffic_mask": 7,
+      "status": 1
+    },
+    {
+      "rule_id_hex": "47f0633117b61b7a63a0c68905a8a4dd57827fc4a303e28b52d729cd023b1dd8",
+      "from_nft": 3,
+      "to_nft": 2,
+      "version": 1,
+      "from_epoch": 1,
+      "to_epoch": 1,
+      "cost": 1,
+      "max_ciphertext": 1500,
+      "traffic_mask": 7,
+      "status": 1
+    },
+    {
+      "rule_id_hex": "c8bfc45da06ba6cbd8dcf7bd7e14d145250efbc368e95b8d0f2c08519bf5c566",
+      "from_nft": 3,
+      "to_nft": 4,
+      "version": 1,
+      "from_epoch": 1,
+      "to_epoch": 1,
+      "cost": 1,
+      "max_ciphertext": 1500,
+      "traffic_mask": 7,
+      "status": 1
+    },
+    {
+      "rule_id_hex": "111493003ef99a5987a9a0891e55999183fdf36c8e3fbe00a458fe8cf8470716",
+      "from_nft": 4,
+      "to_nft": 5,
+      "version": 1,
+      "from_epoch": 1,
+      "to_epoch": 1,
+      "cost": 1,
+      "max_ciphertext": 1500,
+      "traffic_mask": 7,
+      "status": 1
+    },
+    {
+      "rule_id_hex": "d2730ca77a85a974bc3ccb53effa5ee533a5cb9ad0944e638ba9c5a28501af4c",
+      "from_nft": 5,
+      "to_nft": 6,
+      "version": 1,
+      "from_epoch": 1,
+      "to_epoch": 1,
+      "cost": 1,
+      "max_ciphertext": 1500,
+      "traffic_mask": 7,
+      "status": 1
+    },
+    {
+      "rule_id_hex": "07f372eb9b06c580b85be36099c1937f278d77feaa74422033f196e14ff6de39",
+      "from_nft": 6,
+      "to_nft": 7,
+      "version": 1,
+      "from_epoch": 1,
+      "to_epoch": 1,
+      "cost": 1,
+      "max_ciphertext": 1500,
+      "traffic_mask": 7,
+      "status": 1
+    },
+    {
+      "rule_id_hex": "16be3396c0632ffc3c8e15ccafcd0c1f2b8a881006de620bca812628d26788b0",
+      "from_nft": 7,
+      "to_nft": 8,
+      "version": 1,
+      "from_epoch": 1,
+      "to_epoch": 1,
+      "cost": 1,
+      "max_ciphertext": 1500,
+      "traffic_mask": 7,
+      "status": 1
+    },
+    {
+      "rule_id_hex": "1dc13d62498f7a245c8f23ee258ea76fd12041be7d4e8cf1a25313037ee57170",
+      "from_nft": 8,
+      "to_nft": 2,
+      "version": 1,
+      "from_epoch": 1,
+      "to_epoch": 1,
+      "cost": 1,
+      "max_ciphertext": 1500,
+      "traffic_mask": 7,
+      "status": 1
+    }
+  ],
+  "connections": [
+    {
+      "rule_id_hex": "6d36c52403451bd914e6ef20937dbf7b3bb7619a51deb242b87c13f664b3a2fe",
+      "source_nft": 1,
+      "destination_nft": 2,
+      "version": 1,
+      "source_epoch": 1,
+      "destination_epoch": 1,
+      "traffic_mask": 1,
+      "max_hops": 7,
+      "max_ciphertext": 1500,
+      "status": 1,
+      "allowed_edges_hex": [
+        "75d69f5eb7bc832301924f1572e9c7bde4194710f0ab0ced5b2bf1dc0c6adfa1",
+        "47f0633117b61b7a63a0c68905a8a4dd57827fc4a303e28b52d729cd023b1dd8",
+        "c8bfc45da06ba6cbd8dcf7bd7e14d145250efbc368e95b8d0f2c08519bf5c566",
+        "111493003ef99a5987a9a0891e55999183fdf36c8e3fbe00a458fe8cf8470716",
+        "d2730ca77a85a974bc3ccb53effa5ee533a5cb9ad0944e638ba9c5a28501af4c",
+        "07f372eb9b06c580b85be36099c1937f278d77feaa74422033f196e14ff6de39",
+        "16be3396c0632ffc3c8e15ccafcd0c1f2b8a881006de620bca812628d26788b0",
+        "1dc13d62498f7a245c8f23ee258ea76fd12041be7d4e8cf1a25313037ee57170"
+      ]
+    },
+    {
+      "rule_id_hex": "b9752a036088b9bc8d918f6ca2947d56ab3157fbc06a2df359f8e3f2237bf84b",
+      "source_nft": 2,
+      "destination_nft": 1,
+      "version": 1,
+      "source_epoch": 1,
+      "destination_epoch": 1,
+      "traffic_mask": 6,
+      "max_hops": 7,
+      "max_ciphertext": 1500,
+      "status": 1,
+      "allowed_edges_hex": [
+        "fcdd9e836894d3462fda75bed2b35de2df38cafbd05bc4db81abdfd5c98f2110",
+        "c4c2887c77bfe4692e7a1a8e844bdd9f9ab20c73944adb48a45ad80e3b8fcf7f"
+      ]
+    }
+  ],
+  "sessions": [
+    {
+      "session_id_hex": "009ec418d6c26af25dfe3862c52c4ace514bf3f45982d3185d3f6739ae99a9b8",
+      "initiator_nft": 1,
+      "responder_nft": 3,
+      "transcript_hex": "0000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000300000000000000010000000000000001682a0d2b5fd0958a083211824bf3df391f2e6bcb97a07eed004a99396bbb0756aeea369fbdd9ec6b522fffded78bfb09ac44e694a9177afd9d450bbeec8233d8020000000001020000000003000000000000000144444444444444444444444444444444444444444444444444444444444444445555555555555555555555555555555555555555555555555555555555555555000000006553f10003020000000000006553f268",
+      "expires_at": 1700000360,
+      "last_link_sequence": 0,
+      "initiator_nonce_hex": "682a0d2b5fd0958a083211824bf3df391f2e6bcb97a07eed004a99396bbb0756",
+      "responder_nonce_hex": "aeea369fbdd9ec6b522fffded78bfb09ac44e694a9177afd9d450bbeec8233d8"
+    },
+    {
+      "session_id_hex": "36435ace0ebe6aac463ec447f2082fa047e2451cca8e10437e9c1939d5d24613",
+      "initiator_nft": 3,
+      "responder_nft": 2,
+      "transcript_hex": "0000000000000000000000000000000000000000000000000000000000000003000000000000000000000000000000000000000000000000000000000000000200000000000000010000000000000001f6ccd78cd2dd6358b41574454f99c41bddfb57c8646fa47822e297438e5640e8ccf847ea64f879496544e1c385fe4f18231124a508211f6b3b403cd874cc8385020000000003020000000002000000000000000144444444444444444444444444444444444444444444444444444444444444445555555555555555555555555555555555555555555555555555555555555555000000006553f10002010000000000006553f268",
+      "expires_at": 1700000360,
+      "last_link_sequence": 0,
+      "initiator_nonce_hex": "f6ccd78cd2dd6358b41574454f99c41bddfb57c8646fa47822e297438e5640e8",
+      "responder_nonce_hex": "ccf847ea64f879496544e1c385fe4f18231124a508211f6b3b403cd874cc8385"
+    }
+  ],
+  "public_test_key_sources": [
+    "https://www.rfc-editor.org/rfc/rfc8032.html#section-7.1",
+    "Extra fixture keys are SHA-256 of the literal ASCII labels recorded by this data, not real identities."
+  ],
+  "extra_signing_seed_label": "public BCP fixture signing <decimal NFT>",
+  "encryption_key_label": "public BCP fixture encryption <decimal NFT>",
+  "initial_requester_outbox": [
+    {
+      "requester_nft": 1,
+      "responder_nft": 2,
+      "message_id_hex": "82577bf00e66a05d8567b43a208a8d27778dbd55eb7222f961ee65c705e133bc",
+      "request_hash_hex": "ca674abe8d314437e0c33cbc852127ccad6f39b6862e66aff54f4c88aa0e0ce5",
+      "plaintext_hex": "495076582042435020636f6d7061746962696c69747920766563746f720a",
+      "last_receipt_phase": 0
+    }
+  ],
+  "initial_destination_dedup": [],
+  "latest_checkpoint": {
+    "number": 1,
+    "block_hash_hex": "4444444444444444444444444444444444444444444444444444444444444444",
+    "state_root_hex": "5555555555555555555555555555555555555555555555555555555555555555",
+    "timestamp": 1700000000
+  }
+}
