@@ -837,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "9818e3e47baffdde",
-      "source": "173 событий по HX-0173; авторы, основания, проверки и ограничения.",
+      "id": "4990aa2850e6df58",
+      "source": "174 событий по HX-0174; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "1dda2b37b81d3854",
-      "source": "334.7 КиБ · 12 файлов",
+      "id": "349019c116abf36f",
+      "source": "337.3 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4642,6 +4642,111 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "570c7170400cc24c",
+      "source": "HX-0174 · Реализованы исходники трёх контрактов BCP 0.2",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "e078c61c3e49f21a",
+      "source": "Реализовано",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "78bd215cd2b13a3d",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-31T15:22:59+01:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "188e0642b41b4319",
+      "source": "Подготовлены NodeRegistry на ERC-721, TransitPolicy и ConnectionPolicy с неизменяемыми привязками. Передача NFT, ротация и отзыв повышают эпоху; политики требуют двух явных согласий текущих владельцев и версий условий. Соединение закрепляет версии разрешённых рёбер. Пять функций чтения совпадают с принятым ABI; 30 проверок выполняют байткод только в EVM в памяти, без объектов транзакций и RPC.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "3c092688926b108f",
+      "source": "Сохранить открытое создание записи узла без автоматического допуска к транзиту. Использовать проверяемую библиотеку ERC-721 и актуальный закреплённый компилятор; исключить возврат старых согласий после смены владельца, ключей или условий. Зафиксировать write API и его пределы отдельно от неизменного read ABI и прежних сетевых измерений.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "db23d39264abb799",
+      "source": "contracts/bcp02/README.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "c9724cec1b93c5f9",
+      "source": "contracts/bcp02/src/NodeRegistry.sol",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "32e714033d3d6cf9",
+      "source": "contracts/bcp02/src/TransitPolicy.sol",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "54f95efdd13bb398",
+      "source": "contracts/bcp02/src/ConnectionPolicy.sol",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "108bba0734d24dda",
+      "source": "contracts/bcp02/evidence/compilation.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "e4604f7025f4bd20",
+      "source": "contracts/bcp02/evidence/checks.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "2e19b84beadb6c8a",
+      "source": "contracts/bcp02/evidence/preservation.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "a55ca1d23f37596b",
+      "source": "contracts/bcp02/package-lock.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "4e50a80f13847eb2",
+      "source": ".github/workflows/bcp-contracts.yml",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "4b58e350b75ebdca",
+      "source": "Это исходники и локальные вызовы EVM, не развёрнутые контракты или регистрации в Sepolia. Сеть заблокирована в тестовом процессе; кошельки, подпись и отправка транзакций не используются. Независимый аудит, финальность цепочки и доставка пакетов не установлены.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "5913ecdf2e27cbd7",
+      "source": "Хеши runtime в отчёте — шаблоны компилятора с местами для immutable, не хеши развёрнутого кода и не операционные BCP-пины. Нет EL/CL-адаптера, RPC-чтения по финальному блоку или разрешения на запуск. Регистрация NFT не решает Sybil и не даёт роли в проекте.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "053ba378026a289b",
+      "source": "Сохранены прежние 173 события, 22 файла ядра и спецификаций, 38 файлов Lab и пять PCAP; старые подписи не переиздавались. Production Actions, сетевые эксперименты, цепочные транзакции, платные модели и выкатка не выполнялись.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "a43367b275befcdd",
       "source": "HX-0173 · Принято поручение слить PR42 с сохранением истории",
       "context": "history.html:text:section/details/summary"
@@ -4662,19 +4767,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "2c7ef61c8a22a67b",
       "source": "Сохранить исходные коммиты и обоих родителей merge commit, включив разрешение и границы принятия в историю того же PR. Слияние исходников не означает подтверждения финальности блокчейна, независимой совместимости или разрешения на сетевой запуск.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "b1b329aac35c6d76",
@@ -4685,11 +4780,6 @@
       "id": "3a75e2cf8ed0403d",
       "source": "bcp/evidence/preservation.json",
       "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "d6533362fd148033",
@@ -4705,11 +4795,6 @@
       "id": "4be27d7ac9ad8a1b",
       "source": "Защита ветки не меняется. Сетевые эксперименты, цепочные транзакции, модели, выкатка и production Actions не выполняются.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "c8ddac57ed76fd38",
@@ -4760,11 +4845,6 @@
       "id": "de7908a04644f885",
       "source": "HX-0171 · Начата минимальная офлайн-реализация BCP 0.2",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "e078c61c3e49f21a",
-      "source": "Реализовано",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "5220343ed99c01ca",

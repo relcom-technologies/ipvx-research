@@ -1,0 +1,31 @@
+name: BCP contract checks
+on:
+  pull_request:
+    paths: ['contracts/bcp02/**', 'docs/proposals/bcp-0.2/contract-views.json', '.github/workflows/bcp-contracts.yml']
+permissions: {contents: read}
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: contracts/bcp02
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '24'}
+      - name: Install only the locked compiler and local EVM dependencies
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Reproduce ABI, bytecode templates and storage layout
+        run: npm run compile
+      - name: Solidity behavior through in-memory EVM messages, no network or transactions
+        run: npm run check
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.13'}
+      - name: Preserve existing offline BCP compatibility checks
+        working-directory: .
+        run: |
+          python3 -m pip install -r bcp/requirements.lock
+          python3 -B -m unittest discover -s tests/bcp -v
+          python3 -B tests/bcp/vector_report.py --output /tmp/bcp-offline-checks.json
+          cmp bcp/evidence/offline-checks.json /tmp/bcp-offline-checks.json
