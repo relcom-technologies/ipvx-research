@@ -2778,5 +2778,22 @@
   "68416f6a982fd317": "El propietario autorizó explícitamente un commit de fusión normal y --admin una sola vez, únicamente para PR44, sin modificar la protección de la rama. Pasaron las cuatro comprobaciones CI de la revisión be6182e; el historial actualizado debe pasar las comprobaciones del PR antes de fusionar. Se acepta el adaptador EL/CL de solo lectura de BCP 0.2 con pruebas sin conexión, sin ejecución operativa.",
   "5e25cb48d9117ce2": "Conservar el commit original del adaptador y ambos padres del commit de fusión, registrando la autorización y los límites de aceptación en el mismo PR. Aceptar el código fuente no demuestra la finalidad real de Ethereum ni autoriza transacciones, un experimento de red o un despliegue.",
   "14b7ef31f06d09cd": "Se verificaron 60 archivos del PR y fuentes existentes, 38 archivos de Lab y cinco PCAP; los 176 eventos anteriores se conservan como prefijo. Mesh sigue siendo un experimento separado; no se reeditaron las firmas originales.",
-  "0332aa2e985c0a8e": "La protección de la rama no cambia. No se ejecutan transacciones, experimentos de red, modelos, despliegues ni Actions de producción. El adaptador confía en el CL completo; no se probaron clientes en vivo ni la finalidad de la cadena."
+  "0332aa2e985c0a8e": "La protección de la rama no cambia. No se ejecutan transacciones, experimentos de red, modelos, despliegues ni Actions de producción. El adaptador confía en el CL completo; no se probaron clientes en vivo ni la finalidad de la cadena.",
+  "9905835f3709b166": "178 eventos hasta HX-0178; autores, motivos, comprobaciones y limitaciones.",
+  "a0f215cd9cb04046": "343,7 KiB · 12 archivos",
+  "b4bbd82a82d8678f": "HX-0178 · Conectados el adaptador y el núcleo BCP 0.2; ciclo completo verificado sin conexión",
+  "7adb7f6a80fed50a": "Codex — asistente principal de esta conversación · 2026-10-31T16:02:12Z",
+  "f23e8f44aac6d289": "Se añadieron AdapterCore y BoundJournal: el adaptador lee el estado antes de cada operación y el punto de control procede del propio diario del núcleo. Un proceso completó 16 etapas con tres nodos lógicos: negociación, ROUTE, DATA cifrado a través de un retransmisor, ACCEPTED, COMPLETED y ERROR. Se almacena la solicitud original antes de devolver DATA; un ERROR tardío no anula COMPLETED.",
+  "b26539ca2d0f53de": "No aceptar indicadores de confianza ni un punto de control guardado desde un paquete o del llamante. Vincular la afirmación de ascendencia al diario exacto, evitar el estado antiguo después de un fallo y conservar por separado los componentes existentes. Las palabras ABI reales proceden de una EVM en memoria con claves públicas de prueba; las envolturas EL/CL y los relojes son sintéticos.",
+  "68b2091bb207fdaf": "integration/bcp02/README.md",
+  "375d04fee846f6ca": "integration/bcp02/runtime.py",
+  "983cb5b0028413b4": "integration/bcp02/journal.py",
+  "c2825d36ab5bb929": "integration/bcp02/offline_cycle.py",
+  "d87c4ee674e93eaa": "integration/bcp02/evidence/checks.json",
+  "1f1fb581b3b07c4a": "integration/bcp02/evidence/preservation.json",
+  "0043c0b1484c0e10": "integration/bcp02/tests/contract-reads.json",
+  "478c728ac9f2d139": ".github/workflows/bcp-integration.yml",
+  "2dd1c9ba6943e0e5": "Pasaron 23 nuevas pruebas de integración; se reprodujeron sin cambios las 34 pruebas existentes del adaptador, 23 del núcleo, 30 de los contratos y el informe de 50 vectores. Se conserva la salvedad N29. Se verificaron 69 archivos anteriores, un prefijo de 177 eventos, 38 archivos de Lab y cinco PCAP; no se reeditaron firmas originales.",
+  "dbc6ff5b448d1515": "Es un proceso con transferencia local de bytes, no una red de operadores independientes, Ethernet físico, descubrimiento distribuido de rutas ni una medición de beneficio frente a IP. Los recibos se refieren a bytes de prueba definidos, no a la ejecución de una aplicación o modelo; el texto cifrado nuevo no tiene que repetirse byte por byte.",
+  "cf362af126cdbca5": "Se mantiene la confianza en el CL completo; no se probaron la finalidad real ni la interoperabilidad EL/CL. Las bases del adaptador y del núcleo no son atómicas entre sí; no se demostró ejecución de aplicaciones exactamente una vez. Mesh se conserva por separado. No se ejecutaron transacciones, experimentos de red, modelos, despliegues ni Actions de producción."
 }

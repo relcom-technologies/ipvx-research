@@ -2778,5 +2778,22 @@
   "68416f6a982fd317": "Der Eigentümer hat ausdrücklich einen regulären Merge-Commit und einmalig --admin nur für PR44 genehmigt, ohne den Branch-Schutz zu ändern. Alle vier CI-Prüfungen der Revision be6182e bestanden; die aktualisierte Historie muss vor dem Zusammenführen die PR-Prüfungen bestehen. Der Nur-Lese-EL/CL-Adapter für BCP 0.2 wird mit Offline-Nachweisen und ohne operativen Start angenommen.",
   "5e25cb48d9117ce2": "Der ursprüngliche Adapter-Commit und beide Eltern des Merge-Commits bleiben erhalten; Genehmigung und Annahmegrenzen werden im selben PR festgehalten. Die Annahme des Quellcodes beweist keine Ethereum-Finalität im laufenden Betrieb und genehmigt weder Transaktionen noch ein Netzwerkexperiment oder Deployment.",
   "14b7ef31f06d09cd": "60 PR- und bestehende Quelldateien, 38 Lab-Dateien und fünf PCAPs wurden geprüft; die bisherigen 176 Ereignisse bleiben als Präfix erhalten. Mesh bleibt ein separates Experiment; ursprüngliche Signaturen wurden nicht neu ausgestellt.",
-  "0332aa2e985c0a8e": "Der Branch-Schutz bleibt unverändert. Es werden keine Transaktionen, Netzwerkexperimente, Modelle, Deployments oder Production Actions ausgeführt. Der Adapter vertraut dem vollständigen CL; laufende Clients und die Finalität der Blockchain wurden nicht geprüft."
+  "0332aa2e985c0a8e": "Der Branch-Schutz bleibt unverändert. Es werden keine Transaktionen, Netzwerkexperimente, Modelle, Deployments oder Production Actions ausgeführt. Der Adapter vertraut dem vollständigen CL; laufende Clients und die Finalität der Blockchain wurden nicht geprüft.",
+  "9905835f3709b166": "178 Ereignisse bis HX-0178; Autoren, Begründungen, Prüfungen und Grenzen.",
+  "a0f215cd9cb04046": "343,7 KiB · 12 Dateien",
+  "b4bbd82a82d8678f": "HX-0178 · BCP-0.2-Adapter und Kern verbunden; vollständiger Zyklus offline geprüft",
+  "7adb7f6a80fed50a": "Codex — Hauptassistent dieses Gesprächs · 2026-10-31T16:02:12Z",
+  "f23e8f44aac6d289": "AdapterCore und BoundJournal wurden hinzugefügt: Vor jeder Operation liest der Adapter den Zustand, der Kontrollpunkt stammt aus dem eigenen Kernjournal. Ein Prozess durchlief 16 Schritte mit drei logischen Knoten: Handshakes, ROUTE, verschlüsselte DATA über einen Vermittler, ACCEPTED, COMPLETED und ERROR. Die Originalanfrage wird vor Rückgabe von DATA gespeichert; ein später ERROR hebt COMPLETED nicht auf.",
+  "b26539ca2d0f53de": "Vertrauensflags und gespeicherte Kontrollpunkte werden weder aus Paketen noch vom Aufrufer übernommen. Die Ancestry-Aussage wird an das genaue Journal gebunden, alter Zustand nach Fehlern nicht verwendet und bestehende Komponenten bleiben separat erhalten. Tatsächliche Vertrags-ABI-Wörter stammen aus einer EVM im Speicher mit öffentlichen Testschlüsseln; EL/CL-Hüllen und Uhren sind synthetisch.",
+  "68b2091bb207fdaf": "integration/bcp02/README.md",
+  "375d04fee846f6ca": "integration/bcp02/runtime.py",
+  "983cb5b0028413b4": "integration/bcp02/journal.py",
+  "c2825d36ab5bb929": "integration/bcp02/offline_cycle.py",
+  "d87c4ee674e93eaa": "integration/bcp02/evidence/checks.json",
+  "1f1fb581b3b07c4a": "integration/bcp02/evidence/preservation.json",
+  "0043c0b1484c0e10": "integration/bcp02/tests/contract-reads.json",
+  "478c728ac9f2d139": ".github/workflows/bcp-integration.yml",
+  "2dd1c9ba6943e0e5": "23 neue Integrationstests bestanden; die bestehenden 34 Adaptertests, 23 Kerntests, 30 Vertragsprüfungen und der Bericht mit 50 Vektoren wurden unverändert reproduziert. Die N29-Besonderheit bleibt erhalten. 69 frühere Dateien, ein Präfix aus 177 Ereignissen, 38 Lab-Dateien und fünf PCAPs wurden geprüft; ursprüngliche Signaturen wurden nicht neu ausgestellt.",
+  "dbc6ff5b448d1515": "Dies ist ein Prozess mit lokaler Byte-Übertragung, kein Netz unabhängiger Betreiber, physisches Ethernet, verteilte Routensuche oder eine Messung des Nutzens gegenüber IP. Quittungen beziehen sich auf vorgegebene Testbytes, nicht auf Anwendungs- oder Modellausführung; frischer Chiffretext muss sich nicht bytegenau wiederholen.",
+  "cf362af126cdbca5": "Der vollständige CL bleibt eine vertrauenswürdige Instanz; Finalität im laufenden Betrieb und EL/CL-Interoperabilität wurden nicht geprüft. Adapter- und Kerndatenbank bilden keine gemeinsame atomare Transaktion; eine Exactly-once-Anwendungsausführung ist nicht bewiesen. Mesh bleibt separat erhalten. Es wurden keine Transaktionen, Netzwerkexperimente, Modelle, Deployments oder Production Actions ausgeführt."
 }
