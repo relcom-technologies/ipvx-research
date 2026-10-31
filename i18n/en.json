@@ -2753,5 +2753,22 @@
   "95ae56fe82c1049d": "The owner explicitly authorized a regular merge commit and one-time --admin for PR43 only, without changing branch protection. All four CI checks for revision 219b6af passed; the updated revision containing this record must pass PR checks before merging. Source implementations of three BCP 0.2 contracts with offline evidence are accepted; deployment addresses and operational pins are not assigned.",
   "f1950b7bb39f4066": "Preserve the original contract commit and both parents of the merge commit, recording authorization and acceptance boundaries in the same PR. Source acceptance does not mean deployment, NFT registration, chain-finality confirmation or authorization for transactions and network execution.",
   "a64455e177255a8c": "Hashes of contracts, tests, reports, the earlier core and specifications, 38 Lab files and five PCAPs were checked; the preceding 174 events remain as a prefix. Mesh remains a separate experiment; earlier signatures were not reissued.",
-  "6ca4fb72cd582f8f": "Branch protection remains unchanged. No transactions, network experiments, models, deployment or production Actions are performed. Compiler template hashes do not substitute for deployed-code hashes."
+  "6ca4fb72cd582f8f": "Branch protection remains unchanged. No transactions, network experiments, models, deployment or production Actions are performed. Compiler template hashes do not substitute for deployed-code hashes.",
+  "14dc53ef09cb8f8a": "176 events through HX-0176; authors, rationales, checks and limitations.",
+  "ee4613bb811a52fe": "340.4 KiB · 12 files",
+  "9061e67b311739e8": "HX-0176 · BCP 0.2 EL/CL adapter implemented for finalized-hash reads",
+  "23981898df9b1ad6": "Codex — primary assistant in this conversation · 2026-10-31T16:18:37+01:00",
+  "8ce998aecb0c4de4": "A separate read-only adapter was prepared for a pinned pair of full EL/CL clients. It compares the finalized execution block with the CL and reads contract code and ABI at one blockHash with requireCanonical=true per snapshot. The checkpoint and stop on a proven conflict persist; old state C is checked against newer L.",
+  "2ba78b1333a359f0": "Avoid mixing block heights or treating a read failure as an absent record. Retain trust in full clients, separate the adapter journal from the core journal and reject unknown forks without fallback. Actual contract ABI responses came only from an in-memory EVM; EL/CL envelopes are synthetic.",
+  "ddbb0df2967b40f4": "adapters/bcp02/README.md",
+  "40803924554be22a": "adapters/bcp02/reader.py",
+  "527a3f46fdfa5998": "adapters/bcp02/rpc.py",
+  "c7f6e723c8eba152": "adapters/bcp02/store.py",
+  "41d385f7b9a57cd9": "adapters/bcp02/evidence/checks.json",
+  "b8e338a55bd0a92b": "adapters/bcp02/evidence/preservation.json",
+  "fc537366b5c74d0b": "adapters/bcp02/tests/contract-reads.json",
+  "ddf34f77ea54cdd6": ".github/workflows/bcp-adapter.yml",
+  "147b1ab7e14790fa": "34 adapter checks, 23 existing core tests and 30 contract checks passed locally. The report for 50 existing vectors was reproduced; the previous N29 caveat is preserved. This is offline source verification, not a measurement of Ethereum finality or interoperability of running clients.",
+  "02abad4b7b69bdab": "The full CL remains trusted: the adapter does not verify BLS, full block-body SSZ or storage proofs. No operational deployment addresses, keys or pins are assigned; binary hashes require external operator verification. An unknown fork or unavailable state causes refusal.",
+  "e5181b21a5bbe640": "Preserved 175 previous events, 44 core, contract and specification files, 38 Lab files and five PCAPs. Mesh remains a separate experiment; old signatures were not reissued. No transactions, network experiments, models, deployment or production Actions were run."
 }

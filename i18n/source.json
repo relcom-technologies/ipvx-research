@@ -837,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "b1a73598411f5d88",
-      "source": "175 событий по HX-0175; авторы, основания, проверки и ограничения.",
+      "id": "14dc53ef09cb8f8a",
+      "source": "176 событий по HX-0176; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "b9f159385a144327",
-      "source": "338.2 КиБ · 12 файлов",
+      "id": "ee4613bb811a52fe",
+      "source": "340.4 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4642,6 +4642,106 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "9061e67b311739e8",
+      "source": "HX-0176 · Реализован EL/CL-адаптер чтения BCP 0.2 по финализированному хешу",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "e078c61c3e49f21a",
+      "source": "Реализовано",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "23981898df9b1ad6",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-31T16:18:37+01:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "8ce998aecb0c4de4",
+      "source": "Подготовлен отдельный read-only адаптер для закреплённой пары полных EL/CL-клиентов. Он сверяет финализированный execution-блок с CL и читает код и ABI контрактов по одному blockHash с requireCanonical=true на снимок. Сохраняются контрольная точка и запрет продолжения при доказанном конфликте; старое состояние C проверяется против нового L.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "2ba78b1333a359f0",
+      "source": "Не смешивать высоты и не подменять ошибку чтения отсутствующей записью. Сохранить режим доверия полным клиентам, отделить собственный журнал адаптера от журнала ядра и отклонять неизвестные форки без fallback. Реальные ABI-ответы контрактов получены только в EVM в памяти; оболочки EL/CL синтетические.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "ddbb0df2967b40f4",
+      "source": "adapters/bcp02/README.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "40803924554be22a",
+      "source": "adapters/bcp02/reader.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "527a3f46fdfa5998",
+      "source": "adapters/bcp02/rpc.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "c7f6e723c8eba152",
+      "source": "adapters/bcp02/store.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "41d385f7b9a57cd9",
+      "source": "adapters/bcp02/evidence/checks.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "b8e338a55bd0a92b",
+      "source": "adapters/bcp02/evidence/preservation.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "fc537366b5c74d0b",
+      "source": "adapters/bcp02/tests/contract-reads.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "ddf34f77ea54cdd6",
+      "source": ".github/workflows/bcp-adapter.yml",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "147b1ab7e14790fa",
+      "source": "34 проверки адаптера, 23 прежних теста ядра и 30 проверок контрактов прошли локально. Отчёт по 50 прежним векторам воспроизведён; прежняя особенность N29 сохранена. Это офлайн-проверка исходников, не измерение финальности Ethereum или совместимости работающих клиентов.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "02abad4b7b69bdab",
+      "source": "Полный CL остаётся доверенной стороной: BLS, полный SSZ тела блока и доказательства хранения адаптер не проверяет. Нет операционных адресов, ключей или пинов развёртывания; хеши бинарников требуют внешней проверки оператором. Неизвестный форк и недоступное состояние приводят к отказу.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "e5181b21a5bbe640",
+      "source": "Сохранены 175 прежних событий, 44 файла ядра, контрактов и спецификаций, 38 файлов Lab и пять PCAP. Mesh остаётся отдельным экспериментом, старые подписи не переиздавались. Транзакции, сетевые эксперименты, модели, выкатка и production Actions не выполнялись.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "7565157dc12ab050",
       "source": "HX-0175 · Принято поручение слить PR43 с сохранением истории",
       "context": "history.html:text:section/details/summary"
@@ -4662,19 +4762,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "f1950b7bb39f4066",
       "source": "Сохранить исходный коммит контрактов и обоих родителей merge commit, записав разрешение и границы принятия в том же PR. Принятие исходников не означает развёртывания, регистрации NFT, подтверждения финальности цепочки или разрешения на транзакции и сетевой запуск.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "108bba0734d24dda",
@@ -4692,11 +4782,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "d6533362fd148033",
       "source": "Эта запись фиксирует принятое поручение; фактическое слияние подтверждается точным merge-коммитом и отдельной квитанцией после выполнения. Разрешение --admin не распространяется на другие PR.",
       "context": "history.html:text:details/ul/li"
@@ -4712,19 +4797,9 @@
       "context": "history.html:text:details/ul/li"
     },
     {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
-    },
-    {
       "id": "570c7170400cc24c",
       "source": "HX-0174 · Реализованы исходники трёх контрактов BCP 0.2",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "e078c61c3e49f21a",
-      "source": "Реализовано",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "78bd215cd2b13a3d",

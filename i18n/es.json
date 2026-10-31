@@ -2753,5 +2753,22 @@
   "95ae56fe82c1049d": "El propietario autorizó expresamente un merge commit normal y el uso único de --admin solo para PR43, sin cambiar la protección de la rama. Pasaron las cuatro comprobaciones CI de la revisión 219b6af; la revisión actualizada con este registro debe superar las comprobaciones del PR antes de fusionarse. Se aceptan las implementaciones de código fuente de tres contratos BCP 0.2 con pruebas sin conexión; no se asignan direcciones de despliegue ni referencias operativas.",
   "f1950b7bb39f4066": "Conservar el commit original de los contratos y ambos padres del merge commit, registrando la autorización y los límites de aceptación en el mismo PR. Aceptar código fuente no significa despliegue, registro NFT, confirmación de la finalidad de la cadena ni autorización para transacciones o ejecución en red.",
   "a64455e177255a8c": "Se comprobaron los hashes de contratos, pruebas, informes, el núcleo y las especificaciones anteriores, 38 archivos de Lab y cinco PCAP; los 174 eventos anteriores se conservan como prefijo. El mesh sigue siendo un experimento separado; no se reemitieron firmas anteriores.",
-  "6ca4fb72cd582f8f": "La protección de la rama permanece sin cambios. No se realizan transacciones, experimentos de red, modelos, despliegue ni Actions de producción. Los hashes de plantillas del compilador no sustituyen a los hashes del código desplegado."
+  "6ca4fb72cd582f8f": "La protección de la rama permanece sin cambios. No se realizan transacciones, experimentos de red, modelos, despliegue ni Actions de producción. Los hashes de plantillas del compilador no sustituyen a los hashes del código desplegado.",
+  "14dc53ef09cb8f8a": "176 eventos hasta HX-0176; autores, motivos, comprobaciones y limitaciones.",
+  "ee4613bb811a52fe": "340,4 KiB · 12 archivos",
+  "9061e67b311739e8": "HX-0176 · Implementado el adaptador EL/CL de BCP 0.2 para lecturas por hash finalizado",
+  "23981898df9b1ad6": "Codex — asistente principal de esta conversación · 2026-10-31T16:18:37+01:00",
+  "8ce998aecb0c4de4": "Se preparó un adaptador de solo lectura para un par fijado de clientes EL/CL completos. Compara el bloque de ejecución finalizado con el CL y lee el código y ABI de los contratos con un único blockHash y requireCanonical=true por instantánea. Persisten el punto de control y la detención ante un conflicto demostrado; el estado anterior C se contrasta con el nuevo L.",
+  "2ba78b1333a359f0": "Evitar mezclar alturas de bloque o interpretar un fallo de lectura como un registro ausente. Mantener la confianza en los clientes completos, separar el diario del adaptador del diario del núcleo y rechazar bifurcaciones desconocidas sin alternativa automática. Las respuestas ABI reales proceden únicamente de una EVM en memoria; las envolturas EL/CL son sintéticas.",
+  "ddbb0df2967b40f4": "adapters/bcp02/README.md",
+  "40803924554be22a": "adapters/bcp02/reader.py",
+  "527a3f46fdfa5998": "adapters/bcp02/rpc.py",
+  "c7f6e723c8eba152": "adapters/bcp02/store.py",
+  "41d385f7b9a57cd9": "adapters/bcp02/evidence/checks.json",
+  "b8e338a55bd0a92b": "adapters/bcp02/evidence/preservation.json",
+  "fc537366b5c74d0b": "adapters/bcp02/tests/contract-reads.json",
+  "ddf34f77ea54cdd6": ".github/workflows/bcp-adapter.yml",
+  "147b1ab7e14790fa": "Pasaron localmente 34 comprobaciones del adaptador, 23 pruebas existentes del núcleo y 30 de los contratos. Se reprodujo el informe de 50 vectores existentes y se conservó la salvedad anterior de N29. Es una verificación del código sin conexión, no una medición de la finalidad de Ethereum ni de la interoperabilidad de clientes en ejecución.",
+  "02abad4b7b69bdab": "Se mantiene la confianza en el CL completo: el adaptador no verifica BLS, el SSZ completo del cuerpo del bloque ni pruebas de almacenamiento. No se asignan direcciones, claves ni pines operativos de despliegue; los hashes binarios requieren verificación externa del operador. Una bifurcación desconocida o un estado no disponible provoca el rechazo.",
+  "e5181b21a5bbe640": "Se conservaron 175 eventos anteriores, 44 archivos del núcleo, contratos y especificaciones, 38 archivos de Lab y cinco PCAP. Mesh sigue siendo un experimento separado; no se reeditaron firmas anteriores. No se ejecutaron transacciones, experimentos de red, modelos, despliegues ni Actions de producción."
 }

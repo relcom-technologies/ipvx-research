@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "base": "9ac92e80152e588abcee6b97b18796d038cd0154",
+  "scope": "Offline authenticated-transport fixtures; actual in-memory EVM contract read words; synthetic EL/CL headers",
+  "tests_passed": 34,
+  "test_ids": [
+    "test_reader.ReaderTests.test_beacon_header_body_or_execution_mismatch",
+    "test_reader.ReaderTests.test_binding_change_refused_and_no_reset",
+    "test_reader.ReaderTests.test_clock_freshness_request_ancestry_and_deadline_bounds",
+    "test_reader.ReaderTests.test_code_immutable_getters_and_abi_fail_closed",
+    "test_reader.ReaderTests.test_codec_canonical_words_keccak_and_opcode_guard",
+    "test_reader.ReaderTests.test_confirmed_journal_conflict_stops_adapter",
+    "test_reader.ReaderTests.test_core_journal_advances_only_with_proof_to_its_own_saved_checkpoint",
+    "test_reader.ReaderTests.test_el_cl_transitional_disagreement_is_bounded",
+    "test_reader.ReaderTests.test_forged_packet_does_not_poison_durable_conflict",
+    "test_reader.ReaderTests.test_future_clock_and_bad_ancestry_do_not_publish",
+    "test_reader.ReaderTests.test_head_movement_during_calls_does_not_mix_snapshots",
+    "test_reader.ReaderTests.test_identity_and_sync_failures",
+    "test_reader.ReaderTests.test_initial_cl_bootstrap_must_bind_exact_execution_state",
+    "test_reader.ReaderTests.test_lagged_provider_does_not_rollback_saved_head",
+    "test_reader.ReaderTests.test_missing_record_is_zero_and_allows_edge_is_strict_bool",
+    "test_reader.ReaderTests.test_multiple_batches_keep_same_hash",
+    "test_reader.ReaderTests.test_old_packet_new_state_revokes_and_proves_saved_ancestry",
+    "test_reader.ReaderTests.test_optimistic_or_unfinalized_or_noncanonical_rejected",
+    "test_reader.ReaderTests.test_partial_read_failure_never_advances_store",
+    "test_reader.ReaderTests.test_real_contract_views_one_hash_and_core_authorization",
+    "test_reader.ReaderTests.test_saved_cl_conflict_latches",
+    "test_reader.ReaderTests.test_saved_execution_conflict_latches_across_restart_before_rpc",
+    "test_reader.ReaderTests.test_selections_endpoints_and_limits_are_bounded",
+    "test_reader.ReaderTests.test_store_compare_and_swap_preserves_other_reader",
+    "test_reader.ReaderTests.test_success_reopens_with_saved_anchor_and_reduced_reads",
+    "test_reader.ReaderTests.test_unknown_packet_is_unavailable_not_an_empty_snapshot",
+    "test_rpc.TransportTests.test_authenticated_pin_before_http_request_and_no_redirect",
+    "test_rpc.TransportTests.test_batch_reorders_exact_ids_and_rejects_partial_error_duplicate",
+    "test_rpc.TransportTests.test_content_length_completion_closes_response_socket",
+    "test_rpc.TransportTests.test_http_encoding_type_size_and_malformed_json_failures",
+    "test_rpc.TransportTests.test_slow_body_deadline_is_checked_between_chunks",
+    "test_rpc.TransportTests.test_strict_json_has_no_duplicate_or_nonfinite_escape",
+    "test_rpc.TransportTests.test_tls_cannot_be_disabled_and_network_errors_are_sanitized",
+    "test_rpc.TransportTests.test_write_methods_and_nonallowlisted_beacon_paths_never_reach_io"
+  ],
+  "files": [
+    {
+      "path": "adapters/__init__.py",
+      "sha256": "e2d6b70b85527ab6da7e6bb572c6a2666d8fb03443794938a1b467af5745ebfc"
+    },
+    {
+      "path": "adapters/bcp02/__init__.py",
+      "sha256": "9ab295b8a42b34730854e7e74db348248c247483f595c04c5082b2f621d5dcd8"
+    },
+    {
+      "path": "adapters/bcp02/binding.py",
+      "sha256": "48067e9a4944bf58d4fc718fa575e84259697dc3dde8c37c1f5cbf6c8ddae4bf"
+    },
+    {
+      "path": "adapters/bcp02/checks.py",
+      "sha256": "71290c6aa9660dece8768de31cdebe20d420a22508533976da6aa8ab1bc4a0c4"
+    },
+    {
+      "path": "adapters/bcp02/codec.py",
+      "sha256": "8f010d6d48945b60bf4c59cff4dda47bcdeea27309512c7901749a0bd23c803d"
+    },
+    {
+      "path": "adapters/bcp02/preserve.py",
+      "sha256": "72877d9698dd524200504f7e9b7012006faf548a26f0e97579d7f6c371fc074b"
+    },
+    {
+      "path": "adapters/bcp02/reader.py",
+      "sha256": "fe53a873df1ac6b98439b65954c3c061cc51febf674bbabfaf1a7a126b7942ae"
+    },
+    {
+      "path": "adapters/bcp02/requirements.lock",
+      "sha256": "090f0a966d79d06529ca1bbb25ef43ceb28682c7c231fd6b7c80e4c28ba0505c"
+    },
+    {
+      "path": "adapters/bcp02/rpc.py",
+      "sha256": "f48597305bef4ce4cb682321bd6f16244c4800114610cbe4886650a9a6eafd8c"
+    },
+    {
+      "path": "adapters/bcp02/store.py",
+      "sha256": "bc244aae4f680bd8bd11c87130de42d5cacf4024f3c734cd16ab17b02b2ef09b"
+    },
+    {
+      "path": "adapters/bcp02/tests/fixtures.py",
+      "sha256": "ac41dd250df4f9f9ffe8433fc7550366d84caab6f9835eed31f2612c0122072c"
+    },
+    {
+      "path": "adapters/bcp02/tests/generate_contract_reads.mjs",
+      "sha256": "bce3cea23c7283b29b914983c8d809c1cb8b5eb6abdc0bae016c3b8a2e60da41"
+    },
+    {
+      "path": "adapters/bcp02/tests/test_reader.py",
+      "sha256": "77a7cfb3b0cc325ca1a21774a604450dc4c7ca93016b8dee73307da7c0dbfe49"
+    },
+    {
+      "path": "adapters/bcp02/tests/test_rpc.py",
+      "sha256": "b3b4dddbfeeb442c70280188ff463a34c7113686edd9233f0ab5908113f507b7"
+    },
+    {
+      "path": "adapters/bcp02/tests/contract-reads.json",
+      "sha256": "49de434abc07888863c62b61327e554b6477fe768f226a9b6316c023309b635d"
+    }
+  ],
+  "live_chain": false,
+  "transactions": false,
+  "network_experiments": false,
+  "deployment": false,
+  "production_actions": false,
+  "not_proved": [
+    "Ethereum consensus/finality",
+    "BLS or full beacon-body SSZ or storage proofs",
+    "live client interoperability",
+    "operator or endpoint ownership",
+    "independent audit",
+    "packet delivery"
+  ]
+}

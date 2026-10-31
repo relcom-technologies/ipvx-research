@@ -1,0 +1,33 @@
+name: BCP finalized adapter checks
+on:
+  pull_request:
+    paths: ['adapters/**', 'bcp/**', 'tests/bcp/**', 'contracts/bcp02/**', '.github/workflows/bcp-adapter.yml']
+permissions: {contents: read}
+jobs:
+  adapter:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.13'}
+      - run: python3 -m pip install -r adapters/bcp02/requirements.lock
+      - name: Offline EL/CL, ABI, pinning and durable conflict checks
+        run: |
+          python3 -B adapters/bcp02/checks.py --output /tmp/bcp-adapter-checks.json
+          cmp adapters/bcp02/evidence/checks.json /tmp/bcp-adapter-checks.json
+          python3 -B adapters/bcp02/preserve.py
+      - uses: actions/setup-node@v4
+        with: {node-version: '24'}
+      - run: npm --prefix contracts/bcp02 ci --ignore-scripts --no-audit --no-fund
+      - name: Reproduce reads from accepted contracts in memory, without transactions or RPC
+        run: |
+          node --import ./contracts/bcp02/test/offline.mjs adapters/bcp02/tests/generate_contract_reads.mjs /tmp/contract-reads.json
+          cmp adapters/bcp02/tests/contract-reads.json /tmp/contract-reads.json
+          npm --prefix contracts/bcp02 run compile
+          npm --prefix contracts/bcp02 run check
+      - name: Preserve existing BCP compatibility vectors
+        run: |
+          python3 -B -m unittest discover -s tests/bcp -v
+          python3 -B tests/bcp/vector_report.py --output /tmp/bcp-offline-checks.json
+          cmp bcp/evidence/offline-checks.json /tmp/bcp-offline-checks.json

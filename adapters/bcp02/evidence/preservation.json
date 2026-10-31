@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-31T16:17:53.868599+01:00",
+  "attributed_to": "codex-assistant",
+  "recorded_by": "codex-assistant",
+  "research_base": "9ac92e80152e588abcee6b97b18796d038cd0154",
+  "prior_history_events": 175,
+  "prior_history_sha256": "50c219dd1b0a95ff37f96e5dab281089bab01c8c28fe827b069c8cd4e2b42e67",
+  "previous_history_preserved_as_prefix": true,
+  "unchanged_files": [
+    {
+      "path": "bcp/README.md",
+      "sha256": "d77dfb8117556a5a5dba05d1a409d285f14d0fadaef8d980d92e83047271d0fc"
+    },
+    {
+      "path": "bcp/__init__.py",
+      "sha256": "183223c3e23ebfafe93004b990e1613c99e9877b966b319fea59852507767476"
+    },
+    {
+      "path": "bcp/build.py",
+      "sha256": "890fcf80f3f88d8a93a44febe726de1d4cc8c9844178668f36f667459f2300bb"
+    },
+    {
+      "path": "bcp/core.py",
+      "sha256": "a530db78856f784e8e975a5b2b1c9f69d7f4cb1b9e7925af09d0e63a9e4b7317"
+    },
+    {
+      "path": "bcp/evidence/offline-checks.json",
+      "sha256": "1f4f9b34076bb6c54e35d77c586d91ef633cd891e4fc213008f0c9e49cdb4d4d"
+    },
+    {
+      "path": "bcp/evidence/preservation.json",
+      "sha256": "f5ba2ca1ca253eaa3c2886eb115b703061709e01d02f9cf03d3d24ebdf07a5dc"
+    },
+    {
+      "path": "bcp/journal.py",
+      "sha256": "65e7a1df46c5bc51fb69749bbb02d9be3edfde1af3076f2d2fe3d7941eef2ca0"
+    },
+    {
+      "path": "bcp/requirements.lock",
+      "sha256": "6c41b5286eca34c0cffa3fbacc1f7386923f0f4ca2e10d8ae6c0aa151040fd41"
+    },
+    {
+      "path": "bcp/state.py",
+      "sha256": "5f04f57c9439706649f6e9ec912251909f75913fa7779c0c336a9efd7a5a0caa"
+    },
+    {
+      "path": "bcp/wire.py",
+      "sha256": "810d114423fd0a61e6a0079081b32f7a30b9e242f744e5cc4baa97484cf8019d"
+    },
+    {
+      "path": "contracts/bcp02/README.md",
+      "sha256": "4dd0544332e5d664f0cc0b92787ac225e502887078c360f06b6d2dd6d27ffbc2"
+    },
+    {
+      "path": "contracts/bcp02/evidence/checks.json",
+      "sha256": "d675c57f901ed119ab5a95af2819cc348acfbc049b78ba9ce1ef22f446d3f5c2"
+    },
+    {
+      "path": "contracts/bcp02/evidence/compilation.json",
+      "sha256": "fb62683972a6252d105b4b66be17e18d4d0e754424b0416dedc5d53dc6af5ac9"
+    },
+    {
+      "path": "contracts/bcp02/evidence/preservation.json",
+      "sha256": "18e5afdea0c2750c80addd7846baf2990206162b74616d755712b659dd1401ad"
+    },
+    {
+      "path": "contracts/bcp02/package-lock.json",
+      "sha256": "3bf567fb0f4fd5866a10a91fb4bf63d7b881f756d93ae9bb3a6fe1adbaf4e21a"
+    },
+    {
+      "path": "contracts/bcp02/package.json",
+      "sha256": "ca8fff98f4f8f89ab4c6fd405779a234dc2705cd7ff8a4cf22eacefca046bd1d"
+    },
+    {
+      "path": "contracts/bcp02/src/BilateralPolicy.sol",
+      "sha256": "3ada3d6f991e9dc2284d5868fba24ac2f4468aaa99deba7490a9ce3ce456fceb"
+    },
+    {
+      "path": "contracts/bcp02/src/ConnectionPolicy.sol",
+      "sha256": "b41f580dffd6f3cf3a0125f1c5abb8b9ddd1bc7ad9ab259c058ab7f3f4307aa1"
+    },
+    {
+      "path": "contracts/bcp02/src/INodeRegistry.sol",
+      "sha256": "6166e89deae5639b57b65fae3cae51a5c39e24b9b6722a8c3b1dbbe8c5b4fbae"
+    },
+    {
+      "path": "contracts/bcp02/src/NodeRegistry.sol",
+      "sha256": "3123c93639a7cf4d91ac77ead5f8195b07ae2ec6ff477f389960d9c205b760d5"
+    },
+    {
+      "path": "contracts/bcp02/src/TransitPolicy.sol",
+      "sha256": "c478b024d4bae0bcd5b872258a738d26bfd824983c8ea9dd70397ca6b3a544d1"
+    },
+    {
+      "path": "contracts/bcp02/test/Support.sol",
+      "sha256": "db5321e46f815c987af083e9a7121b1621247e13518af0b38599a2598d5b9315"
+    },
+    {
+      "path": "contracts/bcp02/test/contracts.test.mjs",
+      "sha256": "f26a7189726322bf6866d8ebd5ede9381ac0187fecdb9e04043c82b372c003e7"
+    },
+    {
+      "path": "contracts/bcp02/test/evm.mjs",
+      "sha256": "d5276e89f916802682bc8e2f0e90eb13d0730211af4a6ff6743cd51b0c33a15b"
+    },
+    {
+      "path": "contracts/bcp02/test/offline.mjs",
+      "sha256": "949bf1cfc6207f2df58b3d8b3aa4413879297bb7b579f969fcd2d6770da0ce9d"
+    },
+    {
+      "path": "contracts/bcp02/tools/compile.mjs",
+      "sha256": "6a264f1b50db0dd4da72f3754483b866e15047a8fe2056d9036cafb826300ec8"
+    },
+    {
+      "path": "contracts/bcp02/tools/reporter.mjs",
+      "sha256": "6f849bc7155ea091fc2bd8e104bff32ef39b81e10974e6d7ca99c1c537e22891"
+    },
+    {
+      "path": "data/downloads/ipvx-native-device-prototype.zip",
+      "sha256": "8bd021c33b9e0f3b48184c2a5e6bd7fc45c4ce3f32a83ce5c27624a9458d07ad"
+    },
+    {
+      "path": "docs/proposals/bcp-0.2-implementation-notes.md",
+      "sha256": "e808eb2d82394405e070341c87c49861f4772cdfb23cbda8d9081f050983861b"
+    },
+    {
+      "path": "docs/proposals/bcp-0.2/README.md",
+      "sha256": "634c72d0798d9725996133c77d809c3851acbf41a44e6825cae0d5d604a05fc9"
+    },
+    {
+      "path": "docs/proposals/bcp-0.2/contract-views.json",
+      "sha256": "fc1064835ceaa7f23ddf95dd0a74c3c4f926f090d00646b5883878a0e58986ec"
+    },
+    {
+      "path": "docs/proposals/bcp-0.2/fixture-context.json",
+      "sha256": "9ccfff3555191f25c06dd4dcc5f2748a2a24734632f136a067782dc94234066d"
+    },
+    {
+      "path": "docs/proposals/bcp-0.2/preservation.json",
+      "sha256": "bb4d9fbe0c864569934c482899c69d539938e21afbdbb291b3334f5569943f0e"
+    },
+    {
+      "path": "docs/proposals/bcp-0.2/profile.json",
+      "sha256": "dc30309d805d749d7242b784b4ab885016d6a93259f9e035cb22e75cd5a00242"
+    },
+    {
+      "path": "docs/proposals/bcp-0.2/rfc9180-reference.json",
+      "sha256": "12423c247f16a3168873d36f577dddaac62b418fec1aea45e378a8e2b8840a70"
+    },
+    {
+      "path": "docs/proposals/bcp-0.2/sources.json",
+      "sha256": "8b5607228daa0bc3970708e48bab81e97ff9ebb27c9d80240e99027506fa3fc3"
+    },
+    {
+      "path": "docs/proposals/bcp-0.2/vectors.json",
+      "sha256": "59b3b89c13e696c641c22a94f2e384786b23ebec14d7f292a310cb92e886b5d4"
+    },
+    {
+      "path": "docs/proposals/bcp-0.2/wire-format.json",
+      "sha256": "af6a8e1828259de49c7b82681596df40b5bc1e920e50e1aaa695919dd5cb4705"
+    },
+    {
+      "path": "docs/proposals/bcp-minimal-0.1.md",
+      "sha256": "e9d4c1a40ccac0921f06ddffb386d750106bdab2da15a4bf5cb286ec8f9124f0"
+    },
+    {
+      "path": "docs/proposals/bcp-minimal-evidence-2026-10-31.json",
+      "sha256": "b2c8b88e99e0e141d677e77de544cfd3c8075e01af3e9419c437edc35e49c10b"
+    },
+    {
+      "path": "tests/bcp/fixtures.py",
+      "sha256": "afff9501dc4cae2089007259c0e694cb88e64cff91258f0a43b3ec4e0ed5d4ab"
+    },
+    {
+      "path": "tests/bcp/test_core.py",
+      "sha256": "1e09ae25362170b2b62f7e70e7102bf383eb3aa8529d999e2e3df5545d3ca566"
+    },
+    {
+      "path": "tests/bcp/test_vectors.py",
+      "sha256": "fefc5c9ae02657394320755202764f891e1f9921c1eaa583c6f9ac8ba020b964"
+    },
+    {
+      "path": "tests/bcp/vector_report.py",
+      "sha256": "5f0bc6702a6cf9071c009d4b445af4e9bbba7f6ea2ba57ca82e4b35a33c28c02"
+    }
+  ],
+  "lab": {
+    "revision": "93ddbfe905f77036c45d976e96e5c95efc3f2264",
+    "files_hash_verified": 38,
+    "pcaps_hash_verified": 5,
+    "feature_tip": "3ee1f3f553b17f380b8b84beda02f05e3e9a207f",
+    "feature_tip_is_ancestor": true,
+    "working_tree_clean": true,
+    "old_manifest": "docs/proposals/bcp-minimal-evidence-2026-10-31.json",
+    "new_signatures_on_old_evidence": false
+  },
+  "transactions_constructed_or_submitted": false,
+  "live_chain_used": false,
+  "network_experiments": false,
+  "production_actions": false,
+  "deployment": false
+}
