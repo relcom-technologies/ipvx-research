@@ -2682,5 +2682,14 @@
   "180d99ccad947170": "docs/proposals/bcp-0.2/preservation.json",
   "febe7f6db2f52008": "Solo se comprobaron bytes estáticos, 26 firmas y nueve descifrados con primitivas criptográficas estándar. Los resultados negativos están especificados para una implementación futura; no se han demostrado ejecución conjunta ni interoperabilidad independiente.",
   "086a30e9d27ff38a": "Sin implementación de BCP, ejecución EL/CL, RPC a la cadena, transacciones, modelos, experimentos de red ni despliegue. Se prohíben Actions de producción; solo están autorizadas las comprobaciones aisladas del PR.",
-  "b2cbe0fc37eb6f64": "Una ejecución futura requiere valores reales de despliegue y autorización separada del propietario. Este perfil no demuestra BCP-N ni la red subyacente de los hipervisores."
+  "b2cbe0fc37eb6f64": "Una ejecución futura requiere valores reales de despliegue y autorización separada del propietario. Este perfil no demuestra BCP-N ni la red subyacente de los hipervisores.",
+  "bd2c152976207566": "170 eventos hasta HX-0170; autores, fundamentos, comprobaciones y límites.",
+  "b991395f10641844": "330,0 KiB · 12 archivos",
+  "294723f4f587dc52": "HX-0170 · Aceptada la instrucción de fusionar PR41 conservando el historial",
+  "3a34f42eaa869326": "Codex — asistente principal de esta conversación · 2026-10-31T14:09:55+01:00",
+  "8325b145bffa902e": "El propietario autorizó expresamente un merge commit normal y el uso único de --admin solo para PR41, sin cambiar la protección de la rama. Al registrar este evento, las tres comprobaciones CI de la revisión 669ed7d habían pasado; la revisión actualizada con este registro debe superar las comprobaciones del PR antes de fusionarse. Se conservan la especificación BCP 0.2, los vectores estáticos, el borrador anterior 0.1 y las pruebas del mesh.",
+  "b2e6c849be1b4a0b": "Registrar la autorización y los límites de aceptación en el mismo PR antes de fusionar, conservando los commits originales y ambos padres del merge commit. Aceptar documentación Draft no significa implementar BCP, ratificar el protocolo ni autorizar su ejecución.",
+  "d6533362fd148033": "Este registro documenta la instrucción aceptada; la fusión real se confirma con el merge commit exacto y un comprobante separado después de ejecutarse. La autorización de --admin no se extiende a otros PR.",
+  "b7e1360d28e39256": "Se comprobaron los hashes de ocho archivos del perfil, 38 archivos de Lab y cinco PCAP; el historial anterior se conserva como prefijo. Los vectores estáticos no demuestran interoperabilidad independiente.",
+  "e9c689926681a92d": "La protección de la rama permanece sin cambios. No se realizan implementación de BCP, contratos, modelos, experimentos, despliegue ni Actions de producción."
 }

@@ -2682,5 +2682,14 @@
   "180d99ccad947170": "docs/proposals/bcp-0.2/preservation.json",
   "febe7f6db2f52008": "Geprüft wurden nur statische Bytes, 26 Signaturen und neun Entschlüsselungen mit Standard-Kryptoprimitiven. Negative Ergebnisse sind für eine spätere Implementierung vorgegeben; gemeinsamer Betrieb und unabhängige Interoperabilität sind nicht nachgewiesen.",
   "086a30e9d27ff38a": "Keine BCP-Implementierung, kein EL/CL-Betrieb, Blockchain-RPC, Transaktionen, Modelle, Netzwerkexperimente oder Bereitstellung. Production Actions sind verboten; nur isolierte PR-Prüfungen sind autorisiert.",
-  "b2cbe0fc37eb6f64": "Ein späterer Lauf erfordert reale Deployment-Werte und eine separate Genehmigung des Eigentümers. Dieses Profil weist weder BCP-N noch das Hypervisor-Underlay nach."
+  "b2cbe0fc37eb6f64": "Ein späterer Lauf erfordert reale Deployment-Werte und eine separate Genehmigung des Eigentümers. Dieses Profil weist weder BCP-N noch das Hypervisor-Underlay nach.",
+  "bd2c152976207566": "170 Ereignisse bis HX-0170; Autoren, Begründungen, Prüfungen und Grenzen.",
+  "b991395f10641844": "330,0 KiB · 12 Dateien",
+  "294723f4f587dc52": "HX-0170 · Auftrag zum Zusammenführen von PR41 unter Erhalt der Historie angenommen",
+  "3a34f42eaa869326": "Codex — Hauptassistent dieses Gesprächs · 2026-10-31T14:09:55+01:00",
+  "8325b145bffa902e": "Der Eigentümer hat einen regulären Merge-Commit und einmaliges --admin ausschließlich für PR41 ausdrücklich genehmigt, ohne den Branch-Schutz zu ändern. Zum Zeitpunkt der Aufzeichnung waren alle drei CI-Prüfungen der Revision 669ed7d erfolgreich; die aktualisierte Revision mit diesem Eintrag muss vor dem Zusammenführen die PR-Prüfungen bestehen. Die BCP-0.2-Spezifikation, statische Vektoren, der frühere Entwurf 0.1 und die Mesh-Nachweise bleiben erhalten.",
+  "b2e6c849be1b4a0b": "Genehmigung und Annahmegrenzen vor dem Zusammenführen im selben PR festhalten und dabei die ursprünglichen Commits sowie beide Eltern des Merge-Commits erhalten. Die Annahme von Draft-Dokumentation bedeutet weder eine BCP-Implementierung noch die Ratifizierung des Protokolls oder eine Ausführungsgenehmigung.",
+  "d6533362fd148033": "Dieser Eintrag dokumentiert den angenommenen Auftrag; das tatsächliche Zusammenführen wird nach der Ausführung durch den genauen Merge-Commit und einen separaten Beleg bestätigt. Die --admin-Genehmigung gilt nicht für andere PRs.",
+  "b7e1360d28e39256": "Die Hashes von acht Profildateien, 38 Lab-Dateien und fünf PCAPs wurden geprüft; die frühere Historie bleibt als Präfix erhalten. Statische Vektoren beweisen keine unabhängige Interoperabilität.",
+  "e9c689926681a92d": "Der Branch-Schutz bleibt unverändert. BCP-Implementierung, Verträge, Modelle, Experimente, Bereitstellung und Production Actions werden nicht ausgeführt."
 }

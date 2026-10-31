@@ -2682,5 +2682,14 @@
   "180d99ccad947170": "docs/proposals/bcp-0.2/preservation.json",
   "febe7f6db2f52008": "Only static bytes, 26 signatures and nine decryptions were checked using standard cryptographic primitives. Negative outcomes are specified for a future implementation; joint execution and independent interoperability have not been established.",
   "086a30e9d27ff38a": "No BCP implementation, EL/CL execution, chain RPC, transactions, models, network experiments or deployment. Production Actions are forbidden; only isolated PR checks are authorized.",
-  "b2cbe0fc37eb6f64": "A future run requires real deployment values and separate owner authorization. This profile does not prove BCP-N or the hypervisor underlay."
+  "b2cbe0fc37eb6f64": "A future run requires real deployment values and separate owner authorization. This profile does not prove BCP-N or the hypervisor underlay.",
+  "bd2c152976207566": "170 events through HX-0170; authors, rationale, checks and limitations.",
+  "b991395f10641844": "330.0 KiB · 12 files",
+  "294723f4f587dc52": "HX-0170 · Instruction to merge PR41 while preserving history accepted",
+  "3a34f42eaa869326": "Codex — primary assistant in this conversation · 2026-10-31T14:09:55+01:00",
+  "8325b145bffa902e": "The owner explicitly authorized a regular merge commit and one-time --admin for PR41 only, without changing branch protection. At recording time all three CI checks for revision 669ed7d had passed; the updated revision containing this record must pass PR checks before merging. The BCP 0.2 specification, static vectors, earlier 0.1 draft and mesh evidence are preserved.",
+  "b2e6c849be1b4a0b": "Record the authorization and acceptance boundaries in the same PR before merging, preserving the original commits and both parents of the merge commit. Accepting Draft documentation does not mean implementing BCP, ratifying the protocol or authorizing execution.",
+  "d6533362fd148033": "This record documents the accepted instruction; the actual merge is confirmed by the exact merge commit and a separate receipt after execution. The --admin authorization does not extend to other PRs.",
+  "b7e1360d28e39256": "Hashes of eight profile files, 38 Lab files and five PCAPs were checked; the earlier history is preserved as a prefix. Static vectors do not prove independent interoperability.",
+  "e9c689926681a92d": "Branch protection remains unchanged. No BCP implementation, contracts, models, experiments, deployment or production Actions are performed."
 }
