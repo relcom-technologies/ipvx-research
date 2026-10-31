@@ -837,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "bd2c152976207566",
-      "source": "170 событий по HX-0170; авторы, основания, проверки и ограничения.",
+      "id": "9818e3e47baffdde",
+      "source": "173 событий по HX-0173; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "b991395f10641844",
-      "source": "330.0 КиБ · 12 файлов",
+      "id": "1dda2b37b81d3854",
+      "source": "334.7 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4642,8 +4642,8 @@
       "context": "history.html:text:main/section/p"
     },
     {
-      "id": "294723f4f587dc52",
-      "source": "HX-0170 · Принято поручение слить PR41 с сохранением истории",
+      "id": "a43367b275befcdd",
+      "source": "HX-0173 · Принято поручение слить PR42 с сохранением истории",
       "context": "history.html:text:section/details/summary"
     },
     {
@@ -4652,13 +4652,13 @@
       "context": "history.html:text:details/summary/span"
     },
     {
-      "id": "3a34f42eaa869326",
-      "source": "Codex — основной ассистент этой беседы · 2026-10-31T14:09:55+01:00",
+      "id": "034433825cb41f9b",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-31T14:49:18+01:00",
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "8325b145bffa902e",
-      "source": "Владелец прямо разрешил обычный merge commit и разовый --admin только для PR41 без изменения защиты ветки. На момент записи все три CI ревизии 669ed7d прошли; обновлённая ревизия с этой записью должна пройти PR-проверки перед слиянием. Спецификация BCP 0.2, статические векторы, прежний проект 0.1 и доказательства mesh сохраняются.",
+      "id": "ec475768961291ad",
+      "source": "Владелец прямо разрешил обычный merge commit и разовый --admin только для PR42 без изменения защиты ветки. Все четыре CI ревизии 586c1d8 прошли; обновлённая ревизия с этой записью должна пройти PR-проверки перед слиянием. Принимается частичное офлайн-ядро BCP 0.2; исходные векторы, отмеченный дефект N29, исправленный отдельный случай и прежние доказательства сохраняются.",
       "context": "history.html:text:section/details/p"
     },
     {
@@ -4667,8 +4667,8 @@
       "context": "history.html:text:section/details/h3"
     },
     {
-      "id": "b2e6c849be1b4a0b",
-      "source": "Записать разрешение и границы принятия в том же PR до слияния, сохранив исходные коммиты и обоих родителей merge commit. Принятие документации Draft не означает реализации BCP, ратификации протокола или разрешения на запуск.",
+      "id": "2c7ef61c8a22a67b",
+      "source": "Сохранить исходные коммиты и обоих родителей merge commit, включив разрешение и границы принятия в историю того же PR. Слияние исходников не означает подтверждения финальности блокчейна, независимой совместимости или разрешения на сетевой запуск.",
       "context": "history.html:text:section/details/p"
     },
     {
@@ -4677,8 +4677,13 @@
       "context": "history.html:text:section/details/h3"
     },
     {
-      "id": "180d99ccad947170",
-      "source": "docs/proposals/bcp-0.2/preservation.json",
+      "id": "b1b329aac35c6d76",
+      "source": "bcp/evidence/offline-checks.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "3a75e2cf8ed0403d",
+      "source": "bcp/evidence/preservation.json",
       "context": "history.html:text:ul/li/a"
     },
     {
@@ -4692,6 +4697,166 @@
       "context": "history.html:text:details/ul/li"
     },
     {
+      "id": "b7b93fd94159038e",
+      "source": "Проверены хеши реализации и отчёта, старых спецификаций, 38 файлов Lab и пяти PCAP; прежние 172 события сохранены префиксом. Mesh остаётся отдельным экспериментом.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "4be27d7ac9ad8a1b",
+      "source": "Защита ветки не меняется. Сетевые эксперименты, цепочные транзакции, модели, выкатка и production Actions не выполняются.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "c8ddac57ed76fd38",
+      "source": "HX-0172 · Уточнена повторная проверка допуска BCP перед CONFIRM",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "2ccdb3e3ca5897bf",
+      "source": "Уточнение",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "e8ac656d5d8b7393",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-31T14:40:51+01:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "dc7424175ff9c6d4",
+      "source": "При самопроверке PR42 добавлена повторная проверка свежего состояния, эпох, ролей и двусторонних согласий перед локальным завершением сессии инициатором. Отзыв после CHALLENGE больше не допускает создание сессии. Регрессионный сценарий включён в существующий тест; все 23 офлайн-теста проходят.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "6926f8a75e01dea4",
+      "source": "Не переносить проверенное на шаге CHALLENGE разрешение через возможное обновление реестра без повторной проверки. Не менять старую спецификацию, векторы или историю; обновить проверяемое ядро и хеши воспроизводимого отчёта.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "8741dde8fde568cb",
+      "source": "bcp/core.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "8c9ffc02672fdfd3",
+      "source": "tests/bcp/test_core.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "83944609a8769ac3",
+      "source": "Это локальная проверка над синтетическими снимками, без живого EL/CL, сетевого опыта или независимого оператора. Новая ревизия должна пройти PR CI отдельно.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "e5dc44a446e4906c",
+      "source": "Реализация остаётся частичной. Mesh, старые доказательства и 171 предыдущее событие сохранены; слияние, выкатка и production Actions не выполняются.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "de7908a04644f885",
+      "source": "HX-0171 · Начата минимальная офлайн-реализация BCP 0.2",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "e078c61c3e49f21a",
+      "source": "Реализовано",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "5220343ed99c01ca",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-31T14:35:37+01:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "79024362060aff00",
+      "source": "По поручению владельца подготовлено отдельное офлайн-ядро: семь форматов, подписи Ed25519 и HPKE, проверки снимков и политик, сессии, маршруты, повторы и журнал SQLite. Все 14 положительных векторов приняты, все 36 отрицательных отклонены. Исход N29 отличается от прежнего ожидания из-за неверной сессии; отдельный исправленный случай достигает ошибки хеша запроса. Mesh и исходные спецификации сохранены.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "6183f2977554dc6a",
+      "source": "Начать с проверяемого ядра без сетевого транспорта, цепочки и исполнения задач. Не ослаблять аутентификацию ради ошибочного вектора: сохранить его байты, явно описать ранний отказ и добавить отдельную коррекцию. Синтетические снимки и ожидаемые ответы остаются только во входах тестов, не в логике ядра.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "6fcf5990dbe075e8",
+      "source": "bcp/README.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "f692a9d472bd12a8",
+      "source": "bcp/wire.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "6fce66c2f59b5a13",
+      "source": "bcp/state.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "f1b0f347b5d3658b",
+      "source": "bcp/journal.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "5103fd6e88713353",
+      "source": "docs/proposals/bcp-0.2-implementation-notes.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "f420db702a8b7789",
+      "source": "tests/bcp/test_vectors.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "9a05d31123ad51e3",
+      "source": ".github/workflows/bcp.yml",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "0c906e5c7841b61c",
+      "source": "Это частичная реализация: нет контрактов, адаптера проверяющего EL/CL, RPC, живого Ethernet, распределённого обнаружения или исполнителя приложений. Поля доверенного адаптера не доказывают финальность. Межреализационная совместимость не установлена.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "67c80198720b5c09",
+      "source": "Прошли 23 локальных теста ядра и пять тестов прежнего wire-формата. Начальный общий прогон портала заблокирован неполными локальными зависимостями и запретом loopback bind; этот отрицательный результат сохранён. PR CI проверяет полный штатный набор отдельно.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "07b1fbf0b1beb280",
+      "source": "Проверены хеши 38 файлов Lab, пяти PCAP, старых документов и архива прототипа; прежние 170 событий сохранены префиксом. Старые подписи не переиздавались. Сетевые эксперименты, транзакции, модели, выкатка и production Actions не запускались.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "294723f4f587dc52",
+      "source": "HX-0170 · Принято поручение слить PR41 с сохранением истории",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "3a34f42eaa869326",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-31T14:09:55+01:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "8325b145bffa902e",
+      "source": "Владелец прямо разрешил обычный merge commit и разовый --admin только для PR41 без изменения защиты ветки. На момент записи все три CI ревизии 669ed7d прошли; обновлённая ревизия с этой записью должна пройти PR-проверки перед слиянием. Спецификация BCP 0.2, статические векторы, прежний проект 0.1 и доказательства mesh сохраняются.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "b2e6c849be1b4a0b",
+      "source": "Записать разрешение и границы принятия в том же PR до слияния, сохранив исходные коммиты и обоих родителей merge commit. Принятие документации Draft не означает реализации BCP, ратификации протокола или разрешения на запуск.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "180d99ccad947170",
+      "source": "docs/proposals/bcp-0.2/preservation.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
       "id": "b7e1360d28e39256",
       "source": "Проверены хеши восьми файлов профиля, 38 файлов Lab и пяти PCAP; прежняя история сохранена префиксом. Статические векторы не доказывают независимую совместимость.",
       "context": "history.html:text:details/ul/li"
@@ -4700,11 +4865,6 @@
       "id": "e9c689926681a92d",
       "source": "Защита ветки не меняется. Реализация BCP, контракты, модели, эксперименты, выкатка и production Actions не выполняются.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "2f72857198ee5496",
@@ -4815,11 +4975,6 @@
       "id": "3a880bdd5dbfacc5",
       "source": "HX-0167 · Исправлена Linux-сборка документации с сохранением прежних записей",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "e078c61c3e49f21a",
-      "source": "Реализовано",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "69bf8d0f98b070c1",
@@ -5010,11 +5165,6 @@
       "id": "556c141d7130fee6",
       "source": "HX-0163 · Уточнена и повторена мобильная приёмка выкатки",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "2ccdb3e3ca5897bf",
-      "source": "Уточнение",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "874c3b89bfb89200",
