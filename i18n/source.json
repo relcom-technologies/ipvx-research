@@ -837,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "60adfe5b997ce671",
-      "source": "164 событий по HX-0164; авторы, основания, проверки и ограничения.",
+      "id": "3bbd7d5032c29e28",
+      "source": "166 событий по HX-0166; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "c365444550df1288",
-      "source": "319.8 КиБ · 12 файлов",
+      "id": "5ac066914f416a0b",
+      "source": "323.8 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4642,6 +4642,131 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "d2fc520cd7f06733",
+      "source": "HX-0166 · Спецификация BCP подготовлена к публикации в PR",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "59a28f1b11df609f",
+      "source": "В работе",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "77ea21c1812cefde",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-31T11:01:06.303384+01:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "7564f045f4e5440f",
+      "source": "По прямому поручению владельца готовлю PR только с проектом BCP и его документацией. Исходный коммит b33e8b4 сохранён. Проверены хеш спецификации, 38 файлов Lab и неизменный префикс 164 событий; пересобираются производные страницы и архив истории.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "962c76f831309e73",
+      "source": "Передать документ на проверку с явным статусом Draft, сохранив mesh отдельным экспериментом и не выдавая подготовку PR за принятие или реализацию BCP. Согласовать производные документы с каноническим журналом без изменения генераторов.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "10695c6e3cdf6798",
+      "source": "docs/proposals/bcp-minimal-0.1.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "6373e7db2061c57a",
+      "source": "docs/proposals/bcp-minimal-evidence-2026-10-31.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "323c5a993df04059",
+      "source": "Прямое поручение владельца подготовить PR в этой беседе; 31 октября 2026 года.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "01c5af35f83beca9",
+      "source": "На момент записи PR ещё не создан; его URL, точная финальная ревизия и исход CI подтверждаются в самом PR.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "dd6a5fcedfde3d14",
+      "source": "Разрешены только изолированные PR-проверки. Реализация, транзакции, модели, эксперименты, выкатка и production Actions не выполняются.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "029cc75334d9a2b7",
+      "source": "BCP остаётся логическим проектом: выбор цепочки, точный двоичный формат и векторы совместимости не согласованы.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "71465c7f6b710a29",
+      "source": "HX-0165 · Подготовлен проект минимального BCP по исходной идее IPvX",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "c89eba90f1d8c201",
+      "source": "Предложение",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "0397e18e90fe4b96",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-31T10:55:07.858082+01:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "9097ddb2af24e323",
+      "source": "По поручению владельца подготовлена логическая спецификация BCP-MIN-001 0.1: IPX/NFT/SC-адресация, реестр рабочих ключей, контрактный граф транзита, обнаружение соседей, пакеты и квитанции, состояние цепочки и план проверки. Mesh сохраняется отдельным экспериментом без переноса его доказательств на BCP.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "3bd4d804b7d76fdd",
+      "source": "Вернуться к исходным функциям блокчейн-идентификации, маршрутов и формирования пакетов, сохранив полезную транспортную базу. Явно разделить переходный BCP-T с IP-доступом к цепочке и целевой BCP-N; не выдавать Ethereum RPC или ссылки на NFT за независимость от IP.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "3e9d03d837366e27",
+      "source": "Сохранность проверена по хешам 38 файлов Lab, 51 exact-файла интеграции и пяти локальных PCAP; все 26 коммитов strict-LLM остаются предками принятой ревизии.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "78ce9804998cefd0",
+      "source": "Только проект документации: контрактов, кода, транзакций, моделей, экспериментов, выкатки и Actions нет; протокол владельцем не ратифицирован.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "914e385719cb0126",
+      "source": "До совместимости нужны выбор цепочки/финальности, ABI/раскладка хранения, точный framing/transcript и векторы; BCP-N consensus/bootstrap не специфицирован.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "668545e592e53ef9",
+      "source": "Исторические 164 события сохранены побайтно. Старые подписи не создавались заново; сравнение хешей не является независимой проверкой личности подписанта.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "6a551d1aa3383118",
+      "source": "Документация подложки указывает Ethernet/VLAN, но текущие uplink гипервизоров не прочитаны: отсутствие VXLAN не доказано.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
       "id": "6082d681db3fa34f",
       "source": "HX-0164 · Принято поручение слить журнал без повторной выкатки",
       "context": "history.html:text:section/details/summary"
@@ -4662,19 +4787,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "5015e3264b74f9cb",
       "source": "Внести запись о принятии в тот же PR до слияния. Подтвердить выполнение точным merge-коммитом и квитанцией, не создавая цепочку дополнительных PR истории.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "8d6a30e0098e31f0",
@@ -4685,11 +4800,6 @@
       "id": "8f6632b6783b0ca3",
       "source": "docs/claims-rollout-mobile-verification-2026-10-31.json",
       "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "50e5ff92e91859c3",
@@ -4705,11 +4815,6 @@
       "id": "fd0d3c246540c57e",
       "source": "Эта запись фиксирует принятое поручение, не утверждает уже выполненное слияние и не разрешает deployment.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "556c141d7130fee6",
@@ -6027,11 +6132,6 @@
       "context": "history.html:text:section/details/summary"
     },
     {
-      "id": "59a28f1b11df609f",
-      "source": "В работе",
-      "context": "history.html:text:details/summary/span"
-    },
-    {
       "id": "11e0c8d619de595e",
       "source": "Codex — основной ассистент этой беседы · 2026-10-29T09:55:28.492771+00:00",
       "context": "history.html:text:section/details/p"
@@ -6815,11 +6915,6 @@
       "id": "40f63fb30a52108c",
       "source": "HX-0113 · Prepared architecture and agent directory production release",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "c89eba90f1d8c201",
-      "source": "Предложение",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "a7dc7f1fe0a9af7d",
