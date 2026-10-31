@@ -1,0 +1,701 @@
+{
+  "schema_version": 1,
+  "normative": true,
+  "version": "0.2",
+  "integers": "unsigned big-endian, no implicit padding",
+  "hex_json": "lowercase without 0x",
+  "ethernet": {
+    "ethertype_hex": "88b5",
+    "header_bytes": 14,
+    "fcs_in_vectors": false,
+    "max_payload": 1500,
+    "frame_len_excludes": [
+      "Ethernet header",
+      "VLAN headers",
+      "FCS"
+    ],
+    "fragmentation": false
+  },
+  "header": {
+    "bytes": 44,
+    "fields": [
+      {
+        "name": "magic_BCP0",
+        "offset": 0,
+        "bytes": 4
+      },
+      {
+        "name": "major_0",
+        "offset": 4,
+        "bytes": 1
+      },
+      {
+        "name": "minor_2",
+        "offset": 5,
+        "bytes": 1
+      },
+      {
+        "name": "kind",
+        "offset": 6,
+        "bytes": 1
+      },
+      {
+        "name": "flags_zero",
+        "offset": 7,
+        "bytes": 1
+      },
+      {
+        "name": "frame_len",
+        "offset": 8,
+        "bytes": 2
+      },
+      {
+        "name": "reserved_zero",
+        "offset": 10,
+        "bytes": 2
+      },
+      {
+        "name": "profile_id",
+        "offset": 12,
+        "bytes": 32
+      }
+    ],
+    "kinds": {
+      "1": "HELLO",
+      "2": "CHALLENGE",
+      "3": "CONFIRM",
+      "4": "ROUTE",
+      "5": "DATA",
+      "6": "RECEIPT",
+      "7": "ERROR"
+    }
+  },
+  "context": {
+    "domain": "context",
+    "bytes": 262,
+    "ordered_fields": [
+      {
+        "name": "chain_id",
+        "bytes": 32
+      },
+      {
+        "name": "execution_genesis_hash",
+        "bytes": 32
+      },
+      {
+        "name": "node_registry",
+        "bytes": 20
+      },
+      {
+        "name": "transit_policy",
+        "bytes": 20
+      },
+      {
+        "name": "connection_policy",
+        "bytes": 20
+      },
+      {
+        "name": "node_registry_code_hash",
+        "bytes": 32
+      },
+      {
+        "name": "transit_policy_code_hash",
+        "bytes": 32
+      },
+      {
+        "name": "connection_policy_code_hash",
+        "bytes": 32
+      },
+      {
+        "name": "crypto_suite_1",
+        "bytes": 2
+      },
+      {
+        "name": "mtu_1500",
+        "bytes": 2
+      },
+      {
+        "name": "max_state_age_1800",
+        "bytes": 4
+      },
+      {
+        "name": "clock_skew_5",
+        "bytes": 2
+      },
+      {
+        "name": "packet_lifetime_60",
+        "bytes": 2
+      },
+      {
+        "name": "max_path_nodes_8",
+        "bytes": 1
+      },
+      {
+        "name": "max_neighbors_4",
+        "bytes": 1
+      },
+      {
+        "name": "dedup_retention_604800",
+        "bytes": 4
+      },
+      {
+        "name": "read_abi_version_1",
+        "bytes": 2
+      },
+      {
+        "name": "trust_mode_validated_node_1",
+        "bytes": 1
+      }
+    ],
+    "profile_id": "SHA-256(D(context) || ordered_fields); D(context) is already counted in 262"
+  },
+  "checkpoint": {
+    "bytes": 80,
+    "fields": [
+      {
+        "name": "number",
+        "offset": 0,
+        "bytes": 8
+      },
+      {
+        "name": "block_hash",
+        "offset": 8,
+        "bytes": 32
+      },
+      {
+        "name": "state_root",
+        "offset": 40,
+        "bytes": 32
+      },
+      {
+        "name": "timestamp",
+        "offset": 72,
+        "bytes": 8
+      }
+    ]
+  },
+  "hello": {
+    "body_bytes": 224,
+    "frame_bytes": 268,
+    "fields": [
+      {
+        "name": "node_nft",
+        "offset": 0,
+        "bytes": 32
+      },
+      {
+        "name": "key_epoch",
+        "offset": 32,
+        "bytes": 8
+      },
+      {
+        "name": "nonce",
+        "offset": 40,
+        "bytes": 32
+      },
+      {
+        "name": "checkpoint",
+        "offset": 72,
+        "bytes": 80
+      },
+      {
+        "name": "roles",
+        "offset": 152,
+        "bytes": 1
+      },
+      {
+        "name": "reserved_zero",
+        "offset": 153,
+        "bytes": 1
+      },
+      {
+        "name": "source_mac",
+        "offset": 154,
+        "bytes": 6
+      },
+      {
+        "name": "signature",
+        "offset": 160,
+        "bytes": 64
+      }
+    ],
+    "signature_input": "D(hello) || Header || body[0:160]"
+  },
+  "handshake": {
+    "transcript_bytes": 248,
+    "body_bytes": 344,
+    "frame_bytes": 388,
+    "transcript_fields": [
+      {
+        "name": "initiator_nft",
+        "offset": 0,
+        "bytes": 32
+      },
+      {
+        "name": "responder_nft",
+        "offset": 32,
+        "bytes": 32
+      },
+      {
+        "name": "initiator_epoch",
+        "offset": 64,
+        "bytes": 8
+      },
+      {
+        "name": "responder_epoch",
+        "offset": 72,
+        "bytes": 8
+      },
+      {
+        "name": "initiator_nonce",
+        "offset": 80,
+        "bytes": 32
+      },
+      {
+        "name": "responder_nonce",
+        "offset": 112,
+        "bytes": 32
+      },
+      {
+        "name": "initiator_mac",
+        "offset": 144,
+        "bytes": 6
+      },
+      {
+        "name": "responder_mac",
+        "offset": 150,
+        "bytes": 6
+      },
+      {
+        "name": "checkpoint",
+        "offset": 156,
+        "bytes": 80
+      },
+      {
+        "name": "initiator_roles",
+        "offset": 236,
+        "bytes": 1
+      },
+      {
+        "name": "responder_roles",
+        "offset": 237,
+        "bytes": 1
+      },
+      {
+        "name": "reserved_zero",
+        "offset": 238,
+        "bytes": 2
+      },
+      {
+        "name": "session_expires_at",
+        "offset": 240,
+        "bytes": 8
+      }
+    ],
+    "body_tail": [
+      {
+        "name": "session_id",
+        "bytes": 32
+      },
+      {
+        "name": "signature",
+        "bytes": 64
+      }
+    ],
+    "session_id": "SHA-256(D(session) || profile_id || transcript)",
+    "challenge_signer": "responder",
+    "confirm_signer": "initiator",
+    "signature_input": "D(challenge or confirm) || Header || transcript || session_id"
+  },
+  "route": {
+    "frame_bytes": "240 + 144*p",
+    "path_count_range": [
+      1,
+      8
+    ],
+    "fixed_fields": [
+      {
+        "name": "session_id",
+        "offset": 0,
+        "bytes": 32
+      },
+      {
+        "name": "link_sequence",
+        "offset": 32,
+        "bytes": 8
+      },
+      {
+        "name": "checkpoint",
+        "offset": 40,
+        "bytes": 80
+      },
+      {
+        "name": "advertisement_nonce",
+        "offset": 120,
+        "bytes": 32
+      },
+      {
+        "name": "issued_at",
+        "offset": 152,
+        "bytes": 8
+      },
+      {
+        "name": "expires_at",
+        "offset": 160,
+        "bytes": 8
+      },
+      {
+        "name": "path_count",
+        "offset": 168,
+        "bytes": 1
+      },
+      {
+        "name": "reserved_zero",
+        "offset": 169,
+        "bytes": 3
+      }
+    ],
+    "variable_order": [
+      "p node entries: nft[32] || key_epoch[u64]",
+      "p-1 edge entries: rule_id[32] || version[u64]",
+      "p Ed25519 node signatures in path order",
+      "link_signature[64]"
+    ],
+    "node_signature_input": "D(route-node) || profile_id || C[80] || adv_nonce[32] || issued[u64] || expires[u64] || suffix_count[u8] || suffix_node_entries || suffix_edge_entries",
+    "link_signature_input": "D(route-link) || Header || body_without_link_signature",
+    "receiver_must_not_appear_in_path": true
+  },
+  "routed": {
+    "kinds": [
+      5,
+      6,
+      7
+    ],
+    "core_bytes": 360,
+    "core_fields": [
+      {
+        "name": "checkpoint_number",
+        "offset": 0,
+        "bytes": 8
+      },
+      {
+        "name": "checkpoint_hash",
+        "offset": 8,
+        "bytes": 32
+      },
+      {
+        "name": "checkpoint_state_root",
+        "offset": 40,
+        "bytes": 32
+      },
+      {
+        "name": "checkpoint_timestamp",
+        "offset": 72,
+        "bytes": 8
+      },
+      {
+        "name": "source_ipx",
+        "offset": 80,
+        "bytes": 20
+      },
+      {
+        "name": "source_nft",
+        "offset": 100,
+        "bytes": 32
+      },
+      {
+        "name": "destination_ipx",
+        "offset": 132,
+        "bytes": 20
+      },
+      {
+        "name": "destination_nft",
+        "offset": 152,
+        "bytes": 32
+      },
+      {
+        "name": "connection_rule_id",
+        "offset": 184,
+        "bytes": 32
+      },
+      {
+        "name": "connection_rule_version",
+        "offset": 216,
+        "bytes": 8
+      },
+      {
+        "name": "source_key_epoch",
+        "offset": 224,
+        "bytes": 8
+      },
+      {
+        "name": "destination_key_epoch",
+        "offset": 232,
+        "bytes": 8
+      },
+      {
+        "name": "message_id",
+        "offset": 240,
+        "bytes": 32
+      },
+      {
+        "name": "packet_id",
+        "offset": 272,
+        "bytes": 32
+      },
+      {
+        "name": "request_hash",
+        "offset": 304,
+        "bytes": 32
+      },
+      {
+        "name": "issued_at",
+        "offset": 336,
+        "bytes": 8
+      },
+      {
+        "name": "expires_at",
+        "offset": 344,
+        "bytes": 8
+      },
+      {
+        "name": "max_hops",
+        "offset": 352,
+        "bytes": 1
+      },
+      {
+        "name": "traffic_class",
+        "offset": 353,
+        "bytes": 1
+      },
+      {
+        "name": "path_count",
+        "offset": 354,
+        "bytes": 1
+      },
+      {
+        "name": "reserved_zero_1",
+        "offset": 355,
+        "bytes": 1
+      },
+      {
+        "name": "ciphertext_len",
+        "offset": 356,
+        "bytes": 2
+      },
+      {
+        "name": "reserved_zero_2",
+        "offset": 358,
+        "bytes": 2
+      }
+    ],
+    "path_count_range": [
+      2,
+      8
+    ],
+    "immutable_order": [
+      "Core[360]",
+      "p NFT uint256 values",
+      "p-1 edge entries: rule_id[32] || version[u64]",
+      "enc[32]",
+      "payload_hash[32]",
+      "ciphertext[ciphertext_len]",
+      "source_signature[64]"
+    ],
+    "hop_bytes": 208,
+    "hop_fields": [
+      {
+        "name": "session_id",
+        "offset": 0,
+        "bytes": 32
+      },
+      {
+        "name": "link_sequence",
+        "offset": 32,
+        "bytes": 8
+      },
+      {
+        "name": "hop_index",
+        "offset": 40,
+        "bytes": 1
+      },
+      {
+        "name": "reserved_zero",
+        "offset": 41,
+        "bytes": 7
+      },
+      {
+        "name": "immutable_hash",
+        "offset": 48,
+        "bytes": 32
+      },
+      {
+        "name": "sender_nft",
+        "offset": 80,
+        "bytes": 32
+      },
+      {
+        "name": "next_nft",
+        "offset": 112,
+        "bytes": 32
+      },
+      {
+        "name": "hop_signature",
+        "offset": 144,
+        "bytes": 64
+      }
+    ],
+    "frame_bytes": "700 + 72*p + ciphertext_len = 716 + 72*p + plaintext_len",
+    "source_signature_input": "D(packet) || Header || immutable_without_source_signature",
+    "hop_signature_input": "D(hop) || Header || hop[0:144]",
+    "immutable_hash": "SHA-256(immutable including source_signature)",
+    "payload_hash": "SHA-256(ciphertext, excluding enc)",
+    "hpke_info": "D(hpke-info) || Header || Core || Path || Edges",
+    "hpke_aad_hex": "",
+    "traffic_class_by_kind": {
+      "5": 0,
+      "6": 1,
+      "7": 2
+    },
+    "max_hops": "p-1 <= max_hops <= 7",
+    "hop_index": "0 <= i < p-1; sender=path[i], next=path[i+1]",
+    "source_nft": "path[0]",
+    "destination_nft": "path[p-1]"
+  },
+  "receipt_plaintext": {
+    "fixed_bytes": 138,
+    "fields": [
+      {
+        "name": "original_source_nft",
+        "offset": 0,
+        "bytes": 32
+      },
+      {
+        "name": "original_message_id",
+        "offset": 32,
+        "bytes": 32
+      },
+      {
+        "name": "original_request_hash",
+        "offset": 64,
+        "bytes": 32
+      },
+      {
+        "name": "phase",
+        "offset": 96,
+        "bytes": 1
+      },
+      {
+        "name": "reserved_zero",
+        "offset": 97,
+        "bytes": 7
+      },
+      {
+        "name": "result_len",
+        "offset": 104,
+        "bytes": 2
+      },
+      {
+        "name": "result_hash",
+        "offset": 106,
+        "bytes": 32
+      }
+    ],
+    "tail": "result[result_len]",
+    "phases": {
+      "1": "ACCEPTED: result_len=0, hash=SHA-256(empty)",
+      "2": "COMPLETED: hash=SHA-256(result)"
+    }
+  },
+  "error_plaintext": {
+    "bytes": 100,
+    "fields": [
+      {
+        "name": "original_source_nft",
+        "offset": 0,
+        "bytes": 32
+      },
+      {
+        "name": "original_message_id",
+        "offset": 32,
+        "bytes": 32
+      },
+      {
+        "name": "original_request_hash",
+        "offset": 64,
+        "bytes": 32
+      },
+      {
+        "name": "error_code",
+        "offset": 96,
+        "bytes": 2
+      },
+      {
+        "name": "reserved_zero",
+        "offset": 98,
+        "bytes": 2
+      }
+    ]
+  },
+  "errors": {
+    "1": "MALFORMED_HEADER",
+    "2": "UNSUPPORTED_VERSION",
+    "3": "PROFILE_MISMATCH",
+    "4": "NONCANONICAL",
+    "5": "PACKET_TOO_LARGE",
+    "6": "AUTH_FAILED",
+    "7": "SESSION_REPLAY",
+    "8": "EXPIRED",
+    "9": "STATE_UNAVAILABLE",
+    "10": "STATE_STALE",
+    "11": "STATE_CONFLICT",
+    "12": "TIME_UNTRUSTED",
+    "13": "KEY_REVOKED",
+    "14": "POLICY_DENIED",
+    "15": "ROUTE_INVALID",
+    "16": "NO_AUTHORIZED_ROUTE",
+    "17": "MESSAGE_CONFLICT",
+    "18": "UNKNOWN",
+    "19": "INVALID_PAYLOAD",
+    "20": "FINALITY_REQUIRED"
+  },
+  "validation_order": [
+    "framing/version/profile/reserved/lengths/MTU",
+    "session, sequence floor, hop or control-link signature",
+    "immutable hash, source signature, ciphertext hash",
+    "trusted clock, issued/expires lifetime",
+    "authenticated finality source, finalized state, consistency and age",
+    "path structure, active keys/owners, connection and edge policies",
+    "destination decryption, request/result hashes and application deduplication"
+  ],
+  "unknown_extensions": "reject",
+  "domain_definition": "ASCII IPvX-BCP/0.2/ + ASCII label + one zero byte",
+  "framing_precedence": [
+    "payload shorter than 44 bytes or bad magic: MALFORMED_HEADER",
+    "major/minor/kind unsupported: UNSUPPORTED_VERSION",
+    "actual or declared BCP length above 1500: PACKET_TOO_LARGE",
+    "declared length unequal to actual: MALFORMED_HEADER",
+    "nonzero header/body flags or reserved: NONCANONICAL",
+    "unexpected profile_id: PROFILE_MISMATCH",
+    "body dimensions/length inconsistent with selected layout: MALFORMED_HEADER",
+    "invalid path count, duplicate NFT, mismatched path endpoints or hop index: ROUTE_INVALID; never index outside the checked path"
+  ],
+  "semantic_requirements": {
+    "hello": "source MAC equals Ethernet source; no application admission from HELLO alone",
+    "handshake": "distinct initiator/responder NFT and MAC; pending nonce match; session lifetime <=300 seconds; checkpoint, exact registered roles and both directed transit consents valid before ADMITTED",
+    "route": "1<=p<=8; origin is final NFT; first NFT matches link sender; receiver absent from path; each suffix signed; max lifetime 30 seconds; local expiry after 5 seconds without suitable refresh",
+    "link_sequence": "u64, strictly greater than saved floor; never wrap; floor changes only after valid link/hop authentication and immutable hash where present",
+    "routed": "p>=2; max_hops>=p-1 and <=7; no duplicate NFT; role router on intermediate nodes; endpoints equal core source/destination; traffic class 0/1/2 for kinds 5/6/7",
+    "packet_clock": "clock must be trusted; 0<expires-issued<=60; issued<=now+5; now<=expires",
+    "session_clock": "session expiry also applies; expiry yields EXPIRED",
+    "receipt_cache": "accepted phase does not suppress completed phase; completed result may not change; original request linkage required",
+    "return_path": "a separate active connection policy for each reverse packet; no permission inferred from the outbound request",
+    "error_response": "never reply ERROR to ERROR; unauthenticated/malformed input is silently rejected, no application execution",
+    "failure_order": "framing_precedence then validation_order; within state phase availability/finality/conflict/age; within authorization phase revoked key/owner, then active policy/edges; decryption, payload linkage and dedup only at destination",
+    "route_cost": "sum edge uint32 costs in uint64; no advertised unverified metric; lexicographic tiebreak on packed NFT path",
+    "registry_values": "status must be 0/1/2, active roles 1/2/3, active keys nonzero; unknown registry enum makes state unavailable",
+    "payload_values": "receipt phase only 1/2; ERROR code must occur in errors; all plaintext lengths/reserved/hash/linkage checks mandatory; invalid values yield INVALID_PAYLOAD",
+    "source_policy_binding": "connection endpoints must equal core source/destination NFT; every edge must match adjacent path NFT, active epochs/version, traffic mask and length limit, and allowsEdge must be true",
+    "constant_changes": "all profile.json constants are fixed by version 0.2; deployments may bind addresses/hashes/trust pins but cannot silently tune wire semantics"
+  }
+}

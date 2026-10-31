@@ -837,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "f0e31116dcbfe3af",
-      "source": "168 событий по HX-0168; авторы, основания, проверки и ограничения.",
+      "id": "bd2c152976207566",
+      "source": "170 событий по HX-0170; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "d5b1c08eb358a6dc",
-      "source": "326.6 КиБ · 12 файлов",
+      "id": "b991395f10641844",
+      "source": "330.0 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4642,14 +4642,139 @@
       "context": "history.html:text:main/section/p"
     },
     {
-      "id": "88317724c8b245eb",
-      "source": "HX-0168 · Принято поручение слить PR40 с сохранением истории",
+      "id": "294723f4f587dc52",
+      "source": "HX-0170 · Принято поручение слить PR41 с сохранением истории",
       "context": "history.html:text:section/details/summary"
     },
     {
       "id": "199d6db958cdb817",
       "source": "Решение",
       "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "3a34f42eaa869326",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-31T14:09:55+01:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "8325b145bffa902e",
+      "source": "Владелец прямо разрешил обычный merge commit и разовый --admin только для PR41 без изменения защиты ветки. На момент записи все три CI ревизии 669ed7d прошли; обновлённая ревизия с этой записью должна пройти PR-проверки перед слиянием. Спецификация BCP 0.2, статические векторы, прежний проект 0.1 и доказательства mesh сохраняются.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "b2e6c849be1b4a0b",
+      "source": "Записать разрешение и границы принятия в том же PR до слияния, сохранив исходные коммиты и обоих родителей merge commit. Принятие документации Draft не означает реализации BCP, ратификации протокола или разрешения на запуск.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "180d99ccad947170",
+      "source": "docs/proposals/bcp-0.2/preservation.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "d6533362fd148033",
+      "source": "Эта запись фиксирует принятое поручение; фактическое слияние подтверждается точным merge-коммитом и отдельной квитанцией после выполнения. Разрешение --admin не распространяется на другие PR.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "b7e1360d28e39256",
+      "source": "Проверены хеши восьми файлов профиля, 38 файлов Lab и пяти PCAP; прежняя история сохранена префиксом. Статические векторы не доказывают независимую совместимость.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "e9c689926681a92d",
+      "source": "Защита ветки не меняется. Реализация BCP, контракты, модели, эксперименты, выкатка и production Actions не выполняются.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "2f72857198ee5496",
+      "source": "HX-0169 · Предложены цепочка финальность и двоичный профиль BCP 0.2",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "c89eba90f1d8c201",
+      "source": "Предложение",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "8079ba3e5e6560b1",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-31T13:48:11.838171+01:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "96be50d4f29ad487",
+      "source": "Подготовлен профиль BCP-T 0.2: Sepolia L1, проверяющая пара Geth/Lighthouse, только finalized и один block hash для снимка. Зафиксированы ABI чтения, двоичные layout семи kinds, подписываемые строки, HPKE info и 50 статических векторов: 14 положительных и 36 отрицательных. Прежний проект 0.1, mesh и доказательства сохранены.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "98150c8244d52b2e",
+      "source": "Продолжить ранее записанный выбор Ethereum L1/Sepolia, отделив полную EL/CL-проверку от согласия публичных RPC. Выбрать фиксированное кодирование вместо предложенного CBOR и единый HPKE info для однозначных байтов и бюджета MTU. Новые значения — проект решений для PR, не реализация или ратификация.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "648284ee7ecd88ce",
+      "source": "docs/proposals/bcp-0.2/README.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "fb7a6466dffd5597",
+      "source": "docs/proposals/bcp-0.2/profile.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "db6eabde6ff30ba3",
+      "source": "docs/proposals/bcp-0.2/wire-format.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "200b34a352c797d2",
+      "source": "docs/proposals/bcp-0.2/contract-views.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "0b41af836a271c50",
+      "source": "docs/proposals/bcp-0.2/vectors.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "febe7f6db2f52008",
+      "source": "Проверены только статические байты, 26 подписей и девять расшифровок стандартными криптопримитивами. Отрицательные исходы заданы для будущей реализации; совместный запуск и независимая совместимость не установлены.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "086a30e9d27ff38a",
+      "source": "Нет реализации BCP, запуска EL/CL, RPC к цепочке, транзакций, моделей, сетевых экспериментов или выкатки. Production Actions запрещены; разрешены только изолированные PR-проверки.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "b2cbe0fc37eb6f64",
+      "source": "Перед будущим запуском нужны реальные deployment values и отдельное разрешение владельца. BCP-N и подложка гипервизоров этим профилем не доказаны.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "88317724c8b245eb",
+      "source": "HX-0168 · Принято поручение слить PR40 с сохранением истории",
+      "context": "history.html:text:section/details/summary"
     },
     {
       "id": "2bd0ed0e5be598c3",
@@ -4662,29 +4787,14 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "cdac75e5511f6234",
       "source": "Включить разрешение владельца и границы принятия в тот же PR до слияния, сохранив все родительские коммиты. Принимается документация Draft, а не утверждённый wire-протокол или реализация BCP.",
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "6373e7db2061c57a",
       "source": "docs/proposals/bcp-minimal-evidence-2026-10-31.json",
       "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "da6b89cbcd96ab58",
@@ -4700,11 +4810,6 @@
       "id": "c41e0c6b76d8d87a",
       "source": "Разрешено только принятие исходников. Реализация BCP, контракты, модели, эксперименты, выкатка и production Actions не выполняются.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "3a880bdd5dbfacc5",
@@ -4815,11 +4920,6 @@
       "id": "71465c7f6b710a29",
       "source": "HX-0165 · Подготовлен проект минимального BCP по исходной идее IPvX",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "c89eba90f1d8c201",
-      "source": "Предложение",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "0397e18e90fe4b96",

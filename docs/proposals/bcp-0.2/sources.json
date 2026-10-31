@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-10-31",
+  "attributed_to": "codex-assistant",
+  "existing_project_decision": {
+    "context": "IPvX resolver M5 choice of Ethereum L1 with Sepolia spike, recorded in existing source; not a new deployment authorization",
+    "revision": "218bf93acb842604167c93144e5bc967b70ecb6a",
+    "path": "docs/m5-open-questions.md",
+    "sha256": "87fdf31f447bc8edfe06bfbf228cf8cd2bbc2fd231c29e570f359424fb29dccc",
+    "new_bcp_profile_approval_inferred": false
+  },
+  "primary_sources": [
+    {
+      "claim": "Sepolia recommended for applications, validator set controlled by testing teams",
+      "url": "https://ethereum.org/developers/docs/networks"
+    },
+    {
+      "claim": "Immutable Sepolia chain ID and execution genesis hash only; old engine descriptions in README are historical",
+      "url": "https://github.com/eth-clients/sepolia/blob/7b1b9d9549787b6bbf538f943304c4cf84f7e39e/README.md"
+    },
+    {
+      "claim": "EL requires CL validation and explicit bootstrap trust",
+      "url": "https://geth.ethereum.org/docs/getting-started/consensus-clients"
+    },
+    {
+      "claim": "Reference EL version, source pinned in profile.json",
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.10"
+    },
+    {
+      "claim": "Reference CL version, source pinned in profile.json",
+      "url": "https://github.com/sigp/lighthouse/releases/tag/v8.3.2"
+    },
+    {
+      "claim": "Finalized versus safe/latest execution block semantics",
+      "url": "https://ethereum.github.io/execution-apis/next/api/methods/eth_getBlockByNumber/"
+    },
+    {
+      "claim": "Consistent state reads by blockHash and requireCanonical",
+      "url": "https://eips.ethereum.org/EIPS/eip-1898"
+    },
+    {
+      "claim": "Ethereum ABI, selector Keccak-256, typed view returns",
+      "url": "https://docs.soliditylang.org/en/latest/abi-spec.html"
+    },
+    {
+      "claim": "Ed25519 signature and public RFC test keys",
+      "url": "https://www.rfc-editor.org/rfc/rfc8032.html"
+    },
+    {
+      "claim": "HPKE suite, single-shot info binding, reference KAT",
+      "url": "https://www.rfc-editor.org/rfc/rfc9180.html"
+    },
+    {
+      "claim": "Installed standard-library API returns enc || ct and supports info binding",
+      "url": "https://cryptography.io/en/49.0.0/hazmat/primitives/hpke/"
+    }
+  ],
+  "original_ipvx_publications": "Preserved and attributed through ../bcp-minimal-evidence-2026-10-31.json; no original publication rewritten."
+}

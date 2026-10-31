@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "read_abi_version": 1,
+  "status": "interface specification only, no deployed contracts",
+  "node_registry": [
+    {
+      "type": "function",
+      "name": "ownerOf",
+      "stateMutability": "view",
+      "inputs": [
+        {
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "owner",
+          "type": "address"
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "node",
+      "stateMutability": "view",
+      "inputs": [
+        {
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "name": "keyEpoch",
+          "type": "uint64"
+        },
+        {
+          "name": "signingKey",
+          "type": "bytes32"
+        },
+        {
+          "name": "encryptionKey",
+          "type": "bytes32"
+        },
+        {
+          "name": "status",
+          "type": "uint8"
+        },
+        {
+          "name": "roles",
+          "type": "uint8"
+        }
+      ]
+    }
+  ],
+  "transit_policy": [
+    {
+      "type": "function",
+      "name": "edge",
+      "stateMutability": "view",
+      "inputs": [
+        {
+          "name": "ruleId",
+          "type": "bytes32"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "fromNft",
+          "type": "uint256"
+        },
+        {
+          "name": "toNft",
+          "type": "uint256"
+        },
+        {
+          "name": "version",
+          "type": "uint64"
+        },
+        {
+          "name": "fromEpoch",
+          "type": "uint64"
+        },
+        {
+          "name": "toEpoch",
+          "type": "uint64"
+        },
+        {
+          "name": "cost",
+          "type": "uint32"
+        },
+        {
+          "name": "maxCiphertext",
+          "type": "uint16"
+        },
+        {
+          "name": "trafficMask",
+          "type": "uint32"
+        },
+        {
+          "name": "status",
+          "type": "uint8"
+        }
+      ]
+    }
+  ],
+  "connection_policy": [
+    {
+      "type": "function",
+      "name": "connection",
+      "stateMutability": "view",
+      "inputs": [
+        {
+          "name": "ruleId",
+          "type": "bytes32"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "sourceNft",
+          "type": "uint256"
+        },
+        {
+          "name": "destinationNft",
+          "type": "uint256"
+        },
+        {
+          "name": "version",
+          "type": "uint64"
+        },
+        {
+          "name": "sourceEpoch",
+          "type": "uint64"
+        },
+        {
+          "name": "destinationEpoch",
+          "type": "uint64"
+        },
+        {
+          "name": "trafficMask",
+          "type": "uint32"
+        },
+        {
+          "name": "maxHops",
+          "type": "uint8"
+        },
+        {
+          "name": "maxCiphertext",
+          "type": "uint16"
+        },
+        {
+          "name": "status",
+          "type": "uint8"
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "allowsEdge",
+      "stateMutability": "view",
+      "inputs": [
+        {
+          "name": "connectionRule",
+          "type": "bytes32"
+        },
+        {
+          "name": "edgeRule",
+          "type": "bytes32"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "allowed",
+          "type": "bool"
+        }
+      ]
+    }
+  ],
+  "status_codes": {
+    "0": "missing",
+    "1": "active",
+    "2": "revoked"
+  },
+  "role_bits": {
+    "1": "endpoint",
+    "2": "router"
+  },
+  "traffic_bits": {
+    "1": "DATA",
+    "2": "RECEIPT",
+    "4": "ERROR"
+  },
+  "requirements": [
+    "when node.status=active, node.owner must equal ownerOf(tokenId); inactive nodes never authorize operational keys",
+    "missing node/edge/connection views return status=0 and zero remaining fields; ERC-721 ownerOf(nonexistent NFT) reverts; allowsEdge for missing/inactive rules returns false",
+    "keyEpoch increases on key rotation, revocation and ownership transfer",
+    "both edge parties consent at their current key/ownership epochs",
+    "both connection parties consent at their current key/ownership epochs",
+    "policy changes increment version",
+    "no proxy/delegatecall-upgrade contracts in this profile",
+    "all reads by the same finalized blockHash, requireCanonical=true"
+  ]
+}
