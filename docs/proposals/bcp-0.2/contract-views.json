@@ -196,8 +196,8 @@
     "4": "ERROR"
   },
   "requirements": [
-    "node.owner must equal ownerOf(tokenId)",
-    "missing returns status=0 and all other view fields zero",
+    "when node.status=active, node.owner must equal ownerOf(tokenId); inactive nodes never authorize operational keys",
+    "missing node/edge/connection views return status=0 and zero remaining fields; ERC-721 ownerOf(nonexistent NFT) reverts; allowsEdge for missing/inactive rules returns false",
     "keyEpoch increases on key rotation, revocation and ownership transfer",
     "both edge parties consent at their current key/ownership epochs",
     "both connection parties consent at their current key/ownership epochs",

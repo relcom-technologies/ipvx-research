@@ -682,7 +682,7 @@
   ],
   "semantic_requirements": {
     "hello": "source MAC equals Ethernet source; no application admission from HELLO alone",
-    "handshake": "pending nonce match; session lifetime <=300 seconds; checkpoint and both directed transit consents valid before ADMITTED",
+    "handshake": "distinct initiator/responder NFT and MAC; pending nonce match; session lifetime <=300 seconds; checkpoint, exact registered roles and both directed transit consents valid before ADMITTED",
     "route": "1<=p<=8; origin is final NFT; first NFT matches link sender; receiver absent from path; each suffix signed; max lifetime 30 seconds; local expiry after 5 seconds without suitable refresh",
     "link_sequence": "u64, strictly greater than saved floor; never wrap; floor changes only after valid link/hop authentication and immutable hash where present",
     "routed": "p>=2; max_hops>=p-1 and <=7; no duplicate NFT; role router on intermediate nodes; endpoints equal core source/destination; traffic class 0/1/2 for kinds 5/6/7",

@@ -47,8 +47,8 @@
     },
     {
       "path": "docs/proposals/bcp-0.2/contract-views.json",
-      "bytes": 4216,
-      "sha256": "ca05d8cb5fa06cc4dca013996baf6e273f078b6c9761101dd2b35cd2845818fc"
+      "bytes": 4406,
+      "sha256": "fc1064835ceaa7f23ddf95dd0a74c3c4f926f090d00646b5883878a0e58986ec"
     },
     {
       "path": "docs/proposals/bcp-0.2/fixture-context.json",
@@ -77,8 +77,8 @@
     },
     {
       "path": "docs/proposals/bcp-0.2/wire-format.json",
-      "bytes": 16879,
-      "sha256": "53ab41e331ea967dd46d16a38527cf2d916227cc68370ff321b4cb1f92ab95a1"
+      "bytes": 16945,
+      "sha256": "af6a8e1828259de49c7b82681596df40b5bc1e920e50e1aaa695919dd5cb4705"
     }
   ],
   "operational_changes": {
