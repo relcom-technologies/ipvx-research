@@ -2647,5 +2647,16 @@
   "78ce9804998cefd0": "Nur ein Dokumentationsentwurf: keine Verträge, Code, Transaktionen, Modelle, Experimente, Bereitstellung oder Actions; der Eigentümer hat das Protokoll nicht ratifiziert.",
   "914e385719cb0126": "Interoperabilität erfordert die Wahl von Blockchain/Finalität, ABI/Speicherlayout, genauem Framing/Transcript und Vektoren; BCP-N-Konsens/Bootstrap ist nicht spezifiziert.",
   "668545e592e53ef9": "Die bisherigen 164 Ereignisse sind bytegenau erhalten. Alte Signaturen wurden nicht neu erstellt; ein Hash-Vergleich ist keine unabhängige Prüfung der Identität eines Unterzeichners.",
-  "6a551d1aa3383118": "Die Underlay-Dokumentation beschreibt Ethernet/VLAN, aber die aktuellen Hypervisor-Uplinks wurden nicht ausgelesen: Die Abwesenheit von VXLAN ist nicht bewiesen."
+  "6a551d1aa3383118": "Die Underlay-Dokumentation beschreibt Ethernet/VLAN, aber die aktuellen Hypervisor-Uplinks wurden nicht ausgelesen: Die Abwesenheit von VXLAN ist nicht bewiesen.",
+  "02d20beb26c2578a": "167 Ereignisse bis HX-0167; Autoren, Begründungen, Prüfungen und Grenzen.",
+  "10a6c3f8bc60b28a": "325.5 KiB · 12 Dateien",
+  "3a880bdd5dbfacc5": "HX-0167 · Linux-Dokumentationsbuild unter Erhaltung früherer Einträge korrigiert",
+  "69bf8d0f98b070c1": "Codex — Hauptassistent dieses Gesprächs · 2026-10-31T11:11:21.546806+01:00",
+  "dd0ba131a1b0c88e": "Die erste verify-Prüfung für PR40 wurde abgebrochen: Linux lehnte langen Unicode-Text im evidence-Feld von HX-0165 als Dateinamen ab. Nach ausdrücklicher Genehmigung des Eigentümers wurde nur der Dokumentationsgenerator korrigiert: Bei einem Fehler der Pfadprüfung bleibt der Beleg als maskierter Text sichtbar. Vier Regressionstests wurden hinzugefügt; alle 96 bisherigen Seiten blieben vor diesem Eintrag unverändert.",
+  "0d722922af7479dc": "Den ursprünglichen Eintrag HX-0165 bytegenau erhalten und die Verarbeitung textlicher Belege korrigieren, statt den Verlauf umzuschreiben. Der Eigentümer genehmigte die gezielte Generatorkorrektur und eine erneute CI-Prüfung gesondert; dies erlaubt keine BCP-Implementierung.",
+  "6353250ae6a04c6d": "scripts/history_sources.py",
+  "0bdff0963ffc343f": "scripts/test_history_sources.py",
+  "16e6461e72116797": "Die erste fehlgeschlagene PR-Prüfung bleibt erhalten. Die Korrektur wurde lokal geprüft; das Ergebnis der neuen PR-CI lag zum Zeitpunkt dieses Eintrags noch nicht vor.",
+  "b372fed156f0a9d0": "BCP-Spezifikation, Mesh, frühere Belege und Verlaufseinträge bleiben unverändert. Das Protokoll ist nicht implementiert; es wurden keine Experimente oder Bereitstellungen ausgeführt.",
+  "243836832f65a325": "Neue Actions sind nur als automatische isolierte Prüfungen des aktualisierten PR autorisiert; Production Actions und manuelle Workflow-Aufrufe werden nicht verwendet."
 }

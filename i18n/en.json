@@ -2647,5 +2647,16 @@
   "78ce9804998cefd0": "Documentation proposal only: no contracts, code, transactions, models, experiments, deployment or Actions; the owner has not ratified the protocol.",
   "914e385719cb0126": "Interoperability requires selection of the chain/finality, ABI/storage layout, exact framing/transcript and vectors; BCP-N consensus/bootstrap is not specified.",
   "668545e592e53ef9": "The previous 164 events are preserved byte for byte. Old signatures were not recreated; comparing hashes is not an independent verification of a signer’s identity.",
-  "6a551d1aa3383118": "Underlay documentation indicates Ethernet/VLAN, but current hypervisor uplinks have not been read: the absence of VXLAN is not proven."
+  "6a551d1aa3383118": "Underlay documentation indicates Ethernet/VLAN, but current hypervisor uplinks have not been read: the absence of VXLAN is not proven.",
+  "02d20beb26c2578a": "167 events through HX-0167; authors, rationale, checks and limits.",
+  "10a6c3f8bc60b28a": "325.5 KiB · 12 files",
+  "3a880bdd5dbfacc5": "HX-0167 · Linux documentation build fixed while preserving prior records",
+  "69bf8d0f98b070c1": "Codex — main assistant in this conversation · 2026-10-31T11:11:21.546806+01:00",
+  "dd0ba131a1b0c88e": "The first verify check for PR40 stopped: Linux rejected long Unicode text in the evidence of HX-0165 as a filename. After the owner’s explicit authorization, only the documentation generator was fixed: a path lookup error leaves the evidence as escaped text. Four regression checks were added; all 96 prior pages were unchanged before adding this record.",
+  "0d722922af7479dc": "Preserve the original HX-0165 record byte for byte and fix handling of textual evidence rather than rewrite the history. The owner separately authorized the narrow generator fix and another CI check; this does not authorize BCP implementation.",
+  "6353250ae6a04c6d": "scripts/history_sources.py",
+  "0bdff0963ffc343f": "scripts/test_history_sources.py",
+  "16e6461e72116797": "The first failed PR check is retained. The fix was verified locally; the outcome of the new PR CI was not yet available at the time of this entry.",
+  "b372fed156f0a9d0": "The BCP specification, mesh, prior evidence and history records are unchanged. The protocol is not implemented; no experiments or deployment were performed.",
+  "243836832f65a325": "New Actions are authorized only as automatic isolated checks of the updated PR; production Actions and manual workflow dispatch are not used."
 }

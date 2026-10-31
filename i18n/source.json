@@ -837,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "3bbd7d5032c29e28",
-      "source": "166 событий по HX-0166; авторы, основания, проверки и ограничения.",
+      "id": "02d20beb26c2578a",
+      "source": "167 событий по HX-0167; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "5ac066914f416a0b",
-      "source": "323.8 КиБ · 12 файлов",
+      "id": "10a6c3f8bc60b28a",
+      "source": "325.5 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4642,6 +4642,81 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "3a880bdd5dbfacc5",
+      "source": "HX-0167 · Исправлена Linux-сборка документации с сохранением прежних записей",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "e078c61c3e49f21a",
+      "source": "Реализовано",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "69bf8d0f98b070c1",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-31T11:11:21.546806+01:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "dd0ba131a1b0c88e",
+      "source": "Первая verify-проверка PR40 остановилась: Linux отклонил длинный Unicode-текст из evidence HX-0165 как имя файла. После явного разрешения владельца исправлен только генератор документации: ошибка поиска пути оставляет свидетельство экранированным текстом. Добавлены четыре регрессионные проверки; прежние 96 страниц до добавления этой записи не изменились.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "0d722922af7479dc",
+      "source": "Сохранить исходную запись HX-0165 побайтно и исправить обработку текстовых оснований вместо переписывания журнала. Владелец отдельно разрешил точечную правку генератора и повторную проверку CI; это не разрешение реализации BCP.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "6353250ae6a04c6d",
+      "source": "scripts/history_sources.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "0bdff0963ffc343f",
+      "source": "scripts/test_history_sources.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "9eff48ba802739a9",
+      "source": "scripts/build_portal.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "16e6461e72116797",
+      "source": "Первая неуспешная PR-проверка сохранена. Исправление проверено локально; итог нового PR CI на момент записи ещё не получен.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "b372fed156f0a9d0",
+      "source": "Спецификация BCP, mesh, старые доказательства и записи истории не изменены. Протокол не реализован, эксперименты и выкатка не выполнялись.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "243836832f65a325",
+      "source": "Новые Actions разрешены только как автоматические изолированные проверки обновлённого PR; production Actions и ручной запуск workflow не используются.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "d2fc520cd7f06733",
       "source": "HX-0166 · Спецификация BCP подготовлена к публикации в PR",
       "context": "history.html:text:section/details/summary"
@@ -4662,19 +4737,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "962c76f831309e73",
       "source": "Передать документ на проверку с явным статусом Draft, сохранив mesh отдельным экспериментом и не выдавая подготовку PR за принятие или реализацию BCP. Согласовать производные документы с каноническим журналом без изменения генераторов.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "10695c6e3cdf6798",
@@ -4692,11 +4757,6 @@
       "context": "history.html:text:details/ul/li"
     },
     {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "01c5af35f83beca9",
       "source": "На момент записи PR ещё не создан; его URL, точная финальная ревизия и исход CI подтверждаются в самом PR.",
       "context": "history.html:text:details/ul/li"
@@ -4710,11 +4770,6 @@
       "id": "029cc75334d9a2b7",
       "source": "BCP остаётся логическим проектом: выбор цепочки, точный двоичный формат и векторы совместимости не согласованы.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "71465c7f6b710a29",
@@ -4885,11 +4940,6 @@
       "id": "1985f9c320e24d2d",
       "source": "HX-0161 · Исправления утверждений приняты обычными merge commit",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "e078c61c3e49f21a",
-      "source": "Реализовано",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "ca5f9aa20c7b0ba2",
@@ -6100,11 +6150,6 @@
       "id": "d636670365049d27",
       "source": "Сайт по-прежнему отдаёт только статичные файлы и не получает API лаборатории: вместо встраивания используется обычная ссылка, которую допускает текущая CSP. Стенд вынесен на поддомен, чтобы не делить origin и cookie входа Relcom ID с ipvx.org. Управление стендом остаётся за операторским SSH-туннелем.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "9eff48ba802739a9",
-      "source": "scripts/build_portal.py",
-      "context": "history.html:text:ul/li/a"
     },
     {
       "id": "3fdcb33114758eae",

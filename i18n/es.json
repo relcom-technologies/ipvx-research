@@ -2647,5 +2647,16 @@
   "78ce9804998cefd0": "Solo una propuesta documental: sin contratos, código, transacciones, modelos, experimentos, despliegue ni Actions; el propietario no ha ratificado el protocolo.",
   "914e385719cb0126": "La interoperabilidad requiere elegir cadena/finalidad, ABI/distribución del almacenamiento, framing/transcript exactos y vectores; el consenso/bootstrap de BCP-N no está especificado.",
   "668545e592e53ef9": "Los 164 eventos anteriores se conservan byte por byte. No se recrearon las firmas antiguas; comparar hashes no constituye una verificación independiente de la identidad del firmante.",
-  "6a551d1aa3383118": "La documentación de la red subyacente indica Ethernet/VLAN, pero no se han leído los uplinks actuales de los hipervisores: no está demostrada la ausencia de VXLAN."
+  "6a551d1aa3383118": "La documentación de la red subyacente indica Ethernet/VLAN, pero no se han leído los uplinks actuales de los hipervisores: no está demostrada la ausencia de VXLAN.",
+  "02d20beb26c2578a": "167 eventos hasta HX-0167; autores, fundamentos, comprobaciones y límites.",
+  "10a6c3f8bc60b28a": "325.5 KiB · 12 archivos",
+  "3a880bdd5dbfacc5": "HX-0167 · Corregida la compilación de documentación en Linux conservando los registros anteriores",
+  "69bf8d0f98b070c1": "Codex — asistente principal de esta conversación · 2026-10-31T11:11:21.546806+01:00",
+  "dd0ba131a1b0c88e": "La primera comprobación verify de PR40 se detuvo: Linux rechazó como nombre de archivo un texto Unicode largo del campo evidence de HX-0165. Tras la autorización explícita del propietario, se corrigió únicamente el generador de documentación: un error al consultar la ruta deja la prueba como texto escapado. Se añadieron cuatro comprobaciones de regresión; las 96 páginas anteriores permanecieron intactas antes de añadir este registro.",
+  "0d722922af7479dc": "Conservar el registro original HX-0165 byte por byte y corregir el tratamiento de pruebas textuales en vez de reescribir el historial. El propietario autorizó por separado la corrección puntual del generador y otra comprobación de CI; esto no autoriza implementar BCP.",
+  "6353250ae6a04c6d": "scripts/history_sources.py",
+  "0bdff0963ffc343f": "scripts/test_history_sources.py",
+  "16e6461e72116797": "Se conserva la primera comprobación fallida del PR. La corrección se verificó localmente; el resultado del nuevo CI del PR aún no estaba disponible al registrar esta entrada.",
+  "b372fed156f0a9d0": "La especificación BCP, mesh, las pruebas previas y los registros históricos no se modificaron. El protocolo no está implementado; no se realizaron experimentos ni despliegue.",
+  "243836832f65a325": "Las nuevas Actions solo están autorizadas como comprobaciones automáticas aisladas del PR actualizado; no se utilizan Actions de producción ni ejecución manual de workflows."
 }
