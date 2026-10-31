@@ -837,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "4990aa2850e6df58",
-      "source": "174 событий по HX-0174; авторы, основания, проверки и ограничения.",
+      "id": "b1a73598411f5d88",
+      "source": "175 событий по HX-0175; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "349019c116abf36f",
-      "source": "337.3 КиБ · 12 файлов",
+      "id": "b9f159385a144327",
+      "source": "338.2 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4642,6 +4642,81 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "7565157dc12ab050",
+      "source": "HX-0175 · Принято поручение слить PR43 с сохранением истории",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "199d6db958cdb817",
+      "source": "Решение",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "e513ad844a4fe889",
+      "source": "Codex — основной ассистент этой беседы · 2026-10-31T15:39:26+01:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "95ae56fe82c1049d",
+      "source": "Владелец прямо разрешил обычный merge commit и разовый --admin только для PR43 без изменения защиты ветки. Все четыре CI ревизии 219b6af прошли; обновлённая ревизия с этой записью должна пройти PR-проверки перед слиянием. Принимаются исходники трёх контрактов BCP 0.2 с офлайн-доказательствами; адреса и операционные пины развёртывания не назначаются.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "f1950b7bb39f4066",
+      "source": "Сохранить исходный коммит контрактов и обоих родителей merge commit, записав разрешение и границы принятия в том же PR. Принятие исходников не означает развёртывания, регистрации NFT, подтверждения финальности цепочки или разрешения на транзакции и сетевой запуск.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "108bba0734d24dda",
+      "source": "contracts/bcp02/evidence/compilation.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "e4604f7025f4bd20",
+      "source": "contracts/bcp02/evidence/checks.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "2e19b84beadb6c8a",
+      "source": "contracts/bcp02/evidence/preservation.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "d6533362fd148033",
+      "source": "Эта запись фиксирует принятое поручение; фактическое слияние подтверждается точным merge-коммитом и отдельной квитанцией после выполнения. Разрешение --admin не распространяется на другие PR.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "a64455e177255a8c",
+      "source": "Проверены хеши контрактов, тестов, отчётов, прежнего ядра и спецификаций, 38 файлов Lab и пяти PCAP; прежние 174 события сохранены префиксом. Mesh остаётся отдельным экспериментом; старые подписи не переиздавались.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "6ca4fb72cd582f8f",
+      "source": "Защита ветки не меняется. Транзакции, сетевые эксперименты, модели, выкатка и production Actions не выполняются. Хеши шаблонов компилятора не подменяют хеши развёрнутого кода.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "570c7170400cc24c",
       "source": "HX-0174 · Реализованы исходники трёх контрактов BCP 0.2",
       "context": "history.html:text:section/details/summary"
@@ -4662,19 +4737,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "3c092688926b108f",
       "source": "Сохранить открытое создание записи узла без автоматического допуска к транзиту. Использовать проверяемую библиотеку ERC-721 и актуальный закреплённый компилятор; исключить возврат старых согласий после смены владельца, ключей или условий. Зафиксировать write API и его пределы отдельно от неизменного read ABI и прежних сетевых измерений.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "db23d39264abb799",
@@ -4697,21 +4762,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "108bba0734d24dda",
-      "source": "contracts/bcp02/evidence/compilation.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "e4604f7025f4bd20",
-      "source": "contracts/bcp02/evidence/checks.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "2e19b84beadb6c8a",
-      "source": "contracts/bcp02/evidence/preservation.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
       "id": "a55ca1d23f37596b",
       "source": "contracts/bcp02/package-lock.json",
       "context": "history.html:text:ul/li/a"
@@ -4720,11 +4770,6 @@
       "id": "4e50a80f13847eb2",
       "source": ".github/workflows/bcp-contracts.yml",
       "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "4b58e350b75ebdca",
@@ -4742,19 +4787,9 @@
       "context": "history.html:text:details/ul/li"
     },
     {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
-    },
-    {
       "id": "a43367b275befcdd",
       "source": "HX-0173 · Принято поручение слить PR42 с сохранением истории",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "199d6db958cdb817",
-      "source": "Решение",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "034433825cb41f9b",
@@ -4780,11 +4815,6 @@
       "id": "3a75e2cf8ed0403d",
       "source": "bcp/evidence/preservation.json",
       "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "d6533362fd148033",
-      "source": "Эта запись фиксирует принятое поручение; фактическое слияние подтверждается точным merge-коммитом и отдельной квитанцией после выполнения. Разрешение --admin не распространяется на другие PR.",
-      "context": "history.html:text:details/ul/li"
     },
     {
       "id": "b7b93fd94159038e",

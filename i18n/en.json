@@ -2745,5 +2745,13 @@
   "4e50a80f13847eb2": ".github/workflows/bcp-contracts.yml",
   "4b58e350b75ebdca": "These are source implementations and local EVM calls, not deployed contracts or Sepolia registrations. Networking is blocked in the test process; wallets, signing and transaction submission are not used. Independent audit, chain finality and packet delivery have not been established.",
   "5913ecdf2e27cbd7": "Runtime hashes in the report are compiler templates with immutable placeholders, not deployed-code hashes or operational BCP pins. There is no EL/CL adapter, RPC read at a finalized block or authorization to run. NFT registration does not solve Sybil resistance or grant a project role.",
-  "053ba378026a289b": "The preceding 173 events, 22 core and specification files, 38 Lab files and five PCAPs are preserved; earlier signatures were not reissued. No production Actions, network experiments, chain transactions, paid models or deployment were performed."
+  "053ba378026a289b": "The preceding 173 events, 22 core and specification files, 38 Lab files and five PCAPs are preserved; earlier signatures were not reissued. No production Actions, network experiments, chain transactions, paid models or deployment were performed.",
+  "b1a73598411f5d88": "175 events through HX-0175; authors, rationale, checks and limitations.",
+  "b9f159385a144327": "338.2 KiB · 12 files",
+  "7565157dc12ab050": "HX-0175 · Instruction to merge PR43 while preserving history accepted",
+  "e513ad844a4fe889": "Codex — primary assistant in this conversation · 2026-10-31T15:39:26+01:00",
+  "95ae56fe82c1049d": "The owner explicitly authorized a regular merge commit and one-time --admin for PR43 only, without changing branch protection. All four CI checks for revision 219b6af passed; the updated revision containing this record must pass PR checks before merging. Source implementations of three BCP 0.2 contracts with offline evidence are accepted; deployment addresses and operational pins are not assigned.",
+  "f1950b7bb39f4066": "Preserve the original contract commit and both parents of the merge commit, recording authorization and acceptance boundaries in the same PR. Source acceptance does not mean deployment, NFT registration, chain-finality confirmation or authorization for transactions and network execution.",
+  "a64455e177255a8c": "Hashes of contracts, tests, reports, the earlier core and specifications, 38 Lab files and five PCAPs were checked; the preceding 174 events remain as a prefix. Mesh remains a separate experiment; earlier signatures were not reissued.",
+  "6ca4fb72cd582f8f": "Branch protection remains unchanged. No transactions, network experiments, models, deployment or production Actions are performed. Compiler template hashes do not substitute for deployed-code hashes."
 }
