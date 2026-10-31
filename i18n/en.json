@@ -2770,5 +2770,13 @@
   "ddf34f77ea54cdd6": ".github/workflows/bcp-adapter.yml",
   "147b1ab7e14790fa": "34 adapter checks, 23 existing core tests and 30 contract checks passed locally. The report for 50 existing vectors was reproduced; the previous N29 caveat is preserved. This is offline source verification, not a measurement of Ethereum finality or interoperability of running clients.",
   "02abad4b7b69bdab": "The full CL remains trusted: the adapter does not verify BLS, full block-body SSZ or storage proofs. No operational deployment addresses, keys or pins are assigned; binary hashes require external operator verification. An unknown fork or unavailable state causes refusal.",
-  "e5181b21a5bbe640": "Preserved 175 previous events, 44 core, contract and specification files, 38 Lab files and five PCAPs. Mesh remains a separate experiment; old signatures were not reissued. No transactions, network experiments, models, deployment or production Actions were run."
+  "e5181b21a5bbe640": "Preserved 175 previous events, 44 core, contract and specification files, 38 Lab files and five PCAPs. Mesh remains a separate experiment; old signatures were not reissued. No transactions, network experiments, models, deployment or production Actions were run.",
+  "f520854f0118ad9b": "177 events through HX-0177; authors, rationales, checks and limitations.",
+  "7932bf22fb841093": "341.2 KiB · 12 files",
+  "959c5c57f23f7541": "HX-0177 · Instruction adopted to merge PR44 while preserving history",
+  "d6abf4b5dd0247b8": "Codex — primary assistant in this conversation · 2026-10-31T15:31:15Z",
+  "68416f6a982fd317": "The owner explicitly authorized a regular merge commit and one-time --admin for PR44 only, without changing branch protection. All four CI checks for revision be6182e passed; the updated history must pass PR checks before merging. The read-only BCP 0.2 EL/CL adapter is accepted with offline evidence, without an operational run.",
+  "5e25cb48d9117ce2": "Preserve the original adapter commit and both parents of the merge commit, recording authorization and acceptance limits in the same PR. Acceptance of source code does not prove live Ethereum finality or authorize transactions, a network experiment or deployment.",
+  "14b7ef31f06d09cd": "Verified 60 PR and existing source files, 38 Lab files and five PCAPs; the previous 176 events remain a preserved prefix. Mesh remains a separate experiment; original signatures were not reissued.",
+  "0332aa2e985c0a8e": "Branch protection remains unchanged. No transactions, network experiments, models, deployment or production Actions are performed. The adapter trusts the full CL; live clients and chain finality were not tested."
 }
