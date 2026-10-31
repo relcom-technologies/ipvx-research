@@ -6,6 +6,7 @@ from research_architecture import render as render_research_architecture
 from research_contributions import render as render_research_contributions
 from agent_directory import render as render_agent_directory
 from collaboration import render as render_collaboration, entry_link as collaboration_link
+from history_sources import render_history_source
 ROOT=Path(__file__).resolve().parents[1]
 NAV=[('index.html','Обзор'),('architecture.html','Устройство сети'),('experiments.html','Эксперименты'),('rfcs.html','RFC'),('publications.html','Публикации'),('participate.html','Участвовать'),('community.html','Обсуждения')]
 REPO='https://github.com/relcom-technologies/ipvx-research'
@@ -155,12 +156,7 @@ if history_path.exists():
   limits=''.join('<li>'+html.escape(x)+'</li>' for x in event.get('limitations',[]))
   sources=[]
   for source in event.get('evidence',[]):
-   label=html.escape(source)
-   if source.startswith(('https://github.com/relcom-technologies/','https://www.rfc-editor.org/','https://archive.org/','https://ipvx.org/')):
-    sources.append('<li><a href="'+html.escape(source,quote=True)+'">'+label+'</a></li>')
-   elif (ROOT/source).is_file():
-    sources.append('<li><a href="'+REPO+'/blob/main/'+html.escape(source,quote=True)+'">'+label+'</a></li>')
-   else:sources.append('<li>'+label+'</li>')
+   sources.append(render_history_source(ROOT,source,REPO))
   h+='<details class="history-entry" id="'+e('id')+'"><summary>'+e('id')+' · '+e('title')+' <span class="badge">'+html.escape(status_names.get(event['status'],event['status']))+'</span></summary><p class="history-byline">'+actor+' · '+time+'</p><p>'+e('summary')+'</p><h3>Основание</h3><p>'+e('decision_rationale')+'</p>'
   if sources:h+='<h3>Источники и проверки</h3><ul>'+''.join(sources)+'</ul>'
   if limits:h+='<h3>Ограничения</h3><ul>'+limits+'</ul>'
