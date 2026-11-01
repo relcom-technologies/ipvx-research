@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "network_execution": false,
+  "attempts": [
+    {
+      "recorded_at": "2026-11-01T14:47:18.718941+00:00",
+      "result": "7 guard tests passed; fixture setup failed before scenario tests",
+      "cause": "New fixture generator retained a relative import for a deeper tests directory",
+      "generator_before_sha256": "5c233bffb6a43cc06ac816f8a3b52f62b3f6c2d58e72bc4debd569b7e9905352",
+      "correction": "Use the runner directory relative path to the unchanged accepted EVM helper",
+      "measurement": false
+    },
+    {
+      "recorded_at": "2026-11-01T14:57:07.390022+00:00",
+      "result": "7 guard tests passed; all 14 scenario variants rejected synthetic EL/CL head mismatch",
+      "cause": "Canonical JSON key sorting changed dictionary iteration order used for execution-head selection",
+      "correction": "Select execution headers by explicit checkpoint hash and ordered checkpoint list, never mapping iteration order",
+      "measurement": false
+    },
+    {
+      "recorded_at": "2026-11-01T14:57:07.390082+00:00",
+      "result": "30 of 31 offline tests passed; complete fabricated-evidence check returned INCONCLUSIVE",
+      "cause": "macOS temporary root path uses the /var alias; strict path comparison rejected it",
+      "correction": "Resolve the evidence root once while retaining per-file traversal/symlink checks",
+      "measurement": false
+    }
+  ],
+  "review_corrections": [
+    "Fixture fault branches now have distinct execution/beacon hashes while retaining a common bootstrap and packet checkpoint; different ABI states are never served under one execution hash.",
+    "Closed SQLite verifier connections explicitly close rather than relying on connection context-manager commit semantics.",
+    "Capture drains queued packets before stopping; the verifier compares captured count with kernel packet statistics.",
+    "Worker results and receipt hashes are independently reconciled against retained source request bytes in closed SQLite."
+  ]
+}

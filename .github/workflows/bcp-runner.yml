@@ -1,0 +1,31 @@
+name: BCP runner offline checks
+on:
+  pull_request:
+    paths: ['runners/**', 'bcp/**', 'adapters/**', 'integration/**', 'contracts/bcp02/**', 'experiments/bcp02-net-001/**', '.github/workflows/bcp-runner.yml']
+permissions: {contents: read}
+jobs:
+  runner-offline:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.13'}
+      - uses: actions/setup-node@v4
+        with: {node-version: '24'}
+      - run: python3 -m pip install -r runners/bcp02/requirements.lock
+      - run: npm --prefix contracts/bcp02 ci --ignore-scripts --no-audit --no-fund
+      - name: Offline actors, guards and fabricated evidence only; no Linux stand
+        run: |
+          python3 -B runners/bcp02/checks.py --output /tmp/bcp-runner-checks.json
+          cmp runners/bcp02/evidence/checks.json /tmp/bcp-runner-checks.json
+          python3 -B runners/bcp02/preserve.py
+          python3 -B -m runners.bcp02.cli check
+      - name: Preserve accepted PR46 planning report
+        run: |
+          python3 -B experiments/bcp02-net-001/checks.py --output /tmp/bcp-plan.json
+          cmp experiments/bcp02-net-001/static-checks.json /tmp/bcp-plan.json
+          python3 -B experiments/bcp02-net-001/preserve.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: {name: bcp-runner-offline-evidence, path: /tmp/bcp-runner-checks.json}

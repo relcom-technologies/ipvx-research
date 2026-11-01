@@ -837,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "8f9b5a39bf3cabc9",
-      "source": "183 событий по HX-0183; авторы, основания, проверки и ограничения.",
+      "id": "17cacc82f8c7e4dc",
+      "source": "185 событий по HX-0185; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "9d31321a3526e5ea",
-      "source": "351.6 КиБ · 12 файлов",
+      "id": "6cbdacc715d7c1e9",
+      "source": "356.1 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4642,14 +4642,164 @@
       "context": "history.html:text:main/section/p"
     },
     {
-      "id": "53109cf32a778623",
-      "source": "HX-0183 · Уточнена зависимость доступности IPvX от адреса Cloudflare",
+      "id": "c8a36a7c8e0941fc",
+      "source": "HX-0185 · Проверен одноразовый допуск и завершены офлайн-проверки runner",
       "context": "history.html:text:section/details/summary"
     },
     {
       "id": "a5079e121a2ac236",
       "source": "Рецензия",
       "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "23c5b6d535e2de8d",
+      "source": "Codex — основной ассистент этой беседы · 2026-11-01T15:10:16Z",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "dead474e3530ac89",
+      "source": "Добавлены запрет повторного использования подписанного допуска и run ID, проверка выделенного хоста и общий запрет реальных sockets/DNS и посторонних subprocess в проверках. Итоговый отчёт содержит 37 успешных тестов. Все проверки остаются офлайн; рабочий сетевой режим не запускался.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "73005ad426734a57",
+      "source": "Отдельный допуск на один опыт не должен превращаться в возможность повторного запуска копированием файла. Тесты должны технически запрещать создание сети, а не только описывать это в отчёте. Разделить тест проверки PASS на искусственных артефактах и измеренный результат реального стенда.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "f33503eeb7663633",
+      "source": "runners/bcp02/admission.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "014acb4b08a05f93",
+      "source": "runners/bcp02/checks.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "334fe114f0bc0a32",
+      "source": "runners/bcp02/evidence/checks.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "0e393fbc4b380fea",
+      "source": "runners/bcp02/launch-config.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "29a0f76b8db44c3e",
+      "source": "runners/bcp02/evidence/preservation.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "be7c98511cb92965",
+      "source": "Ключ владельца и прочие launch gates по-прежнему пусты. Linux preflight, namespace setup, seccomp и AF_PACKET не выполнялись; готовность к запуску false.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "f71b1f72476c14fe",
+      "source": "Тестовые временные каталоги и EVM в памяти не являются выделенным стендом, сетевым опытом или транзакциями цепочки. Старые mesh/BCP доказательства и история сохранены; production не менялся.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "ae04261e0cb7add2",
+      "source": "HX-0184 · Реализована оснастка изолированного опыта BCP 0.2 для проверки в PR",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "e078c61c3e49f21a",
+      "source": "Реализовано",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "70d31a024080e415",
+      "source": "Codex — основной ассистент этой беседы · 2026-11-01T15:04:52Z",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "611f278579ceb5f1",
+      "source": "По поручению владельца добавлен отдельный пакет стенда и runner для протокола PR46: namespaces/veth, AF_PACKET, двухпортовый R, подписанные соседями ROUTE-суффиксы, свежий fixture-state из EVM в памяти, ограниченный scheduler/worker и сверка доказательств. Пройдены 35 офлайн-тестов, включая 13 случаев и две ветви N07. Это реализация для ревью, а не состоявшийся сетевой опыт.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "5c4646a4bd0e579b",
+      "source": "Сохранить принятый план и прежние компоненты без изменения байтов. Разделить управляющие барьеры и передачу payload, не передавать процессу чужие ключи, не подменять UNKNOWN повторным исполнением. Требовать сопоставления PCAP, событий и закрытых SQLite, отдельного допуска владельца и пинов одноразового Linux-хоста до любых операций стенда.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "706704ad715e72e2",
+      "source": "runners/bcp02/README.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "bd2a434e30ef519d",
+      "source": "runners/bcp02/components.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "91945fc3d2085d02",
+      "source": "runners/bcp02/manifest.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "2cc0104477e24465",
+      "source": "runners/bcp02/evidence/preparation-notes.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "8513325b1344a16e",
+      "source": ".github/workflows/bcp-runner.yml",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "dd6555695304501e",
+      "source": "Тесты используют memory ports, синтетические часы и искусственные PCAP/SQLite. Namespaces, сетевые процессы, packet sockets и seccomp не запускались; Linux-изоляция и Ethernet-доставка ещё не измерены. NOT_RUN не превращён в сетевой PASS.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "98c6b32f08495631",
+      "source": "Три ошибки подготовки и исправления сохранены: относительный импорт EVM, порядок JSON при выборе header и алиас временного каталога macOS. Дополнительно разведены hashes fault-state и усилена независимая сверка результатов и capture coverage.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "7ae0b53c5c9d96f9",
+      "source": "Хост, runtime-пины, ключ допуска, окно, scope ACK и отдельное разрешение на запуск отсутствуют. Текущий CLI блокирует run до создания стенда. Поддерживается только будущий одноразовый Linux x86_64; после аварии хоста возможна ручная сверка оставшихся объектов.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "9c9881ea77e938a2",
+      "source": "397 прежних файлов и префикс 183 событий сохранены побайтно. Mesh остаётся отдельным опытом со старыми доказательствами и подписями. Fixture-state не доказывает Ethereum-финальность, физическую подложку, независимость операторов или преимущество над IP.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "8a05426d663a97a6",
+      "source": "Запуск опыта, транзакции цепочки, модели, выкатка, слияние этого PR и production Actions не выполнялись. Новый workflow разрешает только изолированные PR-проверки.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "53109cf32a778623",
+      "source": "HX-0183 · Уточнена зависимость доступности IPvX от адреса Cloudflare",
+      "context": "history.html:text:section/details/summary"
     },
     {
       "id": "7bca1ee3c59e4b8e",
@@ -4662,19 +4812,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "20faff86cde7177d",
       "source": "Проверить адресную зависимость на том же компьютере, сохранив доменное имя, проверку TLS и настройки DNS. Результат сужает диагностику до выбранного адреса/пути, но не доказывает конкретного виновника или фильтрацию определённым провайдером.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "ac72a4c2d65ae046",
@@ -4685,11 +4825,6 @@
       "id": "fd3cb9e14c3bf3cd",
       "source": "docs/evidence/site-access-2026-11-01.json",
       "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "4a90ad9cc5b5cf6c",
@@ -4705,11 +4840,6 @@
       "id": "72fb73d64ad3243a",
       "source": "PR46 остаётся планом изолированного опыта; опыт, транзакции, выкатка и production Actions не запускались.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "fde0eec0d3f61ee4",
@@ -4925,11 +5055,6 @@
       "id": "b4bbd82a82d8678f",
       "source": "HX-0178 · Связаны адаптер и ядро BCP 0.2; полный цикл проверен офлайн",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "e078c61c3e49f21a",
-      "source": "Реализовано",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "7adb7f6a80fed50a",
