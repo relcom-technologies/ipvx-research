@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-01T12:47:08.707433+00:00",
+  "attributed_to": "codex-assistant",
+  "stage": "first static package validation, not a network run",
+  "tests_run": 14,
+  "failures": 2,
+  "failing_tests": [
+    "test_proposed_package_is_valid_but_not_ready_or_executed",
+    "test_source_pins_and_physical_limits_remain_explicit"
+  ],
+  "reason": "Four pinned tests/bcp source paths were mistakenly absent from the explicit path allowlist. No changed source or unsafe external path was found.",
+  "initial_readiness_sha256": "fff184dd881550448fdd552f88fe2c67debc14b00c94cd5bedc71b51d51142d6",
+  "correction": "Add only tests/bcp/ to the explicit allowlist and count only matching files as verified.",
+  "network_created": false,
+  "runner_executed": false,
+  "transactions": false
+}

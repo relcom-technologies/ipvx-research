@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "protocol_id": "IPVX-BCP02-NET-001-F",
+  "version": "0.1",
+  "status": "blocked_missing_implementation_and_run_authorization",
+  "components": {
+    "namespace_launcher_cleanup": {"revision": null, "sha256": null, "review_evidence": null, "offline_validation_receipt": null},
+    "af_packet_transport": {"revision": null, "sha256": null, "review_evidence": null, "offline_validation_receipt": null},
+    "two_interface_relay_binding": {"revision": null, "sha256": null, "review_evidence": null, "offline_validation_receipt": null},
+    "peer_signed_route_suffix_assembler": {"revision": null, "sha256": null, "review_evidence": null, "offline_validation_receipt": null},
+    "fixture_state_key_exporter": {"revision": null, "sha256": null, "review_evidence": null, "offline_validation_receipt": null},
+    "bounded_scheduler_worker": {"revision": null, "sha256": null, "review_evidence": null, "offline_validation_receipt": null},
+    "capture_verifier": {"revision": null, "sha256": null, "review_evidence": null, "offline_validation_receipt": null},
+    "environment_clock_preflight": {"revision": null, "sha256": null, "review_evidence": null, "offline_validation_receipt": null}
+  },
+  "host_preflight_receipt": null,
+  "process_isolation_receipt": null,
+  "dataset_receipt": null,
+  "owner_scope_ack": null,
+  "accepted_window": null,
+  "owner_launch_decision": null,
+  "run_id": null,
+  "resources_allocated": false,
+  "run_started": false
+}

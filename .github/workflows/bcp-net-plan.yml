@@ -1,0 +1,18 @@
+name: BCP isolated network plan checks
+on:
+  pull_request:
+    paths: ['experiments/bcp02-net-001/**', '.github/workflows/bcp-net-plan.yml']
+permissions: {contents: read}
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.13'}
+      - name: Static plan, source hashes, coverage and closed launch gates only
+        run: |
+          python3 -B experiments/bcp02-net-001/checks.py --output /tmp/bcp-net-plan.json
+          cmp experiments/bcp02-net-001/static-checks.json /tmp/bcp-net-plan.json
+          python3 -B experiments/bcp02-net-001/preserve.py

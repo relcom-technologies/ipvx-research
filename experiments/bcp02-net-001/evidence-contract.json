@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "mandatory_per_run": ["scope_sha256", "run_manifest", "source_binary_dataset_hashes", "namespace_interface_inventory", "process_capability_and_socket_policy", "clock_health", "pcap", "capture_statistics", "events", "journals", "payload_manifest", "worker_log", "state_bank", "injection_manifest", "fault_barrier", "result", "SHA256SUMS"],
+  "capture": {"links": ["L1", "L2"], "filter": null, "all_ethertypes": true, "full_snaplen": true, "expected_ethertype_hex": "88b5", "drops_max": 0, "vlan_allowed": false, "capture_starts_before_hello": true, "capture_starts_before_link_up": true, "packet_fcs_expected": false},
+  "event_fields": ["run_id", "case_id", "node", "utc", "monotonic", "rx_ifindex", "tx_ifindex", "kind", "message_id", "packet_id", "session_id", "sequence", "checkpoint_C", "latest_L", "immutable_sha256", "source_signature_sha256", "decision", "reject_code"],
+  "correlation": ["each accepted DATA/response immutable and source signature equal on L1/L2", "every NEW/COMPLETED mapped to an explicit request ID/hash and both captures", "R-off includes only new IDs issued after acknowledged barrier", "expected injected corrupt frames explicitly separated from unexpected corruption", "dedup/receipt state reconciled with closed SQLite snapshots, not stdout alone", "capture statistics and untruncated packet lengths required for coverage", "fixture-state marker in every result; no finality or independent-operator inference"],
+  "private_retention_seconds_min": 604800,
+  "directory_mode": "0700",
+  "file_mode": "0600",
+  "public_export_forbidden": ["private_keys", "tokens", "cookies", "owner_email", "private_infrastructure_addresses", "real_user_requests", "unredacted_process_environment"],
+  "old_evidence_reissued": false,
+  "missing_evidence_result": "INCONCLUSIVE",
+  "source_hash_authenticates_identity": false,
+  "result_observed": null
+}

@@ -837,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "96b1c94aa4a58f6a",
-      "source": "179 событий по HX-0179; авторы, основания, проверки и ограничения.",
+      "id": "e6e5e5340895928a",
+      "source": "180 событий по HX-0180; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "485469122b657c8d",
-      "source": "344.3 КиБ · 12 файлов",
+      "id": "2d2cd93d716bb491",
+      "source": "347.1 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4642,6 +4642,121 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "99dd5165071e7768",
+      "source": "HX-0180 · Подготовлен протокол первого изолированного сетевого опыта BCP 0.2",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "c89eba90f1d8c201",
+      "source": "Предложение",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "43f06a44bc93a709",
+      "source": "Codex — основной ассистент этой беседы · 2026-11-01T12:50:35Z",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "477e5f2df8a70486",
+      "source": "Подготовлен IPVX-BCP02-NET-001-F: декларативный Linux-стенд A—R—B из трёх namespaces и двух veth-пар, 13 случаев, критерии PASS/FAIL/INCONCLUSIVE и контракт доказательств. Первый опыт ограничен Ethernet-транспортом с fixture-state, без живой Sepolia. Пакет не создаёт сеть и явно не готов к запуску: оснастка, хост, бинарные пины и разрешение владельца отсутствуют.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "d0b1a5d2a0d7e857",
+      "source": "Сначала отделить реальную передачу кадров между процессами от прежнего копирования байтов и не выдавать её за проверку финальности или физической подложки. Закрепить единственный путь, отсутствие IP fallback, полные captures до link-up, отдельные MAC/контексты портов R и собственные ключи процессов. Не использовать offline-конструктор маршрута со всеми чужими ключами как распределённый runner.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "9d5ad99637f9d4cc",
+      "source": "experiments/bcp02-net-001/README.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "d2a2cf6eb55be567",
+      "source": "experiments/bcp02-net-001/protocol.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "9d8623c0f472b0a5",
+      "source": "experiments/bcp02-net-001/stand.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "7f57b60637fc3793",
+      "source": "experiments/bcp02-net-001/candidate.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "32ade6feaea029d3",
+      "source": "experiments/bcp02-net-001/evidence-contract.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "3d78f081fc92d1d6",
+      "source": "experiments/bcp02-net-001/source-pins.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "ec5eb72d1301f084",
+      "source": "experiments/bcp02-net-001/static-checks.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "f87ddf1a40af0664",
+      "source": "experiments/bcp02-net-001/bundle-manifest.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "60fbe0613eaf843a",
+      "source": "experiments/bcp02-net-001/preservation.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "093d404db53bced1",
+      "source": "experiments/bcp02-net-001/preparation-notes.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "3cfe1b105c450b17",
+      "source": ".github/workflows/bcp-net-plan.yml",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "739fd8e3843d8e3a",
+      "source": "14 статических тестов прошли, отчёт воспроизведён. Первоначально 2 из 14 проверок отклонили четыре штатных файла tests/bcp из-за пропуска в allowlist; причина и hash исходного валидатора сохранены, список исправлен точечно. Это ошибка подготовки, не сетевой результат.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "2f8d1a8a5c1bd7a4",
+      "source": "Стенд не создан, runner не реализован, измерения отсутствуют. Оба признака готовности к запуску false. Fixture-state не доказывает блокчейн-финальность; один Linux-host не доказывает физическую сеть, отсутствие IP во всём kernel, независимость операторов или пользу относительно IP. Подготовка PR не разрешает запуск.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "1667d447b3daaba4",
+      "source": "Проверены 84 прежних файла, префикс из 179 событий, 38 файлов Lab и пять PCAP. Mesh и прежние реализации/измерения сохранены отдельно; старые подписи не переиздавались. Запуск опыта, транзакции, модели, выкатка и production Actions не выполнялись.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "8371897d36df9fb0",
       "source": "HX-0179 · Принято поручение слить PR45 с сохранением истории",
       "context": "history.html:text:section/details/summary"
@@ -4662,19 +4777,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "c1b6330972495897",
       "source": "Сохранить исходный коммит интеграции и обоих родителей merge commit, записав разрешение и границы принятия в том же PR. Принятие исходников и офлайн-цикла не доказывает живую финальность Ethereum, физическую передачу кадров или независимое исполнение и не разрешает выкатку.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "d87c4ee674e93eaa",
@@ -4692,11 +4797,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "d6533362fd148033",
       "source": "Эта запись фиксирует принятое поручение; фактическое слияние подтверждается точным merge-коммитом и отдельной квитанцией после выполнения. Разрешение --admin не распространяется на другие PR.",
       "context": "history.html:text:details/ul/li"
@@ -4710,11 +4810,6 @@
       "id": "0332aa2e985c0a8e",
       "source": "Защита ветки не меняется. Транзакции, сетевые эксперименты, модели, выкатка и production Actions не выполняются. Адаптер доверяет полному CL; живые клиенты и финальность цепочки не проверялись.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "b4bbd82a82d8678f",
@@ -5185,11 +5280,6 @@
       "id": "2f72857198ee5496",
       "source": "HX-0169 · Предложены цепочка финальность и двоичный профиль BCP 0.2",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "c89eba90f1d8c201",
-      "source": "Предложение",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "8079ba3e5e6560b1",
