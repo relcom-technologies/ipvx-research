@@ -837,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "9905835f3709b166",
-      "source": "178 событий по HX-0178; авторы, основания, проверки и ограничения.",
+      "id": "96b1c94aa4a58f6a",
+      "source": "179 событий по HX-0179; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "a0f215cd9cb04046",
-      "source": "343.7 КиБ · 12 файлов",
+      "id": "485469122b657c8d",
+      "source": "344.3 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4642,6 +4642,81 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "8371897d36df9fb0",
+      "source": "HX-0179 · Принято поручение слить PR45 с сохранением истории",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "199d6db958cdb817",
+      "source": "Решение",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "b6a0eb37525a4a00",
+      "source": "Codex — основной ассистент этой беседы · 2026-11-01T11:17:25Z",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "7a8b2ea56d7cb68d",
+      "source": "Владелец прямо разрешил обычный merge commit и разовый --admin только для PR45 без изменения защиты ветки. Все четыре CI ревизии 37fa29a прошли; обновлённая история должна пройти PR-проверки перед слиянием. Принимается связь EL/CL-адаптера с ядром BCP 0.2 и офлайн-доказательства полного цикла, без операционного запуска.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "c1b6330972495897",
+      "source": "Сохранить исходный коммит интеграции и обоих родителей merge commit, записав разрешение и границы принятия в том же PR. Принятие исходников и офлайн-цикла не доказывает живую финальность Ethereum, физическую передачу кадров или независимое исполнение и не разрешает выкатку.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "d87c4ee674e93eaa",
+      "source": "integration/bcp02/evidence/checks.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "1f1fb581b3b07c4a",
+      "source": "integration/bcp02/evidence/preservation.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "68b2091bb207fdaf",
+      "source": "integration/bcp02/README.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "d6533362fd148033",
+      "source": "Эта запись фиксирует принятое поручение; фактическое слияние подтверждается точным merge-коммитом и отдельной квитанцией после выполнения. Разрешение --admin не распространяется на другие PR.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "9d64b2b56ff66434",
+      "source": "Проверены 84 файла PR и прежних компонентов, 38 файлов Lab и пять PCAP; прежние 178 событий сохраняются префиксом. Mesh остаётся отдельным экспериментом; исходные подписи не переиздавались.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "0332aa2e985c0a8e",
+      "source": "Защита ветки не меняется. Транзакции, сетевые эксперименты, модели, выкатка и production Actions не выполняются. Адаптер доверяет полному CL; живые клиенты и финальность цепочки не проверялись.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "b4bbd82a82d8678f",
       "source": "HX-0178 · Связаны адаптер и ядро BCP 0.2; полный цикл проверен офлайн",
       "context": "history.html:text:section/details/summary"
@@ -4662,24 +4737,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "b26539ca2d0f53de",
       "source": "Не принимать флаги доверия и сохранённую контрольную точку от пакета или вызывающего кода. Сопоставлять утверждение ancestry с точным журналом, не использовать старое состояние после ошибки и сохранять прежние компоненты отдельно. Реальные ABI-слова контрактов получены в EVM в памяти с публичными тестовыми ключами; EL/CL-оболочки и часы синтетические.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
-      "id": "68b2091bb207fdaf",
-      "source": "integration/bcp02/README.md",
-      "context": "history.html:text:ul/li/a"
     },
     {
       "id": "375d04fee846f6ca",
@@ -4697,16 +4757,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "d87c4ee674e93eaa",
-      "source": "integration/bcp02/evidence/checks.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "1f1fb581b3b07c4a",
-      "source": "integration/bcp02/evidence/preservation.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
       "id": "0043c0b1484c0e10",
       "source": "integration/bcp02/tests/contract-reads.json",
       "context": "history.html:text:ul/li/a"
@@ -4715,11 +4765,6 @@
       "id": "478c728ac9f2d139",
       "source": ".github/workflows/bcp-integration.yml",
       "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "2dd1c9ba6943e0e5",
@@ -4737,19 +4782,9 @@
       "context": "history.html:text:details/ul/li"
     },
     {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
-    },
-    {
       "id": "959c5c57f23f7541",
       "source": "HX-0177 · Принято поручение слить PR44 с сохранением истории",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "199d6db958cdb817",
-      "source": "Решение",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "d6abf4b5dd0247b8",
@@ -4782,18 +4817,8 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "d6533362fd148033",
-      "source": "Эта запись фиксирует принятое поручение; фактическое слияние подтверждается точным merge-коммитом и отдельной квитанцией после выполнения. Разрешение --admin не распространяется на другие PR.",
-      "context": "history.html:text:details/ul/li"
-    },
-    {
       "id": "14b7ef31f06d09cd",
       "source": "Проверены 60 файлов PR и прежних исходников, 38 файлов Lab и пять PCAP; прежние 176 событий сохраняются префиксом. Mesh остаётся отдельным экспериментом; исходные подписи не переиздавались.",
-      "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "0332aa2e985c0a8e",
-      "source": "Защита ветки не меняется. Транзакции, сетевые эксперименты, модели, выкатка и production Actions не выполняются. Адаптер доверяет полному CL; живые клиенты и финальность цепочки не проверялись.",
       "context": "history.html:text:details/ul/li"
     },
     {

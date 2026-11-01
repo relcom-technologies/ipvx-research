@@ -2795,5 +2795,12 @@
   "478c728ac9f2d139": ".github/workflows/bcp-integration.yml",
   "2dd1c9ba6943e0e5": "23 new integration tests passed; the existing 34 adapter tests, 23 core tests, 30 contract checks and 50-vector report were reproduced unchanged. The N29 caveat is preserved. Verified 69 previous files, a prefix of 177 events, 38 Lab files and five PCAPs; original signatures were not reissued.",
   "dbc6ff5b448d1515": "This is one process and local byte transfer, not a network of independent operators, physical Ethernet, distributed route discovery or a measurement of benefit over IP. Receipts refer to specified test bytes, not application or model execution; fresh ciphertext need not repeat byte for byte.",
-  "cf362af126cdbca5": "The full CL remains trusted; live finality and EL/CL interoperability were not tested. Adapter and core databases are not atomic together; exactly-once application execution is unproved. Mesh remains separate. No transactions, network experiments, models, deployment or production Actions were run."
+  "cf362af126cdbca5": "The full CL remains trusted; live finality and EL/CL interoperability were not tested. Adapter and core databases are not atomic together; exactly-once application execution is unproved. Mesh remains separate. No transactions, network experiments, models, deployment or production Actions were run.",
+  "96b1c94aa4a58f6a": "179 events through HX-0179; authors, rationales, checks and limitations.",
+  "485469122b657c8d": "344.3 KiB · 12 files",
+  "8371897d36df9fb0": "HX-0179 · Instruction adopted to merge PR45 while preserving history",
+  "b6a0eb37525a4a00": "Codex — primary assistant in this conversation · 2026-11-01T11:17:25Z",
+  "7a8b2ea56d7cb68d": "The owner explicitly authorized a regular merge commit and one-time --admin for PR45 only, without changing branch protection. All four CI checks for revision 37fa29a passed; the updated history must pass PR checks before merging. The connection of the EL/CL adapter to the BCP 0.2 core and offline full-cycle evidence are accepted, without an operational run.",
+  "c1b6330972495897": "Preserve the original integration commit and both parents of the merge commit, recording authorization and acceptance limits in the same PR. Acceptance of source code and the offline cycle does not prove live Ethereum finality, physical frame transmission or independent execution, and does not authorize deployment.",
+  "9d64b2b56ff66434": "Verified 84 PR and existing component files, 38 Lab files and five PCAPs; the previous 178 events remain a preserved prefix. Mesh remains a separate experiment; original signatures were not reissued."
 }
