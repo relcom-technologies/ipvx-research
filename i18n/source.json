@@ -82,31 +82,6 @@
       "context": "account.html:text:header/div/a"
     },
     {
-      "id": "5bd57038dbadd651",
-      "source": "Язык",
-      "context": "account.html:attribute:aria-label"
-    },
-    {
-      "id": "6da140fdd4be0189",
-      "source": "Русский",
-      "context": "account.html:text:body/nav/a"
-    },
-    {
-      "id": "ba118bf7fc9c1aed",
-      "source": "English",
-      "context": "account.html:text:body/nav/a"
-    },
-    {
-      "id": "801cfe0fa1182664",
-      "source": "Deutsch",
-      "context": "account.html:text:body/nav/a"
-    },
-    {
-      "id": "94b382b61b9dde0f",
-      "source": "Español",
-      "context": "account.html:text:body/nav/a"
-    },
-    {
       "id": "20f6203b19297010",
       "source": "Участник исследования",
       "context": "account.html:text:main/div/h1"
@@ -862,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "6bc32456e0a45a74",
-      "source": "187 событий по HX-0187; авторы, основания, проверки и ограничения.",
+      "id": "21bf5337ed006bcc",
+      "source": "188 событий по HX-0188; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "1c6eb1b46ed73095",
-      "source": "361.5 КиБ · 12 файлов",
+      "id": "2c56463f6f576dd5",
+      "source": "362.7 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4667,6 +4642,81 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "1ea29c4768f5a648",
+      "source": "HX-0188 · Принято поручение слить PR48 с сохранением закрытого допуска",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "199d6db958cdb817",
+      "source": "Решение",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "8894101c46f59cb5",
+      "source": "Codex — основной ассистент этой беседы · 2026-11-01T18:14:07.365262+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "7f44ebfe4ba6a197",
+      "source": "Владелец разрешил обычный merge commit и разовый --admin только для PR48, без изменения защиты ветки. Три PR-проверки исходной ревизии 86fad7c успешны; эта запись и её экспорт проходят проверки до слияния. Принимается пакет подготовки стенда, а не выделенная ВМ или результат опыта.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "da8369a6755a6376",
+      "source": "Сохранить исходный коммит подготовки, прежнюю историю, доказательства и обоих родителей merge commit. Зафиксировать полномочие на слияние отдельно от отсутствующего допуска к запуску; сохранить правила защиты до и после операции для проверки неизменности.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "6a70311cd1e30acb",
+      "source": "preparations/bcp02-net001-stand/scope.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "a9b5d25a35282b59",
+      "source": "preparations/bcp02-net001-stand/preflight.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "0e393fbc4b380fea",
+      "source": "runners/bcp02/launch-config.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "e79c4bb3c6d306b4",
+      "source": "Запись фиксирует поручение и подготовку слияния; фактический merge-коммит и результаты повторного CI сохраняются отдельной квитанцией. Разрешение --admin не распространяется на PR845 или другие PR; изменения правил защиты не разрешены.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "b55378970522c931",
+      "source": "Пять файлов пакета подготовки, 431 закреплённый файл принятого runner и префикс 187 событий сохраняются побайтно. История и доказательства отдельного mesh не изменяются; подписи не переиздаются.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "bf874c115764e52c",
+      "source": "ВМ не выделена, Linux preflight и сетевой опыт NOT_RUN. Барьер dataset/admission, финальный scope ACK, окно и отдельное решение владельца остаются открытыми; ready_to_launch=false. Слияние не запускает опыт, транзакции, модели, выкатку или production Actions.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "655d0e487ff6d7ce",
       "source": "HX-0187 · Запрошена отдельная ВМ BCP и закреплён пакет подготовки без запуска",
       "context": "history.html:text:section/details/summary"
@@ -4687,19 +4737,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "1fa9ff25a46308a3",
       "source": "Не подменять выделенный стенд действующей машиной проекта и не выдумывать размещение, свободный VMID или доступную ёмкость. Не добавлять операции проекта в инфраструктуру. Пропустить старый operational Terraform CI через skip ci в документационном запросе; локальные проверки и история остаются в IPvX. Различать хеш исходного runner, хеш подготовки и отсутствующий окончательный scope запуска.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "2922134fac7c05e8",
@@ -4712,16 +4752,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "6a70311cd1e30acb",
-      "source": "preparations/bcp02-net001-stand/scope.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "a9b5d25a35282b59",
-      "source": "preparations/bcp02-net001-stand/preflight.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
       "id": "bb5c82a867b3d843",
       "source": "preparations/bcp02-net001-stand/checks.json",
       "context": "history.html:text:ul/li/a"
@@ -4730,11 +4760,6 @@
       "id": "318b4de7e4a7a84b",
       "source": "runners/bcp02/controller.py",
       "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "55a9c13a0b9642dd",
@@ -4767,19 +4792,9 @@
       "context": "history.html:text:details/ul/li"
     },
     {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
-    },
-    {
       "id": "a7723dfe7b64854b",
       "source": "HX-0186 · Принято поручение слить PR47 без запуска стенда",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "199d6db958cdb817",
-      "source": "Решение",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "9990ecbd53893fe9",
@@ -4809,11 +4824,6 @@
     {
       "id": "29a0f76b8db44c3e",
       "source": "runners/bcp02/evidence/preservation.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "0e393fbc4b380fea",
-      "source": "runners/bcp02/launch-config.json",
       "context": "history.html:text:ul/li/a"
     },
     {
