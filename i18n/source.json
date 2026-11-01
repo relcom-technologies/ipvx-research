@@ -837,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "4531d01aff7aba94",
-      "source": "182 событий по HX-0182; авторы, основания, проверки и ограничения.",
+      "id": "8f9b5a39bf3cabc9",
+      "source": "183 событий по HX-0183; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "242ff0419a17fce9",
-      "source": "350.1 КиБ · 12 файлов",
+      "id": "9d31321a3526e5ea",
+      "source": "351.6 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4642,6 +4642,76 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "53109cf32a778623",
+      "source": "HX-0183 · Уточнена зависимость доступности IPvX от адреса Cloudflare",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "a5079e121a2ac236",
+      "source": "Рецензия",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "7bca1ee3c59e4b8e",
+      "source": "Codex — основной ассистент этой беседы · 2026-11-01T13:45:05Z",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0ef929e7c6cf9e64",
+      "source": "Владелец сообщил, что сайт работает на телефоне и у других пользователей. С того же проблемного компьютера HTTPS к IPvX, RFC и Lab через альтернативные Cloudflare IPv4 .9 вернул 200 с проверкой сертификата; ранее DNS-selected адреса .5 давали TCP timeout. Системный прокси, hosts override и подключённый VPN-профиль не обнаружены; маршрут идёт через en0.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "20faff86cde7177d",
+      "source": "Проверить адресную зависимость на том же компьютере, сохранив доменное имя, проверку TLS и настройки DNS. Результат сужает диагностику до выбранного адреса/пути, но не доказывает конкретного виновника или фильтрацию определённым провайдером.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "ac72a4c2d65ae046",
+      "source": "docs/evidence/site-access-followup-2026-11-01.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "fd3cb9e14c3bf3cd",
+      "source": "docs/evidence/site-access-2026-11-01.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "4a90ad9cc5b5cf6c",
+      "source": "Это моментальные HTTP-наблюдения; точная причина недоступности .5 не установлена. Перечисленные проверки не исключают все локальные или сетевые фильтры.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "267e62507f48d5e9",
+      "source": "Изменения DNS, hosts, браузера, Cloudflare и серверов не выполнялись. Постоянное закрепление адресов Cloudflare не предлагается.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "72fb73d64ad3243a",
+      "source": "PR46 остаётся планом изолированного опыта; опыт, транзакции, выкатка и production Actions не запускались.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "fde0eec0d3f61ee4",
       "source": "HX-0182 · Принято поручение слить PR46 с сохранением истории",
       "context": "history.html:text:section/details/summary"
@@ -4662,19 +4732,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "79765c0b140a304e",
       "source": "Сохранить исходный коммит подготовки и обоих родителей merge commit, записав разрешение и границы принятия в том же PR. Отдельно сохранить read-only проверку доступности сайта. Слияние протокола не создаёт стенд и не снимает отсутствующие launch gates.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "f87ddf1a40af0664",
@@ -4692,11 +4752,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "d6533362fd148033",
       "source": "Эта запись фиксирует принятое поручение; фактическое слияние подтверждается точным merge-коммитом и отдельной квитанцией после выполнения. Разрешение --admin не распространяется на другие PR.",
       "context": "history.html:text:details/ul/li"
@@ -4712,19 +4767,9 @@
       "context": "history.html:text:details/ul/li"
     },
     {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
-    },
-    {
       "id": "a21fd740968a661d",
       "source": "HX-0181 · Проверена недоступность IPvX с двух сетевых путей",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "a5079e121a2ac236",
-      "source": "Рецензия",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "414cb13a5f5af082",
@@ -4735,11 +4780,6 @@
       "id": "47961e578444c228",
       "source": "Сопоставить клиентское наблюдение с другим сетевым путём и реальным содержимым страниц; не объявлять глобальную аварию по одному таймауту. Ранние проверки через старый локальный порт и другой HTTP-клиент отделены от действующего публичного пути. Конфигурацию и сервисы не менять по неполной диагностике.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "fd3cb9e14c3bf3cd",
-      "source": "docs/evidence/site-access-2026-11-01.json",
-      "context": "history.html:text:ul/li/a"
     },
     {
       "id": "bd98e8be3896c7c5",

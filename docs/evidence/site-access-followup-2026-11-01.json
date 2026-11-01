@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-01T13:45:05Z",
+  "attributed_to": "codex-assistant",
+  "recorded_by": "codex-assistant",
+  "follows": "docs/evidence/site-access-2026-11-01.json",
+  "owner_report": "The site works on the phone and for other users; the reported failure affects this computer.",
+  "computer_read_only_checks": {
+    "system_http_https_socks_proxy_enabled": false,
+    "proxy_auto_config_enabled": false,
+    "proxy_environment_variables_present": false,
+    "matching_hosts_overrides": 0,
+    "connected_scutil_vpn_profiles": 0,
+    "active_network_system_extensions_observed": [],
+    "route_interface_for_both_failing_addresses": "en0"
+  },
+  "dns_comparison": {
+    "computer_ipv4": ["188.114.96.5", "188.114.97.5"],
+    "project_server_ipv4": ["188.114.96.9", "188.114.97.9"]
+  },
+  "computer_https_request_only_address_overrides": [
+    {"checked_at": "2026-11-01T13:44:41.243800+00:00", "url": "https://ipvx.org/", "address": "188.114.96.9", "status": 200, "tls_verification_result": 0, "curl_exit": 0},
+    {"checked_at": "2026-11-01T13:44:41.115485+00:00", "url": "https://ipvx.org/rfc-0007.html", "address": "188.114.97.9", "status": 200, "tls_verification_result": 0, "curl_exit": 0},
+    {"checked_at": "2026-11-01T13:44:41.162249+00:00", "url": "https://lab.ipvx.org/", "address": "188.114.96.9", "status": 200, "tls_verification_result": 0, "curl_exit": 0}
+  ],
+  "interpretation": "The same computer completes verified HTTPS to the domains through the alternate Cloudflare IPv4 addresses. Earlier TCP timeouts affect the DNS-selected .5 addresses. The failure is address/path dependent; the responsible component or provider is not established.",
+  "limits": [
+    "Request-only curl --resolve keeps the original hostname and certificate verification; no DNS, hosts or browser configuration was changed.",
+    "The VPN and extension checks do not exclude all possible application filters or network equipment.",
+    "Successful requests are point-in-time observations, not a recommendation to permanently pin Cloudflare addresses.",
+    "No server changes, service restarts, deployment, BCP experiment, transaction or production Actions were performed."
+  ]
+}

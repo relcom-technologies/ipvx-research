@@ -2837,5 +2837,15 @@
   "fd3cb9e14c3bf3cd": "docs/evidence/site-access-2026-11-01.json",
   "bd98e8be3896c7c5": "These are point-in-time checks from two paths, not a guarantee of access for every user. The exact cause and filtering provider are not established; no answer to the requested mobile-network comparison is assumed.",
   "b51349195f65fd50": "The old local port refused the connection and the first HTTP client returned 403; the cause of 403 was not isolated. An explicit direct connection with another User-Agent returned real pages and health 200. These probes do not replace diagnosis of the current listener.",
-  "c81806aeacf2ccef": "No private addresses, keys, cookies or secrets were published. DNS, Cloudflare, services and production were unchanged; no restarts, deployment or production Actions were performed."
+  "c81806aeacf2ccef": "No private addresses, keys, cookies or secrets were published. DNS, Cloudflare, services and production were unchanged; no restarts, deployment or production Actions were performed.",
+  "8f9b5a39bf3cabc9": "183 events through HX-0183; authors, rationale, checks and limitations.",
+  "9d31321a3526e5ea": "351.6 KiB · 12 files",
+  "53109cf32a778623": "HX-0183 · IPvX availability depends on the Cloudflare address",
+  "7bca1ee3c59e4b8e": "Codex — main assistant in this conversation · 2026-11-01T13:45:05Z",
+  "0ef929e7c6cf9e64": "The owner reported that the site works on the phone and for other users. From the same affected computer, HTTPS to IPvX, RFC and Lab through alternate Cloudflare IPv4 .9 addresses returned 200 with certificate verification; the DNS-selected .5 addresses had previously timed out at TCP connection. No system proxy, hosts override or connected VPN profile was found; the route uses en0.",
+  "20faff86cde7177d": "Check address dependence on the same computer while preserving the hostname, TLS verification and DNS settings. The result narrows the diagnosis to the selected address/path, but does not identify a responsible component or establish filtering by a particular provider.",
+  "ac72a4c2d65ae046": "docs/evidence/site-access-followup-2026-11-01.json",
+  "4a90ad9cc5b5cf6c": "These are point-in-time HTTP observations; the exact cause of .5 unavailability remains unknown. The listed checks do not exclude all local or network filters.",
+  "267e62507f48d5e9": "DNS, hosts, browser, Cloudflare and server settings were not changed. Permanent pinning of Cloudflare addresses is not proposed.",
+  "72fb73d64ad3243a": "PR46 remains an isolated experiment plan; no experiment, transactions, deployment or production Actions were run."
 }

@@ -2837,5 +2837,15 @@
   "fd3cb9e14c3bf3cd": "docs/evidence/site-access-2026-11-01.json",
   "bd98e8be3896c7c5": "Son comprobaciones puntuales desde dos rutas, no una garantía de acceso para todos los usuarios. No se establecieron la causa exacta ni el proveedor del filtrado; no se presupone una respuesta a la comparación solicitada con la red móvil.",
   "b51349195f65fd50": "El puerto local antiguo rechazó la conexión y el primer cliente HTTP devolvió 403; no se aisló la causa del 403. Una conexión directa explícita con otro User-Agent devolvió páginas reales y health 200. Estas pruebas no sustituyen el diagnóstico del listener actual.",
-  "c81806aeacf2ccef": "No se publicaron direcciones privadas, claves, cookies ni secretos. DNS, Cloudflare, los servicios y producción no cambiaron; no se realizaron reinicios, despliegues ni Actions de producción."
+  "c81806aeacf2ccef": "No se publicaron direcciones privadas, claves, cookies ni secretos. DNS, Cloudflare, los servicios y producción no cambiaron; no se realizaron reinicios, despliegues ni Actions de producción.",
+  "8f9b5a39bf3cabc9": "183 eventos hasta HX-0183; autores, fundamentos, comprobaciones y limitaciones.",
+  "9d31321a3526e5ea": "351.6 KiB · 12 archivos",
+  "53109cf32a778623": "HX-0183 · La disponibilidad de IPvX depende de la dirección de Cloudflare",
+  "7bca1ee3c59e4b8e": "Codex — asistente principal de esta conversación · 2026-11-01T13:45:05Z",
+  "0ef929e7c6cf9e64": "El propietario indicó que el sitio funciona en el teléfono y para otros usuarios. Desde el mismo ordenador afectado, las solicitudes HTTPS a IPvX, RFC y Lab mediante direcciones IPv4 alternativas de Cloudflare terminadas en .9 devolvieron 200 con verificación del certificado; las direcciones .5 elegidas por DNS habían agotado antes el tiempo de conexión TCP. No se encontró ningún proxy del sistema, modificación en hosts ni perfil VPN conectado; la ruta usa en0.",
+  "20faff86cde7177d": "Comprobar la dependencia de la dirección en el mismo ordenador, conservando el nombre de dominio, la verificación TLS y la configuración DNS. El resultado acota el diagnóstico a la dirección o ruta elegida, pero no identifica al responsable ni demuestra un filtrado de un proveedor concreto.",
+  "ac72a4c2d65ae046": "docs/evidence/site-access-followup-2026-11-01.json",
+  "4a90ad9cc5b5cf6c": "Son observaciones HTTP puntuales; se desconoce la causa exacta de la inaccesibilidad de .5. Las comprobaciones indicadas no descartan todos los filtros locales o de red.",
+  "267e62507f48d5e9": "No se modificaron DNS, hosts, el navegador, Cloudflare ni los servidores. No se propone fijar permanentemente las direcciones de Cloudflare.",
+  "72fb73d64ad3243a": "PR46 sigue siendo un plan de experimento aislado; no se ejecutaron experimentos, transacciones, despliegues ni Actions de producción."
 }

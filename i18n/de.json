@@ -2837,5 +2837,15 @@
   "fd3cb9e14c3bf3cd": "docs/evidence/site-access-2026-11-01.json",
   "bd98e8be3896c7c5": "Dies sind Momentaufnahmen zweier Pfade, keine Erreichbarkeitsgarantie für alle Nutzer. Genaue Ursache und Filteranbieter sind nicht festgestellt; eine Antwort auf den angefragten Mobilfunkvergleich wird nicht vorausgesetzt.",
   "b51349195f65fd50": "Der alte lokale Port lehnte die Verbindung ab, der erste HTTP-Client lieferte 403; dessen Ursache wurde nicht isoliert. Eine explizite Direktverbindung mit anderem User-Agent lieferte echte Seiten und Health 200. Diese Prüfungen ersetzen keine Diagnose des aktuellen Listeners.",
-  "c81806aeacf2ccef": "Private Adressen, Schlüssel, Cookies oder Geheimnisse wurden nicht veröffentlicht. DNS, Cloudflare, Dienste und Production blieben unverändert; es gab keine Neustarts, Deployments oder Production Actions."
+  "c81806aeacf2ccef": "Private Adressen, Schlüssel, Cookies oder Geheimnisse wurden nicht veröffentlicht. DNS, Cloudflare, Dienste und Production blieben unverändert; es gab keine Neustarts, Deployments oder Production Actions.",
+  "8f9b5a39bf3cabc9": "183 Ereignisse bis HX-0183; Autoren, Begründungen, Prüfungen und Einschränkungen.",
+  "9d31321a3526e5ea": "351.6 KiB · 12 Dateien",
+  "53109cf32a778623": "HX-0183 · IPvX-Erreichbarkeit hängt von der Cloudflare-Adresse ab",
+  "7bca1ee3c59e4b8e": "Codex — Hauptassistent dieses Gesprächs · 2026-11-01T13:45:05Z",
+  "0ef929e7c6cf9e64": "Der Eigentümer meldete, dass die Website auf dem Telefon und bei anderen Nutzern funktioniert. Vom selben betroffenen Computer lieferten HTTPS-Anfragen an IPvX, RFC und Lab über alternative Cloudflare-IPv4-Adressen mit .9 den Status 200 mit Zertifikatsprüfung; die per DNS gewählten .5-Adressen hatten zuvor TCP-Zeitüberschreitungen verursacht. Es wurden kein Systemproxy, hosts-Eintrag oder verbundenes VPN-Profil gefunden; die Route nutzt en0.",
+  "20faff86cde7177d": "Die Adressabhängigkeit auf demselben Computer prüfen und dabei Hostnamen, TLS-Prüfung und DNS-Einstellungen beibehalten. Das Ergebnis grenzt die Diagnose auf die gewählte Adresse bzw. den Pfad ein, identifiziert aber weder eine verantwortliche Komponente noch eine Filterung durch einen bestimmten Anbieter.",
+  "ac72a4c2d65ae046": "docs/evidence/site-access-followup-2026-11-01.json",
+  "4a90ad9cc5b5cf6c": "Dies sind punktuelle HTTP-Beobachtungen; die genaue Ursache der Nichterreichbarkeit von .5 ist nicht bekannt. Die genannten Prüfungen schließen nicht alle lokalen oder netzseitigen Filter aus.",
+  "267e62507f48d5e9": "DNS-, hosts-, Browser-, Cloudflare- und Servereinstellungen wurden nicht geändert. Eine dauerhafte Festlegung auf Cloudflare-Adressen wird nicht vorgeschlagen.",
+  "72fb73d64ad3243a": "PR46 bleibt ein Plan für einen isolierten Versuch; es wurden keine Versuche, Transaktionen, Bereitstellungen oder Production Actions ausgeführt."
 }
