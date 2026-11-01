@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-01T17:43:57.685351+00:00",
+  "target_preflight_status": "NOT_RUN",
+  "reason": "New Proxmox VM requested through PR845; capacity, allocation and authenticated management route pending.",
+  "local_preparation": {
+    "immutable_debian_image_checksum": "PASS",
+    "node_linux_archive_checksum": "PASS",
+    "linux_wheels_downloaded": 4,
+    "linux_binaries_executed": false
+  },
+  "target_gates": {
+    "capacity_and_create_only_plan": "PENDING",
+    "new_guest_identity": "PENDING",
+    "vcpu_ram_disk_inventory": "PENDING",
+    "original_image_import_receipt": "PENDING",
+    "installed_kernel_and_config_hash": "PENDING",
+    "installed_python_ip_node_seccomp_hashes": "PENDING",
+    "dependency_installation": "PENDING",
+    "trusted_ntp_clock": "PENDING",
+    "all_non_loopback_links_down": "PENDING",
+    "ipv4_ipv6_default_routes_absent": "PENDING",
+    "out_of_band_management": "PENDING",
+    "unused_uids_60001_to_60004": "PENDING",
+    "private_artifact_permissions": "PENDING",
+    "read_only_environment_preflight": "PENDING"
+  },
+  "admission_gates": {
+    "reviewed_dataset_admission_lifecycle": "PENDING",
+    "fresh_dataset_hash": "PENDING",
+    "final_launch_candidate_review": "PENDING",
+    "owner_scope_ack": "PENDING",
+    "accepted_window": "PENDING",
+    "separate_owner_launch_decision": "PENDING",
+    "owner_signed_one_time_permit": "PENDING"
+  },
+  "dataset_lifecycle_observation": {
+    "source": "runners/bcp02/controller.py",
+    "revision": "6ab9926a210f4600cb0d87fd709793e83a5e7e34",
+    "current_behavior": "run_all exports dataset after claim_once; source/image permit does not prebind dataset hash",
+    "changed": false
+  },
+  "resources_allocated": false,
+  "network_created": false,
+  "experiment_started": false,
+  "transactions": 0,
+  "production_actions": 0,
+  "ready_to_launch": false
+}
