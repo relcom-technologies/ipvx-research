@@ -1,0 +1,254 @@
+{
+  "schema_version": 1,
+  "base": "8fb04e89dfbbe7a1b6f05f1fdb465bf4193c1179",
+  "tests_passed": 23,
+  "test_ids": [
+    "test_cycle.CycleTests.test_adapter_conflict_survives_restart_without_core_admission",
+    "test_cycle.CycleTests.test_c_and_l_advance_uses_actual_core_journal_not_packet_assertion",
+    "test_cycle.CycleTests.test_complete_cycle_real_contract_keys_and_durable_receipts",
+    "test_cycle.CycleTests.test_completed_receipt_and_original_survive_requester_restart",
+    "test_cycle.CycleTests.test_core_conflict_survives_restart_and_stops_before_adapter_io",
+    "test_cycle.CycleTests.test_forged_packet_checkpoint_cannot_poison_saved_conflict",
+    "test_cycle.CycleTests.test_integration_does_not_accept_caller_attestation_or_saved_anchor",
+    "test_cycle.CycleTests.test_journal_cas_rejects_an_unproved_concurrent_advance",
+    "test_cycle.CycleTests.test_journal_scope_and_legacy_import_are_not_guessed",
+    "test_cycle.CycleTests.test_key_rotation_in_new_l_blocks_old_authenticated_data",
+    "test_cycle.CycleTests.test_late_accepted_and_error_do_not_downgrade_completed",
+    "test_cycle.CycleTests.test_original_outbox_conflict_never_returns_replacement_packet",
+    "test_cycle.CycleTests.test_outbox_storage_failure_returns_no_frame",
+    "test_cycle.CycleTests.test_packet_expiry_is_checked_after_adapter_read_delay",
+    "test_cycle.CycleTests.test_pending_limit_preserves_completed_originals_and_never_reallocates_ids",
+    "test_cycle.CycleTests.test_restart_keeps_dedup_but_requires_real_handshake_again",
+    "test_cycle.CycleTests.test_retransmission_deduplicates_but_session_replay_is_rejected",
+    "test_cycle.CycleTests.test_reverse_connection_is_independently_required",
+    "test_cycle.CycleTests.test_rpc_failure_never_reuses_previous_state_or_creates_outbox",
+    "test_cycle.CycleTests.test_sender_control_signature_must_match_contract_key",
+    "test_cycle.CycleTests.test_stale_clock_and_malformed_or_unknown_scope_stop_before_core",
+    "test_cycle.CycleTests.test_unknown_receipt_does_not_create_original_or_erase_completed",
+    "test_cycle.CycleTests.test_withdrawn_transit_blocks_forward_without_delivering"
+  ],
+  "cycle": {
+    "scope": "One process, three logical nodes; bytes copied directly between local state machines",
+    "profile_hex": "9d86b1973f3f71fcfd3c3fa5d535e13348af9cccbe3c25abfa3dc837b90cf595",
+    "execution_number": 101,
+    "packet_kinds": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "trace": [
+      {
+        "stage": "HELLO",
+        "kind": 1,
+        "receiver": 3,
+        "action": "PENDING_CHALLENGE",
+        "disposition": null,
+        "bcp_bytes": 268
+      },
+      {
+        "stage": "CHALLENGE",
+        "kind": 2,
+        "receiver": 1,
+        "action": "CONFIRM_SESSION",
+        "disposition": null,
+        "bcp_bytes": 388
+      },
+      {
+        "stage": "CONFIRM",
+        "kind": 3,
+        "receiver": 3,
+        "action": "ADMIT_SESSION",
+        "disposition": null,
+        "bcp_bytes": 388
+      },
+      {
+        "stage": "HELLO",
+        "kind": 1,
+        "receiver": 2,
+        "action": "PENDING_CHALLENGE",
+        "disposition": null,
+        "bcp_bytes": 268
+      },
+      {
+        "stage": "CHALLENGE",
+        "kind": 2,
+        "receiver": 3,
+        "action": "CONFIRM_SESSION",
+        "disposition": null,
+        "bcp_bytes": 388
+      },
+      {
+        "stage": "CONFIRM",
+        "kind": 3,
+        "receiver": 2,
+        "action": "ADMIT_SESSION",
+        "disposition": null,
+        "bcp_bytes": 388
+      },
+      {
+        "stage": "ROUTE-ORIGIN",
+        "kind": 4,
+        "receiver": 3,
+        "action": "CACHE_ROUTE",
+        "disposition": null,
+        "bcp_bytes": 384
+      },
+      {
+        "stage": "ROUTE-SUFFIX",
+        "kind": 4,
+        "receiver": 1,
+        "action": "CACHE_ROUTE",
+        "disposition": null,
+        "bcp_bytes": 528
+      },
+      {
+        "stage": "DATA-relay",
+        "kind": 5,
+        "receiver": 3,
+        "action": "FORWARD",
+        "disposition": null,
+        "bcp_bytes": 947
+      },
+      {
+        "stage": "DATA-destination",
+        "kind": 5,
+        "receiver": 2,
+        "action": "DELIVER",
+        "disposition": "NEW",
+        "bcp_bytes": 947
+      },
+      {
+        "stage": "ACCEPTED-relay",
+        "kind": 6,
+        "receiver": 3,
+        "action": "FORWARD",
+        "disposition": null,
+        "bcp_bytes": 1070
+      },
+      {
+        "stage": "ACCEPTED-destination",
+        "kind": 6,
+        "receiver": 1,
+        "action": "DELIVER",
+        "disposition": "RECEIPT",
+        "bcp_bytes": 1070
+      },
+      {
+        "stage": "COMPLETED-relay",
+        "kind": 6,
+        "receiver": 3,
+        "action": "FORWARD",
+        "disposition": null,
+        "bcp_bytes": 1084
+      },
+      {
+        "stage": "COMPLETED-destination",
+        "kind": 6,
+        "receiver": 1,
+        "action": "DELIVER",
+        "disposition": "RECEIPT",
+        "bcp_bytes": 1084
+      },
+      {
+        "stage": "ERROR-relay",
+        "kind": 7,
+        "receiver": 3,
+        "action": "FORWARD",
+        "disposition": null,
+        "bcp_bytes": 1032
+      },
+      {
+        "stage": "ERROR-destination",
+        "kind": 7,
+        "receiver": 1,
+        "action": "DELIVER",
+        "disposition": "ERROR_RECORDED",
+        "bcp_bytes": 1032
+      }
+    ],
+    "original_stored_before_data_return": true,
+    "original_sha256": "f6c5477064c80d4527c77bec8c51dac062a9bfec585f0f1db41d0334a2a45beb",
+    "one_block_hash_per_snapshot": true,
+    "source_signature_and_immutable_bytes_preserved_per_hop": true,
+    "relay_did_not_deliver_or_decrypt": true,
+    "delivery": "NEW",
+    "retained_receipt": {
+      "phase": 2,
+      "result_sha256": "5389a012bad51f471f7b8cce2b11b108640df6c3003670de8de5b04a4aab6be2",
+      "error": 18
+    },
+    "network_connections": 0,
+    "chain_transactions": 0,
+    "application_or_model_execution": false,
+    "timing": "Synthetic logical clocks; not a latency or throughput measurement",
+    "not_proved": [
+      "Ethereum finality",
+      "live RPC compatibility",
+      "Ethernet delivery",
+      "distributed route discovery",
+      "independent operators",
+      "application execution exactly once",
+      "practical advantage over IP"
+    ]
+  },
+  "files": [
+    {
+      "path": "integration/__init__.py",
+      "sha256": "fad0afde700407836067e906a559c70ff216f4d07d18e976fe4a8fe8c4344ae6"
+    },
+    {
+      "path": "integration/bcp02/README.md",
+      "sha256": "f28c0c17afc0bfd231ef561d40fedc0c7fb5c24fcf5ccb37680162700c07fc7b"
+    },
+    {
+      "path": "integration/bcp02/__init__.py",
+      "sha256": "1cc85503bbdfd1f27840b9d0bfebc204e5741d4818a0fcc32ca4a184332e6f07"
+    },
+    {
+      "path": "integration/bcp02/checks.py",
+      "sha256": "03efb521bb69c2e0ebac93958928eb056e99854418e66a7a76811d1ef132f6e4"
+    },
+    {
+      "path": "integration/bcp02/journal.py",
+      "sha256": "788166db1eaded53eb1f98b972d28ab69ebf0522b677a7dfe45ef1f238398a55"
+    },
+    {
+      "path": "integration/bcp02/offline_cycle.py",
+      "sha256": "c23f39de50d964321800daf9e44def0a869464742476498c7d6bdc5284c5b753"
+    },
+    {
+      "path": "integration/bcp02/preserve.py",
+      "sha256": "c12c47627e87c73387cf11abcd6f98096c69888f70dfffdaf9462ec9764daeac"
+    },
+    {
+      "path": "integration/bcp02/runtime.py",
+      "sha256": "c1b12d7b75e1ce19175a03ac5c5c0bba2c3ae17d1bf048eddc678df62cfb08a6"
+    },
+    {
+      "path": "integration/bcp02/tests/cycle_fixture.py",
+      "sha256": "ef157442e546ee6a10004ccaa0a98e904089ca5be81da80bc0fd423f2523b1b9"
+    },
+    {
+      "path": "integration/bcp02/tests/generate_reads.mjs",
+      "sha256": "6fda10651e6dafa576b68e49fbeb5e4529f9938aa1ecec9805c4190d326e75d0"
+    },
+    {
+      "path": "integration/bcp02/tests/test_cycle.py",
+      "sha256": "22791c7d6b792d0d839c2362e7bd214dfbb0f83afa9bccef8f6044122d79aa39"
+    },
+    {
+      "path": "integration/bcp02/tests/contract-reads.json",
+      "sha256": "060bc9ec3d6b35950dcb12872509ba6fc0e57427b8eb36777335a31636a13080"
+    }
+  ],
+  "ciphertext_bytes": "Fresh HPKE randomness; logical outcomes and within-run immutable equality reproduced",
+  "live_chain": false,
+  "transactions": false,
+  "network_experiments": false,
+  "deployment": false,
+  "production_actions": false
+}

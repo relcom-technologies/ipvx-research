@@ -1,0 +1,35 @@
+name: BCP offline integration checks
+on:
+  pull_request:
+    paths: ['integration/**', 'adapters/**', 'bcp/**', 'tests/bcp/**', 'contracts/bcp02/**', '.github/workflows/bcp-integration.yml']
+permissions: {contents: read}
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.13'}
+      - run: python3 -m pip install -r adapters/bcp02/requirements.lock
+      - uses: actions/setup-node@v4
+        with: {node-version: '24'}
+      - run: npm --prefix contracts/bcp02 ci --ignore-scripts --no-audit --no-fund
+      - name: Reproduce real contract views with public test keys, in memory only
+        run: |
+          node --import ./contracts/bcp02/test/offline.mjs integration/bcp02/tests/generate_reads.mjs /tmp/bcp-cycle-reads.json
+          cmp integration/bcp02/tests/contract-reads.json /tmp/bcp-cycle-reads.json
+      - name: Full offline cycle and failure checks, no network connections
+        run: |
+          python3 -B integration/bcp02/checks.py --output /tmp/bcp-cycle-checks.json
+          cmp integration/bcp02/evidence/checks.json /tmp/bcp-cycle-checks.json
+          python3 -B integration/bcp02/preserve.py
+      - name: Preserve original adapter, core and contracts reports
+        run: |
+          python3 -B adapters/bcp02/checks.py --output /tmp/bcp-adapter-checks.json
+          cmp adapters/bcp02/evidence/checks.json /tmp/bcp-adapter-checks.json
+          python3 -B -m unittest discover -s tests/bcp -v
+          python3 -B tests/bcp/vector_report.py --output /tmp/bcp-core-checks.json
+          cmp bcp/evidence/offline-checks.json /tmp/bcp-core-checks.json
+          npm --prefix contracts/bcp02 run compile
+          npm --prefix contracts/bcp02 run check
