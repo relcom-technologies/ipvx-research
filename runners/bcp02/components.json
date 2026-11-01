@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "protocol_id": "IPVX-BCP02-NET-001-F",
+  "source_base": "a81e6d1251baf51c0ab6be1a1be05bb24b7c028c",
+  "components": {
+    "namespace_launcher_cleanup": {
+      "files": [
+        "runners/bcp02/stand.py",
+        "runners/bcp02/controller.py"
+      ],
+      "implementation_present": true,
+      "source_binding": "runners/bcp02/manifest.json",
+      "offline_validation_receipt": "runners/bcp02/evidence/checks.json",
+      "review_evidence": null
+    },
+    "af_packet_transport": {
+      "files": [
+        "runners/bcp02/transport.py",
+        "runners/bcp02/entry.py",
+        "runners/bcp02/pcap.py"
+      ],
+      "implementation_present": true,
+      "source_binding": "runners/bcp02/manifest.json",
+      "offline_validation_receipt": "runners/bcp02/evidence/checks.json",
+      "review_evidence": null
+    },
+    "two_interface_relay_binding": {
+      "files": [
+        "runners/bcp02/node.py",
+        "runners/bcp02/runtime.py"
+      ],
+      "implementation_present": true,
+      "source_binding": "runners/bcp02/manifest.json",
+      "offline_validation_receipt": "runners/bcp02/evidence/checks.json",
+      "review_evidence": null
+    },
+    "peer_signed_route_suffix_assembler": {
+      "files": [
+        "runners/bcp02/routes.py"
+      ],
+      "implementation_present": true,
+      "source_binding": "runners/bcp02/manifest.json",
+      "offline_validation_receipt": "runners/bcp02/evidence/checks.json",
+      "review_evidence": null
+    },
+    "fixture_state_key_exporter": {
+      "files": [
+        "runners/bcp02/fixture.py",
+        "runners/bcp02/generate_bank.mjs"
+      ],
+      "implementation_present": true,
+      "source_binding": "runners/bcp02/manifest.json",
+      "offline_validation_receipt": "runners/bcp02/evidence/checks.json",
+      "review_evidence": null
+    },
+    "bounded_scheduler_worker": {
+      "files": [
+        "runners/bcp02/worker.py",
+        "runners/bcp02/scenarios.py",
+        "runners/bcp02/node.py"
+      ],
+      "implementation_present": true,
+      "source_binding": "runners/bcp02/manifest.json",
+      "offline_validation_receipt": "runners/bcp02/evidence/checks.json",
+      "review_evidence": null
+    },
+    "capture_verifier": {
+      "files": [
+        "runners/bcp02/verifier.py"
+      ],
+      "implementation_present": true,
+      "source_binding": "runners/bcp02/manifest.json",
+      "offline_validation_receipt": "runners/bcp02/evidence/checks.json",
+      "review_evidence": null
+    },
+    "environment_clock_preflight": {
+      "files": [
+        "runners/bcp02/admission.py",
+        "runners/bcp02/linux.py"
+      ],
+      "implementation_present": true,
+      "source_binding": "runners/bcp02/manifest.json",
+      "offline_validation_receipt": "runners/bcp02/evidence/checks.json",
+      "review_evidence": null
+    }
+  },
+  "reviewed": false,
+  "network_experiment": "NOT_RUN",
+  "launch_configuration": "runners/bcp02/launch-config.json",
+  "owner_launch_decision": null
+}

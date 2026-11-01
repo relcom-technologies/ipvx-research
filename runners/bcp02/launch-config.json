@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "state_mode": "fixture-state-ethernet",
+  "status": "implementation_for_review_not_authorized",
+  "owner_public_key": null,
+  "review_evidence": null,
+  "host_image_sha256": null,
+  "kernel_config_sha256": null,
+  "binary_sha256": {"python": null, "ip": null, "node": null, "libseccomp": null},
+  "allocated_host": null,
+  "accepted_window": null,
+  "owner_scope_ack": null,
+  "owner_launch_decision": null,
+  "resources_allocated": false,
+  "experiment_started": false,
+  "network_measurement": null
+}
