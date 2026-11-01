@@ -4,6 +4,7 @@ from contextlib import closing
 import json
 from pathlib import Path
 import sqlite3
+import stat
 
 from bcp.core import verify
 from bcp.wire import Reject, decode_ethernet, signing_inputs, digest, uint
@@ -16,7 +17,9 @@ from .scenarios import SCRIPTS, observed
 def events(path):
     result=[]
     with open(path) as f:
-        for line in f:
+        while True:
+            line=f.readline(4097)
+            if not line:break
             need(len(line)<=4096,'oversized event')
             result.append(json.loads(line))
     return result
@@ -36,6 +39,12 @@ def evaluate(directory):
         manifest=read_json(directory/'run-manifest.json')
         if manifest['network_execution'] is not True:return result
         need(manifest['state_mode']=='fixture-state-ethernet','wrong state marker')
+        total=0
+        for p in directory.rglob('*'):
+            meta=p.lstat()
+            need(not p.is_symlink() and (stat.S_ISDIR(meta.st_mode) or stat.S_ISREG(meta.st_mode)),'unsafe evidence file type')
+            if stat.S_ISREG(meta.st_mode):total+=meta.st_size
+        need(total<=1024**3,'evidence exceeds artifact budget')
         for name in ('payload-manifest.json','worker-log.json','injection-manifest.json','fault-barriers.json',
                      'clock-health.json','process-policy.json','source-binary-dataset-hashes.json','state-bank.json'):
             read_json(directory/name)
@@ -71,6 +80,7 @@ def evaluate(directory):
             folder=directory/'cases'/label
             closed=read_json(folder/'closed.json')
             for file,pin in closed['files'].items():
+                need(not Path(file).is_absolute() and '..' not in Path(file).parts,'unsafe closed evidence path')
                 p=folder/file;need(p.resolve()==p and sha(p.read_bytes())==pin,'closed evidence mismatch')
             ev=[];db={}
             for node in NODES:

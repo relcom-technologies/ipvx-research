@@ -117,6 +117,9 @@ class GuardTests(unittest.TestCase):
             self.assertEqual(evaluate(d)['outcome'],'INCONCLUSIVE')
             Path(d,'run-manifest.json').write_text('{"network_execution":false}')
             self.assertEqual(evaluate(d)['outcome'],'NOT_RUN')
+            import os
+            fifo=Path(d)/'untrusted.json';os.mkfifo(fifo)
+            with self.assertRaises(Blocked):read_json(fifo)
 
     def test_scheduler_original_survives_unknown_and_caps_retries(self):
         clock=[0.0];s=Scheduler(clock=lambda:clock[0]);s.begin(b'id',None,b'plain')

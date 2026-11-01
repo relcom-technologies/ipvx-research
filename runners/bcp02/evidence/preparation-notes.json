@@ -29,6 +29,7 @@
     "Fixture fault branches now have distinct execution/beacon hashes while retaining a common bootstrap and packet checkpoint; different ABI states are never served under one execution hash.",
     "Closed SQLite verifier connections explicitly close rather than relying on connection context-manager commit semantics.",
     "Capture drains queued packets before stopping; the verifier compares captured count with kernel packet statistics.",
-    "Worker results and receipt hashes are independently reconciled against retained source request bytes in closed SQLite."
+    "Worker results and receipt hashes are independently reconciled against retained source request bytes in closed SQLite.",
+    "Artifact readers reject non-regular inputs, symlinks and path escapes, bound event lines and enforce the total artifact size; FIFO rejection is covered in the existing invalid-evidence test."
   ]
 }

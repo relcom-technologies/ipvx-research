@@ -4,6 +4,7 @@ import json
 import os
 from pathlib import Path
 import re
+import stat
 import time
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -38,7 +39,8 @@ def read_json(path):
             d[k] = v
         return d
     p = Path(path)
-    need(not p.is_symlink() and p.stat().st_size <= 16 * 1024 * 1024, 'unsafe JSON input')
+    meta=p.lstat()
+    need(stat.S_ISREG(meta.st_mode) and not p.is_symlink() and meta.st_size <= 16 * 1024 * 1024, 'unsafe JSON input')
     return json.loads(p.read_text(), object_pairs_hook=pairs)
 
 
