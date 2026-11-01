@@ -837,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "b1f8a6d1f346eb84",
-      "source": "186 событий по HX-0186; авторы, основания, проверки и ограничения.",
+      "id": "21bf5337ed006bcc",
+      "source": "188 событий по HX-0188; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "9252d35a03e9d44a",
-      "source": "357.4 КиБ · 12 файлов",
+      "id": "2c56463f6f576dd5",
+      "source": "362.7 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4642,14 +4642,159 @@
       "context": "history.html:text:main/section/p"
     },
     {
-      "id": "a7723dfe7b64854b",
-      "source": "HX-0186 · Принято поручение слить PR47 без запуска стенда",
+      "id": "1ea29c4768f5a648",
+      "source": "HX-0188 · Принято поручение слить PR48 с сохранением закрытого допуска",
       "context": "history.html:text:section/details/summary"
     },
     {
       "id": "199d6db958cdb817",
       "source": "Решение",
       "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "8894101c46f59cb5",
+      "source": "Codex — основной ассистент этой беседы · 2026-11-01T18:14:07.365262+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "7f44ebfe4ba6a197",
+      "source": "Владелец разрешил обычный merge commit и разовый --admin только для PR48, без изменения защиты ветки. Три PR-проверки исходной ревизии 86fad7c успешны; эта запись и её экспорт проходят проверки до слияния. Принимается пакет подготовки стенда, а не выделенная ВМ или результат опыта.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "da8369a6755a6376",
+      "source": "Сохранить исходный коммит подготовки, прежнюю историю, доказательства и обоих родителей merge commit. Зафиксировать полномочие на слияние отдельно от отсутствующего допуска к запуску; сохранить правила защиты до и после операции для проверки неизменности.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "6a70311cd1e30acb",
+      "source": "preparations/bcp02-net001-stand/scope.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "a9b5d25a35282b59",
+      "source": "preparations/bcp02-net001-stand/preflight.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "0e393fbc4b380fea",
+      "source": "runners/bcp02/launch-config.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "e79c4bb3c6d306b4",
+      "source": "Запись фиксирует поручение и подготовку слияния; фактический merge-коммит и результаты повторного CI сохраняются отдельной квитанцией. Разрешение --admin не распространяется на PR845 или другие PR; изменения правил защиты не разрешены.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "b55378970522c931",
+      "source": "Пять файлов пакета подготовки, 431 закреплённый файл принятого runner и префикс 187 событий сохраняются побайтно. История и доказательства отдельного mesh не изменяются; подписи не переиздаются.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "bf874c115764e52c",
+      "source": "ВМ не выделена, Linux preflight и сетевой опыт NOT_RUN. Барьер dataset/admission, финальный scope ACK, окно и отдельное решение владельца остаются открытыми; ready_to_launch=false. Слияние не запускает опыт, транзакции, модели, выкатку или production Actions.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "655d0e487ff6d7ce",
+      "source": "HX-0187 · Запрошена отдельная ВМ BCP и закреплён пакет подготовки без запуска",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "c89eba90f1d8c201",
+      "source": "Предложение",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "518edae404fde10b",
+      "source": "Codex — основной ассистент этой беседы · 2026-11-01T17:44:55.707599+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "b74ce3863a8729ba",
+      "source": "По выбору владельца новая ВМ запрошена через draft PR845 инфраструктуры: x86_64, 2 vCPU, 2048 МиБ RAM, диск не более 10 ГиБ, без автозапуска и публичной сети, с отдельным каналом управления после отключения egress. В клиентском репозитории подготовлены версии, хеши загрузок, отдельный scope подготовки и честный список ожидающих проверок. ВМ ещё не выделена; target preflight и опыт NOT_RUN.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "1fa9ff25a46308a3",
+      "source": "Не подменять выделенный стенд действующей машиной проекта и не выдумывать размещение, свободный VMID или доступную ёмкость. Не добавлять операции проекта в инфраструктуру. Пропустить старый operational Terraform CI через skip ci в документационном запросе; локальные проверки и история остаются в IPvX. Различать хеш исходного runner, хеш подготовки и отсутствующий окончательный scope запуска.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "2922134fac7c05e8",
+      "source": "preparations/bcp02-net001-stand/README.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "a24aa87f5ead95b9",
+      "source": "preparations/bcp02-net001-stand/artifacts.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "bb5c82a867b3d843",
+      "source": "preparations/bcp02-net001-stand/checks.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "318b4de7e4a7a84b",
+      "source": "runners/bcp02/controller.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "55a9c13a0b9642dd",
+      "source": "37 офлайн-тестов runner и 14 проверок плана успешны; CLI сохраняет NOT_RUN и ready_to_launch=false. Это не Linux preflight, Ethernet-доставка или доказательство изоляции. Инфраструктурный PR остаётся draft; проверено отсутствие запусков Actions у его коммита.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "3760c937c008cf13",
+      "source": "Образ Debian 13 build 20261026-2643 и Node 24.22.0 Linux скачаны и сверены с официальными HTTPS-контрольными суммами; четыре Python wheel и Git-архив закреплены локальными хешами. Образы и Linux-бинарники не запускались; OpenPGP-проверка не заявляется. Первый ответ redirect HTML отклонён по хешу и сохранён отдельно до корректной загрузки QCOW2.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "bfb9737ed7da85b4",
+      "source": "Неизменны 431 файл принятого пакета и префикс 186 событий. В отдельной Lab-копии проверены 201 отслеживаемый файл, включая два PCAP, против 93ddbfe905f77036c45d976e96e5c95efc3f2264; старые mesh-свидетельства и подписи не переиздавались.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "726bcd8146393176",
+      "source": "Размещение, ёмкость, новая ВМ, приватный доступ, установленные kernel/config/binary pins, достоверные часы и закрытый egress ожидают выделения. Ресурсный запрос и его слияние не выдают допуск к опыту.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "230dc2dd43a449fa",
+      "source": "Найден отдельный барьер допуска: controller создаёт свежий dataset внутри run_all после claim_once, а текущий source/image permit не закрепляет его хеш заранее. Принятый код оставлен неизменным; до запуска нужен отдельный reviewed цикл dataset/admission с соблюдением срока свежести, затем финальный scope ACK, окно и разовое решение владельца.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "19cd6e5f282f5ce3",
+      "source": "Нет разрешения на запуск опыта, HELLO/DATA, создание его namespaces, транзакции, модели, выкатку или production Actions. Временные ключи допуска не создавались; ready_to_request_launch и ready_to_launch остаются false.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "a7723dfe7b64854b",
+      "source": "HX-0186 · Принято поручение слить PR47 без запуска стенда",
+      "context": "history.html:text:section/details/summary"
     },
     {
       "id": "9990ecbd53893fe9",
@@ -4662,19 +4807,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "d80621eb9914198e",
       "source": "Сохранить исходные коммиты реализации и обоих родителей merge commit. Зафиксировать поручение отдельно от отсутствующего допуска на опыт; проверить сохранность исходников, истории и доказательств, а после слияния — точный merge-коммит и неизменность правил защиты.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "91945fc3d2085d02",
@@ -4692,16 +4827,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "0e393fbc4b380fea",
-      "source": "runners/bcp02/launch-config.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "ab495498a5102cbd",
       "source": "Эта запись фиксирует разрешение и подготовку слияния; фактический результат подтверждается отдельной квитанцией и merge-коммитом. Разрешение --admin не относится к другим PR и не меняет защиту ветки.",
       "context": "history.html:text:details/ul/li"
@@ -4715,11 +4840,6 @@
       "id": "d095d9f4f8b2732e",
       "source": "37 офлайн-тестов runner и 14 проверок плана не измеряют Linux-изоляцию или Ethernet-доставку. Стенд, транзакции, модели, выкатка и production Actions не запускаются; ready_to_launch остаётся false, отдельный допуск владельца отсутствует.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "c8a36a7c8e0941fc",
@@ -4965,11 +5085,6 @@
       "id": "99dd5165071e7768",
       "source": "HX-0180 · Подготовлен протокол первого изолированного сетевого опыта BCP 0.2",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "c89eba90f1d8c201",
-      "source": "Предложение",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "43f06a44bc93a709",

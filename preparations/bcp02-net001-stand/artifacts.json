@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-01T17:43:57.685351+00:00",
+  "source_revision": "6ab9926a210f4600cb0d87fd709793e83a5e7e34",
+  "artifacts": [
+    {
+      "name": "debian-13-genericcloud-amd64-20261026-2643.qcow2",
+      "bytes": 341114880,
+      "sha256": "dd7f5e92d879a983d757fc6acd8c5df0294abd9ba57137b29f8c863bb74a6904"
+    },
+    {
+      "name": "debian-version-genericcloud.json",
+      "bytes": 50859,
+      "sha256": "c1ddd11cd5aa77fee8789a60bbab8b338346a16cbe058211fdd18ca5066e303b"
+    },
+    {
+      "name": "debian-version-SHA512SUMS",
+      "bytes": 8724,
+      "sha256": "f9e3b6d25a73706755c83d34edf9ad52e990b543169d695a8fd95037b3f6155f"
+    },
+    {
+      "name": "node-v24.22.0-linux-x64.tar.xz",
+      "bytes": 32015600,
+      "sha256": "cc2f601cee82d9a5a233302fe307abc600727035fd7d2c3a3571755989e95008"
+    },
+    {
+      "name": "node-SHASUMS256.txt",
+      "bytes": 3171,
+      "sha256": "8912ada1431af8390bb3e30328d30bca701b59c7a6d5396b491293515c092c46"
+    },
+    {
+      "name": "ipvx-research-6ab9926a.tar",
+      "bytes": 13557760,
+      "sha256": "653d4731f560ba5ad46edf7a8f5164c981ae00934d27ea170b927c038e7abeb4"
+    },
+    {
+      "name": "cffi-2.1.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "bytes": 221824,
+      "sha256": "a931079504ecc49efed7744c476a5c343a92fabf66dec2db95edb1b2fdc770e2"
+    },
+    {
+      "name": "cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl",
+      "bytes": 4752576,
+      "sha256": "9dab55f57c74c3cad24c323bacbbd04be4705ba6eb0d92e920b1fc4837ed5079"
+    },
+    {
+      "name": "pycparser-3.12-py3-none-any.whl",
+      "bytes": 62600,
+      "sha256": "a076f3f489b39b43ed13563a1dafe42447445bec2e294154ec5c57fcdda4c85e"
+    },
+    {
+      "name": "pycryptodome-4.2.0-cp39-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "bytes": 2976488,
+      "sha256": "76777686de3a354c41710727988c2284448d5db9bd82e5ddb9a9b6710d17d9df"
+    }
+  ],
+  "image": {
+    "url": "https://cloud.debian.org/images/cloud/trixie/20261026-2643/debian-13-genericcloud-amd64-20261026-2643.qcow2",
+    "sha512": "3ace18e33bdd036edb49d1f79342bd01d2ab980e35194edb0b410435cd543538d286a0bd13bbb0835f7862306e3d385ce2f6a70d8ecf0bd961111166adbc1b8e",
+    "publisher_checksum_match": true,
+    "booted": false,
+    "installed_identity_verified": false
+  },
+  "node": {
+    "version": "24.22.0",
+    "url": "https://nodejs.org/dist/v24.22.0/node-v24.22.0-linux-x64.tar.xz",
+    "archive_publisher_checksum_match": true,
+    "linux_elf_sha256": "67ca5783febb8bf85736c79fcdd92c8d6d465a0eb2a082672bcdfa76a506751c",
+    "linux_elf_executed": false
+  },
+  "selected_image_packages": [
+    {
+      "name": "iproute2",
+      "version": "6.15.0-1"
+    },
+    {
+      "name": "libseccomp2:amd64",
+      "version": "2.6.0-2"
+    },
+    {
+      "name": "linux-image-cloud-amd64",
+      "version": "6.12.113-1"
+    },
+    {
+      "name": "python3",
+      "version": "3.13.5-1"
+    },
+    {
+      "name": "python3.13",
+      "version": "3.13.5-2+deb13u5"
+    },
+    {
+      "name": "systemd-timesyncd",
+      "version": "257.13-1~deb13u1"
+    }
+  ],
+  "absent_image_packages": [
+    "qemu-guest-agent",
+    "python3-venv",
+    "python3.13-venv"
+  ],
+  "provenance_limit": "Official HTTPS publisher checksum verification for Debian and Node; no OpenPGP verification. Python wheels hashed locally after platform-specific pip download; not installed on Linux.",
+  "rejected_fetch": {
+    "kind": "redirect HTML instead of QCOW2",
+    "bytes": 417,
+    "sha256": "81e19ef40194cd17194a21f3b748de22f9630cbb3345895b3c8fc99051d3dc47",
+    "accepted": false,
+    "resolution": "HTTPS-only redirects followed; full QCOW2 checksum verified"
+  },
+  "binaries_installed": false
+}

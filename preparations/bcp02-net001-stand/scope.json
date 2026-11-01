@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "scope_kind": "resource-request-and-stand-preparation-only",
+  "request_id": "IPVX-BCP02-STAND-001",
+  "source_revision": "6ab9926a210f4600cb0d87fd709793e83a5e7e34",
+  "runner_scope_sha256": "4e9f8d89ec0f2bf0ef646659356bdac15e94fca41f403be0460eaeeedd35171d",
+  "artifacts_json_sha256": "2aecc2fdb0e70e2bc470f6fd57b53cb98aa353b11a1f959d857c51593e3683ff",
+  "infrastructure_request": {
+    "url": "https://github.com/relcom-technologies/relcom-infra/pull/845",
+    "revision": "99ad90be8fae7d67a646adfbf8f243321949c059"
+  },
+  "resources": {
+    "guests": 1,
+    "architecture": "x86_64",
+    "vcpu": 2,
+    "ram_mib": 2048,
+    "disk_gib_max": 10,
+    "gpu": 0,
+    "public_nics": 0,
+    "autostart": false
+  },
+  "preparation": {
+    "image_download_and_hash": true,
+    "source_preservation": true,
+    "target_environment_preflight_after_allocation": true,
+    "out_of_band_management_required": true
+  },
+  "excluded": {
+    "experiment_launch": true,
+    "experiment_namespace_creation": true,
+    "hello_data_frames": true,
+    "blockchain_transactions": true,
+    "model_calls": true,
+    "production_deployment": true,
+    "production_actions": true,
+    "shared_network_or_template_changes": true
+  },
+  "target": {
+    "allocated": false,
+    "node": null,
+    "vmid": null,
+    "machine_id_sha256": null,
+    "installed_kernel_config_sha256": null,
+    "installed_binary_sha256": null
+  },
+  "final_run_dataset_sha256": null,
+  "accepted_window": null,
+  "owner_scope_ack": null,
+  "owner_launch_decision": null,
+  "launch_permit_issued": false,
+  "ready_to_request_launch": false,
+  "ready_to_launch": false,
+  "preparation_scope_sha256": "9e278651cf741358867b4891ef230a8b19a95d9c99b988ac50051c466e7048f0"
+}
