@@ -2874,5 +2874,14 @@
   "9c9881ea77e938a2": "397 frühere Dateien und der Präfix von 183 Ereignissen bleiben bytegleich. Mesh bleibt ein separater Versuch mit ursprünglichen Belegen und Signaturen. Fixture-State belegt weder Ethereum-Finalität noch physische Unterlage, unabhängige Betreiber oder Vorteile gegenüber IP.",
   "8a05426d663a97a6": "Es wurden kein Versuch gestartet, keine Blockchain-Transaktionen, Modelle, Bereitstellung, Zusammenführung dieses PR oder Production Actions ausgeführt. Der neue Workflow erlaubt nur isolierte PR-Prüfungen.",
   "23c5b6d535e2de8d": "Codex — Hauptassistent dieses Gesprächs · 2026-11-01T15:10:16Z",
-  "70d31a024080e415": "Codex — Hauptassistent dieses Gesprächs · 2026-11-01T15:04:52Z"
+  "70d31a024080e415": "Codex — Hauptassistent dieses Gesprächs · 2026-11-01T15:04:52Z",
+  "b1f8a6d1f346eb84": "186 Ereignisse bis HX-0186; Autoren, Begründungen, Prüfungen und Einschränkungen.",
+  "9252d35a03e9d44a": "357.4 KiB · 12 Dateien",
+  "a7723dfe7b64854b": "HX-0186 · Auftrag zur Zusammenführung von PR47 ohne Prüfstandsstart angenommen",
+  "9990ecbd53893fe9": "Codex — Hauptassistent dieses Gesprächs · 2026-11-01T15:47:27Z",
+  "022923c0f94cc937": "Der Eigentümer hat einen normalen Merge-Commit und einmalig --admin ausschließlich für PR47 genehmigt; der Branch-Schutz bleibt bestehen. Alle vier CI-Prüfungen der Revision 2ae9b59 waren erfolgreich; die aktualisierte Historie durchläuft vor dem Merge die PR-Prüfungen. Angenommen wird Werkzeugcode für einen zukünftigen isolierten Versuch, weder ein Netzwerkergebnis noch eine Startfreigabe.",
+  "d80621eb9914198e": "Die ursprünglichen Implementierungscommits und beide Eltern des Merge-Commits erhalten. Den Auftrag getrennt von der fehlenden Versuchszulassung festhalten; Quellen, Historie und Belege auf Erhaltung prüfen und nach dem Merge den genauen Commit sowie unveränderte Schutzregeln bestätigen.",
+  "ab495498a5102cbd": "Dieser Eintrag dokumentiert Genehmigung und Merge-Vorbereitung; das tatsächliche Ergebnis wird durch einen separaten Beleg und den Merge-Commit bestätigt. Die --admin-Genehmigung gilt nicht für andere PRs und ändert den Branch-Schutz nicht.",
+  "f69d8cef6abf9861": "431 festgelegte Quell- und Belegdateien sowie die vorherigen 185 Ereignisse bleiben bytegleich. Mesh, frühere PCAPs, Signaturen und negative Ergebnisse bleiben eigenständige Belege.",
+  "d095d9f4f8b2732e": "37 Offline-Tests des Runners und 14 Planprüfungen messen weder Linux-Isolation noch Ethernet-Zustellung. Prüfstand, Transaktionen, Modelle, Bereitstellung und Production Actions werden nicht gestartet; ready_to_launch bleibt false und eine separate Eigentümerfreigabe fehlt."
 }

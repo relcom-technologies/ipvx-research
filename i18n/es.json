@@ -2874,5 +2874,14 @@
   "9c9881ea77e938a2": "Se conservan byte a byte 397 archivos previos y el prefijo de 183 eventos. Mesh sigue siendo un experimento separado con sus pruebas y firmas originales. Fixture-state no demuestra finalidad de Ethereum, infraestructura física, independencia de operadores ni ventaja frente a IP.",
   "8a05426d663a97a6": "No se lanzaron experimentos, transacciones de cadena, modelos, despliegues, fusión de este PR ni Actions de producción. El nuevo workflow solo permite comprobaciones aisladas de PR.",
   "23c5b6d535e2de8d": "Codex — asistente principal de esta conversación · 2026-11-01T15:10:16Z",
-  "70d31a024080e415": "Codex — asistente principal de esta conversación · 2026-11-01T15:04:52Z"
+  "70d31a024080e415": "Codex — asistente principal de esta conversación · 2026-11-01T15:04:52Z",
+  "b1f8a6d1f346eb84": "186 eventos hasta HX-0186; autores, fundamentos, comprobaciones y limitaciones.",
+  "9252d35a03e9d44a": "357.4 KiB · 12 archivos",
+  "a7723dfe7b64854b": "HX-0186 · Aceptada la instrucción de fusionar PR47 sin iniciar el banco",
+  "9990ecbd53893fe9": "Codex — asistente principal de esta conversación · 2026-11-01T15:47:27Z",
+  "022923c0f94cc937": "El propietario autorizó un merge commit normal y --admin una sola vez únicamente para PR47, manteniendo la protección de la rama. Las cuatro comprobaciones CI de la revisión 2ae9b59 fueron satisfactorias; la historia actualizada pasa las comprobaciones del PR antes de fusionarse. Se acepta código de herramientas para un futuro experimento aislado, no un resultado de red ni una autorización de lanzamiento.",
+  "d80621eb9914198e": "Conservar los commits originales de implementación y ambos padres del merge commit. Registrar la instrucción por separado de la admisión del experimento aún ausente; verificar la conservación de fuentes, historia y pruebas y, tras la fusión, confirmar el commit exacto y las reglas de protección sin cambios.",
+  "ab495498a5102cbd": "Este registro documenta la autorización y preparación de la fusión; el resultado real se confirma mediante un recibo separado y el merge commit. La autorización --admin no se aplica a otros PR y no modifica la protección de la rama.",
+  "f69d8cef6abf9861": "Se conservan byte a byte 431 archivos fijados de fuentes y pruebas y los 185 eventos anteriores. Mesh, los PCAP antiguos, las firmas y los resultados negativos siguen siendo pruebas separadas.",
+  "d095d9f4f8b2732e": "37 pruebas offline del runner y 14 comprobaciones del plan no miden el aislamiento Linux ni la entrega Ethernet. No se inician el banco, transacciones, modelos, despliegue ni Actions de producción; ready_to_launch sigue en false y falta la admisión separada del propietario."
 }

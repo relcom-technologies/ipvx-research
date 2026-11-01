@@ -2874,5 +2874,14 @@
   "9c9881ea77e938a2": "397 earlier files and the prefix of 183 events remain byte-identical. Mesh remains a separate experiment with its original evidence and signatures. Fixture-state does not establish Ethereum finality, the physical underlay, operator independence or advantage over IP.",
   "8a05426d663a97a6": "No experiment launch, chain transactions, models, deployment, merge of this PR or production Actions were performed. The new workflow permits isolated PR checks only.",
   "23c5b6d535e2de8d": "Codex — main assistant in this conversation · 2026-11-01T15:10:16Z",
-  "70d31a024080e415": "Codex — main assistant in this conversation · 2026-11-01T15:04:52Z"
+  "70d31a024080e415": "Codex — main assistant in this conversation · 2026-11-01T15:04:52Z",
+  "b1f8a6d1f346eb84": "186 events through HX-0186; authors, rationale, checks and limitations.",
+  "9252d35a03e9d44a": "357.4 KiB · 12 files",
+  "a7723dfe7b64854b": "HX-0186 · Instruction accepted to merge PR47 without starting the stand",
+  "9990ecbd53893fe9": "Codex — main assistant in this conversation · 2026-11-01T15:47:27Z",
+  "022923c0f94cc937": "The owner authorized a normal merge commit and one-time --admin for PR47 only, retaining branch protection. All four CI checks for revision 2ae9b59 succeeded; the updated history passes PR checks before merging. This accepts tooling code for a future isolated experiment, not a network result or launch authorization.",
+  "d80621eb9914198e": "Preserve the original implementation commits and both merge-commit parents. Record the instruction separately from the missing experiment admission; verify preservation of sources, history and evidence, then verify the exact merge commit and unchanged protection rules after merging.",
+  "ab495498a5102cbd": "This record documents authorization and merge preparation; the actual result is confirmed by a separate receipt and merge commit. The --admin authorization does not apply to other PRs and does not change branch protection.",
+  "f69d8cef6abf9861": "431 pinned source/evidence files and the previous 185 events remain byte-identical. Mesh, old PCAPs, signatures and negative results remain separate evidence.",
+  "d095d9f4f8b2732e": "37 offline runner tests and 14 planning checks do not measure Linux isolation or Ethernet delivery. The stand, transactions, models, deployment and production Actions are not started; ready_to_launch remains false and separate owner admission is absent."
 }
