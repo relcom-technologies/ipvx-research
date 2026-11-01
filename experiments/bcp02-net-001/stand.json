@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "status": "proposed_not_provisioned",
+  "host": {"count": 1, "candidate_os": "Linux, isolated throwaway environment", "allocated": false, "operator": null, "resource_authority_evidence": null, "image_sha256": null, "kernel_release": null, "kernel_config_sha256": null},
+  "resources": {"vcpu_max": 2, "ram_mib_max": 4096, "disk_mib_max": 10240, "wall_seconds_max": 3600, "active_seconds_max": 1200, "artifact_bytes_max": 1073741824, "capture_bytes_max": 268435456, "models": 0, "gpu": 0, "paid_calls": 0, "blockchain_transactions": 0},
+  "nodes": [
+    {"id": "A", "namespace": "bcp02-net001-a", "nft": 1, "role": "endpoint", "ports": [{"name": "a0", "mac": "02:bc:02:00:01:01", "link": "L1"}]},
+    {"id": "R", "namespace": "bcp02-net001-r", "nft": 3, "role": "router", "ports": [{"name": "r0", "mac": "02:bc:02:00:03:01", "link": "L1"}, {"name": "r1", "mac": "02:bc:02:00:03:02", "link": "L2"}]},
+    {"id": "B", "namespace": "bcp02-net001-b", "nft": 2, "role": "endpoint", "ports": [{"name": "b0", "mac": "02:bc:02:00:02:01", "link": "L2"}]}
+  ],
+  "links": [{"id": "L1", "kind": "veth", "ends": ["A:a0", "R:r0"]}, {"id": "L2", "kind": "veth", "ends": ["R:r1", "B:b0"]}],
+  "data_plane": {"socket_family": "AF_PACKET", "socket_type": "SOCK_RAW", "ethertype_hex": "88b5", "bcp_payload_mtu": 1500, "ethernet_header_bytes": 14, "fcs_in_pcap": false, "vlan": false, "bridges": [], "physical_peers": [], "ip_tunnels": [], "ipv4_addresses": [], "ipv6_addresses": [], "routes": [], "loopback_up": false, "ipv6_autoconfiguration": false, "ip_forwarding": false},
+  "process_policy": {"bound_ifindex_required": true, "drop_packet_outgoing": true, "detect_truncation": true, "node_capabilities": ["CAP_NET_RAW in own namespace only"], "deny_socket_families": ["AF_INET", "AF_INET6"], "deny_setns": true, "deny_host_net_admin": true, "own_private_key_only": true, "one_relay_event_loop": true, "relay_core_contexts": 2, "control_payloads_allowed": false},
+  "setup_policy": {"create_only_new_objects": true, "abort_on_name_collision": true, "interfaces_initially_down": true, "disable_autoconfiguration_before_link_up": true, "capture_before_link_up": true, "full_capture_before_first_hello": true, "record_namespace_inode_and_peer_ifindex": true, "capture_filter": null, "capture_drops_allowed": 0, "teardown_after_evidence_archival": true, "modify_production": false},
+  "fixture_provider": {"mode": "fixture-state-ethernet", "live_rpc": false, "on_chain_deployments": false, "keys": "fresh per run; only own secret material per process", "state_public_data_only": true, "headers": "explicitly synthetic; fresh dataset, no timestamp relabeling", "clock": "real trusted wall/monotonic clocks; no baseline patch", "contract_bank": "local EVM message results, not chain finality", "run_dataset_sha256": null},
+  "binary_pins": {"python": null, "iproute2": null, "capture_tool": null, "runner": null},
+  "whole_device_no_ip_claim": false,
+  "physical_ethernet_claim": false,
+  "independent_operator_claim": false,
+  "network_created": false
+}
