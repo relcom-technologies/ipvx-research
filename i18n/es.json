@@ -2975,5 +2975,15 @@
   "22daf234f16f8840": "docs/handoff-checks-2026-11-02.json",
   "0dd7f899c49f14f4": "Se observó un ciclo programado posterior exitoso por servicio tras reparar, sin inicios manuales, reinicios de temporizadores ni prueba SMTP. La compatibilidad aún depende de una versión anterior conservada; runtimes independientes y aceptación de todas las tareas de fondo siguen como deuda de despliegue. La actividad previa de los temporizadores no demostraba funcionamiento de notificaciones.",
   "bc9d948a8ae83ab5": "El recibo Claude/GPT guardado coincide con código y hash de configuración; no hay provider-block. El poll ordinario reinicia smoke_verified_current, por lo que false por sí solo no implica pérdida de preparación. No hubo solicitudes nuevas de pago; los precios configurados vencen el 5 de noviembre de 2026.",
-  "2d7304fe3342fc6e": "No se repitió el despliegue web ni cambió la protección GitHub. No se inició agente, experimento, transacción, VM ni Actions de producción. Siguen pendientes preflight Linux, asignación VM por draft PR845 y permiso separado del propietario. La entrega completa con rutas operativas locales sigue privada; el informe público no incluye secretos ni direcciones de infraestructura."
+  "2d7304fe3342fc6e": "No se repitió el despliegue web ni cambió la protección GitHub. No se inició agente, experimento, transacción, VM ni Actions de producción. Siguen pendientes preflight Linux, asignación VM por draft PR845 y permiso separado del propietario. La entrega completa con rutas operativas locales sigue privada; el informe público no incluye secretos ni direcciones de infraestructura.",
+  "631ba2041ab3adcc": "193 eventos hasta HX-0193; autores, razones, comprobaciones y límites.",
+  "f3672562dd4570b7": "375.7 KiB · 12 archivos",
+  "12d6a909589b130c": "HX-0193 · Guardado el informe completo de entrega en el repositorio",
+  "5ff1b1138ad0de2f": "Codex — asistente principal de esta conversación · 2026-11-02T21:18:51.847811+00:00",
+  "2010b27411a7b373": "Por petición expresa del propietario, el HANDOFF completo se añadió a la raíz de la rama PR52. Conserva el estado de las cinco etapas y BCP, versiones, evidencias, barreras, materiales e instrucciones iniciales. En la versión pública se generalizan rutas personales y datos operativos de acceso; la copia privada completa original no cambia. El resumen enlaza el archivo completo.",
+  "135a938993047a5d": "Dar al siguiente agente una entrada permanente en Git conservando contenido completo y privacidad del acceso. Guardar documentación no autoriza fusionar, ejecutar, desplegar ni reutilizar --admin.",
+  "6f9be27fcca30d7e": "HANDOFF-IPVX-2026-11-02.md",
+  "7dcafe249b20c485": "Se documenta el estado existente. Las comprobaciones históricas no se repitieron como mediciones nuevas; los valores de main, producción y plazos conservan la fecha original de entrega.",
+  "c022513533aa13cb": "No se publicaron rutas privadas absolutas, datos SSH ni ajustes de acceso; el propietario conserva la copia exacta. No se reescribieron registros ni evidencias anteriores.",
+  "1db1919fd08a2cec": "PR52 sigue abierto. No se modificaron ni iniciaron código, servidores, temporizadores, modelos, experimento o transacciones; no hubo despliegue ni Actions de producción."
 }

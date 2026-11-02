@@ -2975,5 +2975,15 @@
   "22daf234f16f8840": "docs/handoff-checks-2026-11-02.json",
   "0dd7f899c49f14f4": "One successful subsequent scheduled cycle per service was observed after repair, without manual starts, timer restarts or an SMTP test. Compatibility still depends on a retained older release; independent runtimes and acceptance of all background tasks remain deployment debt. Previous timer activity did not prove notification operation.",
   "bc9d948a8ae83ab5": "The saved Claude/GPT paired receipt matches code and model-config hash; no provider-block exists. Ordinary poll resets smoke_verified_current, so false alone does not mean lost readiness. No new paid requests were made; configured price validity ends on 5 November 2026.",
-  "2d7304fe3342fc6e": "Websites were not redeployed and GitHub protection was unchanged. No new agent, experiment, transaction, VM or production Actions were started. Linux preflight, VM allocation through draft PR845 and a separate owner permit remain gates. The full handoff with local operational paths stays owner-private; the public report contains no secrets or infrastructure addresses."
+  "2d7304fe3342fc6e": "Websites were not redeployed and GitHub protection was unchanged. No new agent, experiment, transaction, VM or production Actions were started. Linux preflight, VM allocation through draft PR845 and a separate owner permit remain gates. The full handoff with local operational paths stays owner-private; the public report contains no secrets or infrastructure addresses.",
+  "631ba2041ab3adcc": "193 events through HX-0193; authors, rationale, checks and limitations.",
+  "f3672562dd4570b7": "375.7 KiB · 12 files",
+  "12d6a909589b130c": "HX-0193 · Saved the full handoff report in the repository",
+  "5ff1b1138ad0de2f": "Codex — primary assistant in this conversation · 2026-11-02T21:18:51.847811+00:00",
+  "2010b27411a7b373": "At the owner’s explicit request, the full HANDOFF was added to the root of the PR52 branch. It preserves the five stages and BCP status, revisions, evidence, gates, working materials and initial assignment. Personal paths and operational access details are generalized in the public version; the original full private copy is unchanged. The brief summary links to the full file.",
+  "135a938993047a5d": "Give the next agent a lasting Git entry point while preserving substantive completeness and access privacy. Saving documentation does not authorize merging, execution, deployment or reuse of --admin.",
+  "6f9be27fcca30d7e": "HANDOFF-IPVX-2026-11-02.md",
+  "7dcafe249b20c485": "This documents existing state. Historical checks and observations were not repeated as new measurements; main, production and deadline values retain the original handoff date.",
+  "c022513533aa13cb": "Private absolute paths, SSH access details and access settings were not published; the owner retains their exact copy. Previous entries and evidence were not rewritten.",
+  "1db1919fd08a2cec": "PR52 remains open. Code, servers, timers, models, experiment and transactions were neither changed nor started; no deployment or production Actions occurred."
 }

@@ -872,13 +872,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "80e798b3521d9b07",
-      "source": "192 событий по HX-0192; авторы, основания, проверки и ограничения.",
+      "id": "631ba2041ab3adcc",
+      "source": "193 событий по HX-0193; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "993cdc37b2f9bc85",
-      "source": "374.1 КиБ · 12 файлов",
+      "id": "f3672562dd4570b7",
+      "source": "375.7 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4677,6 +4677,81 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "12d6a909589b130c",
+      "source": "HX-0193 · Полный отчёт передачи сохранён в репозитории",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "e078c61c3e49f21a",
+      "source": "Реализовано",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "5ff1b1138ad0de2f",
+      "source": "Codex — основной ассистент этой беседы · 2026-11-02T21:18:51.847811+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "2010b27411a7b373",
+      "source": "По прямому поручению владельца полный HANDOFF добавлен в корень ветки PR52. Сохранены состояние пяти этапов и BCP, версии, доказательства, барьеры, рабочие материалы и начальное поручение. В публичной версии персональные пути и операционные реквизиты обобщены; исходная полная приватная копия не изменена. Краткая сводка ссылается на полный файл.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "135a938993047a5d",
+      "source": "Дать следующему агенту постоянную точку входа в Git, сохранив содержательную полноту и приватность доступа. Не превращать сохранение документа в разрешение на слияние, запуск, выкатку или повторное использование --admin.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "6f9be27fcca30d7e",
+      "source": "HANDOFF-IPVX-2026-11-02.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "fceab5068362f1f6",
+      "source": "docs/handoff-2026-11-02.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "22daf234f16f8840",
+      "source": "docs/handoff-checks-2026-11-02.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "7dcafe249b20c485",
+      "source": "Это документирование имеющегося состояния. Исторические проверки и наблюдения не повторялись как новые измерения; значения main, prod и сроков имеют дату исходной передачи.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "c022513533aa13cb",
+      "source": "Приватные абсолютные пути, SSH-реквизиты и настройки доступа не опубликованы; их точная копия сохранена у владельца. Прежние записи и доказательства не переписаны.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "1db1919fd08a2cec",
+      "source": "PR52 остаётся открытым. Код, серверы, таймеры, модели, опыт и транзакции не менялись и не запускались; выкатки и production Actions не было.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "a0d9ae02b54419fc",
       "source": "HX-0192 · Восстановлена зависимость уведомлений и подготовлена передача IPvX",
       "context": "history.html:text:section/details/summary"
@@ -4697,29 +4772,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "5a5f5ca085be7ccf",
       "source": "Восстановить ранее порученную автономность уведомлений, сохранив ключи, данные, курсоры и старые отказы. Проверять фактический результат oneshot, а не только активность таймера. Отделить текущую парную квитанцию моделей от неоднозначных флагов обычного poll и передать следующему агенту измеренные границы готовности.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
-      "id": "fceab5068362f1f6",
-      "source": "docs/handoff-2026-11-02.md",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "22daf234f16f8840",
-      "source": "docs/handoff-checks-2026-11-02.json",
-      "context": "history.html:text:ul/li/a"
     },
     {
       "id": "d692a9753313a13d",
@@ -4737,11 +4792,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "0dd7f899c49f14f4",
       "source": "Наблюдалось по одному успешному очередному циклу служб после ремонта, без ручного старта, перезапуска таймеров или SMTP-теста. Совместимость пока зависит от сохранённого старого release; независимые runtime и приёмка всех фоновых задач остаются техническим долгом. Прежняя активность таймеров не доказывала работу уведомлений.",
       "context": "history.html:text:details/ul/li"
@@ -4755,11 +4805,6 @@
       "id": "2d7304fe3342fc6e",
       "source": "Сайты не выкатывались повторно; защита GitHub не менялась. Никакой новый агент, опыт, транзакция, ВМ или production Actions не запускались. Linux preflight, выделение ВМ по draft PR845 и отдельный owner permit остаются барьерами. Полная передача с локальными операционными путями хранится приватно у владельца; в публичном отчёте нет секретов и адресов инфраструктуры.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "73e304840561828e",
@@ -4800,11 +4845,6 @@
       "id": "4805eb10fcf7ba0b",
       "source": "HX-0190 · Подготовлено единое представление BCP и отдельного Mesh",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "e078c61c3e49f21a",
-      "source": "Реализовано",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "d4982bd1bcdd0b0b",
