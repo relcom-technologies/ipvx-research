@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-02T20:39:13.349703+00:00",
+  "attributed_to": "codex-assistant",
+  "recorded_by": "codex-assistant",
+  "portal_main": "c47e6b020e08d66730ac1931f1311efc75a9d087",
+  "lab_main": "0e973aea69b93c8c6ef7d7dee0e9593728a8aaf0",
+  "portal_published": "733cbc3e29dfbc44369e50e8957650be8af6fc31",
+  "lab_published": "b712d0c07c7b01d364b443a8a6ead17c271f9490",
+  "website_versions_unchanged_during_handoff": true,
+  "runtime_compatibility_restored": true,
+  "runtime_source_revision": "e034dd494bbf60a77ab7fdb3ec23f05a9446f6b0",
+  "public_manifest_unchanged": true,
+  "manual_service_starts": 0,
+  "timers_restarted": false,
+  "model_calls_in_handoff": 0,
+  "scheduled_services_after_recovery": {
+    "ipvx-notification-feed.service": {
+      "Result": "success",
+      "ExecMainStartTimestamp": "Mon 2026-11-02 21:33:37 CET",
+      "ExecMainExitTimestamp": "Mon 2026-11-02 21:33:37 CET",
+      "ExecMainStatus": "0",
+      "ActiveState": "inactive"
+    },
+    "ipvx-notifier.service": {
+      "Result": "success",
+      "ExecMainStartTimestamp": "Mon 2026-11-02 21:33:37 CET",
+      "ExecMainExitTimestamp": "Mon 2026-11-02 21:33:42 CET",
+      "ExecMainStatus": "0",
+      "ActiveState": "inactive"
+    },
+    "ipvx-participation-watch.service": {
+      "Result": "success",
+      "ExecMainStartTimestamp": "Mon 2026-11-02 21:36:07 CET",
+      "ExecMainExitTimestamp": "Mon 2026-11-02 21:36:09 CET",
+      "ExecMainStatus": "0",
+      "ActiveState": "inactive"
+    },
+    "ipvx-liaison-poll.service": {
+      "Result": "success",
+      "ExecMainStartTimestamp": "Mon 2026-11-02 21:33:37 CET",
+      "ExecMainExitTimestamp": "Mon 2026-11-02 21:33:39 CET",
+      "ExecMainStatus": "0",
+      "ActiveState": "inactive"
+    }
+  },
+  "paired_readiness": {
+    "existing_readiness_receipt": true,
+    "readiness_recorded_at": "2026-10-30T00:33:36.512947+00:00",
+    "readiness_models_count": 2,
+    "readiness_revision_matches": true,
+    "readiness_model_config_matches": true,
+    "provider_block_exists": false,
+    "daily_budget_usd": 3,
+    "generation_enabled": true,
+    "pricing_valid_until": {
+      "writer": "2026-11-05",
+      "reviewer": "2026-11-05"
+    }
+  },
+  "source_scope_sha256": "397ad9d8d3d8d926057b57259d9b1a01bddcc458dc009ff5b4278fa26a60e33a",
+  "network_experiment": "NOT_RUN",
+  "target_preflight": "NOT_RUN",
+  "vm_allocated": false,
+  "ready_to_launch": false,
+  "transactions": 0,
+  "production_actions": false,
+  "limits": [
+    "One successful scheduled cycle per service after repair is observed, not a long-term availability or fresh mailbox-delivery test.",
+    "Saved paired readiness is valid for the installed code/config; provider availability was not retested with a new paid request.",
+    "The interpreter compatibility alias depends on an older immutable portal release; dedicated service runtimes remain deployment debt.",
+    "No new autonomous agent/chat was started during this handoff preparation."
+  ],
+  "history_prefix_events": 191,
+  "history_prefix_sha256": "9598c9b5310bd08145ba5c41510bbe12923840fad6eed5d31a534ebded4c5f40"
+}

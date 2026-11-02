@@ -872,13 +872,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "2e2302bd36dd119e",
-      "source": "191 событий по HX-0191; авторы, основания, проверки и ограничения.",
+      "id": "80e798b3521d9b07",
+      "source": "192 событий по HX-0192; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "93bab484601302c0",
-      "source": "371.2 КиБ · 12 файлов",
+      "id": "993cdc37b2f9bc85",
+      "source": "374.1 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4677,6 +4677,91 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "a0d9ae02b54419fc",
+      "source": "HX-0192 · Восстановлена зависимость уведомлений и подготовлена передача IPvX",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "2ccdb3e3ca5897bf",
+      "source": "Уточнение",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "8ba05eafbdd2720d",
+      "source": "Codex — основной ассистент этой беседы · 2026-11-02T20:36:32.158539+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "fe6c770962a64400",
+      "source": "По поручению владельца подготовлена передача состояния пяти этапов, BCP и дальнейших барьеров. При сверке обнаружил свой пропуск в приёмке публикации: после смены current три служебных процесса не находили прежнюю Python-среду и завершались 203/EXEC, хотя таймеры были активны. Восстановил ссылку на существующий неизменённый runtime; следующие штатные циклы наблюдателя A2A, почтовой проекции и уведомителя успешны. Версии сайтов и публичные файлы не менялись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "5a5f5ca085be7ccf",
+      "source": "Восстановить ранее порученную автономность уведомлений, сохранив ключи, данные, курсоры и старые отказы. Проверять фактический результат oneshot, а не только активность таймера. Отделить текущую парную квитанцию моделей от неоднозначных флагов обычного poll и передать следующему агенту измеренные границы готовности.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "fceab5068362f1f6",
+      "source": "docs/handoff-2026-11-02.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "22daf234f16f8840",
+      "source": "docs/handoff-checks-2026-11-02.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "d692a9753313a13d",
+      "source": "docs/bcp-site-release-2026-11-02.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "6f7fb2f061e8061a",
+      "source": "runners/bcp02/dataset-admission.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "ad0968a880742b51",
+      "source": "services/liaison/worker.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "0dd7f899c49f14f4",
+      "source": "Наблюдалось по одному успешному очередному циклу служб после ремонта, без ручного старта, перезапуска таймеров или SMTP-теста. Совместимость пока зависит от сохранённого старого release; независимые runtime и приёмка всех фоновых задач остаются техническим долгом. Прежняя активность таймеров не доказывала работу уведомлений.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "bc9d948a8ae83ab5",
+      "source": "Сохранённая парная квитанция Claude/GPT совпадает с кодом и model-config hash; provider-block отсутствует. Обычный poll обнуляет smoke_verified_current, поэтому false сам по себе не означает утраченный допуск. Новых платных запросов не выполнялось; актуальность конфигурации цен заканчивается 5 ноября 2026 года.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "2d7304fe3342fc6e",
+      "source": "Сайты не выкатывались повторно; защита GitHub не менялась. Никакой новый агент, опыт, транзакция, ВМ или production Actions не запускались. Linux preflight, выделение ВМ по draft PR845 и отдельный owner permit остаются барьерами. Полная передача с локальными операционными путями хранится приватно у владельца; в публичном отчёте нет секретов и адресов инфраструктуры.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "73e304840561828e",
       "source": "HX-0191 · Слиты PR49/50 и опубликованы согласованные сайты BCP",
       "context": "history.html:text:section/details/summary"
@@ -4692,29 +4777,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "de470ce21ec2a1d5",
       "source": "Завершить ранее порученную публикацию сайтов вне GitHub Actions, сохранив историю и прежние доказательства. Обновлены только публичные файлы портала и интерфейсы Lab; фоновые узлы, доступ, закрытая очередь и уведомления сохранены. Отдельная квитанция фиксирует результат выкатки, не переписывая подготовительные записи.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
-      "id": "d692a9753313a13d",
-      "source": "docs/bcp-site-release-2026-11-02.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "303758ef502ef651",
@@ -4730,11 +4795,6 @@
       "id": "f45ed3429c76adc4",
       "source": "Новая ВМ не выделена, Linux preflight и BCP-опыт остаются NOT_RUN; ready_to_launch=false. Транзакции, модели, сетевой опыт и production Actions не запускались. Публикация сайтов не доказывает физическую подложку или работу BCP с реальной цепочкой. Эта запись истории не требует повторной выкатки.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "4805eb10fcf7ba0b",
@@ -4820,11 +4880,6 @@
       "id": "50deda6ce28b5b15",
       "source": "Закрыть обнаруженный в HX-0187 разрыв между разрешением и фактическим набором данных. Привязать ключи акторов к публичному состоянию, сохранить чтение только своего секрета дочерним процессом и отказаться от молчаливого продления свежести. Дедлайн равен минимуму created_at+1800 и возраста самого раннего свежего checkpoint+1800; окно допуска целиком помещается внутрь. Старый домен подписи не даёт полномочий новой ревизии.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "6f7fb2f061e8061a",
-      "source": "runners/bcp02/dataset-admission.md",
-      "context": "history.html:text:ul/li/a"
     },
     {
       "id": "cbf536284a442d1f",
@@ -5730,11 +5785,6 @@
       "id": "c8ddac57ed76fd38",
       "source": "HX-0172 · Уточнена повторная проверка допуска BCP перед CONFIRM",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "2ccdb3e3ca5897bf",
-      "source": "Уточнение",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "e8ac656d5d8b7393",
@@ -7244,11 +7294,6 @@
     {
       "id": "dbc59a9b48a5ecbb",
       "source": "services/liaison/README.md",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "ad0968a880742b51",
-      "source": "services/liaison/worker.py",
       "context": "history.html:text:ul/li/a"
     },
     {
