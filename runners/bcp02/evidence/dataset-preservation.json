@@ -320,6 +320,11 @@
     "integrations/press/README.md": "fe0a2f172784777dfdbc0069399a67eb07d9e9c3f91e3bebadeb532e91a13bc9",
     "integrations/press/custom.css": "f432eae24ac9af3c98c84f6103e1e10c2b4fb0f8fd4c66137693a70959c8b371",
     "integrations/press/layout-acceptance-2026-10-29.json": "cf703358866ba026ccd22e1990a8ef58f2b37255430fbd22f3540c37898c351d",
+    "preparations/bcp02-net001-stand/README.md": "473b09fea653b945c263a0b6c38d8e49ecbbb56a10454a22bf9dc5ea7ee5c4c0",
+    "preparations/bcp02-net001-stand/artifacts.json": "2aecc2fdb0e70e2bc470f6fd57b53cb98aa353b11a1f959d857c51593e3683ff",
+    "preparations/bcp02-net001-stand/checks.json": "655f7aead51e91c16a2fb754812c29e75c382ac1f3e55adfe5ebb45dc8d218df",
+    "preparations/bcp02-net001-stand/preflight.json": "3b15b7d46cd80911163e6b6c262628d3df9d7b9cdf6a1b1e76daf001b343cc73",
+    "preparations/bcp02-net001-stand/scope.json": "df11983dd5041675d542266e22c894ceb097bb9992f4a35f920141340054381c",
     "rfc/0001-identity-and-packets.md": "0602bf8636d1c900dc755522514096e1d145997b5cce3e5d8d0fd2b69b01ed57",
     "rfc/0002-local-routing.md": "dd3111f3843f3e44260377bb286f94287ce7b40e60456782108de43a919c0cc6",
     "rfc/0003-participation-and-voting.md": "0b973e0fa5a98a43abe0bc487664476cb537ca3a271053fb8383efe99b21cca1",
@@ -363,8 +368,6 @@
     "scripts/browser_replay_check.mjs": "6fe0c4e544dba18eeceba1582eb70ba39779df0970ba7d925fdb53df071f8b62",
     "scripts/browser_research_links_check.mjs": "7ffc2ab0a389dc21261b940c5a77f47e64fccfe4355cfed55e4357ddff7f906f",
     "scripts/build_downloads.py": "6fc03e3ad63d7f48afd59bf9aa8775572c5139a91c34cd34c2411fb954e558a3",
-    "scripts/build_languages.py": "5f710c320b5bf39ff1a096b9bc05e24cf13b1e55a74caf550e0426f5ce20f6fb",
-    "scripts/build_portal.py": "2449da02270873e368e91044f5fb44f9d335c1f1b3a159ffc2167642dc2e1ec2",
     "scripts/check_history.py": "286e2469545b2d08af59184af4f68231566ac8f3dbc3e5c1213a4c568f725b4b",
     "scripts/check_languages.py": "781c8d6da4e7ec4eccb462d7f83eaf37b4e4f10a40276ea77b8cb1b06db39689",
     "scripts/check_site.py": "e8621cc2702481e3f6bb452be4428fa4ebf5ffa17a99ccb053f7b007627dbcfe",
@@ -420,12 +423,7 @@
     "tests/bcp/fixtures.py": "afff9501dc4cae2089007259c0e694cb88e64cff91258f0a43b3ec4e0ed5d4ab",
     "tests/bcp/test_core.py": "1e09ae25362170b2b62f7e70e7102bf383eb3aa8529d999e2e3df5545d3ca566",
     "tests/bcp/test_vectors.py": "fefc5c9ae02657394320755202764f891e1f9921c1eaa583c6f9ac8ba020b964",
-    "tests/bcp/vector_report.py": "5f0bc6702a6cf9071c009d4b445af4e9bbba7f6ea2ba57ca82e4b35a33c28c02",
-    "preparations/bcp02-net001-stand/scope.json": "df11983dd5041675d542266e22c894ceb097bb9992f4a35f920141340054381c",
-    "preparations/bcp02-net001-stand/checks.json": "655f7aead51e91c16a2fb754812c29e75c382ac1f3e55adfe5ebb45dc8d218df",
-    "preparations/bcp02-net001-stand/README.md": "473b09fea653b945c263a0b6c38d8e49ecbbb56a10454a22bf9dc5ea7ee5c4c0",
-    "preparations/bcp02-net001-stand/preflight.json": "3b15b7d46cd80911163e6b6c262628d3df9d7b9cdf6a1b1e76daf001b343cc73",
-    "preparations/bcp02-net001-stand/artifacts.json": "2aecc2fdb0e70e2bc470f6fd57b53cb98aa353b11a1f959d857c51593e3683ff"
+    "tests/bcp/vector_report.py": "5f0bc6702a6cf9071c009d4b445af4e9bbba7f6ea2ba57ca82e4b35a33c28c02"
   },
   "revised_sources": {
     "runners/bcp02/README.md": {
@@ -483,12 +481,26 @@
     "runners/bcp02/manifest.json": {
       "previous_sha256": "2508df00329aae1cc35c1664a4a94ce801166247547b25bb868de993b85eb270",
       "previous_revision": "8c68879211f2d491017bd5f821ec610138eade9c"
+    },
+    "scripts/build_portal.py": {
+      "previous_sha256": "2449da02270873e368e91044f5fb44f9d335c1f1b3a159ffc2167642dc2e1ec2",
+      "previous_revision": "8c68879211f2d491017bd5f821ec610138eade9c",
+      "reason": "Owner-requested website update; no protocol source change"
+    },
+    "scripts/build_languages.py": {
+      "previous_sha256": "5f710c320b5bf39ff1a096b9bc05e24cf13b1e55a74caf550e0426f5ce20f6fb",
+      "previous_revision": "8c68879211f2d491017bd5f821ec610138eade9c",
+      "reason": "Owner-requested website update; no protocol source change"
     }
   },
   "archived_evidence": {
     "runners/bcp02/evidence/archive/pr47/manifest.json": "2508df00329aae1cc35c1664a4a94ce801166247547b25bb868de993b85eb270",
     "runners/bcp02/evidence/archive/pr47/checks.json": "a05b8066ee81f3e07846bb7700df7315f16560785de08a0809d528eb17b0d92f",
-    "runners/bcp02/evidence/archive/pr47/preparation-notes.json": "c42827b2bf424831806e2b9f3f8546b675142153195f4b18a7270cfb640ec3e5"
+    "runners/bcp02/evidence/archive/pr47/preparation-notes.json": "c42827b2bf424831806e2b9f3f8546b675142153195f4b18a7270cfb640ec3e5",
+    "runners/bcp02/evidence/archive/dataset-v2/dataset-preservation.json": "8f6e0bb9d4c3648fb791f4730b93d3e603b665b2a6925c5476a4210d676ed1eb",
+    "runners/bcp02/evidence/archive/dataset-v2/manifest.json": "d5840ff91925c064463be8c7f56f80142943f64a5775fa2e04d01d978ea07c21",
+    "runners/bcp02/evidence/archive/dataset-v2/scripts/build_portal.py": "2449da02270873e368e91044f5fb44f9d335c1f1b3a159ffc2167642dc2e1ec2",
+    "runners/bcp02/evidence/archive/dataset-v2/scripts/build_languages.py": "5f710c320b5bf39ff1a096b9bc05e24cf13b1e55a74caf550e0426f5ce20f6fb"
   },
   "interpretation": "Previous source bytes remain available at exact accepted Git revision; changed evidence reports/manifests are additionally retained byte-for-byte. No prior network evidence or mesh source was changed.",
   "network_execution": false
