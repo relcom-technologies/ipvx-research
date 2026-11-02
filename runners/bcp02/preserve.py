@@ -14,9 +14,16 @@ def check():
         p=ROOT/name;need(p.resolve()==p and sha(p.read_bytes())==pin,'previous source changed: '+name)
     prefix=b''.join((ROOT/'history/events.jsonl').read_bytes().splitlines(keepends=True)[:saved['history_events']])
     need(sha(prefix)==saved['history_prefix_sha256'],'accepted history prefix changed')
+    revision=read_json(Path(__file__).with_name('evidence')/'dataset-preservation.json')
+    for name,pin in {**revision['unchanged_files'],**revision['archived_evidence']}.items():
+        need(sha((ROOT/name).read_bytes())==pin,'dataset revision preservation mismatch: '+name)
+    prefix=b''.join((ROOT/'history/events.jsonl').read_bytes().splitlines(keepends=True)[:revision['history_events']])
+    need(sha(prefix)==revision['history_prefix_sha256'],'dataset revision history prefix changed')
     from runners.bcp02.admission import source_hash
     digest=source_hash()
     return dict(previous_files=len(saved['files']),previous_events=saved['history_events'],
+                dataset_revision_previous_events=revision['history_events'],
+                dataset_revision_unchanged_files=len(revision['unchanged_files']),archived_reports=len(revision['archived_evidence']),
                 source_scope_sha256=digest,network_execution=False,old_evidence_reissued=False)
 
 

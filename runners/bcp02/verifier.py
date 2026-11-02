@@ -10,6 +10,9 @@ from bcp.core import verify
 from bcp.wire import Reject, decode_ethernet, signing_inputs, digest, uint
 from .common import CASES, NODES, Blocked, read_json, need, sha
 from .fixture import FixtureChain
+from .dataset import descriptor, fresh, lifetime
+from .admission import verify_permit
+from cryptography.exceptions import InvalidSignature
 from .pcap import frames
 from .scenarios import SCRIPTS, observed
 
@@ -50,7 +53,24 @@ def evaluate(directory):
             read_json(directory/name)
         data=read_json(directory/'dataset/dataset.json');chain=FixtureChain(data)
         need(sha((directory/'dataset/dataset.json').read_bytes())==manifest['dataset_sha256'],'dataset mismatch')
+        admission=read_json(directory/'dataset-admission.json')
+        binding,bundle=descriptor((directory/'dataset/bundle.json').read_bytes())
+        need(binding==admission['dataset'] and binding['run_id']==manifest['run_id']
+             and binding['dataset_sha256']==manifest['dataset_sha256'], 'admission dataset mismatch')
+        need(lifetime(data)==(binding['created_at'],binding['expires_at']), 'admission freshness metadata mismatch')
+        permit=verify_permit(admission['envelope'],admission['owner_public_key'],
+                             scope=manifest['scope_sha256'],now=admission['admitted_at'])
+        need(permit['dataset']==binding and permit['run_id']==manifest['run_id']
+             and permit['_document_sha256']==admission['permit_document_sha256'], 'permit receipt mismatch')
+        for name,pin in bundle['files'].items():
+            # Secret key contents are not needed by the offline verifier.
+            if name.endswith('/key.json'):continue
+            need(sha((directory/'dataset'/name).read_bytes())==pin, 'admission bundle member mismatch')
+        for name in ('source-binary-dataset-hashes.json','state-bank.json'):
+            index=read_json(directory/name)
+            need(index['dataset_admission']==binding,'dataset index admission mismatch')
         captured=defaultdict(set);raw_by_hash={}
+
         for link in ('L1','L2'):
             folder=directory/'captures'/link
             count=0
@@ -59,6 +79,8 @@ def evaluate(directory):
                     count+=1
                     if raw[12:14]!=b'\x88\xb5':
                         result['outcome']='FAIL_ISOLATION';result['reason']='unexpected EtherType';return result
+                    fresh(binding,timestamp)
+                    need(permit['not_before']<=timestamp<permit['not_after'],'capture outside permit/dataset lifetime')
                     h=sha(raw);captured[h].add(link);raw_by_hash[h]=raw
             stats=read_json(folder/'capture-statistics.json')
             need(stats['filter'] is None and stats['snaplen']==65535 and stats['error'] is None
@@ -85,6 +107,9 @@ def evaluate(directory):
             ev=[];db={}
             for node in NODES:
                 ev+=events(folder/node/'events.jsonl');db[node]=tables(folder/node/'core.sqlite')
+            for e in ev:
+                fresh(binding,e['utc'])
+                need(permit['not_before']<=e['utc']<permit['not_after'],'event outside permit/dataset lifetime')
             need(all(e['run_id']==manifest['run_id'] and e['case_id']==case for e in ev),'event scope mismatch')
             need(any(e['decision']=='READY' for e in ev),'missing process evidence')
             for e in ev:
@@ -156,6 +181,6 @@ def evaluate(directory):
                 need(sha(twin) in captured,'corrupt injection lacks intact twin')
         result['outcome']='PASS' if all(c['pass_criteria_met'] for c in result['case_results'].values()) else 'FAIL_PROTOCOL'
         result['interpretation']='Transport with synthetic fixture-state only; no chain finality, physical link or independent-operator conclusion.'
-    except (Blocked,OSError,ValueError,KeyError,TypeError,sqlite3.Error) as e:
+    except (Blocked,OSError,ValueError,KeyError,TypeError,InvalidSignature,sqlite3.Error) as e:
         result['outcome']='INCONCLUSIVE';result['reason']=str(e)
     return result

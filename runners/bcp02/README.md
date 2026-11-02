@@ -10,6 +10,11 @@ package. The accepted plan directory, core, contracts, adapter, integration and
 historical mesh evidence remain unchanged. Its old missing-implementation text
 is the preserved planning snapshot; this directory records subsequent work.
 
+The dataset/admission lifecycle is revised for review in
+[dataset-admission.md](dataset-admission.md). Original PR47 checks and manifest
+remain byte-identical in `evidence/archive/pr47/` and Git; PR48 preparation stays
+an unchanged dated snapshot. No old permit authorizes this runner2 revision.
+
 ## What is implemented
 
 - `stand.py`, `controller.py`: collision-safe creation of the three declared
@@ -25,7 +30,7 @@ is the preserved planning snapshot; this directory records subsequent work.
   and START/STOP/barrier stage, never frames, request bytes or application results.
 - `routes.py`: verify the peer's signed suffix, preserve its signatures and sign
   only the local prefix/link. No use of the all-private-keys fixture constructor.
-- `fixture.py`, `generate_bank.mjs`: fresh per-run Ed25519/X25519 keys; each actor
+- `fixture.py`, `generate_bank.mjs`, `dataset.py`: separately prepared and sealed per-run Ed25519/X25519 keys; each actor
   loads only its own private material. Public keys are registered in the accepted
   contracts using direct in-memory EVM messages, not transactions or RPC. Fixed
   synthetic EL/CL envelopes wrap those ABI reads; the accepted adapter checks
@@ -66,7 +71,7 @@ Preparation failures and corrections are retained in `evidence/preparation-notes
 ## Future admission and operation — not authorized by this PR
 
 `launch-config.json` deliberately has no owner key, allocated host, binary/image
-pins, accepted window, owner scope ACK or separate launch decision. Default CLI
+pins, dataset descriptor, accepted window, owner scope ACK or separate launch decision. Default CLI
 only reports NOT_RUN. `run` fails before setup under the committed configuration.
 Changing it requires a reviewed candidate and a newly frozen `manifest.json`.
 
@@ -81,14 +86,18 @@ directories have different owners; their root-owned parent is not traversable.
 Only after reviewed configuration and separate owner authorization may an
 operator supply a root-owned 0600 permit signed by the configured owner key.
 The signed payload binds `scope_sha256`, `run_id`, `host_image_sha256`,
-`not_before`, `not_after`, `launch:true`, `transactions:0`, `production:false`.
+`not_before`, `not_after`, `launch:true`, `transactions:0`, `production:false`, and
+the complete sealed dataset descriptor under a version-2 signature domain. It
+binds raw dataset/bundle hashes, creation time and the exclusive freshness
+deadline; the window must end no later than that deadline. See the lifecycle
+document above for preparation and review before signing.
 The window must match the accepted configuration and last at most one hour.
 Source hashes alone and a user-supplied JSON assertion never grant authority.
 The allocated host's machine-ID hash is checked. Before any setup, the permit
 and run ID are consumed in a root-private host ledger; copying a permit, changing
 its filename or retrying a failed run does not authorize another attempt.
 
-The explicit future command is `python3 -m runners.bcp02.cli run --permit <private-permit> --output <new-private-directory>`.
+The explicit future command is `python3 -m runners.bcp02.cli run --permit <private-permit> --dataset <sealed-directory> --output <new-private-directory>`.
 **Do not execute it under the present authorization.** Each child also verifies
 admission before opening sockets. Image identity is operator-attested; actual
 kernel config, binaries, CPU/RAM, namespace, socket and clock checks are measured
@@ -111,7 +120,7 @@ Ethernet delivery. This is one host and one infrastructure operator, not proof o
 physical Ethernet, a whole device without IP, independent operators or utility
 over IP. Headers/roots are synthetic; ABI execution does not prove Ethereum
 finality. A separate live-chain protocol would be needed for that conclusion.
-Host resources, a run dataset, installed binary pins, review and launch approval
+Host resources, a real reviewed run dataset, installed binary pins, review and launch approval
 remain missing. Neither merge nor green unit tests remove those gates.
 
 Reference mechanisms: [packet(7)](https://man7.org/linux/man-pages/man7/packet.7.html),

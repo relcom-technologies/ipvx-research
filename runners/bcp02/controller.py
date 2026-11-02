@@ -8,17 +8,18 @@ import subprocess
 import sys
 import time
 
-from .admission import preflight, source_hash, claim_once
-from .common import NODES, need, private_json, sha, control, run_id, ROOT
-from .fixture import export
+from .admission import preflight, source_hash, claim_once, authorize, verify_permit
+from .common import NODES, need, private_json, sha, control, run_id, ROOT, read_json
+from .dataset import load, snapshot, fresh
 from .scenarios import SCRIPTS, observed
 from .stand import Stand, NS, execute, inode
 from .verifier import evaluate
 
 
 class Controller:
-    def __init__(self,directory,permit,config,permit_path):
+    def __init__(self,directory,permit,config,permit_path,dataset_path):
         self.directory=Path(directory);self.permit=permit;self.config=config;self.permit_path=str(Path(permit_path).resolve())
+        self.dataset_path=Path(dataset_path)
         self.run=run_id(permit['run_id']);self.children={};self.selector=selectors.DefaultSelector();self.events=[]
         self.start=time.monotonic();self.acked=set();self.serial=0;self.current='P01';self.label='P01'
         self.timeline=dict(capture_ready={},link_up=None,resources_within_limits=True,clock_healthy=True,
@@ -27,6 +28,7 @@ class Controller:
 
     def bounds(self):
         need(time.monotonic()-self.start<1200 and time.time()<self.permit['not_after'],'run time/window bound')
+        fresh(self.permit['dataset'],time.time())
         size=0
         for p in self.directory.rglob('*'):
             need(not p.is_symlink(),'artifact symlink')
@@ -161,19 +163,36 @@ class Controller:
             private_json(folder/'closed.json',dict(files=pins,relay_stopped_monotonic=stopped_at))
 
     def run_all(self):
-        # Nothing below is called by tests or PR CI. Admission is checked by CLI.
+        # Offline tests exercise only rejection before claim/setup; no network body.
         self.health=preflight(self.config)
         need(time.time()<self.permit['not_after'],'permit expired during preflight')
+        permit,config=authorize(self.permit_path)
+        need(permit==self.permit and config==self.config,'admission changed before claim')
+        contents=load(self.dataset_path,self.permit['dataset'],time.time())
+        envelope=read_json(self.permit_path)
+        checked=verify_permit(envelope,self.config['owner_public_key'],scope=source_hash(),now=time.time())
+        need(checked==self.permit,'permit changed during dataset load')
+        fresh(self.permit['dataset'],time.time())
         claim_once(self.permit)
         self.directory.mkdir(mode=0o700,exist_ok=False)
         for name in ('configs','captures','cases'):(self.directory/name).mkdir(mode=0o700)
         result=None;error=None
         try:
-            self.dataset_hash=export(self.directory/'dataset',self.run,int(time.time()))
+            private_json(self.directory/'admitted-permit.json',envelope)
+            self.permit_path=str(self.directory/'admitted-permit.json')
+            snapshot(contents,self.directory/'dataset')
+            self.dataset_hash=self.permit['dataset']['dataset_sha256']
+            load(self.directory/'dataset',self.permit['dataset'],time.time())
+            private_json(self.directory/'dataset-admission.json',dict(
+                envelope=read_json(self.permit_path),
+                owner_public_key=self.config['owner_public_key'],scope_sha256=source_hash(),
+                permit_document_sha256=self.permit['_document_sha256'],dataset=self.permit['dataset'],
+                admitted_at=time.time(),authority='Configured owner key; receipt alone does not authenticate a human.'))
             private_json(self.directory/'run-manifest.json',dict(run_id=self.run,state_mode='fixture-state-ethernet',
                 network_execution=True,scope_sha256=source_hash(),dataset_sha256=self.dataset_hash,
                 source_revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
                 host_preflight=self.health,transactions=0,models=0,paid_calls=0))
+            self.bounds()
             private_json(self.directory/'inventory-down.json',self.stand.create())
             for link,node,port in [('L1','A','a0'),('L2','B','b0')]:
                 self.spawn('capture-'+link,node,self.directory/'captures'/link,role='capture',link=link,port=port)
@@ -222,6 +241,6 @@ class Controller:
         private_json(self.directory/'clock-health.json',self.health)
         private_json(self.directory/'process-policy.json',self.timeline['processes'])
         private_json(self.directory/'source-binary-dataset-hashes.json',dict(scope_sha256=source_hash(),
-            binaries=self.config['binary_sha256'],dataset_sha256=getattr(self,'dataset_hash',None)))
+            binaries=self.config['binary_sha256'],dataset_sha256=getattr(self,'dataset_hash',None),dataset_admission=self.permit['dataset']))
         private_json(self.directory/'state-bank.json',dict(mode='fixture-state-ethernet',dataset='dataset/dataset.json',
-            sha256=getattr(self,'dataset_hash',None),live_rpc=False,transactions=0))
+            sha256=getattr(self,'dataset_hash',None),dataset_admission=self.permit['dataset'],live_rpc=False,transactions=0))

@@ -7,6 +7,7 @@ import time
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[2]))
 from runners.bcp02.admission import authorize
+from runners.bcp02.dataset import inspect_public, actor_key, fresh
 from runners.bcp02.common import Events, need, read_json, private_json, sha, control
 from runners.bcp02.linux import isolate, Clock
 from runners.bcp02.transport import PacketPort
@@ -16,12 +17,13 @@ from runners.bcp02.pcap import Writer
 
 def main():
     need(len(sys.argv)==3,'entry requires private config and permit paths')
-    authorize(sys.argv[2])
+    permit,_=authorize(sys.argv[2])
     c=read_json(sys.argv[1]);need(os.stat('/proc/self/ns/net').st_ino==c['namespace_inode'],'child in wrong namespace')
     os.umask(0o077)
-    need(sha(Path(c['dataset']).read_bytes())==c['dataset_sha256'],'dataset changed')
-    dataset=read_json(c['dataset']);key=None
-    if c['role']=='node':key=read_json('key.json')
+    need(c['run_id']==permit['run_id'] and c['dataset_sha256']==permit['dataset']['dataset_sha256'],'child dataset admission mismatch')
+    dataset,manifest=inspect_public(Path(c['dataset']).parent,permit['dataset'],time.time());key=None
+    if c['role']=='node':key=actor_key('key.json',c['node'],dataset,manifest)
+    fresh(permit['dataset'],time.time())
     ports={name:PacketPort(name,capture=c['role']=='capture') for name in c['ports']}
     # All sockets/secret material opened before dropping every capability. The
     # process then cannot create any new socket, switch namespaces or exec.
@@ -41,7 +43,10 @@ def main():
         file=open('capture.pcap','xb');os.chmod('capture.pcap',0o600);writer=Writer(file)
     try:
         while time.monotonic()-started<(90 if node else 1200):
+            fresh(permit['dataset'],clock.read()['now'])
+            need(time.time()<permit['not_after'],'permit expired in child')
             for selected,_ in selector.select(0.02):
+                fresh(permit['dataset'],clock.read()['now'])
                 port=selected.data
                 if port is None:
                     line=sys.stdin.readline()
