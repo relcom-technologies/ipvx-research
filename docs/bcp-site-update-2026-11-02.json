@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-02",
+  "attributed_to": "codex-assistant",
+  "recorded_by": "codex-assistant",
+  "status": "prepared_not_deployed",
+  "request": "Owner requested current-style portal/Lab updates and deployment after checks; no BCP experiment or production Actions.",
+  "bcp_implementation_pr": "https://github.com/relcom-technologies/ipvx-research/pull/49",
+  "lab_pr": "https://github.com/relcom-technologies/ipvx-agent-lab/pull/32",
+  "lab_revision": "b712d0c07c7b01d364b443a8a6ead17c271f9490",
+  "shared_facts_sha256": "ab9dce76cfe7d95fad1d720803575bbdbccde9b0672a4fe5ffc629e992ff7c80",
+  "shared_css_sha256": "8a3c7499d8cea7bc63f0c3ac7da29613a60179657dbd576c6c4c202605863f91",
+  "page_checks": 3,
+  "responsive_checks": 18,
+  "lab_unit_tests_passed": 206,
+  "lab_unit_tests_skipped": 8,
+  "original_lab_files_frozen": 53,
+  "views": {
+    "portal-final": {
+      "findings": [
+        {
+          "level": "WARN",
+          "id": "no-footage",
+          "width": 1440,
+          "message": "No video anywhere on the page.",
+          "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+        }
+      ],
+      "viewports": [
+        {
+          "width": 1440,
+          "overflow": 0,
+          "errors": []
+        },
+        {
+          "width": 768,
+          "overflow": 0,
+          "errors": []
+        },
+        {
+          "width": 390,
+          "overflow": 0,
+          "errors": []
+        }
+      ]
+    },
+    "lab-final": {
+      "findings": [],
+      "viewports": [
+        {
+          "width": 1440,
+          "overflow": 0,
+          "errors": []
+        },
+        {
+          "width": 768,
+          "overflow": 0,
+          "errors": []
+        },
+        {
+          "width": 390,
+          "overflow": 0,
+          "errors": []
+        }
+      ]
+    }
+  },
+  "design": {
+    "direction": "dense-tiles / Operating Sheet preserved",
+    "seed": 609954131,
+    "scope": "Read-mode refinement, not a replacement identity",
+    "exceptions": [
+      "Existing stone palette and thin rules preserved at owner request",
+      "Read-mode documentation uses no stock photos, decorative video or new entrance animation",
+      "Plex 24px/mobile section and 18px subhead follow existing DESIGN.md; sidecar is stale",
+      "Lab static detector cannot resolve /assets routes as filesystem links; actual browser confirms typography/contrast. Existing trust-edge marking is semantic and outside this update."
+    ]
+  },
+  "network_experiment": "NOT_RUN",
+  "ready_to_launch": false,
+  "production_actions": false,
+  "deployed": false,
+  "negative_results": [
+    "Initial Lab pytest: 201 passed/8 skipped, 5 localhost binds blocked by sandbox EPERM. The five passed on scoped loopback retry.",
+    "Initial portal preview used a non-40-character test revision and was refused by existing server validation; corrected to explicit all-zero preview-only revision.",
+    "One browser-test tool request timed out in automatic approval review before script creation; the reviewed local-only script was then created and ran successfully.",
+    "Draft attempted to extend the old browser script; preservation correctly rejected the frozen source. The script was restored byte-for-byte; new dedicated page tests and 18 separate browser checks cover BCP.",
+    "The first history rebuild required new translations and a temporary helper was initially addressed from the wrong directory. Corrected before commit.",
+    "The original preservation guard also pinned both presentation builders. Their accepted bytes are now verified in explicit archives; all other original files remain checked in place, and current builders remain source-hash pinned."
+  ]
+}

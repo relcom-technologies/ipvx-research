@@ -42,6 +42,11 @@
       "context": "account.html:text:header/nav/a"
     },
     {
+      "id": "12dd6323515fc7a0",
+      "source": "BCP 0.2",
+      "context": "account.html:text:header/nav/a"
+    },
+    {
       "id": "fb626eb69a95be72",
       "source": "Устройство сети",
       "context": "account.html:text:header/nav/a"
@@ -80,6 +85,31 @@
       "id": "041ebc7928fb7759",
       "source": "GitHub ↗",
       "context": "account.html:text:header/div/a"
+    },
+    {
+      "id": "5bd57038dbadd651",
+      "source": "Язык",
+      "context": "account.html:attribute:aria-label"
+    },
+    {
+      "id": "6da140fdd4be0189",
+      "source": "Русский",
+      "context": "account.html:text:body/nav/a"
+    },
+    {
+      "id": "ba118bf7fc9c1aed",
+      "source": "English",
+      "context": "account.html:text:body/nav/a"
+    },
+    {
+      "id": "801cfe0fa1182664",
+      "source": "Deutsch",
+      "context": "account.html:text:body/nav/a"
+    },
+    {
+      "id": "94b382b61b9dde0f",
+      "source": "Español",
+      "context": "account.html:text:body/nav/a"
     },
     {
       "id": "20f6203b19297010",
@@ -607,13 +637,13 @@
       "context": "architecture.html:text:main/div/h1"
     },
     {
-      "id": "9e0fa27e5e4c6228",
-      "source": "Стабильный ID отвечает на вопрос «кому». Локальный маршрут — «через какого соседа». Физический канал — «как передать кадр».",
+      "id": "5c8dfa31cf49989c",
+      "source": "BCP задаёт идентичность и разрешённый путь по состоянию реестра. Записанные сетевые опыты ниже показывают отдельный исторический прототип.",
       "context": "architecture.html:text:main/div/p"
     },
     {
-      "id": "4ced51ed01494135",
-      "source": "Четыре разных уровня",
+      "id": "f28ebc368d95de0f",
+      "source": "Уровни исторического прототипа",
       "context": "architecture.html:text:main/section/h2"
     },
     {
@@ -672,13 +702,13 @@
       "context": "architecture.html:text:main/section/p"
     },
     {
-      "id": "1711a86baa73bb97",
-      "source": "Что берём из IPvX",
+      "id": "8f3eeaec8ed17a8d",
+      "source": "От прототипа к BCP",
       "context": "architecture.html:text:main/section/h2"
     },
     {
-      "id": "27bd68562935d6d2",
-      "source": "Самостоятельное создание идентификаторов, отделение личности от местоположения, проверяемые контакты и распределённое разрешение. К ним добавляем явный допуск, границы ресурсов и измеримую доставку. Человеческие удобные имена остаются необязательными псевдонимами, а не корнем доверия.",
+      "id": "2f201b718a365658",
+      "source": "В историческом прототипе ID создаётся из ключа. В BCP NodeRegistry связывает NFT-идентификатор с владельцем и ключами, а TransitPolicy и ConnectionPolicy задают разрешённые пути. Это разные модели допуска; их результаты не подменяют друг друга. Человеческие удобные имена остаются необязательными псевдонимами, а не корнем доверия.",
       "context": "architecture.html:text:main/section/p"
     },
     {
@@ -692,8 +722,8 @@
       "context": "architecture.html:text:main/section/h2"
     },
     {
-      "id": "bd6043181e469d17",
-      "source": "В завершённом опыте локальные модели работали в целых гостевых ОС без INET и IPv6 на разных физических хостах. Нативные кадры шли через Ethernet, а управление внешними машинами сохраняло IP.",
+      "id": "ecb2ffcdaa4af1bd",
+      "source": "В завершённом опыте локальные модели работали в целых гостевых ОС без INET и IPv6 на разных физических хостах. Внутри гостей наблюдались кадры Ethernet, а управление внешними машинами сохраняло IP. Фактическая подложка между гипервизорами отдельно не подтверждена их конфигурацией.",
       "context": "architecture.html:text:main/section/p"
     },
     {
@@ -710,6 +740,11 @@
       "id": "f9618fab92c1d965",
       "source": "Схема устройства и проект RFC-0006 →",
       "context": "architecture.html:text:section/p/a"
+    },
+    {
+      "id": "18f31b09ca77a467",
+      "source": "BCP 0.2 · IPvX Research",
+      "context": "bcp.html:text:html/head/title"
     },
     {
       "id": "da6bf6140b94679f",
@@ -837,13 +872,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "ba4239f2501b3333",
-      "source": "189 событий по HX-0189; авторы, основания, проверки и ограничения.",
+      "id": "e286d27dc8a24f4d",
+      "source": "190 событий по HX-0190; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "0ac139279ac7eed2",
-      "source": "366.1 КиБ · 12 файлов",
+      "id": "234e181343086c8f",
+      "source": "368.4 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -882,8 +917,8 @@
       "context": "experiments.html:text:main/section/h2"
     },
     {
-      "id": "bfcbf2bd726faf80",
-      "source": "Отдельный живой стенд использует пять ВМ на трёх физических хостах, синтетических агентов без LLM и административный IP. Это другая конфигурация, чем записанный strict-LLM-опыт с тремя гостями без INET/IPv6. На",
+      "id": "75f8e5bc96b24a98",
+      "source": "Отдельный живой стенд использует пять ВМ на трёх физических хостах, синтетических агентов без LLM и административный IP. Это другая конфигурация, чем записанный strict-LLM-опыт с тремя гостями без INET/IPv6. Ни тот, ни другой не реализуют блокчейн-реестр BCP; конфигурация подложки между гипервизорами отдельно не подтверждена. На",
       "context": "experiments.html:text:main/section/p"
     },
     {
@@ -1487,23 +1522,23 @@
       "context": "index.html:text:div/section/h1"
     },
     {
-      "id": "0f3697bfd293a48e",
-      "source": "Исследуем адресацию и доставку сообщений, которые агенты могут использовать напрямую. Разрабатываем RFC и проверяем идеи на работающем стенде.",
+      "id": "31ae7c8fbc97c828",
+      "source": "Разрабатываем BCP: идентичность из реестра, разрешённый путь и собственный формат пакетов. Код проверяем офлайн; сетевой опыт готовим отдельно от исторического Mesh.",
       "context": "index.html:text:div/section/p"
     },
     {
-      "id": "5547f094d08c6aba",
-      "source": "Открыть проекты RFC",
+      "id": "bf73bc1f7bcc34ff",
+      "source": "Открыть BCP 0.2",
       "context": "index.html:text:div/section/a"
     },
     {
-      "id": "02d17a74f08be33e",
-      "source": "Что уже есть",
+      "id": "36e5ace98055fe7e",
+      "source": "Код и измерения",
       "context": "index.html:text:div/aside/h2"
     },
     {
-      "id": "3ab5cf12e02ad6c0",
-      "source": "Собственный Ethernet-протокол, устойчивые ID и локальный выбор маршрута.",
+      "id": "3fb290aaf576a38c",
+      "source": "BCP 0.2 — реализация с офлайн-проверками. Отдельный Mesh — подписанная доставка и локальный выбор маршрута.",
       "context": "index.html:text:div/aside/p"
     },
     {
@@ -4642,14 +4677,94 @@
       "context": "history.html:text:main/section/p"
     },
     {
-      "id": "f3040747c5208a90",
-      "source": "HX-0189 · Реализована привязка dataset и срока свежести к допуску BCP",
+      "id": "4805eb10fcf7ba0b",
+      "source": "HX-0190 · Подготовлено единое представление BCP и отдельного Mesh",
       "context": "history.html:text:section/details/summary"
     },
     {
       "id": "e078c61c3e49f21a",
       "source": "Реализовано",
       "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "d4982bd1bcdd0b0b",
+      "source": "Codex — основной ассистент этой беседы · 2026-11-02T12:29:48.384058+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "f1902f550090c606",
+      "source": "Портал на четырёх языках и Lab сохраняют текущий стиль. Общая структура: идея BCP, реализованный код, офлайн-проверки и следующий опыт. Один и тот же снимок фактов явно оставляет сетевой опыт и preflight в NOT_RUN; Mesh сохраняется отдельным историческим экспериментом. Владелец поручил публикацию после проверок; эта запись не заявляет выполненную выкатку.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "a0b5381cb84d0f84",
+      "source": "Согласовать утверждения обоих сайтов с кодом и доказательствами. Показать привязку dataset к permit v2 и сроку свежести, сохранив прежние результаты, интерфейсы и историю. Общие JSON/CSS исключают расхождения между представлениями.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "7135746f30a4a363",
+      "source": "data/bcp-status.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "9185bd3ba51dfed5",
+      "source": "docs/bcp-site-update-2026-11-02.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "cf9807bdf9da3775",
+      "source": "scripts/test_bcp_project.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "1def40c71375a44f",
+      "source": "runners/bcp02/evidence/archive/dataset-v2/manifest.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "4b5e8a56f97facb9",
+      "source": "runners/bcp02/evidence/dataset-preservation.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "a1f30bef3834bb79",
+      "source": "Локально прошли три проверки страницы и 18 браузерных сочетаний маршрутов/ширин. В Lab 201 тест прошёл сразу, пять проверок локальных HTTP-портов прошли после отдельного разрешённого повтора, восемь пропущены; CI verify/audit успешны. Исходные 53 файла доказательств Lab сохранены.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "b2514cde8c5d6d94",
+      "source": "Первоначальные 189 событий не переписаны. Для двух изменённых скриптов сайта закреплены предыдущие хеши; 420 остальных исходников сохранены. Manifest и отчёт dataset v2 архивированы побайтно. Негативные результаты и оговорённые ограничения визуальных анализаторов сохранены.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "a409903ad524580f",
+      "source": "Публикация веб-сервисов не выделяет ВМ и не запускает BCP, транзакции, модели или production Actions. Допуск, реальный Linux preflight и проверка подложки остаются отдельными барьерами. Окончательные CI, merge и выкатка фиксируются по фактическим результатам.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "f3040747c5208a90",
+      "source": "HX-0189 · Реализована привязка dataset и срока свежести к допуску BCP",
+      "context": "history.html:text:section/details/summary"
     },
     {
       "id": "65e99b68b0c81472",
@@ -4662,19 +4777,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "50deda6ce28b5b15",
       "source": "Закрыть обнаруженный в HX-0187 разрыв между разрешением и фактическим набором данных. Привязать ключи акторов к публичному состоянию, сохранить чтение только своего секрета дочерним процессом и отказаться от молчаливого продления свежести. Дедлайн равен минимуму created_at+1800 и возраста самого раннего свежего checkpoint+1800; окно допуска целиком помещается внутрь. Старый домен подписи не даёт полномочий новой ревизии.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "6f7fb2f061e8061a",
@@ -4717,11 +4822,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "4b5e8a56f97facb9",
-      "source": "runners/bcp02/evidence/dataset-preservation.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
       "id": "b1dd174aa2877559",
       "source": "runners/bcp02/evidence/archive/pr47/manifest.json",
       "context": "history.html:text:ul/li/a"
@@ -4730,11 +4830,6 @@
       "id": "bbe9535c1ab51eb7",
       "source": "runners/bcp02/evidence/archive/pr47/checks.json",
       "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "9f8b9f9d241251f8",
@@ -4760,11 +4855,6 @@
       "id": "385226a12377c2c0",
       "source": "Владелец позже поручил обновить оформление и содержание портала и Lab и выполнить выкатку после проверок. Это отдельная работа над веб-сервисами; она не разрешает запуск BCP-опыта, транзакции или production Actions. В этой записи ни слияние, ни выкатка не заявляются.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "1ea29c4768f5a648",

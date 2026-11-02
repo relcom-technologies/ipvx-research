@@ -14,6 +14,7 @@ import re
 import xml.etree.ElementTree as ET
 from i18n_sources import ROOT, SKIP, ATTRS, VOID, key, editorial
 from observatory import render as render_observatory
+from bcp_project import render as render_bcp, TEXT as BCP_TEXT, header as bcp_header
 from research_architecture import render as render_research_architecture
 from research_contributions import render as render_research_contributions
 from agent_directory import render as render_agent_directory
@@ -149,6 +150,11 @@ def localized(tree, name, language, catalog, pages):
     def walk(node, skipped=False):
         if isinstance(node, str):
             return node if skipped else translate(node)
+        if 'bcp-project' in (node.attr('class') or '').split():
+            markup=render_bcp(ROOT,language,compact=node.attr('data-bcp-mode')=='compact')
+            return next(child for child in Tree(markup).root.children if isinstance(child,Element))
+        if 'bcp-header' in (node.attr('class') or '').split():
+            return next(child for child in Tree(bcp_header(language)).root.children if isinstance(child,Element))
         if language != 'ru' and node.attr('id') == 'research-links-jump':
             return next(child for child in Tree(research_jump(language)).root.children if isinstance(child, Element))
         if language != 'ru' and node.attr('id') == 'research-links':
