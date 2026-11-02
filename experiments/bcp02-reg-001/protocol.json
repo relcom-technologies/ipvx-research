@@ -83,6 +83,12 @@
       "expected": "success; runtime keccak equals local build"
     },
     {
+      "id": "deploy-immutables",
+      "wallet": "reader",
+      "action": "read registry()/transit() getters",
+      "expected": "policies reference the deployed registry and transit"
+    },
+    {
       "id": "register-a",
       "wallet": "W1",
       "action": "NodeRegistry.register(A keys, endpoint)",
@@ -107,9 +113,15 @@
       "expected": "status 1 after both consents"
     },
     {
+      "id": "edge-rb-one-side",
+      "wallet": "W1",
+      "action": "TransitPolicy.propose(R,B) + consent(R) only",
+      "expected": "status 2 until B's owner W2 consents"
+    },
+    {
       "id": "edge-rb",
       "wallet": "W1+W2",
-      "action": "TransitPolicy.propose(R,B) + consent(R) by W1 + consent(B) by W2",
+      "action": "TransitPolicy.consent(edge-rb, version, B) by W2",
       "expected": "status 1 only after W2 consents"
     },
     {
@@ -122,6 +134,12 @@
       "id": "snapshot-s1",
       "wallet": "reader",
       "action": "finalized snapshot S1",
+      "expected": "R1 records match; source state for NET-001"
+    },
+    {
+      "id": "snapshot-s1-check",
+      "wallet": "reader",
+      "action": "check the snapshot against the step's expectation",
       "expected": "R1 records match; source state for NET-001"
     },
     {
@@ -149,6 +167,12 @@
       "expected": "reverts; owner W1"
     },
     {
+      "id": "w3-unchanged",
+      "wallet": "reader",
+      "action": "read A keys, R status, A owner",
+      "expected": "unchanged by third-party attempts"
+    },
+    {
       "id": "rotate-r",
       "wallet": "W1",
       "action": "NodeRegistry.setKeys(R new keys)",
@@ -161,15 +185,39 @@
       "expected": "edge-ar, edge-rb status 2; allowsEdge false for conn-ab"
     },
     {
-      "id": "repropose-edges",
+      "id": "snapshot-s2-check",
+      "wallet": "reader",
+      "action": "check the snapshot against the step's expectation",
+      "expected": "edge-ar, edge-rb status 2; allowsEdge false for conn-ab"
+    },
+    {
+      "id": "repropose-ar",
+      "wallet": "W1",
+      "action": "TransitPolicy.propose(A,R) again + consent(A) + consent(R)",
+      "expected": "status 1 under a new version"
+    },
+    {
+      "id": "repropose-rb",
       "wallet": "W1+W2",
-      "action": "re-propose and re-consent edge-ar and edge-rb, re-propose conn-ab",
-      "expected": "status 1 again with new versions; old version grants stay unusable"
+      "action": "TransitPolicy.propose(R,B) again + consent(R) + consent(B) by W2",
+      "expected": "status 1 under a new version"
+    },
+    {
+      "id": "repropose-ab",
+      "wallet": "W1+W2",
+      "action": "ConnectionPolicy.propose(A,B) again pinning the new edge versions + both consents",
+      "expected": "status 1; old version grants stay unusable"
     },
     {
       "id": "snapshot-s3",
       "wallet": "reader",
       "action": "finalized snapshot S3",
+      "expected": "new versions active; old versions not restored"
+    },
+    {
+      "id": "snapshot-s3-check",
+      "wallet": "reader",
+      "action": "check the snapshot against the step's expectation",
       "expected": "new versions active; old versions not restored"
     },
     {
@@ -182,6 +230,12 @@
       "id": "snapshot-s4",
       "wallet": "reader",
       "action": "finalized snapshot S4",
+      "expected": "B inactive until rebound; conn-ab status 2"
+    },
+    {
+      "id": "snapshot-s4-check",
+      "wallet": "reader",
+      "action": "check the snapshot against the step's expectation",
       "expected": "B inactive until rebound; conn-ab status 2"
     },
     {
