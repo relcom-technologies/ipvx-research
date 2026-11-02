@@ -157,7 +157,7 @@ class Provider:
                 text=self.openai_format()).input_tokens
         if self.name == 'anthropic':
             return self.client.messages.count_tokens(model=self.model, system=SYSTEM,
-                output_config=self.anthropic_format(),messages=[{'role':'user','content':prompt}]).input_tokens
+                output_config=self.anthropic_format(),messages=[{'role':'user','content':prompt}],**self.anthropic_options()).input_tokens
         return 0
 
     def openai_format(self):
@@ -165,6 +165,15 @@ class Provider:
 
     def anthropic_format(self):
         return {'format':{'type':'json_schema','schema':response_schema()}}
+
+    def anthropic_options(self):
+        # Claude Sonnet 5.5 thinks by default, and thinking tokens count against the same
+        # max_tokens as the JSON answer. `between_tools` keeps a tool-less call answer-only,
+        # as Sonnet 4.5 was, so the draft is not truncated and the reservation bound holds.
+        thinking=self.config.get('thinking')
+        if thinking is None:return {}
+        if thinking not in ({'type':'between_tools'},{'type':'adaptive'}):raise ValueError('unsupported_thinking_configuration')
+        return {'thinking':thinking}
 
     def generate(self, prompt, maximum):
         if self.name == 'openai':
@@ -175,7 +184,8 @@ class Provider:
             return response.output_text, response.model, dict(input_tokens=response.usage.input_tokens, output_tokens=response.usage.output_tokens)
         if self.name == 'anthropic':
             response = self.client.messages.create(model=self.model, system=SYSTEM, max_tokens=maximum,
-                service_tier='standard_only',output_config=self.anthropic_format(),messages=[{'role':'user','content':prompt}])
+                service_tier='standard_only',output_config=self.anthropic_format(),messages=[{'role':'user','content':prompt}],
+                **self.anthropic_options())
             self.response_meta={'stop_reason':response.stop_reason,'request_id':getattr(response,'_request_id',None),
                 'content_types':[x.type for x in response.content]}
             return ''.join(x.text for x in response.content if x.type == 'text'), response.model, dict(input_tokens=response.usage.input_tokens, output_tokens=response.usage.output_tokens)

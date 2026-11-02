@@ -28,7 +28,7 @@ if ! test -f /var/lib/ipvx-liaison/state/config.json; then
   python3 - "$release/config.example.json" <<'PY'
 import json,os,sys
 p='/var/lib/ipvx-liaison/state/config.json'
-d=json.load(open(sys.argv[1]));assert d['daily_budget_usd']==3 and d['publication_mode']=='draft_only'
+d=json.load(open(sys.argv[1]));assert 0<d['daily_budget_usd']<=3 and d['publication_mode']=='draft_only'
 d['billing_authorized']=True
 fd=os.open(p,os.O_WRONLY|os.O_CREAT|os.O_EXCL,0o600)
 with os.fdopen(fd,'w') as out:json.dump(d,out)
@@ -40,7 +40,8 @@ import json,os
 import sys,shutil
 p='/var/lib/ipvx-liaison/state/config.json'
 d=json.load(open(p))
-assert d['daily_budget_usd']==3 and d['publication_mode']=='draft_only'
+# The owner's limit was 3 USD/day until 2026-11-02 and is 1 USD/day since; never above 3.
+assert 0<d['daily_budget_usd']<=3 and d['publication_mode']=='draft_only'
 target='/etc/ipvx-liaison/config.json'
 if not os.path.exists(target):shutil.copyfile(p,'/etc/ipvx-liaison/config.before-autonomous.json')
 current=json.load(open(sys.argv[1]));current['billing_authorized']=True
