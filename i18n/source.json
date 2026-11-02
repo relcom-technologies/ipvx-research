@@ -872,13 +872,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "e286d27dc8a24f4d",
-      "source": "190 событий по HX-0190; авторы, основания, проверки и ограничения.",
+      "id": "2e2302bd36dd119e",
+      "source": "191 событий по HX-0191; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "234e181343086c8f",
-      "source": "368.4 КиБ · 12 файлов",
+      "id": "93bab484601302c0",
+      "source": "371.2 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4677,6 +4677,66 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "73e304840561828e",
+      "source": "HX-0191 · Слиты PR49/50 и опубликованы согласованные сайты BCP",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "a65bdf7674795b3f",
+      "source": "Codex — основной ассистент этой беседы · 2026-11-02T19:43:04.685502+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "1e980bb3b4c61548",
+      "source": "PR49 и PR50 слиты обычными merge commit с разовым --admin после ответа владельца на запрос; защита main не изменена. Ранее обычным merge commit принят Lab PR32. Выложены проверенные неизменяемые версии портала 733cbc3 и Lab b712d0c, чьи деревья совпадают с принятыми merge commit. Пройдены 14 публичных HTTPS-проверок и 18 браузерных проверок на трёх ширинах.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "de470ce21ec2a1d5",
+      "source": "Завершить ранее порученную публикацию сайтов вне GitHub Actions, сохранив историю и прежние доказательства. Обновлены только публичные файлы портала и интерфейсы Lab; фоновые узлы, доступ, закрытая очередь и уведомления сохранены. Отдельная квитанция фиксирует результат выкатки, не переписывая подготовительные записи.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "d692a9753313a13d",
+      "source": "docs/bcp-site-release-2026-11-02.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "303758ef502ef651",
+      "source": "Сохранность четырёх прогонов и 131 события Lab подтверждена хешами логических строк до и после. Шесть контейнеров агентов и резолверов не пересозданы; службы входа/A2A и таймеры уведомлений не перезапущены. Доступность шифрованного журнала подтверждена без новой проверки содержимого заявок или тестового письма.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "e2617ec80894882a",
+      "source": "Две ошибки адресации в проверках выкатки вызвали автоматические откаты: адрес публичного viewer, затем отсутствующий штатный Host для входа. Обе исправлены; третья попытка успешна. Первые квитанции, резервные копии и отрицательные проверки сохранены. Проверка TLS не отключалась; ограничения отдельного Python-клиента проверены штатным браузером.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "f45ed3429c76adc4",
+      "source": "Новая ВМ не выделена, Linux preflight и BCP-опыт остаются NOT_RUN; ready_to_launch=false. Транзакции, модели, сетевой опыт и production Actions не запускались. Публикация сайтов не доказывает физическую подложку или работу BCP с реальной цепочкой. Эта запись истории не требует повторной выкатки.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "4805eb10fcf7ba0b",
       "source": "HX-0190 · Подготовлено единое представление BCP и отдельного Mesh",
       "context": "history.html:text:section/details/summary"
@@ -4697,19 +4757,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "a0b5381cb84d0f84",
       "source": "Согласовать утверждения обоих сайтов с кодом и доказательствами. Показать привязку dataset к permit v2 и сроку свежести, сохранив прежние результаты, интерфейсы и историю. Общие JSON/CSS исключают расхождения между представлениями.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "7135746f30a4a363",
@@ -4737,11 +4787,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "a1f30bef3834bb79",
       "source": "Локально прошли три проверки страницы и 18 браузерных сочетаний маршрутов/ширин. В Lab 201 тест прошёл сразу, пять проверок локальных HTTP-портов прошли после отдельного разрешённого повтора, восемь пропущены; CI verify/audit успешны. Исходные 53 файла доказательств Lab сохранены.",
       "context": "history.html:text:details/ul/li"
@@ -4755,11 +4800,6 @@
       "id": "a409903ad524580f",
       "source": "Публикация веб-сервисов не выделяет ВМ и не запускает BCP, транзакции, модели или production Actions. Допуск, реальный Linux preflight и проверка подложки остаются отдельными барьерами. Окончательные CI, merge и выкатка фиксируются по фактическим результатам.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "f3040747c5208a90",

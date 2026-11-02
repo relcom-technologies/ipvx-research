@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "attributed_to": "codex-assistant",
+  "recorded_by": "codex-assistant",
+  "status": "measured",
+  "as_of": "2026-11-02T19:45:32.004057+00:00",
+  "applied_at": "2026-11-02T19:43:04.685502+00:00",
+  "merges": [
+    {
+      "headRefOid": "c14cebd4d5040632bd1fb38319b74bce5b7c2152",
+      "mergeCommit": {
+        "oid": "bab49537018647b8e4a832b9d680dad9130ca11d"
+      },
+      "mergedAt": "2026-11-02T19:38:04Z",
+      "state": "MERGED",
+      "number": 49
+    },
+    {
+      "headRefOid": "733cbc3e29dfbc44369e50e8957650be8af6fc31",
+      "mergeCommit": {
+        "oid": "7f625ade22db8e1f53c4fbfdf18806a233cc5c7c"
+      },
+      "mergedAt": "2026-11-02T19:38:53Z",
+      "state": "MERGED",
+      "number": 50
+    }
+  ],
+  "branch_rules_unchanged": true,
+  "portal_revision": "733cbc3e29dfbc44369e50e8957650be8af6fc31",
+  "lab_revision": "b712d0c07c7b01d364b443a8a6ead17c271f9490",
+  "lab_merge_commit": "0e973aea69b93c8c6ef7d7dee0e9593728a8aaf0",
+  "public_sites": [
+    "https://ipvx.org/bcp.html",
+    "https://lab.ipvx.org/#bcp",
+    "https://lab.ipvx.org/#mesh"
+  ],
+  "public_https_checks": 14,
+  "browser_route_viewport_checks": 18,
+  "shared_facts_identical": true,
+  "retained_lab_records": {
+    "runs": 4,
+    "events": 131,
+    "logical_row_hashes_unchanged": true
+  },
+  "six_legacy_agent_resolver_containers_unchanged": true,
+  "auth_a2a_and_notification_timer_invocations_unchanged": true,
+  "signed_queue_export_available": true,
+  "negative_results": [
+    "First acceptance used loopback for a viewer bound to the existing private interface; automatic rollback completed.",
+    "Second acceptance omitted the public Host header for sign-in; the existing host boundary correctly refused it and automatic rollback completed.",
+    "Both checks were corrected and prevalidated against the previous release; the third attempt passed without resetting data or delivery state.",
+    "Standalone Python HTTPS initially lacked a trust bundle, then received 403 with verified TLS. Native-browser HTTPS checks passed; no TLS verification was disabled."
+  ],
+  "network_experiment": "NOT_RUN",
+  "transactions": 0,
+  "ready_to_launch": false,
+  "production_actions": false,
+  "limits": [
+    "Website publication does not allocate the requested test VM, perform Linux preflight, establish physical underlay or authorize the BCP experiment.",
+    "The deployed immutable revisions are the tested PR heads; each is byte-identical to the tree of its accepted two-parent merge commit.",
+    "This receipt records service and page acceptance, not a new model run, SMTP-delivery test or independent review."
+  ],
+  "private_receipt_sha256": "bf3c57df05b7bbb483ddbb78873284865aca8ba44eda896bce0a731645158da2",
+  "public_checks": [
+    {
+      "url": "https://ipvx.org/healthz",
+      "status": 200,
+      "sha256": "5146dfaa0c8967c9b0c08ecfcc15b5d526013d41fb8b13b9526ce974c5f3a7bf"
+    },
+    {
+      "url": "https://ipvx.org/",
+      "status": 200,
+      "sha256": "e9f80097e15261917b75832ee1fbf05743d37170e3acbe65d026ff6da5b66de3"
+    },
+    {
+      "url": "https://ipvx.org/architecture.html",
+      "status": 200,
+      "sha256": "2a734f4861fab7fdcfa52d189777736e4a2984402aac944a70ae781ded01c197"
+    },
+    {
+      "url": "https://ipvx.org/bcp.html",
+      "status": 200,
+      "sha256": "91957d6a4363e006f54414dbab524c1cc184fa2c79056efb1a8c3156615390df"
+    },
+    {
+      "url": "https://ipvx.org/bcp.en.html",
+      "status": 200,
+      "sha256": "56bab43160d42298e6fa06de4cc91fd5d31722f2892599f6ef13d0b820108b44"
+    },
+    {
+      "url": "https://ipvx.org/bcp.de.html",
+      "status": 200,
+      "sha256": "1ed407a58bc04febefc383fb185cc39a48893db89da6b7bc974de845b7404901"
+    },
+    {
+      "url": "https://ipvx.org/bcp.es.html",
+      "status": 200,
+      "sha256": "f392cec57f0db8b9c0b5b58e380a17fb2f48204589dd5829fc0d73a6fae403b3"
+    },
+    {
+      "url": "https://ipvx.org/data/bcp-status.json",
+      "status": 200,
+      "sha256": "ab9dce76cfe7d95fad1d720803575bbdbccde9b0672a4fe5ffc629e992ff7c80"
+    },
+    {
+      "url": "https://ipvx.org/auth/session",
+      "status": 200,
+      "sha256": "8aefeea119acd38b3ce2459cb9d54b682dc1f6ab4a622b38b3ba027c92b1c133"
+    },
+    {
+      "url": "https://lab.ipvx.org/health",
+      "status": 200,
+      "sha256": "0fdbffd43a828f18d87cb4ccccccbafbdf724b00541ccacedefbb335bb24e79f"
+    },
+    {
+      "url": "https://lab.ipvx.org/assets/bcp-status.json",
+      "status": 200,
+      "sha256": "ab9dce76cfe7d95fad1d720803575bbdbccde9b0672a4fe5ffc629e992ff7c80"
+    },
+    {
+      "url": "https://lab.ipvx.org/",
+      "status": 200,
+      "sha256": "1e9bc28c659d3eb30bb7d5814dc9830042fc571d9e48469995aae4fab1729cd3"
+    },
+    {
+      "url": "https://lab.ipvx.org/api/mesh/state",
+      "status": 200,
+      "sha256": "edebcfa1189f5577b66cb86733d33c2c5fecca560ab311a06dc2d90d4febf12a"
+    }
+  ],
+  "history_prefix_events": 190,
+  "history_prefix_sha256": "d2aacb0b8e92ba86015791b5a8db52a5122891267064d8220e3ac235eb167ac3"
+}
