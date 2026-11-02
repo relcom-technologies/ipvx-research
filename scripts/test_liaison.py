@@ -54,6 +54,35 @@ class LiaisonTests(unittest.TestCase):
         for change in [dict(evidence=['made-up']), dict(decision='run'), dict(evidence=[]), dict(tool='shell')]:
             with self.assertRaises(ValueError): agent.parse_reply(json.dumps(valid|change), ['profile'])
 
+    def test_owner_limit_of_one_dollar_holds_one_pair_and_refuses_the_rest(self):
+        # Owner decision 2026-11-02: 1 USD/day shared by both providers.
+        config=json.loads((ROOT/'services/liaison/config.example.json').read_text())
+        self.assertEqual(config['daily_budget_usd'],1);agent.validate_config(config)
+        ledger=agent.Ledger(Path(self.directory.name)/'one.sqlite',config['daily_budget_usd'])
+        ledger.reserve('pair',900_000,'fixture','fixture')
+        with self.assertRaises(agent.BudgetError):ledger.reserve('over',200_000,'fixture','fixture')
+
+    def test_sonnet_writer_answers_without_thinking_in_count_and_generation(self):
+        # Thinking tokens would share max_tokens with the JSON draft; between_tools keeps the call answer-only.
+        config=json.loads((ROOT/'services/liaison/config.example.json').read_text())['writer']
+        self.assertEqual((config['model'],config['thinking']),('claude-sonnet-5-5',{'type':'between_tools'}))
+        seen=[]
+        class Block:type='text';text='{}'
+        class Usage:input_tokens=7;output_tokens=3
+        class Messages:
+            def count_tokens(self,**kwargs):seen.append(('count',kwargs.get('thinking')));return Usage()
+            def create(self,**kwargs):
+                seen.append(('create',kwargs.get('thinking')))
+                class Response:content=[Block()];model=kwargs['model'];usage=Usage();stop_reason='end_turn';_request_id='req'
+                return Response()
+        provider=agent.Provider.__new__(agent.Provider);provider.config=config;provider.name='anthropic';provider.model=config['model']
+        provider.client=type('Client',(),{'messages':Messages()})()
+        self.assertEqual(provider.count('prompt'),7)
+        self.assertEqual(provider.generate('prompt',100)[1],'claude-sonnet-5-5')
+        self.assertEqual(seen,[('count',{'type':'between_tools'}),('create',{'type':'between_tools'})])
+        provider.config={**config,'thinking':{'type':'enabled','budget_tokens':1024}}
+        with self.assertRaises(ValueError):provider.generate('prompt',100)
+
     def test_pricing_expiry_stops_before_count_or_generation(self):
         class NeverCalled:
             name='openai';model='fixture';config={'pricing_valid_until':'2000-01-01'}
