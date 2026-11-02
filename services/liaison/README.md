@@ -1,18 +1,23 @@
 # IPvXResearchLiaison
 
 This service prepares technical replies from public discussion and versioned
-project evidence. Claude writes a draft; GPT checks it. These are two backends of
+project evidence. Claude (Sonnet 5.5 since 2026-11-02; Sonnet 4.5 before) writes a
+draft; GPT checks it. These are two backends of
 the same project representative, not independent researchers. The local adapter
 supports an explicitly configured Ollama server on loopback; no local inference
 has been measured for this service yet.
 
-The owner authorized **3 USD/day shared across providers**, measured by calendar
-day in Europe/Berlin. SQLite reserves maximum output cost plus a margin before
+The owner authorized **1 USD/day shared across providers** (2026-11-02; 3 USD/day
+before), measured by calendar day in Europe/Berlin. SQLite reserves maximum output cost plus a margin before
 generation, using provider input-token counts and the configured prices. Failed
 or uncertain calls keep their reservations. Concurrent workers share the ledger;
 there are at most eight generation calls/day. SDK retries are disabled. An expired
 price record, absent credential or exhausted balance stops new generation.
-Prices must be reviewed before `pricing_valid_until`; custom/region/priority
+Prices must be reviewed before `pricing_valid_until`; they were checked against the
+providers' pages on 2026-11-02 and are valid in the example until 2026-11-29, the day
+before Claude Sonnet 4.5 retires. The writer runs with `thinking: between_tools`: the
+call has no tools, so it answers without thinking tokens, which would otherwise share
+`max_output_tokens` with the JSON draft. custom/region/priority
 pricing is outside this default configuration. This ledger is not a provider
 billing statement. No tools, browsing, model execution or resource grants are
 exposed to a model.
@@ -75,7 +80,8 @@ Official API references reviewed 29 October 2026:
 - [OpenAI Python API](https://developers.openai.com/api/reference/python)
 - [GPT-5.5 model and pricing](https://developers.openai.com/api/docs/models/gpt-5.5)
 - [Claude Python API](https://platform.claude.com/docs/en/api/python)
-- [Claude Sonnet 4.5 model](https://platform.claude.com/docs/en/models/sonnet-4-5/overview)
+- [Claude Sonnet 4.5 model](https://platform.claude.com/docs/en/models/sonnet-4-5/overview) (retires 2026-11-30)
+- [Claude pricing](https://platform.claude.com/docs/en/about-claude/pricing), reviewed 2 November 2026: Sonnet 5.5 is `claude-sonnet-5-5`, $2/$10 per million tokens
 
 Focused tests cover concurrent budget reservations, the Berlin day boundary,
 duplicate versions, untrusted model decisions, expired prices, attribution and
