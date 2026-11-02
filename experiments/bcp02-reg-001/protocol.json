@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "protocol_id": "IPVX-BCP02-REG-001",
+  "version": "0.1",
+  "status": "proposed",
+  "source_base": "a3f4dcbec0e2aed08842800d5b3bdd4c60373470",
+  "author": "claude-code-assistant",
+  "recorded_by": "claude-code-assistant",
+  "owner_decision": {
+    "date": "2026-11-02",
+    "text": "Registry first; NET-001 second, on live registry state instead of synthetic state."
+  },
+  "chain": {
+    "name": "Ethereum Sepolia",
+    "chain_id": 11155111,
+    "mainnet_forbidden": true
+  },
+  "contracts": {
+    "sources": "contracts/bcp02/src",
+    "solc": "0.8.38",
+    "openzeppelin": "5.6.1",
+    "runtime_hash_must_match_local_build": true
+  },
+  "wallets": {
+    "W1": "owner of NFT A and R",
+    "W2": "owner of NFT B (different account, same lab owner)",
+    "W3": "third party without NFTs, only refused attempts"
+  },
+  "read_modes": {
+    "V": {
+      "description": "own Geth v1.17.10 + Lighthouse v8.3.2 pair, unchanged adapters/bcp02",
+      "admission_claims_allowed": true
+    },
+    "Q": {
+      "description": ">=3 independent public RPC providers, identical data at one finalized blockHash",
+      "admission_claims_allowed": false,
+      "profile_deviation": "BCP 0.2 forbids public RPC for admission; Q results are labelled read_mode=Q"
+    }
+  },
+  "claims": {
+    "R1": {
+      "statement": "Node identity is read from the registry at a finalized block",
+      "pass": "3/3 registered nodes match byte for byte; 1/1 absent NFT returns status 0",
+      "read_mode_required": "V"
+    },
+    "R2": {
+      "statement": "Only the NFT owner manages the node; transfer clears keys and raises the epoch",
+      "pass": "4/4 third-party attempts revert on chain; after each transfer keys are empty and epoch increased by 1"
+    },
+    "R3": {
+      "statement": "A permitted path needs bilateral consent and loses force on rotation or withdrawal",
+      "pass": "conn-ab status 1 only after all consents; status 2 and allowsEdge false in the first finalized snapshot after rotate-r; old versions never restored"
+    },
+    "R4": {
+      "statement": "Registry changes are available to nodes immediately (Resolver paper lines 285-286, 500)",
+      "measurement": "distribution over >=20 writes of submit->inclusion, ->safe, ->finalized, ->reader acceptance",
+      "preregistered_expectation": "finalized-only reading makes a change effective after about two Sepolia epochs (~13 min); if so, 'immediately available' is not supported for finalized reading",
+      "threshold": null
+    },
+    "R5": {
+      "statement": "Cost of registry writes",
+      "measurement": "gas units per operation type; any money figure is an estimate at a stated gas price",
+      "threshold": null
+    }
+  },
+  "steps": [
+    {
+      "id": "deploy-registry",
+      "wallet": "W1",
+      "action": "NodeRegistry deploy",
+      "expected": "success; runtime keccak equals local build"
+    },
+    {
+      "id": "deploy-transit",
+      "wallet": "W1",
+      "action": "TransitPolicy deploy (registry immutable)",
+      "expected": "success; runtime keccak equals local build"
+    },
+    {
+      "id": "deploy-connection",
+      "wallet": "W1",
+      "action": "ConnectionPolicy deploy (transit immutable)",
+      "expected": "success; runtime keccak equals local build"
+    },
+    {
+      "id": "deploy-immutables",
+      "wallet": "reader",
+      "action": "read registry()/transit() getters",
+      "expected": "policies reference the deployed registry and transit"
+    },
+    {
+      "id": "register-a",
+      "wallet": "W1",
+      "action": "NodeRegistry.register(A keys, endpoint)",
+      "expected": "success; NFT A epoch 1"
+    },
+    {
+      "id": "register-r",
+      "wallet": "W1",
+      "action": "NodeRegistry.register(R keys, router)",
+      "expected": "success; NFT R epoch 1"
+    },
+    {
+      "id": "register-b",
+      "wallet": "W2",
+      "action": "NodeRegistry.register(B keys, endpoint)",
+      "expected": "success; NFT B epoch 1"
+    },
+    {
+      "id": "edge-ar",
+      "wallet": "W1",
+      "action": "TransitPolicy.propose(A,R) + consent(A) + consent(R)",
+      "expected": "status 1 after both consents"
+    },
+    {
+      "id": "edge-rb-one-side",
+      "wallet": "W1",
+      "action": "TransitPolicy.propose(R,B) + consent(R) only",
+      "expected": "status 2 until B's owner W2 consents"
+    },
+    {
+      "id": "edge-rb",
+      "wallet": "W1+W2",
+      "action": "TransitPolicy.consent(edge-rb, version, B) by W2",
+      "expected": "status 1 only after W2 consents"
+    },
+    {
+      "id": "conn-ab",
+      "wallet": "W1+W2",
+      "action": "ConnectionPolicy.propose(A,B,[edge-ar,edge-rb]) + consent(A) + consent(B)",
+      "expected": "status 1 after both endpoint consents"
+    },
+    {
+      "id": "snapshot-s1",
+      "wallet": "reader",
+      "action": "finalized snapshot S1",
+      "expected": "R1 records match; source state for NET-001"
+    },
+    {
+      "id": "snapshot-s1-check",
+      "wallet": "reader",
+      "action": "check the snapshot against the step's expectation",
+      "expected": "R1 records match; source state for NET-001"
+    },
+    {
+      "id": "w3-setkeys-a",
+      "wallet": "W3",
+      "action": "NodeRegistry.setKeys(A) by non-owner",
+      "expected": "reverts; A unchanged"
+    },
+    {
+      "id": "w3-revoke-r",
+      "wallet": "W3",
+      "action": "NodeRegistry.revoke(R) by non-owner",
+      "expected": "reverts; R active"
+    },
+    {
+      "id": "w3-consent-b",
+      "wallet": "W3",
+      "action": "TransitPolicy.consent(edge-rb, version, B) by non-owner",
+      "expected": "reverts; consents unchanged"
+    },
+    {
+      "id": "w3-transfer-a",
+      "wallet": "W3",
+      "action": "ERC-721 transferFrom(W1,W3,A) without approval",
+      "expected": "reverts; owner W1"
+    },
+    {
+      "id": "w3-unchanged",
+      "wallet": "reader",
+      "action": "read A keys, R status, A owner",
+      "expected": "unchanged by third-party attempts"
+    },
+    {
+      "id": "rotate-r",
+      "wallet": "W1",
+      "action": "NodeRegistry.setKeys(R new keys)",
+      "expected": "success; R epoch 2"
+    },
+    {
+      "id": "snapshot-s2",
+      "wallet": "reader",
+      "action": "finalized snapshot S2",
+      "expected": "edge-ar, edge-rb status 2; allowsEdge false for conn-ab"
+    },
+    {
+      "id": "snapshot-s2-check",
+      "wallet": "reader",
+      "action": "check the snapshot against the step's expectation",
+      "expected": "edge-ar, edge-rb status 2; allowsEdge false for conn-ab"
+    },
+    {
+      "id": "repropose-ar",
+      "wallet": "W1",
+      "action": "TransitPolicy.propose(A,R) again + consent(A) + consent(R)",
+      "expected": "status 1 under a new version"
+    },
+    {
+      "id": "repropose-rb",
+      "wallet": "W1+W2",
+      "action": "TransitPolicy.propose(R,B) again + consent(R) + consent(B) by W2",
+      "expected": "status 1 under a new version"
+    },
+    {
+      "id": "repropose-ab",
+      "wallet": "W1+W2",
+      "action": "ConnectionPolicy.propose(A,B) again pinning the new edge versions + both consents",
+      "expected": "status 1; old version grants stay unusable"
+    },
+    {
+      "id": "snapshot-s3",
+      "wallet": "reader",
+      "action": "finalized snapshot S3",
+      "expected": "new versions active; old versions not restored"
+    },
+    {
+      "id": "snapshot-s3-check",
+      "wallet": "reader",
+      "action": "check the snapshot against the step's expectation",
+      "expected": "new versions active; old versions not restored"
+    },
+    {
+      "id": "transfer-b",
+      "wallet": "W2",
+      "action": "ERC-721 transferFrom(W2,W1,B) and back by W1",
+      "expected": "keys and roles cleared, inactive, epoch +1 each transfer; B needs new setKeys"
+    },
+    {
+      "id": "snapshot-s4",
+      "wallet": "reader",
+      "action": "finalized snapshot S4",
+      "expected": "B inactive until rebound; conn-ab status 2"
+    },
+    {
+      "id": "snapshot-s4-check",
+      "wallet": "reader",
+      "action": "check the snapshot against the step's expectation",
+      "expected": "B inactive until rebound; conn-ab status 2"
+    },
+    {
+      "id": "latency-series",
+      "wallet": "W1",
+      "action": ">=20 single NodeRegistry.setKeys writes, one per block window",
+      "expected": "per write: submit, inclusion, safe, finalized, reader acceptance times"
+    }
+  ],
+  "no_automatic_retry": true,
+  "outputs": {
+    "S1": "finalized snapshot used as NET-001 state source with state_mode=sepolia-finalized-snapshot (requires a separate NET-001 protocol change)",
+    "report": "tx hashes, blocks, gas, timings, snapshots, tool versions; no private keys, RPC tokens or management addresses"
+  },
+  "does_not_establish": [
+    "independent operators",
+    "mainnet economics",
+    "Sybil resistance",
+    "complete finality proof beyond the operator's EL/CL trust boundary",
+    "native delivery or absence of IP (NET-001)",
+    "naming (NAME-001)"
+  ],
+  "prerequisites": [
+    {
+      "item": "permission to send Sepolia transactions",
+      "owner": "project owner",
+      "status": "open"
+    },
+    {
+      "item": "wallets W1-W3 with Sepolia ETH; keys kept outside Git",
+      "owner": "project owner / operator",
+      "status": "open"
+    },
+    {
+      "item": "read mode choice (Q then V, or V only)",
+      "owner": "project owner",
+      "status": "open"
+    },
+    {
+      "item": "VM for Geth + Lighthouse (mode V); size measured at sync",
+      "owner": "project owner / infrastructure operator",
+      "status": "open"
+    },
+    {
+      "item": "deployment and write tool with offline tests against the in-memory EVM",
+      "owner": "implementation PR, then review",
+      "status": "open"
+    },
+    {
+      "item": "one-run permit with window and step list",
+      "owner": "project owner",
+      "status": "open"
+    }
+  ],
+  "execution_performed": false,
+  "transactions_performed": false,
+  "production_actions": false
+}
