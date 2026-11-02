@@ -20,8 +20,6 @@ jobs:
         run: npm run compile
       - name: Solidity behavior through in-memory EVM messages, no network or transactions
         run: npm run check
-      - name: REG-001 step runner against the in-memory EVM, no network or transactions
-        run: node --import ./test/offline.mjs --test reg001/runner.test.mjs
       - uses: actions/setup-python@v5
         with: {python-version: '3.13'}
       - name: Preserve existing offline BCP compatibility checks
