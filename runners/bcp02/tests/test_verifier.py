@@ -11,6 +11,9 @@ import unittest
 
 from runners.bcp02.common import NODES, private_json, sha
 from runners.bcp02.fixture import export
+from runners.bcp02.dataset import seal
+from runners.bcp02.admission import verify_permit
+from runners.bcp02.tests.test_admission import signed, SCOPE
 from runners.bcp02.pcap import Writer
 from runners.bcp02.scenarios import SCRIPTS
 from runners.bcp02.verifier import evaluate
@@ -20,11 +23,15 @@ from runners.bcp02.tests.memory import Memory,T0
 class EvidenceTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.tmp=tempfile.TemporaryDirectory();cls.root=Path(cls.tmp.name)/'unit';cls.root.mkdir()
+        cls.tmp=tempfile.TemporaryDirectory();cls.root=Path(cls.tmp.name).resolve()/'unit';cls.root.mkdir()
         export(cls.root/'dataset','offline-unit-tests',T0+100)
+        binding=seal(cls.root/'dataset',T0+100)
+        doc,public=signed(binding);permit=verify_permit(doc,public,scope=SCOPE,now=T0+100)
+        private_json(cls.root/'dataset-admission.json',dict(envelope=doc,owner_public_key=public,scope_sha256=SCOPE,
+            dataset=binding,admitted_at=T0+100,permit_document_sha256=permit['_document_sha256']))
         data=json.loads((cls.root/'dataset/dataset.json').read_text());data['_directory']=str(cls.root/'dataset')
         private_json(cls.root/'run-manifest.json',dict(network_execution=True,state_mode='fixture-state-ethernet',
-            run_id='offline-unit-tests',dataset_sha256=sha((cls.root/'dataset/dataset.json').read_bytes()),
+            run_id='offline-unit-tests',scope_sha256=SCOPE,dataset_sha256=sha((cls.root/'dataset/dataset.json').read_bytes()),
             warning='FABRICATED UNIT EVIDENCE; NOT A NETWORK MEASUREMENT'))
         (cls.root/'cases').mkdir();(cls.root/'captures').mkdir();wire=[]
         for label,script in SCRIPTS.items():
@@ -53,7 +60,7 @@ class EvidenceTests(unittest.TestCase):
         for name in ('inventory-down.json','inventory-up.json'):private_json(cls.root/name,inventory)
         for name in ('payload-manifest.json','worker-log.json','injection-manifest.json','fault-barriers.json',
                      'clock-health.json','process-policy.json','source-binary-dataset-hashes.json','state-bank.json'):
-            private_json(cls.root/name,{'unit_test_fixture':True})
+            private_json(cls.root/name,{'unit_test_fixture':True,'dataset_admission':binding})
 
     @classmethod
     def tearDownClass(cls):cls.tmp.cleanup()
@@ -61,6 +68,19 @@ class EvidenceTests(unittest.TestCase):
     def copy(self):
         temp=tempfile.TemporaryDirectory();self.addCleanup(temp.cleanup)
         folder=Path(temp.name)/'copy';shutil.copytree(self.root,folder);return folder
+
+    def test_missing_admission_is_inconclusive(self):
+        folder=self.copy();(folder/'dataset-admission.json').unlink()
+        self.assertEqual(evaluate(folder)['outcome'],'INCONCLUSIVE')
+
+    def test_changed_signed_binding_is_inconclusive(self):
+        folder=self.copy();p=folder/'dataset-admission.json';d=json.loads(p.read_text());d['dataset']['expires_at']+=1;p.write_text(json.dumps(d))
+        self.assertEqual(evaluate(folder)['outcome'],'INCONCLUSIVE')
+
+    def test_capture_after_signed_expiry_is_inconclusive(self):
+        folder=self.copy();p=folder/'captures/L1/capture.pcap'
+        raw=p.read_bytes();raw=raw[:24]+struct.pack('<I',T0+3000)+raw[28:];p.write_bytes(raw)
+        self.assertEqual(evaluate(folder)['outcome'],'INCONCLUSIVE')
 
     def test_complete_synthetic_evidence_reconciles(self):
         result=evaluate(self.root)

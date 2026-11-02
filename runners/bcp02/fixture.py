@@ -49,7 +49,7 @@ def envelopes(run, timestamp, *, branch='active'):
 
 
 def export(directory, run, now, *, node_binary='node'):
-    """Future preparation only; CLI admission precedes calls. Tests use temp dirs."""
+    """Offline dataset preparation only; no launch authority. Tests use temp dirs."""
     directory=Path(directory)
     directory.mkdir(mode=0o700, exist_ok=False)
     public={}
@@ -69,7 +69,7 @@ def export(directory, run, now, *, node_binary='node'):
     generated.chmod(0o600)
     bank=read_json(generated)
     need(bank['keys']==public and set(bank['states'])=={'active','rotated','reverse_denied','edge_denied'},'unexpected EVM bank')
-    private_json(directory/'dataset.json',dict(schema=1,state_mode='fixture-state-ethernet',run_id=run,
+    private_json(directory/'dataset.json',dict(schema=1,created_at=now,state_mode='fixture-state-ethernet',run_id=run,
         warning='Synthetic headers/state roots; no Ethereum finality or deployed contracts.',
         bank=bank, fresh=envelopes(run,now-24), stale=envelopes(run+'-stale',now-1920),
         branches={mode:envelopes(run,now-24,branch=mode) for mode in ('rotated','edge_denied','reverse_denied')},

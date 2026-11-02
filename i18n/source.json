@@ -837,13 +837,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "21bf5337ed006bcc",
-      "source": "188 событий по HX-0188; авторы, основания, проверки и ограничения.",
+      "id": "ba4239f2501b3333",
+      "source": "189 событий по HX-0189; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "2c56463f6f576dd5",
-      "source": "362.7 КиБ · 12 файлов",
+      "id": "0ac139279ac7eed2",
+      "source": "366.1 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4642,6 +4642,131 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "f3040747c5208a90",
+      "source": "HX-0189 · Реализована привязка dataset и срока свежести к допуску BCP",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "e078c61c3e49f21a",
+      "source": "Реализовано",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "65e99b68b0c81472",
+      "source": "Codex — основной ассистент этой беседы · 2026-11-02T11:51:52.263259+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "141c8ea5e9e3d803",
+      "source": "Для ревью добавлен двухэтапный цикл: отдельная подготовка запечатанного dataset, затем подписанный permit v2 на точные хеши dataset.json и всего пакета, run ID, время создания и исключающий дедлайн свежести. Runner принимает заранее проверенные байты, не генерирует их после допуска. Локально успешны 63 офлайн-теста и прежние 14 проверок плана; сетевой опыт не запускался.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "50deda6ce28b5b15",
+      "source": "Закрыть обнаруженный в HX-0187 разрыв между разрешением и фактическим набором данных. Привязать ключи акторов к публичному состоянию, сохранить чтение только своего секрета дочерним процессом и отказаться от молчаливого продления свежести. Дедлайн равен минимуму created_at+1800 и возраста самого раннего свежего checkpoint+1800; окно допуска целиком помещается внутрь. Старый домен подписи не даёт полномочий новой ревизии.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "6f7fb2f061e8061a",
+      "source": "runners/bcp02/dataset-admission.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "cbf536284a442d1f",
+      "source": "runners/bcp02/dataset.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "f33503eeb7663633",
+      "source": "runners/bcp02/admission.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "318b4de7e4a7a84b",
+      "source": "runners/bcp02/controller.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "1b6c1f2a86dc7fad",
+      "source": "runners/bcp02/entry.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "9c5f368f34f75d79",
+      "source": "runners/bcp02/verifier.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "c752254c48a07369",
+      "source": "runners/bcp02/tests/test_admission.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "334fe114f0bc0a32",
+      "source": "runners/bcp02/evidence/checks.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "4b5e8a56f97facb9",
+      "source": "runners/bcp02/evidence/dataset-preservation.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "b1dd174aa2877559",
+      "source": "runners/bcp02/evidence/archive/pr47/manifest.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "bbe9535c1ab51eb7",
+      "source": "runners/bcp02/evidence/archive/pr47/checks.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "9f8b9f9d241251f8",
+      "source": "Проверки используют временные файлы, синтетические ключи/подписи/часы, memory ports и искусственные PCAP/SQLite. 63 теста не доказывают Linux-изоляцию, Ethernet-доставку, финальность Ethereum или независимость оператора. Реальный dataset, owner permit, namespaces и сетевые процессы не создавались.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "287d25995a7dd252",
+      "source": "Первая новая проверка дала 60/61: неверное время постороннего EtherType преждевременно давало INCONCLUSIVE. Приоритет FAIL_ISOLATION восстановлен; отрицательный результат и исправление сохранены, последующие 63 теста успешны.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "6365f62dd36fc4d4",
+      "source": "Прежние 188 событий, 422 неревизуемых файла, исходные отчёты PR47 и пять файлов датированной подготовки PR48 сохранены. Изменённые исходники доступны по точной предыдущей Git-ревизии, старые manifest/checks/preparation-notes дополнительно архивированы побайтно. Mesh остаётся отдельным опытом.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "da68981ec7388b8f",
+      "source": "Конфигурация по умолчанию не содержит dataset descriptor, ключ владельца, финальный ACK или разрешение на запуск; ready_to_launch=false. Нужны отдельная ВМ, реальные kernel/binary pins и preflight, свежий пакет, review и отдельное разовое решение владельца. Самодостаточная квитанция с публичным ключом не удостоверяет человека.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "385226a12377c2c0",
+      "source": "Владелец позже поручил обновить оформление и содержание портала и Lab и выполнить выкатку после проверок. Это отдельная работа над веб-сервисами; она не разрешает запуск BCP-опыта, транзакции или production Actions. В этой записи ни слияние, ни выкатка не заявляются.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "63bcd56de7bd488a",
+      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "1ea29c4768f5a648",
       "source": "HX-0188 · Принято поручение слить PR48 с сохранением закрытого допуска",
       "context": "history.html:text:section/details/summary"
@@ -4662,19 +4787,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "da8369a6755a6376",
       "source": "Сохранить исходный коммит подготовки, прежнюю историю, доказательства и обоих родителей merge commit. Зафиксировать полномочие на слияние отдельно от отсутствующего допуска к запуску; сохранить правила защиты до и после операции для проверки неизменности.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "6a70311cd1e30acb",
@@ -4692,11 +4807,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "e79c4bb3c6d306b4",
       "source": "Запись фиксирует поручение и подготовку слияния; фактический merge-коммит и результаты повторного CI сохраняются отдельной квитанцией. Разрешение --admin не распространяется на PR845 или другие PR; изменения правил защиты не разрешены.",
       "context": "history.html:text:details/ul/li"
@@ -4710,11 +4820,6 @@
       "id": "bf874c115764e52c",
       "source": "ВМ не выделена, Linux preflight и сетевой опыт NOT_RUN. Барьер dataset/admission, финальный scope ACK, окно и отдельное решение владельца остаются открытыми; ready_to_launch=false. Слияние не запускает опыт, транзакции, модели, выкатку или production Actions.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "63bcd56de7bd488a",
-      "source": "Зафиксировал: Codex — основной ассистент этой беседы. Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "655d0e487ff6d7ce",
@@ -4754,11 +4859,6 @@
     {
       "id": "bb5c82a867b3d843",
       "source": "preparations/bcp02-net001-stand/checks.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "318b4de7e4a7a84b",
-      "source": "runners/bcp02/controller.py",
       "context": "history.html:text:ul/li/a"
     },
     {
@@ -4817,11 +4917,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "334fe114f0bc0a32",
-      "source": "runners/bcp02/evidence/checks.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
       "id": "29a0f76b8db44c3e",
       "source": "runners/bcp02/evidence/preservation.json",
       "context": "history.html:text:ul/li/a"
@@ -4867,11 +4962,6 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "f33503eeb7663633",
-      "source": "runners/bcp02/admission.py",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
       "id": "014acb4b08a05f93",
       "source": "runners/bcp02/checks.py",
       "context": "history.html:text:ul/li/a"
@@ -4890,11 +4980,6 @@
       "id": "ae04261e0cb7add2",
       "source": "HX-0184 · Реализована оснастка изолированного опыта BCP 0.2 для проверки в PR",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "e078c61c3e49f21a",
-      "source": "Реализовано",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "70d31a024080e415",

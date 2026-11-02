@@ -23,7 +23,34 @@ def source_hash():
         p=ROOT/name
         need(p.resolve()==p and sha(p.read_bytes())==expected,'source pin mismatch: '+name)
     import json
-    return sha(b'IPVX-BCP02-NET-001-F/runner1\0'+json.dumps(manifest,sort_keys=True,separators=(',',':')).encode())
+    return sha(b'IPVX-BCP02-NET-001-F/runner2\0'+json.dumps(manifest,sort_keys=True,separators=(',',':')).encode())
+
+
+PERMIT_DOMAIN = b'IPVX BCP02 isolated run permit v2\0'
+
+
+def verify_permit(doc, public_key, *, scope, now):
+    """Signature/integrity check; caller supplies the reviewed trusted owner key."""
+    from .dataset import parse, fresh
+    raw=base64.b64decode(doc['payload'],validate=True)
+    need(len(raw)<=8192,'permit too large')
+    signature=base64.b64decode(doc['signature'],validate=True)
+    Ed25519PublicKey.from_public_bytes(bytes.fromhex(public_key)).verify(signature,PERMIT_DOMAIN+raw)
+    permit=parse(raw)
+    need(set(permit)=={'version','scope_sha256','run_id','host_image_sha256','not_before','not_after',
+                       'launch','transactions','production','dataset'} and type(permit['version']) is int
+         and permit['version']==2, 'dataset-bound v2 permit required')
+    need(permit['scope_sha256']==scope, 'permit source/scope mismatch')
+    start,end=permit['not_before'],permit['not_after']
+    need(type(start) is int and type(end) is int and start<=now<end and 0<end-start<=3600,
+         'permit window not accepted/current')
+    fresh(permit['dataset'],now)
+    need(permit['dataset']['run_id']==permit['run_id'] and start>=permit['dataset']['created_at']
+         and end<=permit['dataset']['expires_at'], 'permit exceeds signed dataset lifetime/run')
+    need(permit['launch'] is True and type(permit['transactions']) is int and permit['transactions']==0
+         and permit['production'] is False, 'permit operation mismatch')
+    permit['_document_sha256']=sha(raw+signature)
+    return permit
 
 
 def authorize(path, *, config=None, now=None):
@@ -31,26 +58,18 @@ def authorize(path, *, config=None, now=None):
     need(c['state_mode']=='fixture-state-ethernet' and c['owner_public_key'] and c['review_evidence']
          and c['host_image_sha256'] and c['kernel_config_sha256'] and all(c['binary_sha256'].values())
          and c['allocated_host'] and c['accepted_window'] and c['owner_scope_ack']
-         and c['owner_launch_decision'] and c['resources_allocated'] is True,
-         'BLOCKED: implementation review, host/binary pins and separate owner launch decision are missing')
+         and c['owner_launch_decision'] and c['resources_allocated'] is True and c.get('run_dataset'),
+         'BLOCKED: implementation review, host/dataset pins and separate owner launch decision are missing')
     p=Path(path);s=p.lstat()
     need(stat.S_ISREG(s.st_mode) and not p.is_symlink() and s.st_uid==0
          and stat.S_IMODE(s.st_mode)==0o600,'owner permit must be a root-owned regular 0600 file')
     parent=p.resolve().parent;ps=parent.stat()
     need(ps.st_uid==0 and not stat.S_IMODE(ps.st_mode)&0o022,'permit parent must not be writable by other users')
-    doc=read_json(p);raw=base64.b64decode(doc['payload'],validate=True)
-    need(len(raw)<=8192,'permit too large')
-    Ed25519PublicKey.from_public_bytes(bytes.fromhex(c['owner_public_key'])).verify(
-        base64.b64decode(doc['signature'],validate=True),b'IPVX BCP02 isolated run permit\0'+raw)
-    import json
-    permit=json.loads(raw)
-    need(permit['scope_sha256']==source_hash(), 'permit source/scope mismatch')
-    now=time.time() if now is None else now
-    need(permit['not_before']<=now<permit['not_after'] and permit['not_after']-permit['not_before']<=3600
-         and c['accepted_window']==[permit['not_before'],permit['not_after']], 'permit window not accepted/current')
-    need(permit['launch'] is True and permit['transactions']==0 and permit['production'] is False
-         and permit['host_image_sha256']==c['host_image_sha256'], 'permit operation mismatch')
-    permit['_document_sha256']=sha(raw+base64.b64decode(doc['signature'],validate=True))
+    permit=verify_permit(read_json(p),c['owner_public_key'],scope=source_hash(),
+                         now=time.time() if now is None else now)
+    need(c['accepted_window']==[permit['not_before'],permit['not_after']], 'permit window not accepted/current')
+    need(permit['host_image_sha256']==c['host_image_sha256'] and permit['dataset']==c['run_dataset'],
+         'permit host/dataset differs from reviewed configuration')
     return permit,c
 
 

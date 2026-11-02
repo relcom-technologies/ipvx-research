@@ -23,6 +23,13 @@
       "cause": "macOS temporary root path uses the /var alias; strict path comparison rejected it",
       "correction": "Resolve the evidence root once while retaining per-file traversal/symlink checks",
       "measurement": false
+    },
+    {
+      "recorded_at": "2026-11-02T11:50:23.522531+00:00",
+      "result": "First dataset-bound check: 60/61 offline tests passed; unexpected EtherType returned INCONCLUSIVE",
+      "cause": "Lifetime check preceded the strict EtherType isolation decision on an intentionally old injected capture timestamp",
+      "correction": "Always classify unexpected EtherType as FAIL_ISOLATION before timestamp reconciliation; subsequent 63-test offline suite passes",
+      "measurement": false
     }
   ],
   "review_corrections": [
@@ -30,6 +37,9 @@
     "Closed SQLite verifier connections explicitly close rather than relying on connection context-manager commit semantics.",
     "Capture drains queued packets before stopping; the verifier compares captured count with kernel packet statistics.",
     "Worker results and receipt hashes are independently reconciled against retained source request bytes in closed SQLite.",
-    "Artifact readers reject non-regular inputs, symlinks and path escapes, bound event lines and enforce the total artifact size; FIFO rejection is covered in the existing invalid-evidence test."
+    "Artifact readers reject non-regular inputs, symlinks and path escapes, bound event lines and enforce the total artifact size; FIFO rejection is covered in the existing invalid-evidence test.",
+    "Runtime consumes an already sealed dataset and copies validated in-memory bytes; it no longer exports or renews state after permit consumption.",
+    "The v2 signed permit and reviewed configuration bind exact dataset/bundle hashes, run ID, creation/expiry and the fixed 1800-second maximum age.",
+    "Controller and children recheck freshness before setup/sockets and while processing; verifier correlates admission, captures and event timestamps."
   ]
 }
