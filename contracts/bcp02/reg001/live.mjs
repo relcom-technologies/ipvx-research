@@ -8,7 +8,7 @@
 // finalized block hash. This is the labelled interim deviation, not BCP-T validated-node admission.
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { JsonRpcProvider, Wallet, ContractFactory } from 'ethers';
+import { JsonRpcProvider, Wallet, ContractFactory, NonceManager, toQuantity } from 'ethers';
 import { run, Journal, PROTOCOL, STEP_IDS, build, iface, maskImmutables, assertSepolia } from './runner.mjs';
 
 const POLL_MS = 12_000;
@@ -26,7 +26,8 @@ export function checkPermit(permit, now = new Date()) {
 }
 
 export class LiveBackend {
-  constructor(providers, wallets, journal, { readWaitMs = 2_000, readTries = 30 } = {}) {
+  // About three minutes of tolerance: run 3 met a burst of 5xx answers while 20 observers were polling.
+  constructor(providers, wallets, journal, { readWaitMs = 2_000, readTries = 90 } = {}) {
     assert.ok(providers.length >= 3, 'Read mode Q needs at least three independent RPC providers');
     this.providers = providers; this.wallets = wallets; this.journal = journal; this.contracts = {}; this.lastId = 0n;
     this.lastBlock = null; this.readWaitMs = readWaitMs; this.readTries = readTries;
@@ -49,7 +50,7 @@ export class LiveBackend {
     }
   }
   get afterLastWrite() { return this.lastBlock ?? 'latest'; }
-  async address(w) { return this.wallets[w].address; }
+  async address(w) { return this.wallets[w].getAddress(); }
   async deploy(w, name, args) {
     const c = build()[name];
     const factory = new ContractFactory(c.abi, `0x${c.evm.bytecode.object}`, this.wallets[w]);
@@ -83,8 +84,13 @@ export class LiveBackend {
     }
     let returned;
     try { returned = [...c.iface.decodeFunctionResult(fn, await call())]; } catch { returned = undefined; }
+    // Gas is estimated at the block of the last write as well. Left to the signer it is estimated at
+    // 'latest', and a backend a block behind reverts a call that depends on that write (run 4).
+    const at = this.lastBlock === null ? 'latest' : toQuantity(this.lastBlock);
+    const from = await this.address(w);
+    const estimate = BigInt(await this.available(() => this.providers[0].send('eth_estimateGas', [{ from, to: c.address, data }, at])));
     const submitted = Date.now();
-    const tx = await this.wallets[w].sendTransaction({ to: c.address, data });
+    const tx = await this.wallets[w].sendTransaction({ to: c.address, data, gasLimit: estimate * 12n / 10n + 10_000n });
     const receipt = await this.available(() => tx.wait());
     if (name === 'NodeRegistry' && fn === 'register' && returned) this.lastId = returned[0];
     return { ...this.record(w, `${name}.${fn}`, receipt, submitted), returned };
@@ -154,7 +160,9 @@ if (process.argv[1] && import.meta.url.endsWith(process.argv[1].split('/').pop()
   const providers = a.rpc.map(url => new JsonRpcProvider(url, undefined, { staticNetwork: true }));
   for (const p of providers) assertSepolia((await p.getNetwork()).chainId);
   const keys = JSON.parse(fs.readFileSync(a.wallets, 'utf8'));
-  const wallets = Object.fromEntries(['W1', 'W2', 'W3'].map(w => [w, new Wallet(keys[w], providers[0])]));
+  // Nonces are counted locally: asked again after each transaction, a backend a block behind would
+  // return a stale one.
+  const wallets = Object.fromEntries(['W1', 'W2', 'W3'].map(w => [w, new NonceManager(new Wallet(keys[w], providers[0]))]));
   const journal = new Journal(a.journal);
   journal.add({ step: 'permit', ok: true, detail: `${permit.approved_by}; window ${permit.window_start} – ${permit.window_end}`, read_mode: 'Q', providers: providers.length });
   const result = await run(new LiveBackend(providers, wallets, journal), journal);

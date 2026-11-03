@@ -145,3 +145,22 @@ test('a latency observation that fails mid-series is journaled as the run error,
   assert.match(journal.entries.at(-1).detail, /500/);
   assert.ok(journal.entries.some(e => e.step === 'snapshot-s4-check' && e.ok), 'every functional step before the series is kept');
 });
+
+// Run 4 on Sepolia stopped at edge-ar: A's consent passed simulation at the block of the propose, but
+// the signer then estimated gas at 'latest' on a backend a block behind, where the rule did not exist
+// yet, and the estimate reverted with MissingRule.
+test('gas for a write is estimated at the block of the last write, waiting for a backend that is behind', async () => {
+  const estimates = fake([notYet(), '0x5208']);
+  const sent = [];
+  const W1 = { getAddress: async () => `0x${'aa'.repeat(20)}`, call: async () => '0x',
+    sendTransaction: async tx => { sent.push(tx); return { wait: async () => ({ status: 1, hash: `0x${'44'.repeat(32)}`, blockNumber: 124,
+      blockHash: `0x${'55'.repeat(32)}`, gasUsed: 30_000n, gasPrice: 1n }) }; } };
+  const b = new LiveBackend([estimates, fake([]), fake([])], { W1 }, null, { readWaitMs: 1, readTries: 5 });
+  b.contracts.TransitPolicy = { address: `0x${'22'.repeat(20)}`, iface: iface('TransitPolicy') };
+  b.lastBlock = 123;
+  const r = await b.send('W1', 'TransitPolicy', 'consent', [`0x${'66'.repeat(32)}`, 1n, 1n]);
+  assert.equal(r.status, 'success');
+  assert.deepEqual(estimates.seen.map(([m, p]) => [m, p[1]]), [['eth_estimateGas', '0x7b'], ['eth_estimateGas', '0x7b']]);
+  assert.equal(sent[0].gasLimit, 0x5208n * 12n / 10n + 10_000n, 'the signer is given the pinned estimate instead of estimating at latest');
+  assert.equal(b.lastBlock, 124);
+});
