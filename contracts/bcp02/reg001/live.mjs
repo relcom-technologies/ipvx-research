@@ -32,9 +32,10 @@ export class LiveBackend {
     this.lastBlock = null; this.readWaitMs = readWaitMs; this.readTries = readTries;
   }
   // Public RPCs are load-balanced: a backend one block behind answers 'latest' with older state and
-  // an unknown block with an error. Reads after a write therefore name the block of that write, and a
-  // block not yet available is waited for, bounded, instead of being taken as a result. Only a real
-  // revert (CALL_EXCEPTION) is a result.
+  // an unknown block with an error, and a busy one with a transient 5xx. Reads after a write therefore
+  // name the block of that write, and an unavailable answer is waited for, bounded, instead of being
+  // taken as a result. Only a real revert (CALL_EXCEPTION) is a result. Submitting a transaction is
+  // never repeated here: a retry could send it twice.
   async available(read) {
     for (let i = 1; ; i++) {
       try {
@@ -54,7 +55,7 @@ export class LiveBackend {
     const factory = new ContractFactory(c.abi, `0x${c.evm.bytecode.object}`, this.wallets[w]);
     const submitted = Date.now();
     const contract = await factory.deploy(...args);
-    const receipt = await contract.deploymentTransaction().wait();
+    const receipt = await this.available(() => contract.deploymentTransaction().wait());
     this.contracts[name] = { address: await contract.getAddress(), iface: iface(name), blockHash: receipt.blockHash };
     return this.record(w, `${name}.deploy`, receipt, submitted, { address: this.contracts[name].address });
   }
@@ -84,7 +85,7 @@ export class LiveBackend {
     try { returned = [...c.iface.decodeFunctionResult(fn, await call())]; } catch { returned = undefined; }
     const submitted = Date.now();
     const tx = await this.wallets[w].sendTransaction({ to: c.address, data });
-    const receipt = await tx.wait();
+    const receipt = await this.available(() => tx.wait());
     if (name === 'NodeRegistry' && fn === 'register' && returned) this.lastId = returned[0];
     return { ...this.record(w, `${name}.${fn}`, receipt, submitted), returned };
   }
@@ -96,7 +97,7 @@ export class LiveBackend {
   }
   async finalizedAtLeast(number) {
     for (;;) {
-      const blocks = await Promise.all(this.providers.map(p => p.getBlock('finalized')));
+      const blocks = await Promise.all(this.providers.map(p => this.available(() => p.getBlock('finalized'))));
       const lowest = blocks.reduce((a, b) => (b.number < a.number ? b : a));
       if (lowest.number >= number) return lowest;
       await sleep(POLL_MS);
@@ -104,13 +105,13 @@ export class LiveBackend {
   }
   // A snapshot waits until the block holding the latest write (or `atLeast`) is finalized on every provider.
   async snapshot({ nfts, edges, connections, atLeast }) {
-    const fin = await this.finalizedAtLeast(atLeast ?? await this.providers[0].getBlockNumber());
+    const fin = await this.finalizedAtLeast(atLeast ?? await this.available(() => this.providers[0].getBlockNumber()));
     const hashes = await Promise.all(this.providers.map(p => this.available(() => p.getBlock(fin.number)).then(b => b.hash)));
     assert.ok(hashes.every(h => h === hashes[0]), `Providers disagree on finalized block ${fin.number}`);
     const at = { blockHash: hashes[0], requireCanonical: true };
     const callAll = async (name, fn, args) => {
       const c = this.contracts[name], data = c.iface.encodeFunctionData(fn, args);
-      const raw = await Promise.all(this.providers.map(p => p.send('eth_call', [{ to: c.address, data }, at])));
+      const raw = await Promise.all(this.providers.map(p => this.available(() => p.send('eth_call', [{ to: c.address, data }, at]))));
       assert.ok(raw.every(r => r === raw[0]), `Providers disagree on ${name}.${fn} at ${hashes[0]}`);
       return [...c.iface.decodeFunctionResult(fn, raw[0])];
     };
@@ -124,7 +125,7 @@ export class LiveBackend {
     const included = await this.available(() => p.getBlock(record.block));
     let safe_ms = null, finalized_ms = null;
     while (finalized_ms === null) {
-      const [s, f] = await Promise.all([p.getBlock('safe'), p.getBlock('finalized')]);
+      const [s, f] = await Promise.all([this.available(() => p.getBlock('safe')), this.available(() => p.getBlock('finalized'))]);
       if (safe_ms === null && s.number >= record.block) safe_ms = Date.now();
       if (f.number >= record.block) finalized_ms = Date.now();
       else await sleep(POLL_MS);

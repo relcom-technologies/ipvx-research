@@ -114,3 +114,34 @@ test('only a real revert counts as an expected rejection; an unavailable block i
   await assert.rejects(b.send('W1', 'NodeRegistry', 'revoke', [1n]), /header not found/);
   assert.deepEqual(behind.tags, [123, 123, 123], 'simulation reads the state after the last write, never an older latest');
 });
+
+// Run 3 on Sepolia passed every functional step, then died in the latency series: a provider answered
+// a safe/finalized poll with a transient 500, the poll was not protected, and the failing observation
+// escaped as an unhandled rejection while later writes were still being sent.
+const busy = () => Object.assign(new Error('server response 500 Internal Server Error'), { code: 'SERVER_ERROR' });
+const chain = (fail = 0) => ({ calls: 0, async getBlock(tag) {
+  if (typeof tag === 'string' && this.calls++ < fail) throw busy();
+  return { number: 100, hash: `0x${'33'.repeat(32)}`, timestamp: 1_800_000_000 };
+} });
+
+test('a transient 500 while polling safe/finalized blocks is waited out, not fatal', async () => {
+  const providers = [chain(2), chain(1), chain(0)];
+  const b = new LiveBackend(providers, {}, null, { readWaitMs: 1, readTries: 5 });
+  const t = await b.timing({ block: 90, status: 'success', tx: '0xabc', submitted_ms: 0 });
+  assert.equal(t.included, true);
+  assert.ok(t.safe_seen_ms && t.finalized_seen_ms && t.reader_accepted_ms);
+});
+
+test('a latency observation that fails mid-series is journaled as the run error, not an unhandled crash', async () => {
+  const b = await backend();
+  const send = b.send.bind(b);
+  b.send = async (...a) => { await new Promise(r => setTimeout(r, 5)); return send(...a); };
+  let first = true;
+  b.timing = async r => { if (first) { first = false; throw busy(); } return { included: true, ...r }; };
+  const journal = new Journal();
+  const result = await run(b, journal, { latencyWrites: 4 });
+  assert.equal(result.ok, false);
+  assert.equal(journal.entries.at(-1).step, 'error');
+  assert.match(journal.entries.at(-1).detail, /500/);
+  assert.ok(journal.entries.some(e => e.step === 'snapshot-s4-check' && e.ok), 'every functional step before the series is kept');
+});
