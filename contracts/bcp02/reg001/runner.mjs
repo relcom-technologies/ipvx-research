@@ -161,7 +161,11 @@ export async function run(backend, journal, { latencyWrites = 20 } = {}) {
     const watched = [];
     for (let i = 0; i < latencyWrites; i++) {
       const r = await send('W1', 'NodeRegistry', 'setKeys', [S.A, key(1000 + 2 * i), key(1001 + 2 * i), ROLE.endpoint]);
-      watched.push(backend.timing(r));
+      const timing = backend.timing(r);
+      // Observed while later writes are still being sent: a failure is handled by Promise.all below and
+      // journaled as the run's error, instead of escaping as an unhandled rejection that kills the run.
+      timing.catch(() => {});
+      watched.push(timing);
     }
     const series = await Promise.all(watched);
     expect(journal, 'latency-series', series.length === latencyWrites && series.every(t => t.included), `${series.length} writes timed`, series);
