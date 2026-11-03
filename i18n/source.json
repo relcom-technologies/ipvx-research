@@ -2,8 +2,8 @@
   "schema_version": 1,
   "entries": [
     {
-      "id": "3f37a2fbeff4a3c1",
-      "source": "Исследования IPvX: нативная сеть для агентов, воспроизводимые эксперименты и совместная разработка RFC.",
+      "id": "ebbdf10b02e71109",
+      "source": "IPvX — адреса, имена и маршруты из блокчейн-реестра вместо IP и DNS: открытые протоколы, воспроизводимые опыты и совместная разработка RFC.",
       "context": "account.html:attribute:content"
     },
     {
@@ -607,14 +607,179 @@
       "context": "architecture.html:text:html/head/title"
     },
     {
-      "id": "3a28f91f0264605d",
-      "source": "Как устроена сеть",
+      "id": "61ba552001678f6d",
+      "source": "Как устроен IPvX",
       "context": "architecture.html:text:main/div/h1"
     },
     {
-      "id": "5c8dfa31cf49989c",
-      "source": "BCP задаёт идентичность и разрешённый путь по состоянию реестра. Записанные сетевые опыты ниже показывают отдельный исторический прототип.",
+      "id": "10430b00f6c8da07",
+      "source": "Четыре части: реестр, пакетный слой, имена и выбор маршрута. Ниже — что из них уже реализовано и проверено, а затем исторический прототип, на котором измерялась доставка без IP.",
       "context": "architecture.html:text:main/div/p"
+    },
+    {
+      "id": "81676d323efdb54e",
+      "source": "Реестр: адрес из блокчейна",
+      "context": "architecture.html:text:main/section/h2"
+    },
+    {
+      "id": "4f9b1817069f2b69",
+      "source": "В исходных статьях адрес IPvX записан тремя частями: сторона подключения, сущность (NFT) и правило соединения (смарт-контракт). Его не выдаёт цепочка ICANN → RIR → провайдер: владение и правила записаны в реестре, который может проверить любой.",
+      "context": "architecture.html:text:main/section/p"
+    },
+    {
+      "id": "71aebd1e6b74e2e4",
+      "source": "В BCP 0.2 это три контракта. NodeRegistry связывает NFT узла с владельцем и ключами. TransitPolicy и ConnectionPolicy задают, через кого можно пройти и с кем можно соединиться; правило действует, только когда согласны обе стороны. Пакет BCP несёт владельца, NFT и правило соединения получателя.",
+      "context": "architecture.html:text:main/section/p"
+    },
+    {
+      "id": "2fff9fc7d5ecbb10",
+      "source": "Опыт REG-001 проверил эти контракты на тестовой цепочке Sepolia: чужой владелец не может изменить узел, а изменение становится действующим для узлов через 14–19 минут — после финализации блока.",
+      "context": "architecture.html:text:main/section/p"
+    },
+    {
+      "id": "39584e0e5b7114d9",
+      "source": "Итоги REG-001 →",
+      "context": "architecture.html:text:section/p/a"
+    },
+    {
+      "id": "07bfc6c6c575cef3",
+      "source": "Имена: резолвер IRS",
+      "context": "architecture.html:text:main/section/h2"
+    },
+    {
+      "id": "4bf32fa5973d9489",
+      "source": "Во второй исходной статье имена берутся из реестра, а не из иерархии DNS. Резолвер IRS отвечает на обычные запросы имён, но данные берёт из блокчейна. Имена плоские и не зависят от корневой зоны ICANN; в статье показана рабочая зона",
+      "context": "architecture.html:text:main/section/p"
+    },
+    {
+      "id": "7b2fcc660887869b",
+      "source": "В исследовании этот трек ещё не начат. Протокол NAME-001 будет написан после опыта NET-001, когда реестр уже будет давать узлам настоящее состояние.",
+      "context": "architecture.html:text:main/section/p"
+    },
+    {
+      "id": "cf89a4bb2b81ac3c",
+      "source": "Выбор маршрута",
+      "context": "architecture.html:text:main/section/h2"
+    },
+    {
+      "id": "56aa646c27fa1148",
+      "source": "Договоры между NFT задают разрешённые пути, но не выбирают среди них лучший. Выбор можно делать по цене, задержке или условиям договора; в исходной статье эту задачу поручают ИИ. В исследовании выбор маршрута по договорам ещё не проверялся.",
+      "context": "architecture.html:text:main/section/p"
+    },
+    {
+      "id": "0a67413c14a125cb",
+      "source": "Где остаётся IP",
+      "context": "architecture.html:text:main/section/h2"
+    },
+    {
+      "id": "b48811816e7b4d29",
+      "source": "IPvX заменяет IP-адресацию и DNS, а не надстраивается над ними. На переходном этапе пакеты IPvX можно перевозить через существующий IP; тогда IP — только носитель, а не часть адреса.",
+      "context": "architecture.html:text:main/section/p"
+    },
+    {
+      "id": "2b1e52004543e4c4",
+      "source": "Сейчас IP остаётся там, где без него пока не обойтись: этот сайт, управление машинами стенда, установка моделей и чтение реестра с узла Ethereum. В опытах с доставкой кадры между узлами идут без IP. Если соединить площадки IP-туннелем, это будет переходный режим, и он не докажет отказ от IP в нижележащей сети.",
+      "context": "architecture.html:text:main/section/p"
+    },
+    {
+      "id": "8e754f5c05687c7f",
+      "source": "От мысли до сообщения",
+      "context": "architecture.html:text:div/div/h2"
+    },
+    {
+      "id": "539ecf0c408039df",
+      "source": "Объяснение протокола",
+      "context": "architecture.html:text:div/div/span"
+    },
+    {
+      "id": "0b4e2343170588d6",
+      "source": "Модель работает на своей машине. По сети уходят зашифрованная задача и результат.",
+      "context": "architecture.html:text:section/div/p"
+    },
+    {
+      "id": "21adfb820dbfe769",
+      "source": "Маршрут A через R1 к B",
+      "context": "architecture.html:attribute:aria-label"
+    },
+    {
+      "id": "12a747f98d8840f7",
+      "source": "Агент A",
+      "context": "architecture.html:text:div/div/strong"
+    },
+    {
+      "id": "0c72a0fb02cf4eab",
+      "source": "Локальная модель · устойчивый ID",
+      "context": "architecture.html:text:div/div/span"
+    },
+    {
+      "id": "6f63ca7d24331fc9",
+      "source": "Посредник R1",
+      "context": "architecture.html:text:div/div/strong"
+    },
+    {
+      "id": "25a16bb154a35497",
+      "source": "Выбирает следующего соседа",
+      "context": "architecture.html:text:div/div/span"
+    },
+    {
+      "id": "307729576b2a6cc9",
+      "source": "Агент B",
+      "context": "architecture.html:text:div/div/strong"
+    },
+    {
+      "id": "749d93ea9d88eb1c",
+      "source": "Своя модель · свой ID",
+      "context": "architecture.html:text:div/div/span"
+    },
+    {
+      "id": "7601badcd67cf1e0",
+      "source": "Ethernet · 0x88B5 · без IP и DNS в доставке",
+      "context": "architecture.html:text:section/div/p"
+    },
+    {
+      "id": "2db2955c3b7b16af",
+      "source": "Этапы обмена",
+      "context": "architecture.html:attribute:aria-label"
+    },
+    {
+      "id": "2b9cc65da95da593",
+      "source": "1. Сформировать",
+      "context": "architecture.html:text:div/div/button"
+    },
+    {
+      "id": "61c41d2eecefcf31",
+      "source": "2. Передать",
+      "context": "architecture.html:text:div/div/button"
+    },
+    {
+      "id": "a75bc1a64f8471bf",
+      "source": "3. Выполнить",
+      "context": "architecture.html:text:div/div/button"
+    },
+    {
+      "id": "059066d2de0071b8",
+      "source": "4. Ответить",
+      "context": "architecture.html:text:div/div/button"
+    },
+    {
+      "id": "680e6230b3f7552f",
+      "source": "Агент A формирует задачу",
+      "context": "architecture.html:text:div/div/h3"
+    },
+    {
+      "id": "02506b0aa1d5c74a",
+      "source": "Получатель — устойчивый ID. Сообщение получает подпись, срок действия и уникальный номер; содержимое шифруется для B.",
+      "context": "architecture.html:text:div/div/p"
+    },
+    {
+      "id": "757361651e31c623",
+      "source": "Это интерактивное объяснение, а не живой сетевой обмен. Фактические журналы — в экспериментах.",
+      "context": "architecture.html:text:section/div/p"
+    },
+    {
+      "id": "21ac88366766526f",
+      "source": "Открыть сохранённый обмен с подписанной квитанцией →",
+      "context": "architecture.html:text:section/div/a"
     },
     {
       "id": "f28ebc368d95de0f",
@@ -662,28 +827,13 @@
       "context": "architecture.html:text:ol/li/p"
     },
     {
-      "id": "0a67413c14a125cb",
-      "source": "Где остаётся IP",
-      "context": "architecture.html:text:main/section/h2"
-    },
-    {
-      "id": "01c622a218177e5f",
-      "source": "Управление машинами, установка моделей и этот сайт используют существующий Интернет. Нативные задания и объявления маршрутов в эксперименте идут отдельным протоколом. Это проверка собственного уровня доставки в контролируемом Ethernet-сегменте.",
-      "context": "architecture.html:text:main/section/p"
-    },
-    {
-      "id": "74114bfa80c11444",
-      "source": "Для связи независимых площадок нужны физические каналы или явно обозначенная подложка. Если соединить площадки IP-туннелем, это будет IPvX поверх IP. Такой вариант может быть полезен, но он не докажет отказ от IP в нижележащей сети.",
-      "context": "architecture.html:text:main/section/p"
-    },
-    {
       "id": "8f3eeaec8ed17a8d",
       "source": "От прототипа к BCP",
       "context": "architecture.html:text:main/section/h2"
     },
     {
-      "id": "2f201b718a365658",
-      "source": "В историческом прототипе ID создаётся из ключа. В BCP NodeRegistry связывает NFT-идентификатор с владельцем и ключами, а TransitPolicy и ConnectionPolicy задают разрешённые пути. Это разные модели допуска; их результаты не подменяют друг друга. Человеческие удобные имена остаются необязательными псевдонимами, а не корнем доверия.",
+      "id": "55bd120089021083",
+      "source": "В историческом прототипе ID создаётся из ключа. В BCP NodeRegistry связывает NFT-идентификатор с владельцем и ключами, а TransitPolicy и ConnectionPolicy задают разрешённые пути. Это разные модели допуска; их результаты не подменяют друг друга. Имён в BCP 0.2 пока нет: их место займёт резолвер IRS.",
       "context": "architecture.html:text:main/section/p"
     },
     {
@@ -1487,53 +1637,53 @@
       "context": "governance.html:text:main/section/a"
     },
     {
-      "id": "bd3a229dff105a8b",
-      "source": "Исследуем сеть для агентов · IPvX Research",
+      "id": "572faa470123aab9",
+      "source": "IPvX: адреса, имена и маршруты вместо IP и DNS · IPvX Research",
       "context": "index.html:text:html/head/title"
     },
     {
-      "id": "5ab3e3888e74868c",
-      "source": "IPvX. Сеть для агентов",
+      "id": "8ded2c7619eed0a9",
+      "source": "IPvX — адреса, имена и маршруты вместо IP и DNS",
       "context": "index.html:text:div/section/h1"
     },
     {
-      "id": "31ae7c8fbc97c828",
-      "source": "Разрабатываем BCP: идентичность из реестра, разрешённый путь и собственный формат пакетов. Код проверяем офлайн; сетевой опыт готовим отдельно от исторического Mesh.",
+      "id": "2bd4b997c7b3f718",
+      "source": "Источник истины — блокчейн-реестр. Узел — это NFT, имя — запись реестра, путь — договор между NFT в смарт-контракте. Пакеты IPvX идут прямо по среде передачи; на переходном этапе их можно возить через существующий IP.",
       "context": "index.html:text:div/section/p"
     },
     {
-      "id": "bf73bc1f7bcc34ff",
-      "source": "Открыть BCP 0.2",
+      "id": "b137e00e678113a0",
+      "source": "Где мы сейчас",
       "context": "index.html:text:div/section/a"
     },
     {
-      "id": "36e5ace98055fe7e",
-      "source": "Код и измерения",
+      "id": "8821708d6b7aa5b3",
+      "source": "Что уже проверено",
       "context": "index.html:text:div/aside/h2"
     },
     {
-      "id": "3fb290aaf576a38c",
-      "source": "BCP 0.2 — реализация с офлайн-проверками. Отдельный Mesh — подписанная доставка и локальный выбор маршрута.",
+      "id": "caf19d14c57d85b2",
+      "source": "Реестр работает на живой тестовой цепочке Sepolia: регистрация узлов, права владельца и двустороннее согласие на путь. Изменение в реестре становится действующим через 14–19 минут, а не мгновенно.",
       "context": "index.html:text:div/aside/p"
     },
     {
-      "id": "c0da0de18290b229",
-      "source": "В проверенном опыте две модели и маршрутизатор работали в гостевых ОС на разных физических машинах. Глобальная сеть и открытый допуск пока не доказаны.",
+      "id": "1a3cbedd5e513996",
+      "source": "Отдельно измерена доставка кадров по Ethernet без IP и DNS между пятью машинами — но на заранее допущенных узлах, без блокчейн-реестра.",
       "context": "index.html:text:div/aside/p"
     },
     {
-      "id": "f4bbbedf23708832",
-      "source": "Сам портал и управление используют IP, DNS и HTTPS. Без IP/DNS работает доставка внутри нативного эксперимента.",
+      "id": "0da2976cc65351f7",
+      "source": "Соединить реестр и доставку — следующий шаг. Имена и выбор маршрута ещё не проверялись. Сам портал работает через обычные IP, DNS и HTTPS.",
       "context": "index.html:text:div/aside/p"
     },
     {
-      "id": "fdbc29f3b140fdc7",
-      "source": "Посмотреть доказательства →",
+      "id": "8d4a8340dd6449af",
+      "source": "Итоги опыта с реестром →",
       "context": "index.html:text:div/aside/a"
     },
     {
-      "id": "76ac7a2fdc0fa674",
-      "source": "Как доставляется пакет →",
+      "id": "e6d97ba987cddbe7",
+      "source": "Из чего состоит IPvX →",
       "context": "index.html:text:div/div/a"
     },
     {
@@ -1552,104 +1702,69 @@
       "context": "index.html:text:div/div/a"
     },
     {
-      "id": "8e754f5c05687c7f",
-      "source": "От мысли до сообщения",
-      "context": "index.html:text:div/div/h2"
+      "id": "08777d0212ea977d",
+      "source": "Четыре части IPvX",
+      "context": "index.html:text:div/section/h2"
     },
     {
-      "id": "539ecf0c408039df",
-      "source": "Объяснение протокола",
-      "context": "index.html:text:div/div/span"
+      "id": "7a32a8436cc6505a",
+      "source": "Реестр вместо выдачи адресов",
+      "context": "index.html:text:ol/li/h3"
     },
     {
-      "id": "0b4e2343170588d6",
-      "source": "Модель работает на своей машине. По сети уходят зашифрованная задача и результат.",
-      "context": "index.html:text:section/div/p"
+      "id": "6d2001ffba4d4eb0",
+      "source": "Узел получает идентичность как NFT в блокчейн-реестре. Владелец, ключи и правила пути записаны в смарт-контрактах, а не выдаются цепочкой ICANN → RIR → провайдер.",
+      "context": "index.html:text:ol/li/p"
     },
     {
-      "id": "21adfb820dbfe769",
-      "source": "Маршрут A через R1 к B",
-      "context": "index.html:attribute:aria-label"
+      "id": "4723860b4cb4c950",
+      "source": "Проверено на Sepolia",
+      "context": "index.html:text:ol/li/span"
     },
     {
-      "id": "12a747f98d8840f7",
-      "source": "Агент A",
-      "context": "index.html:text:div/div/strong"
+      "id": "7ab806f619577b8b",
+      "source": "Пакеты без IP",
+      "context": "index.html:text:ol/li/h3"
     },
     {
-      "id": "0c72a0fb02cf4eab",
-      "source": "Локальная модель · устойчивый ID",
-      "context": "index.html:text:div/div/span"
+      "id": "925fba7e15c91d58",
+      "source": "Пакет несёт владельца, NFT и правило соединения получателя и идёт прямо в кадрах Ethernet. MAC указывает ближайшего соседа, адрес из реестра — конечный узел.",
+      "context": "index.html:text:ol/li/p"
     },
     {
-      "id": "6f63ca7d24331fc9",
-      "source": "Посредник R1",
-      "context": "index.html:text:div/div/strong"
+      "id": "73a63ebba0315163",
+      "source": "Измерено без реестра",
+      "context": "index.html:text:ol/li/span"
     },
     {
-      "id": "25a16bb154a35497",
-      "source": "Выбирает следующего соседа",
-      "context": "index.html:text:div/div/span"
+      "id": "21139d8c8298e8f6",
+      "source": "Имена без иерархии DNS",
+      "context": "index.html:text:ol/li/h3"
     },
     {
-      "id": "307729576b2a6cc9",
-      "source": "Агент B",
-      "context": "index.html:text:div/div/strong"
+      "id": "764b19f6a2ece309",
+      "source": "Резолвер IRS отвечает на запросы имён по записям реестра. Имена плоские и не зависят от корневой зоны ICANN.",
+      "context": "index.html:text:ol/li/p"
     },
     {
-      "id": "749d93ea9d88eb1c",
-      "source": "Своя модель · свой ID",
-      "context": "index.html:text:div/div/span"
+      "id": "c6cc849619579234",
+      "source": "Не начато",
+      "context": "index.html:text:ol/li/span"
     },
     {
-      "id": "7601badcd67cf1e0",
-      "source": "Ethernet · 0x88B5 · без IP и DNS в доставке",
-      "context": "index.html:text:section/div/p"
+      "id": "bf8a6387ef62d48f",
+      "source": "Договоры между NFT задают разрешённые пути. Среди них маршрут выбирается по цене, задержке или условиям договора; в исходной статье эту задачу поручают ИИ.",
+      "context": "index.html:text:ol/li/p"
     },
     {
-      "id": "2db2955c3b7b16af",
-      "source": "Этапы обмена",
-      "context": "index.html:attribute:aria-label"
+      "id": "5dfc7a81c0cac656",
+      "source": "Части описаны в исходных статьях IPvX.",
+      "context": "index.html:text:div/section/p"
     },
     {
-      "id": "2b9cc65da95da593",
-      "source": "1. Сформировать",
-      "context": "index.html:text:div/div/button"
-    },
-    {
-      "id": "61c41d2eecefcf31",
-      "source": "2. Передать",
-      "context": "index.html:text:div/div/button"
-    },
-    {
-      "id": "a75bc1a64f8471bf",
-      "source": "3. Выполнить",
-      "context": "index.html:text:div/div/button"
-    },
-    {
-      "id": "059066d2de0071b8",
-      "source": "4. Ответить",
-      "context": "index.html:text:div/div/button"
-    },
-    {
-      "id": "680e6230b3f7552f",
-      "source": "Агент A формирует задачу",
-      "context": "index.html:text:div/div/h3"
-    },
-    {
-      "id": "02506b0aa1d5c74a",
-      "source": "Получатель — устойчивый ID. Сообщение получает подпись, срок действия и уникальный номер; содержимое шифруется для B.",
-      "context": "index.html:text:div/div/p"
-    },
-    {
-      "id": "757361651e31c623",
-      "source": "Это интерактивное объяснение, а не живой сетевой обмен. Фактические журналы — в экспериментах.",
-      "context": "index.html:text:section/div/p"
-    },
-    {
-      "id": "21ac88366766526f",
-      "source": "Открыть сохранённый обмен с подписанной квитанцией →",
-      "context": "index.html:text:section/div/a"
+      "id": "9bc2267d965b8291",
+      "source": "Открыть публикации →",
+      "context": "index.html:text:section/p/a"
     },
     {
       "id": "0150db41088cca9c",
@@ -1677,13 +1792,68 @@
       "context": "index.html:text:div/aside/a"
     },
     {
-      "id": "5beaacce36f54fa0",
-      "source": "От идеи к проверке",
+      "id": "31998c35a6f08da3",
+      "source": "Сначала реестр, затем доставка пакетов на живом состоянии реестра, затем имена. Протокол каждого опыта записывается до запуска; результат публикуется вместе с ограничениями.",
+      "context": "index.html:text:section/div/p"
+    },
+    {
+      "id": "45de93b71f84509b",
+      "source": "Реестр на живой цепочке",
+      "context": "index.html:text:div/a/strong"
+    },
+    {
+      "id": "eb0bcac1092da985",
+      "source": "REG-001 · Sepolia: 30 шагов, 47 транзакций; изменение действует через 14–19 минут",
+      "context": "index.html:text:div/a/span"
+    },
+    {
+      "id": "c045c25ac4882e59",
+      "source": "Выполнено",
+      "context": "index.html:text:div/a/span"
+    },
+    {
+      "id": "3d3151440ee6e354",
+      "source": "Пакеты по реестру",
+      "context": "index.html:text:div/a/strong"
+    },
+    {
+      "id": "84308d413588e2ef",
+      "source": "NET-001 · узлы берут адреса и права из реестра и обмениваются кадрами Ethernet без IP",
+      "context": "index.html:text:div/a/span"
+    },
+    {
+      "id": "1573dc78f28da2a5",
+      "source": "Ждёт ВМ",
+      "context": "index.html:text:div/a/span"
+    },
+    {
+      "id": "60b10f5c594b11a5",
+      "source": "Имена из реестра",
+      "context": "index.html:text:div/a/strong"
+    },
+    {
+      "id": "1e4d744f56bc2c85",
+      "source": "NAME-001 · резолвер IRS отвечает на запросы имён по записям реестра",
+      "context": "index.html:text:div/a/span"
+    },
+    {
+      "id": "d3fc4df60320d296",
+      "source": "Протокол не написан",
+      "context": "index.html:text:div/a/span"
+    },
+    {
+      "id": "ca649b1a16365f3e",
+      "source": "Автоматический выбор пути среди разрешённых договорами",
+      "context": "index.html:text:div/a/span"
+    },
+    {
+      "id": "e3e445c69805f856",
+      "source": "Агенты и модели — одно из применений",
       "context": "index.html:text:section/div/h2"
     },
     {
-      "id": "b55dca2e7a5d4cbf",
-      "source": "Каждый результат имеет границы. Расчётная модель, настоящий сетевой обмен и ответы языковой модели публикуются отдельно.",
+      "id": "b298b23b6ef91e71",
+      "source": "Прежние опыты проверяли, как языковые модели обмениваются задачами через собственный формат пакетов. Это сценарий применения сети, а не определение IPvX; журналы и выводы этих опытов сохранены.",
       "context": "index.html:text:section/div/p"
     },
     {
