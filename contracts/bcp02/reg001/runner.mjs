@@ -39,12 +39,14 @@ export function expectedRuntime(name) {
   return maskImmutables(`0x${c.evm.deployedBytecode.object}`, c.evm.deployedBytecode.immutableReferences);
 }
 
+// Token ids, key epochs and statuses are BigInt; the journal file records them as decimal strings.
+const line = row => `${JSON.stringify(row, (_, v) => (typeof v === 'bigint' ? v.toString() : v))}\n`;
 export class Journal {
   constructor(file) { this.file = file; this.entries = []; if (file && fs.existsSync(file)) throw new Error(`Journal exists: ${file}; a rerun needs a new journal`); }
   add(entry) {
     const row = { at: new Date().toISOString(), ...entry };
     this.entries.push(row);
-    if (this.file) fs.appendFileSync(this.file, `${JSON.stringify(row)}\n`, { mode: 0o600 });
+    if (this.file) fs.appendFileSync(this.file, line(row), { mode: 0o600 });
     return row;
   }
 }
