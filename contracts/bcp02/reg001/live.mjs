@@ -12,6 +12,11 @@ import { JsonRpcProvider, Wallet, ContractFactory, NonceManager, toQuantity } fr
 import { run, Journal, PROTOCOL, STEP_IDS, build, iface, maskImmutables, assertSepolia } from './runner.mjs';
 
 const POLL_MS = 12_000;
+// ethers reports every failed eth_call or eth_estimateGas as CALL_EXCEPTION, including a backend that
+// does not have the requested block yet ("missing revert data", run 5). It is a revert only when the
+// node said so: revert data present, or an "execution reverted" message from the node.
+export const isRevert = error => error?.code === 'CALL_EXCEPTION'
+  && ((typeof error.data === 'string' && error.data.length > 2) || /revert/i.test(error.info?.error?.message ?? ''));
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 export function checkPermit(permit, now = new Date()) {
@@ -35,7 +40,7 @@ export class LiveBackend {
   // Public RPCs are load-balanced: a backend one block behind answers 'latest' with older state and
   // an unknown block with an error, and a busy one with a transient 5xx. Reads after a write therefore
   // name the block of that write, and an unavailable answer is waited for, bounded, instead of being
-  // taken as a result. Only a real revert (CALL_EXCEPTION) is a result. Submitting a transaction is
+  // taken as a result. Only a real revert (isRevert) is a result. Submitting a transaction is
   // never repeated here: a retry could send it twice.
   async available(read) {
     for (let i = 1; ; i++) {
@@ -44,7 +49,7 @@ export class LiveBackend {
         if (value === null || value === undefined) throw new Error('block not yet available');
         return value;
       } catch (error) {
-        if (error.code === 'CALL_EXCEPTION' || i >= this.readTries) throw error;
+        if (isRevert(error) || i >= this.readTries) throw error;
         await sleep(this.readWaitMs);
       }
     }
@@ -78,7 +83,7 @@ export class LiveBackend {
     // A call simulated first tells an expected revert apart without spending gas on it.
     const call = () => this.available(() => this.wallets[w].call({ to: c.address, data, blockTag: this.afterLastWrite }));
     try { await call(); } catch (error) {
-      if (error.code !== 'CALL_EXCEPTION') throw error;
+      if (!isRevert(error)) throw error;
       const reason = error.data ? c.iface.parseError(error.data)?.name ?? null : null;
       return { status: 'reverted', error: reason, wallet: w, call: `${name}.${fn}`, simulated: true };
     }

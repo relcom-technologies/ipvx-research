@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { MemoryEVM, A, B, X } from '../test/evm.mjs';
 import { run, MemoryBackend, Journal, PROTOCOL, STEP_IDS, assertSepolia, build, iface, expectedRuntime } from './runner.mjs';
-import { checkPermit, LiveBackend } from './live.mjs';
+import { checkPermit, LiveBackend, isRevert } from './live.mjs';
 
 const WALLETS = { W1: A, W2: B, W3: X };
 const backend = async () => new MemoryBackend(await MemoryEVM.create(), WALLETS);
@@ -103,7 +103,8 @@ test('a provider that never reaches the block, or returns other code, stops the 
 });
 
 test('only a real revert counts as an expected rejection; an unavailable block is not mistaken for one', async () => {
-  const reverts = { async call() { throw Object.assign(new Error('execution reverted'), { code: 'CALL_EXCEPTION' }); } };
+  const reverts = { async call() { throw Object.assign(new Error('execution reverted'), { code: 'CALL_EXCEPTION', data: '0xd08a05d5',
+    info: { error: { code: 3, message: 'execution reverted' } } }); } };
   const behind = { tags: [], async call(tx) { this.tags.push(tx.blockTag); throw notYet(); } };
   const b = new LiveBackend([fake([]), fake([]), fake([])], { W3: reverts, W1: behind }, null, { readWaitMs: 1, readTries: 3 });
   b.contracts.NodeRegistry = { address: `0x${'22'.repeat(20)}`, iface: iface('NodeRegistry') };
@@ -163,4 +164,38 @@ test('gas for a write is estimated at the block of the last write, waiting for a
   assert.deepEqual(estimates.seen.map(([m, p]) => [m, p[1]]), [['eth_estimateGas', '0x7b'], ['eth_estimateGas', '0x7b']]);
   assert.equal(sent[0].gasLimit, 0x5208n * 12n / 10n + 10_000n, 'the signer is given the pinned estimate instead of estimating at latest');
   assert.equal(b.lastBlock, 124);
+});
+
+// Run 5 on Sepolia stopped at register-r: estimating gas at the block of register-a reached a backend
+// without that block, and ethers reported the node's "header not found" as CALL_EXCEPTION "missing
+// revert data", which was taken for a revert instead of being waited out.
+const missingBlock = () => Object.assign(new Error('missing revert data'), { code: 'CALL_EXCEPTION', data: null,
+  info: { error: { code: -32000, message: 'header not found' } } });
+
+test('a CALL_EXCEPTION without revert evidence is a lagging backend, not a revert', async () => {
+  assert.equal(isRevert(missingBlock()), false);
+  assert.equal(isRevert(Object.assign(new Error('x'), { code: 'CALL_EXCEPTION', data: '0xbe771320' })), true);
+  assert.equal(isRevert(Object.assign(new Error('x'), { code: 'CALL_EXCEPTION', data: null, info: { error: { message: 'execution reverted' } } })), true);
+  const estimates = fake([missingBlock(), missingBlock(), '0x5208']);
+  const W1 = { getAddress: async () => `0x${'aa'.repeat(20)}`, call: async () => '0x',
+    sendTransaction: async () => ({ wait: async () => ({ status: 1, hash: `0x${'44'.repeat(32)}`, blockNumber: 124,
+      blockHash: `0x${'55'.repeat(32)}`, gasUsed: 30_000n, gasPrice: 1n }) }) };
+  const b = new LiveBackend([estimates, fake([]), fake([])], { W1 }, null, { readWaitMs: 1, readTries: 5 });
+  b.contracts.NodeRegistry = { address: `0x${'22'.repeat(20)}`, iface: iface('NodeRegistry') };
+  b.lastBlock = 123;
+  const r = await b.send('W1', 'NodeRegistry', 'register', [`0x${'01'.repeat(32)}`, `0x${'02'.repeat(32)}`, 2]);
+  assert.equal(r.status, 'success');
+  assert.equal(estimates.seen.length, 3);
+});
+
+test('a simulation answered by a backend without the block is waited out, not taken as an expected rejection', async () => {
+  let n = 0;
+  const W3 = { call: async () => { if (n++ < 2) throw missingBlock(); throw Object.assign(new Error('execution reverted'), { code: 'CALL_EXCEPTION', data: '0xd08a05d5' }); } };
+  const b = new LiveBackend([fake([]), fake([]), fake([])], { W3 }, null, { readWaitMs: 1, readTries: 5 });
+  b.contracts.NodeRegistry = { address: `0x${'22'.repeat(20)}`, iface: iface('NodeRegistry') };
+  b.lastBlock = 123;
+  const r = await b.send('W3', 'NodeRegistry', 'revoke', [1n]);
+  assert.equal(r.status, 'reverted');
+  assert.equal(r.error, 'NotNodeOwner');
+  assert.equal(n, 3, 'the two missing-block answers were waited out');
 });
