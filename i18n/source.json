@@ -847,13 +847,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "207724b7947bb780",
-      "source": "194 событий по HX-0194; авторы, основания, проверки и ограничения.",
+      "id": "0837993d0502eeab",
+      "source": "195 событий по HX-0195; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "16ed87b5db4031eb",
-      "source": "380.0 КиБ · 12 файлов",
+      "id": "ec9776aa26abf1af",
+      "source": "383.8 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4652,14 +4652,94 @@
       "context": "history.html:text:main/section/p"
     },
     {
-      "id": "bbdbdca29d907bf1",
-      "source": "HX-0194 · Курс «реестр первым»: протокол REG-001, liaison на Sonnet 5.5 и исправление закреплённых исходников",
+      "id": "086ef4dc555ed043",
+      "source": "HX-0195 · REG-001 выполнен: живой реестр BCP 0.2 в Sepolia прошёл все 30 шагов в режиме чтения Q",
       "context": "history.html:text:section/details/summary"
     },
     {
       "id": "e078c61c3e49f21a",
       "source": "Реализовано",
       "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "a6aaa15388372c0e",
+      "source": "Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд) · 2026-11-03T15:04:03+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "882bf7a68e37b532",
+      "source": "3 ноября 2026 года по разрешению владельца («Да, режим Q») опыт REG-001 развернул контракты реестра BCP 0.2 в тестовой сети Sepolia и прошёл зарегистрированную последовательность из 30 шагов: шестой прогон — полностью, без единого несовпадения. Прогоны 1–5 остановились на дефектах исполнителя, а не реестра: публичные RPC с балансировкой отвечали с узлов, отстающих на блок; каждый дефект исправлен отдельным PR с тестом (PR56–PR60). Итог по заранее записанным порогам: R2 подтверждено с оговоркой, R3 подтверждено и воспроизведено на контрактах третьего прогона, R4 — «immediately available» не подтверждается для финализированного чтения (изменение становится действующим в среднем через 16,5 минуты, от 14,2 до 19,0), R5 — газ измерен по квитанциям всех 47 транзакций; R1 остаётся открытым до режима V. Журналы, разрешения и пересчитываемые результаты слиты в PR61.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "938f209f9a80d0e4",
+      "source": "Записать результат таким, каким он получился, по порогам, зарегистрированным до запуска: отрицательный результат R4 и оговорку R2 не сглаживать, прерванные прогоны сохранить как доказательства. Числа выводятся из журналов скриптом, который CI проверяет, чтобы отчёт не мог разойтись с данными.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "458962664ae285c8",
+      "source": "experiments/bcp02-reg-001/README.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "5882a8ac66bad941",
+      "source": "experiments/bcp02-reg-001/results.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "6db1d70c0f07f37d",
+      "source": "experiments/bcp02-reg-001/runs",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "aed853914f2c46e0",
+      "source": "Режим Q: снимки читались через три публичных RPC с совпадением данных в одном финализированном блоке. По профилю BCP 0.2 это не допуск, поэтому R1 не утверждается; для него и для состояния NET-001 нужна собственная пара Geth + Lighthouse (режим V), ВМ для неё ещё не запрошена.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "1a69dd7f1adcb55f",
+      "source": "Оговорка R2: в протоколе записано «отклонено цепочкой». Исполнитель проверяет каждый вызов на живом состоянии (eth_call) и не отправляет отклонённый, поэтому все 4 отказа третьего лица получены от развёрнутых контрактов, но не записаны в блоки как неудачные транзакции.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "a31eacccd4298345",
+      "source": "Мои ошибки: пять прогонов прервались на дефектах исполнителя, которые не поймали офлайн-тесты против EVM в памяти — там нет отстающих узлов. Первый запуск шестого прогона не стартовал из-за неверных аргументов командной строки; транзакций он не отправил.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "6154e564f441e9bf",
+      "source": "W1 и W2 принадлежат одному владельцу лаборатории: проверен механизм двустороннего согласия, а не независимость сторон. Газ измерен в единицах Sepolia; денежной оценки для mainnet нет. Отзыв узла владельцем и отзыв согласия в последовательность не входили и не измерены.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "312aa6a9a9a8e89c",
+      "source": "Двадцать записей серии R4 отправлены за пять минут и финализированы вместе, поэтому распределение отражает время отправки, а не двадцать независимых замеров финальности. NET-001 и NAME-001 остаются NOT_RUN; изменение протокола NET-001 на финализированный снимок ещё не подготовлено.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "eef48afb7e7c7a81",
+      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "bbdbdca29d907bf1",
+      "source": "HX-0194 · Курс «реестр первым»: протокол REG-001, liaison на Sonnet 5.5 и исправление закреплённых исходников",
+      "context": "history.html:text:section/details/summary"
     },
     {
       "id": "09cbe58ef51fb340",
@@ -4672,24 +4752,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "9b78893179e217f3",
       "source": "Сначала проверить ядро исходной идеи — реестр в цепочке, — а затем строить сетевой опыт на его настоящем состоянии. Записать пороги и ожидаемый отрицательный результат по «immediately available» до запуска, чтобы их нельзя было подогнать. Разделить режимы чтения: временный режим Q через три публичных RPC годится только для R2–R5, право утверждать R1 даёт лишь собственный узел (режим V).",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
-      "id": "458962664ae285c8",
-      "source": "experiments/bcp02-reg-001/README.md",
-      "context": "history.html:text:ul/li/a"
     },
     {
       "id": "c4330c356b9bc0fe",
@@ -4705,11 +4770,6 @@
       "id": "754db1a58f63a4d7",
       "source": "runners/bcp02/evidence/archive/liaison-pr53",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "0f798eacc3dabb4b",
@@ -4730,11 +4790,6 @@
       "id": "a8969f6ea334f8ef",
       "source": "Публичная страница сотрудничества ещё указывает 3 USD в сутки для liaison; цены в конфигурации действительны до 29 ноября 2026 года. Новая ВМ для режима V не запрошена; NET-001, NAME-001 и Linux preflight остаются NOT_RUN.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "eef48afb7e7c7a81",
-      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "12d6a909589b130c",
