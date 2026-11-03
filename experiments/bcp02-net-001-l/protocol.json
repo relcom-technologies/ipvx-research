@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "protocol_id": "IPVX-BCP02-NET-001-L",
+  "version": "0.1",
+  "status": "proposed_not_run",
+  "source_base": "45da649059ab25e7ac330e31c14aa93f9846dc98",
+  "author": "claude-code-assistant",
+  "recorded_by": "claude-code-assistant",
+  "derived_from": {
+    "protocol": "IPVX-BCP02-NET-001-F",
+    "path": "experiments/bcp02-net-001",
+    "unchanged": ["wire_version", "hypothesis core", "cases P01-N11 and their oracles", "outcomes", "stand topology A-R-B over two veth links", "data_plane", "process_policy", "setup_policy", "unexpected_ethertype_action", "capture_drop_action"],
+    "registry_evidence": "experiments/bcp02-reg-001/results.json"
+  },
+  "wire_version": "0.2",
+  "state_mode": "sepolia-finalized-snapshot",
+  "hypothesis": "Delivery and reverse receipts depend on the sole authorized A-R-B Ethernet path and on node keys and policies read from the live Sepolia registry at a finalized block; a registry change stops delivery once a node observes the finalized block containing it; no IP fallback or replacement message ID is used.",
+  "state_source": {
+    "read_mode": "V",
+    "read_mode_Q_allowed": false,
+    "reader": "adapters/bcp02 against an own Geth v1.17.10 + Lighthouse v8.3.2 pair (request IPVX-BCP02-VALIDATOR-001)",
+    "binding": "actual contract addresses, runtime Keccak-256, HTTPS URLs with SHA-256 DER pins, CL genesis, weak-subjectivity bootstrap and binary declarations, fixed before the run",
+    "delivery_to_nodes": "the same local state-provider interface as NET-001-F; only its source changes",
+    "state_channel": "a separate state-reader namespace reaches the validator over HTTPS on a private network; node namespaces keep no IP address, route or AF_INET socket",
+    "state_channel_carries_bcp_frames": false,
+    "max_state_age_seconds": 1800,
+    "age_measured_from": "finalized execution header timestamp",
+    "observed_acceptance_age_seconds": {"min": 781, "max": 792, "source": "REG-001 run 6, snapshots S1-S4"},
+    "refresh_period_seconds_max": 300,
+    "clock_skew_seconds": 5
+  },
+  "contracts": {
+    "choice": "owner decision: reuse the REG-001 run 6 deployment (runtime already verified) or deploy afresh with the same build",
+    "reg001_run6": {"NodeRegistry": "0x69A23A6E1b55D05Ae4CBD76fe17De5E9bACde639", "TransitPolicy": "0xf44c3948039E43A34B4Dd90BF57af3f86857Da3A", "ConnectionPolicy": "0x7F9e74b8b2E8C62A88D144eb6FE082f0BB0b83F6"},
+    "chain_id": 11155111,
+    "mainnet_forbidden": true
+  },
+  "transactions": {
+    "before_window": {
+      "purpose": "register A, R, B with this run's fresh public keys and establish the declared policies",
+      "register": 3,
+      "edge_propose": 4,
+      "edge_consent": 8,
+      "connection_propose": 2,
+      "connection_consent": 4,
+      "total": 21,
+      "owners": {"A": "W1", "R": "W1", "B": "W2"},
+      "effective": "only after the finalized snapshot C containing all of them is accepted in read mode V"
+    },
+    "inside_window": [
+      {"case": "N07", "phase": "a", "call": "TransitPolicy.withdraw on the forward edge R->B"},
+      {"case": "N07", "phase": "b", "call": "ConnectionPolicy.withdraw on the reverse connection B->A"},
+      {"case": "N06", "call": "NodeRegistry.setKeys on A (epoch increases)"}
+    ],
+    "total_max": 24,
+    "keys": "private keys stay with the operator outside Git; node private keys are fresh per run and never on chain",
+    "no_automatic_retry": true
+  },
+  "timing": {
+    "rationale": "REG-001 R4: a registry change becomes effective for a finalized reader after 14.2-19.0 min (median 16.5). NET-001-F deadlines assume an instantly published fixture state.",
+    "state_change_cases_last": true,
+    "state_change_order": ["N07a", "N07b", "N06"],
+    "one_change_per_snapshot": true,
+    "finality_wait_seconds_max": 1500,
+    "deadlines_start_at": "the node's first observation of the finalized snapshot L containing the change, not the transaction submission",
+    "measured": "submit -> inclusion -> finalized -> reader acceptance -> first node rejection, per change",
+    "N08_live": "block the validator endpoints at the stand firewall as a declared barrier: STATE_UNAVAILABLE on the next required read, then STATE_STALE once the cached snapshot exceeds 1800 s; the wait counts as a finality-type wait"
+  },
+  "limits": {"logical_requests_max": 40, "data_attempts_max": 120, "attempts_per_id_max": 3, "attempt_timeout_seconds": 5, "fault_outcome_deadline_seconds": 20, "case_seconds_max": 90, "data_per_session_inflight": 1, "active_seconds_max": 1200, "wall_seconds_max": 7200, "finality_waits_max": 4, "retention_seconds_min": 604800},
+  "route_constraints": {"directed_edges": "A->R, R->A, R->B, B->R as registered in this run", "directed_connections": "A->B, B->A as registered in this run", "shared_peer_private_keys": false, "peer_signed_suffix_required": true},
+  "cases": "IPVX-BCP02-NET-001-F cases P01-N11 with identical oracles and success metrics; stimuli N06, N07 and N08 use real registry transactions and a real endpoint block instead of fixture banks; every result carries state_mode=sepolia-finalized-snapshot and the snapshot block hash",
+  "additional_measurement": {
+    "id": "L1",
+    "statement": "end-to-end time from a registry transaction to the first refused BCP frame",
+    "threshold": null
+  },
+  "outcomes": ["NOT_RUN", "BLOCKED", "PASS", "FAIL_PROTOCOL", "FAIL_ISOLATION", "INCONCLUSIVE", "ABORTED"],
+  "pass_requires_all_cases": true,
+  "prerequisites": [
+    {"item": "validator VM allocated and synced (IPVX-BCP02-VALIDATOR-001)", "owner": "project owner / infrastructure operator", "status": "requested"},
+    {"item": "REG-001 snapshots S1-S4 re-read in read mode V, zero transactions; closes R1 and accepts the validator", "owner": "project", "status": "open"},
+    {"item": "NET-001-F components implemented, reviewed and NET-001-F run first", "owner": "project", "status": "open"},
+    {"item": "L-only components: per-run registry writer, live state-reader binding, finality-wait scheduler, firewall barrier for N08", "owner": "project", "status": "open"},
+    {"item": "stand VM (IPVX-BCP02-STAND-001) with a private link to the validator for the state reader only", "owner": "project owner / infrastructure operator", "status": "open"},
+    {"item": "owner permit for up to 24 Sepolia transactions per run, window and step list", "owner": "project owner", "status": "open"}
+  ],
+  "does_not_establish": [
+    "an IP-free whole device: the state reader uses IP to reach the validator",
+    "physical Ethernet between hosts",
+    "independent operators",
+    "complete finality proof beyond the operator's EL/CL trust boundary",
+    "naming (NAME-001)",
+    "AI route choice"
+  ],
+  "results": null,
+  "execution_performed": false,
+  "transactions_performed": false,
+  "production_actions": false
+}
