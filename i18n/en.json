@@ -2985,5 +2985,19 @@
   "6f9be27fcca30d7e": "HANDOFF-IPVX-2026-11-02.md",
   "7dcafe249b20c485": "This documents existing state. Historical checks and observations were not repeated as new measurements; main, production and deadline values retain the original handoff date.",
   "c022513533aa13cb": "Private absolute paths, SSH access details and access settings were not published; the owner retains their exact copy. Previous entries and evidence were not rewritten.",
-  "1db1919fd08a2cec": "PR52 remains open. Code, servers, timers, models, experiment and transactions were neither changed nor started; no deployment or production Actions occurred."
+  "1db1919fd08a2cec": "PR52 remains open. Code, servers, timers, models, experiment and transactions were neither changed nor started; no deployment or production Actions occurred.",
+  "207724b7947bb780": "194 events through HX-0194; authors, rationale, checks and limitations.",
+  "16ed87b5db4031eb": "380.0 KiB · 12 files",
+  "bbdbdca29d907bf1": "HX-0194 · “Registry first”: the REG-001 protocol, liaison on Sonnet 5.5 and a repair of pinned sources",
+  "09cbe58ef51fb340": "Claude Code — the owner's assistant (ipvx-agent-lab, public stand) · 2026-11-02T22:33:36+00:00",
+  "a66520a6845c145c": "By the owner’s decision of 2 November 2026, the REG-001 experiment — a live BCP 0.2 registry on Sepolia — goes first; NET-001 becomes the second step and will receive a real finalized snapshot instead of synthetic state. A comparison with the original papers showed that their central thesis — the blockchain as the single source of addresses and routes — had not yet been tested on a live chain. PR54 added a protocol with pre-registered R1–R5 thresholds and a step runner checked on an in-memory EVM. PR53 moved the liaison writer to Claude Sonnet 5.5 with a 1 USD per day limit; after the owner topped up the balance, the paired check passed and generation was enabled. PR53, PR54 and PR52 were merged.",
+  "9b78893179e217f3": "First test the core of the original idea — the on-chain registry — and then build the network experiment on its real state. Record the thresholds and the expected negative result for “immediately available” before launch so they cannot be fitted afterwards. Separate the read modes: the temporary mode Q through three public RPCs is valid only for R2–R5; only an own node (mode V) gives the right to claim R1.",
+  "458962664ae285c8": "experiments/bcp02-reg-001/README.md",
+  "c4330c356b9bc0fe": "experiments/bcp02-reg-001/protocol.json",
+  "947738e45e506079": "contracts/bcp02/reg001/README.md",
+  "754db1a58f63a4d7": "runners/bcp02/evidence/archive/liaison-pr53",
+  "0f798eacc3dabb4b": "My error: PR53 changed five liaison files pinned by the BCP runner’s hashes, and from its merge until the PR54 merge the runner preservation checks failed on main; the runner workflow does not run on liaison paths, so PR53’s CI did not show it. Fixed following the website-PR precedent: the original bytes are kept in an archive and verified there, and the manifest pins the current ones. Recorded runner checks reproduce byte for byte; previous evidence was not reissued. The runner source scope hash changed, which a revision of the NET-001 admission requires anyway.",
+  "d2345ac904938078": "All three merges were made on the owner’s direct word with a one-time --admin command, but the flag bypassed nothing: main’s protection applies to administrators too, so PR52 was merged only after its branch was updated and CI passed again. Main protection was not changed.",
+  "adce1e9da8415ab0": "REG-001 has not been run and no transaction has been sent. The owner authorized Sepolia transactions in mode Q; three test wallets were created, their keys are kept outside Git, and funding is pending. In mode Q the R1 result is not claimed; W1 and W2 belong to the same owner, so bilateral consent tests the mechanism, not the independence of the parties.",
+  "a8969f6ea334f8ef": "The public collaboration page still states 3 USD per day for liaison; the configured prices are valid until 29 November 2026. A new VM for mode V has not been requested; NET-001, NAME-001 and the Linux preflight remain NOT_RUN."
 }

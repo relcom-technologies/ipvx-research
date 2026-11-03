@@ -87,31 +87,6 @@
       "context": "account.html:text:header/div/a"
     },
     {
-      "id": "5bd57038dbadd651",
-      "source": "Язык",
-      "context": "account.html:attribute:aria-label"
-    },
-    {
-      "id": "6da140fdd4be0189",
-      "source": "Русский",
-      "context": "account.html:text:body/nav/a"
-    },
-    {
-      "id": "ba118bf7fc9c1aed",
-      "source": "English",
-      "context": "account.html:text:body/nav/a"
-    },
-    {
-      "id": "801cfe0fa1182664",
-      "source": "Deutsch",
-      "context": "account.html:text:body/nav/a"
-    },
-    {
-      "id": "94b382b61b9dde0f",
-      "source": "Español",
-      "context": "account.html:text:body/nav/a"
-    },
-    {
       "id": "20f6203b19297010",
       "source": "Участник исследования",
       "context": "account.html:text:main/div/h1"
@@ -872,13 +847,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "631ba2041ab3adcc",
-      "source": "193 событий по HX-0193; авторы, основания, проверки и ограничения.",
+      "id": "207724b7947bb780",
+      "source": "194 событий по HX-0194; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "f3672562dd4570b7",
-      "source": "375.7 КиБ · 12 файлов",
+      "id": "16ed87b5db4031eb",
+      "source": "380.0 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4677,14 +4652,94 @@
       "context": "history.html:text:main/section/p"
     },
     {
-      "id": "12d6a909589b130c",
-      "source": "HX-0193 · Полный отчёт передачи сохранён в репозитории",
+      "id": "bbdbdca29d907bf1",
+      "source": "HX-0194 · Курс «реестр первым»: протокол REG-001, liaison на Sonnet 5.5 и исправление закреплённых исходников",
       "context": "history.html:text:section/details/summary"
     },
     {
       "id": "e078c61c3e49f21a",
       "source": "Реализовано",
       "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "09cbe58ef51fb340",
+      "source": "Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд) · 2026-11-02T22:33:36+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "a66520a6845c145c",
+      "source": "По решению владельца от 2 ноября 2026 года первым идёт опыт REG-001 — живой реестр BCP 0.2 в Sepolia; NET-001 становится вторым шагом и получит настоящий финализированный снимок вместо синтетического состояния. Сверка с исходными статьями показала, что их центральный тезис — блокчейн как единый источник адресов и маршрутов — ещё не проверялся на живой цепочке. PR54 добавил протокол с заранее зарегистрированными порогами R1–R5 и исполнитель шагов, проверенный на EVM в памяти. PR53 перевёл писателя liaison на Claude Sonnet 5.5 с лимитом 1 USD в сутки; после пополнения баланса владельцем парная проверка прошла, генерация включена. Слиты PR53, PR54 и PR52.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "9b78893179e217f3",
+      "source": "Сначала проверить ядро исходной идеи — реестр в цепочке, — а затем строить сетевой опыт на его настоящем состоянии. Записать пороги и ожидаемый отрицательный результат по «immediately available» до запуска, чтобы их нельзя было подогнать. Разделить режимы чтения: временный режим Q через три публичных RPC годится только для R2–R5, право утверждать R1 даёт лишь собственный узел (режим V).",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "458962664ae285c8",
+      "source": "experiments/bcp02-reg-001/README.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "c4330c356b9bc0fe",
+      "source": "experiments/bcp02-reg-001/protocol.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "947738e45e506079",
+      "source": "contracts/bcp02/reg001/README.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "754db1a58f63a4d7",
+      "source": "runners/bcp02/evidence/archive/liaison-pr53",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "0f798eacc3dabb4b",
+      "source": "Моя ошибка: PR53 изменил пять файлов liaison, закреплённых хешами исполнителя BCP, и с его слияния до слияния PR54 проверки сохранности исполнителя на main не проходили; рабочий процесс исполнителя не запускается на путях liaison, поэтому CI PR53 этого не показал. Исправлено по прецеденту PR сайта: исходные байты хранятся в архиве и проверяются там, манифест закрепляет текущие. Записанные проверки исполнителя воспроизводятся байт в байт; прежние доказательства не перевыпущены. Хеш области исходников исполнителя изменился, что и так требуется для пересмотра допуска NET-001.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "d2345ac904938078",
+      "source": "Все три слияния выполнены по прямому слову владельца командой с разовым --admin, но флаг ничего не обошёл: защита main распространяется и на администраторов, поэтому PR52 слит только после обновления ветки и повторного зелёного CI. Защита main не менялась.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "adce1e9da8415ab0",
+      "source": "REG-001 не запущен, ни одной транзакции не отправлено. Владелец разрешил транзакции Sepolia в режиме Q; три тестовых кошелька созданы, ключи хранятся вне Git, пополнение ожидается. В режиме Q результат R1 не утверждается; W1 и W2 принадлежат одному владельцу, поэтому двустороннее согласие проверяет механизм, а не независимость сторон.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "a8969f6ea334f8ef",
+      "source": "Публичная страница сотрудничества ещё указывает 3 USD в сутки для liaison; цены в конфигурации действительны до 29 ноября 2026 года. Новая ВМ для режима V не запрошена; NET-001, NAME-001 и Linux preflight остаются NOT_RUN.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "eef48afb7e7c7a81",
+      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "12d6a909589b130c",
+      "source": "HX-0193 · Полный отчёт передачи сохранён в репозитории",
+      "context": "history.html:text:section/details/summary"
     },
     {
       "id": "5ff1b1138ad0de2f",
@@ -4697,19 +4752,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "135a938993047a5d",
       "source": "Дать следующему агенту постоянную точку входа в Git, сохранив содержательную полноту и приватность доступа. Не превращать сохранение документа в разрешение на слияние, запуск, выкатку или повторное использование --admin.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "6f9be27fcca30d7e",
@@ -4725,11 +4770,6 @@
       "id": "22daf234f16f8840",
       "source": "docs/handoff-checks-2026-11-02.json",
       "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "7dcafe249b20c485",
@@ -7535,11 +7575,6 @@
       "id": "7df8f750a5722906",
       "source": "Хронология на lab.ipvx.org накапливается, пока страница открыта: наблюдатель отдаёт только последние 24 доставки.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "eef48afb7e7c7a81",
-      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "276f4e743f02df50",
