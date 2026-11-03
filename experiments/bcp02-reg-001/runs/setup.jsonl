@@ -1,0 +1,3 @@
+{"at":"2026-11-03T01:12:27.023Z","step":"faucet-in","wallet":"W1","tx":"0x9b095a9c4772d07ad207266d8bf23d0f72cf390f16bb4dadc506dcaa0f950ee6","value_eth":"0.05","block":12051934,"source":"Google Cloud Sepolia faucet"}
+{"at":"2026-11-03T01:12:40.173Z","step":"fund-w2","from":"W1","to":"W2","value_eth":"0.01","tx":"0x64c6cf36fece5b5eac24991c6b16ea482cb8dc97e01efb1f599aaaa8df908bec","block":12051943,"status":1,"gas":"204600"}
+{"at":"2026-11-03T01:13:01.769Z","step":"fund-w3","from":"W1","to":"W3","value_eth":"0.002","tx":"0xef4ee0a3049722c2ec99d774f4ee1c7d3156a90defaebc8e35a9551dd1731ee3","block":12051945,"status":1,"gas":"204600"}

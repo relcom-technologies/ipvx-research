@@ -18,3 +18,5 @@ jobs:
         run: npm ci --ignore-scripts --no-audit --no-fund
       - name: REG-001 step runner against the in-memory EVM, no network or transactions
         run: node --import ./test/offline.mjs --test reg001/runner.test.mjs
+      - name: REG-001 results are recomputed from the committed run journals, offline
+        run: node ../../experiments/bcp02-reg-001/summarize.mjs --check
