@@ -847,13 +847,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "0837993d0502eeab",
-      "source": "195 событий по HX-0195; авторы, основания, проверки и ограничения.",
+      "id": "e8cb1f114989c96f",
+      "source": "196 событий по HX-0196; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "ec9776aa26abf1af",
-      "source": "383.8 КиБ · 12 файлов",
+      "id": "8e44c9df1eb34efa",
+      "source": "387.3 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4652,6 +4652,81 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "3915337baf14b1af",
+      "source": "HX-0196 · Предложен NET-001-L на живом состоянии реестра и запрошена ВМ собственного узла Sepolia",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "c89eba90f1d8c201",
+      "source": "Предложение",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "4ee57b445a6a32bf",
+      "source": "Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд) · 2026-11-03T21:25:49+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "c242f44211d566fc",
+      "source": "По поручению владельца («ВМ и NET-001») подготовлены два документа. Протокол IPVX-BCP02-NET-001-L слит в PR63: то же ядро, что у NET-001-F (узлы A—R—B, кадры 0x88B5 без IP, 13 случаев и их оракулы), но ключи и права узлов читаются из живого реестра Sepolia в финализированном блоке и только в режиме V. Сроки перестроены по результату R4 из REG-001: изменения реестра (отзыв ребра, отзыв соединения, смена ключей) идут последними, по одному на снимок, сроки 20 с и 90 с отсчитываются от наблюдения узлом финализированного изменения, окно увеличено до 7200 с, добавлено измерение L1 — время от транзакции до первого отклонённого кадра; до 24 транзакций на прогон. Для режима V в relcom-infra открыт черновой запрос ВМ IPVX-BCP02-VALIDATOR-001 (PR854): 4 vCPU, 16 ГиБ, 1200 ГиБ SSD под Geth v1.17.10 и Lighthouse v8.3.2, только исходящие P2P-соединения, RPC не на публичном адресе, без ключей и транзакций; приёмка — повторное чтение снимков S1–S4 REG-001.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "d07af328700c5ca2",
+      "source": "Не менять закреплённый пакет NET-001-F, а вынести живое состояние в отдельный вариант: так ошибки транспорта и ошибки состояния останутся различимыми, а F можно запустить первым. Сроки строить по измеренной финальности, а не по исходному «immediately available». Узел запросить у оператора инфраструктуры, а не поднимать в обход: доступа к Proxmox и provisioner у исполнителя нет, а запросы ВМ в relcom-infra оформляются только документацией.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "d2ea48bd792cb82f",
+      "source": "experiments/bcp02-net-001-l/README.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "cb62ac653b3d7f34",
+      "source": "experiments/bcp02-net-001-l/protocol.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "5882a8ac66bad941",
+      "source": "experiments/bcp02-reg-001/results.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "49fa6175956126ad",
+      "source": "Это протокол и запрос, а не запуск: ВМ не выделена, узел не синхронизирован, транзакций и кадров нет. NET-001-F и NET-001-L остаются NOT_RUN; слияние PR63 не разрешает прогон.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "7ebc7246029be590",
+      "source": "Запрос PR854 — черновик без выделения ресурсов; размер диска взят из внешнего замера синхронизированной пары Sepolia, фактический объём будет измерен после синхронизации. Как совместить P2P с правилом «на публичном адресе слушает только sshd», выбирает оператор.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "f5aa7aac289b7138",
+      "source": "Читатель состояния ходит к валидатору по IP, поэтому NET-001-L может показать только плоскость данных между узлами без IP, а не устройство без IP целиком. Решения владельца ещё открыты: переиспользовать контракты прогона 6 REG-001 или развернуть заново, и разрешение на прогон.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "eef48afb7e7c7a81",
+      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "086ef4dc555ed043",
       "source": "HX-0195 · REG-001 выполнен: живой реестр BCP 0.2 в Sepolia прошёл все 30 шагов в режиме чтения Q",
       "context": "history.html:text:section/details/summary"
@@ -4672,19 +4747,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "938f209f9a80d0e4",
       "source": "Записать результат таким, каким он получился, по порогам, зарегистрированным до запуска: отрицательный результат R4 и оговорку R2 не сглаживать, прерванные прогоны сохранить как доказательства. Числа выводятся из журналов скриптом, который CI проверяет, чтобы отчёт не мог разойтись с данными.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "458962664ae285c8",
@@ -4692,19 +4757,9 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "5882a8ac66bad941",
-      "source": "experiments/bcp02-reg-001/results.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
       "id": "6db1d70c0f07f37d",
       "source": "experiments/bcp02-reg-001/runs",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "aed853914f2c46e0",
@@ -4730,11 +4785,6 @@
       "id": "312aa6a9a9a8e89c",
       "source": "Двадцать записей серии R4 отправлены за пять минут и финализированы вместе, поэтому распределение отражает время отправки, а не двадцать независимых замеров финальности. NET-001 и NAME-001 остаются NOT_RUN; изменение протокола NET-001 на финализированный снимок ещё не подготовлено.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "eef48afb7e7c7a81",
-      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "bbdbdca29d907bf1",
@@ -5145,11 +5195,6 @@
       "id": "655d0e487ff6d7ce",
       "source": "HX-0187 · Запрошена отдельная ВМ BCP и закреплён пакет подготовки без запуска",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "c89eba90f1d8c201",
-      "source": "Предложение",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "518edae404fde10b",
