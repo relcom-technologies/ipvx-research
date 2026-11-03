@@ -1,0 +1,600 @@
+{
+ "schema_version": 1,
+ "protocol_id": "IPVX-BCP02-REG-001",
+ "protocol_version": "0.1",
+ "result_status": "completed_read_mode_Q",
+ "read_mode": "Q",
+ "chain_id": 11155111,
+ "recorded_by": "claude-code-assistant",
+ "derived_by": "experiments/bcp02-reg-001/summarize.mjs from runs/",
+ "runs": [
+  {
+   "run": 1,
+   "source_revision": "76bce5971354c1d39b48de33d66773f750e10a93",
+   "window_start": "2026-11-03T01:12:17Z",
+   "steps_passed": 2,
+   "steps_total": 30,
+   "last_passed": "deploy-transit",
+   "error": "AssertionError: Providers disagree on deployed code",
+   "contracts": {
+    "NodeRegistry": "0x48b3b5eaF1e29bE692E9Ce9C086F879b7d849A8F",
+    "TransitPolicy": "0x056A403D0E3b69092C680603e620E90D6fDFe2ed"
+   },
+   "cause": "runtime hash read at \"latest\" on a load-balanced RPC; a lagging backend had no code yet",
+   "fix": "relcom-technologies/ipvx-research#56"
+  },
+  {
+   "run": 2,
+   "source_revision": "2e86ff7ec91b219e842371f064ea628e883f220a",
+   "window_start": "2026-11-03T09:02:50Z",
+   "steps_passed": 4,
+   "steps_total": 30,
+   "last_passed": "deploy-immutables",
+   "error": "TypeError: Do not know how to serialize a BigInt",
+   "contracts": {
+    "NodeRegistry": "0xc0bF16dA961A0a5a4dFaA030624A90De9eF6f7af",
+    "TransitPolicy": "0x8ECf73192D85b6581Dea9F7Ef7E4AA8dEF0D9fcC",
+    "ConnectionPolicy": "0x4614F2f1540B048e53B0bb2F24C1FF251B03ca04"
+   },
+   "cause": "journal could not serialize a BigInt",
+   "fix": "relcom-technologies/ipvx-research#57"
+  },
+  {
+   "run": 3,
+   "source_revision": "92c10993973a6fe5f6343daa1fd04e3ce2f87a94",
+   "window_start": "2026-11-03T09:31:57Z",
+   "steps_passed": 29,
+   "steps_total": 30,
+   "last_passed": "snapshot-s4-check",
+   "error": null,
+   "contracts": {
+    "NodeRegistry": "0x333EDa5D761560b9172a4258457c5B31518FFCAf",
+    "TransitPolicy": "0xA9f59Ca987816D314C596821Ec67c73a3aacBC42",
+    "ConnectionPolicy": "0xA74822CeB774bF7D008543dc0c76cAfB7165F2EC"
+   },
+   "cause": "an RPC 500 during the latency series escaped as an unhandled rejection; process exited without a journal line",
+   "fix": "relcom-technologies/ipvx-research#58"
+  },
+  {
+   "run": 4,
+   "source_revision": "5033e6e397bc938c7c0b98bcc5f556830526544a",
+   "window_start": "2026-11-03T11:29:34Z",
+   "steps_passed": 7,
+   "steps_total": 30,
+   "last_passed": "register-b",
+   "error": "Error: execution reverted",
+   "contracts": {
+    "NodeRegistry": "0xE48382a29BfCC483C76fF5fF19ABe22ace50a528",
+    "TransitPolicy": "0x7a7d58ECe97c2Cf57F6dcc4D6D8C52Fe2e6ed954",
+    "ConnectionPolicy": "0xd2763dAa68F9Ac5D4a851accD1968A5cbC7680E9"
+   },
+   "cause": "gas estimated at \"latest\" on a backend one block behind the previous write",
+   "fix": "relcom-technologies/ipvx-research#59"
+  },
+  {
+   "run": 5,
+   "source_revision": "ff7bde9b03364d0e055964a7cb31582ba2ff2311",
+   "window_start": "2026-11-03T11:50:50Z",
+   "steps_passed": 5,
+   "steps_total": 30,
+   "last_passed": "register-a",
+   "error": "Error: missing revert data",
+   "contracts": {
+    "NodeRegistry": "0x35C988Ce75FDfd840893e1204fB61e03cE0f9a50",
+    "TransitPolicy": "0xc9279728a33A446910626846d544E40D72De1bC0",
+    "ConnectionPolicy": "0xD56653CC571044A2f6e02Ca2fA337113c0A65a67"
+   },
+   "cause": "a missing block on a lagging backend is reported by ethers as CALL_EXCEPTION and was taken for a revert",
+   "fix": "relcom-technologies/ipvx-research#60"
+  },
+  {
+   "run": 6,
+   "source_revision": "ab4a2207ed9f6dbe9de7895fc55b3c12eacdbc46",
+   "window_start": "2026-11-03T13:29:05Z",
+   "steps_passed": 30,
+   "steps_total": 30,
+   "last_passed": "latency-series",
+   "error": null,
+   "contracts": {
+    "NodeRegistry": "0x69A23A6E1b55D05Ae4CBD76fe17De5E9bACde639",
+    "TransitPolicy": "0xf44c3948039E43A34B4Dd90BF57af3f86857Da3A",
+    "ConnectionPolicy": "0x7F9e74b8b2E8C62A88D144eb6FE082f0BB0b83F6"
+   },
+   "cause": null,
+   "fix": null
+  }
+ ],
+ "complete_run": {
+  "run": 6,
+  "steps_passed": 30,
+  "contracts": {
+   "NodeRegistry": "0x69A23A6E1b55D05Ae4CBD76fe17De5E9bACde639",
+   "TransitPolicy": "0xf44c3948039E43A34B4Dd90BF57af3f86857Da3A",
+   "ConnectionPolicy": "0x7F9e74b8b2E8C62A88D144eb6FE082f0BB0b83F6"
+  },
+  "snapshots": {
+   "S1": {
+    "block": 12055611,
+    "block_hash": "0xff92243915d12d2bff651b9812d20855fdb50fd766f1f47fc201f64015439b86",
+    "mode": "Q",
+    "nfts": [
+     [
+      "0x04F98b2EADEB8346C0EDd46110E42a98F151D344",
+      "1",
+      "0x000000000000000000000000000000000000000000000000000000000000000a",
+      "0x000000000000000000000000000000000000000000000000000000000000000b",
+      "1",
+      "1"
+     ],
+     [
+      "0x04F98b2EADEB8346C0EDd46110E42a98F151D344",
+      "1",
+      "0x000000000000000000000000000000000000000000000000000000000000001e",
+      "0x000000000000000000000000000000000000000000000000000000000000001f",
+      "1",
+      "2"
+     ],
+     [
+      "0xD7d99538293829075Ef9BF04FB1b641A88A099F2",
+      "1",
+      "0x0000000000000000000000000000000000000000000000000000000000000014",
+      "0x0000000000000000000000000000000000000000000000000000000000000015",
+      "1",
+      "1"
+     ],
+     [
+      "0x0000000000000000000000000000000000000000",
+      "0",
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0",
+      "0"
+     ]
+    ],
+    "edges": [
+     [
+      "1",
+      "2",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1500",
+      "7",
+      "1"
+     ],
+     [
+      "2",
+      "3",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1500",
+      "7",
+      "1"
+     ]
+    ],
+    "connections": [
+     [
+      "1",
+      "3",
+      "1",
+      "1",
+      "1",
+      "7",
+      "2",
+      "1500",
+      "1"
+     ]
+    ]
+   },
+   "S2": {
+    "block": 12055706,
+    "block_hash": "0xc763808cba087028045244b56429cde03c7d059c3ece903ab1643164331e30f8",
+    "mode": "Q",
+    "nfts": [
+     [
+      "0x04F98b2EADEB8346C0EDd46110E42a98F151D344",
+      "1",
+      "0x000000000000000000000000000000000000000000000000000000000000000a",
+      "0x000000000000000000000000000000000000000000000000000000000000000b",
+      "1",
+      "1"
+     ],
+     [
+      "0x04F98b2EADEB8346C0EDd46110E42a98F151D344",
+      "2",
+      "0x0000000000000000000000000000000000000000000000000000000000000028",
+      "0x0000000000000000000000000000000000000000000000000000000000000029",
+      "1",
+      "2"
+     ],
+     [
+      "0xD7d99538293829075Ef9BF04FB1b641A88A099F2",
+      "1",
+      "0x0000000000000000000000000000000000000000000000000000000000000014",
+      "0x0000000000000000000000000000000000000000000000000000000000000015",
+      "1",
+      "1"
+     ],
+     [
+      "0x0000000000000000000000000000000000000000",
+      "0",
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0",
+      "0"
+     ]
+    ],
+    "edges": [
+     [
+      "1",
+      "2",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1500",
+      "7",
+      "2"
+     ],
+     [
+      "2",
+      "3",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1500",
+      "7",
+      "2"
+     ]
+    ],
+    "connections": [
+     [
+      "1",
+      "3",
+      "1",
+      "1",
+      "1",
+      "7",
+      "2",
+      "1500",
+      "1"
+     ]
+    ]
+   },
+   "S3": {
+    "block": 12055800,
+    "block_hash": "0x36f03c48961ebcf0cf53ff5e91197ebf798e701f966b63055fbb82a90e1bec21",
+    "mode": "Q",
+    "nfts": [
+     [
+      "0x04F98b2EADEB8346C0EDd46110E42a98F151D344",
+      "1",
+      "0x000000000000000000000000000000000000000000000000000000000000000a",
+      "0x000000000000000000000000000000000000000000000000000000000000000b",
+      "1",
+      "1"
+     ],
+     [
+      "0x04F98b2EADEB8346C0EDd46110E42a98F151D344",
+      "2",
+      "0x0000000000000000000000000000000000000000000000000000000000000028",
+      "0x0000000000000000000000000000000000000000000000000000000000000029",
+      "1",
+      "2"
+     ],
+     [
+      "0xD7d99538293829075Ef9BF04FB1b641A88A099F2",
+      "1",
+      "0x0000000000000000000000000000000000000000000000000000000000000014",
+      "0x0000000000000000000000000000000000000000000000000000000000000015",
+      "1",
+      "1"
+     ],
+     [
+      "0x0000000000000000000000000000000000000000",
+      "0",
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0",
+      "0"
+     ]
+    ],
+    "edges": [
+     [
+      "1",
+      "2",
+      "2",
+      "1",
+      "2",
+      "1",
+      "1500",
+      "7",
+      "1"
+     ],
+     [
+      "2",
+      "3",
+      "2",
+      "2",
+      "1",
+      "1",
+      "1500",
+      "7",
+      "1"
+     ]
+    ],
+    "connections": [
+     [
+      "1",
+      "3",
+      "2",
+      "1",
+      "1",
+      "7",
+      "2",
+      "1500",
+      "1"
+     ]
+    ]
+   },
+   "S4": {
+    "block": 12055896,
+    "block_hash": "0x5b2a7e190360ea1ed70af2afd8b92760a6004d341adcf352aa853c8f256f3441",
+    "mode": "Q",
+    "nfts": [
+     [
+      "0x04F98b2EADEB8346C0EDd46110E42a98F151D344",
+      "1",
+      "0x000000000000000000000000000000000000000000000000000000000000000a",
+      "0x000000000000000000000000000000000000000000000000000000000000000b",
+      "1",
+      "1"
+     ],
+     [
+      "0x04F98b2EADEB8346C0EDd46110E42a98F151D344",
+      "2",
+      "0x0000000000000000000000000000000000000000000000000000000000000028",
+      "0x0000000000000000000000000000000000000000000000000000000000000029",
+      "1",
+      "2"
+     ],
+     [
+      "0xD7d99538293829075Ef9BF04FB1b641A88A099F2",
+      "3",
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "2",
+      "0"
+     ],
+     [
+      "0x0000000000000000000000000000000000000000",
+      "0",
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0",
+      "0"
+     ]
+    ],
+    "edges": [
+     [
+      "1",
+      "2",
+      "2",
+      "1",
+      "2",
+      "1",
+      "1500",
+      "7",
+      "1"
+     ],
+     [
+      "2",
+      "3",
+      "2",
+      "2",
+      "1",
+      "1",
+      "1500",
+      "7",
+      "2"
+     ]
+    ],
+    "connections": [
+     [
+      "1",
+      "3",
+      "2",
+      "1",
+      "1",
+      "7",
+      "2",
+      "1500",
+      "2"
+     ]
+    ]
+   }
+  },
+  "transactions_sent": 47,
+  "gas_total": 27508587
+ },
+ "replication": "run 3 passed the same 29 steps up to snapshot-s4-check on separate contracts; it stopped only in the latency series",
+ "claims": {
+  "R1": {
+   "verdict": "not_claimed_mode_Q",
+   "observed": "A, R, B in S1 match the written owner, epoch, keys, role; NFT 99 reads as all-zero with status 0; each snapshot accepted only when 3 providers returned identical data at one finalized blockHash",
+   "why_not_claimed": "the pass condition requires read mode V (own validated node); public RPCs are not admission under BCP 0.2"
+  },
+  "R2": {
+   "verdict": "supported_with_reservation",
+   "third_party": [
+    {
+     "step": "w3-setkeys-a",
+     "call": "NodeRegistry.setKeys",
+     "refused": true,
+     "error": "NotNodeOwner",
+     "simulated": true
+    },
+    {
+     "step": "w3-revoke-r",
+     "call": "NodeRegistry.revoke",
+     "refused": true,
+     "error": "NotNodeOwner",
+     "simulated": true
+    },
+    {
+     "step": "w3-consent-b",
+     "call": "TransitPolicy.consent",
+     "refused": true,
+     "error": "NotPartyOwner",
+     "simulated": true
+    },
+    {
+     "step": "w3-transfer-a",
+     "call": "NodeRegistry.transferFrom",
+     "refused": true,
+     "error": "ERC721InsufficientApproval",
+     "simulated": true
+    }
+   ],
+   "transfer": "epoch 1 -> 2 -> 3; keys cleared; owner W2 again",
+   "unchanged_after_attempts": true,
+   "reservation": "pre-registered wording is \"revert on chain\"; the attempts were refused by the deployed contracts on live state via eth_call and were not mined as failed transactions"
+  },
+  "R3": {
+   "verdict": "supported",
+   "one_sided_edge": "after only R consented, status 2 (needs B's owner W2)",
+   "after_rotation_S2": "edges 2/2, allowsEdge false/false",
+   "reconsent_S3": "versions 1,1 -> 2,2; path allowed again only under new versions",
+   "after_transfer_S4": "B unbound: its edge and the connection are unusable until rebound and re-consented",
+   "note": "in S2 the connection record keeps status 1; it stops allowing the path through allowsEdge=false on both edges"
+  },
+  "R4": {
+   "verdict": "immediately_available_not_supported_for_finalized_reading",
+   "seconds_from_submit": {
+    "inclusion_block_time": {
+     "n": 20,
+     "min": 2,
+     "p50": 8.4,
+     "p90": 21.3,
+     "max": 30.5
+    },
+    "safe_seen": {
+     "n": 20,
+     "min": 473.6,
+     "p50": 611.2,
+     "p90": 725,
+     "max": 764.1
+    },
+    "finalized_seen": {
+     "n": 20,
+     "min": 851.3,
+     "p50": 988.8,
+     "p90": 1102.6,
+     "max": 1141.7
+    },
+    "reader_accepted": {
+     "n": 20,
+     "min": 851.7,
+     "p50": 989.3,
+     "p90": 1103,
+     "max": 1142.2
+    }
+   },
+   "preregistered_expectation": "about 13 minutes",
+   "note": "writes are visible in a block within seconds; under BCP 0.2 a reader acts on them only after finality. The 20 writes were sent within about 5 minutes and finalized together, so the spread reflects send time, not 20 independent finality samples. Times on the operator clock, polled every 12 s."
+  },
+  "R5": {
+   "verdict": "measured",
+   "gas_units_by_call": {
+    "NodeRegistry.deploy": {
+     "n": 1,
+     "values": [
+      7387006
+     ]
+    },
+    "TransitPolicy.deploy": {
+     "n": 1,
+     "values": [
+      5665932
+     ]
+    },
+    "ConnectionPolicy.deploy": {
+     "n": 1,
+     "values": [
+      7732206
+     ]
+    },
+    "NodeRegistry.register": {
+     "n": 3,
+     "values": [
+      597745,
+      695665
+     ]
+    },
+    "TransitPolicy.propose": {
+     "n": 4,
+     "values": [
+      69983,
+      491401
+     ]
+    },
+    "TransitPolicy.consent": {
+     "n": 8,
+     "values": [
+      66912,
+      67045
+     ]
+    },
+    "ConnectionPolicy.propose": {
+     "n": 2,
+     "values": [
+      158215,
+      1097195
+     ]
+    },
+    "ConnectionPolicy.consent": {
+     "n": 4,
+     "values": [
+      66952,
+      67085
+     ]
+    },
+    "NodeRegistry.setKeys": {
+     "n": 21,
+     "values": [
+      61210,
+      61222,
+      61234
+     ]
+    },
+    "NodeRegistry.transferFrom": {
+     "n": 2,
+     "values": [
+      88218,
+      178192
+     ]
+    }
+   },
+   "gas_price_wei_in_journal": [
+    "19",
+    "21",
+    "20"
+   ],
+   "not_measured": [
+    "NodeRegistry.revoke by the owner (the sequence only has a refused third-party revoke)",
+    "withdrawal of consent (not in the registered sequence)"
+   ],
+   "note": "first propose of a rule pays for its storage; re-proposing the same rule as a new version is cheaper (TransitPolicy 491401 vs 69983, ConnectionPolicy 1097195 vs 158215)"
+  }
+ },
+ "limitations": [
+  "read mode Q only; R1 and NET-001 state need read mode V on an own Geth + Lighthouse pair",
+  "W1 and W2 belong to one lab owner: the mechanism of bilateral consent is tested, not independent parties",
+  "gas in Sepolia units; no mainnet money figure is given",
+  "the transport for transactions and reads was JSON-RPC over the ordinary Internet; it is a carrier here, not part of any claim"
+ ]
+}

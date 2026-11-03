@@ -1,0 +1,53 @@
+{
+ "protocol_id": "IPVX-BCP02-REG-001",
+ "protocol_version": "0.1",
+ "chain_id": 11155111,
+ "steps": [
+  "deploy-registry",
+  "deploy-transit",
+  "deploy-connection",
+  "deploy-immutables",
+  "register-a",
+  "register-r",
+  "register-b",
+  "edge-ar",
+  "edge-rb-one-side",
+  "edge-rb",
+  "conn-ab",
+  "snapshot-s1",
+  "snapshot-s1-check",
+  "w3-setkeys-a",
+  "w3-revoke-r",
+  "w3-consent-b",
+  "w3-transfer-a",
+  "w3-unchanged",
+  "rotate-r",
+  "snapshot-s2",
+  "snapshot-s2-check",
+  "repropose-ar",
+  "repropose-rb",
+  "repropose-ab",
+  "snapshot-s3",
+  "snapshot-s3-check",
+  "transfer-b",
+  "snapshot-s4",
+  "snapshot-s4-check",
+  "latency-series"
+ ],
+ "read_mode": "Q",
+ "approved_by": "owner, chat 2026-11-02: \"Да, режим Q\" (Sepolia transactions, read mode Q)",
+ "window_start": "2026-11-03T09:31:57Z",
+ "window_end": "2026-11-03T10:32:57Z",
+ "rpc": [
+  "https://ethereum-sepolia-rpc.publicnode.com",
+  "https://sepolia.gateway.tenderly.co",
+  "https://rpc.sepolia.ethpandaops.io"
+ ],
+ "rpc_spare": [
+  "https://1rpc.io/sepolia"
+ ],
+ "source_revision": "92c10993973a6fe5f6343daa1fd04e3ce2f87a94",
+ "note": "window gates the launch only; the registered sequence then runs to completion or to the first mismatch",
+ "run": 3,
+ "previous_run": "run 1: read race (fixed in PR56); run 2: journal BigInt serialization (fixed in PR57); journals and contracts kept"
+}

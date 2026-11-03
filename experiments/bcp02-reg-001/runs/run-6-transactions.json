@@ -1,0 +1,431 @@
+{
+ "chain_id": 11155111,
+ "from_block": 12055594,
+ "to_block": 12055987,
+ "source": "receipts read from one public Sepolia RPC after finality; read-only",
+ "transactions": [
+  {
+   "block": 12055594,
+   "tx": "0x0ebd23fa987df780d2f106d055ec6be7b0a5df2922d56a998545cf21f15d80c7",
+   "wallet": "W1",
+   "contract": "NodeRegistry",
+   "fn": "deploy",
+   "status": 1,
+   "gas": "7387006"
+  },
+  {
+   "block": 12055595,
+   "tx": "0xb5181a97977e1f08ea7dcece42c6955b8d76d31fed7cf59f4e200c0f35628cbb",
+   "wallet": "W1",
+   "contract": "TransitPolicy",
+   "fn": "deploy",
+   "status": 1,
+   "gas": "5665932"
+  },
+  {
+   "block": 12055596,
+   "tx": "0x21c1cb9a94aee12e2b5231591ff42a07babca6c18a91c0be635029ba2140e0da",
+   "wallet": "W1",
+   "contract": "ConnectionPolicy",
+   "fn": "deploy",
+   "status": 1,
+   "gas": "7732206"
+  },
+  {
+   "block": 12055597,
+   "tx": "0xa774f67efe8f73654c1d923a8d3be4fae08bb50a17bb50e80e857c64705fffc6",
+   "wallet": "W1",
+   "contract": "NodeRegistry",
+   "fn": "register",
+   "status": 1,
+   "gas": "695665"
+  },
+  {
+   "block": 12055598,
+   "tx": "0xe63e794914274ccfd42f4c3dae6492be0351e3059dd0e7158924fdf61980c0ce",
+   "wallet": "W1",
+   "contract": "NodeRegistry",
+   "fn": "register",
+   "status": 1,
+   "gas": "597745"
+  },
+  {
+   "block": 12055599,
+   "tx": "0xb92c77c4a2794934ff7d24bbb1473242ab7a3ac2d2d59f4db2084d1e1b6383ea",
+   "wallet": "W2",
+   "contract": "NodeRegistry",
+   "fn": "register",
+   "status": 1,
+   "gas": "695665"
+  },
+  {
+   "block": 12055601,
+   "tx": "0xc2be9c943b750cbe21920e36934da91997a0ea0993fbdf1955dd088b1ea7c5a9",
+   "wallet": "W1",
+   "contract": "TransitPolicy",
+   "fn": "propose",
+   "status": 1,
+   "gas": "491401"
+  },
+  {
+   "block": 12055602,
+   "tx": "0xf2109aef9886e2977caf828ebb9e3ec9773cb62839b78c5d6ffdd7a48b0f91d9",
+   "wallet": "W1",
+   "contract": "TransitPolicy",
+   "fn": "consent",
+   "status": 1,
+   "gas": "66912"
+  },
+  {
+   "block": 12055603,
+   "tx": "0x9fc52231004abd68900d5ee4cab6c5cb0c2633fd4b74f131bb3aed8ba98c7046",
+   "wallet": "W1",
+   "contract": "TransitPolicy",
+   "fn": "consent",
+   "status": 1,
+   "gas": "67045"
+  },
+  {
+   "block": 12055605,
+   "tx": "0xc6a042282d132327ab59477cf2247bbd3440fb0eb8436ade5ae4d52628005430",
+   "wallet": "W1",
+   "contract": "TransitPolicy",
+   "fn": "propose",
+   "status": 1,
+   "gas": "491401"
+  },
+  {
+   "block": 12055606,
+   "tx": "0x91cd08b89e45a47a7d55fd2a5dcdc7804884ce6a2eb99d990e69b2290efe529c",
+   "wallet": "W1",
+   "contract": "TransitPolicy",
+   "fn": "consent",
+   "status": 1,
+   "gas": "66912"
+  },
+  {
+   "block": 12055607,
+   "tx": "0xe9b3072f1d3a6dbf98d919708c5955aff033c4af867c6967bd1a733f61420088",
+   "wallet": "W2",
+   "contract": "TransitPolicy",
+   "fn": "consent",
+   "status": 1,
+   "gas": "67045"
+  },
+  {
+   "block": 12055608,
+   "tx": "0x98a2201edc6f9c5a9a315473390442aa8d63f358fed389f49945bfe522bb32e9",
+   "wallet": "W1",
+   "contract": "ConnectionPolicy",
+   "fn": "propose",
+   "status": 1,
+   "gas": "1097195"
+  },
+  {
+   "block": 12055609,
+   "tx": "0xf0f01ba4071dacbffd9a152160fe12a038dcaad3ccc0b6b47945c87708b224cd",
+   "wallet": "W1",
+   "contract": "ConnectionPolicy",
+   "fn": "consent",
+   "status": 1,
+   "gas": "66952"
+  },
+  {
+   "block": 12055610,
+   "tx": "0x73530cffdba613953810e5308c85efadd48c55c647d989d4e04d042718b496f8",
+   "wallet": "W2",
+   "contract": "ConnectionPolicy",
+   "fn": "consent",
+   "status": 1,
+   "gas": "67085"
+  },
+  {
+   "block": 12055677,
+   "tx": "0x502c170e5e14cb6226bfb55c268fdea61ccbc616da5c4625b85a9c110aba9efa",
+   "wallet": "W1",
+   "contract": "NodeRegistry",
+   "fn": "setKeys",
+   "status": 1,
+   "gas": "61210"
+  },
+  {
+   "block": 12055772,
+   "tx": "0xf49a2004c25e4954b258cc63a85fdf778c00f21c367739e443f5fc86d06f1a7f",
+   "wallet": "W1",
+   "contract": "TransitPolicy",
+   "fn": "propose",
+   "status": 1,
+   "gas": "69983"
+  },
+  {
+   "block": 12055773,
+   "tx": "0x50b918df72edfa1c0bb43b6a0534c0bd7751656b48a0f376258772a668b4b858",
+   "wallet": "W1",
+   "contract": "TransitPolicy",
+   "fn": "consent",
+   "status": 1,
+   "gas": "66912"
+  },
+  {
+   "block": 12055774,
+   "tx": "0x13bcb7768c4b896966795c9d4954ac848932afff99d0914be7e90dbed88d97e5",
+   "wallet": "W1",
+   "contract": "TransitPolicy",
+   "fn": "consent",
+   "status": 1,
+   "gas": "67045"
+  },
+  {
+   "block": 12055775,
+   "tx": "0xafec5acd308ef98c0719f3f59155d8ddf40a019977c054aa95580acd2b971c99",
+   "wallet": "W1",
+   "contract": "TransitPolicy",
+   "fn": "propose",
+   "status": 1,
+   "gas": "69983"
+  },
+  {
+   "block": 12055776,
+   "tx": "0x8c44ef3f199170cfd4edc8ced0cc8682e7fce9c0f41728aa62ce28b4ef98a184",
+   "wallet": "W1",
+   "contract": "TransitPolicy",
+   "fn": "consent",
+   "status": 1,
+   "gas": "66912"
+  },
+  {
+   "block": 12055778,
+   "tx": "0x85a96bc0bc818734542be7c48da425feaa145ac6e4762c037bf57c40925597c5",
+   "wallet": "W2",
+   "contract": "TransitPolicy",
+   "fn": "consent",
+   "status": 1,
+   "gas": "67045"
+  },
+  {
+   "block": 12055779,
+   "tx": "0x28db494c068a87af7819952d2c59d61a17738c5653ea2fec8317920b88cf537c",
+   "wallet": "W1",
+   "contract": "ConnectionPolicy",
+   "fn": "propose",
+   "status": 1,
+   "gas": "158215"
+  },
+  {
+   "block": 12055781,
+   "tx": "0x6f34ce44a0de99feed442d08cc45da63d94b5de8d163026b804f2e04203fa39f",
+   "wallet": "W1",
+   "contract": "ConnectionPolicy",
+   "fn": "consent",
+   "status": 1,
+   "gas": "66952"
+  },
+  {
+   "block": 12055782,
+   "tx": "0xe0c07607309b99dc1c6e08555689f18beb03d2d0a70a4b625e0259c6d09c8b41",
+   "wallet": "W2",
+   "contract": "ConnectionPolicy",
+   "fn": "consent",
+   "status": 1,
+   "gas": "67085"
+  },
+  {
+   "block": 12055867,
+   "tx": "0xee3683ca97b17d30734c72e5673dcefee6beb90a20669c76b637ed45a3da74ef",
+   "wallet": "W2",
+   "contract": "NodeRegistry",
+   "fn": "transferFrom",
+   "status": 1,
+   "gas": "88218"
+  },
+  {
+   "block": 12055868,
+   "tx": "0x4de4f93ec1c939cd3075d12bea36398087bd417e550eac219051ec0e4a7d864b",
+   "wallet": "W1",
+   "contract": "NodeRegistry",
+   "fn": "transferFrom",
+   "status": 1,
+   "gas": "178192"
+  },
+  {
+   "block": 12055963,
+   "tx": "0x3b4101e7ee75b69bf9930fac2b45ac54445bfc47d2a02becd27ea320c1415e37",
+   "wallet": "W1",
+   "contract": "NodeRegistry",
+   "fn": "setKeys",
+   "status": 1,
+   "gas": "61234"
+  },
+  {
+   "block": 12055965,
+   "tx": "0xffba594f5eedbd7c5621a07a3c73b63153c6d3712c44b8b336763468b8234476",
+   "wallet": "W1",
+   "contract": "NodeRegistry",
+   "fn": "setKeys",
+   "status": 1,
+   "gas": "61234"
+  },
+  {
+   "block": 12055966,
+   "tx": "0x2728829f429d0acf95708cb9114dbdf487fa33b0f31d0df6fd71706be5dcfb77",
+   "wallet": "W1",
+   "contract": "NodeRegistry",
+   "fn": "setKeys",
+   "status": 1,
+   "gas": "61234"
+  },
+  {
+   "block": 12055967,
+   "tx": "0x8ae2d52c17061e62fc113985b3b6a20ee15b496f563efd72c52a824619be9643",
+   "wallet": "W1",
+   "contract": "NodeRegistry",
+   "fn": "setKeys",
+   "status": 1,
+   "gas": "61234"
+  },
+  {
+   "block": 12055969,
+   "tx": "0xdadd691b7c3412de91d273ec0bdcbabe680781cb67e8dd9c523ae991a434c2a7",
+   "wallet": "W1",
+   "contract": "NodeRegistry",
+   "fn": "setKeys",
+   "status": 1,
+   "gas": "61234"
+  },
+  {
+   "block": 12055970,
+   "tx": "0x63ee0a5a3923390388dc65a9d1a70c7350805ee506d805ee26b02ee4f0c81cbf",
+   "wallet": "W1",
+   "contract": "NodeRegistry",
+   "fn": "setKeys",
+   "status": 1,
+   "gas": "61234"
+  },
+  {
+   "block": 12055971,
+   "tx": "0x78e612722c9cfcf3e677354c1c10f65ca958bbaa0d1d39acbafa1958b5d3cb9c",
+   "wallet": "W1",
+   "contract": "NodeRegistry",
+   "fn": "setKeys",
+   "status": 1,
+   "gas": "61234"
+  },
+  {
+   "block": 12055972,
+   "tx": "0xb4104ab1570750db7ae5c18a95df62de340213be1030369c858a76b915a180d2",
+   "wallet": "W1",
+   "contract": "NodeRegistry",
+   "fn": "setKeys",
+   "status": 1,
+   "gas": "61234"
+  },
+  {
+   "block": 12055973,
+   "tx": "0x986c733cf92bc133846291f0a9ace5d45c36e3dc167d2e67634b5d9319969d1a",
+   "wallet": "W1",
+   "contract": "NodeRegistry",
+   "fn": "setKeys",
+   "status": 1,
+   "gas": "61234"
+  },
+  {
+   "block": 12055974,
+   "tx": "0x8fae995d0c8b62dfc82241ef9969eb441e2693074aebb12f9c1399b7f0014740",
+   "wallet": "W1",
+   "contract": "NodeRegistry",
+   "fn": "setKeys",
+   "status": 1,
+   "gas": "61234"
+  },
+  {
+   "block": 12055975,
+   "tx": "0x9e5242b9717fde84d38a9a97cd057fd86835ab996c4fb5f3e2f0a29eb5552e57",
+   "wallet": "W1",
+   "contract": "NodeRegistry",
+   "fn": "setKeys",
+   "status": 1,
+   "gas": "61234"
+  },
+  {
+   "block": 12055976,
+   "tx": "0x6ca84aadc1ea5eb445fb92040b54af5be7ef2a0b700791728543220a7db62a21",
+   "wallet": "W1",
+   "contract": "NodeRegistry",
+   "fn": "setKeys",
+   "status": 1,
+   "gas": "61234"
+  },
+  {
+   "block": 12055978,
+   "tx": "0xcd64eadc8440da61f0b98fde250e4e91615b50eefb7dcb061ef6aa5c7e740e4c",
+   "wallet": "W1",
+   "contract": "NodeRegistry",
+   "fn": "setKeys",
+   "status": 1,
+   "gas": "61222"
+  },
+  {
+   "block": 12055979,
+   "tx": "0x41123ee2b86db655cfec80e6a82fed3ff7d281437f3b86b2ee0caa02e2de236e",
+   "wallet": "W1",
+   "contract": "NodeRegistry",
+   "fn": "setKeys",
+   "status": 1,
+   "gas": "61234"
+  },
+  {
+   "block": 12055980,
+   "tx": "0x06fffa40f946359d7f885d9a744ef00d08e159d8cd511fe35f6976ba6eed91b7",
+   "wallet": "W1",
+   "contract": "NodeRegistry",
+   "fn": "setKeys",
+   "status": 1,
+   "gas": "61234"
+  },
+  {
+   "block": 12055981,
+   "tx": "0x2df96ebe9d3c1d5a0c81fb88391533c18e0a4a404c4e5e460cd2f8891fb9fe1a",
+   "wallet": "W1",
+   "contract": "NodeRegistry",
+   "fn": "setKeys",
+   "status": 1,
+   "gas": "61234"
+  },
+  {
+   "block": 12055982,
+   "tx": "0xdb58007a8e190bffe8a9da3aa03f4fc966b50c82ebeb33c910edc541d9c82ae6",
+   "wallet": "W1",
+   "contract": "NodeRegistry",
+   "fn": "setKeys",
+   "status": 1,
+   "gas": "61234"
+  },
+  {
+   "block": 12055983,
+   "tx": "0xafe2fdacb92d555eeb238d351f3eba05013f6052e509c4f67862444a920c2a05",
+   "wallet": "W1",
+   "contract": "NodeRegistry",
+   "fn": "setKeys",
+   "status": 1,
+   "gas": "61234"
+  },
+  {
+   "block": 12055986,
+   "tx": "0xdf15ada73301939bb3e767b07742d74722686b60d5b99252cfc5c8c37b458c23",
+   "wallet": "W1",
+   "contract": "NodeRegistry",
+   "fn": "setKeys",
+   "status": 1,
+   "gas": "61234"
+  },
+  {
+   "block": 12055987,
+   "tx": "0x72e3d1ac9d9e24a62e7cbd44e63a0d4d143d550ed4d66b4b6015ab20486977b3",
+   "wallet": "W1",
+   "contract": "NodeRegistry",
+   "fn": "setKeys",
+   "status": 1,
+   "gas": "61234"
+  }
+ ]
+}
