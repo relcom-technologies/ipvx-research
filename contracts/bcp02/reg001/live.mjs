@@ -26,10 +26,28 @@ export function checkPermit(permit, now = new Date()) {
 }
 
 export class LiveBackend {
-  constructor(providers, wallets, journal) {
+  constructor(providers, wallets, journal, { readWaitMs = 2_000, readTries = 30 } = {}) {
     assert.ok(providers.length >= 3, 'Read mode Q needs at least three independent RPC providers');
     this.providers = providers; this.wallets = wallets; this.journal = journal; this.contracts = {}; this.lastId = 0n;
+    this.lastBlock = null; this.readWaitMs = readWaitMs; this.readTries = readTries;
   }
+  // Public RPCs are load-balanced: a backend one block behind answers 'latest' with older state and
+  // an unknown block with an error. Reads after a write therefore name the block of that write, and a
+  // block not yet available is waited for, bounded, instead of being taken as a result. Only a real
+  // revert (CALL_EXCEPTION) is a result.
+  async available(read) {
+    for (let i = 1; ; i++) {
+      try {
+        const value = await read();
+        if (value === null || value === undefined) throw new Error('block not yet available');
+        return value;
+      } catch (error) {
+        if (error.code === 'CALL_EXCEPTION' || i >= this.readTries) throw error;
+        await sleep(this.readWaitMs);
+      }
+    }
+  }
+  get afterLastWrite() { return this.lastBlock ?? 'latest'; }
   async address(w) { return this.wallets[w].address; }
   async deploy(w, name, args) {
     const c = build()[name];
@@ -37,15 +55,18 @@ export class LiveBackend {
     const submitted = Date.now();
     const contract = await factory.deploy(...args);
     const receipt = await contract.deploymentTransaction().wait();
-    this.contracts[name] = { address: await contract.getAddress(), iface: iface(name) };
+    this.contracts[name] = { address: await contract.getAddress(), iface: iface(name), blockHash: receipt.blockHash };
     return this.record(w, `${name}.deploy`, receipt, submitted, { address: this.contracts[name].address });
   }
   async runtimeHash(name) {
-    const codes = await Promise.all(this.providers.map(p => p.getCode(this.contracts[name].address, 'latest')));
+    // Code is read at the deployment block itself on every provider, never at 'latest'.
+    const { address, blockHash } = this.contracts[name];
+    const codes = await Promise.all(this.providers.map(p => this.available(() => p.send('eth_getCode', [address, { blockHash, requireCanonical: true }]))));
     assert.ok(codes.every(c => c === codes[0]), 'Providers disagree on deployed code');
     return maskImmutables(codes[0], build()[name].evm.deployedBytecode.immutableReferences);
   }
   record(w, call, receipt, submitted, extra = {}) {
+    if (this.lastBlock === null || receipt.blockNumber > this.lastBlock) this.lastBlock = receipt.blockNumber;
     return { status: receipt.status === 1 ? 'success' : 'reverted', wallet: w, call, tx: receipt.hash, block: receipt.blockNumber,
       block_hash: receipt.blockHash, gas: receipt.gasUsed.toString(), gas_price: receipt.gasPrice?.toString(), submitted_ms: submitted, ...extra };
   }
@@ -53,12 +74,14 @@ export class LiveBackend {
     const c = this.contracts[name];
     const data = c.iface.encodeFunctionData(fn, args);
     // A call simulated first tells an expected revert apart without spending gas on it.
-    try { await this.wallets[w].call({ to: c.address, data }); } catch (error) {
+    const call = () => this.available(() => this.wallets[w].call({ to: c.address, data, blockTag: this.afterLastWrite }));
+    try { await call(); } catch (error) {
+      if (error.code !== 'CALL_EXCEPTION') throw error;
       const reason = error.data ? c.iface.parseError(error.data)?.name ?? null : null;
       return { status: 'reverted', error: reason, wallet: w, call: `${name}.${fn}`, simulated: true };
     }
     let returned;
-    try { returned = [...c.iface.decodeFunctionResult(fn, await this.wallets[w].call({ to: c.address, data }))]; } catch { returned = undefined; }
+    try { returned = [...c.iface.decodeFunctionResult(fn, await call())]; } catch { returned = undefined; }
     const submitted = Date.now();
     const tx = await this.wallets[w].sendTransaction({ to: c.address, data });
     const receipt = await tx.wait();
@@ -68,7 +91,8 @@ export class LiveBackend {
   async lastTokenId() { return this.lastId; }
   async read(name, fn, args) {
     const c = this.contracts[name];
-    return [...c.iface.decodeFunctionResult(fn, await this.providers[0].call({ to: c.address, data: c.iface.encodeFunctionData(fn, args) }))];
+    const data = c.iface.encodeFunctionData(fn, args);
+    return [...c.iface.decodeFunctionResult(fn, await this.available(() => this.providers[0].call({ to: c.address, data, blockTag: this.afterLastWrite })))];
   }
   async finalizedAtLeast(number) {
     for (;;) {
@@ -81,7 +105,7 @@ export class LiveBackend {
   // A snapshot waits until the block holding the latest write (or `atLeast`) is finalized on every provider.
   async snapshot({ nfts, edges, connections, atLeast }) {
     const fin = await this.finalizedAtLeast(atLeast ?? await this.providers[0].getBlockNumber());
-    const hashes = await Promise.all(this.providers.map(p => p.getBlock(fin.number).then(b => b.hash)));
+    const hashes = await Promise.all(this.providers.map(p => this.available(() => p.getBlock(fin.number)).then(b => b.hash)));
     assert.ok(hashes.every(h => h === hashes[0]), `Providers disagree on finalized block ${fin.number}`);
     const at = { blockHash: hashes[0], requireCanonical: true };
     const callAll = async (name, fn, args) => {
@@ -97,7 +121,7 @@ export class LiveBackend {
   }
   async timing(record) {
     const p = this.providers[0];
-    const included = await p.getBlock(record.block);
+    const included = await this.available(() => p.getBlock(record.block));
     let safe_ms = null, finalized_ms = null;
     while (finalized_ms === null) {
       const [s, f] = await Promise.all([p.getBlock('safe'), p.getBlock('finalized')]);
