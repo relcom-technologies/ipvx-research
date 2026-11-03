@@ -6,11 +6,11 @@ from pathlib import Path
 TEXT={
 'ru':{
  'title':'BCP 0.2', 'lead':'Идентичность узла, разрешённый путь и пакет — из проверяемого состояния реестра.',
- 'summary':'Исходная идея IPvX развивается в BCP. Код проходит офлайн-проверки; первый сетевой опыт ещё не запускался.',
+ 'summary':'BCP 0.2 — пакетный слой и реестр IPvX. Контракты реестра проверены на живой цепочке Sepolia (REG-001); доставка пакетов по реестру (NET-001) ещё не запускалась.',
  'read':'Открыть BCP 0.2', 'source':'Код и спецификация', 'status':'Состояние разработки',
  'code':'Реализовано в коде', 'code_text':'Формат пакетов, NodeRegistry, TransitPolicy, ConnectionPolicy, EL/CL-адаптер и связь с ядром. Чтения контрактов привязаны к одному финализированному blockHash.',
  'checks':'Проверено офлайн', 'checks_text':'{runner} теста runner и {plan} проверок плана. Временные ключи, EVM в памяти, синтетические заголовки и memory ports; это не измерение сети или финальности цепочки.',
- 'pending':'Следующий сетевой опыт', 'pending_text':'Запрошена отдельная ВМ: 2 vCPU, 2 ГиБ RAM, диск до 10 ГиБ. Выделение и Linux preflight ожидают выполнения. Допуск к запуску закрыт.',
+ 'pending':'Следующий сетевой опыт', 'pending_text':'NET-001: протокол принят в двух вариантах — на тестовом и на живом состоянии реестра. Нужны ВМ стенда и собственный узел Sepolia; ни одна ещё не выделена. Допуск к запуску закрыт.',
  'idea':'Что меняет BCP', 'identity':'Идентичность', 'identity_text':'NodeRegistry связывает NFT-идентификатор узла с владельцем и ключами. Самостоятельно созданный ключ ещё не даёт права участвовать.',
  'route':'Разрешённый путь', 'route_text':'TransitPolicy и ConnectionPolicy задают допустимые переходы и соединения. Узел проверяет путь по закреплённому состоянию; блокчейн не заменяет канал передачи кадров.',
  'packet':'Формирование пакета', 'packet_text':'Идентификаторы, checkpoint, путь, подписи и зашифрованные данные получают точный двоичный формат. MAC указывает ближайшего соседа, идентификатор — конечный узел.',
@@ -23,11 +23,11 @@ TEXT={
 },
 'en':{
  'title':'BCP 0.2','lead':'Node identity, an authorized path and packet construction from verifiable registry state.',
- 'summary':'The original IPvX idea is developing into BCP. Code passes offline checks; the first network experiment has not run.',
+ 'summary':'BCP 0.2 is the IPvX packet layer and registry. The registry contracts were tested on the live Sepolia chain (REG-001); packet delivery driven by the registry (NET-001) has not run.',
  'read':'Explore BCP 0.2','source':'Code and specification','status':'Development status',
  'code':'Implemented in code','code_text':'Packet format, NodeRegistry, TransitPolicy, ConnectionPolicy, the EL/CL adapter and core integration. Contract reads are pinned to one finalized blockHash.',
  'checks':'Checked offline','checks_text':'{runner} runner tests and {plan} plan checks. Temporary keys, an in-memory EVM, synthetic headers and memory ports; no network or chain-finality measurement.',
- 'pending':'Next network experiment','pending_text':'A dedicated VM is requested: 2 vCPU, 2 GiB RAM, up to 10 GiB disk. Allocation and Linux preflight are pending. Launch admission is closed.',
+ 'pending':'Next network experiment','pending_text':'NET-001: the protocol is accepted in two variants, on test state and on live registry state. It needs the stand VM and an own Sepolia node; neither is allocated yet. Launch admission is closed.',
  'idea':'What BCP changes','identity':'Identity','identity_text':'NodeRegistry binds a node NFT identifier to its owner and keys. A self-generated key alone does not grant participation.',
  'route':'Authorized path','route_text':'TransitPolicy and ConnectionPolicy define allowed hops and connections. Nodes validate paths against pinned state; a blockchain does not replace the frame transport.',
  'packet':'Packet construction','packet_text':'Identifiers, checkpoint, path, signatures and encrypted data have an exact binary format. MAC identifies the next neighbor; the identifier names the final node.',
@@ -40,11 +40,11 @@ TEXT={
 },
 'de':{
  'title':'BCP 0.2','lead':'Knotenidentität, erlaubter Pfad und Paketaufbau aus überprüfbarem Registerzustand.',
- 'summary':'Die ursprüngliche IPvX-Idee wird als BCP weiterentwickelt. Der Code besteht Offline-Prüfungen; das erste Netzwerkexperiment wurde noch nicht gestartet.',
+ 'summary':'BCP 0.2 ist die Paketschicht und Registry von IPvX. Die Registry-Verträge wurden auf der lebenden Sepolia-Chain geprüft (REG-001); die von der Registry gesteuerte Paketzustellung (NET-001) ist noch nicht gelaufen.',
  'read':'BCP 0.2 erkunden','source':'Code und Spezifikation','status':'Entwicklungsstand',
  'code':'Im Code implementiert','code_text':'Paketformat, NodeRegistry, TransitPolicy, ConnectionPolicy, EL/CL-Adapter und Kernintegration. Vertragslesezugriffe sind an einen finalisierten blockHash gebunden.',
  'checks':'Offline geprüft','checks_text':'{runner} Runner-Tests und {plan} Planprüfungen. Temporäre Schlüssel, EVM im Speicher, synthetische Header und Memory-Ports; keine Messung von Netzwerk oder Chain-Finalität.',
- 'pending':'Nächstes Netzwerkexperiment','pending_text':'Separate VM beantragt: 2 vCPU, 2 GiB RAM, bis 10 GiB Disk. Zuteilung und Linux-Preflight stehen aus. Startfreigabe ist gesperrt.',
+ 'pending':'Nächstes Netzwerkexperiment','pending_text':'NET-001: Das Protokoll ist in zwei Varianten angenommen, auf Testzustand und auf lebendem Registry-Zustand. Benötigt werden die Stand-VM und ein eigener Sepolia-Knoten; keine von beiden ist bisher zugeteilt. Startfreigabe ist gesperrt.',
  'idea':'Was BCP ändert','identity':'Identität','identity_text':'NodeRegistry bindet eine Knoten-NFT-Kennung an Eigentümer und Schlüssel. Ein selbst erzeugter Schlüssel allein berechtigt nicht zur Teilnahme.',
  'route':'Erlaubter Pfad','route_text':'TransitPolicy und ConnectionPolicy legen erlaubte Übergänge und Verbindungen fest. Knoten prüfen Pfade gegen fixierten Zustand; Blockchain ersetzt nicht den Frame-Transport.',
  'packet':'Paketaufbau','packet_text':'Kennungen, Checkpoint, Pfad, Signaturen und verschlüsselte Daten erhalten ein genaues Binärformat. MAC bezeichnet den nächsten Nachbarn, die Kennung den Zielknoten.',
@@ -57,11 +57,11 @@ TEXT={
 },
 'es':{
  'title':'BCP 0.2','lead':'Identidad del nodo, ruta autorizada y paquetes desde un estado de registro verificable.',
- 'summary':'La idea original de IPvX se desarrolla como BCP. El código pasa comprobaciones offline; el primer experimento de red aún no se ha ejecutado.',
+ 'summary':'BCP 0.2 es la capa de paquetes y el registro de IPvX. Los contratos del registro se probaron en la cadena viva Sepolia (REG-001); la entrega de paquetes guiada por el registro (NET-001) aún no se ha ejecutado.',
  'read':'Explorar BCP 0.2','source':'Código y especificación','status':'Estado del desarrollo',
  'code':'Implementado en código','code_text':'Formato de paquetes, NodeRegistry, TransitPolicy, ConnectionPolicy, adaptador EL/CL e integración con el núcleo. Las lecturas de contratos se fijan a un blockHash finalizado.',
  'checks':'Comprobado offline','checks_text':'{runner} pruebas del runner y {plan} comprobaciones del plan. Claves temporales, EVM en memoria, cabeceras sintéticas y puertos en memoria; sin medición de red ni finalidad de cadena.',
- 'pending':'Próximo experimento de red','pending_text':'Solicitada una VM dedicada: 2 vCPU, 2 GiB RAM, disco de hasta 10 GiB. Asignación y preflight Linux pendientes. El permiso de inicio está cerrado.',
+ 'pending':'Próximo experimento de red','pending_text':'NET-001: el protocolo está aceptado en dos variantes, sobre estado de prueba y sobre el estado vivo del registro. Necesita la VM del banco y un nodo Sepolia propio; ninguna está asignada aún. El permiso de inicio está cerrado.',
  'idea':'Qué cambia BCP','identity':'Identidad','identity_text':'NodeRegistry vincula el identificador NFT de un nodo con su propietario y claves. Una clave autogenerada no concede participación.',
  'route':'Ruta autorizada','route_text':'TransitPolicy y ConnectionPolicy definen saltos y conexiones permitidos. Los nodos verifican rutas contra un estado fijado; blockchain no sustituye el transporte de tramas.',
  'packet':'Formación del paquete','packet_text':'Identificadores, checkpoint, ruta, firmas y datos cifrados tienen un formato binario exacto. MAC indica el vecino siguiente; el identificador, el nodo final.',
@@ -76,7 +76,9 @@ TEXT={
 def facts(root):
  d=json.loads((Path(root)/'data/bcp-status.json').read_text())
  assert d['network_experiment']=='NOT_RUN' and d['target_preflight']=='NOT_RUN' and d['ready_to_launch'] is False
- assert not any(d[k] for k in ['vm_allocated','live_chain_finality_measured','blockchain_transactions_performed','open_admission_implemented','physical_underlay_verified','independent_operator_execution'])
+ assert not any(d[k] for k in ['vm_allocated','open_admission_implemented','physical_underlay_verified','independent_operator_execution'])
+ # REG-001 ran on Sepolia in read mode Q; that is registry evidence, not a network-experiment admission.
+ assert d['registry_experiment']['status']=='completed' and d['registry_experiment']['read_mode']=='Q'
  checks=json.loads((Path(root)/'runners/bcp02/evidence/checks.json').read_text())
  assert checks['success'] and d['checks']['runner_tests']==checks['tests']
  assert d['admission']['max_state_age_seconds']==1800 and d['admission']['permit_version']==2
