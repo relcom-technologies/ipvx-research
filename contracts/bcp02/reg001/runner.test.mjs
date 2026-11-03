@@ -20,6 +20,18 @@ test('the registered REG-001 sequence passes end to end on the in-memory EVM, st
   assert.ok(journal.entries.find(e => e.step === 'latency-series').records.every(t => t.synthetic), 'memory timings are labelled synthetic');
 });
 
+// Run 2 on Sepolia stopped at register-a: the file journal could not serialize the BigInt token id.
+// The in-memory journal above never serializes, so the full sequence is also written to a file here.
+test('the full sequence is written to a journal file that parses back line for line', async () => {
+  const file = path.join(fs.mkdtempSync(path.join(os.tmpdir(), 'reg001-')), 'journal.jsonl');
+  const result = await run(await backend(), new Journal(file), { latencyWrites: 2 });
+  assert.equal(result.ok, true);
+  const rows = fs.readFileSync(file, 'utf8').trim().split('\n').map(l => JSON.parse(l));
+  assert.deepEqual(rows.map(r => r.step), PROTOCOL.steps.map(s => s.id));
+  assert.equal(rows.find(r => r.step === 'register-a').records[0].returned[0], '1', 'token id recorded as a decimal string');
+  assert.equal(fs.statSync(file).mode & 0o077, 0, 'journal file is private to the operator');
+});
+
 test('a registry that lets a third party rotate keys stops the run at that step', async () => {
   const b = await backend();
   const send = b.send.bind(b);
