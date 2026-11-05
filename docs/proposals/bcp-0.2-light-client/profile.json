@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "protocol": "BCP-T",
+  "version": "0.2-LC",
+  "status": "Draft proposed profile, not deployed",
+  "base_profile": {
+    "path": "docs/proposals/bcp-0.2/profile.json",
+    "sha256": "dc30309d805d749d7242b784b4ab885016d6a93259f9e035cb22e75cd5a00242",
+    "unchanged": "chain, finality tag, constants, crypto, wire format and read ABI"
+  },
+  "trust_mode": "verified-light-client",
+  "trust_mode_byte": 2,
+  "profile_id": "bcp.wire.context_id with the last context byte 2 instead of 1 (lightclient/bcp02/light.py profile_context)",
+  "reference_client": {
+    "name": "Helios",
+    "version": "0.12.0",
+    "client_version_string": "helios-0.12.0",
+    "source_commit": "2af9b41887e069144ee56cd710f3ddca195473f8",
+    "installed_or_executed": false
+  },
+  "operator_requirements": [
+    "explicit weak-subjectivity checkpoint at most 14 days old, strict_checkpoint_age true, load_external_fallback false",
+    "JSON-RPC on 127.0.0.1 only; installed binary SHA-256 recorded",
+    "execution RPC serving eth_getProof at the finalized block; consensus RPC with the light client API",
+    "a read at least every 8191 blocks (about 27 hours), otherwise a new execution bootstrap"
+  ],
+  "adapter": "lightclient/bcp02/light.py",
+  "source_probe": {
+    "date": "2026-11-05",
+    "account": "NodeRegistry of REG-001 run 6",
+    "eth_getProof_finalized": {
+      "sepolia.gateway.tenderly.co": true,
+      "rpc.sepolia.ethpandaops.io": true,
+      "ethereum-sepolia-rpc.publicnode.com": false,
+      "1rpc.io/sepolia": "rate limited"
+    },
+    "light_client_finality_update": {
+      "lodestar-sepolia.chainsafe.io": true,
+      "ethereum-sepolia-beacon-api.publicnode.com": false,
+      "sepolia.lightclientdata.org": false,
+      "beacon.sepolia.ethpandaops.io": false
+    }
+  },
+  "not_established": [
+    "live interoperability of the adapter with Helios",
+    "historical reads older than 8191 blocks",
+    "availability with a single public consensus source",
+    "independent audit of Helios"
+  ]
+}
