@@ -34,6 +34,11 @@
       "ethereum-sepolia-rpc.publicnode.com": false,
       "1rpc.io/sepolia": "rate limited"
     },
+    "eth_createAccessList_finalized": {
+      "sepolia.gateway.tenderly.co": true,
+      "rpc.sepolia.ethpandaops.io": true,
+      "ethereum-sepolia-rpc.publicnode.com": true
+    },
     "light_client_finality_update": {
       "lodestar-sepolia.chainsafe.io": true,
       "ethereum-sepolia-beacon-api.publicnode.com": false,

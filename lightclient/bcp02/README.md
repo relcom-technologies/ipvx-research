@@ -32,4 +32,5 @@ python3 -B -m unittest discover -s lightclient/bcp02/tests -v
 
 Tests block real sockets and answer as Helios would around the adapter's offline
 contract-read fixtures. Live compatibility with Helios is untested; nothing here
-installs or runs it.
+installs or runs it. The first live read is specified by
+[REG-001-LC](../../experiments/bcp02-reg-001-lc/README.md).
