@@ -997,13 +997,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "e8cb1f114989c96f",
-      "source": "196 событий по HX-0196; авторы, основания, проверки и ограничения.",
+      "id": "e50751688968ef76",
+      "source": "197 событий по HX-0197; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "8e44c9df1eb34efa",
-      "source": "387.3 КиБ · 12 файлов",
+      "id": "65174381e64b0533",
+      "source": "390.3 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4822,14 +4822,89 @@
       "context": "history.html:text:main/section/p"
     },
     {
-      "id": "3915337baf14b1af",
-      "source": "HX-0196 · Предложен NET-001-L на живом состоянии реестра и запрошена ВМ собственного узла Sepolia",
+      "id": "f75aaa74dc84a017",
+      "source": "HX-0197 · Предложен режим чтения LC: лёгкий клиент Helios вместо собственного узла Sepolia",
       "context": "history.html:text:section/details/summary"
     },
     {
       "id": "c89eba90f1d8c201",
       "source": "Предложение",
       "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "984ba62d5fff8eca",
+      "source": "Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд) · 2026-11-05T18:49:55+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "96cb7d2460b98782",
+      "source": "Владелец отказался выделять отдельную ВМ под пару Geth + Lighthouse (запрос IPVX-BCP02-VALIDATOR-001, около 1 ТБ SSD, 4 ядра, 16 ГБ) и сначала отдельный тенант provisioner; relcom-infra PR855 и PR854 закрыты без слияния. По его поручению подготовлен режим BCP 0.2-LC: профиль docs/proposals/bcp-0.2-light-client (байт trust_mode 2, остальное как в BCP 0.2), читатель lightclient/bcp02, который читает те же снимки через локальный Helios 0.12.0 по loopback и только импортирует принятый адаптер adapters/bcp02 (его файлы заморожены), девять офлайн-тестов и PR-проверка bcp-light.yml; слито владельцем в PR66. NET-001-L переведён на режим LC; приёмка R1 REG-001 заменена чтением текущего состояния контрактов прогона 6, которое должно совпасть с S4. Замер 2026-11-05: eth_getProof на финализированном блоке отдают Tenderly и ethpandaops, API лёгкого клиента для Sepolia — только lodestar-sepolia.chainsafe.io.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "3c5943ef1f063211",
+      "source": "Адаптер validated-node сам не проверяет ни подписи BLS, ни доказательства хранилища и доверяет узлу; Helios проверяет и то и другое, почти ничего не хранит и помещается на существующий стенд. Полный узел по умолчанию и не дал бы старые снимки S1–S3. Принятые файлы BCP 0.2 не меняются: новый режим описан рядом, с другим ID профиля, чтобы узлы разных режимов не смешивались.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "40c23ef270996bbf",
+      "source": "docs/proposals/bcp-0.2-light-client/README.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "aa488ada659ef7e6",
+      "source": "docs/proposals/bcp-0.2-light-client/profile.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "d07b2b516d20a3c1",
+      "source": "lightclient/bcp02/light.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "19847bd893c0d0eb",
+      "source": "lightclient/bcp02/tests/test_light.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "d15ff3989196f54d",
+      "source": "Helios не установлен и не запускался; совместимость адаптера с ним проверена только на фикстурах. Установка на стенд — отдельное разрешение владельца.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "fd40295999e0b9a6",
+      "source": "Окно лёгкого клиента — 8191 блок (около 27 часов): старые снимки S1–S3 недоступны, сохранённая точка старше окна требует новой начальной точки.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "5779ae0bfef00122",
+      "source": "Для консенсуса Sepolia найден один публичный источник; его отказ остановит чтение (доступность, не подлинность). Доверие — комитету синхронизации, а не всему набору валидаторов.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "eef48afb7e7c7a81",
+      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "3915337baf14b1af",
+      "source": "HX-0196 · Предложен NET-001-L на живом состоянии реестра и запрошена ВМ собственного узла Sepolia",
+      "context": "history.html:text:section/details/summary"
     },
     {
       "id": "4ee57b445a6a32bf",
@@ -4842,19 +4917,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "d07af328700c5ca2",
       "source": "Не менять закреплённый пакет NET-001-F, а вынести живое состояние в отдельный вариант: так ошибки транспорта и ошибки состояния останутся различимыми, а F можно запустить первым. Сроки строить по измеренной финальности, а не по исходному «immediately available». Узел запросить у оператора инфраструктуры, а не поднимать в обход: доступа к Proxmox и provisioner у исполнителя нет, а запросы ВМ в relcom-infra оформляются только документацией.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "d2ea48bd792cb82f",
@@ -4872,11 +4937,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "49fa6175956126ad",
       "source": "Это протокол и запрос, а не запуск: ВМ не выделена, узел не синхронизирован, транзакций и кадров нет. NET-001-F и NET-001-L остаются NOT_RUN; слияние PR63 не разрешает прогон.",
       "context": "history.html:text:details/ul/li"
@@ -4890,11 +4950,6 @@
       "id": "f5aa7aac289b7138",
       "source": "Читатель состояния ходит к валидатору по IP, поэтому NET-001-L может показать только плоскость данных между узлами без IP, а не устройство без IP целиком. Решения владельца ещё открыты: переиспользовать контракты прогона 6 REG-001 или развернуть заново, и разрешение на прогон.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "eef48afb7e7c7a81",
-      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "086ef4dc555ed043",
