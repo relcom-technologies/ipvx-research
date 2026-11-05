@@ -10,7 +10,7 @@
   },
   "trust_mode": "verified-light-client",
   "trust_mode_byte": 2,
-  "profile_id": "bcp.wire.context_id with the last context byte 2 instead of 1 (adapters/bcp02/light.py profile_context)",
+  "profile_id": "bcp.wire.context_id with the last context byte 2 instead of 1 (lightclient/bcp02/light.py profile_context)",
   "reference_client": {
     "name": "Helios",
     "version": "0.12.0",
@@ -24,7 +24,7 @@
     "execution RPC serving eth_getProof at the finalized block; consensus RPC with the light client API",
     "a read at least every 8191 blocks (about 27 hours), otherwise a new execution bootstrap"
   ],
-  "adapter": "adapters/bcp02/light.py",
+  "adapter": "lightclient/bcp02/light.py",
   "source_probe": {
     "date": "2026-11-05",
     "account": "NodeRegistry of REG-001 run 6",

@@ -142,22 +142,6 @@ class Adapter:
             current=parent
         raise Reject('STATE_UNAVAILABLE')
 
-    def _bind_anchor(self, saved, head, anchor):
-        self._el_ancestor(head.execution,anchor.execution,True)
-        self._cl_ancestor(self._header(head.cl_root),anchor)
-        # On first use bind the CL bootstrap root to the exact execution
-        # checkpoint as well; an execution ancestor alone cannot bind CL.
-        if saved is None:
-            h=self._header(anchor.cl_root)
-            block=self._beacon('/eth/v2/beacon/blocks/'+hx(anchor.cl_root))
-            require(block['execution_optimistic'] is False and block['finalized'] is True
-                    and block['version'] in SUPPORTED_FORKS,'FINALITY_REQUIRED')
-            m=block['data']['message'];p=m['body']['execution_payload']
-            for key in ('slot','proposer_index','parent_root','state_root'):require(m[key]==h[3][key],'STATE_UNAVAILABLE')
-            require(block['data']['signature']==h[4],'STATE_UNAVAILABLE')
-            require(Checkpoint(decimal(p['block_number']),hexdata(p['block_hash'],32),hexdata(p['state_root'],32),decimal(p['timestamp']))
-                    ==anchor.execution,'STATE_UNAVAILABLE')
-
     def _fresh(self, cp, now):
         require(cp.timestamp<=now+5,'TIME_UNTRUSTED')
         require(now-cp.timestamp<=1800,'STATE_STALE')
@@ -240,7 +224,20 @@ class Adapter:
             self._fresh(head.execution,now)
             anchor=saved or SavedPoint(self.binding.bootstrap_execution,self.binding.bootstrap_cl_root,self.binding.bootstrap_cl_slot)
             require(head.execution.number>=anchor.execution.number and head.cl_slot>=anchor.cl_slot,'STATE_CONFLICT')
-            self._bind_anchor(saved,head,anchor)
+            self._el_ancestor(head.execution,anchor.execution,True)
+            self._cl_ancestor(self._header(head.cl_root),anchor)
+            # On first use bind the CL bootstrap root to the exact execution
+            # checkpoint as well; an execution ancestor alone cannot bind CL.
+            if saved is None:
+                h=self._header(anchor.cl_root)
+                block=self._beacon('/eth/v2/beacon/blocks/'+hx(anchor.cl_root))
+                require(block['execution_optimistic'] is False and block['finalized'] is True
+                        and block['version'] in SUPPORTED_FORKS,'FINALITY_REQUIRED')
+                m=block['data']['message'];p=m['body']['execution_payload']
+                for key in ('slot','proposer_index','parent_root','state_root'):require(m[key]==h[3][key],'STATE_UNAVAILABLE')
+                require(block['data']['signature']==h[4],'STATE_UNAVAILABLE')
+                require(Checkpoint(decimal(p['block_number']),hexdata(p['block_hash'],32),hexdata(p['state_root'],32),decimal(p['timestamp']))
+                        ==anchor.execution,'STATE_UNAVAILABLE')
             cp=packet_checkpoint or head.execution
             require(type(cp) is Checkpoint,'STATE_UNAVAILABLE');cp.encode();self._fresh(cp,now)
             self._el_ancestor(head.execution,cp,False)

@@ -5,20 +5,25 @@ Helios verifies Ethereum consensus from a pinned weak-subjectivity checkpoint
 it serves against the verified state root with Merkle proofs. It answers on this
 host's loopback interface only. The adapter checks its identity and finality,
 canonical ancestry through Helios's EIP-2935 lookups, code hashes and ABI, and
-reuses the validated-node snapshot reader unchanged.
+reuses the validated-node snapshot reader. The accepted adapters/bcp02 files are
+imported, never modified: their hashes are pinned by later work.
 """
 from dataclasses import dataclass
 from hashlib import sha256
+import http.client
 import json
+import sqlite3
 from struct import pack
+import time
 from urllib.parse import urlsplit
 
-from bcp.wire import Checkpoint, digest, domain, fixed, require, uint
-from .binding import Limits
-from .codec import CHAIN_ID, GENESIS, execution_header, quantity
-from .reader import Adapter
-from .rpc import LoopbackHTTP
-from .store import SavedPoint
+from bcp.state import StateView, Attestation
+from bcp.wire import Checkpoint, Reject, digest, domain, fixed, require, uint
+from adapters.bcp02.binding import Limits, Selection
+from adapters.bcp02.codec import CHAIN_ID, GENESIS, execution_header, quantity
+from adapters.bcp02.reader import Adapter, Bundle
+from adapters.bcp02.rpc import MAX_BODY, PinnedHTTPS, strict_json
+from adapters.bcp02.store import SavedPoint
 
 HELIOS_VERSION='helios-0.12.0'
 VALIDATED_NODE,VERIFIED_LIGHT_CLIENT=1,2
@@ -39,6 +44,54 @@ def _plain(url):
     if p.username or p.password or p.query or p.fragment or not p.hostname:raise ValueError('URL without credentials/query is required')
     if not url.isascii() or '%' in url or '\\' in url or any(ord(c)<33 for c in url):raise ValueError('noncanonical URL')
     return p
+
+
+class LoopbackHTTP(PinnedHTTPS):
+    """Plain HTTP to the light client on this host's loopback interface only.
+
+    The channel is local, so there is no certificate to pin; Helios, not this
+    transport, verifies consensus and state. Beacon paths are not served. The
+    exchange keeps PinnedHTTPS's bounds: status 200, identity encoding, JSON,
+    8 MiB body and a monotonic deadline.
+    """
+    def __init__(self, endpoint):
+        self.endpoint=endpoint;self._id=0
+
+    def _authenticate(self, connection):
+        require(connection.sock.getpeername()[0] in ('127.0.0.1','::1'),'STATE_UNAVAILABLE')
+
+    def _exchange(self, method, path, body, timeout):
+        deadline=time.monotonic()+timeout
+        endpoint=urlsplit(self.endpoint.url)
+        connection=http.client.HTTPConnection(endpoint.hostname,endpoint.port,timeout=timeout)
+        try:
+            connection.connect()
+            self._authenticate(connection)
+            connection.request(method,path,body=body,headers={'Accept':'application/json','Content-Type':'application/json'})
+            response=connection.getresponse()
+            require(response.status==200,'STATE_UNAVAILABLE')
+            require(response.getheader('Content-Encoding','identity').lower()=='identity','STATE_UNAVAILABLE')
+            require(response.getheader('Content-Type','').split(';',1)[0].lower()=='application/json','STATE_UNAVAILABLE')
+            length=response.getheader('Content-Length')
+            require(length is None or (length.isdecimal() and int(length)<=MAX_BODY),'STATE_UNAVAILABLE')
+            chunks=[];size=0
+            while True:
+                remaining=deadline-time.monotonic()
+                require(remaining>0,'STATE_UNAVAILABLE')
+                sock=connection.sock or response.fp.raw._sock
+                sock.settimeout(remaining)
+                chunk=response.read1(min(65536,MAX_BODY+1-size))
+                if not chunk:break
+                chunks.append(chunk);size+=len(chunk)
+                require(size<=MAX_BODY,'STATE_UNAVAILABLE')
+                if response.isclosed():break
+            return strict_json(b''.join(chunks))
+        except (OSError,http.client.HTTPException,ValueError,RecursionError,AttributeError):
+            raise Reject('STATE_UNAVAILABLE') from None
+        finally:connection.close()
+
+    def beacon(self, path, timeout):
+        raise Reject('STATE_UNAVAILABLE')
 
 
 @dataclass(frozen=True)
@@ -79,10 +132,6 @@ class LightBinding:
         if self.client_version!=HELIOS_VERSION:raise ValueError('client must be the pinned Helios release')
         for url in (self.execution_rpc,self.consensus_rpc):
             if _plain(url).scheme!='https':raise ValueError('Helios upstreams must be HTTPS')
-
-    # The shared reader's anchor fields; the beacon side is Helios's, not tracked here.
-    bootstrap_cl_root=NO_CL_ROOT
-    bootstrap_cl_slot=0
 
     @property
     def profile(self):
@@ -130,5 +179,32 @@ class LightAdapter(Adapter):
         require(cp.number==target.number,'STATE_UNAVAILABLE')
         if cp!=target:self._conflict(trusted)
 
-    def _bind_anchor(self, saved, head, anchor):
-        self._el_ancestor(head.execution,anchor.execution,True)
+    def read(self, selection, *, now, clock_trusted, packet_checkpoint=None, confirmed_core_checkpoint=None):
+        """Adapter.read without the beacon walk and bootstrap binding, which Helios owns."""
+        require(not self._busy,'STATE_UNAVAILABLE')
+        require(type(selection) is Selection,'STATE_UNAVAILABLE')
+        require(clock_trusted is True and type(now) is int and now>=0,'TIME_UNTRUSTED')
+        self._busy=True;self._started=time.monotonic();self._requests=0;self._el_headers={};self._cl_headers={}
+        try:
+            saved=self.store.get();self._identity();head=self._head()
+            self._fresh(head.execution,now)
+            anchor=saved or SavedPoint(self.binding.bootstrap_execution,NO_CL_ROOT,0)
+            require(head.execution.number>=anchor.execution.number,'STATE_CONFLICT')
+            self._el_ancestor(head.execution,anchor.execution,True)
+            cp=packet_checkpoint or head.execution
+            require(type(cp) is Checkpoint,'STATE_UNAVAILABLE');cp.encode();self._fresh(cp,now)
+            self._el_ancestor(head.execution,cp,False)
+            if confirmed_core_checkpoint is not None:
+                require(type(confirmed_core_checkpoint) is Checkpoint,'STATE_UNAVAILABLE')
+                confirmed_core_checkpoint.encode();self._el_ancestor(head.execution,confirmed_core_checkpoint,True)
+            latest=self._snapshot(head.execution,selection)
+            packet=latest if cp==head.execution else self._snapshot(cp,selection)
+            self._budget(0);ended=now+int(time.monotonic()-self._started)
+            att=Attestation(True,True,True,True,True,'finalized',False,False,True,True,
+                            True if confirmed_core_checkpoint is not None else None)
+            view=StateView(packet,latest,att);view.check(self.binding.profile,cp,ended)
+            self.store.save(saved,head)  # only a complete validated bundle advances state
+            return Bundle(view,head.cl_root,head.cl_slot,self._requests,selection)
+        except Reject:raise
+        except (KeyError,TypeError,ValueError,OverflowError,RecursionError,sqlite3.Error):raise Reject('STATE_UNAVAILABLE') from None
+        finally:self._busy=False

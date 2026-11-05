@@ -18,7 +18,7 @@
   "state_source": {
     "read_mode": "LC",
     "read_mode_Q_allowed": false,
-    "reader": "adapters/bcp02/light.py against a local Helios 0.12.0 verifying light client (BCP 0.2-LC); until 2026-11-05 read mode V with an own Geth + Lighthouse pair",
+    "reader": "lightclient/bcp02/light.py against a local Helios 0.12.0 verifying light client (BCP 0.2-LC); until 2026-11-05 read mode V with an own Geth + Lighthouse pair",
     "binding": "actual contract addresses, runtime Keccak-256, loopback endpoint, Helios weak-subjectivity checkpoint, execution bootstrap, Helios binary SHA-256 and its declared upstreams, fixed before the run",
     "delivery_to_nodes": "the same local state-provider interface as NET-001-F; only its source changes",
     "state_channel": "a separate state-reader namespace asks Helios on loopback; Helios reaches public Sepolia RPC over HTTPS and verifies every answer with proofs; node namespaces keep no IP address, route or AF_INET socket",

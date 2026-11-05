@@ -9,11 +9,10 @@ from unittest.mock import MagicMock,patch
 
 from bcp.wire import Reject,context_id
 from adapters.bcp02.codec import CHAIN_ID,GENESIS,hx
-from adapters.bcp02.light import (HELIOS_VERSION,LightAdapter,LightBinding,LoopbackEndpoint,
-                                  VALIDATED_NODE,profile_context)
-from adapters.bcp02.rpc import LoopbackHTTP
 from adapters.bcp02.store import Store
-from fixtures import Chain,DATA,h
+from adapters.bcp02.tests.fixtures import Chain,DATA,h
+from lightclient.bcp02.light import (HELIOS_VERSION,LightAdapter,LightBinding,LoopbackEndpoint,
+                                     LoopbackHTTP,VALIDATED_NODE,profile_context)
 
 
 class LightChain(Chain):
@@ -134,6 +133,30 @@ class LightReaderTests(unittest.TestCase):
         with self.assertRaises(Reject):transport._authenticate(connection)
         connection.sock.getpeername.return_value=('127.0.0.1',8545);transport._authenticate(connection)
         with self.assertRaises(Reject):transport.beacon('/eth/v1/beacon/genesis',1)
+
+
+class LoopbackTransportTests(unittest.TestCase):
+    def setUp(self):
+        self.addCleanup(patch.stopall)
+        patch.object(socket.socket,'connect',side_effect=AssertionError('live network forbidden')).start()
+        self.transport=LoopbackHTTP(LoopbackEndpoint('http://127.0.0.1:8545'))
+
+    def exchange(self,raw=b'[]',*,status=200,headers=None,peer='127.0.0.1'):
+        self.connection=MagicMock();self.connection.sock.getpeername.return_value=(peer,8545)
+        response=self.connection.getresponse.return_value;response.status=status;response.isclosed.return_value=False
+        values={'Content-Type':'application/json',**(headers or {})}
+        response.getheader.side_effect=lambda name,default=None:values.get(name,default)
+        response.read1.side_effect=[raw,b'']
+        patch('lightclient.bcp02.light.http.client.HTTPConnection',return_value=self.connection).start()
+        return self.transport._exchange('POST','/',b'[]',1)
+
+    def test_loopback_peer_checked_before_request_and_bounds_kept(self):
+        self.assertEqual(self.exchange(),[]);self.connection.close.assert_called_once()
+        with self.assertRaises(Reject):self.exchange(peer='192.0.2.1')
+        self.connection.request.assert_not_called()
+        for kwargs in ({'status':302},{'headers':{'Content-Type':'text/html'}},{'headers':{'Content-Encoding':'gzip'}},
+                       {'headers':{'Content-Length':str(9*1024*1024)}},{'raw':b'{"a":1,"a":2}'}):
+            with self.subTest(**kwargs),self.assertRaises(Reject):self.exchange(**kwargs)
 
 
 if __name__=='__main__':
