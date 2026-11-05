@@ -19,6 +19,9 @@ ARCHIVED={
     'infra/install_liaison.sh':'liaison-pr53','scripts/test_liaison.py':'liaison-pr53',
     'services/liaison/README.md':'liaison-pr53','services/liaison/agent.py':'liaison-pr53',
     'services/liaison/config.example.json':'liaison-pr53',
+    # Portal assets and browser check, revised in PR65 (IPvX as a replacement for IP and DNS).
+    'assets/portal.js':'portal-pr65','assets/portal.css':'portal-pr65','assets/en/portal.js':'portal-pr65',
+    'assets/de/portal.js':'portal-pr65','assets/es/portal.js':'portal-pr65','scripts/browser_check.mjs':'portal-pr65',
 }
 
 
@@ -43,7 +46,7 @@ def check():
     from runners.bcp02.admission import source_hash
     digest=source_hash()
     return dict(previous_files=len(saved['files']),previous_events=saved['history_events'],
-                previous_presentation_sources_archived=2,previous_liaison_sources_archived=5,
+                previous_presentation_sources_archived=2,previous_liaison_sources_archived=5,previous_portal_sources_archived=6,
                 dataset_revision_previous_events=revision['history_events'],
                 dataset_revision_unchanged_files=len(revision['unchanged_files']),archived_reports=len(revision['archived_evidence']),
                 source_scope_sha256=digest,network_execution=False,old_evidence_reissued=False)
