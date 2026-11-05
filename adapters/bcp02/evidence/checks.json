@@ -2,8 +2,16 @@
   "schema_version": 1,
   "base": "9ac92e80152e588abcee6b97b18796d038cd0154",
   "scope": "Offline authenticated-transport fixtures; actual in-memory EVM contract read words; synthetic EL/CL headers",
-  "tests_passed": 34,
+  "tests_passed": 42,
   "test_ids": [
+    "test_light.LightReaderTests.test_binding_and_transport_bounds",
+    "test_light.LightReaderTests.test_bootstrap_off_chain_latches_conflict",
+    "test_light.LightReaderTests.test_identity_and_sync_failures",
+    "test_light.LightReaderTests.test_packet_off_chain_is_not_durable",
+    "test_light.LightReaderTests.test_profile_differs_from_validated_node_only_in_trust_mode",
+    "test_light.LightReaderTests.test_reads_one_hash_without_beacon_and_under_its_own_profile",
+    "test_light.LightReaderTests.test_saved_ancestry_is_one_verified_lookup",
+    "test_light.LightReaderTests.test_saved_point_outside_history_window_is_unavailable_not_conflict",
     "test_reader.ReaderTests.test_beacon_header_body_or_execution_mismatch",
     "test_reader.ReaderTests.test_binding_change_refused_and_no_reset",
     "test_reader.ReaderTests.test_clock_freshness_request_ancestry_and_deadline_bounds",
@@ -46,7 +54,7 @@
     },
     {
       "path": "adapters/bcp02/__init__.py",
-      "sha256": "9ab295b8a42b34730854e7e74db348248c247483f595c04c5082b2f621d5dcd8"
+      "sha256": "2ca2c61a953917653a16c02b6af8609b87d1ec0f9a9c205c631daa0f88b80981"
     },
     {
       "path": "adapters/bcp02/binding.py",
@@ -61,12 +69,16 @@
       "sha256": "8f010d6d48945b60bf4c59cff4dda47bcdeea27309512c7901749a0bd23c803d"
     },
     {
+      "path": "adapters/bcp02/light.py",
+      "sha256": "127c385acba4b68959b694840b741b2deab7a3d7b3ce83ead2e6a25d0ea0f90a"
+    },
+    {
       "path": "adapters/bcp02/preserve.py",
       "sha256": "72877d9698dd524200504f7e9b7012006faf548a26f0e97579d7f6c371fc074b"
     },
     {
       "path": "adapters/bcp02/reader.py",
-      "sha256": "fe53a873df1ac6b98439b65954c3c061cc51febf674bbabfaf1a7a126b7942ae"
+      "sha256": "ffab9a50af3e9f8acc7afceb3360b2a3da29a9cee443cdf0175762bab71dbf47"
     },
     {
       "path": "adapters/bcp02/requirements.lock",
@@ -74,7 +86,7 @@
     },
     {
       "path": "adapters/bcp02/rpc.py",
-      "sha256": "f48597305bef4ce4cb682321bd6f16244c4800114610cbe4886650a9a6eafd8c"
+      "sha256": "f74aff78a246b204b772fa4147f44acff503dcfb6787688c4e17a2ef0e4c0d99"
     },
     {
       "path": "adapters/bcp02/store.py",
@@ -87,6 +99,10 @@
     {
       "path": "adapters/bcp02/tests/generate_contract_reads.mjs",
       "sha256": "bce3cea23c7283b29b914983c8d809c1cb8b5eb6abdc0bae016c3b8a2e60da41"
+    },
+    {
+      "path": "adapters/bcp02/tests/test_light.py",
+      "sha256": "6586d5dcae3ebf272e9f85d8a8dd95e8cadd869535f7f63ad777acb0fdfadbfe"
     },
     {
       "path": "adapters/bcp02/tests/test_reader.py",

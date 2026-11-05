@@ -1,4 +1,4 @@
-"""Bounded, certificate-pinned HTTPS. Only read RPC and Beacon API paths."""
+"""Bounded, certificate-pinned HTTPS, or loopback HTTP to a local light client. Only read RPC and Beacon API paths."""
 import hashlib
 import http.client
 import json
@@ -35,14 +35,20 @@ class PinnedHTTPS:
             raise ValueError('CA/hostname verification cannot be disabled')
         self._id=0
 
+    def _connection(self, endpoint, timeout):
+        return http.client.HTTPSConnection(endpoint.hostname,endpoint.port or 443,timeout=timeout,context=self.context)
+
+    def _authenticate(self, connection):
+        cert=connection.sock.getpeercert(binary_form=True)
+        require(cert and hashlib.sha256(cert).digest()==self.endpoint.certificate_sha256,'STATE_UNAVAILABLE')
+
     def _exchange(self, method, path, body, timeout):
         deadline=time.monotonic()+timeout
         endpoint=urlsplit(self.endpoint.url)
-        connection=http.client.HTTPSConnection(endpoint.hostname,endpoint.port or 443,timeout=timeout,context=self.context)
+        connection=self._connection(endpoint,timeout)
         try:
             connection.connect()
-            cert=connection.sock.getpeercert(binary_form=True)
-            require(cert and hashlib.sha256(cert).digest()==self.endpoint.certificate_sha256,'STATE_UNAVAILABLE')
+            self._authenticate(connection)
             connection.request(method,(endpoint.path.rstrip('/') or '')+path,body=body,
                                headers={'Accept':'application/json','Content-Type':'application/json'})
             response=connection.getresponse()
@@ -93,3 +99,23 @@ class PinnedHTTPS:
             by_id[value['id']]=value['result']
         require(set(by_id)=={item['id'] for item in items},'STATE_UNAVAILABLE')
         return [by_id[item['id']] for item in items]
+
+
+class LoopbackHTTP(PinnedHTTPS):
+    """Plain HTTP to a verifying light client on this host's loopback interface only.
+
+    The channel is local, so there is no certificate to pin; the light client, not
+    this transport, verifies consensus and state. Beacon paths are not served.
+    """
+    def __init__(self, endpoint):
+        self.endpoint=endpoint;self._id=0
+
+    def _connection(self, endpoint, timeout):
+        return http.client.HTTPConnection(endpoint.hostname,endpoint.port,timeout=timeout)
+
+    def _authenticate(self, connection):
+        host=connection.sock.getpeername()[0]
+        require(host in ('127.0.0.1','::1'),'STATE_UNAVAILABLE')
+
+    def beacon(self, path, timeout):
+        raise Reject('STATE_UNAVAILABLE')

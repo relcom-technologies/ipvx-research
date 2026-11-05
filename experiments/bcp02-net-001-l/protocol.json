@@ -16,12 +16,12 @@
   "state_mode": "sepolia-finalized-snapshot",
   "hypothesis": "Delivery and reverse receipts depend on the sole authorized A-R-B Ethernet path and on node keys and policies read from the live Sepolia registry at a finalized block; a registry change stops delivery once a node observes the finalized block containing it; no IP fallback or replacement message ID is used.",
   "state_source": {
-    "read_mode": "V",
+    "read_mode": "LC",
     "read_mode_Q_allowed": false,
-    "reader": "adapters/bcp02 against an own Geth v1.17.10 + Lighthouse v8.3.2 pair (request IPVX-BCP02-VALIDATOR-001)",
-    "binding": "actual contract addresses, runtime Keccak-256, HTTPS URLs with SHA-256 DER pins, CL genesis, weak-subjectivity bootstrap and binary declarations, fixed before the run",
+    "reader": "adapters/bcp02/light.py against a local Helios 0.12.0 verifying light client (BCP 0.2-LC); until 2026-11-05 read mode V with an own Geth + Lighthouse pair",
+    "binding": "actual contract addresses, runtime Keccak-256, loopback endpoint, Helios weak-subjectivity checkpoint, execution bootstrap, Helios binary SHA-256 and its declared upstreams, fixed before the run",
     "delivery_to_nodes": "the same local state-provider interface as NET-001-F; only its source changes",
-    "state_channel": "a separate state-reader namespace reaches the validator over HTTPS on a private network; node namespaces keep no IP address, route or AF_INET socket",
+    "state_channel": "a separate state-reader namespace asks Helios on loopback; Helios reaches public Sepolia RPC over HTTPS and verifies every answer with proofs; node namespaces keep no IP address, route or AF_INET socket",
     "state_channel_carries_bcp_frames": false,
     "max_state_age_seconds": 1800,
     "age_measured_from": "finalized execution header timestamp",
@@ -64,7 +64,7 @@
     "finality_wait_seconds_max": 1500,
     "deadlines_start_at": "the node's first observation of the finalized snapshot L containing the change, not the transaction submission",
     "measured": "submit -> inclusion -> finalized -> reader acceptance -> first node rejection, per change",
-    "N08_live": "block the validator endpoints at the stand firewall as a declared barrier: STATE_UNAVAILABLE on the next required read, then STATE_STALE once the cached snapshot exceeds 1800 s; the wait counts as a finality-type wait"
+    "N08_live": "block the light client's upstream endpoints at the stand firewall as a declared barrier: STATE_UNAVAILABLE on the next required read, then STATE_STALE once the cached snapshot exceeds 1800 s; the wait counts as a finality-type wait"
   },
   "limits": {"logical_requests_max": 40, "data_attempts_max": 120, "attempts_per_id_max": 3, "attempt_timeout_seconds": 5, "fault_outcome_deadline_seconds": 20, "case_seconds_max": 90, "data_per_session_inflight": 1, "active_seconds_max": 1200, "wall_seconds_max": 7200, "finality_waits_max": 4, "retention_seconds_min": 604800},
   "route_constraints": {"directed_edges": "A->R, R->A, R->B, B->R as registered in this run", "directed_connections": "A->B, B->A as registered in this run", "shared_peer_private_keys": false, "peer_signed_suffix_required": true},
@@ -77,18 +77,18 @@
   "outcomes": ["NOT_RUN", "BLOCKED", "PASS", "FAIL_PROTOCOL", "FAIL_ISOLATION", "INCONCLUSIVE", "ABORTED"],
   "pass_requires_all_cases": true,
   "prerequisites": [
-    {"item": "validator VM allocated and synced (IPVX-BCP02-VALIDATOR-001)", "owner": "project owner / infrastructure operator", "status": "requested"},
-    {"item": "REG-001 snapshots S1-S4 re-read in read mode V, zero transactions; closes R1 and accepts the validator", "owner": "project", "status": "open"},
+    {"item": "Helios 0.12.0 installed on the stand with an explicit checkpoint (VALIDATOR-001 and relcom-infra PR854 closed 2026-11-05: no separate VM)", "owner": "project owner", "status": "open"},
+    {"item": "current state of the REG-001 run 6 contracts read in mode LC with zero transactions and equal to S4; closes R1 and accepts the mode (S1-S3 are older than the light client window)", "owner": "project", "status": "open"},
     {"item": "NET-001-F components implemented, reviewed and NET-001-F run first", "owner": "project", "status": "open"},
     {"item": "L-only components: per-run registry writer, live state-reader binding, finality-wait scheduler, firewall barrier for N08", "owner": "project", "status": "open"},
-    {"item": "stand VM (IPVX-BCP02-STAND-001) with a private link to the validator for the state reader only", "owner": "project owner / infrastructure operator", "status": "open"},
+    {"item": "stand VM (IPVX-BCP02-STAND-001) with outbound HTTPS for the light client only", "owner": "project owner / infrastructure operator", "status": "open"},
     {"item": "owner permit for up to 24 Sepolia transactions per run, window and step list", "owner": "project owner", "status": "open"}
   ],
   "does_not_establish": [
-    "an IP-free whole device: the state reader uses IP to reach the validator",
+    "an IP-free whole device: the light client uses IP to reach public RPC",
     "physical Ethernet between hosts",
     "independent operators",
-    "complete finality proof beyond the operator's EL/CL trust boundary",
+    "finality beyond the sync committee and the light client trust boundary",
     "naming (NAME-001)",
     "AI route choice"
   ],

@@ -80,6 +80,28 @@ The adapter accepts finalized-block envelopes for Deneb, Electra and Fulu.
 Gloas and any unknown fork are refused, not decoded using an older shape. Live
 compatibility with the pinned clients/current Sepolia fork is still untested.
 
+## Verified light client mode (BCP 0.2-LC)
+
+`light.py` reads the same snapshots through a local Helios 0.12.0 instead of an
+operator's full EL + CL pair (profile:
+[docs/proposals/bcp-0.2-light-client](../../docs/proposals/bcp-0.2-light-client/README.md)).
+Helios verifies sync-committee signatures from a pinned weak-subjectivity
+checkpoint and every account, storage and code value against the verified state
+root; this library reaches it over loopback HTTP only and never contacts its
+upstream RPCs. `LightBinding` pins the loopback endpoint, the three contracts and
+runtime hashes, the Helios checkpoint, an execution bootstrap, the Helios binary
+SHA-256, its exact version and the declared upstreams. The profile ID differs from
+validated-node only in the trust-mode byte (2 instead of 1).
+
+The read keeps steps 4-6 above. Steps 1-3 change: chain ID and the exact client
+version are checked (Helios cannot serve block 0); Helios must report itself not
+syncing, which it does only while its verified head is under 60 s old; the head is
+its `finalized` block; ancestry to the saved point is one block-by-number lookup,
+which Helios answers only when the hash matches the EIP-2935 history of its
+verified head. A saved point more than 8191 blocks (about 27 hours) old is
+therefore `STATE_UNAVAILABLE`, never a conflict, and needs a new bootstrap by the
+operator. No beacon root is tracked. Live compatibility with Helios is untested.
+
 ## Embedding interface (no invocation on import)
 
 Construct `Binding`, then `Store(private_path, binding.fingerprint)` and
