@@ -1,7 +1,7 @@
 name: BCP light client checks
 on:
   pull_request:
-    paths: ['lightclient/**', 'adapters/**', 'bcp/**', '.github/workflows/bcp-light.yml']
+    paths: ['lightclient/**', 'adapters/**', 'bcp/**', 'experiments/bcp02-reg-001-lc/**', 'experiments/bcp02-reg-001/runs/**', '.github/workflows/bcp-light.yml']
 permissions: {contents: read}
 jobs:
   light:
@@ -15,6 +15,7 @@ jobs:
       - name: Offline light-client reads; the accepted adapter stays unchanged
         run: |
           python3 -B -m unittest discover -s lightclient/bcp02/tests -v
+          python3 -B -m unittest discover -s experiments/bcp02-reg-001-lc/tests -v
           python3 -B adapters/bcp02/preserve.py
           python3 -B adapters/bcp02/checks.py --output /tmp/bcp-adapter-checks.json
           cmp adapters/bcp02/evidence/checks.json /tmp/bcp-adapter-checks.json

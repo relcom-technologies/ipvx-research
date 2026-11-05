@@ -78,7 +78,7 @@
   "pass_requires_all_cases": true,
   "prerequisites": [
     {"item": "Helios 0.12.0 installed on the stand with an explicit checkpoint (VALIDATOR-001 and relcom-infra PR854 closed 2026-11-05: no separate VM)", "owner": "project owner", "status": "open"},
-    {"item": "current state of the REG-001 run 6 contracts read in mode LC with zero transactions and equal to S4; closes R1 and accepts the mode (S1-S3 are older than the light client window)", "owner": "project", "status": "open"},
+    {"item": "current state of the REG-001 run 6 contracts read in mode LC with zero transactions and equal to S4 plus the 20 setKeys writes of the R4 series (experiments/bcp02-reg-001-lc); closes R1 and accepts the mode (S1-S3 are older than the light client window)", "owner": "project", "status": "open"},
     {"item": "NET-001-F components implemented, reviewed and NET-001-F run first", "owner": "project", "status": "open"},
     {"item": "L-only components: per-run registry writer, live state-reader binding, finality-wait scheduler, firewall barrier for N08", "owner": "project", "status": "open"},
     {"item": "stand VM (IPVX-BCP02-STAND-001) with outbound HTTPS for the light client only", "owner": "project owner / infrastructure operator", "status": "open"},
