@@ -3075,5 +3075,18 @@
   "d3fc4df60320d296": "Protocolo sin escribir",
   "ca649b1a16365f3e": "Elección automática de ruta entre las permitidas por los contratos",
   "e3e445c69805f856": "Agentes y modelos: una de las aplicaciones",
-  "b298b23b6ef91e71": "Los experimentos anteriores probaron cómo los modelos de lenguaje intercambian tareas mediante un formato de paquetes propio. Es un caso de uso de la red, no la definición de IPvX; los registros y conclusiones de esos experimentos se conservan."
+  "b298b23b6ef91e71": "Los experimentos anteriores probaron cómo los modelos de lenguaje intercambian tareas mediante un formato de paquetes propio. Es un caso de uso de la red, no la definición de IPvX; los registros y conclusiones de esos experimentos se conservan.",
+  "e50751688968ef76": "197 eventos hasta HX-0197; autores, fundamentos, comprobaciones y limitaciones.",
+  "65174381e64b0533": "390.3 KiB · 12 archivos",
+  "f75aaa74dc84a017": "HX-0197 · Propuesto el modo de lectura LC: un cliente ligero Helios en lugar de un nodo Sepolia propio",
+  "984ba62d5fff8eca": "Claude Code — asistente del propietario (ipvx-agent-lab, banco público) · 2026-11-05T18:49:55+00:00",
+  "96cb7d2460b98782": "El propietario rechazó asignar una VM propia para un par Geth + Lighthouse (solicitud IPVX-BCP02-VALIDATOR-001, unos 1 TB de SSD, 4 núcleos, 16 GB) y, antes, un tenant propio del provisioner; relcom-infra PR855 y PR854 se cerraron sin fusionar. Por encargo del propietario se preparó el modo BCP 0.2-LC: el perfil docs/proposals/bcp-0.2-light-client (byte trust_mode 2, todo lo demás como en BCP 0.2), el lector lightclient/bcp02, que lee las mismas instantáneas mediante un Helios 0.12.0 local por loopback y solo importa el adaptador aceptado adapters/bcp02 (sus archivos están congelados), nueve pruebas sin conexión y la comprobación de PR bcp-light.yml; fusionado por el propietario en PR66. NET-001-L pasó al modo de lectura LC; la aceptación R1 de REG-001 se sustituyó por la lectura del estado actual de los contratos de la ejecución 6, que debe coincidir con S4. Medición del 2026-11-05: eth_getProof en el bloque finalizado lo sirven Tenderly y ethpandaops; la API de cliente ligero para Sepolia, solo lodestar-sepolia.chainsafe.io.",
+  "3c5943ef1f063211": "El adaptador validated-node no verifica por sí mismo ni firmas BLS ni pruebas de almacenamiento y confía en su nodo; Helios verifica ambas cosas, casi no almacena nada y cabe en el banco existente. Un nodo completo con la configuración por defecto tampoco habría dado las instantáneas antiguas S1–S3. Los archivos aceptados de BCP 0.2 no cambian: el nuevo modo se describe al lado, con otro ID de perfil, para que los nodos de modos distintos no se mezclen.",
+  "40c23ef270996bbf": "docs/proposals/bcp-0.2-light-client/README.md",
+  "aa488ada659ef7e6": "docs/proposals/bcp-0.2-light-client/profile.json",
+  "d07b2b516d20a3c1": "lightclient/bcp02/light.py",
+  "19847bd893c0d0eb": "lightclient/bcp02/tests/test_light.py",
+  "d15ff3989196f54d": "Helios no se ha instalado ni ejecutado; la compatibilidad del adaptador con él solo se comprobó con fixtures. La instalación en el banco requiere una autorización aparte del propietario.",
+  "fd40295999e0b9a6": "La ventana del cliente ligero es de 8191 bloques (unas 27 horas): las instantáneas antiguas S1–S3 no están disponibles y un punto guardado más antiguo que la ventana necesita un nuevo punto de partida.",
+  "5779ae0bfef00122": "Para el consenso de Sepolia solo se encontró una fuente pública; su caída detendría la lectura (disponibilidad, no autenticidad). La confianza recae en el comité de sincronización, no en todo el conjunto de validadores."
 }
