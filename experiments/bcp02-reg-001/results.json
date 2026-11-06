@@ -426,8 +426,7 @@
   "R1": {
    "verdict": "not_claimed_mode_Q",
    "observed": "A, R, B in S1 match the written owner, epoch, keys, role; NFT 99 reads as all-zero with status 0; each snapshot accepted only when 3 providers returned identical data at one finalized blockHash",
-   "why_not_claimed": "the pass condition requires read mode V (own validated node); public RPCs are not admission under BCP 0.2",
-   "closed_by": {"date": "2026-11-06", "protocol": "IPVX-BCP02-REG-001-LC", "outcome": "PASS", "path": "experiments/bcp02-reg-001-lc/result.json", "criterion": "current state of the run 6 contracts read in mode LC equals S4 plus the 20 setKeys writes of the R4 series", "s1_s3": "remain mode Q observations"}
+   "why_not_claimed": "the pass condition requires read mode V (own validated node); public RPCs are not admission under BCP 0.2"
   },
   "R2": {
    "verdict": "supported_with_reservation",
