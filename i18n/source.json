@@ -997,13 +997,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "982a3bd1a894adba",
-      "source": "198 событий по HX-0198; авторы, основания, проверки и ограничения.",
+      "id": "80502ac970725bdd",
+      "source": "199 событий по HX-0199; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "a7baa0d57d4b16b6",
-      "source": "393.7 КиБ · 12 файлов",
+      "id": "d4fc39673b26929b",
+      "source": "398.0 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4822,6 +4822,96 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "1297baf5a745cb69",
+      "source": "HX-0199 · Раннер NET-001-F впервые встретился с настоящим ядром: четыре сбоя исправлены, добавлена репетиция без разрешения",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "e078c61c3e49f21a",
+      "source": "Реализовано",
+      "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "36efc420beffeb19",
+      "source": "Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд) · 2026-11-06T20:46:00+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "62383b93b7b3cfbe",
+      "source": "6 ноября 2026 года по поручению владельца («Проба и PR») ревизия раннера NET-001-F выявила, что офлайн-тесты подменяют ядро, а настоящий прогон тратит одноразовое разрешение до первого namespace. В одноразовом локальном контейнере Docker на ревизии 2 воспроизведены четыре сбоя, каждый из которых оборвал бы прогон: пустой вывод ip -j netns list на новой машине, ENETDOWN на сокете захвата, привязанном к выключенному линку, запрет seccomp на сокет внутри if_nametoindex и журнал SQLite, который после сброса прав не открывается через родительские каталоги с правами 0700. Все четыре исправлены в ревизии 3. Новая команда rehearse проходит тот же путь в ядре на синтетических кадрах, без разрешения, набора данных, ключей прогона, Core и цепочки. В контейнере она дала REHEARSAL_PASS по 4 кадра без потерь на линк и отказала при возврате трёх из исправлений. Опыт не запускался, статус остаётся NOT_RUN, стенд не затронут.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "7f718f9001f6c098",
+      "source": "Репетиция нужна потому, что сбои такого рода заглушки показать не могут, а обнаружить их настоящим прогоном стоило бы разрешения и набора данных. Четвёртый сбой нашла сама репетиция, при чтении кода он был пропущен. Строгий аудит интерфейсов оставлен без изменений: запасные туннели ядра описаны как условие для стенда, а не разрешены кодом. Каталоги выше акторов стали проходимыми (0711), но не читаемыми, а каталоги самих акторов остались закрытыми (0700). Другой способ, открывать журнал по пути /proc/self/cwd, не выбран, потому что SQLite раскрывает символические ссылки и снова упирается в те же каталоги; это вывод из устройства SQLite, отдельно он не проверялся.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "556c0953d77cf78b",
+      "source": "runners/bcp02/rehearsal.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "706704ad715e72e2",
+      "source": "runners/bcp02/README.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "2cc0104477e24465",
+      "source": "runners/bcp02/evidence/preparation-notes.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "334fe114f0bc0a32",
+      "source": "runners/bcp02/evidence/checks.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "6d4bd095ede685dd",
+      "source": "runners/bcp02/evidence/archive/runner-v2/runners/bcp02/manifest.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "476238b9d8c55d31",
+      "source": "Контейнер не является стендом: ядро 7.0.14-linuxkit на aarch64, а прогон требует x86_64. Прослойка пробы обошла проверку архитектуры и убрала из запретов fork и vfork, которых на arm64 нет, поэтому запрет этих двух вызовов не проверялся.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "314fb5115a67cc49",
+      "source": "REHEARSAL_PASS получен только при скрытых обёрткой запасных туннелях этого ядра. Без этого репетиция отказывает, а настройка net.core.fb_tunnels_only_for_init_net=1 взята из документации ядра и не проверялась.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "481a587d4438cc6a",
+      "source": "Настоящие entry и Node с ядром ещё не встречались: это произойдёт только в самом прогоне, поэтому успех репетиции не обещает его успеха. Сторонней ревизии раннера нет. На стенде репетиция не запускалась, для этого нужно отдельное разрешение владельца.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "365fc176e546e8ca",
+      "source": "Открытыми оставлены: захват работает под UID своего узла, git rev-parse вызывается после расхода разрешения, 329 закреплённых файлов лежат вне путей, запускающих CI раннера.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "eef48afb7e7c7a81",
+      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "3a819b587ecabbbf",
       "source": "HX-0198 · R1 закрыт: первое чтение реестра через Helios совпало с ожиданием",
       "context": "history.html:text:section/details/summary"
@@ -4837,19 +4927,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "54d26a918581be71",
       "source": "Ожидание было выведено из опубликованного журнала и слито до чтения, поэтому результат нельзя было подогнать. Временный процесс с лимитами и уборкой проверяет совместимость адаптера с Helios без постоянной службы на стенде, где работают сайт и лаборатория. Значение 300 с в NET-001-L не изменено задним числом: его нужно согласовать с измеренным окном до запуска.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "d1101003ea208a0c",
@@ -4872,11 +4952,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "674064a754eb5847",
       "source": "R1 закрыт по заменённому критерию, то есть по текущему состоянию. Значения S1–S3 старше окна лёгкого клиента и остаются наблюдениями режима Q.",
       "context": "history.html:text:details/ul/li"
@@ -4895,11 +4970,6 @@
       "id": "94228e0a97d2f428",
       "source": "Бинарник взят из релиза и проектом не собирался; источник консенсуса один, аудита Helios нет. Постоянной службы Helios на стенде нет, а готовность NET-001-L это чтение не доказывает.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "eef48afb7e7c7a81",
-      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "f75aaa74dc84a017",
@@ -5015,11 +5085,6 @@
       "id": "086ef4dc555ed043",
       "source": "HX-0195 · REG-001 выполнен: живой реестр BCP 0.2 в Sepolia прошёл все 30 шагов в режиме чтения Q",
       "context": "history.html:text:section/details/summary"
-    },
-    {
-      "id": "e078c61c3e49f21a",
-      "source": "Реализовано",
-      "context": "history.html:text:details/summary/span"
     },
     {
       "id": "a6aaa15388372c0e",
@@ -5382,11 +5447,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "334fe114f0bc0a32",
-      "source": "runners/bcp02/evidence/checks.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
       "id": "b1dd174aa2877559",
       "source": "runners/bcp02/evidence/archive/pr47/manifest.json",
       "context": "history.html:text:ul/li/a"
@@ -5647,18 +5707,8 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "706704ad715e72e2",
-      "source": "runners/bcp02/README.md",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
       "id": "bd2a434e30ef519d",
       "source": "runners/bcp02/components.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "2cc0104477e24465",
-      "source": "runners/bcp02/evidence/preparation-notes.json",
       "context": "history.html:text:ul/li/a"
     },
     {
