@@ -32,5 +32,15 @@ class BcpPresentation(unittest.TestCase):
             self.assertEqual(s.count('class="bcp-row"'),3)
             self.assertIn('pull/845',render(ROOT,language))
 
+    def test_status_states_light_client_read_and_open_conditions(self):
+        d=facts(ROOT);self.assertFalse(d['state_source']['own_node_required']);self.assertFalse(d['state_source']['helios_running_on_stand'])
+        self.assertNotIn('validator_request',d['references'])
+        for language in ['ru','en','de','es']:
+            with self.subTest(language=language):
+                s=render(ROOT,language)
+                for name in ['REG-001-LC','S1–S3','NET-001-L','Helios','2026-11-05','2026-11-06']:
+                    self.assertIn(name,s)
+                self.assertIn('bcp02-reg-001-lc',s)
+
 
 if __name__=='__main__':unittest.main()
