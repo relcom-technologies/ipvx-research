@@ -1,4 +1,4 @@
-"""Default is read-only NOT_RUN. Only explicit `run` reaches gated Linux setup."""
+"""Default is read-only NOT_RUN. Explicit `run` reaches gated Linux setup; `rehearse` only the permit-free rehearsal."""
 import argparse
 import json
 from pathlib import Path
@@ -14,6 +14,7 @@ def main():
     v=sub.add_parser('verify');v.add_argument('directory',type=Path)
     r=sub.add_parser('run');r.add_argument('--permit',required=True);r.add_argument('--output',required=True,type=Path);r.add_argument('--dataset',required=True,type=Path)
     d=sub.add_parser('prepare-dataset');d.add_argument('--run-id',required=True);d.add_argument('--output',required=True,type=Path)
+    h=sub.add_parser('rehearse');h.add_argument('--output',required=True,type=Path)
     args=parser.parse_args()
     if args.command in (None,'check'):
         print(json.dumps(dict(state_mode='fixture-state-ethernet',outcome='NOT_RUN',scope_sha256=source_hash(),
@@ -31,6 +32,14 @@ def main():
     if args.command=='verify':
         from .verifier import evaluate
         print(json.dumps(evaluate(args.directory),indent=2));return
+    if args.command=='rehearse':
+        from .rehearsal import rehearse
+        try:report=rehearse(args.output)
+        except Blocked as e:
+            print(json.dumps(dict(outcome='BLOCKED',network_created=False,reason=str(e))))
+            raise SystemExit(2)
+        print(json.dumps(report,indent=2))
+        raise SystemExit(0 if report['outcome']=='REHEARSAL_PASS' else 1)
     started=False
     try:
         permit,config=authorize(args.permit)

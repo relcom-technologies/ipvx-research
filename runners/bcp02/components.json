@@ -93,6 +93,15 @@
       "source_binding": "runners/bcp02/manifest.json",
       "offline_validation_receipt": "runners/bcp02/evidence/checks.json",
       "review_evidence": null
+    },
+    "kernel_rehearsal": {
+      "files": [
+        "runners/bcp02/rehearsal.py"
+      ],
+      "implementation_present": true,
+      "source_binding": "runners/bcp02/manifest.json",
+      "offline_validation_receipt": "runners/bcp02/evidence/checks.json",
+      "review_evidence": null
     }
   },
   "reviewed": false,

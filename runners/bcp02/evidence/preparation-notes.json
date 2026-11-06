@@ -30,6 +30,54 @@
       "cause": "Lifetime check preceded the strict EtherType isolation decision on an intentionally old injected capture timestamp",
       "correction": "Always classify unexpected EtherType as FAIL_ISOLATION before timestamp reconciliation; subsequent 63-test offline suite passes",
       "measurement": false
+    },
+    {
+      "recorded_at": "2026-11-06T20:51:37+00:00",
+      "result": "First contact of revision 2 with a real kernel: Stand.create raised JSONDecodeError on a host without /run/netns",
+      "cause": "iproute2 netns_list prints nothing at all when the directory does not exist",
+      "correction": "Treat empty output as an empty list",
+      "environment": "Disposable local Docker container, not the stand: ubuntu:24.04, kernel 7.0.14-linuxkit aarch64, iproute2 6.1.0, glibc 2.39, libseccomp 2.5.5, Python 3.12.3, cryptography 41.0.7, sqlite 3.45.1, --network none. A probe shim bypassed only the x86_64 guard and dropped fork/vfork from the deny list, because arm64 has no such syscalls.",
+      "measurement": false
+    },
+    {
+      "recorded_at": "2026-11-06T20:51:37+00:00",
+      "result": "Capture socket bound to a down link: select reported it ready and recv raised OSError errno 100 before link-up",
+      "cause": "packet_do_bind leaves ENETDOWN pending on a socket bound to a link that is not up; offline tests used a mock socket",
+      "correction": "Read and clear SO_ERROR after bind, allow ENETDOWN only for captures. The kernel hooks the socket at NETDEV_UP",
+      "environment": "Disposable local Docker container, not the stand: ubuntu:24.04, kernel 7.0.14-linuxkit aarch64, iproute2 6.1.0, glibc 2.39, libseccomp 2.5.5, Python 3.12.3, cryptography 41.0.7, sqlite 3.45.1, --network none. A probe shim bypassed only the x86_64 guard and dropped fork/vfork from the deny list, because arm64 has no such syscalls.",
+      "measurement": false
+    },
+    {
+      "recorded_at": "2026-11-06T20:51:37+00:00",
+      "result": "After isolate every PacketPort.recv and send raised OSError: no interface with this name",
+      "cause": "glibc if_nametoindex opens a socket internally, which the child seccomp policy denies",
+      "correction": "Read the ifindex with SIOCGIFINDEX on the packet socket that is already open",
+      "environment": "Disposable local Docker container, not the stand: ubuntu:24.04, kernel 7.0.14-linuxkit aarch64, iproute2 6.1.0, glibc 2.39, libseccomp 2.5.5, Python 3.12.3, cryptography 41.0.7, sqlite 3.45.1, --network none. A probe shim bypassed only the x86_64 guard and dropped fork/vfork from the deny list, because arm64 has no such syscalls.",
+      "measurement": false
+    },
+    {
+      "recorded_at": "2026-11-06T20:51:37+00:00",
+      "result": "A throwaway SQLite journal in the actor directory failed after the privilege drop: unable to open database file",
+      "cause": "SQLite turns a relative path into an absolute one with getcwd, and the root-owned 0700 parents could not be traversed by the actor UID. The same layout would have stopped every Node at startup",
+      "correction": "Run, cases and case directories are 0711, search-only; actor directories stay 0700. Output ancestors are checked before the permit is consumed",
+      "environment": "Disposable local Docker container, not the stand: ubuntu:24.04, kernel 7.0.14-linuxkit aarch64, iproute2 6.1.0, glibc 2.39, libseccomp 2.5.5, Python 3.12.3, cryptography 41.0.7, sqlite 3.45.1, --network none. A probe shim bypassed only the x86_64 guard and dropped fork/vfork from the deny list, because arm64 has no such syscalls.",
+      "measurement": false
+    },
+    {
+      "recorded_at": "2026-11-06T20:51:37+00:00",
+      "result": "Stand.audit refused the namespaces: tunl0, gre0, gretap0, erspan0, ip_vti0, ip6_vti0, sit0, ip6tnl0, ip6gre0",
+      "cause": "This kernel creates fallback tunnels in every network namespace. The strict audit is correct, so the code stays; on such a kernel the host needs net.core.fb_tunnels_only_for_init_net=1 before namespaces are created",
+      "correction": "None in code. Recorded as a stand condition; that sysctl was not exercised here",
+      "environment": "Disposable local Docker container, not the stand: ubuntu:24.04, kernel 7.0.14-linuxkit aarch64, iproute2 6.1.0, glibc 2.39, libseccomp 2.5.5, Python 3.12.3, cryptography 41.0.7, sqlite 3.45.1, --network none. A probe shim bypassed only the x86_64 guard and dropped fork/vfork from the deny list, because arm64 has no such syscalls.",
+      "measurement": false
+    },
+    {
+      "recorded_at": "2026-11-06T20:51:37+00:00",
+      "result": "The rehearsal passed on revision 3 only with those fallback tunnels hidden by the probe wrapper around ip: 4 frames and 0 drops on each link. It failed as intended with each of the ENETDOWN, if_nametoindex and closed-parent fixes reverted, and with the tunnels not hidden",
+      "cause": "Rehearsal, not a run: synthetic frames, no BCP, permit, dataset, chain or stand",
+      "correction": null,
+      "environment": "Disposable local Docker container, not the stand: ubuntu:24.04, kernel 7.0.14-linuxkit aarch64, iproute2 6.1.0, glibc 2.39, libseccomp 2.5.5, Python 3.12.3, cryptography 41.0.7, sqlite 3.45.1, --network none. A probe shim bypassed only the x86_64 guard and dropped fork/vfork from the deny list, because arm64 has no such syscalls.",
+      "measurement": false
     }
   ],
   "review_corrections": [

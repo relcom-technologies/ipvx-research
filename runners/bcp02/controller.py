@@ -12,7 +12,7 @@ from .admission import preflight, source_hash, claim_once, authorize, verify_per
 from .common import NODES, need, private_json, sha, control, run_id, ROOT, read_json
 from .dataset import load, snapshot, fresh
 from .scenarios import SCRIPTS, observed
-from .stand import Stand, NS, execute, inode
+from .stand import Stand, NS, actor_parent, audit_process, execute, inode, reachable
 from .verifier import evaluate
 
 
@@ -57,32 +57,6 @@ class Controller:
         self.children[key]=child;self.selector.register(p.stdout,selectors.EVENT_READ,child)
         return child
 
-    def audit_process(self,child):
-        pid=child['process'].pid
-        status={s.split(':',1)[0]:s.split(':',1)[1].strip() for s in Path(f'/proc/{pid}/status').read_text().splitlines() if ':' in s}
-        need(all(int(status[k],16)==0 for k in ('CapEff','CapPrm','CapBnd','CapAmb'))
-             and status['NoNewPrivs']=='1' and status['Seccomp']=='2'
-             and set(map(int,status['Uid'].split()))=={child['uid']},'root process-policy audit failed')
-        need(Path(f'/proc/{pid}/ns/net').stat().st_ino==self.stand.created[NS[child['node']]],'process namespace mismatch')
-        for name in ('tcp','tcp6','udp','udp6','raw','raw6'):
-            p=Path(f'/proc/{pid}/net/{name}')
-            need(not p.exists() or len(p.read_text().splitlines())<=1,'INET socket present')
-        packets=Path(f'/proc/{pid}/net/packet').read_text().splitlines()[1:]
-        allowed={str(p['ifindex']) for p in self.stand.inventory[child['node']]['links'] if p['ifname']!='lo'}
-        entries={line.split()[-1]:line.split() for line in packets}
-        sockets=[]
-        for fd in Path(f'/proc/{pid}/fd').iterdir():
-            try:target=os.readlink(fd)
-            except FileNotFoundError:continue
-            if target.startswith('socket:['):
-                sock=target[8:-1];need(sock in entries,'non-packet socket fd')
-                fields=entries[sock];need(fields[2]=='3' and fields[4] in allowed,'unbound/wrong packet socket')
-                need(fields[3] in ('88b5','0003'),'unexpected packet protocol');sockets.append(sock)
-        expected=len(NODES[child['node']][1]) if child['role']=='node' else 1
-        need(len(sockets)==expected,'packet socket count mismatch')
-        return dict(pid=pid,node=child['key'],uid=child['uid'],namespace_inode=self.stand.created[NS[child['node']]],
-                    status={k:status[k] for k in ('CapEff','CapPrm','CapBnd','CapAmb','NoNewPrivs','Seccomp')},packet_sockets=sockets)
-
     def poll(self,timeout=0.03):
         self.bounds()
         for selected,_ in self.selector.select(timeout):
@@ -96,7 +70,7 @@ class Controller:
                 e=json.loads(line);need(e['node']==c['key'] and e['run_id']==self.run,'child event identity mismatch')
                 if e['decision'] in ('FAIL_ISOLATION','CHILD_ERROR','ABORTED'):need(False,e['decision'])
                 if e['decision']=='READY':
-                    c['ready']=True;self.timeline['processes'].append(self.audit_process(c))
+                    c['ready']=True;self.timeline['processes'].append(audit_process(self.stand,c))
                     if c['role']=='capture':self.timeline['capture_ready'][c['link']]=time.monotonic()
                 if e['decision']=='BARRIER_ACK':self.acked.add((c['key'],e['stage']))
                 if c['role']=='node':self.events.append(e)
@@ -129,7 +103,7 @@ class Controller:
 
     def case(self,label,script):
         self.current=label.split('-')[0];self.label=label;self.events=[]
-        folder=self.directory/'cases'/label;folder.mkdir(mode=0o700)
+        folder=actor_parent(self.directory/'cases'/label)
         for node in NODES:self.spawn(node,node,folder/node)
         self.wait(lambda:all(self.children[n]['ready'] for n in NODES))
         for node in NODES:self.send(node,'START')
@@ -173,9 +147,10 @@ class Controller:
         checked=verify_permit(envelope,self.config['owner_public_key'],scope=source_hash(),now=time.time())
         need(checked==self.permit,'permit changed during dataset load')
         fresh(self.permit['dataset'],time.time())
+        reachable(self.directory)
         claim_once(self.permit)
-        self.directory.mkdir(mode=0o700,exist_ok=False)
-        for name in ('configs','captures','cases'):(self.directory/name).mkdir(mode=0o700)
+        actor_parent(self.directory);actor_parent(self.directory/'cases')
+        for name in ('configs','captures'):(self.directory/name).mkdir(mode=0o700)
         result=None;error=None
         try:
             private_json(self.directory/'admitted-permit.json',envelope)
