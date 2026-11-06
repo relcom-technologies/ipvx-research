@@ -1,4 +1,5 @@
 from copy import deepcopy
+from hashlib import sha256
 import json
 from pathlib import Path
 import re
@@ -97,7 +98,14 @@ class DerivationTests(unittest.TestCase):
         s=PROTOCOL['selection']
         for rule in (*s['edges'].values(),*s['connections'].values()):
             self.assertRegex(journal,'rule '+re.escape(rule[:10]))
-        self.assertFalse(PROTOCOL['execution_performed'] or PROTOCOL['transactions_performed'] or PROTOCOL['results'])
+        self.assertFalse(PROTOCOL['transactions_performed'])
+
+    def test_published_result_is_the_pinned_pass(self):
+        raw=(HERE/'result.json').read_bytes();result=json.loads(raw);pinned=PROTOCOL['results']
+        self.assertEqual(sha256(raw).hexdigest(),pinned['sha256'])
+        self.assertEqual((result['outcome'],result['differences'],result['transactions_sent']),('PASS',[],0))
+        self.assertEqual(lc_read.compare(EXPECTED,result['observed']),[])
+        self.assertEqual((result['block']['number'],result['checkpoint']),(pinned['block'],pinned['checkpoint']['root']))
 
 
 class ReadTests(unittest.TestCase):

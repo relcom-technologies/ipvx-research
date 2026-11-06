@@ -2,7 +2,7 @@
   "schema_version": 1,
   "protocol_id": "IPVX-BCP02-REG-001-LC",
   "version": "0.1",
-  "status": "proposed_not_run",
+  "status": "executed",
   "author": "claude-code-assistant",
   "recorded_by": "claude-code-assistant",
   "closes": "REG-001 R1, and acceptance of read mode LC on live Sepolia",
@@ -54,9 +54,10 @@
     "PASS": "no difference from expected.json: R1 closed, mode LC accepted on live Sepolia",
     "FAIL_STATE": "any difference: recorded as is, expected.json is not revised afterwards",
     "BLOCKED": "the adapter or Helios refused the read: a compatibility or availability defect, not a verdict on R1; a new read needs a fixing PR and a new owner permit",
-    "NOT_RUN": "the current state"
+    "NOT_RUN": "the state before 2026-11-06"
   },
   "permit_required": "owner permission for the stand, separate from merging this protocol",
+  "permit": {"date": "2026-11-06", "scope": "one read on a temporary Helios: separate user, 512 MB, 50% CPU, only 127.0.0.1:8545, stopped within an hour, no transactions, wallets or lab.env, then removal of the process, user, data, binary and sources", "further_reads": "need a new owner permit"},
   "does_not_establish": [
     "the values of S1-S3, which are older than the light client window and stay mode Q observations",
     "liveness of the single consensus source",
@@ -64,8 +65,39 @@
     "an independent audit of Helios",
     "a long-running Helios service for NET-001-L"
   ],
-  "results": null,
-  "execution_performed": false,
+  "results": {
+    "outcome": "PASS",
+    "path": "result.json",
+    "sha256": "dc92594c71e807c05edf9f2752c3adf770e2406d700065570de4652dd4effd2d",
+    "read_at": "2026-11-06T00:08:35+00:00",
+    "source_commit": "3135baffbd20f95aed4ff5f4485769c1a9109439",
+    "block": 12072858,
+    "block_age_at_read_seconds": 815,
+    "checkpoint": {"root": "0x290ecce47d1f9e5f61a5a8ea437548dd1d67b4bd6e564cc97479911fb7dcc689", "epoch": 359866, "slot": 11515712, "same_root_from": ["lodestar-sepolia.chainsafe.io", "checkpoint-sync.sepolia.ethpandaops.io"]},
+    "block_cross_check": {"date": "2026-11-06", "same_hash_and_state_root_from": ["sepolia.gateway.tenderly.co", "ethereum-sepolia-rpc.publicnode.com", "rpc.sepolia.ethpandaops.io"], "note": "ethpandaops is also the Helios execution upstream, so only the first two are independent of the read; this is a check of the block identity, not of the registry values"},
+    "helios_process": {"memory_peak_bytes": 12816384, "cpu_seconds": 5.13, "restarts": 0, "journal_lines": 113, "journal_errors": 0, "journal_warnings": 53, "warning": "inconsistent block history detected: clearing cache", "warning_cause": "not investigated; it follows nearly every 12 s status line and the read still passed"},
+    "head_cadence": {
+      "status_line_every_seconds": 12,
+      "status_lines": 54,
+      "lines_with_head_age_at_most_60_seconds": 6,
+      "max_head_age_seconds": 400,
+      "head_blocks_seen": [12072858, 12072889, 12072921],
+      "full_intervals_measured": 1,
+      "interval_seconds": 384,
+      "readable_window_seconds_per_interval": 32,
+      "waits_for_not_syncing_seconds": [221, 347],
+      "head_age_at_read_seconds": 47,
+      "note": "384 s equals one Sepolia epoch, but one full interval is a small sample and the cause was not investigated"
+    },
+    "deviations": [
+      "lc_read.py was launched twice. The first launch stopped with PermissionError on /var/lib/ipvx-helios/helios (its parent directory is mode 0700) before any request to Helios and wrote no result. The second launch, in the same readable window, passed a copy from the release archive with the same SHA-256, checked with sudo.",
+      "helios --version, helios --help and ldd were run on the extracted binary under the operator account, outside the restricted user and its limits, while checking the binary.",
+      "A shell loop waited for eth_syncing to return false immediately before the read; section 3 said only to wait before preparing the sources.",
+      "Three of the ten tests errored on the stand, because the run 6 journals they need were not shipped there. The seven read tests passed there; all ten pass in CI."
+    ],
+    "cleanup": {"verified": ["unit gone", "user removed", "/var/lib/ipvx-helios and the working directory removed", "no helios process", "port 8545 free", "14 pip cache files created by this read removed", "three ipvx-research services active", "8 containers healthy", "ipvx.org answering 200"], "not_removed": ["journald lines of the unit on the stand"]}
+  },
+  "execution_performed": true,
   "transactions_performed": false,
   "production_actions": false
 }

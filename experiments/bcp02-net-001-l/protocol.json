@@ -27,6 +27,7 @@
     "age_measured_from": "finalized execution header timestamp",
     "observed_acceptance_age_seconds": {"min": 781, "max": 792, "source": "REG-001 run 6, snapshots S1-S4"},
     "refresh_period_seconds_max": 300,
+    "refresh_period_finding": {"status": "open", "date": "2026-11-06", "source": "experiments/bcp02-reg-001-lc, results.head_cadence", "observed": "with lodestar-sepolia.chainsafe.io the Helios head advanced after 384 s in the one full interval measured, and eth_syncing was false for about 32 s of it, so the adapter cannot refresh every 300 s", "estimate": "the finalized block was 815 s old at the read; one interval adds about 384 s, so state stays under 1800 s with reads in each window and about one missed window, from one read only"},
     "clock_skew_seconds": 5
   },
   "contracts": {
@@ -45,7 +46,7 @@
       "connection_consent": 4,
       "total": 21,
       "owners": {"A": "W1", "R": "W1", "B": "W2"},
-      "effective": "only after the finalized snapshot C containing all of them is accepted in read mode V"
+      "effective": "only after the finalized snapshot C containing all of them is accepted in read mode LC"
     },
     "inside_window": [
       {"case": "N07", "phase": "a", "call": "TransitPolicy.withdraw on the forward edge R->B"},
@@ -77,8 +78,9 @@
   "outcomes": ["NOT_RUN", "BLOCKED", "PASS", "FAIL_PROTOCOL", "FAIL_ISOLATION", "INCONCLUSIVE", "ABORTED"],
   "pass_requires_all_cases": true,
   "prerequisites": [
-    {"item": "Helios 0.12.0 installed on the stand with an explicit checkpoint (VALIDATOR-001 and relcom-infra PR854 closed 2026-11-05: no separate VM)", "owner": "project owner", "status": "open"},
-    {"item": "current state of the REG-001 run 6 contracts read in mode LC with zero transactions and equal to S4 plus the 20 setKeys writes of the R4 series (experiments/bcp02-reg-001-lc); closes R1 and accepts the mode (S1-S3 are older than the light client window)", "owner": "project", "status": "open"},
+    {"item": "Helios 0.12.0 installed on the stand with an explicit checkpoint (VALIDATOR-001 and relcom-infra PR854 closed 2026-11-05: no separate VM); the temporary instance of REG-001-LC was removed", "owner": "project owner", "status": "open"},
+    {"item": "current state of the REG-001 run 6 contracts read in mode LC with zero transactions and equal to S4 plus the 20 setKeys writes of the R4 series (experiments/bcp02-reg-001-lc); closes R1 and accepts the mode (S1-S3 are older than the light client window)", "owner": "project", "status": "closed", "closed_on": "2026-11-06", "evidence": "experiments/bcp02-reg-001-lc/result.json"},
+    {"item": "the snapshot refresh rule reconciled with the readable window of the light client (state_source.refresh_period_finding)", "owner": "project", "status": "open"},
     {"item": "NET-001-F components implemented, reviewed and NET-001-F run first", "owner": "project", "status": "open"},
     {"item": "L-only components: per-run registry writer, live state-reader binding, finality-wait scheduler, firewall barrier for N08", "owner": "project", "status": "open"},
     {"item": "stand VM (IPVX-BCP02-STAND-001) with outbound HTTPS for the light client only", "owner": "project owner / infrastructure operator", "status": "open"},
