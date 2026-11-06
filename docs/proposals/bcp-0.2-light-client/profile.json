@@ -16,13 +16,15 @@
     "version": "0.12.0",
     "client_version_string": "helios-0.12.0",
     "source_commit": "2af9b41887e069144ee56cd710f3ddca195473f8",
-    "installed_or_executed": false
+    "installed_or_executed": "once, temporarily, then removed: experiments/bcp02-reg-001-lc",
+    "built_by_project": false
   },
   "operator_requirements": [
     "explicit weak-subjectivity checkpoint at most 14 days old, strict_checkpoint_age true, load_external_fallback false",
     "JSON-RPC on 127.0.0.1 only; installed binary SHA-256 recorded",
     "execution RPC serving eth_getProof at the finalized block; consensus RPC with the light client API",
-    "a read at least every 8191 blocks (about 27 hours), otherwise a new execution bootstrap"
+    "a read at least every 8191 blocks (about 27 hours), otherwise a new execution bootstrap",
+    "a read immediately after eth_syncing returns false; observed window about 32 s per 384 s interval, one interval measured (experiments/bcp02-reg-001-lc)"
   ],
   "adapter": "lightclient/bcp02/light.py",
   "source_probe": {
@@ -47,9 +49,10 @@
     }
   },
   "not_established": [
-    "live interoperability of the adapter with Helios",
+    "a long-running Helios service",
     "historical reads older than 8191 blocks",
     "availability with a single public consensus source",
     "independent audit of Helios"
-  ]
+  ],
+  "live_read": {"date": "2026-11-06", "protocol": "IPVX-BCP02-REG-001-LC", "outcome": "PASS", "path": "experiments/bcp02-reg-001-lc/result.json"}
 }
