@@ -3088,5 +3088,19 @@
   "19847bd893c0d0eb": "lightclient/bcp02/tests/test_light.py",
   "d15ff3989196f54d": "Helios has not been installed or run; the adapter's compatibility with it was checked on fixtures only. Installation on the stand is a separate owner authorization.",
   "fd40295999e0b9a6": "The light client window is 8191 blocks (about 27 hours): the old snapshots S1–S3 are unavailable, and a saved point older than the window needs a new starting point.",
-  "5779ae0bfef00122": "Only one public source was found for Sepolia consensus; its failure would stop reads (availability, not authenticity). Trust rests on the sync committee, not the whole validator set."
+  "5779ae0bfef00122": "Only one public source was found for Sepolia consensus; its failure would stop reads (availability, not authenticity). Trust rests on the sync committee, not the whole validator set.",
+  "982a3bd1a894adba": "198 events through HX-0198; authors, rationale, checks and limitations.",
+  "a7baa0d57d4b16b6": "393.7 KiB · 12 files",
+  "3a819b587ecabbbf": "HX-0198 · R1 closed: the first registry read through Helios matched the expectation",
+  "b0b08a31db92fd0e": "Claude Code — the owner's assistant (ipvx-agent-lab, public stand) · 2026-11-06T00:08:35+00:00",
+  "a0a46db1e72638d2": "On November 6, 2026, with the owner's permission (“Разрешаю”, “I permit it”), the REG-001-LC experiment read the state of the REG-001 run 6 contracts once through a temporary Helios 0.12.0 on the stand: outcome PASS, no differences from expected.json at finalized block 12072858, 24 requests to Helios, zero transactions. Under the protocol this closes R1 and accepts mode LC on live Sepolia; the lightclient/bcp02 adapter worked with a real Helios for the first time. Helios peak memory was 12.8 MB against a 512 MB limit, CPU 5.1 s. The process, user, data, binary and sources were removed after the read. A new finding for NET-001-L: the Helios head advanced after 384 s, and reading was possible for about 32 s of that, so refreshing the snapshot at least every 300 s cannot be met with this consensus source; the condition is recorded as open. Correction to HX-0197: it says the state must equal S4, which is the author's error. S4 was followed by the R4 series of 20 setKeys writes, and the correct expectation is S4 plus that series; this was fixed in PR69 before the read. Separately, PR68 restored the pinned runner source hashes that the portal change in PR65 had broken.",
+  "54d26a918581be71": "The expectation was derived from the published journal and merged before the read, so the result could not be fitted to it. A temporary process with limits and cleanup tests the adapter's compatibility with Helios without a permanent service on the stand that runs the site and the lab. The 300 s value in NET-001-L was not changed after the fact: it has to be reconciled with the measured window before any run.",
+  "d1101003ea208a0c": "experiments/bcp02-reg-001-lc/result.json",
+  "f40e1cd83b73c45f": "experiments/bcp02-reg-001-lc/protocol.json",
+  "f779b1b82177c8f1": "experiments/bcp02-reg-001-lc/expected.json",
+  "72f24a6467c97409": "experiments/bcp02-reg-001-lc/README.md",
+  "674064a754eb5847": "R1 is closed on the replacement criterion, that is, on the current state. The values of S1–S3 are older than the light client window and remain mode Q observations.",
+  "d510e2e180b66258": "The read script was launched twice: the first launch stopped on an access permission error before any request to Helios and wrote no result. The helios --version, --help and ldd calls ran outside the separate user. Both are noted in the protocol.",
+  "5b7a173693d79997": "The 384 s interval was measured once, and its cause was not investigated. The cause of the 53 inconsistent block history warnings is also unknown; the log has no errors.",
+  "94228e0a97d2f428": "The binary comes from the release and was not built by the project; there is one consensus source and no audit of Helios. There is no permanent Helios service on the stand, and this read does not show that NET-001-L is ready."
 }

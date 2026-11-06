@@ -997,13 +997,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "e50751688968ef76",
-      "source": "197 событий по HX-0197; авторы, основания, проверки и ограничения.",
+      "id": "982a3bd1a894adba",
+      "source": "198 событий по HX-0198; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "65174381e64b0533",
-      "source": "390.3 КиБ · 12 файлов",
+      "id": "a7baa0d57d4b16b6",
+      "source": "393.7 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4822,6 +4822,86 @@
       "context": "history.html:text:main/section/p"
     },
     {
+      "id": "3a819b587ecabbbf",
+      "source": "HX-0198 · R1 закрыт: первое чтение реестра через Helios совпало с ожиданием",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "b0b08a31db92fd0e",
+      "source": "Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд) · 2026-11-06T00:08:35+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "a0a46db1e72638d2",
+      "source": "6 ноября 2026 года по разрешению владельца («Разрешаю») опыт REG-001-LC один раз прочитал состояние контрактов прогона 6 REG-001 через временный Helios 0.12.0 на стенде: исход PASS, ни одного отличия от expected.json в финализированном блоке 12072858, 24 запроса к Helios, ноль транзакций. По протоколу это закрывает R1 и принимает режим LC на живой Sepolia; адаптер lightclient/bcp02 впервые работал с настоящим Helios. Пик памяти Helios — 12,8 МБ при лимите 512 МБ, CPU 5,1 с. Процесс, пользователь, данные, бинарник и исходники после чтения удалены. Новая находка для NET-001-L: голова Helios сдвинулась через 384 с, а читать можно было около 32 с из них, поэтому обновление снимка не реже раза в 300 с с этим источником консенсуса не выполнимо; условие записано как открытое. Поправка к HX-0197: там сказано, что состояние должно совпасть с S4, это ошибка автора. После S4 шла серия R4 из 20 записей setKeys, и верное ожидание — S4 плюс эта серия; исправлено в PR69 до чтения. Отдельно PR68 вернул закреплённые хеши исходников раннера, сбитые изменением портала в PR65.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "54d26a918581be71",
+      "source": "Ожидание было выведено из опубликованного журнала и слито до чтения, поэтому результат нельзя было подогнать. Временный процесс с лимитами и уборкой проверяет совместимость адаптера с Helios без постоянной службы на стенде, где работают сайт и лаборатория. Значение 300 с в NET-001-L не изменено задним числом: его нужно согласовать с измеренным окном до запуска.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "d1101003ea208a0c",
+      "source": "experiments/bcp02-reg-001-lc/result.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "f40e1cd83b73c45f",
+      "source": "experiments/bcp02-reg-001-lc/protocol.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "f779b1b82177c8f1",
+      "source": "experiments/bcp02-reg-001-lc/expected.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "72f24a6467c97409",
+      "source": "experiments/bcp02-reg-001-lc/README.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "674064a754eb5847",
+      "source": "R1 закрыт по заменённому критерию, то есть по текущему состоянию. Значения S1–S3 старше окна лёгкого клиента и остаются наблюдениями режима Q.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "d510e2e180b66258",
+      "source": "Скрипт чтения запускался дважды: первый запуск остановился на ошибке прав доступа до единого запроса к Helios и результата не записал. Вызовы helios --version, --help и ldd выполнялись вне отдельного пользователя. Обе отметки есть в протоколе.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "5b7a173693d79997",
+      "source": "Интервал 384 с измерен один раз, причина не выяснялась. Также не выяснена причина 53 предупреждений inconsistent block history; ошибок в журнале нет.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "94228e0a97d2f428",
+      "source": "Бинарник взят из релиза и проектом не собирался; источник консенсуса один, аудита Helios нет. Постоянной службы Helios на стенде нет, а готовность NET-001-L это чтение не доказывает.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "eef48afb7e7c7a81",
+      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
       "id": "f75aaa74dc84a017",
       "source": "HX-0197 · Предложен режим чтения LC: лёгкий клиент Helios вместо собственного узла Sepolia",
       "context": "history.html:text:section/details/summary"
@@ -4842,19 +4922,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "3c5943ef1f063211",
       "source": "Адаптер validated-node сам не проверяет ни подписи BLS, ни доказательства хранилища и доверяет узлу; Helios проверяет и то и другое, почти ничего не хранит и помещается на существующий стенд. Полный узел по умолчанию и не дал бы старые снимки S1–S3. Принятые файлы BCP 0.2 не меняются: новый режим описан рядом, с другим ID профиля, чтобы узлы разных режимов не смешивались.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "40c23ef270996bbf",
@@ -4877,11 +4947,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "d15ff3989196f54d",
       "source": "Helios не установлен и не запускался; совместимость адаптера с ним проверена только на фикстурах. Установка на стенд — отдельное разрешение владельца.",
       "context": "history.html:text:details/ul/li"
@@ -4895,11 +4960,6 @@
       "id": "5779ae0bfef00122",
       "source": "Для консенсуса Sepolia найден один публичный источник; его отказ остановит чтение (доступность, не подлинность). Доверие — комитету синхронизации, а не всему набору валидаторов.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "eef48afb7e7c7a81",
-      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "3915337baf14b1af",
