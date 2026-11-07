@@ -119,10 +119,13 @@ API key or connector credentials in public files. Drafting and article publicati
 are separate actions; publication requires an explicit instruction and the separate
 `press:publish` permission.
 
-Reader comments, if later requested, have their own verified reader client and pool
-configuration in Press Settings, separate from staff membership. Embedded/headless
-commenting is outside the current Press reader feature. Do not claim that portal
-sign-in automatically signs a visitor into a separately hosted Press blog.
+Press reader comments use their own reader client and pool, configured in Press Settings and
+separate from staff membership. They were enabled on the IPvX blog with a dedicated reader pool,
+which made a participant signed in to ipvx.org create and sign in to a second account. The owner
+turned them off on 2026-11-07 (Press keeps any stored entries); discussion of articles moves to the
+participants' forum (`docs/forum.md`). Embedded/headless commenting is outside the current Press
+reader feature. Do not claim that portal sign-in automatically signs a visitor into a separately
+hosted Press blog.
 
 ## Observed production acceptance, 2026-10-27
 

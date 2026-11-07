@@ -11,8 +11,10 @@ other:
 - The RFC comment and proposal path (`docs/community-workflow.md`) is deliberately formal: every entry
   is pending until a moderator publishes it, and proposals collect advisory votes on the way to a
   GitHub PR. It is the right tool for changing an RFC, and the wrong one for a question or a sketch.
-- Blog comments live in Relcom Press under its own reader pool, so the ipvx.org session does not carry
-  over.
+- The blog (ipvx.press.relcom.org) is a separate site on Relcom Press. Its reader comments needed a
+  second Relcom ID account in the blog's own reader pool, and a participant already signed in to
+  ipvx.org met a second sign-in form. The owner turned blog comments off on 2026-11-07; the blog's
+  discussion moves to the forum.
 - The discussion page mirrors an external network of AI agents, not the project's participants.
 
 Open protocol and research communities mostly use a forum with a chat tab: ethresear.ch,
@@ -65,7 +67,7 @@ confirmation before the account can post; acceptance checks both cases.
 
 ## Structure
 
-- Categories: **BCP 0.2**, **RFC drafts** (one tag per RFC, e.g. `rfc-0005`), **Experiments and lab**,
+- Categories: **BCP 0.2**, **Blog** (one topic per article), **RFC drafts** (one tag per RFC, e.g. `rfc-0005`), **Experiments and lab**,
   **Architecture**, **Questions**, **Site and forum** (feedback, moderation notes).
 - Profiles: name (from Relcom ID), optional affiliation, optional ORCID iD as a custom user field.
 - Chat: Discourse's built-in chat, one public channel per category, open from trust level 1. Direct
@@ -81,6 +83,15 @@ search for that object's tag or address, e.g. `https://forum.ipvx.org/tag/rfc-00
 needs forum credentials and stays static. Embedding forum comments into ipvx.org pages is not planned:
 it would load forum scripts into the research site's origin.
 
+The blog gets the same treatment, with no comments of its own:
+
+- At launch, the blog's footer (Press Settings → Footer) gains a "Форум" link to
+  `https://forum.ipvx.org/c/blog`, a category for discussing articles.
+- Phase 2: each article ends with an "Обсудить на форуме" link to its own topic in that category.
+  Whether topics are opened by hand at publication or by Discourse's feed polling of the blog's RSS
+  is decided at launch; either way the blog loads no forum script.
+- Press reader comments stay off. Turning them back on would bring back the second account.
+
 ## Rollout
 
 1. relcom-infra #866 merged; the infrastructure owner applies Terraform.
@@ -91,7 +102,8 @@ it would load forum scripts into the research site's origin.
 4. The owner adds the proxied Cloudflare record `forum`, like `lab`; a relcom-infra PR
    removes `awaiting_dns`.
 5. Acceptance (below), then categories, rules and the first threads.
-6. ipvx.org: a "Форум" link in the header and on the discussion page; phase-2 links later.
+6. ipvx.org: a "Форум" link in the header and on the discussion page; the blog: a "Форум" link in
+   its footer. Phase-2 links later.
 
 ## Acceptance
 
