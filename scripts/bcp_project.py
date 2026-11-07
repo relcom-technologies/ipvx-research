@@ -9,7 +9,7 @@ TEXT={
  'summary':'BCP 0.2 — пакетный слой и реестр IPvX. Контракты реестра проверены на живой цепочке Sepolia: REG-001 шёл в режиме чтения Q, а R1 закрыт 2026-11-06 чтением REG-001-LC через лёгкий клиент — по заменённому критерию, текущему состоянию; значения S1–S3 остаются наблюдениями режима Q. Доставка пакетов по реестру (NET-001) ещё не запускалась.',
  'read':'Открыть BCP 0.2', 'source':'Код и спецификация', 'status':'Состояние разработки',
  'code':'Реализовано в коде', 'code_text':'Формат пакетов, NodeRegistry, TransitPolicy, ConnectionPolicy, EL/CL-адаптер и связь с ядром. Чтения контрактов привязаны к одному финализированному blockHash.',
- 'checks':'Проверено офлайн', 'checks_text':'{runner} теста runner и {plan} проверок плана. Временные ключи, EVM в памяти, синтетические заголовки и memory ports; это не измерение сети или финальности цепочки.',
+ 'checks':'Проверено офлайн', 'checks_text':'{runner} {runner_ru} runner и {plan} {plan_ru} плана. Временные ключи, EVM в памяти, синтетические заголовки и memory ports; это не измерение сети или финальности цепочки.',
  'pending':'Следующий сетевой опыт', 'pending_text':'NET-001: протокол принят в двух вариантах — на тестовом и на живом состоянии реестра; ни один ещё не запускался. Живой вариант читает реестр через лёгкий клиент Helios: режим LC заменил режим V 2026-11-05, собственный узел Sepolia не нужен. Helios на стенде не работает: временный клиент, выполнивший чтение, удалён. Отдельная ВМ стенда для NET-001 не выделена, правило обновления снимка в NET-001-L остаётся открытым условием. Допуск к запуску закрыт.',
  'idea':'Что меняет BCP', 'identity':'Идентичность', 'identity_text':'NodeRegistry связывает NFT-идентификатор узла с владельцем и ключами. Самостоятельно созданный ключ ещё не даёт права участвовать.',
  'route':'Разрешённый путь', 'route_text':'TransitPolicy и ConnectionPolicy задают допустимые переходы и соединения. Узел проверяет путь по закреплённому состоянию; блокчейн не заменяет канал передачи кадров.',
@@ -92,12 +92,19 @@ def facts(root):
  return d
 
 
+def ru_count(n,one,few,many):
+ """Russian noun form after the number n: 1 тест, 2 теста, 5 тестов, 11 тестов, 21 тест."""
+ return one if n%10==1 and n%100!=11 else few if 2<=n%10<=4 and not 12<=n%100<=14 else many
+
+
 def render(root,language='ru',*,compact=False,lab=False):
  d=facts(root);t=TEXT[language];e=lambda x:html.escape(str(x),quote=True)
  page='https://ipvx.org/bcp.html' if lab else ('bcp.html' if language=='ru' else 'bcp.'+language+'.html')
  refs=d['references'];repo='https://github.com/relcom-technologies/ipvx-research'
  opening=f'<div class="bcp-intro"><h2>{e(t["title"] if compact else t["status"])}</h2><p class="lead">{e(t["summary"])}</p><p class="bcp-date">{e(t["date"])}: <time datetime="{e(d["as_of"])}">{e(d["as_of"])}</time></p></div>'
- rows=''.join(f'<div class="bcp-row"><h3>{e(t[k])}</h3><p>{e(t[k+"_text"].format(runner=d["checks"]["runner_tests"],plan=d["checks"]["plan_tests"]))}</p></div>' for k in ['code','checks','pending'])
+ r,p=d['checks']['runner_tests'],d['checks']['plan_tests']
+ counts=dict(runner=r,plan=p,runner_ru=ru_count(r,'тест','теста','тестов'),plan_ru=ru_count(p,'проверка','проверки','проверок'))
+ rows=''.join(f'<div class="bcp-row"><h3>{e(t[k])}</h3><p>{e(t[k+"_text"].format(**counts))}</p></div>' for k in ['code','checks','pending'])
  output=f'<section class="bcp-project section" data-bcp-mode="{('compact' if compact else 'full')}" data-i18n-fixed>{opening}<div class="bcp-status-list">{rows}</div>'
  if compact:return output+f'<p class="bcp-links"><a class="button" href="{page}">{e(t["read"])}</a><a href="{e(refs["runner"])}">{e(t["source"])}</a></p></section>'
  output+=f'<div class="bcp-explanation"><h2>{e(t["idea"])}</h2><ol class="bcp-lifecycle">'+''.join(f'<li><h3>{e(t[k])}</h3><p>{e(t[k+"_text"])}</p></li>' for k in ['identity','route','packet'])+'</ol></div>'
