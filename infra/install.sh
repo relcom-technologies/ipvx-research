@@ -16,6 +16,10 @@ install -m 0644 "$source_dir/infra/configure_community.py" "$release/configure_c
 install -m 0644 "$source_dir/infra/auth-requirements.lock" "$release/auth-requirements.lock"
 python3 -m venv "$release/auth-venv"
 "$release/auth-venv/bin/python" -m pip install --only-binary=:all: --no-cache-dir -r "$release/auth-requirements.lock"
+install -m 0644 "$source_dir/infra/forum_moderator.py" "$release/forum_moderator.py"
+install -m 0644 "$source_dir/infra/forum-moderator-requirements.lock" "$release/forum-moderator-requirements.lock"
+python3 -m venv "$release/moderator-venv"
+"$release/moderator-venv/bin/python" -m pip install --only-binary=:all: --no-cache-dir -r "$release/forum-moderator-requirements.lock"
 for module in a2a_service a2a_store a2a_admin; do
   install -m 0644 "$source_dir/infra/$module.py" "$release/$module.py"
 done
@@ -105,6 +109,48 @@ UMask=0077
 [Install]
 WantedBy=multi-user.target
 EOF
+# The automatic forum moderator runs only once the owner has placed its private environment
+# (the Anthropic API key) in /etc/ipvx-research/forum-moderator.env; see docs/forum.md.
+cat > /etc/systemd/system/ipvx-forum-moderator.service <<EOF
+[Unit]
+Description=IPvX forum automatic moderator (one pass over pending posts)
+After=network-online.target ipvx-research-auth.service
+Wants=network-online.target
+ConditionPathExists=/etc/ipvx-research/forum-moderator.env
+[Service]
+Type=oneshot
+DynamicUser=yes
+User=ipvx-research-auth
+StateDirectory=ipvx-research-auth
+StateDirectoryMode=0700
+EnvironmentFile=/etc/ipvx-research/forum-moderator.env
+Environment=IPVX_COMMUNITY_STATE_DIR=/var/lib/ipvx-research-auth/community
+ExecStart=$release/moderator-venv/bin/python $release/forum_moderator.py
+TimeoutStartSec=15min
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+CPUQuota=25%
+MemoryMax=256M
+TasksMax=32
+UMask=0077
+EOF
+cat > /etc/systemd/system/ipvx-forum-moderator.timer <<EOF
+[Unit]
+Description=Run the IPvX forum automatic moderator every two minutes
+[Timer]
+OnBootSec=2min
+OnUnitInactiveSec=2min
+[Install]
+WantedBy=timers.target
+EOF
 cat > /etc/systemd/system/ipvx-research.service <<EOF
 [Unit]
 Description=IPvX public research files (no lab API)
@@ -142,6 +188,11 @@ systemctl enable --now ipvx-research-auth.service
 systemctl restart ipvx-research-auth.service
 systemctl enable --now ipvx-research.service
 systemctl restart ipvx-research.service
+if [[ -f /etc/ipvx-research/forum-moderator.env ]]; then
+  systemctl enable --now ipvx-forum-moderator.timer
+else
+  systemctl disable --now ipvx-forum-moderator.timer 2>/dev/null || true
+fi
 for attempt in {1..20}; do
   if curl --fail --silent http://10.10.50.131:8092/healthz | python3 -c 'import json,sys; assert json.load(sys.stdin)["revision"]==sys.argv[1]' "$revision"; then
     if curl --fail --silent -H 'Host: ipvx.org' http://10.10.50.131:8092/auth/session | python3 -c 'import json,sys; j=json.load(sys.stdin); assert j["authenticated"] is False and j["user"] is None'; then

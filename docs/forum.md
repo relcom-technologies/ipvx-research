@@ -1,7 +1,7 @@
 # Participants' forum: ipvx.org/forum
 
-Date: 2026-11-07. Status: **Backend and pages implemented and locally tested; automatic moderator and
-deployment not yet done.** This replaces the Discourse plan of the same date (see "Superseded").
+Date: 2026-11-07. Status: **Backend, pages and automatic moderator implemented and locally tested;
+not deployed, and the automatic moderator is not switched on.** This replaces the Discourse plan of the same date (see "Superseded").
 
 ## Why
 
@@ -64,15 +64,23 @@ rate limit, size and capacity bounds, audit event, blocked accounts refused.
 A participant's post starts **pending** and is visible only to its author and moderators. A
 moderator's or administrator's own post is published at once.
 
-1. **Automatic moderator.** A separate process on the server reads `forum_review_queue()` and records a
-   verdict with `forum_review(post, verdict, reason, reviewer)`, in-process only, never over HTTP:
-   - `publish` — on topic, nothing that breaks the rules;
-   - `hide` — clear violations: sexual content, spam or advertising, abuse, credentials, keys or
-     personal data;
-   - `escalate` — unsure; the post stays pending in the people queue.
+1. **Automatic moderator** (`infra/forum_moderator.py`). A separate process on the server reads
+   `forum_review_queue()` and records a verdict with `forum_review(post, verdict, reason, reviewer)`,
+   in-process only, never over HTTP:
+   - `publish` — harmless: questions, proposals, disagreement, blunt technical criticism, code and
+     logs without secrets;
+   - `hide` — clear violations: sexual content, spam or advertising, phishing, abuse or threats,
+     credentials, keys or another person's private data, attack instructions;
+   - `escalate` — unsure: accusations against a named person, third-party vulnerabilities, legal
+     claims, missing context; the post stays pending in the people queue.
 
-   Each verdict is an audit event naming the model and the reason. It will call Claude through the
-   Anthropic SDK with the API key in the server's private environment, never in Git.
+   A post with a recognisable credential (a private key block, an Anthropic, OpenAI, AWS, GitHub,
+   GitLab, Slack or Google key) is hidden by a local rule (`rules:credentials-v1`) and never sent to
+   the model. Every other post goes to Claude through the Anthropic SDK as JSON data, with fixed rules
+   in the system prompt that tell the model never to follow instructions inside a post, and a JSON
+   schema for the answer. An unusable answer (refusal, truncation, an unknown verdict) becomes
+   `escalate`. Each verdict is an audit event naming the model and prompt version
+   (`claude-opus-5-5:v1`) and a one-sentence reason in Russian for the moderators.
 2. **People.** Moderators see three queues: escalated posts, posts the automatic moderator has not
    reached, and hidden posts. Any verdict can be reversed with a reason. Hiding or publishing a
    thread's opening post does the same to the thread.
@@ -85,13 +93,39 @@ If the automatic moderator is not running, posts wait for people; nothing is pub
 2. **Pages** (done): `forum.html` with categories, threads, a thread page, composer, search, the public name
    and the moderators' queues (`?mod=`), in the portal's own style and i18n (ru/en/de/es); "Форум" in
    the ipvx.org header. `scripts/browser_forum_check.mjs` covers it against a synthetic API.
-3. **Automatic moderator:** the worker, its prompt and rules, a systemd unit and timer, a local test
-   against fixtures. Turning it on in production makes paid API calls and needs the owner's separate
-   permission and key.
+3. **Automatic moderator** (done, not switched on): `infra/forum_moderator.py`, its rules and answer
+   schema, the `ipvx-forum-moderator` service and timer, `scripts/test_forum_moderator.py` against a
+   scripted client. Turning it on makes paid API calls and needs the owner's separate permission and
+   key; see "Running the automatic moderator".
 4. **Links:** "Обсудить" next to RFC sections, experiments, hypotheses, lab gates; a "Форум" link in
    the lab header and the blog footer (Press Settings → Footer).
 5. **Notifications:** an on-site unread count for threads a participant wrote in. Email later, once a
    mail provider is chosen.
+
+## Running the automatic moderator
+
+`infra/install.sh` installs the worker in its own virtual environment
+(`infra/forum-moderator-requirements.lock`), a oneshot `ipvx-forum-moderator.service` that shares
+the community service's dynamic user and state directory, and `ipvx-forum-moderator.timer`, which
+runs it two minutes after boot and two minutes after each run. Both start only when
+`/etc/ipvx-research/forum-moderator.env` exists; without that file the timer is disabled at every
+deploy.
+
+Switching it on is the owner's step, after a separate decision, because every post sent to the model
+is a paid call:
+
+1. Create `/etc/ipvx-research/forum-moderator.env` as root, mode `0600`, with `ANTHROPIC_API_KEY=…`.
+   Optional: `IPVX_FORUM_MODERATOR_MODEL` (default `claude-opus-5-5`; a smaller model costs less) and
+   `IPVX_FORUM_MODERATOR_DAILY_CALLS` (default 300). The key never goes into Git, a report or a chat.
+2. Optionally check the verdicts first without recording them (this still makes paid calls):
+   `systemd-run --wait --pipe -p DynamicUser=yes -p User=ipvx-research-auth -p StateDirectory=ipvx-research-auth -p EnvironmentFile=/etc/ipvx-research/forum-moderator.env -E IPVX_COMMUNITY_STATE_DIR=/var/lib/ipvx-research-auth/community /srv/ipvx-research/current/moderator-venv/bin/python /srv/ipvx-research/current/forum_moderator.py --dry-run`.
+3. `systemctl enable --now ipvx-forum-moderator.timer`, or deploy again.
+
+Each run reviews up to 20 posts, at most `IPVX_FORUM_MODERATOR_DAILY_CALLS` model calls a day
+(counted in `forum-moderator.json` next to the database). When the limit is reached or the API fails,
+the run stops and the remaining posts wait for people; an API failure marks the run as failed in
+`systemctl status`. To switch it off: `systemctl disable --now ipvx-forum-moderator.timer` and remove
+the environment file.
 
 ## Acceptance
 
