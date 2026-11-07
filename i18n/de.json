@@ -3114,5 +3114,9 @@
   "476238b9d8c55d31": "Der Container ist nicht der Prüfstand: Kernel 7.0.14-linuxkit auf aarch64, während ein Lauf x86_64 verlangt. Die Zwischenschicht der Probe umging die Architekturprüfung und nahm fork und vfork aus der Verbotsliste, weil arm64 diese Aufrufe nicht hat; das Verbot dieser beiden wurde daher nicht geprüft.",
   "314fb5115a67cc49": "REHEARSAL_PASS wurde nur erreicht, als ein Wrapper die Fallback-Tunnel dieses Kernels verbarg. Ohne ihn verweigert die Probe, und die Einstellung net.core.fb_tunnels_only_for_init_net=1 stammt aus der Kernel-Dokumentation und wurde nicht geprüft.",
   "481a587d4438cc6a": "Die echten entry und Node sind noch nie auf einen Kernel getroffen: Das geschieht erst im Lauf selbst, daher verspricht eine bestandene Probe keinen bestandenen Lauf. Eine unabhängige Prüfung des Runners gibt es nicht. Auf dem Prüfstand lief die Probe nicht; dafür ist eine gesonderte Genehmigung des Eigentümers nötig.",
-  "365fc176e546e8ca": "Offen bleibt: Jeder Capture läuft unter der UID seines Knotens, git rev-parse wird nach dem Verbrauch der Genehmigung aufgerufen, und 329 festgelegte Dateien liegen außerhalb der Pfade, die die Runner-CI auslösen."
+  "365fc176e546e8ca": "Offen bleibt: Jeder Capture läuft unter der UID seines Knotens, git rev-parse wird nach dem Verbrauch der Genehmigung aufgerufen, und 329 festgelegte Dateien liegen außerhalb der Pfade, die die Runner-CI auslösen.",
+  "29f1ed6acba6e50e": "Labor ↗",
+  "a89c15b03fa6a0a6": "Versuch mit fünf Maschinen →",
+  "3d65b35ade39ad6e": "Live-Stand ↗",
+  "8df944631f86c457": "Wie es gedacht ist →"
 }

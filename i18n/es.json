@@ -3114,5 +3114,9 @@
   "476238b9d8c55d31": "El contenedor no es el banco: kernel 7.0.14-linuxkit en aarch64, mientras que una ejecución requiere x86_64. La capa de la prueba eludió la comprobación de arquitectura y quitó fork y vfork de la lista de denegación, porque arm64 no tiene esas llamadas, así que no se comprobó su denegación.",
   "314fb5115a67cc49": "REHEARSAL_PASS se obtuvo solo con los túneles de reserva de este kernel ocultos por un envoltorio. Sin él, el ensayo se niega, y el ajuste net.core.fb_tunnels_only_for_init_net=1 procede de la documentación del kernel y no se comprobó.",
   "481a587d4438cc6a": "Los entry y Node reales aún no se han encontrado con un kernel: eso solo ocurre en la propia ejecución, así que aprobar el ensayo no promete aprobar la ejecución. No hay revisión independiente del runner. El ensayo no se ejecutó en el banco; para ello hace falta un permiso aparte del propietario.",
-  "365fc176e546e8ca": "Queda abierto: cada captura se ejecuta con el UID de su nodo, git rev-parse se llama después de gastar el permiso y 329 archivos fijados están fuera de las rutas que activan la CI del runner."
+  "365fc176e546e8ca": "Queda abierto: cada captura se ejecuta con el UID de su nodo, git rev-parse se llama después de gastar el permiso y 329 archivos fijados están fuera de las rutas que activan la CI del runner.",
+  "29f1ed6acba6e50e": "Laboratorio ↗",
+  "a89c15b03fa6a0a6": "Experimento con cinco máquinas →",
+  "3d65b35ade39ad6e": "Banco en vivo ↗",
+  "8df944631f86c457": "Cómo está pensado →"
 }

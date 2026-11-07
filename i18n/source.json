@@ -82,6 +82,11 @@
       "context": "account.html:text:header/div/a"
     },
     {
+      "id": "29f1ed6acba6e50e",
+      "source": "Лаборатория ↗",
+      "context": "account.html:text:header/div/a"
+    },
+    {
       "id": "041ebc7928fb7759",
       "source": "GitHub ↗",
       "context": "account.html:text:header/div/a"
@@ -1737,6 +1742,16 @@
       "context": "index.html:text:ol/li/span"
     },
     {
+      "id": "a89c15b03fa6a0a6",
+      "source": "Опыт на пяти машинах →",
+      "context": "index.html:text:li/p/a"
+    },
+    {
+      "id": "3d65b35ade39ad6e",
+      "source": "Стенд вживую ↗",
+      "context": "index.html:text:li/p/a"
+    },
+    {
       "id": "21139d8c8298e8f6",
       "source": "Имена без иерархии DNS",
       "context": "index.html:text:ol/li/h3"
@@ -1750,6 +1765,11 @@
       "id": "c6cc849619579234",
       "source": "Не начато",
       "context": "index.html:text:ol/li/span"
+    },
+    {
+      "id": "8df944631f86c457",
+      "source": "Как это задумано →",
+      "context": "index.html:text:li/p/a"
     },
     {
       "id": "bf8a6387ef62d48f",
