@@ -25,7 +25,7 @@ async function open(width,{signedIn=false,roles=[],path='forum.html'}={}){
    if(path==='/session')return reply(route,200,{authenticated:signedIn,author:signedIn?member:null,roles:signedIn?['participant',...roles]:[],access:signedIn?'active':'anonymous',capabilities:[]});
    if(path==='/forum/profile')return signedIn?reply(route,200,{author:member,pendingPosts:0,publishesDirectly:roles.length>0}):reply(route,401,{error:'sign_in_required'});
    if(path==='/forum/categories')return reply(route,200,{categories:['bcp','blog','rfc','experiments','architecture','questions','meta'].map((id,i)=>({id,threads:i?0:1,lastActivityAt:i?null:stamp}))});
-   if(/^\/forum\/(categories\/bcp|subjects\/h5)\/threads$/.test(path))return reply(route,200,{threads:state.threads,nextBefore:null});
+   if(/^\/forum\/(categories\/bcp|subjects\/(h5|rfc-0005\.s3))\/threads$/.test(path))return reply(route,200,{threads:state.threads,nextBefore:null});
    if(path==='/forum/threads/1')return reply(route,200,{thread:state.threads[0],posts:state.posts,nextAfter:null});
    if(path==='/forum/search')return reply(route,200,{results:[{post:1,thread:1,title:state.threads[0].title,excerpt:'…Opening text…'}]});
    if(path==='/forum/moderation')return roles.length?reply(route,200,{queue:url.searchParams.get('queue'),posts:[{...state.posts[0],id:3,status:'pending',review:{queue:'people',note:'Unsure '+hostile},threadTitle:'Queued '+hostile,category:'bcp',opening:false}],nextBefore:null}):reply(route,403,{error:'role_required'});
@@ -114,6 +114,20 @@ for(const width of [1440,768,390]){
  const participant=await open(1440,{signedIn:true,path:'forum.html?mod=people'});
  if(!(await participant.page.locator('.forum-status.forum-error').count()))throw Error('participant reached moderation');
  await participant.page.close();checks.push(['moderator',390]);
+}
+{
+ // A project object's discussions: readable label, a link back in the same edition, category suggested.
+ const {page,errors}=await open(390,{signedIn:true,path:'forum.html?s=rfc-0005.s3'});
+ if(!(await page.locator('.forum-view h2').first().textContent()).includes('RFC-0005, раздел 3'))throw Error('subject label missing');
+ if(await page.locator('.forum-lead a[href="rfc-0005.html#s3"]').count()!==1)throw Error('link back to the RFC section missing');
+ if(await page.locator('.forum-compose select[name=category]').inputValue()!=='rfc')throw Error('category not suggested');
+ await noOverflow(page,'subject 390');
+ await page.screenshot({path:`${out}/forum-subject-390.png`,fullPage:true});
+ if(errors.length)throw Error('page errors: '+errors.join('; '));
+ await page.close();
+ const english=await open(768,{path:'forum.en.html?s=rfc-0005.s3'});
+ if(await english.page.locator('.forum-lead a[href="rfc-0005.en.html#s3"]').count()!==1)throw Error('link back leaves the English edition');
+ await english.page.close();checks.push(['subject',390]);
 }
 for(const [language,word] of [['en','Categories'],['de','Kategorien'],['es','Categorías']]){
  const {page,errors}=await open(768,{path:`forum.${language}.html`});

@@ -907,6 +907,21 @@
       "context": "bcp.html:text:html/head/title"
     },
     {
+      "id": "bd34b0468417b427",
+      "source": "Вопросы и идеи по BCP",
+      "context": "bcp.html:text:main/section/h2"
+    },
+    {
+      "id": "46907f54d1fda182",
+      "source": "Обсуждение BCP идёт на форуме участников; предложения изменить документ — через RFC и GitHub.",
+      "context": "bcp.html:text:main/section/p"
+    },
+    {
+      "id": "8be6c644470af0a1",
+      "source": "Открыть раздел BCP на форуме",
+      "context": "bcp.html:text:main/section/a"
+    },
+    {
       "id": "da6bf6140b94679f",
       "source": "Блог исследований · IPvX Research",
       "context": "blog.html:text:html/head/title"
@@ -1032,13 +1047,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "0ead08acf58eda3c",
-      "source": "200 событий по HX-0200; авторы, основания, проверки и ограничения.",
+      "id": "9d0705c89d824942",
+      "source": "201 событий по HX-0201; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "1b51c0f49c522c47",
-      "source": "401.2 КиБ · 12 файлов",
+      "id": "b693406dcc816222",
+      "source": "403.2 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -1135,6 +1150,11 @@
       "id": "458f81e15ef4c349",
       "source": "Две локальные модели",
       "context": "experiments.html:text:section/div/h2"
+    },
+    {
+      "id": "ea20e013d7118f5c",
+      "source": "Обсудить опыт на форуме",
+      "context": "experiments.html:text:div/p/a"
     },
     {
       "id": "82a2dd54d6241606",
@@ -1405,6 +1425,11 @@
       "id": "ea081f8eae3837de",
       "source": "36 свежих измеренных вызовов и 12 исключённых прогревов, две ВМ.",
       "context": "experiments.html:text:section/details/p"
+    },
+    {
+      "id": "09964feb743457dc",
+      "source": "Обсудить гипотезу",
+      "context": "experiments.html:text:details/p/a"
     },
     {
       "id": "bb29d286642c8db9",
@@ -3017,6 +3042,11 @@
       "context": "rfc-0001.html:text:main/div/a"
     },
     {
+      "id": "8e56fb0e74b88343",
+      "source": "Обсудить на форуме",
+      "context": "rfc-0001.html:text:main/div/a"
+    },
+    {
       "id": "290773056a2d437c",
       "source": "Исходный текст",
       "context": "rfc-0001.html:text:main/div/a"
@@ -3029,7 +3059,12 @@
     {
       "id": "a1c5ae7bcb34bbf4",
       "source": "Problem",
-      "context": "rfc-0001.html:text:main/article/h2"
+      "context": "rfc-0001.html:text:article/div/h2"
+    },
+    {
+      "id": "06b60adcb8aac039",
+      "source": "Обсудить раздел",
+      "context": "rfc-0001.html:text:article/div/a"
     },
     {
       "id": "f60ebc0739d59c57",
@@ -3039,7 +3074,7 @@
     {
       "id": "1d65a86fa9aa8de9",
       "source": "Proposed mechanism",
-      "context": "rfc-0001.html:text:main/article/h2"
+      "context": "rfc-0001.html:text:article/div/h2"
     },
     {
       "id": "1e2eaf0fe4c9ddfd",
@@ -3054,7 +3089,7 @@
     {
       "id": "3e8b5f6af88facd9",
       "source": "Implemented evidence",
-      "context": "rfc-0001.html:text:main/article/h2"
+      "context": "rfc-0001.html:text:article/div/h2"
     },
     {
       "id": "99fad3ee591b8152",
@@ -3064,7 +3099,7 @@
     {
       "id": "36afca802c4d6f01",
       "source": "Unresolved",
-      "context": "rfc-0001.html:text:main/article/h2"
+      "context": "rfc-0001.html:text:article/div/h2"
     },
     {
       "id": "a3ffe886456f6e01",
@@ -3074,7 +3109,7 @@
     {
       "id": "dca4e76905a85b98",
       "source": "Review criteria",
-      "context": "rfc-0001.html:text:main/article/h2"
+      "context": "rfc-0001.html:text:article/div/h2"
     },
     {
       "id": "b06e165cbe080965",
@@ -3249,7 +3284,7 @@
     {
       "id": "c091fe341bc11d05",
       "source": "Implemented baseline",
-      "context": "rfc-0002.html:text:main/article/h2"
+      "context": "rfc-0002.html:text:article/div/h2"
     },
     {
       "id": "7c0bf80552f52d93",
@@ -3264,7 +3299,7 @@
     {
       "id": "3eddb250adebadee",
       "source": "What has not been established",
-      "context": "rfc-0002.html:text:main/article/h2"
+      "context": "rfc-0002.html:text:article/div/h2"
     },
     {
       "id": "89b4671d0c6a847c",
@@ -3274,7 +3309,7 @@
     {
       "id": "0ed6bde62dd69a4c",
       "source": "Proposed next research",
-      "context": "rfc-0002.html:text:main/article/h2"
+      "context": "rfc-0002.html:text:article/div/h2"
     },
     {
       "id": "7df33cd3da39e080",
@@ -3284,7 +3319,7 @@
     {
       "id": "b31c97d175cef635",
       "source": "Acceptance evidence",
-      "context": "rfc-0002.html:text:main/article/h2"
+      "context": "rfc-0002.html:text:article/div/h2"
     },
     {
       "id": "851c2b15d0c27cd3",
@@ -3309,7 +3344,7 @@
     {
       "id": "73e0212c50860396",
       "source": "Participation",
-      "context": "rfc-0003.html:text:main/article/h2"
+      "context": "rfc-0003.html:text:article/div/h2"
     },
     {
       "id": "2bee251a33572969",
@@ -3319,7 +3354,7 @@
     {
       "id": "c215203c060fb8f6",
       "source": "Electorate and threshold",
-      "context": "rfc-0003.html:text:main/article/h2"
+      "context": "rfc-0003.html:text:article/div/h2"
     },
     {
       "id": "fef3114c0e8a504e",
@@ -3334,7 +3369,7 @@
     {
       "id": "cd8e974be23868e1",
       "source": "Votes",
-      "context": "rfc-0003.html:text:main/article/h2"
+      "context": "rfc-0003.html:text:article/div/h2"
     },
     {
       "id": "68fd497f68d10cde",
@@ -3344,7 +3379,7 @@
     {
       "id": "ea520f3f103c4b80",
       "source": "Separate gates",
-      "context": "rfc-0003.html:text:main/article/h2"
+      "context": "rfc-0003.html:text:article/div/h2"
     },
     {
       "id": "e99311a2e9332ced",
@@ -3354,7 +3389,7 @@
     {
       "id": "a1040eb31c4c9266",
       "source": "Open governance questions",
-      "context": "rfc-0003.html:text:main/article/h2"
+      "context": "rfc-0003.html:text:article/div/h2"
     },
     {
       "id": "004fb8427b4f47cc",
@@ -3374,7 +3409,7 @@
     {
       "id": "781e69e47300f86d",
       "source": "Separate questions",
-      "context": "rfc-0004.html:text:main/article/h2"
+      "context": "rfc-0004.html:text:article/div/h2"
     },
     {
       "id": "e86cce4958f70f31",
@@ -3384,7 +3419,7 @@
     {
       "id": "91fda6bcb4b33898",
       "source": "Matched comparison",
-      "context": "rfc-0004.html:text:main/article/h2"
+      "context": "rfc-0004.html:text:article/div/h2"
     },
     {
       "id": "72426f432e0537b4",
@@ -3394,7 +3429,7 @@
     {
       "id": "a27f5a35ff69c5be",
       "source": "Collaborative task",
-      "context": "rfc-0004.html:text:main/article/h2"
+      "context": "rfc-0004.html:text:article/div/h2"
     },
     {
       "id": "e185a05fe788237f",
@@ -3404,7 +3439,7 @@
     {
       "id": "b6ce788d9786917c",
       "source": "Report",
-      "context": "rfc-0004.html:text:main/article/h2"
+      "context": "rfc-0004.html:text:article/div/h2"
     },
     {
       "id": "7b241b4ccc49f9d0",
@@ -3414,7 +3449,7 @@
     {
       "id": "94957ab2f498b1f4",
       "source": "Current local model boundary",
-      "context": "rfc-0004.html:text:main/article/h2"
+      "context": "rfc-0004.html:text:article/div/h2"
     },
     {
       "id": "b1ff795a44d191b6",
@@ -3454,7 +3489,7 @@
     {
       "id": "366b7644221557dc",
       "source": "1. Question and recommendation",
-      "context": "rfc-0005.html:text:main/article/h2"
+      "context": "rfc-0005.html:text:article/div/h2"
     },
     {
       "id": "22b5707c155bd17e",
@@ -3514,7 +3549,7 @@
     {
       "id": "fdb899f7a428cb51",
       "source": "2. Implemented baseline and boundary",
-      "context": "rfc-0005.html:text:main/article/h2"
+      "context": "rfc-0005.html:text:article/div/h2"
     },
     {
       "id": "00db4ba68136c62e",
@@ -3544,7 +3579,7 @@
     {
       "id": "cd3579d54330a6a8",
       "source": "3. Four claims that must remain distinct",
-      "context": "rfc-0005.html:text:main/article/h2"
+      "context": "rfc-0005.html:text:article/div/h2"
     },
     {
       "id": "fe70a11b89f36291",
@@ -3594,7 +3629,7 @@
     {
       "id": "d6188603ebd994f3",
       "source": "4. Proposed operation",
-      "context": "rfc-0005.html:text:main/article/h2"
+      "context": "rfc-0005.html:text:article/div/h2"
     },
     {
       "id": "935279aa43152866",
@@ -3714,7 +3749,7 @@
     {
       "id": "715a0b51346534f7",
       "source": "5. Relationship to earlier IPvX ideas and existing protocols",
-      "context": "rfc-0005.html:text:main/article/h2"
+      "context": "rfc-0005.html:text:article/div/h2"
     },
     {
       "id": "a1cd235562cffaef",
@@ -3779,7 +3814,7 @@
     {
       "id": "621f59fef03b6e70",
       "source": "6. Experiment and decision criteria",
-      "context": "rfc-0005.html:text:main/article/h2"
+      "context": "rfc-0005.html:text:article/div/h2"
     },
     {
       "id": "41e6988cb46d5220",
@@ -3829,7 +3864,7 @@
     {
       "id": "e2f304656cf548b4",
       "source": "7. Agent usefulness and open questions",
-      "context": "rfc-0005.html:text:main/article/h2"
+      "context": "rfc-0005.html:text:article/div/h2"
     },
     {
       "id": "546b79f56a35f0c9",
@@ -4034,7 +4069,7 @@
     {
       "id": "1bc149f70eccd41c",
       "source": "1. Three evidence levels",
-      "context": "rfc-0006.html:text:main/article/h2"
+      "context": "rfc-0006.html:text:article/div/h2"
     },
     {
       "id": "252f804cb398f5fd",
@@ -4079,7 +4114,7 @@
     {
       "id": "a27e23bd32fe48af",
       "source": "2. Reuse the physical network, replace the network protocol",
-      "context": "rfc-0006.html:text:main/article/h2"
+      "context": "rfc-0006.html:text:article/div/h2"
     },
     {
       "id": "686af15f2149a35e",
@@ -4114,7 +4149,7 @@
     {
       "id": "e13544efae4e7e1b",
       "source": "3. Strict node OS profile",
-      "context": "rfc-0006.html:text:main/article/h2"
+      "context": "rfc-0006.html:text:article/div/h2"
     },
     {
       "id": "b431fb36c5d95035",
@@ -4189,7 +4224,7 @@
     {
       "id": "6ca41cdf1f4cce4d",
       "source": "4. Boot and identity creation",
-      "context": "rfc-0006.html:text:main/article/h2"
+      "context": "rfc-0006.html:text:article/div/h2"
     },
     {
       "id": "d626a092bed29731",
@@ -4234,7 +4269,7 @@
     {
       "id": "4ef2f21077f01b87",
       "source": "5. Native neighbor discovery and admission",
-      "context": "rfc-0006.html:text:main/article/h2"
+      "context": "rfc-0006.html:text:article/div/h2"
     },
     {
       "id": "8e0a74f231df3def",
@@ -4279,7 +4314,7 @@
     {
       "id": "b685ca10187d9a8a",
       "source": "6. Forwarding and transport responsibilities",
-      "context": "rfc-0006.html:text:main/article/h2"
+      "context": "rfc-0006.html:text:article/div/h2"
     },
     {
       "id": "1a295f2caaa08621",
@@ -4304,7 +4339,7 @@
     {
       "id": "36e749810e2dc1a9",
       "source": "7. Two prototype tracks that must not be confused",
-      "context": "rfc-0006.html:text:main/article/h2"
+      "context": "rfc-0006.html:text:article/div/h2"
     },
     {
       "id": "8bb672829f983eba",
@@ -4354,7 +4389,7 @@
     {
       "id": "610a9eeb1db204e0",
       "source": "8. Virtual wires and physical prototype",
-      "context": "rfc-0006.html:text:main/article/h2"
+      "context": "rfc-0006.html:text:article/div/h2"
     },
     {
       "id": "0c31b10f46923ced",
@@ -4394,7 +4429,7 @@
     {
       "id": "0300651ab4f71297",
       "source": "9. Public research, private operations and discussion",
-      "context": "rfc-0006.html:text:main/article/h2"
+      "context": "rfc-0006.html:text:article/div/h2"
     },
     {
       "id": "7e7362d500616624",
@@ -4419,7 +4454,7 @@
     {
       "id": "df4c97a58e022f35",
       "source": "10. Proof gates and rejection rules",
-      "context": "rfc-0006.html:text:main/article/h2"
+      "context": "rfc-0006.html:text:article/div/h2"
     },
     {
       "id": "427de92a3965e778",
@@ -4524,7 +4559,7 @@
     {
       "id": "417c10c03a09efea",
       "source": "11. Measured appendix — first strict guests, 2026-10-27",
-      "context": "rfc-0006.html:text:main/article/h2"
+      "context": "rfc-0006.html:text:article/div/h2"
     },
     {
       "id": "84218927bfa5c00c",
@@ -4594,7 +4629,7 @@
     {
       "id": "7d175ddb5269160c",
       "source": "Measured readiness appendix — 2026-10-27",
-      "context": "rfc-0006.html:text:main/article/h2"
+      "context": "rfc-0006.html:text:article/div/h2"
     },
     {
       "id": "219f775dc1ac1691",
@@ -4634,7 +4669,7 @@
     {
       "id": "a08b88d72762901e",
       "source": "1. Purpose and authorities",
-      "context": "rfc-0007.html:text:main/article/h2"
+      "context": "rfc-0007.html:text:article/div/h2"
     },
     {
       "id": "5cb4123a7a88ad53",
@@ -4649,7 +4684,7 @@
     {
       "id": "6259219bf4f90d81",
       "source": "2. Public and private material",
-      "context": "rfc-0007.html:text:main/article/h2"
+      "context": "rfc-0007.html:text:article/div/h2"
     },
     {
       "id": "68e957138d953d1e",
@@ -4659,7 +4694,7 @@
     {
       "id": "3f196a729ce5dd4d",
       "source": "3. Roles and bootstrap",
-      "context": "rfc-0007.html:text:main/article/h2"
+      "context": "rfc-0007.html:text:article/div/h2"
     },
     {
       "id": "799a733b001d7532",
@@ -4674,7 +4709,7 @@
     {
       "id": "5c18d055ee9a355a",
       "source": "4. Discussion and feedback",
-      "context": "rfc-0007.html:text:main/article/h2"
+      "context": "rfc-0007.html:text:article/div/h2"
     },
     {
       "id": "24da4f9f122a33c7",
@@ -4694,7 +4729,7 @@
     {
       "id": "f27c64db364e822b",
       "source": "5. Binding decisions and approved PR gate",
-      "context": "rfc-0007.html:text:main/article/h2"
+      "context": "rfc-0007.html:text:article/div/h2"
     },
     {
       "id": "c4c9d9efff5f96fe",
@@ -4714,7 +4749,7 @@
     {
       "id": "0254d86964aac6f2",
       "source": "6. Prototype and acceptance",
-      "context": "rfc-0007.html:text:main/article/h2"
+      "context": "rfc-0007.html:text:article/div/h2"
     },
     {
       "id": "3244b8ff7d94dde4",
@@ -4749,7 +4784,7 @@
     {
       "id": "5c180c6fc9841438",
       "source": "7. Decision sought",
-      "context": "rfc-0007.html:text:main/article/h2"
+      "context": "rfc-0007.html:text:article/div/h2"
     },
     {
       "id": "7a9891cb60357de5",
@@ -4912,14 +4947,89 @@
       "context": "history.html:text:main/section/p"
     },
     {
-      "id": "ab92ef1d3172f157",
-      "source": "HX-0200 · Форум участников встроен в ipvx.org вместо Discourse",
+      "id": "84e076351e37cbef",
+      "source": "HX-0201 · Ссылки «Обсудить» ведут с RFC, гипотез и опытов на форум",
       "context": "history.html:text:section/details/summary"
     },
     {
       "id": "e078c61c3e49f21a",
       "source": "Реализовано",
       "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "56c5d30542b5214e",
+      "source": "Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд) · 2026-11-07T22:45:00+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "3a9c55cba83f0660",
+      "source": "Каждая страница RFC получила ссылку на обсуждение документа на форуме, а каждый её раздел — свою ссылку «Обсудить раздел». У гипотез LLM1–LLM8 и у четырёх опытов на странице экспериментов есть ссылка на их обсуждение, на странице BCP — на раздел BCP форума. Страница обсуждений объекта на форуме показывает понятное название вместо служебного кода, ведёт обратно на объект в той же языковой версии и заранее выбирает подходящую категорию для новой темы. В шапку лаборатории lab.ipvx.org добавляется ссылка «Форум» отдельным изменением в ipvx-agent-lab.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "76e5ccf934f4f705",
+      "source": "Форум полезен, только если до него можно дойти от того, что обсуждают. Ссылка на объект проекта связывает тему с конкретным документом или опытом и собирает обсуждения одного объекта на одной странице; формальные комментарии и предложения к RFC по-прежнему идут прежним путём.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "9eff48ba802739a9",
+      "source": "scripts/build_portal.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "0a33cac58507d81e",
+      "source": "assets/forum.js",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "353fb9d18ab42886",
+      "source": "scripts/browser_forum_check.mjs",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "34091d07ef8c6ebd",
+      "source": "docs/forum.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "37dff4429140a908",
+      "source": "Изменение собрано поверх ещё не слитого PR78 и не выкачено.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "1754a1a83ab6c2ae",
+      "source": "Номера разделов RFC берутся из порядка заголовков: если раздел вставят в середину документа, старые темы будут указывать на соседний раздел.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "d960329ccc1ed2e6",
+      "source": "Ссылки у ворот лаборатории и в подвале блога ещё не добавлены.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "eef48afb7e7c7a81",
+      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "ab92ef1d3172f157",
+      "source": "HX-0200 · Форум участников встроен в ipvx.org вместо Discourse",
+      "context": "history.html:text:section/details/summary"
     },
     {
       "id": "ff62925754f60ea6",
@@ -4932,33 +5042,13 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "ac0cc73083ac447a",
       "source": "Собственный форум использует уже работающие вход Relcom ID, роли, аудит и защиту от повторной отправки, не требует второго домена, аккаунта и чужого скрипта и выглядит как остальной сайт. Взамен проект отказывается от готовой защиты от спама, писем-дайджестов и чата Discourse. Модерация с ИИ ускоряет публикацию, но каждое её решение записывается и обратимо, а без работающего модератора посты ждут людей.",
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
-      "id": "34091d07ef8c6ebd",
-      "source": "docs/forum.md",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
       "id": "d070ea66ee2814ab",
       "source": "infra/community.py",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "0a33cac58507d81e",
-      "source": "assets/forum.js",
       "context": "history.html:text:ul/li/a"
     },
     {
@@ -4977,16 +5067,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "353fb9d18ab42886",
-      "source": "scripts/browser_forum_check.mjs",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "a0ec2c130a04e2cb",
       "source": "Автоматический модератор не включён: он проверен тестами с подставным клиентом и настоящим SDK против локального сервера, без вызовов Claude API. Включение платное и требует ключа и отдельного разрешения владельца.",
       "context": "history.html:text:details/ul/li"
@@ -5000,11 +5080,6 @@
       "id": "a0e691056bcbd0d0",
       "source": "Уведомлений и писем нет. ВМ, маршрут, DNS-запись и приложение Relcom ID от Discourse ещё не убраны.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "eef48afb7e7c7a81",
-      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "1297baf5a745cb69",
@@ -6729,11 +6804,6 @@
     {
       "id": "0bdff0963ffc343f",
       "source": "scripts/test_history_sources.py",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "9eff48ba802739a9",
-      "source": "scripts/build_portal.py",
       "context": "history.html:text:ul/li/a"
     },
     {
@@ -14732,244 +14802,269 @@
       "context": "assets/forum.js:2767"
     },
     {
+      "id": "46df2f48a251b2e0",
+      "source": ", раздел",
+      "context": "assets/forum.js:5788"
+    },
+    {
+      "id": "17a2bbc2d51be3f1",
+      "source": "Гипотеза LLM",
+      "context": "assets/forum.js:5957"
+    },
+    {
+      "id": "96eededdb91fd590",
+      "source": "Опыт:",
+      "context": "assets/forum.js:6147"
+    },
+    {
+      "id": "5c6f86a2718671e4",
+      "source": "Лаборатория:",
+      "context": "assets/forum.js:6314"
+    },
+    {
       "id": "a393e127129273aa",
       "source": "Пишите простым текстом. Не публикуйте пароли, ключи и личные данные.",
-      "context": "assets/forum.js:6219"
+      "context": "assets/forum.js:7329"
     },
     {
       "id": "899dce11fb2c0f4c",
       "source": "Отправляем…",
-      "context": "assets/forum.js:6633"
+      "context": "assets/forum.js:7743"
     },
     {
       "id": "3186280aca4f0fbb",
       "source": "Опубликовано.",
-      "context": "assets/forum.js:6969"
+      "context": "assets/forum.js:8079"
     },
     {
       "id": "262220cee2a67c07",
       "source": "Отправлено. Сообщение появится после проверки; пока его видите только вы.",
-      "context": "assets/forum.js:6985"
+      "context": "assets/forum.js:8095"
     },
     {
       "id": "26c80474c7221e11",
       "source": "Новая тема",
-      "context": "assets/forum.js:7177"
+      "context": "assets/forum.js:8297"
     },
     {
       "id": "98562f8141d841a3",
       "source": "Войдите через Relcom ID",
-      "context": "assets/forum.js:7254"
+      "context": "assets/forum.js:8374"
     },
     {
       "id": "0857a51b6c33e1d1",
       "source": ", чтобы начать тему.",
-      "context": "assets/forum.js:7305"
+      "context": "assets/forum.js:8425"
     },
     {
       "id": "41f780fdee89f896",
       "source": "Категория",
-      "context": "assets/forum.js:7426"
+      "context": "assets/forum.js:8546"
     },
     {
       "id": "2ffeafbca981d162",
       "source": "Опубликовать тему",
-      "context": "assets/forum.js:7694"
+      "context": "assets/forum.js:8830"
     },
     {
       "id": "7b9de65d16725ec8",
       "source": "ответ",
-      "context": "assets/forum.js:8590"
+      "context": "assets/forum.js:9726"
     },
     {
       "id": "2878e68255e5e1ef",
       "source": "ответов",
-      "context": "assets/forum.js:8598"
+      "context": "assets/forum.js:9734"
     },
     {
       "id": "d70e2991341717b0",
       "source": "Закрыта",
-      "context": "assets/forum.js:8787"
+      "context": "assets/forum.js:9923"
     },
     {
       "id": "e86a9f261bb63858",
       "source": "Тем пока нет. Начните первую.",
-      "context": "assets/forum.js:9237"
+      "context": "assets/forum.js:10373"
     },
     {
       "id": "05f6c615a3518d94",
       "source": "Категории",
-      "context": "assets/forum.js:9442"
+      "context": "assets/forum.js:10578"
     },
     {
       "id": "672e9a1bbbeb0541",
       "source": "Тем:",
-      "context": "assets/forum.js:9844"
+      "context": "assets/forum.js:10980"
     },
     {
       "id": "bfc2b5508cf371f3",
       "source": "· последнее:",
-      "context": "assets/forum.js:9865"
+      "context": "assets/forum.js:11001"
     },
     {
       "id": "a45b6dce57013d75",
       "source": "Тем пока нет",
-      "context": "assets/forum.js:9908"
+      "context": "assets/forum.js:11044"
     },
     {
       "id": "eac88378e03b0899",
       "source": "Обсуждения:",
-      "context": "assets/forum.js:10855"
+      "context": "assets/forum.js:12073"
+    },
+    {
+      "id": "57fb0f05a811ee82",
+      "source": "Открыть на сайте",
+      "context": "assets/forum.js:12173"
     },
     {
       "id": "fcc8e9eb339f6170",
       "source": "в ответ на #",
-      "context": "assets/forum.js:11567"
+      "context": "assets/forum.js:12949"
     },
     {
       "id": "b9af23eeff5da84a",
       "source": "Ответить",
-      "context": "assets/forum.js:11946"
+      "context": "assets/forum.js:13328"
     },
     {
       "id": "a5483ea07f882437",
       "source": "Модерация",
-      "context": "assets/forum.js:12311"
+      "context": "assets/forum.js:13693"
     },
     {
       "id": "eb604b03dfbc9dcc",
       "source": "Отметка проверки:",
-      "context": "assets/forum.js:12369"
+      "context": "assets/forum.js:13751"
     },
     {
       "id": "aee7bfdd238185e0",
       "source": "Скрыто.",
-      "context": "assets/forum.js:12775"
+      "context": "assets/forum.js:14157"
     },
     {
-      "id": "59a7550ec72ea352",
-      "source": "Объект:",
-      "context": "assets/forum.js:13375"
+      "id": "6342c9187e01caa4",
+      "source": "Обсуждается:",
+      "context": "assets/forum.js:14757"
     },
     {
       "id": "43179c6963573b93",
       "source": "Тема закрыта: новые ответы может оставить только модератор.",
-      "context": "assets/forum.js:13523"
+      "context": "assets/forum.js:14923"
     },
     {
       "id": "423ce129e1e2b464",
       "source": "Показать ещё ответы",
-      "context": "assets/forum.js:13669"
+      "context": "assets/forum.js:15069"
     },
     {
       "id": "feb89900a501d52a",
       "source": "Ответ на #",
-      "context": "assets/forum.js:13949"
+      "context": "assets/forum.js:15349"
     },
     {
       "id": "95837f0d814001fd",
       "source": "Открыть тему",
-      "context": "assets/forum.js:14539"
+      "context": "assets/forum.js:15939"
     },
     {
       "id": "737f9620e6176156",
       "source": "Закрыть тему",
-      "context": "assets/forum.js:14554"
+      "context": "assets/forum.js:15954"
     },
     {
       "id": "a7a4033657e89fc9",
       "source": "Закрыть",
-      "context": "assets/forum.js:14671"
+      "context": "assets/forum.js:16071"
     },
     {
       "id": "8269124505a107ee",
       "source": "Готово. Обновите страницу.",
-      "context": "assets/forum.js:14833"
+      "context": "assets/forum.js:16233"
     },
     {
       "id": "363f81e7f3bd7ed4",
       "source": ", чтобы ответить.",
-      "context": "assets/forum.js:15090"
+      "context": "assets/forum.js:16490"
     },
     {
       "id": "b7717c6c8eb0310b",
       "source": "Тема закрыта.",
-      "context": "assets/forum.js:15184"
+      "context": "assets/forum.js:16584"
     },
     {
       "id": "102eefe4f6c95575",
       "source": "Ответы откроются, когда тему опубликуют.",
-      "context": "assets/forum.js:15273"
+      "context": "assets/forum.js:16673"
     },
     {
       "id": "ceb68a9287da00d8",
       "source": "Отправить",
-      "context": "assets/forum.js:15433"
+      "context": "assets/forum.js:16833"
     },
     {
       "id": "180f58ab975323f9",
       "source": "Поиск",
-      "context": "assets/forum.js:15869"
+      "context": "assets/forum.js:17269"
     },
     {
       "id": "798ff068cd437db1",
       "source": "Поиск:",
-      "context": "assets/forum.js:15887"
+      "context": "assets/forum.js:17287"
     },
     {
       "id": "6bd686a245261e16",
       "source": "Ничего не найдено.",
-      "context": "assets/forum.js:16388"
+      "context": "assets/forum.js:17788"
     },
     {
       "id": "b1ff8198038c3e25",
       "source": "Модерация форума",
-      "context": "assets/forum.js:16661"
+      "context": "assets/forum.js:18061"
     },
     {
       "id": "c3dcb5467b98cdbd",
       "source": "начало темы",
-      "context": "assets/forum.js:17220"
+      "context": "assets/forum.js:18620"
     },
     {
       "id": "73561e0a5bf2597b",
       "source": "Как вас показывать",
-      "context": "assets/forum.js:17555"
+      "context": "assets/forum.js:18955"
     },
     {
       "id": "2aa98ec188e2526b",
       "source": "Сейчас:",
-      "context": "assets/forum.js:17654"
+      "context": "assets/forum.js:19054"
     },
     {
       "id": "06aac3b5dc5f79ab",
       "source": "Сейчас вы показаны псевдонимом «",
-      "context": "assets/forum.js:17679"
+      "context": "assets/forum.js:19079"
     },
     {
       "id": "5b6563c66c6fdc02",
       "source": "». Имя и почта из Relcom ID на форуме не видны.",
-      "context": "assets/forum.js:17730"
+      "context": "assets/forum.js:19130"
     },
     {
       "id": "4a11b55556c77ba2",
       "source": "Публичное имя",
-      "context": "assets/forum.js:17821"
+      "context": "assets/forum.js:19221"
     },
     {
       "id": "59322ea5e71f4d6d",
       "source": "Сохранить имя",
-      "context": "assets/forum.js:17884"
+      "context": "assets/forum.js:19284"
     },
     {
       "id": "440a79c335cd171c",
       "source": "Поиск по форуму",
-      "context": "assets/forum.js:18205"
+      "context": "assets/forum.js:19605"
     },
     {
       "id": "b37952ae01b23375",
       "source": "Загружаем форум…",
-      "context": "assets/forum.js:18987"
+      "context": "assets/forum.js:20387"
     },
     {
       "id": "dd1b88ab67f4b98a",
