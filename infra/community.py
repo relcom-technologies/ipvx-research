@@ -30,6 +30,14 @@ MAX_VOTES = 200000
 PAGE_BYTES = 98304  # Leave room below the existing 128 KiB public proxy bound.
 RATE_SECONDS = 600
 RATE_WRITES = 30
+# Forum: fixed categories, so a route allowlist can name every one of them.
+FORUM_CATEGORIES = ('bcp', 'blog', 'rfc', 'experiments', 'architecture', 'questions', 'meta')
+FORUM_SUBJECT = r'[a-z0-9][a-z0-9.-]{0,79}'
+MAX_THREADS = 20000
+MAX_POSTS = 100000
+FORUM_PENDING = 20
+RESERVED_NAMES = {'admin', 'administrator', 'moderator', 'ipvx', 'relcom', 'system',
+                  'automatic-moderator', 'participant', 'участник', 'модератор', 'администратор'}
 
 
 @dataclass(frozen=True)
@@ -118,7 +126,30 @@ class CommunityService:
                     blocked INTEGER NOT NULL DEFAULT 0, access_updated INTEGER);
                 CREATE INDEX IF NOT EXISTS entry_listing ON entries(rfc,status,id);
                 CREATE INDEX IF NOT EXISTS entry_author ON entries(author,status,id);
+                CREATE TABLE IF NOT EXISTS forum_threads (id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    category TEXT NOT NULL, subject TEXT, title TEXT NOT NULL, author TEXT NOT NULL,
+                    status TEXT NOT NULL, locked INTEGER NOT NULL DEFAULT 0,
+                    posts INTEGER NOT NULL DEFAULT 0, created INTEGER NOT NULL, bumped INTEGER NOT NULL);
+                CREATE TABLE IF NOT EXISTS forum_posts (id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    thread INTEGER NOT NULL, author TEXT NOT NULL, text TEXT NOT NULL, reply_to INTEGER,
+                    status TEXT NOT NULL, review TEXT, review_note TEXT,
+                    created INTEGER NOT NULL, updated INTEGER NOT NULL);
+                CREATE TABLE IF NOT EXISTS forum_names (actor TEXT PRIMARY KEY, name TEXT NOT NULL,
+                    folded TEXT NOT NULL UNIQUE, updated INTEGER NOT NULL);
+                CREATE INDEX IF NOT EXISTS forum_listing ON forum_threads(category,status,bumped,id);
+                CREATE INDEX IF NOT EXISTS forum_subject ON forum_threads(subject,status,bumped,id);
+                CREATE INDEX IF NOT EXISTS forum_thread_posts ON forum_posts(thread,status,id);
+                CREATE INDEX IF NOT EXISTS forum_queue ON forum_posts(status,review,id);
+                CREATE INDEX IF NOT EXISTS forum_author ON forum_posts(author,status);
             ''')
+            # Full-text search over published posts only. Without FTS5 the forum still
+            # works and search answers 503.
+            try:
+                db.execute("CREATE VIRTUAL TABLE IF NOT EXISTS forum_search USING fts5(title, text, "
+                           "post UNINDEXED, thread UNINDEXED, tokenize='unicode61 remove_diacritics 2')")
+                self.search_ready = True
+            except sqlite3.OperationalError:
+                self.search_ready = False
             if bootstrap_admin_sub is not None or bootstrap_admin_author_id is not None:
                 if bootstrap_admin_author_id is not None:
                     if (not isinstance(bootstrap_admin_author_id, str)
@@ -292,7 +323,8 @@ class CommunityService:
                 # response by replaying an old successful administrator request.
                 if target.path == PREFIX + '/roles' or re.fullmatch(PREFIX + r'/members/member_[a-f0-9]{24}/access', target.path):
                     self._require(db, actor, 'admin')
-                elif re.fullmatch(PREFIX + r'/entries/([1-9][0-9]{0,8})/moderation', target.path):
+                elif (re.fullmatch(PREFIX + r'/entries/([1-9][0-9]{0,8})/moderation', target.path)
+                      or re.fullmatch(PREFIX + r'/forum/(?:posts|threads)/[1-9][0-9]{0,8}/moderation', target.path)):
                     self._require(db, actor, 'moderator', 'admin')
                 elif (vote_match := re.fullmatch(PREFIX + r'/entries/([1-9][0-9]{0,8})/vote', target.path)):
                     row = self._entry(db, int(vote_match[1]))
@@ -321,6 +353,8 @@ class CommunityService:
     def _get(self, db, path, query, actor):
         if path == PREFIX + '/members':
             return self._members(db, query, actor)
+        if path.startswith(PREFIX + '/forum/'):
+            return self._forum_get(db, path[len(PREFIX + '/forum'):], query, actor)
         if set(query) - {'limit', 'before', 'mine', 'kind'}:
             raise Rejected(400, 'unknown_query')
         limit = int(query.get('limit', ['25'])[0])
@@ -342,7 +376,7 @@ class CommunityService:
                 'roles': sorted({'participant', *roles}) if actor and not blocked else [],
                 'access': 'blocked' if blocked else 'active' if actor else 'anonymous',
                 'governance': {'votesBinding': False, 'ratification': 'RFC-0003 / pinned GitHub electorate'},
-                'capabilities': ['submit_pending', 'advisory_vote'] if actor and not blocked else []})
+                'capabilities': ['submit_pending', 'advisory_vote', 'forum_post'] if actor and not blocked else []})
         match = re.fullmatch(PREFIX + r'/rfcs/(rfc-\d{4})/entries', path)
         if match:
             kind = query.get('kind', ['comment'])[0]
@@ -412,6 +446,8 @@ class CommunityService:
             'visibility': 'admin-private', 'scope': 'verified accounts that have visited this portal; not the entire identity-provider pool'})
 
     def _post(self, db, path, actor, body):
+        if path.startswith(PREFIX + '/forum/'):
+            return self._forum_post(db, path[len(PREFIX + '/forum'):], actor, body)
         match = re.fullmatch(PREFIX + r'/members/(member_[a-f0-9]{24})/access', path)
         if match:
             self._require(db, actor, 'admin')
@@ -502,3 +538,329 @@ class CommunityService:
             return CommunityResponse(200, {'authorId': target, 'roles': sorted(self._roles(db, target)),
                 'notice': 'Portal roles grant no GitHub, governance, native network or infrastructure access.'})
         raise Rejected(404, 'route_not_found')
+
+    # Forum: categories of threads, each a sequence of plain-text posts. A post from a
+    # participant starts pending; the automatic moderator (forum_review_queue/forum_review,
+    # in-process only) publishes it, hides it or passes it to people. Moderators' own posts
+    # are published at once. Hiding or publishing the opening post does the same to its thread.
+
+    def _limit(self, query, default, maximum):
+        limit = int(query.get('limit', [str(default)])[0])
+        if not 1 <= limit <= maximum:
+            raise Rejected(400, 'invalid_pagination')
+        return limit
+
+    def _moderates(self, db, actor):
+        return bool(actor and self._roles(db, actor) & {'moderator', 'admin'})
+
+    def _forum_author(self, db, actor):
+        row = db.execute('SELECT name FROM forum_names WHERE actor=?', (actor,)).fetchone()
+        return {'id': actor, 'label': row[0] if row else 'Участник ' + actor[-6:], 'named': bool(row)}
+
+    def _thread(self, db, thread_id):
+        row = db.execute('SELECT * FROM forum_threads WHERE id=?', (thread_id,)).fetchone()
+        if not row:
+            raise Rejected(404, 'thread_not_found')
+        return row
+
+    def _forum_post_row(self, db, post_id):
+        row = db.execute('SELECT * FROM forum_posts WHERE id=?', (post_id,)).fetchone()
+        if not row:
+            raise Rejected(404, 'post_not_found')
+        return row
+
+    def _opening(self, db, thread_id):
+        return db.execute('SELECT min(id) FROM forum_posts WHERE thread=?', (thread_id,)).fetchone()[0]
+
+    def _public_thread(self, db, row):
+        return {'id': row['id'], 'category': row['category'], 'subject': row['subject'],
+                'title': row['title'], 'status': row['status'], 'locked': bool(row['locked']),
+                'author': self._forum_author(db, row['author']), 'replies': max(row['posts'] - 1, 0),
+                'createdAt': _stamp(row['created']), 'lastActivityAt': _stamp(row['bumped'])}
+
+    def _public_post(self, db, row, moderator=False):
+        item = {'id': row['id'], 'thread': row['thread'], 'text': row['text'], 'replyTo': row['reply_to'],
+                'status': row['status'], 'author': self._forum_author(db, row['author']),
+                'createdAt': _stamp(row['created'])}
+        if moderator:
+            item['review'] = {'queue': 'people' if row['review'] == 'people' else 'automatic',
+                              'note': row['review_note']}
+        return item
+
+    def _index(self, db, thread_id):
+        """Keep search equal to what an anonymous reader can see in this thread."""
+        if not self.search_ready:
+            return
+        db.execute('DELETE FROM forum_search WHERE thread=?', (thread_id,))
+        thread = self._thread(db, thread_id)
+        if thread['status'] == 'published':
+            db.execute("INSERT INTO forum_search(title,text,post,thread) SELECT ?,text,id,thread "
+                       "FROM forum_posts WHERE thread=? AND status='published'", (thread['title'], thread_id))
+
+    def _refresh(self, db, thread_id):
+        count, last = db.execute("SELECT count(*),max(created) FROM forum_posts WHERE thread=? AND status='published'",
+                                 (thread_id,)).fetchone()
+        db.execute('UPDATE forum_threads SET posts=?,bumped=COALESCE(?,created) WHERE id=?', (count, last, thread_id))
+        self._index(db, thread_id)
+
+    def _set_post(self, db, row, status, review, note):
+        db.execute('UPDATE forum_posts SET status=?,review=?,review_note=?,updated=? WHERE id=?',
+                   (status, review, note, int(self.clock()), row['id']))
+        if self._opening(db, row['thread']) == row['id']:
+            db.execute('UPDATE forum_threads SET status=? WHERE id=?', (status, row['thread']))
+        self._refresh(db, row['thread'])
+
+    def _thread_page(self, db, where, values, query, actor):
+        if set(query) - {'limit', 'before'}:
+            raise Rejected(400, 'unknown_query')
+        limit = self._limit(query, 25, 50)
+        before = query.get('before', [''])[0]
+        if before:
+            if not re.fullmatch(r'[0-9]{1,12}-[1-9][0-9]{0,8}', before):
+                raise Rejected(400, 'invalid_pagination')
+            bumped, last = map(int, before.split('-'))
+            where += ' AND (bumped<? OR (bumped=? AND id<?))'
+            values = [*values, bumped, bumped, last]
+        if not self._moderates(db, actor):
+            where += " AND (status='published' OR author=?)"
+            values = [*values, actor]
+        rows = db.execute('SELECT * FROM forum_threads WHERE ' + where + ' ORDER BY bumped DESC, id DESC LIMIT ?',
+                          [*values, limit]).fetchall()
+        items, used = [], 0
+        for row in rows:
+            item = self._public_thread(db, row)
+            size = len(json.dumps(item, ensure_ascii=False).encode()) + 2
+            if used + size > PAGE_BYTES:
+                break
+            items.append(item)
+            used += size
+        last = rows[len(items) - 1] if items else None
+        cursor = '%d-%d' % (last['bumped'], last['id']) if last is not None and len(rows) == limit else None
+        return {'threads': items, 'nextBefore': cursor}
+
+    def _forum_get(self, db, path, query, actor):
+        moderator = self._moderates(db, actor)
+        if path == '/categories':
+            if query:
+                raise Rejected(400, 'unexpected_query')
+            counts = {row[0]: (row[1], row[2]) for row in db.execute(
+                "SELECT category,count(*),max(bumped) FROM forum_threads WHERE status='published' GROUP BY category")}
+            return CommunityResponse(200, {'categories': [
+                {'id': c, 'threads': counts.get(c, (0, None))[0],
+                 'lastActivityAt': _stamp(counts[c][1]) if c in counts else None} for c in FORUM_CATEGORIES]})
+        match = re.fullmatch(r'/categories/([a-z]{2,20})/threads', path)
+        if match:
+            if match[1] not in FORUM_CATEGORIES:
+                raise Rejected(404, 'category_not_found')
+            page = self._thread_page(db, "category=? AND status!='hidden'" if not moderator else 'category=?',
+                                     [match[1]], query, actor)
+            return CommunityResponse(200, {'category': match[1], **page})
+        match = re.fullmatch(r'/subjects/(' + FORUM_SUBJECT + ')/threads', path)
+        if match:
+            page = self._thread_page(db, "subject=? AND status!='hidden'" if not moderator else 'subject=?',
+                                     [match[1]], query, actor)
+            return CommunityResponse(200, {'subject': match[1], **page})
+        match = re.fullmatch(r'/threads/([1-9][0-9]{0,8})', path)
+        if match:
+            if set(query) - {'limit', 'after'}:
+                raise Rejected(400, 'unknown_query')
+            limit = self._limit(query, 50, 100)
+            after = int(query.get('after', ['0'])[0])
+            if not 0 <= after <= 999999999:
+                raise Rejected(400, 'invalid_pagination')
+            thread = self._thread(db, int(match[1]))
+            if not (thread['status'] == 'published' or thread['author'] == actor or moderator):
+                raise Rejected(404, 'thread_not_found')
+            clause, values = ('1=1', []) if moderator else ("(status='published' OR author=?)", [actor])
+            rows = db.execute('SELECT * FROM forum_posts WHERE thread=? AND id>? AND ' + clause + ' ORDER BY id LIMIT ?',
+                              [thread['id'], after, *values, limit]).fetchall()
+            items, cursor = self._page(rows, lambda row: self._public_post(db, row, moderator), limit)
+            return CommunityResponse(200, {'thread': self._public_thread(db, thread), 'posts': items, 'nextAfter': cursor})
+        if path == '/search':
+            if set(query) - {'q', 'limit'}:
+                raise Rejected(400, 'unknown_query')
+            if not self.search_ready:
+                raise Rejected(503, 'search_unavailable')
+            words = re.findall(r'\w{2,40}', _text(query.get('q', [''])[0], 2, 200))[:8]
+            if not words:
+                raise Rejected(400, 'invalid_search')
+            limit = self._limit(query, 20, 25)
+            rows = db.execute("SELECT post,thread,title,snippet(forum_search,1,'','','…',16) AS excerpt "
+                              'FROM forum_search WHERE forum_search MATCH ? ORDER BY rank LIMIT ?',
+                              (' '.join('"%s"' % word for word in words), limit)).fetchall()
+            return CommunityResponse(200, {'results': [{'post': row['post'], 'thread': row['thread'],
+                'title': row['title'], 'excerpt': row['excerpt']} for row in rows]})
+        if path == '/moderation':
+            self._require(db, actor, 'moderator', 'admin')
+            if set(query) - {'queue', 'limit', 'before'}:
+                raise Rejected(400, 'unknown_query')
+            queue = query.get('queue', ['people'])[0]
+            limit = self._limit(query, 25, 50)
+            before = int(query.get('before', ['999999999'])[0])
+            where = {'people': "p.status='pending' AND p.review='people'",
+                     'automatic': "p.status='pending' AND p.review IS NULL",
+                     'hidden': "p.status='hidden'"}.get(queue)
+            if where is None:
+                raise Rejected(400, 'invalid_queue')
+            rows = db.execute('SELECT p.* FROM forum_posts p WHERE ' + where + ' AND p.id<? ORDER BY p.id DESC LIMIT ?',
+                              (before, limit)).fetchall()
+            def convert(row):
+                thread = self._thread(db, row['thread'])
+                return {**self._public_post(db, row, True), 'threadTitle': thread['title'],
+                        'category': thread['category'], 'opening': self._opening(db, row['thread']) == row['id']}
+            items, cursor = self._page(rows, convert, limit)
+            return CommunityResponse(200, {'queue': queue, 'posts': items, 'nextBefore': cursor,
+                                           'visibility': 'moderator-private'})
+        if path == '/profile':
+            if query:
+                raise Rejected(400, 'unexpected_query')
+            if not actor:
+                raise Rejected(401, 'sign_in_required')
+            pending = db.execute("SELECT count(*) FROM forum_posts WHERE author=? AND status='pending'", (actor,)).fetchone()[0]
+            return CommunityResponse(200, {'author': self._forum_author(db, actor), 'pendingPosts': pending,
+                                           'publishesDirectly': moderator})
+        raise Rejected(404, 'route_not_found')
+
+    def _new_post(self, db, thread_id, actor, text, reply_to=None):
+        if db.execute('SELECT count(*) FROM forum_posts').fetchone()[0] >= MAX_POSTS:
+            raise Rejected(503, 'post_capacity_reached')
+        moderator = self._moderates(db, actor)
+        if not moderator and db.execute("SELECT count(*) FROM forum_posts WHERE author=? AND status='pending'",
+                                        (actor,)).fetchone()[0] >= FORUM_PENDING:
+            raise Rejected(429, 'pending_limit_reached')
+        now = int(self.clock())
+        status = 'published' if moderator else 'pending'
+        post_id = db.execute('INSERT INTO forum_posts(thread,author,text,reply_to,status,created,updated) '
+                             'VALUES(?,?,?,?,?,?,?)', (thread_id, actor, text, reply_to, status, now, now)).lastrowid
+        return post_id, status
+
+    def _forum_post(self, db, path, actor, body):
+        match = re.fullmatch(r'/categories/([a-z]{2,20})/threads', path)
+        if match:
+            if match[1] not in FORUM_CATEGORIES:
+                raise Rejected(404, 'category_not_found')
+            _fields(body, {'title', 'text', 'subject'})
+            title = ' '.join(_text(body.get('title'), 3, 200).split())
+            text = _text(body.get('text'), 1, 8000)
+            subject = body.get('subject')
+            if subject is not None and (not isinstance(subject, str) or not re.fullmatch(FORUM_SUBJECT, subject)):
+                raise Rejected(400, 'invalid_subject')
+            if db.execute('SELECT count(*) FROM forum_threads').fetchone()[0] >= MAX_THREADS:
+                raise Rejected(503, 'thread_capacity_reached')
+            now = int(self.clock())
+            thread_id = db.execute('INSERT INTO forum_threads(category,subject,title,author,status,created,bumped) '
+                                   "VALUES(?,?,?,?,'pending',?,?)", (match[1], subject, title, actor, now, now)).lastrowid
+            post_id, status = self._new_post(db, thread_id, actor, text)
+            db.execute('UPDATE forum_threads SET status=? WHERE id=?', (status, thread_id))
+            self._refresh(db, thread_id)
+            self._audit(db, actor, 'forum_open_thread', thread_id, {'category': match[1], 'post': post_id, 'status': status})
+            return CommunityResponse(201, {'thread': self._public_thread(db, self._thread(db, thread_id)),
+                'post': self._public_post(db, self._forum_post_row(db, post_id)),
+                'visibility': 'published' if status == 'published' else 'own-private'})
+        match = re.fullmatch(r'/threads/([1-9][0-9]{0,8})/posts', path)
+        if match:
+            _fields(body, {'text', 'replyTo'})
+            thread = self._thread(db, int(match[1]))
+            moderator = self._moderates(db, actor)
+            if thread['status'] != 'published' and not moderator:
+                raise Rejected(404, 'thread_not_found')
+            if thread['locked'] and not moderator:
+                raise Rejected(409, 'thread_locked')
+            text = _text(body.get('text'), 1, 8000)
+            reply_to = body.get('replyTo')
+            if reply_to is not None:
+                if type(reply_to) is not int or not db.execute(
+                        "SELECT 1 FROM forum_posts WHERE id=? AND thread=? AND status='published'",
+                        (reply_to, thread['id'])).fetchone():
+                    raise Rejected(400, 'invalid_reply')
+            post_id, status = self._new_post(db, thread['id'], actor, text, reply_to)
+            self._refresh(db, thread['id'])
+            self._audit(db, actor, 'forum_reply', post_id, {'thread': thread['id'], 'status': status})
+            return CommunityResponse(201, {'post': self._public_post(db, self._forum_post_row(db, post_id)),
+                'visibility': 'published' if status == 'published' else 'own-private'})
+        match = re.fullmatch(r'/posts/([1-9][0-9]{0,8})/moderation', path)
+        if match:
+            self._require(db, actor, 'moderator', 'admin')
+            _fields(body, {'action', 'reason'})
+            action, reason = body.get('action'), _text(body.get('reason'), 3, 1000)
+            if action not in ('publish', 'hide'):
+                raise Rejected(400, 'invalid_moderation_action')
+            row = self._forum_post_row(db, int(match[1]))
+            status = 'published' if action == 'publish' else 'hidden'
+            self._set_post(db, row, status, 'people', reason)
+            self._audit(db, actor, 'forum_' + action, row['id'], {'from': row['status'], 'to': status, 'reason': reason})
+            return CommunityResponse(200, {'post': self._public_post(db, self._forum_post_row(db, row['id']), True)})
+        match = re.fullmatch(r'/threads/([1-9][0-9]{0,8})/moderation', path)
+        if match:
+            self._require(db, actor, 'moderator', 'admin')
+            _fields(body, {'action', 'reason'})
+            action, reason = body.get('action'), _text(body.get('reason'), 3, 1000)
+            if action not in ('lock', 'unlock'):
+                raise Rejected(400, 'invalid_moderation_action')
+            thread = self._thread(db, int(match[1]))
+            db.execute('UPDATE forum_threads SET locked=? WHERE id=?', (int(action == 'lock'), thread['id']))
+            self._audit(db, actor, 'forum_' + action, thread['id'], {'reason': reason})
+            return CommunityResponse(200, {'thread': self._public_thread(db, self._thread(db, thread['id']))})
+        if path == '/profile':
+            _fields(body, {'name'})
+            name = body.get('name')
+            if not isinstance(name, str):
+                raise Rejected(400, 'invalid_name')
+            name = ' '.join(name.split())
+            if not name:
+                db.execute('DELETE FROM forum_names WHERE actor=?', (actor,))
+            else:
+                folded = name.casefold()
+                if (not re.fullmatch(r'[^\W_][\w .\'-]{0,38}[^\W_]', name)
+                        or folded in RESERVED_NAMES or folded.startswith(('участник', 'participant', 'member_'))):
+                    raise Rejected(400, 'invalid_name')
+                taken = db.execute('SELECT actor FROM forum_names WHERE folded=?', (folded,)).fetchone()
+                if taken and taken[0] != actor:
+                    raise Rejected(409, 'name_taken')
+                db.execute('INSERT INTO forum_names VALUES(?,?,?,?) ON CONFLICT(actor) DO UPDATE SET '
+                           'name=excluded.name,folded=excluded.folded,updated=excluded.updated',
+                           (actor, name, folded, int(self.clock())))
+            self._audit(db, actor, 'forum_name', actor, {'name': name or None})
+            return CommunityResponse(200, {'author': self._forum_author(db, actor)})
+        raise Rejected(404, 'route_not_found')
+
+    def forum_review_queue(self, limit=20):
+        """Posts waiting for the automatic moderator, oldest first. In-process only."""
+        if type(limit) is not int or not 1 <= limit <= 100:
+            raise ValueError('limit must be 1..100')
+        with self._db() as db:
+            rows = db.execute("SELECT * FROM forum_posts WHERE status='pending' AND review IS NULL ORDER BY id LIMIT ?",
+                              (limit,)).fetchall()
+            out = []
+            for row in rows:
+                thread = self._thread(db, row['thread'])
+                out.append({'id': row['id'], 'thread': row['thread'], 'category': thread['category'],
+                            'title': thread['title'], 'opening': self._opening(db, row['thread']) == row['id'],
+                            'text': row['text']})
+            return out
+
+    def forum_review(self, post_id, verdict, reason, reviewer):
+        """Record the automatic moderator's verdict on one pending post.
+
+        ``publish`` and ``hide`` take effect at once; ``escalate`` leaves the post pending
+        in the people queue. A moderator can reverse any verdict. Returns False when the
+        post was already decided, so a retried or concurrent worker changes nothing.
+        """
+        if verdict not in ('publish', 'hide', 'escalate'):
+            raise ValueError('verdict must be publish, hide or escalate')
+        if not isinstance(reviewer, str) or not re.fullmatch(r'[a-z0-9][a-z0-9.:-]{2,79}', reviewer):
+            raise ValueError('reviewer must name the model or rule set')
+        reason = _text(reason, 3, 500)
+        with self._db() as db:
+            db.execute('BEGIN IMMEDIATE')
+            row = db.execute('SELECT * FROM forum_posts WHERE id=?', (post_id,)).fetchone()
+            if not row or row['status'] != 'pending' or row['review'] is not None:
+                return False
+            if verdict == 'escalate':
+                db.execute("UPDATE forum_posts SET review='people',review_note=?,updated=? WHERE id=?",
+                           (reason, int(self.clock()), row['id']))
+            else:
+                self._set_post(db, row, 'published' if verdict == 'publish' else 'hidden', 'automatic', reason)
+            self._audit(db, 'automatic-moderator', 'forum_auto_' + verdict, row['id'],
+                        {'reviewer': reviewer, 'reason': reason})
+            return True

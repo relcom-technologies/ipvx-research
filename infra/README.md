@@ -21,6 +21,8 @@ Session state is separate from releases. Its SQLite database and encryption key 
 RFC discussion uses the same loopback identity process, through an exact reviewed
 /community/v1 route allowlist. Verified sessions can submit bounded pending text;
 moderation, advisory votes and portal-role changes are separate audited operations.
+The participants' forum (docs/forum.md) uses the same process, database and allowlist
+under /community/v1/forum; its posts start pending until a moderator decides.
 The private community database/HMAC key sit in their own StateDirectory child.
 The optional root-owned /etc/ipvx-research/community.env pins an already observed
 owner pseudonym; without it, nobody is automatically promoted. The scoped operator
