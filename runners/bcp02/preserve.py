@@ -22,6 +22,8 @@ ARCHIVED={
     # Portal assets and browser check, revised in PR65 (IPvX as a replacement for IP and DNS).
     'assets/portal.js':'portal-pr65','assets/portal.css':'portal-pr65','assets/en/portal.js':'portal-pr65',
     'assets/de/portal.js':'portal-pr65','assets/es/portal.js':'portal-pr65','scripts/browser_check.mjs':'portal-pr65',
+    # Kernel contact fixed in runner revision 3, after the first rehearsal on a real kernel.
+    'runners/bcp02/stand.py':'runner-v2','runners/bcp02/transport.py':'runner-v2','runners/bcp02/tests/test_runner.py':'runner-v2',
 }
 
 
@@ -47,6 +49,7 @@ def check():
     digest=source_hash()
     return dict(previous_files=len(saved['files']),previous_events=saved['history_events'],
                 previous_presentation_sources_archived=2,previous_liaison_sources_archived=5,previous_portal_sources_archived=6,
+                previous_runner_sources_archived=3,
                 dataset_revision_previous_events=revision['history_events'],
                 dataset_revision_unchanged_files=len(revision['unchanged_files']),archived_reports=len(revision['archived_evidence']),
                 source_scope_sha256=digest,network_execution=False,old_evidence_reissued=False)

@@ -10,7 +10,7 @@ ROOT=Path(__file__).resolve().parents[1]
 class BcpPresentation(unittest.TestCase):
     def test_snapshot_agrees_with_actual_report_and_closed_config(self):
         d=facts(ROOT);c=json.loads((ROOT/'runners/bcp02/launch-config.json').read_text())
-        self.assertEqual(d['checks']['runner_tests'],63)
+        self.assertEqual(d['checks']['runner_tests'],77)
         self.assertIsNone(c['owner_launch_decision']);self.assertIsNone(c['run_dataset'])
         self.assertEqual(d['network_experiment'],'NOT_RUN')
 

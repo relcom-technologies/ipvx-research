@@ -132,10 +132,12 @@ class GuardTests(unittest.TestCase):
     def test_packet_port_binding_outgoing_and_truncation(self):
         api=Mock(AF_PACKET=17,SOCK_RAW=3,SOL_SOCKET=1,SO_RCVBUF=8,MSG_TRUNC=32)
         api.htons.side_effect=lambda n:n;api.if_nametoindex.return_value=7
+        api.socket.return_value.getsockopt.return_value=0
+        ioctl=lambda fd,request,buffer:buffer[:16]+(7).to_bytes(4,'little')+buffer[20:]
         raw=bytes(12)+b'\x88\xb5'+bytes(44)
         def receive(buffers,*args):buffers[0][:len(raw)]=raw;return len(raw),[],0,('a0',0,4,0,b'')
         api.socket.return_value.recvmsg_into.side_effect=receive
-        port=PacketPort('a0',api=api);self.assertIsNone(port.recv())
+        port=PacketPort('a0',api=api,ioctl=ioctl);self.assertIsNone(port.recv())
         api.socket.return_value.recvmsg_into.side_effect=None
         api.socket.return_value.recvmsg_into.return_value=(1515,[],32,('a0',0,0,0,b''))
         with self.assertRaisesRegex(Blocked,'truncated'):port.recv()

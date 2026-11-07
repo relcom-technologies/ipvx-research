@@ -15,6 +15,12 @@ The dataset/admission lifecycle is revised for review in
 remain byte-identical in `evidence/archive/pr47/` and Git; PR48 preparation stays
 an unchanged dated snapshot. No old permit authorizes this runner2 revision.
 
+Correction, 2026-11-06, runner revision 3. The statement above that no namespace or
+raw socket was used held until this date. Revision 3 was prepared with them in a
+disposable local Docker container, see [Permit-free rehearsal](#permit-free-rehearsal).
+Network experiment still NOT_RUN. Revision 2 sources and reports stay byte-identical in
+`evidence/archive/runner-v2/`. No permit for an earlier revision authorizes revision 3.
+
 ## What is implemented
 
 - `stand.py`, `controller.py`: collision-safe creation of the three declared
@@ -61,12 +67,55 @@ python3 -B -m runners.bcp02.cli check
 Tests inject memory ports, synthetic clocks, fake kernel command APIs and
 fabricated PCAP/SQLite evidence. Their PASS branch tests the verifier, **not a
 network measurement**. The EVM generator is preloaded with the existing offline
-network prohibition. No CI command invokes `run`, `entry`, namespace setup,
+network prohibition. No CI command invokes `run`, `rehearse`, `entry`, namespace setup,
 packet sockets, seccomp installation or privileged Linux processes.
 
 The new workflow is PR-only, isolated and without production credentials.
 Existing workflows and prior evidence reports retain their original hashes.
 Preparation failures and corrections are retained in `evidence/preparation-notes.json`.
+
+## Permit-free rehearsal
+
+Offline tests inject the kernel, and a real run consumes its one-use permit before
+its first namespace. So the first contact with a real kernel would have cost a permit,
+and it would have failed. Revision 2 in a disposable container showed four faults,
+each one fatal to a run and none able to produce a false PASS:
+
+1. `ip -j netns list` prints nothing until `/run/netns` exists, and `Stand.create` parsed that as JSON.
+2. A capture socket bound to a down link has `ENETDOWN` pending, so its first `recv` killed the capture before link-up.
+3. `if_nametoindex` opens a socket inside glibc, so the seccomp policy broke every frame sent or received after the drop.
+4. SQLite reopens a journal by absolute path, which root-owned 0700 parents refuse to the actor UID, so every node would have stopped at startup.
+
+`python3 -m runners.bcp02.cli rehearse --output <new-directory>` runs the same kernel
+contact without a permit: the declared namespaces and veth links, both captures before
+link-up, privilege drop and seccomp, denied socket and process creation, a journal and
+signatures on throwaway keys under that policy, synthetic 0x88B5 frames of 60 and 1514
+bytes along A—R—B and back, the `/proc` process audit, capture reconciliation and
+cleanup. Its marked frames do not decode as BCP. It reads no permit, dataset, run key,
+Core or chain, changes no launch gate, and `verify` never reads its directory as a run.
+Passing shows kernel plumbing only: no Node, no BCP delivery, no measurement.
+
+It needs root and creates and removes network namespaces on the host, so **running it on
+the stand takes its own owner permission**. It does not need host egress closed.
+
+Result on 2026-11-06 in a disposable Docker container, not on the stand and not on the
+x86_64 architecture of a run, with details in `evidence/preparation-notes.json`:
+`REHEARSAL_PASS` with 4 frames and 0 drops per link on revision 3, only with the probe
+hiding that kernel's fallback tunnels and bypassing the x86_64 guard. It fails with
+each of faults 2, 3 and 4 put back, and without hiding the tunnels. Rehearsal directly
+on the stand is what remains; a pass here says nothing about that host.
+
+Conditions a host must meet, each checked only by the rehearsal or run itself:
+
+- no fallback tunnels in new namespaces: where the kernel creates `tunl0`, `gre0` and the like,
+  the audit refuses them and cleanup leaves the namespaces in place. Set
+  `net.core.fb_tunnels_only_for_init_net=1` first (kernel documentation; not exercised here);
+- every directory above `--output` searchable by the actor UIDs (`run` checks this before consuming the permit).
+
+Known gaps left open by this revision: each capture runs under its node's UID, because
+`spawn` looks the UID up by node and 60004 is never used; `run` calls `git rev-parse` after
+consuming the permit, and git is not in the preflight; 329 of the pinned files are
+outside the paths that trigger the runner workflow, so a change there can break the pins unnoticed.
 
 ## Future admission and operation — not authorized by this PR
 
@@ -80,8 +129,9 @@ CPUs and 4 GiB RAM, provision dependencies first, close host egress, obtain a
 trusted synchronized clock and record image/kernel/binary pins. UIDs 60001–60004
 must be unused. Node processes start in their own namespace, open only their
 declared packet sockets, read own key, then drop all capabilities and install the
-filter. Private artifact directories are 0700 and files 0600. Private actor cwd
-directories have different owners; their root-owned parent is not traversable.
+filter. Files are 0600. Actor directories are 0700 under different owners; the
+root-owned run, cases and case directories above them are 0711, search-only, because
+SQLite reopens journals by absolute path after the drop. Everything else stays 0700.
 
 Only after reviewed configuration and separate owner authorization may an
 operator supply a root-owned 0600 permit signed by the configured owner key.
@@ -114,9 +164,10 @@ to delete colliding objects.
 
 ## Limits that remain
 
-Linux namespace/capability/seccomp/AF_PACKET behavior is implemented but **not yet
-measured**. Offline mocks cannot prove kernel enforcement, capture coverage or
-Ethernet delivery. This is one host and one infrastructure operator, not proof of
+Linux namespace/capability/seccomp/AF_PACKET behavior is implemented and rehearsed in
+one disposable container, but **not yet measured**, on the stand or anywhere else. Offline
+mocks cannot prove kernel enforcement, capture coverage or Ethernet delivery. The real
+`entry` loop and Node have still never met a real kernel: that is the run itself. This is one host and one infrastructure operator, not proof of
 physical Ethernet, a whole device without IP, independent operators or utility
 over IP. Headers/roots are synthetic; ABI execution does not prove Ethereum
 finality. A separate live-chain protocol would be needed for that conclusion.

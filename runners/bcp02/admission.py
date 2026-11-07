@@ -23,7 +23,7 @@ def source_hash():
         p=ROOT/name
         need(p.resolve()==p and sha(p.read_bytes())==expected,'source pin mismatch: '+name)
     import json
-    return sha(b'IPVX-BCP02-NET-001-F/runner2\0'+json.dumps(manifest,sort_keys=True,separators=(',',':')).encode())
+    return sha(b'IPVX-BCP02-NET-001-F/runner3\0'+json.dumps(manifest,sort_keys=True,separators=(',',':')).encode())
 
 
 PERMIT_DOMAIN = b'IPVX BCP02 isolated run permit v2\0'

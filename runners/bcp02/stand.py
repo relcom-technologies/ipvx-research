@@ -2,10 +2,23 @@
 import json
 import os
 from pathlib import Path
+import stat
 import subprocess
 from .common import NODES, MACS, need
 
 NS={n:'bcp02-net001-'+n.lower() for n in NODES}
+
+
+def actor_parent(path):
+    """Search-only, never listable. SQLite reopens a journal by its absolute path after
+    the privilege drop, so an actor has to pass through; its own directory stays 0700."""
+    path=Path(path);path.mkdir(exist_ok=False);os.chmod(path,0o711)
+    return path
+
+
+def reachable(path):
+    need(all(stat.S_IMODE(p.stat().st_mode)&0o001 for p in Path(path).resolve().parents),
+         'every directory above the output must be searchable by actor UIDs')
 
 
 class Stand:
@@ -16,7 +29,8 @@ class Stand:
         return self.execute(['ip',*args])
 
     def create(self):
-        existing={n['name'] for n in json.loads(self.ip('-j','netns','list'))}
+        # iproute2 prints nothing at all until the first namespace creates /run/netns.
+        existing={n['name'] for n in json.loads(self.ip('-j','netns','list') or '[]')}
         need(not existing.intersection(NS.values()), 'namespace name collision; nothing deleted')
         for name in NS.values():
             self.ip('netns','add',name)
@@ -83,6 +97,33 @@ class Stand:
             need(not pids,'namespace processes still running')
             self.ip('netns','delete',name)
             del self.created[name]
+
+
+def audit_process(stand, child):
+    pid=child['process'].pid
+    status={s.split(':',1)[0]:s.split(':',1)[1].strip() for s in Path(f'/proc/{pid}/status').read_text().splitlines() if ':' in s}
+    need(all(int(status[k],16)==0 for k in ('CapEff','CapPrm','CapBnd','CapAmb'))
+         and status['NoNewPrivs']=='1' and status['Seccomp']=='2'
+         and set(map(int,status['Uid'].split()))=={child['uid']},'root process-policy audit failed')
+    need(Path(f'/proc/{pid}/ns/net').stat().st_ino==stand.created[NS[child['node']]],'process namespace mismatch')
+    for name in ('tcp','tcp6','udp','udp6','raw','raw6'):
+        p=Path(f'/proc/{pid}/net/{name}')
+        need(not p.exists() or len(p.read_text().splitlines())<=1,'INET socket present')
+    packets=Path(f'/proc/{pid}/net/packet').read_text().splitlines()[1:]
+    allowed={str(p['ifindex']) for p in stand.inventory[child['node']]['links'] if p['ifname']!='lo'}
+    entries={line.split()[-1]:line.split() for line in packets}
+    sockets=[]
+    for fd in Path(f'/proc/{pid}/fd').iterdir():
+        try:target=os.readlink(fd)
+        except FileNotFoundError:continue
+        if target.startswith('socket:['):
+            sock=target[8:-1];need(sock in entries,'non-packet socket fd')
+            fields=entries[sock];need(fields[2]=='3' and fields[4] in allowed,'unbound/wrong packet socket')
+            need(fields[3] in ('88b5','0003'),'unexpected packet protocol');sockets.append(sock)
+    expected=len(NODES[child['node']][1]) if child['role']=='node' else 1
+    need(len(sockets)==expected,'packet socket count mismatch')
+    return dict(pid=pid,node=child['key'],uid=child['uid'],namespace_inode=stand.created[NS[child['node']]],
+                status={k:status[k] for k in ('CapEff','CapPrm','CapBnd','CapAmb','NoNewPrivs','Seccomp')},packet_sockets=sockets)
 
 
 def execute(command):
