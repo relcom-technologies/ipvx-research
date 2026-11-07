@@ -21,7 +21,7 @@
     "accepted_source": "8c68879211f2d491017bd5f821ec610138eade9c",
     "dataset_admission_revision": "c14cebd4d5040632bd1fb38319b74bce5b7c2152",
     "dataset_admission_pr": "https://github.com/relcom-technologies/ipvx-research/pull/49",
-    "resource_request": "https://github.com/relcom-technologies/relcom-infra/pull/845",
+    "resource_request": "https://github.com/relcom-technologies/relcom-infra/pull/865",
     "registry_lc_read": "https://github.com/relcom-technologies/ipvx-research/blob/main/experiments/bcp02-reg-001-lc/README.md",
     "specification": "https://github.com/relcom-technologies/ipvx-research/tree/main/docs/proposals/bcp-0.2",
     "runner": "https://github.com/relcom-technologies/ipvx-research/tree/main/runners/bcp02",
