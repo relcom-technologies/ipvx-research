@@ -92,6 +92,31 @@
       "context": "account.html:text:header/div/a"
     },
     {
+      "id": "5bd57038dbadd651",
+      "source": "Язык",
+      "context": "account.html:attribute:aria-label"
+    },
+    {
+      "id": "6da140fdd4be0189",
+      "source": "Русский",
+      "context": "account.html:text:body/nav/a"
+    },
+    {
+      "id": "ba118bf7fc9c1aed",
+      "source": "English",
+      "context": "account.html:text:body/nav/a"
+    },
+    {
+      "id": "801cfe0fa1182664",
+      "source": "Deutsch",
+      "context": "account.html:text:body/nav/a"
+    },
+    {
+      "id": "94b382b61b9dde0f",
+      "source": "Español",
+      "context": "account.html:text:body/nav/a"
+    },
+    {
       "id": "20f6203b19297010",
       "source": "Участник исследования",
       "context": "account.html:text:main/div/h1"
@@ -13377,79 +13402,84 @@
       "context": "assets/portal.js:4768"
     },
     {
+      "id": "77dee7906532f171",
+      "source": "Участник IPvX",
+      "context": "assets/relcom.js:1130"
+    },
+    {
+      "id": "99c10e724f693053",
+      "source": "Вход выполнен через Relcom ID",
+      "context": "assets/relcom.js:1201"
+    },
+    {
       "id": "4836efabcc6e314c",
       "source": "Сервис входа временно недоступен. Попробуйте позже.",
-      "context": "assets/relcom.js:809"
+      "context": "assets/relcom.js:1687"
     },
     {
       "id": "c008a5bfb8198af0",
       "source": "Вход не подтверждён. Попробуйте войти снова.",
-      "context": "assets/relcom.js:883"
+      "context": "assets/relcom.js:1761"
     },
     {
       "id": "cc94876a882dc176",
       "source": "Проверяем состояние входа…",
-      "context": "assets/relcom.js:1339"
+      "context": "assets/relcom.js:2217"
     },
     {
       "id": "dc1a32328eebfc14",
       "source": "Вы не вошли. Можно использовать существующую учётную запись или зарегистрироваться.",
-      "context": "assets/relcom.js:1639"
+      "context": "assets/relcom.js:2517"
     },
     {
       "id": "cca717bc5947cddd",
       "source": "Сеанс истёк. Войдите снова, чтобы подтвердить учётную запись.",
-      "context": "assets/relcom.js:1949"
-    },
-    {
-      "id": "77dee7906532f171",
-      "source": "Участник IPvX",
-      "context": "assets/relcom.js:2131"
+      "context": "assets/relcom.js:2827"
     },
     {
       "id": "aeffada4139fa017",
       "source": "Адрес не предоставлен",
-      "context": "assets/relcom.js:2236"
+      "context": "assets/relcom.js:3114"
     },
     {
       "id": "d5c613606b17394e",
       "source": "Электронная почта подтверждена Relcom ID",
-      "context": "assets/relcom.js:2337"
+      "context": "assets/relcom.js:3215"
     },
     {
       "id": "b591040dd9450ccb",
       "source": "Подтверждение электронной почты не получено",
-      "context": "assets/relcom.js:2380"
+      "context": "assets/relcom.js:3258"
     },
     {
       "id": "c80d54f6befe32f3",
       "source": "Вход выполнен. Права участия и голосования определяются отдельно.",
-      "context": "assets/relcom.js:2902"
+      "context": "assets/relcom.js:3780"
     },
     {
       "id": "d088d97bab6d70f3",
       "source": "Не удалось проверить вход. Попробуйте ещё раз; материалы исследования доступны без входа.",
-      "context": "assets/relcom.js:3060"
+      "context": "assets/relcom.js:3938"
     },
     {
       "id": "5aa9b7e99d53cdb4",
       "source": "мин чтения",
-      "context": "assets/relcom.js:4663"
+      "context": "assets/relcom.js:5541"
     },
     {
       "id": "8cca93a86d3c5a59",
       "source": "Опубликованные статьи в Relcom Press.",
-      "context": "assets/relcom.js:5083"
+      "context": "assets/relcom.js:5961"
     },
     {
       "id": "feb50986e49882b3",
       "source": "Пока нет опубликованных статей. Новые материалы появятся здесь после публикации в Relcom Press.",
-      "context": "assets/relcom.js:5123"
+      "context": "assets/relcom.js:6001"
     },
     {
       "id": "0bda035d3218750e",
       "source": "Не удалось загрузить список статей. Откройте блог в Relcom Press или попробуйте ещё раз.",
-      "context": "assets/relcom.js:5261"
+      "context": "assets/relcom.js:6139"
     },
     {
       "id": "ca2d8926f3d2c983",

@@ -11,6 +11,16 @@
    return await response.json();
   }finally{clearTimeout(timer);}
  };
+ /* Every page's header says who is signed in; the account page keeps the details and the sign-out. */
+ const headerAccount=document.querySelector('.header-actions a[href^="https://ipvx.org/account"]');
+ if(headerAccount){
+  request('/auth/session',{credentials:'same-origin',cache:'no-store',headers:{Accept:'application/json'}}).then(data=>{
+   if(data.authenticated!==true||!data.user||typeof data.user.sub!=='string')return;
+   const expiry=data.expiresAt?Date.parse(data.expiresAt):NaN;if(Number.isFinite(expiry)&&expiry<=Date.now())return;
+   const name=typeof data.user.name==='string'&&data.user.name.trim()?data.user.name.trim():"Participante IPvX";
+   headerAccount.textContent=name;headerAccount.title="Sesión iniciada con Relcom ID";headerAccount.classList.add('signed-in');
+  }).catch(()=>{/* The header keeps the sign-in link when the session cannot be read. */});
+ }
  const sessionStatus=byId('session-status');
  if(sessionStatus){
   let expiryTimer;
