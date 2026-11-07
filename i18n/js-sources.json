@@ -252,157 +252,175 @@
     "sha256": "1ab9e2d5de9db7276de9adb2ed11b1f61bf3a0bcc43b0c7d87c26f50e4591108"
   },
   {
-    "start": 809,
-    "end": 862,
-    "source": "Сервис входа временно недоступен. Попробуйте позже.",
-    "kind": "literal",
-    "file": "assets/relcom.js",
-    "context": "assets/relcom.js:809",
-    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
-  },
-  {
-    "start": 883,
-    "end": 929,
-    "source": "Вход не подтверждён. Попробуйте войти снова.",
-    "kind": "literal",
-    "file": "assets/relcom.js",
-    "context": "assets/relcom.js:883",
-    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
-  },
-  {
-    "start": 1339,
-    "end": 1367,
-    "source": "Проверяем состояние входа…",
-    "kind": "literal",
-    "file": "assets/relcom.js",
-    "context": "assets/relcom.js:1339",
-    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
-  },
-  {
-    "start": 1639,
-    "end": 1724,
-    "source": "Вы не вошли. Можно использовать существующую учётную запись или зарегистрироваться.",
-    "kind": "literal",
-    "file": "assets/relcom.js",
-    "context": "assets/relcom.js:1639",
-    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
-  },
-  {
-    "start": 1949,
-    "end": 2012,
-    "source": "Сеанс истёк. Войдите снова, чтобы подтвердить учётную запись.",
-    "kind": "literal",
-    "file": "assets/relcom.js",
-    "context": "assets/relcom.js:1949",
-    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
-  },
-  {
-    "start": 2131,
-    "end": 2146,
+    "start": 1130,
+    "end": 1145,
     "source": "Участник IPvX",
     "kind": "literal",
     "file": "assets/relcom.js",
-    "context": "assets/relcom.js:2131",
-    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
+    "context": "assets/relcom.js:1130",
+    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
   },
   {
-    "start": 2236,
-    "end": 2259,
-    "source": "Адрес не предоставлен",
+    "start": 1273,
+    "end": 1304,
+    "source": "Вход выполнен через Relcom ID",
     "kind": "literal",
     "file": "assets/relcom.js",
-    "context": "assets/relcom.js:2236",
-    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
+    "context": "assets/relcom.js:1273",
+    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
   },
   {
-    "start": 2337,
-    "end": 2379,
-    "source": "Электронная почта подтверждена Relcom ID",
+    "start": 1759,
+    "end": 1812,
+    "source": "Сервис входа временно недоступен. Попробуйте позже.",
     "kind": "literal",
     "file": "assets/relcom.js",
-    "context": "assets/relcom.js:2337",
-    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
+    "context": "assets/relcom.js:1759",
+    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
   },
   {
-    "start": 2380,
-    "end": 2425,
-    "source": "Подтверждение электронной почты не получено",
+    "start": 1833,
+    "end": 1879,
+    "source": "Вход не подтверждён. Попробуйте войти снова.",
     "kind": "literal",
     "file": "assets/relcom.js",
-    "context": "assets/relcom.js:2380",
-    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
+    "context": "assets/relcom.js:1833",
+    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
   },
   {
-    "start": 2779,
-    "end": 2842,
+    "start": 2289,
+    "end": 2317,
+    "source": "Проверяем состояние входа…",
+    "kind": "literal",
+    "file": "assets/relcom.js",
+    "context": "assets/relcom.js:2289",
+    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
+  },
+  {
+    "start": 2589,
+    "end": 2674,
+    "source": "Вы не вошли. Можно использовать существующую учётную запись или зарегистрироваться.",
+    "kind": "literal",
+    "file": "assets/relcom.js",
+    "context": "assets/relcom.js:2589",
+    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
+  },
+  {
+    "start": 2899,
+    "end": 2962,
     "source": "Сеанс истёк. Войдите снова, чтобы подтвердить учётную запись.",
     "kind": "literal",
     "file": "assets/relcom.js",
-    "context": "assets/relcom.js:2779",
-    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
+    "context": "assets/relcom.js:2899",
+    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
   },
   {
-    "start": 2902,
-    "end": 2969,
+    "start": 3081,
+    "end": 3096,
+    "source": "Участник IPvX",
+    "kind": "literal",
+    "file": "assets/relcom.js",
+    "context": "assets/relcom.js:3081",
+    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
+  },
+  {
+    "start": 3186,
+    "end": 3209,
+    "source": "Адрес не предоставлен",
+    "kind": "literal",
+    "file": "assets/relcom.js",
+    "context": "assets/relcom.js:3186",
+    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
+  },
+  {
+    "start": 3287,
+    "end": 3329,
+    "source": "Электронная почта подтверждена Relcom ID",
+    "kind": "literal",
+    "file": "assets/relcom.js",
+    "context": "assets/relcom.js:3287",
+    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
+  },
+  {
+    "start": 3330,
+    "end": 3375,
+    "source": "Подтверждение электронной почты не получено",
+    "kind": "literal",
+    "file": "assets/relcom.js",
+    "context": "assets/relcom.js:3330",
+    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
+  },
+  {
+    "start": 3729,
+    "end": 3792,
+    "source": "Сеанс истёк. Войдите снова, чтобы подтвердить учётную запись.",
+    "kind": "literal",
+    "file": "assets/relcom.js",
+    "context": "assets/relcom.js:3729",
+    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
+  },
+  {
+    "start": 3852,
+    "end": 3919,
     "source": "Вход выполнен. Права участия и голосования определяются отдельно.",
     "kind": "literal",
     "file": "assets/relcom.js",
-    "context": "assets/relcom.js:2902",
-    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
+    "context": "assets/relcom.js:3852",
+    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
   },
   {
-    "start": 3060,
-    "end": 3151,
+    "start": 4010,
+    "end": 4101,
     "source": "Не удалось проверить вход. Попробуйте ещё раз; материалы исследования доступны без входа.",
     "kind": "literal",
     "file": "assets/relcom.js",
-    "context": "assets/relcom.js:3060",
-    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
+    "context": "assets/relcom.js:4010",
+    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
   },
   {
-    "start": 3559,
-    "end": 3593,
+    "start": 4509,
+    "end": 4543,
     "source": "Загружаем опубликованные статьи…",
     "kind": "literal",
     "file": "assets/relcom.js",
-    "context": "assets/relcom.js:3559",
-    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
+    "context": "assets/relcom.js:4509",
+    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
   },
   {
-    "start": 4663,
-    "end": 4676,
+    "start": 5613,
+    "end": 5626,
     "source": " мин чтения",
     "kind": "literal",
     "file": "assets/relcom.js",
-    "context": "assets/relcom.js:4663",
-    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
+    "context": "assets/relcom.js:5613",
+    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
   },
   {
-    "start": 5083,
-    "end": 5122,
+    "start": 6033,
+    "end": 6072,
     "source": "Опубликованные статьи в Relcom Press.",
     "kind": "literal",
     "file": "assets/relcom.js",
-    "context": "assets/relcom.js:5083",
-    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
+    "context": "assets/relcom.js:6033",
+    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
   },
   {
-    "start": 5123,
-    "end": 5220,
+    "start": 6073,
+    "end": 6170,
     "source": "Пока нет опубликованных статей. Новые материалы появятся здесь после публикации в Relcom Press.",
     "kind": "literal",
     "file": "assets/relcom.js",
-    "context": "assets/relcom.js:5123",
-    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
+    "context": "assets/relcom.js:6073",
+    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
   },
   {
-    "start": 5261,
-    "end": 5351,
+    "start": 6211,
+    "end": 6301,
     "source": "Не удалось загрузить список статей. Откройте блог в Relcom Press или попробуйте ещё раз.",
     "kind": "literal",
     "file": "assets/relcom.js",
-    "context": "assets/relcom.js:5261",
-    "sha256": "584f649c995497cb0f6a49ab16b8fde2f4eb8fe689c03b646a717adb8b598851"
+    "context": "assets/relcom.js:6211",
+    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
   },
   {
     "start": 647,
