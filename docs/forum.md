@@ -1,6 +1,6 @@
 # Participants' forum: ipvx.org/forum
 
-Date: 2026-11-07. Status: **Backend implemented and locally tested; pages, automatic moderator and
+Date: 2026-11-07. Status: **Backend and pages implemented and locally tested; automatic moderator and
 deployment not yet done.** This replaces the Discourse plan of the same date (see "Superseded").
 
 ## Why
@@ -81,9 +81,10 @@ If the automatic moderator is not running, posts wait for people; nothing is pub
 
 ## Phases
 
-1. **Backend** (this change): data model, API, moderation hooks, search, tests.
-2. **Pages:** `/forum/`, category, thread and composer pages in the portal's own style and i18n
-   (ru/en/de/es), the moderation queues on the admin page, a "Форум" link in the ipvx.org header.
+1. **Backend:** data model, API, moderation hooks, search, tests. Done.
+2. **Pages** (done): `forum.html` with categories, threads, a thread page, composer, search, the public name
+   and the moderators' queues (`?mod=`), in the portal's own style and i18n (ru/en/de/es); "Форум" in
+   the ipvx.org header. `scripts/browser_forum_check.mjs` covers it against a synthetic API.
 3. **Automatic moderator:** the worker, its prompt and rules, a systemd unit and timer, a local test
    against fixtures. Turning it on in production makes paid API calls and needs the owner's separate
    permission and key.

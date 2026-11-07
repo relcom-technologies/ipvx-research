@@ -184,7 +184,7 @@ def localized(tree, name, language, catalog, pages):
             if language != 'ru' and lower in ('href', 'src', 'action') and value:
                 if value in ('assets/llm-comparison.svg', 'assets/llm-comparison-mobile.svg'):
                     node.set(lower, value.replace('assets/', 'assets/'+language+'/'))
-                elif re.fullmatch(r'assets/(?:portal|relcom|community|admin|replay|agent-replay)\.js', value):
+                elif re.fullmatch(r'assets/(?:portal|relcom|community|admin|replay|agent-replay|forum)\.js', value):
                     node.set(lower, value.replace('assets/', 'assets/'+language+'/'))
                 else:
                     canonical = value.removeprefix('https://ipvx.org/')
@@ -192,7 +192,7 @@ def localized(tree, name, language, catalog, pages):
                     if path in pages:
                         node.set(lower, value.replace(path, page_name(path, language), 1))
                     elif value.startswith('https://ipvx.org/auth/login?returnTo='):
-                        node.set(lower, re.sub(r'returnTo=/(account|admin)\.html', r'returnTo=/\1.'+language+'.html', value))
+                        node.set(lower, re.sub(r'returnTo=/(account|admin|forum)\.html', r'returnTo=/\1.'+language+'.html', value))
         original = original_nodes.get(id(node))
         node.children = [walk(child, skip) for child in node.children]
         if node.tag == 'html':
@@ -257,7 +257,7 @@ def build(languages=LANGUAGES):
             continue
         folder = ROOT/'assets'/language
         folder.mkdir(exist_ok=True)
-        for file in ['portal', 'relcom', 'community', 'admin', 'replay', 'agent-replay']:
+        for file in ['portal', 'relcom', 'community', 'admin', 'replay', 'agent-replay', 'forum']:
             source = (ROOT/'assets'/f'{file}.js').read_text()
             own_spans = [span for span in spans if span['file'] == f'assets/{file}.js']
             digest = hashlib.sha256(source.encode()).hexdigest()
