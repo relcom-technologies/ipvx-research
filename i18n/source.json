@@ -1047,13 +1047,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "9d0705c89d824942",
-      "source": "201 событий по HX-0201; авторы, основания, проверки и ограничения.",
+      "id": "f4f3864f6e7af3ae",
+      "source": "202 событий по HX-0202; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "b693406dcc816222",
-      "source": "403.2 КиБ · 12 файлов",
+      "id": "69f0d4026e29a220",
+      "source": "404.5 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4947,8 +4947,8 @@
       "context": "history.html:text:main/section/p"
     },
     {
-      "id": "84e076351e37cbef",
-      "source": "HX-0201 · Ссылки «Обсудить» ведут с RFC, гипотез и опытов на форум",
+      "id": "fe42842fa4177d63",
+      "source": "HX-0202 · Форум показывает новые ответы в темах участника",
       "context": "history.html:text:section/details/summary"
     },
     {
@@ -4957,13 +4957,13 @@
       "context": "history.html:text:details/summary/span"
     },
     {
-      "id": "56c5d30542b5214e",
-      "source": "Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд) · 2026-11-07T22:45:00+00:00",
+      "id": "d0990ca7a62e8512",
+      "source": "Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд) · 2026-11-07T23:00:00+00:00",
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "3a9c55cba83f0660",
-      "source": "Каждая страница RFC получила ссылку на обсуждение документа на форуме, а каждый её раздел — свою ссылку «Обсудить раздел». У гипотез LLM1–LLM8 и у четырёх опытов на странице экспериментов есть ссылка на их обсуждение, на странице BCP — на раздел BCP форума. Страница обсуждений объекта на форуме показывает понятное название вместо служебного кода, ведёт обратно на объект в той же языковой версии и заранее выбирает подходящую категорию для новой темы. В шапку лаборатории lab.ipvx.org добавляется ссылка «Форум» отдельным изменением в ipvx-agent-lab.",
+      "id": "08111527c1bc64ec",
+      "source": "Участник следит за каждой темой, в которой писал. Новыми считаются опубликованные ответы других участников после его отметки прочтения: собственный пост сдвигает отметку до него, открытая тема — до последнего показанного поста. В шапке ipvx.org рядом с «Форумом» вошедший участник видит число новых ответов; на форуме есть список «Мои темы», каждая тема ведёт к первому новому ответу, а новые посты отмечены в самой теме.",
       "context": "history.html:text:section/details/p"
     },
     {
@@ -4972,8 +4972,8 @@
       "context": "history.html:text:section/details/h3"
     },
     {
-      "id": "76e5ccf934f4f705",
-      "source": "Форум полезен, только если до него можно дойти от того, что обсуждают. Ссылка на объект проекта связывает тему с конкретным документом или опытом и собирает обсуждения одного объекта на одной странице; формальные комментарии и предложения к RFC по-прежнему идут прежним путём.",
+      "id": "e38ea988ab5d6a45",
+      "source": "Без уведомлений участник не узнаёт, что ему ответили, и разговор обрывается. Счётчик на сайте не требует почтового сервиса и не хранит ничего, кроме номера последнего прочитанного поста в теме.",
       "context": "history.html:text:section/details/p"
     },
     {
@@ -4982,13 +4982,23 @@
       "context": "history.html:text:section/details/h3"
     },
     {
-      "id": "9eff48ba802739a9",
-      "source": "scripts/build_portal.py",
+      "id": "d070ea66ee2814ab",
+      "source": "infra/community.py",
       "context": "history.html:text:ul/li/a"
     },
     {
       "id": "0a33cac58507d81e",
       "source": "assets/forum.js",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "25c8a7834e79bfc4",
+      "source": "assets/relcom.js",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "9df7500e24cea105",
+      "source": "scripts/test_forum.py",
       "context": "history.html:text:ul/li/a"
     },
     {
@@ -5007,6 +5017,51 @@
       "context": "history.html:text:section/details/h3"
     },
     {
+      "id": "7cf5ae43d02196b4",
+      "source": "Писем нет: для них нужен почтовый сервис, он ещё не выбран.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "043db0f85cf9e8bb",
+      "source": "Следить можно только за темами, в которых участник писал; подписаться на чужую тему или отключить уведомления нельзя.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "e7f5d8c5deb95188",
+      "source": "Изменение собрано поверх ещё не слитых PR78 и PR79 и не выкачено.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "eef48afb7e7c7a81",
+      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "84e076351e37cbef",
+      "source": "HX-0201 · Ссылки «Обсудить» ведут с RFC, гипотез и опытов на форум",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "56c5d30542b5214e",
+      "source": "Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд) · 2026-11-07T22:45:00+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "3a9c55cba83f0660",
+      "source": "Каждая страница RFC получила ссылку на обсуждение документа на форуме, а каждый её раздел — свою ссылку «Обсудить раздел». У гипотез LLM1–LLM8 и у четырёх опытов на странице экспериментов есть ссылка на их обсуждение, на странице BCP — на раздел BCP форума. Страница обсуждений объекта на форуме показывает понятное название вместо служебного кода, ведёт обратно на объект в той же языковой версии и заранее выбирает подходящую категорию для новой темы. В шапку лаборатории lab.ipvx.org добавляется ссылка «Форум» отдельным изменением в ipvx-agent-lab.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "76e5ccf934f4f705",
+      "source": "Форум полезен, только если до него можно дойти от того, что обсуждают. Ссылка на объект проекта связывает тему с конкретным документом или опытом и собирает обсуждения одного объекта на одной странице; формальные комментарии и предложения к RFC по-прежнему идут прежним путём.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "9eff48ba802739a9",
+      "source": "scripts/build_portal.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
       "id": "37dff4429140a908",
       "source": "Изменение собрано поверх ещё не слитого PR78 и не выкачено.",
       "context": "history.html:text:details/ul/li"
@@ -5020,11 +5075,6 @@
       "id": "d960329ccc1ed2e6",
       "source": "Ссылки у ворот лаборатории и в подвале блога ещё не добавлены.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "eef48afb7e7c7a81",
-      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "ab92ef1d3172f157",
@@ -5047,11 +5097,6 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "d070ea66ee2814ab",
-      "source": "infra/community.py",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
       "id": "aa17155fac26b1e3",
       "source": "infra/forum_moderator.py",
       "context": "history.html:text:ul/li/a"
@@ -5059,11 +5104,6 @@
     {
       "id": "1e3bb1ead3380156",
       "source": "scripts/test_forum_moderator.py",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "9df7500e24cea105",
-      "source": "scripts/test_forum.py",
       "context": "history.html:text:ul/li/a"
     },
     {
@@ -12012,11 +12052,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "25c8a7834e79bfc4",
-      "source": "assets/relcom.js",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
       "id": "d639d59dc7f5ae4e",
       "source": "assets/relcom.css",
       "context": "history.html:text:ul/li/a"
@@ -13592,74 +13627,79 @@
       "context": "assets/relcom.js:1273"
     },
     {
+      "id": "325b633e86495f32",
+      "source": "— новых ответов",
+      "context": "assets/relcom.js:1997"
+    },
+    {
       "id": "4836efabcc6e314c",
       "source": "Сервис входа временно недоступен. Попробуйте позже.",
-      "context": "assets/relcom.js:1759"
+      "context": "assets/relcom.js:2613"
     },
     {
       "id": "c008a5bfb8198af0",
       "source": "Вход не подтверждён. Попробуйте войти снова.",
-      "context": "assets/relcom.js:1833"
+      "context": "assets/relcom.js:2687"
     },
     {
       "id": "cc94876a882dc176",
       "source": "Проверяем состояние входа…",
-      "context": "assets/relcom.js:2289"
+      "context": "assets/relcom.js:3143"
     },
     {
       "id": "dc1a32328eebfc14",
       "source": "Вы не вошли. Можно использовать существующую учётную запись или зарегистрироваться.",
-      "context": "assets/relcom.js:2589"
+      "context": "assets/relcom.js:3443"
     },
     {
       "id": "cca717bc5947cddd",
       "source": "Сеанс истёк. Войдите снова, чтобы подтвердить учётную запись.",
-      "context": "assets/relcom.js:2899"
+      "context": "assets/relcom.js:3753"
     },
     {
       "id": "aeffada4139fa017",
       "source": "Адрес не предоставлен",
-      "context": "assets/relcom.js:3186"
+      "context": "assets/relcom.js:4040"
     },
     {
       "id": "d5c613606b17394e",
       "source": "Электронная почта подтверждена Relcom ID",
-      "context": "assets/relcom.js:3287"
+      "context": "assets/relcom.js:4141"
     },
     {
       "id": "b591040dd9450ccb",
       "source": "Подтверждение электронной почты не получено",
-      "context": "assets/relcom.js:3330"
+      "context": "assets/relcom.js:4184"
     },
     {
       "id": "c80d54f6befe32f3",
       "source": "Вход выполнен. Права участия и голосования определяются отдельно.",
-      "context": "assets/relcom.js:3852"
+      "context": "assets/relcom.js:4706"
     },
     {
       "id": "d088d97bab6d70f3",
       "source": "Не удалось проверить вход. Попробуйте ещё раз; материалы исследования доступны без входа.",
-      "context": "assets/relcom.js:4010"
+      "context": "assets/relcom.js:4864"
     },
     {
       "id": "5aa9b7e99d53cdb4",
       "source": "мин чтения",
-      "context": "assets/relcom.js:5613"
+      "context": "assets/relcom.js:6467"
     },
     {
       "id": "8cca93a86d3c5a59",
       "source": "Опубликованные статьи в Relcom Press.",
-      "context": "assets/relcom.js:6033"
+      "context": "assets/relcom.js:6887"
     },
     {
       "id": "feb50986e49882b3",
       "source": "Пока нет опубликованных статей. Новые материалы появятся здесь после публикации в Relcom Press.",
-      "context": "assets/relcom.js:6073"
+      "context": "assets/relcom.js:6927"
     },
     {
       "id": "0bda035d3218750e",
       "source": "Не удалось загрузить список статей. Откройте блог в Relcom Press или попробуйте ещё раз.",
-      "context": "assets/relcom.js:6211"
+      "context": "assets/relcom.js:7065"
     },
     {
       "id": "ca2d8926f3d2c983",
@@ -14639,432 +14679,467 @@
     {
       "id": "9e37774086d1b0e3",
       "source": "Текущая работа над BCP 0.2: прогоны, стенд, проверки и их границы.",
-      "context": "assets/forum.js:865"
+      "context": "assets/forum.js:893"
     },
     {
       "id": "c31cdbd07e6cc3a2",
       "source": "Блог",
-      "context": "assets/forum.js:944"
+      "context": "assets/forum.js:972"
     },
     {
       "id": "bbbf2a2e58048677",
       "source": "Обсуждение статей блога IPvX Research: одна тема на статью.",
-      "context": "assets/forum.js:951"
+      "context": "assets/forum.js:979"
     },
     {
       "id": "237252fc237a0b53",
       "source": "Черновики RFC",
-      "context": "assets/forum.js:1022"
+      "context": "assets/forum.js:1050"
     },
     {
       "id": "1ca8852dfa384b30",
       "source": "Вопросы и идеи по черновикам RFC. Изменение RFC идёт через предложение к RFC или PR в GitHub.",
-      "context": "assets/forum.js:1038"
+      "context": "assets/forum.js:1066"
     },
     {
       "id": "1c7444e19aafc326",
       "source": "Эксперименты и лаборатория",
-      "context": "assets/forum.js:1151"
+      "context": "assets/forum.js:1179"
     },
     {
       "id": "cc4cee2f3f790f0e",
       "source": "Эксперименты, стенд lab.ipvx.org, гипотезы и их проверки.",
-      "context": "assets/forum.js:1180"
+      "context": "assets/forum.js:1208"
     },
     {
       "id": "9fe78c578deeabc5",
       "source": "Архитектура",
-      "context": "assets/forum.js:1258"
+      "context": "assets/forum.js:1286"
     },
     {
       "id": "723f6e30f804c900",
       "source": "Устройство IPvX: адресация, маршрутизация, доставка сообщений.",
-      "context": "assets/forum.js:1272"
+      "context": "assets/forum.js:1300"
     },
     {
       "id": "9c924186ced1f2cf",
       "source": "Вопросы",
-      "context": "assets/forum.js:1352"
+      "context": "assets/forum.js:1380"
     },
     {
       "id": "9d7a07e8149bcf79",
       "source": "Вопросы о проекте и протоколе.",
-      "context": "assets/forum.js:1362"
+      "context": "assets/forum.js:1390"
     },
     {
       "id": "0c7074136b3b94cf",
       "source": "Сайт и форум",
-      "context": "assets/forum.js:1405"
+      "context": "assets/forum.js:1433"
     },
     {
       "id": "a287192f900c40e3",
       "source": "Отзывы о сайте и форуме, правила и заметки модераторов.",
-      "context": "assets/forum.js:1420"
+      "context": "assets/forum.js:1448"
     },
     {
       "id": "3aa429df0710bb94",
       "source": "Ждут решения людей",
-      "context": "assets/forum.js:1503"
+      "context": "assets/forum.js:1531"
     },
     {
       "id": "b4c8ed80277861fc",
       "source": "Ждут автоматической проверки",
-      "context": "assets/forum.js:1534"
+      "context": "assets/forum.js:1562"
     },
     {
       "id": "37cd5876821e8021",
       "source": "Скрытые",
-      "context": "assets/forum.js:1572"
+      "context": "assets/forum.js:1600"
     },
     {
       "id": "abda2910b5d6ea68",
       "source": "На проверке · видно только вам и модераторам",
-      "context": "assets/forum.js:1612"
+      "context": "assets/forum.js:1640"
     },
     {
       "id": "00a02c3a05e4d1fe",
       "source": "Сеанс истёк. Войдите снова через Relcom ID.",
-      "context": "assets/forum.js:1721"
+      "context": "assets/forum.js:1749"
     },
     {
       "id": "13e4c62fe85e7166",
       "source": "Для участия нужна учётная запись с подтверждённой почтой.",
-      "context": "assets/forum.js:1793"
+      "context": "assets/forum.js:1821"
     },
     {
       "id": "579b2b5ea6dc233e",
       "source": "Ваше участие заблокировано администратором.",
-      "context": "assets/forum.js:1868"
+      "context": "assets/forum.js:1896"
     },
     {
       "id": "e9c8c575888fb649",
       "source": "Тема закрыта для новых ответов.",
-      "context": "assets/forum.js:1928"
+      "context": "assets/forum.js:1956"
     },
     {
       "id": "013ba261006d29b7",
       "source": "Тема не найдена или ещё не опубликована.",
-      "context": "assets/forum.js:1979"
+      "context": "assets/forum.js:2007"
     },
     {
       "id": "8d2ac50bf0981458",
       "source": "Такой категории нет.",
-      "context": "assets/forum.js:2041"
+      "context": "assets/forum.js:2069"
     },
     {
       "id": "166f821dece13d00",
       "source": "У вас слишком много сообщений на проверке. Дождитесь решения.",
-      "context": "assets/forum.js:2086"
+      "context": "assets/forum.js:2114"
     },
     {
       "id": "6a3aab4cd30c3faa",
       "source": "Слишком много действий подряд. Попробуйте через несколько минут.",
-      "context": "assets/forum.js:2170"
+      "context": "assets/forum.js:2198"
     },
     {
       "id": "4f663e19b5173bed",
       "source": "Это имя уже занято.",
-      "context": "assets/forum.js:2248"
+      "context": "assets/forum.js:2276"
     },
     {
       "id": "0a5671240101f91a",
       "source": "Имя: от 2 до 40 букв и цифр, без служебных слов.",
-      "context": "assets/forum.js:2283"
+      "context": "assets/forum.js:2311"
     },
     {
       "id": "fa57a7d28e46ab5e",
       "source": "Проверьте длину текста: заголовок от 3 до 200 знаков, сообщение до 8000.",
-      "context": "assets/forum.js:2347"
+      "context": "assets/forum.js:2375"
     },
     {
       "id": "a4bdcad02fbf1978",
       "source": "Поиск временно недоступен.",
-      "context": "assets/forum.js:2441"
+      "context": "assets/forum.js:2469"
     },
     {
       "id": "9e9f14dd42147c08",
       "source": "Введите хотя бы одно слово из двух букв.",
-      "context": "assets/forum.js:2485"
+      "context": "assets/forum.js:2513"
     },
     {
       "id": "9ce4f440ef912fd0",
       "source": "Нужна роль модератора.",
-      "context": "assets/forum.js:2542"
+      "context": "assets/forum.js:2570"
     },
     {
       "id": "b8a8ccd80cd645d5",
       "source": "Форум временно недоступен. Повторите позже.",
-      "context": "assets/forum.js:2721"
+      "context": "assets/forum.js:2749"
     },
     {
       "id": "b266c6f0f8667f33",
       "source": "Запрос не выполнен.",
-      "context": "assets/forum.js:2767"
+      "context": "assets/forum.js:2795"
     },
     {
       "id": "46df2f48a251b2e0",
       "source": ", раздел",
-      "context": "assets/forum.js:5788"
+      "context": "assets/forum.js:5816"
     },
     {
       "id": "17a2bbc2d51be3f1",
       "source": "Гипотеза LLM",
-      "context": "assets/forum.js:5957"
+      "context": "assets/forum.js:5985"
     },
     {
       "id": "96eededdb91fd590",
       "source": "Опыт:",
-      "context": "assets/forum.js:6147"
+      "context": "assets/forum.js:6175"
     },
     {
       "id": "5c6f86a2718671e4",
       "source": "Лаборатория:",
-      "context": "assets/forum.js:6314"
+      "context": "assets/forum.js:6342"
     },
     {
       "id": "a393e127129273aa",
       "source": "Пишите простым текстом. Не публикуйте пароли, ключи и личные данные.",
-      "context": "assets/forum.js:7329"
+      "context": "assets/forum.js:7357"
     },
     {
       "id": "899dce11fb2c0f4c",
       "source": "Отправляем…",
-      "context": "assets/forum.js:7743"
+      "context": "assets/forum.js:7771"
     },
     {
       "id": "3186280aca4f0fbb",
       "source": "Опубликовано.",
-      "context": "assets/forum.js:8079"
+      "context": "assets/forum.js:8107"
     },
     {
       "id": "262220cee2a67c07",
       "source": "Отправлено. Сообщение появится после проверки; пока его видите только вы.",
-      "context": "assets/forum.js:8095"
+      "context": "assets/forum.js:8123"
     },
     {
       "id": "26c80474c7221e11",
       "source": "Новая тема",
-      "context": "assets/forum.js:8297"
+      "context": "assets/forum.js:8325"
     },
     {
       "id": "98562f8141d841a3",
       "source": "Войдите через Relcom ID",
-      "context": "assets/forum.js:8374"
+      "context": "assets/forum.js:8402"
     },
     {
       "id": "0857a51b6c33e1d1",
       "source": ", чтобы начать тему.",
-      "context": "assets/forum.js:8425"
+      "context": "assets/forum.js:8453"
     },
     {
       "id": "41f780fdee89f896",
       "source": "Категория",
-      "context": "assets/forum.js:8546"
+      "context": "assets/forum.js:8574"
     },
     {
       "id": "2ffeafbca981d162",
       "source": "Опубликовать тему",
-      "context": "assets/forum.js:8830"
+      "context": "assets/forum.js:8858"
     },
     {
       "id": "7b9de65d16725ec8",
       "source": "ответ",
-      "context": "assets/forum.js:9726"
+      "context": "assets/forum.js:9754"
     },
     {
       "id": "2878e68255e5e1ef",
       "source": "ответов",
-      "context": "assets/forum.js:9734"
+      "context": "assets/forum.js:9762"
     },
     {
       "id": "d70e2991341717b0",
       "source": "Закрыта",
-      "context": "assets/forum.js:9923"
+      "context": "assets/forum.js:9951"
     },
     {
       "id": "e86a9f261bb63858",
       "source": "Тем пока нет. Начните первую.",
-      "context": "assets/forum.js:10373"
+      "context": "assets/forum.js:10401"
     },
     {
       "id": "05f6c615a3518d94",
       "source": "Категории",
-      "context": "assets/forum.js:10578"
+      "context": "assets/forum.js:10606"
     },
     {
       "id": "672e9a1bbbeb0541",
       "source": "Тем:",
-      "context": "assets/forum.js:10980"
+      "context": "assets/forum.js:11008"
     },
     {
       "id": "bfc2b5508cf371f3",
       "source": "· последнее:",
-      "context": "assets/forum.js:11001"
+      "context": "assets/forum.js:11029"
     },
     {
       "id": "a45b6dce57013d75",
       "source": "Тем пока нет",
-      "context": "assets/forum.js:11044"
+      "context": "assets/forum.js:11072"
     },
     {
       "id": "eac88378e03b0899",
       "source": "Обсуждения:",
-      "context": "assets/forum.js:12073"
+      "context": "assets/forum.js:12101"
     },
     {
       "id": "57fb0f05a811ee82",
       "source": "Открыть на сайте",
-      "context": "assets/forum.js:12173"
+      "context": "assets/forum.js:12201"
+    },
+    {
+      "id": "7200631f8dc1d3c1",
+      "source": "Новое",
+      "context": "assets/forum.js:13104"
     },
     {
       "id": "fcc8e9eb339f6170",
       "source": "в ответ на #",
-      "context": "assets/forum.js:12949"
+      "context": "assets/forum.js:13202"
     },
     {
       "id": "b9af23eeff5da84a",
       "source": "Ответить",
-      "context": "assets/forum.js:13328"
+      "context": "assets/forum.js:13581"
     },
     {
       "id": "a5483ea07f882437",
       "source": "Модерация",
-      "context": "assets/forum.js:13693"
+      "context": "assets/forum.js:13946"
     },
     {
       "id": "eb604b03dfbc9dcc",
       "source": "Отметка проверки:",
-      "context": "assets/forum.js:13751"
+      "context": "assets/forum.js:14004"
     },
     {
       "id": "aee7bfdd238185e0",
       "source": "Скрыто.",
-      "context": "assets/forum.js:14157"
+      "context": "assets/forum.js:14410"
     },
     {
       "id": "6342c9187e01caa4",
       "source": "Обсуждается:",
-      "context": "assets/forum.js:14757"
+      "context": "assets/forum.js:15010"
     },
     {
       "id": "43179c6963573b93",
       "source": "Тема закрыта: новые ответы может оставить только модератор.",
-      "context": "assets/forum.js:14923"
+      "context": "assets/forum.js:15176"
     },
     {
       "id": "423ce129e1e2b464",
       "source": "Показать ещё ответы",
-      "context": "assets/forum.js:15069"
+      "context": "assets/forum.js:15322"
     },
     {
       "id": "feb89900a501d52a",
       "source": "Ответ на #",
-      "context": "assets/forum.js:15349"
+      "context": "assets/forum.js:15602"
     },
     {
       "id": "95837f0d814001fd",
       "source": "Открыть тему",
-      "context": "assets/forum.js:15939"
+      "context": "assets/forum.js:16234"
     },
     {
       "id": "737f9620e6176156",
       "source": "Закрыть тему",
-      "context": "assets/forum.js:15954"
+      "context": "assets/forum.js:16249"
     },
     {
       "id": "a7a4033657e89fc9",
       "source": "Закрыть",
-      "context": "assets/forum.js:16071"
+      "context": "assets/forum.js:16366"
     },
     {
       "id": "8269124505a107ee",
       "source": "Готово. Обновите страницу.",
-      "context": "assets/forum.js:16233"
+      "context": "assets/forum.js:16528"
     },
     {
       "id": "363f81e7f3bd7ed4",
       "source": ", чтобы ответить.",
-      "context": "assets/forum.js:16490"
+      "context": "assets/forum.js:16785"
     },
     {
       "id": "b7717c6c8eb0310b",
       "source": "Тема закрыта.",
-      "context": "assets/forum.js:16584"
+      "context": "assets/forum.js:16879"
     },
     {
       "id": "102eefe4f6c95575",
       "source": "Ответы откроются, когда тему опубликуют.",
-      "context": "assets/forum.js:16673"
+      "context": "assets/forum.js:16968"
     },
     {
       "id": "ceb68a9287da00d8",
       "source": "Отправить",
-      "context": "assets/forum.js:16833"
+      "context": "assets/forum.js:17128"
+    },
+    {
+      "id": "3d1faf00de44b6ae",
+      "source": "Мои темы",
+      "context": "assets/forum.js:17724"
+    },
+    {
+      "id": "d09ae9db0221c935",
+      "source": "Темы, в которых вы писали. Новыми считаются опубликованные ответы других участников после вашего последнего прочтения.",
+      "context": "assets/forum.js:17766"
+    },
+    {
+      "id": "cdff0f6ecb4a5f60",
+      "source": "Новых ответов:",
+      "context": "assets/forum.js:18495"
+    },
+    {
+      "id": "2fb7a81efbc0a130",
+      "source": "Новых ответов нет",
+      "context": "assets/forum.js:18527"
+    },
+    {
+      "id": "87e669baf1770cdb",
+      "source": "Вы ещё не писали на форуме. Здесь появятся темы, в которых вы участвуете.",
+      "context": "assets/forum.js:18685"
     },
     {
       "id": "180f58ab975323f9",
       "source": "Поиск",
-      "context": "assets/forum.js:17269"
+      "context": "assets/forum.js:18867"
     },
     {
       "id": "798ff068cd437db1",
       "source": "Поиск:",
-      "context": "assets/forum.js:17287"
+      "context": "assets/forum.js:18885"
     },
     {
       "id": "6bd686a245261e16",
       "source": "Ничего не найдено.",
-      "context": "assets/forum.js:17788"
+      "context": "assets/forum.js:19386"
     },
     {
       "id": "b1ff8198038c3e25",
       "source": "Модерация форума",
-      "context": "assets/forum.js:18061"
+      "context": "assets/forum.js:19659"
     },
     {
       "id": "c3dcb5467b98cdbd",
       "source": "начало темы",
-      "context": "assets/forum.js:18620"
+      "context": "assets/forum.js:20218"
     },
     {
       "id": "73561e0a5bf2597b",
       "source": "Как вас показывать",
-      "context": "assets/forum.js:18955"
+      "context": "assets/forum.js:20553"
     },
     {
       "id": "2aa98ec188e2526b",
       "source": "Сейчас:",
-      "context": "assets/forum.js:19054"
+      "context": "assets/forum.js:20652"
     },
     {
       "id": "06aac3b5dc5f79ab",
       "source": "Сейчас вы показаны псевдонимом «",
-      "context": "assets/forum.js:19079"
+      "context": "assets/forum.js:20677"
     },
     {
       "id": "5b6563c66c6fdc02",
       "source": "». Имя и почта из Relcom ID на форуме не видны.",
-      "context": "assets/forum.js:19130"
+      "context": "assets/forum.js:20728"
     },
     {
       "id": "4a11b55556c77ba2",
       "source": "Публичное имя",
-      "context": "assets/forum.js:19221"
+      "context": "assets/forum.js:20819"
     },
     {
       "id": "59322ea5e71f4d6d",
       "source": "Сохранить имя",
-      "context": "assets/forum.js:19284"
+      "context": "assets/forum.js:20882"
     },
     {
       "id": "440a79c335cd171c",
       "source": "Поиск по форуму",
-      "context": "assets/forum.js:19605"
+      "context": "assets/forum.js:21203"
+    },
+    {
+      "id": "7d1e430bc7f23a28",
+      "source": "Мои темы · новых:",
+      "context": "assets/forum.js:21893"
     },
     {
       "id": "b37952ae01b23375",
       "source": "Загружаем форум…",
-      "context": "assets/forum.js:20387"
+      "context": "assets/forum.js:22148"
     },
     {
       "id": "dd1b88ab67f4b98a",

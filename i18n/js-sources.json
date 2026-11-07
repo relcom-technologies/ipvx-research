@@ -258,7 +258,7 @@
     "kind": "literal",
     "file": "assets/relcom.js",
     "context": "assets/relcom.js:1130",
-    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
+    "sha256": "6e894f5e539c3f6eb924193b44339b2b5892b672fde0194da5214001c5a9e35b"
   },
   {
     "start": 1273,
@@ -267,160 +267,169 @@
     "kind": "literal",
     "file": "assets/relcom.js",
     "context": "assets/relcom.js:1273",
-    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
+    "sha256": "6e894f5e539c3f6eb924193b44339b2b5892b672fde0194da5214001c5a9e35b"
   },
   {
-    "start": 1759,
-    "end": 1812,
+    "start": 1997,
+    "end": 2015,
+    "source": " — новых ответов",
+    "kind": "literal",
+    "file": "assets/relcom.js",
+    "context": "assets/relcom.js:1997",
+    "sha256": "6e894f5e539c3f6eb924193b44339b2b5892b672fde0194da5214001c5a9e35b"
+  },
+  {
+    "start": 2613,
+    "end": 2666,
     "source": "Сервис входа временно недоступен. Попробуйте позже.",
     "kind": "literal",
     "file": "assets/relcom.js",
-    "context": "assets/relcom.js:1759",
-    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
+    "context": "assets/relcom.js:2613",
+    "sha256": "6e894f5e539c3f6eb924193b44339b2b5892b672fde0194da5214001c5a9e35b"
   },
   {
-    "start": 1833,
-    "end": 1879,
+    "start": 2687,
+    "end": 2733,
     "source": "Вход не подтверждён. Попробуйте войти снова.",
     "kind": "literal",
     "file": "assets/relcom.js",
-    "context": "assets/relcom.js:1833",
-    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
+    "context": "assets/relcom.js:2687",
+    "sha256": "6e894f5e539c3f6eb924193b44339b2b5892b672fde0194da5214001c5a9e35b"
   },
   {
-    "start": 2289,
-    "end": 2317,
+    "start": 3143,
+    "end": 3171,
     "source": "Проверяем состояние входа…",
     "kind": "literal",
     "file": "assets/relcom.js",
-    "context": "assets/relcom.js:2289",
-    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
+    "context": "assets/relcom.js:3143",
+    "sha256": "6e894f5e539c3f6eb924193b44339b2b5892b672fde0194da5214001c5a9e35b"
   },
   {
-    "start": 2589,
-    "end": 2674,
+    "start": 3443,
+    "end": 3528,
     "source": "Вы не вошли. Можно использовать существующую учётную запись или зарегистрироваться.",
     "kind": "literal",
     "file": "assets/relcom.js",
-    "context": "assets/relcom.js:2589",
-    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
+    "context": "assets/relcom.js:3443",
+    "sha256": "6e894f5e539c3f6eb924193b44339b2b5892b672fde0194da5214001c5a9e35b"
   },
   {
-    "start": 2899,
-    "end": 2962,
+    "start": 3753,
+    "end": 3816,
     "source": "Сеанс истёк. Войдите снова, чтобы подтвердить учётную запись.",
     "kind": "literal",
     "file": "assets/relcom.js",
-    "context": "assets/relcom.js:2899",
-    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
+    "context": "assets/relcom.js:3753",
+    "sha256": "6e894f5e539c3f6eb924193b44339b2b5892b672fde0194da5214001c5a9e35b"
   },
   {
-    "start": 3081,
-    "end": 3096,
+    "start": 3935,
+    "end": 3950,
     "source": "Участник IPvX",
     "kind": "literal",
     "file": "assets/relcom.js",
-    "context": "assets/relcom.js:3081",
-    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
+    "context": "assets/relcom.js:3935",
+    "sha256": "6e894f5e539c3f6eb924193b44339b2b5892b672fde0194da5214001c5a9e35b"
   },
   {
-    "start": 3186,
-    "end": 3209,
+    "start": 4040,
+    "end": 4063,
     "source": "Адрес не предоставлен",
     "kind": "literal",
     "file": "assets/relcom.js",
-    "context": "assets/relcom.js:3186",
-    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
+    "context": "assets/relcom.js:4040",
+    "sha256": "6e894f5e539c3f6eb924193b44339b2b5892b672fde0194da5214001c5a9e35b"
   },
   {
-    "start": 3287,
-    "end": 3329,
+    "start": 4141,
+    "end": 4183,
     "source": "Электронная почта подтверждена Relcom ID",
     "kind": "literal",
     "file": "assets/relcom.js",
-    "context": "assets/relcom.js:3287",
-    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
+    "context": "assets/relcom.js:4141",
+    "sha256": "6e894f5e539c3f6eb924193b44339b2b5892b672fde0194da5214001c5a9e35b"
   },
   {
-    "start": 3330,
-    "end": 3375,
+    "start": 4184,
+    "end": 4229,
     "source": "Подтверждение электронной почты не получено",
     "kind": "literal",
     "file": "assets/relcom.js",
-    "context": "assets/relcom.js:3330",
-    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
+    "context": "assets/relcom.js:4184",
+    "sha256": "6e894f5e539c3f6eb924193b44339b2b5892b672fde0194da5214001c5a9e35b"
   },
   {
-    "start": 3729,
-    "end": 3792,
+    "start": 4583,
+    "end": 4646,
     "source": "Сеанс истёк. Войдите снова, чтобы подтвердить учётную запись.",
     "kind": "literal",
     "file": "assets/relcom.js",
-    "context": "assets/relcom.js:3729",
-    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
+    "context": "assets/relcom.js:4583",
+    "sha256": "6e894f5e539c3f6eb924193b44339b2b5892b672fde0194da5214001c5a9e35b"
   },
   {
-    "start": 3852,
-    "end": 3919,
+    "start": 4706,
+    "end": 4773,
     "source": "Вход выполнен. Права участия и голосования определяются отдельно.",
     "kind": "literal",
     "file": "assets/relcom.js",
-    "context": "assets/relcom.js:3852",
-    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
+    "context": "assets/relcom.js:4706",
+    "sha256": "6e894f5e539c3f6eb924193b44339b2b5892b672fde0194da5214001c5a9e35b"
   },
   {
-    "start": 4010,
-    "end": 4101,
+    "start": 4864,
+    "end": 4955,
     "source": "Не удалось проверить вход. Попробуйте ещё раз; материалы исследования доступны без входа.",
     "kind": "literal",
     "file": "assets/relcom.js",
-    "context": "assets/relcom.js:4010",
-    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
+    "context": "assets/relcom.js:4864",
+    "sha256": "6e894f5e539c3f6eb924193b44339b2b5892b672fde0194da5214001c5a9e35b"
   },
   {
-    "start": 4509,
-    "end": 4543,
+    "start": 5363,
+    "end": 5397,
     "source": "Загружаем опубликованные статьи…",
     "kind": "literal",
     "file": "assets/relcom.js",
-    "context": "assets/relcom.js:4509",
-    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
+    "context": "assets/relcom.js:5363",
+    "sha256": "6e894f5e539c3f6eb924193b44339b2b5892b672fde0194da5214001c5a9e35b"
   },
   {
-    "start": 5613,
-    "end": 5626,
+    "start": 6467,
+    "end": 6480,
     "source": " мин чтения",
     "kind": "literal",
     "file": "assets/relcom.js",
-    "context": "assets/relcom.js:5613",
-    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
+    "context": "assets/relcom.js:6467",
+    "sha256": "6e894f5e539c3f6eb924193b44339b2b5892b672fde0194da5214001c5a9e35b"
   },
   {
-    "start": 6033,
-    "end": 6072,
+    "start": 6887,
+    "end": 6926,
     "source": "Опубликованные статьи в Relcom Press.",
     "kind": "literal",
     "file": "assets/relcom.js",
-    "context": "assets/relcom.js:6033",
-    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
+    "context": "assets/relcom.js:6887",
+    "sha256": "6e894f5e539c3f6eb924193b44339b2b5892b672fde0194da5214001c5a9e35b"
   },
   {
-    "start": 6073,
-    "end": 6170,
+    "start": 6927,
+    "end": 7024,
     "source": "Пока нет опубликованных статей. Новые материалы появятся здесь после публикации в Relcom Press.",
     "kind": "literal",
     "file": "assets/relcom.js",
-    "context": "assets/relcom.js:6073",
-    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
+    "context": "assets/relcom.js:6927",
+    "sha256": "6e894f5e539c3f6eb924193b44339b2b5892b672fde0194da5214001c5a9e35b"
   },
   {
-    "start": 6211,
-    "end": 6301,
+    "start": 7065,
+    "end": 7155,
     "source": "Не удалось загрузить список статей. Откройте блог в Relcom Press или попробуйте ещё раз.",
     "kind": "literal",
     "file": "assets/relcom.js",
-    "context": "assets/relcom.js:6211",
-    "sha256": "bddd5f905e3eeb038a13f28e16e322689c3e1bc108af8df5652eed63bb4f06ce"
+    "context": "assets/relcom.js:7065",
+    "sha256": "6e894f5e539c3f6eb924193b44339b2b5892b672fde0194da5214001c5a9e35b"
   },
   {
     "start": 647,
@@ -2430,1038 +2439,1119 @@
     "sha256": "1836f99dc017213dae7d8195b34a8e8a9ebc879b155000afaadfd38dc6f37355"
   },
   {
-    "start": 865,
-    "end": 933,
+    "start": 893,
+    "end": 961,
     "source": "Текущая работа над BCP 0.2: прогоны, стенд, проверки и их границы.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:865",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:893",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 944,
-    "end": 950,
+    "start": 972,
+    "end": 978,
     "source": "Блог",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:944",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:972",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 951,
-    "end": 1012,
+    "start": 979,
+    "end": 1040,
     "source": "Обсуждение статей блога IPvX Research: одна тема на статью.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:951",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:979",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 1022,
-    "end": 1037,
+    "start": 1050,
+    "end": 1065,
     "source": "Черновики RFC",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:1022",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:1050",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 1038,
-    "end": 1133,
+    "start": 1066,
+    "end": 1161,
     "source": "Вопросы и идеи по черновикам RFC. Изменение RFC идёт через предложение к RFC или PR в GitHub.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:1038",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:1066",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 1151,
-    "end": 1179,
+    "start": 1179,
+    "end": 1207,
     "source": "Эксперименты и лаборатория",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:1151",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:1179",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 1180,
-    "end": 1239,
+    "start": 1208,
+    "end": 1267,
     "source": "Эксперименты, стенд lab.ipvx.org, гипотезы и их проверки.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:1180",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:1208",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 1258,
-    "end": 1271,
+    "start": 1286,
+    "end": 1299,
     "source": "Архитектура",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:1258",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:1286",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 1272,
-    "end": 1336,
+    "start": 1300,
+    "end": 1364,
     "source": "Устройство IPvX: адресация, маршрутизация, доставка сообщений.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:1272",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:1300",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 1352,
-    "end": 1361,
+    "start": 1380,
+    "end": 1389,
     "source": "Вопросы",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:1352",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:1380",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 1362,
-    "end": 1394,
+    "start": 1390,
+    "end": 1422,
     "source": "Вопросы о проекте и протоколе.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:1362",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:1390",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 1405,
-    "end": 1419,
+    "start": 1433,
+    "end": 1447,
     "source": "Сайт и форум",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:1405",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:1433",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 1420,
-    "end": 1477,
+    "start": 1448,
+    "end": 1505,
     "source": "Отзывы о сайте и форуме, правила и заметки модераторов.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:1420",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:1448",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 1503,
-    "end": 1523,
+    "start": 1531,
+    "end": 1551,
     "source": "Ждут решения людей",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:1503",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:1531",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 1534,
-    "end": 1564,
+    "start": 1562,
+    "end": 1592,
     "source": "Ждут автоматической проверки",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:1534",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:1562",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 1572,
-    "end": 1581,
+    "start": 1600,
+    "end": 1609,
     "source": "Скрытые",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:1572",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:1600",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 1612,
-    "end": 1658,
+    "start": 1640,
+    "end": 1686,
     "source": "На проверке · видно только вам и модераторам",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:1612",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:1640",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 1666,
-    "end": 1686,
+    "start": 1694,
+    "end": 1714,
     "source": "Скрыто модератором",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:1666",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:1694",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 1721,
-    "end": 1766,
+    "start": 1749,
+    "end": 1794,
     "source": "Сеанс истёк. Войдите снова через Relcom ID.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:1721",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:1749",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 1793,
-    "end": 1852,
+    "start": 1821,
+    "end": 1880,
     "source": "Для участия нужна учётная запись с подтверждённой почтой.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:1793",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:1821",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 1868,
-    "end": 1913,
+    "start": 1896,
+    "end": 1941,
     "source": "Ваше участие заблокировано администратором.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:1868",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:1896",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 1928,
-    "end": 1961,
+    "start": 1956,
+    "end": 1989,
     "source": "Тема закрыта для новых ответов.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:1928",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:1956",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 1979,
-    "end": 2021,
+    "start": 2007,
+    "end": 2049,
     "source": "Тема не найдена или ещё не опубликована.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:1979",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:2007",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 2041,
-    "end": 2063,
+    "start": 2069,
+    "end": 2091,
     "source": "Такой категории нет.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:2041",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:2069",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 2086,
-    "end": 2149,
+    "start": 2114,
+    "end": 2177,
     "source": "У вас слишком много сообщений на проверке. Дождитесь решения.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:2086",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:2114",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 2170,
-    "end": 2236,
+    "start": 2198,
+    "end": 2264,
     "source": "Слишком много действий подряд. Попробуйте через несколько минут.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:2170",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:2198",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 2248,
-    "end": 2269,
+    "start": 2276,
+    "end": 2297,
     "source": "Это имя уже занято.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:2248",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:2276",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 2283,
-    "end": 2333,
+    "start": 2311,
+    "end": 2361,
     "source": "Имя: от 2 до 40 букв и цифр, без служебных слов.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:2283",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:2311",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 2347,
-    "end": 2421,
+    "start": 2375,
+    "end": 2449,
     "source": "Проверьте длину текста: заголовок от 3 до 200 знаков, сообщение до 8000.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:2347",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:2375",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 2441,
-    "end": 2469,
+    "start": 2469,
+    "end": 2497,
     "source": "Поиск временно недоступен.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:2441",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:2469",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 2485,
-    "end": 2527,
+    "start": 2513,
+    "end": 2555,
     "source": "Введите хотя бы одно слово из двух букв.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:2485",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:2513",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 2542,
-    "end": 2566,
+    "start": 2570,
+    "end": 2594,
     "source": "Нужна роль модератора.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:2542",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:2570",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 2632,
-    "end": 2687,
+    "start": 2660,
+    "end": 2715,
     "source": "Временно достигнут предел действий. Попробуйте позже.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:2632",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:2660",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 2721,
-    "end": 2766,
+    "start": 2749,
+    "end": 2794,
     "source": "Форум временно недоступен. Повторите позже.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:2721",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:2749",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 2767,
-    "end": 2788,
+    "start": 2795,
+    "end": 2816,
     "source": "Запрос не выполнен.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:2767",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:2795",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 4931,
-    "end": 4941,
+    "start": 4959,
+    "end": 4969,
     "source": "Участник",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:4931",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:4959",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 5150,
-    "end": 5157,
+    "start": 5178,
+    "end": 5185,
     "source": "Форум",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:5150",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:5178",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 5523,
-    "end": 5545,
+    "start": 5551,
+    "end": 5573,
     "source": "Две локальные модели",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:5523",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:5551",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 5553,
-    "end": 5584,
+    "start": 5581,
+    "end": 5612,
     "source": "Пять машин и отказ посредника",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:5553",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:5581",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 5595,
-    "end": 5626,
+    "start": 5623,
+    "end": 5654,
     "source": "Документы через нативную сеть",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:5595",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:5623",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 5633,
-    "end": 5655,
+    "start": 5661,
+    "end": 5683,
     "source": "Расчёт больших сетей",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:5633",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:5661",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 5788,
-    "end": 5799,
+    "start": 5816,
+    "end": 5827,
     "source": ", раздел ",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:5788",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:5816",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 5957,
-    "end": 5971,
+    "start": 5985,
+    "end": 5999,
     "source": "Гипотеза LLM",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:5957",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:5985",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 6147,
-    "end": 6155,
+    "start": 6175,
+    "end": 6183,
     "source": "Опыт: ",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:6147",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:6175",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 6314,
-    "end": 6329,
+    "start": 6342,
+    "end": 6357,
     "source": "Лаборатория: ",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:6314",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:6342",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 7329,
-    "end": 7399,
+    "start": 7357,
+    "end": 7427,
     "source": "Пишите простым текстом. Не публикуйте пароли, ключи и личные данные.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:7329",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:7357",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 7743,
-    "end": 7756,
+    "start": 7771,
+    "end": 7784,
     "source": "Отправляем…",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:7743",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:7771",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 8079,
-    "end": 8094,
+    "start": 8107,
+    "end": 8122,
     "source": "Опубликовано.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:8079",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:8107",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 8095,
-    "end": 8170,
+    "start": 8123,
+    "end": 8198,
     "source": "Отправлено. Сообщение появится после проверки; пока его видите только вы.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:8095",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:8123",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 8297,
-    "end": 8309,
+    "start": 8325,
+    "end": 8337,
     "source": "Новая тема",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:8297",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:8325",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 8374,
-    "end": 8399,
+    "start": 8402,
+    "end": 8427,
     "source": "Войдите через Relcom ID",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:8374",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:8402",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 8425,
-    "end": 8447,
+    "start": 8453,
+    "end": 8475,
     "source": ", чтобы начать тему.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:8425",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:8453",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 8546,
-    "end": 8557,
+    "start": 8574,
+    "end": 8585,
     "source": "Категория",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:8546",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:8574",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 8690,
-    "end": 8701,
+    "start": 8718,
+    "end": 8729,
     "source": "Заголовок",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:8690",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:8718",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 8744,
-    "end": 8755,
+    "start": 8772,
+    "end": 8783,
     "source": "Сообщение",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:8744",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:8772",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 8830,
-    "end": 8849,
+    "start": 8858,
+    "end": 8877,
     "source": "Опубликовать тему",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:8830",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:8858",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 9726,
-    "end": 9733,
+    "start": 9754,
+    "end": 9761,
     "source": "ответ",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:9726",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:9754",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 9734,
-    "end": 9743,
+    "start": 9762,
+    "end": 9771,
     "source": "ответов",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:9734",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:9762",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 9923,
-    "end": 9932,
+    "start": 9951,
+    "end": 9960,
     "source": "Закрыта",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:9923",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:9951",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 10373,
-    "end": 10404,
+    "start": 10401,
+    "end": 10432,
     "source": "Тем пока нет. Начните первую.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:10373",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:10401",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 10578,
-    "end": 10589,
+    "start": 10606,
+    "end": 10617,
     "source": "Категории",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:10578",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:10606",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 10980,
-    "end": 10987,
+    "start": 11008,
+    "end": 11015,
     "source": "Тем: ",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:10980",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:11008",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 11001,
-    "end": 11017,
+    "start": 11029,
+    "end": 11045,
     "source": " · последнее: ",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:11001",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:11029",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 11044,
-    "end": 11058,
+    "start": 11072,
+    "end": 11086,
     "source": "Тем пока нет",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:11044",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:11072",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 11576,
-    "end": 11590,
+    "start": 11604,
+    "end": 11618,
     "source": "Показать ещё",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:11576",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:11604",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 12073,
-    "end": 12087,
+    "start": 12101,
+    "end": 12115,
     "source": "Обсуждения: ",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:12073",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:12101",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 12173,
-    "end": 12191,
+    "start": 12201,
+    "end": 12219,
     "source": "Открыть на сайте",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:12173",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:12201",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 12315,
-    "end": 12329,
+    "start": 12343,
+    "end": 12357,
     "source": "Показать ещё",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:12315",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:12343",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 12949,
-    "end": 12963,
+    "start": 13104,
+    "end": 13111,
+    "source": "Новое",
+    "kind": "literal",
+    "file": "assets/forum.js",
+    "context": "assets/forum.js:13104",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
+  },
+  {
+    "start": 13202,
+    "end": 13216,
     "source": "в ответ на #",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:12949",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:13202",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 13328,
-    "end": 13338,
+    "start": 13581,
+    "end": 13591,
     "source": "Ответить",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:13328",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:13581",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 13693,
-    "end": 13704,
+    "start": 13946,
+    "end": 13957,
     "source": "Модерация",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:13693",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:13946",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 13751,
-    "end": 13771,
+    "start": 14004,
+    "end": 14024,
     "source": "Отметка проверки: ",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:13751",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:14004",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 13840,
-    "end": 13849,
+    "start": 14093,
+    "end": 14102,
     "source": "Причина",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:13840",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:14093",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 13901,
-    "end": 13909,
+    "start": 14154,
+    "end": 14162,
     "source": "Скрыть",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:13901",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:14154",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 13910,
-    "end": 13924,
+    "start": 14163,
+    "end": 14177,
     "source": "Опубликовать",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:13910",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:14163",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 14141,
-    "end": 14156,
+    "start": 14394,
+    "end": 14409,
     "source": "Опубликовано.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:14141",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:14394",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 14157,
-    "end": 14166,
+    "start": 14410,
+    "end": 14419,
     "source": "Скрыто.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:14157",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:14410",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 14757,
-    "end": 14772,
+    "start": 15010,
+    "end": 15025,
     "source": "Обсуждается: ",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:14757",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:15010",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 14923,
-    "end": 14984,
+    "start": 15176,
+    "end": 15237,
     "source": "Тема закрыта: новые ответы может оставить только модератор.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:14923",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:15176",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 15069,
-    "end": 15090,
+    "start": 15322,
+    "end": 15343,
     "source": "Показать ещё ответы",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:15069",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:15322",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 15349,
-    "end": 15361,
+    "start": 15602,
+    "end": 15614,
     "source": "Ответ на #",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:15349",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:15602",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 15939,
-    "end": 15953,
+    "start": 16234,
+    "end": 16248,
     "source": "Открыть тему",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:15939",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:16234",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 15954,
-    "end": 15968,
+    "start": 16249,
+    "end": 16263,
     "source": "Закрыть тему",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:15954",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:16249",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 16014,
-    "end": 16023,
+    "start": 16309,
+    "end": 16318,
     "source": "Причина",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:16014",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:16309",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 16061,
-    "end": 16070,
+    "start": 16356,
+    "end": 16365,
     "source": "Открыть",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:16061",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:16356",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 16071,
-    "end": 16080,
+    "start": 16366,
+    "end": 16375,
     "source": "Закрыть",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:16071",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:16366",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 16233,
-    "end": 16261,
+    "start": 16528,
+    "end": 16556,
     "source": "Готово. Обновите страницу.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:16233",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:16528",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 16364,
-    "end": 16374,
+    "start": 16659,
+    "end": 16669,
     "source": "Ответить",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:16364",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:16659",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 16439,
-    "end": 16464,
+    "start": 16734,
+    "end": 16759,
     "source": "Войдите через Relcom ID",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:16439",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:16734",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 16490,
-    "end": 16509,
+    "start": 16785,
+    "end": 16804,
     "source": ", чтобы ответить.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:16490",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:16785",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 16584,
-    "end": 16599,
+    "start": 16879,
+    "end": 16894,
     "source": "Тема закрыта.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:16584",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:16879",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 16673,
-    "end": 16715,
+    "start": 16968,
+    "end": 17010,
     "source": "Ответы откроются, когда тему опубликуют.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:16673",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:16968",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 16773,
-    "end": 16784,
+    "start": 17068,
+    "end": 17079,
     "source": "Сообщение",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:16773",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:17068",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 16833,
-    "end": 16844,
+    "start": 17128,
+    "end": 17139,
     "source": "Отправить",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:16833",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:17128",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 17269,
-    "end": 17276,
+    "start": 17724,
+    "end": 17734,
+    "source": "Мои темы",
+    "kind": "literal",
+    "file": "assets/forum.js",
+    "context": "assets/forum.js:17724",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
+  },
+  {
+    "start": 17745,
+    "end": 17755,
+    "source": "Мои темы",
+    "kind": "literal",
+    "file": "assets/forum.js",
+    "context": "assets/forum.js:17745",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
+  },
+  {
+    "start": 17766,
+    "end": 17886,
+    "source": "Темы, в которых вы писали. Новыми считаются опубликованные ответы других участников после вашего последнего прочтения.",
+    "kind": "literal",
+    "file": "assets/forum.js",
+    "context": "assets/forum.js:17766",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
+  },
+  {
+    "start": 18495,
+    "end": 18512,
+    "source": "Новых ответов: ",
+    "kind": "literal",
+    "file": "assets/forum.js",
+    "context": "assets/forum.js:18495",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
+  },
+  {
+    "start": 18527,
+    "end": 18546,
+    "source": "Новых ответов нет",
+    "kind": "literal",
+    "file": "assets/forum.js",
+    "context": "assets/forum.js:18527",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
+  },
+  {
+    "start": 18685,
+    "end": 18760,
+    "source": "Вы ещё не писали на форуме. Здесь появятся темы, в которых вы участвуете.",
+    "kind": "literal",
+    "file": "assets/forum.js",
+    "context": "assets/forum.js:18685",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
+  },
+  {
+    "start": 18867,
+    "end": 18874,
     "source": "Поиск",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:17269",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:18867",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 17287,
-    "end": 17296,
+    "start": 18885,
+    "end": 18894,
     "source": "Поиск: ",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:17287",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:18885",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 17788,
-    "end": 17808,
+    "start": 19386,
+    "end": 19406,
     "source": "Ничего не найдено.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:17788",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:19386",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 18039,
-    "end": 18050,
+    "start": 19637,
+    "end": 19648,
     "source": "Модерация",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:18039",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:19637",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 18061,
-    "end": 18079,
+    "start": 19659,
+    "end": 19677,
     "source": "Модерация форума",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:18061",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:19659",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 18620,
-    "end": 18633,
+    "start": 20218,
+    "end": 20231,
     "source": "начало темы",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:18620",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:20218",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 18634,
-    "end": 18641,
+    "start": 20232,
+    "end": 20239,
     "source": "ответ",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:18634",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:20232",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 18795,
-    "end": 18811,
+    "start": 20393,
+    "end": 20409,
     "source": "Очередь пуста.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:18795",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:20393",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 18955,
-    "end": 18975,
+    "start": 20553,
+    "end": 20573,
     "source": "Как вас показывать",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:18955",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:20553",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 19054,
-    "end": 19064,
+    "start": 20652,
+    "end": 20662,
     "source": "Сейчас: ",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:19054",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:20652",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 19079,
-    "end": 19113,
+    "start": 20677,
+    "end": 20711,
     "source": "Сейчас вы показаны псевдонимом «",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:19079",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:20677",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 19130,
-    "end": 19179,
+    "start": 20728,
+    "end": 20777,
     "source": "». Имя и почта из Relcom ID на форуме не видны.",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:19130",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:20728",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 19221,
-    "end": 19236,
+    "start": 20819,
+    "end": 20834,
     "source": "Публичное имя",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:19221",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:20819",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 19284,
-    "end": 19299,
+    "start": 20882,
+    "end": 20897,
     "source": "Сохранить имя",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:19284",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:20882",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 19409,
-    "end": 19422,
+    "start": 21007,
+    "end": 21020,
     "source": "Сохранено: ",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:19409",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:21007",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 19605,
-    "end": 19622,
+    "start": 21203,
+    "end": 21220,
     "source": "Поиск по форуму",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:19605",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:21203",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 19770,
-    "end": 19787,
+    "start": 21368,
+    "end": 21385,
     "source": "Поиск по форуму",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:19770",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:21368",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 19873,
-    "end": 19880,
+    "start": 21471,
+    "end": 21478,
     "source": "Найти",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:19873",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:21471",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 20251,
-    "end": 20262,
+    "start": 21893,
+    "end": 21913,
+    "source": "Мои темы · новых: ",
+    "kind": "literal",
+    "file": "assets/forum.js",
+    "context": "assets/forum.js:21893",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
+  },
+  {
+    "start": 21921,
+    "end": 21931,
+    "source": "Мои темы",
+    "kind": "literal",
+    "file": "assets/forum.js",
+    "context": "assets/forum.js:21921",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
+  },
+  {
+    "start": 22012,
+    "end": 22023,
     "source": "Модерация",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:20251",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:22012",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 20296,
-    "end": 20319,
+    "start": 22057,
+    "end": 22080,
     "source": "Войти через Relcom ID",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:20296",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:22057",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   },
   {
-    "start": 20387,
-    "end": 20405,
+    "start": 22148,
+    "end": 22166,
     "source": "Загружаем форум…",
     "kind": "literal",
     "file": "assets/forum.js",
-    "context": "assets/forum.js:20387",
-    "sha256": "d9a75cc1b3d51af8565dd5b3d3920ddcb2ae1d8a69c8e52d5d1cd357783bb8d6"
+    "context": "assets/forum.js:22148",
+    "sha256": "f0bf91d80bb7df1a437bbcc3225ed0422369d90980d450e5c08b7646c86ab989"
   }
 ]

@@ -47,3 +47,4 @@
  .forum-search{min-width:100%}
  .forum-post:target{box-shadow:none}
 }
+.forum-post.forum-new{border-left:3px solid var(--active);padding-left:16px}.forum-new-badge{background:var(--signal);color:var(--ink)}.forum-thread-row.forum-new h3 a{font-weight:600}.forum-who a.forum-unread{font-weight:600}

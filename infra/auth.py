@@ -40,7 +40,7 @@ TX_SECONDS = 600
 SESSION_SECONDS = 3600
 RECHECK_SECONDS = 600
 MAX_JSON = 131072
-COMMUNITY_ROUTE = re.compile(r'/community/v1/(?:agents/proposals(?:/page/[0-9]{1,4}|/proposal_[a-f0-9]{24}/decision)?|session|moderation|audit|roles|members(?:/member_[a-f0-9]{24}/access)?|rfcs/rfc-000[1-7]/entries|entries/[1-9][0-9]{0,8}(?:/vote|/moderation)?|forum/(?:categories(?:/(?:bcp|blog|rfc|experiments|architecture|questions|meta)/threads)?|threads/[1-9][0-9]{0,8}(?:/posts|/moderation)?|posts/[1-9][0-9]{0,8}/moderation|subjects/[a-z0-9][a-z0-9.-]{0,79}/threads|search|moderation|profile))')
+COMMUNITY_ROUTE = re.compile(r'/community/v1/(?:agents/proposals(?:/page/[0-9]{1,4}|/proposal_[a-f0-9]{24}/decision)?|session|moderation|audit|roles|members(?:/member_[a-f0-9]{24}/access)?|rfcs/rfc-000[1-7]/entries|entries/[1-9][0-9]{0,8}(?:/vote|/moderation)?|forum/(?:categories(?:/(?:bcp|blog|rfc|experiments|architecture|questions|meta)/threads)?|threads/[1-9][0-9]{0,8}(?:/posts|/moderation)?|posts/[1-9][0-9]{0,8}/moderation|subjects/[a-z0-9][a-z0-9.-]{0,79}/threads|search|moderation|profile|notifications))')
 
 
 class AuthFailure(Exception):

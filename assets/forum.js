@@ -1,5 +1,5 @@
 /* Participants' forum. Posts are plain text rendered with textContent; roles come only from the verified backend.
-   One page, five views chosen by the query: categories, ?c= category, ?t= thread, ?s= subject, ?q= search, ?mod= queue. */
+   One page, views chosen by the query: categories, ?c= category, ?t= thread, ?s= subject, ?q= search, ?mine= own threads, ?mod= queue. */
 (()=>{
  'use strict';
  const root=document.querySelector('[data-forum]');
@@ -11,7 +11,7 @@
  const params=new URLSearchParams(location.search);
  const status=$('.forum-status'),view=$('.forum-view');
  const requests=new Map();
- let session=null,profile=null;
+ let session=null,profile=null,notices=null;
  const categories={
   bcp:['BCP 0.2','Текущая работа над BCP 0.2: прогоны, стенд, проверки и их границы.'],
   blog:['Блог','Обсуждение статей блога IPvX Research: одна тема на статью.'],
@@ -173,11 +173,12 @@
   view.append(composer(null,ref,info.category));
  }
 
- function postItem(item,thread,onReply){
+ function postItem(item,thread,onReply,lastSeen){
   const article=node('article',undefined,'forum-post');article.id='post-'+item.id;
   const meta=node('p',undefined,'forum-meta');
   const anchor=node('a','#'+item.id,'forum-anchor');anchor.href='#post-'+item.id;
   meta.append(node('strong',author(item.author)),node('span',date(item.createdAt)),anchor);
+  if(Number.isSafeInteger(lastSeen)&&item.id>lastSeen&&item.status==='published'&&item.author?.id!==session?.author?.id){article.classList.add('forum-new');meta.append(node('span','Новое','badge forum-new-badge'));}
   article.append(meta);
   if(item.replyTo){const ref=node('a','в ответ на #'+item.replyTo,'forum-reply-ref');ref.href='#post-'+item.replyTo;article.append(ref);}
   const state=badge(item.status);if(state)article.append(state);
@@ -217,7 +218,8 @@
   view.append(list,more);
   let replyTo=null;const target=node('p','','forum-reply-target');target.hidden=true;
   const onReply=item=>{replyTo=item.id;target.hidden=false;target.textContent='Ответ на #'+item.id+' · '+author(item.author);const area=$('.forum-reply textarea');area?.focus();};
-  const add=data=>{for(const item of data.posts||[])if(item&&Number.isSafeInteger(item.id)&&typeof item.text==='string')list.append(postItem(item,info,onReply));cursor=data.nextAfter||null;more.hidden=!cursor;};
+  const lastSeen=first.lastSeen;
+  const add=data=>{for(const item of data.posts||[])if(item&&Number.isSafeInteger(item.id)&&typeof item.text==='string')list.append(postItem(item,info,onReply,lastSeen));cursor=data.nextAfter||null;more.hidden=!cursor;};
   let cursor=null;add(first);
   more.addEventListener('click',()=>get('/forum/threads/'+id+'?after='+cursor).then(add).catch(error=>say(describe(error),true)));
   if(moderator()){
@@ -239,6 +241,24 @@
    }));
   }
   view.append(box);
+  const linked=/^#post-[1-9][0-9]{0,8}$/.test(location.hash)?document.getElementById(location.hash.slice(1)):null;
+  if(linked)linked.scrollIntoView({block:'start'});
+ }
+
+ async function mine(){
+  view.append(crumbs(node('span','Мои темы')),heading('Мои темы'),node('p','Темы, в которых вы писали. Новыми считаются опубликованные ответы других участников после вашего последнего прочтения.','forum-lead'));
+  const data=await get('/forum/notifications?limit=50'),list=node('div',undefined,'forum-threads');
+  for(const item of data.threads||[]){
+   if(!item||!Number.isSafeInteger(item.id))continue;
+   const row=node('article',undefined,'forum-thread-row'),title=node('h3'),a=link({t:item.id},item.title);
+   if(item.newPosts>0&&Number.isSafeInteger(item.firstNew)){a.hash='post-'+item.firstNew;row.classList.add('forum-new');}
+   title.append(a);
+   const meta=node('p',undefined,'forum-meta');
+   meta.append(node('span',categories[item.category]?.[0]||item.category),node('span',item.newPosts>0?'Новых ответов: '+item.newPosts:'Новых ответов нет'),node('span',date(item.lastActivityAt)));
+   row.append(title,meta);list.append(row);
+  }
+  if(!list.children.length)list.append(node('p','Вы ещё не писали на форуме. Здесь появятся темы, в которых вы участвуете.','forum-empty'));
+  view.append(list);
  }
 
  async function search(query){
@@ -286,7 +306,7 @@
   searchForm.action=page;searchForm.method='get';searchForm.setAttribute('role','search');searchForm.append(label,input,button);
   bar.append(searchForm);
   const who=node('p',undefined,'forum-who');
-  if(signedIn()){who.append(node('span',author(profile?.author||session.author)));if(moderator())who.append(link({mod:'people'},'Модерация'));}
+  if(signedIn()){who.append(node('span',author(profile?.author||session.author)));const unread=notices?.unreadPosts>0?notices.unreadPosts:0;who.append(link({mine:1},unread?'Мои темы · новых: '+unread:'Мои темы',unread?'forum-unread':undefined));if(moderator())who.append(link({mod:'people'},'Модерация'));}
   else who.append(signInLink('Войти через Relcom ID'));
   bar.append(who);
   return bar;
@@ -296,15 +316,16 @@
   try{
    say('Загружаем форум…');
    try{session=await get('/session');}catch{session=null;}
-   if(signedIn()){try{profile=await get('/forum/profile');}catch{profile=null;}}
+   if(signedIn()){try{profile=await get('/forum/profile');}catch{profile=null;}try{notices=await get('/forum/notifications?limit=1');}catch{notices=null;}}
    if(session?.access==='blocked')say(errors.access_blocked,true);
    view.replaceChildren();root.prepend(toolbar());
-   const t=params.get('t'),c=params.get('c'),s=params.get('s'),q=params.get('q'),mod=params.get('mod');
+   const t=params.get('t'),c=params.get('c'),s=params.get('s'),q=params.get('q'),mod=params.get('mod'),own=params.get('mine');
    if(t&&/^[1-9][0-9]{0,8}$/.test(t))await thread(t);
    else if(c)await category(c);
    else if(s)await subject(s);
    else if(q)await search(q);
    else if(mod)await queue(mod);
+   else if(own){if(!signedIn())throw Object.assign(new Error('signin'),{status:401,code:'sign_in_required'});await mine();}
    else await home();
    if(session?.access!=='blocked')say('');
   }catch(error){say(describe(error),true);}
