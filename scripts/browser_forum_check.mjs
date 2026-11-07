@@ -11,22 +11,23 @@ const stamp='2026-11-07T18:00:00Z';
 function fixture(){
  const threads=[{id:1,category:'bcp',subject:'h5',title:'Synthetic topic '+hostile,status:'published',locked:false,author:member,replies:1,createdAt:stamp,lastActivityAt:stamp}];
  const posts=[{id:1,thread:1,text:'Opening text <script>window.__forumXss=1</script>',replyTo:null,status:'published',author:member,createdAt:stamp},
-  {id:2,thread:1,text:'Second line\nwith a break',replyTo:1,status:'published',author:{...member,label:'Alice Novak',named:true},createdAt:stamp}];
+  {id:2,thread:1,text:'Second line\nwith a break',replyTo:1,status:'published',author:{id:'member_'+'1'.repeat(24),label:'Alice Novak',named:true},createdAt:stamp}];
  return {threads,posts,writes:[],keys:new Set()};
 }
-async function open(width,{signedIn=false,roles=[],path='forum.html'}={}){
+async function open(width,{signedIn=false,roles=[],path='forum.html',lastSeen}={}){
  const page=await browser.newPage({viewport:{width,height:1000},reducedMotion:'reduce'}),errors=[],state=fixture();
  page.on('pageerror',error=>errors.push(error.message));
  const reply=(route,status,data)=>route.fulfill({status,contentType:'application/json',body:JSON.stringify(data)});
- await page.route('**/auth/session',route=>reply(route,200,{authenticated:signedIn,user:null}));
+ await page.route('**/auth/session',route=>reply(route,200,{authenticated:signedIn,user:signedIn?{sub:'verified-alice',name:'Alice'}:null}));
  await page.route('**/community/v1/**',async route=>{
   const request=route.request(),url=new URL(request.url()),path=url.pathname.replace('/community/v1',''),method=request.method();
   if(method==='GET'){
    if(path==='/session')return reply(route,200,{authenticated:signedIn,author:signedIn?member:null,roles:signedIn?['participant',...roles]:[],access:signedIn?'active':'anonymous',capabilities:[]});
    if(path==='/forum/profile')return signedIn?reply(route,200,{author:member,pendingPosts:0,publishesDirectly:roles.length>0}):reply(route,401,{error:'sign_in_required'});
    if(path==='/forum/categories')return reply(route,200,{categories:['bcp','blog','rfc','experiments','architecture','questions','meta'].map((id,i)=>({id,threads:i?0:1,lastActivityAt:i?null:stamp}))});
-   if(/^\/forum\/(categories\/bcp|subjects\/h5)\/threads$/.test(path))return reply(route,200,{threads:state.threads,nextBefore:null});
-   if(path==='/forum/threads/1')return reply(route,200,{thread:state.threads[0],posts:state.posts,nextAfter:null});
+   if(/^\/forum\/(categories\/bcp|subjects\/(h5|rfc-0005\.s3))\/threads$/.test(path))return reply(route,200,{threads:state.threads,nextBefore:null});
+   if(path==='/forum/threads/1')return reply(route,200,{thread:state.threads[0],posts:state.posts,nextAfter:null,...(lastSeen===undefined?{}:{lastSeen})});
+   if(path==='/forum/notifications')return signedIn?reply(route,200,{unreadThreads:1,unreadPosts:2,threads:[{...state.threads[0],newPosts:2,firstNew:2}]}):reply(route,401,{error:'sign_in_required'});
    if(path==='/forum/search')return reply(route,200,{results:[{post:1,thread:1,title:state.threads[0].title,excerpt:'…Opening text…'}]});
    if(path==='/forum/moderation')return roles.length?reply(route,200,{queue:url.searchParams.get('queue'),posts:[{...state.posts[0],id:3,status:'pending',review:{queue:'people',note:'Unsure '+hostile},threadTitle:'Queued '+hostile,category:'bcp',opening:false}],nextBefore:null}):reply(route,403,{error:'role_required'});
    return reply(route,404,{error:'route_not_found'});
@@ -114,6 +115,42 @@ for(const width of [1440,768,390]){
  const participant=await open(1440,{signedIn:true,path:'forum.html?mod=people'});
  if(!(await participant.page.locator('.forum-status.forum-error').count()))throw Error('participant reached moderation');
  await participant.page.close();checks.push(['moderator',390]);
+}
+{
+ // A project object's discussions: readable label, a link back in the same edition, category suggested.
+ const {page,errors}=await open(390,{signedIn:true,path:'forum.html?s=rfc-0005.s3'});
+ if(!(await page.locator('.forum-view h2').first().textContent()).includes('RFC-0005, раздел 3'))throw Error('subject label missing');
+ if(await page.locator('.forum-lead a[href="rfc-0005.html#s3"]').count()!==1)throw Error('link back to the RFC section missing');
+ if(await page.locator('.forum-compose select[name=category]').inputValue()!=='rfc')throw Error('category not suggested');
+ await noOverflow(page,'subject 390');
+ await page.screenshot({path:`${out}/forum-subject-390.png`,fullPage:true});
+ if(errors.length)throw Error('page errors: '+errors.join('; '));
+ await page.close();
+ const english=await open(768,{path:'forum.en.html?s=rfc-0005.s3'});
+ if(await english.page.locator('.forum-lead a[href="rfc-0005.en.html#s3"]').count()!==1)throw Error('link back leaves the English edition');
+ await english.page.close();checks.push(['subject',390]);
+}
+{
+ // New replies: the count in the header and the toolbar, the list of own threads, the marked post.
+ const {page,errors}=await open(1440,{signedIn:true,path:'index.html'});
+ await page.waitForSelector('header nav .nav-count');
+ if((await page.locator('header nav .nav-count').textContent())!=='2')throw Error('header count wrong');
+ if(await page.locator('header nav a[href="forum.html?mine=1"]').count()!==1)throw Error('header link does not open own threads');
+ await page.goto(base+'forum.html?mine=1');await settle(page);
+ if(!(await page.locator('.forum-who a.forum-unread').textContent()).includes('2'))throw Error('toolbar count missing');
+ if(await page.locator('.forum-thread-row.forum-new a[href$="/forum.html?t=1#post-2"]').count()!==1)throw Error('own thread does not link to the first new reply');
+ await page.close();
+ const seen=await open(390,{signedIn:true,path:'forum.html?t=1#post-2',lastSeen:1});
+ if(await seen.page.locator('#post-2.forum-new .forum-new-badge').count()!==1)throw Error('new reply not marked');
+ if(await seen.page.locator('#post-1.forum-new').count())throw Error('own post marked new');
+ await noOverflow(seen.page,'new reply 390');
+ await seen.page.screenshot({path:`${out}/forum-new-390.png`,fullPage:true});
+ if(errors.length||seen.errors.length)throw Error('page errors: '+[...errors,...seen.errors].join('; '));
+ await seen.page.close();
+ const anonymous=await open(768,{path:'index.html'});
+ await anonymous.page.waitForTimeout(300);
+ if(await anonymous.page.locator('header nav .nav-count').count())throw Error('count shown to an anonymous reader');
+ await anonymous.page.close();checks.push(['notifications',1440]);
 }
 for(const [language,word] of [['en','Categories'],['de','Kategorien'],['es','Categorías']]){
  const {page,errors}=await open(768,{path:`forum.${language}.html`});

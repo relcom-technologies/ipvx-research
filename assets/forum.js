@@ -1,5 +1,5 @@
 /* Participants' forum. Posts are plain text rendered with textContent; roles come only from the verified backend.
-   One page, five views chosen by the query: categories, ?c= category, ?t= thread, ?s= subject, ?q= search, ?mod= queue. */
+   One page, views chosen by the query: categories, ?c= category, ?t= thread, ?s= subject, ?q= search, ?mine= own threads, ?mod= queue. */
 (()=>{
  'use strict';
  const root=document.querySelector('[data-forum]');
@@ -11,7 +11,7 @@
  const params=new URLSearchParams(location.search);
  const status=$('.forum-status'),view=$('.forum-view');
  const requests=new Map();
- let session=null,profile=null;
+ let session=null,profile=null,notices=null;
  const categories={
   bcp:['BCP 0.2','Текущая работа над BCP 0.2: прогоны, стенд, проверки и их границы.'],
   blog:['Блог','Обсуждение статей блога IPvX Research: одна тема на статью.'],
@@ -52,6 +52,20 @@
  const badge=state=>statusNames[state]?node('span',statusNames[state],'badge forum-state forum-'+state):null;
  const crumbs=(...items)=>{const trail=node('p',undefined,'forum-crumbs');trail.append(link(null,'Форум'));for(const item of items){trail.append(node('span','/','forum-sep'));trail.append(item);}return trail;};
  const heading=(text,level='h2')=>node(level,text,'forum-heading');
+ // Project objects a thread can be about; the link back stays in the reader's language edition.
+ const edition=(page.match(/^forum(\.[a-z]{2})?\.html$/)||[])[1]||'';
+ const experiments={llm:'Две локальные модели',native:'Пять машин и отказ посредника',documents:'Документы через нативную сеть',scale:'Расчёт больших сетей'};
+ function about(ref){
+  let match=/^rfc-(\d{4})(?:\.s([1-9]\d?))?$/.exec(ref);
+  if(match)return {label:'RFC-'+match[1]+(match[2]?', раздел '+match[2]:''),href:'rfc-'+match[1]+edition+'.html'+(match[2]?'#s'+match[2]:''),category:'rfc'};
+  match=/^llm([1-9]\d?)$/.exec(ref);
+  if(match)return {label:'Гипотеза LLM'+match[1],href:'experiments'+edition+'.html#llm'+match[1],category:'experiments'};
+  match=/^experiments\.([a-z]+)$/.exec(ref);
+  if(match&&experiments[match[1]])return {label:'Опыт: '+experiments[match[1]],href:'experiments'+edition+'.html#'+match[1],category:'experiments'};
+  match=/^lab\.([a-z0-9-]+)$/.exec(ref);
+  if(match)return {label:'Лаборатория: '+match[1],href:'https://lab.ipvx.org/',category:'experiments'};
+  return {label:ref,href:null,category:null};
+ }
 
  function form(fields,submitText,onSubmit){
   const element=node('form',undefined,'forum-form'),result=node('p','','forum-form-status');result.setAttribute('role','status');result.setAttribute('aria-live','polite');
@@ -79,12 +93,12 @@
  }
  const published=data=>data.visibility==='published'?'Опубликовано.':'Отправлено. Сообщение появится после проверки; пока его видите только вы.';
 
- function composer(category,subject){
+ function composer(category,subject,suggested){
   const box=node('section',undefined,'forum-compose');
   box.append(heading('Новая тема','h3'));
   if(!signedIn()){const p=node('p');p.append(signInLink('Войдите через Relcom ID'),document.createTextNode(', чтобы начать тему.'));box.append(p);return box;}
   const fields=[];
-  if(!category)fields.push({name:'category',label:'Категория',type:'select',options:Object.entries(categories).map(([id,[name]])=>[id,name])});
+  if(!category)fields.push({name:'category',label:'Категория',type:'select',value:suggested,options:Object.entries(categories).map(([id,[name]])=>[id,name])});
   fields.push({name:'title',label:'Заголовок',max:200,required:true},{name:'text',label:'Сообщение',type:'textarea',rows:7,max:8000,required:true});
   box.append(form(fields,'Опубликовать тему',async(values,result)=>{
    const target=category||values.category,body={title:values.title,text:values.text};
@@ -149,18 +163,22 @@
 
  async function subject(ref){
   if(!/^[a-z0-9][a-z0-9.-]{0,79}$/.test(ref))throw Object.assign(new Error('missing'),{status:404,code:'thread_not_found'});
-  view.append(crumbs(node('span',ref)),heading('Обсуждения: '+ref));
+  const info=about(ref);
+  document.title=info.label+' · '+document.title;
+  view.append(crumbs(node('span',info.label)),heading('Обсуждения: '+info.label));
+  if(info.href){const back=node('p',undefined,'forum-lead'),a=node('a','Открыть на сайте');a.href=info.href;back.append(a);view.append(back);}
   const list=node('div',undefined,'forum-threads'),more=node('button','Показать ещё','button secondary forum-more');more.type='button';more.hidden=true;
   view.append(list,more);
   await threadList('/forum/subjects/'+ref+'/threads',list,more);
-  view.append(composer(null,ref));
+  view.append(composer(null,ref,info.category));
  }
 
- function postItem(item,thread,onReply){
+ function postItem(item,thread,onReply,lastSeen){
   const article=node('article',undefined,'forum-post');article.id='post-'+item.id;
   const meta=node('p',undefined,'forum-meta');
   const anchor=node('a','#'+item.id,'forum-anchor');anchor.href='#post-'+item.id;
   meta.append(node('strong',author(item.author)),node('span',date(item.createdAt)),anchor);
+  if(Number.isSafeInteger(lastSeen)&&item.id>lastSeen&&item.status==='published'&&item.author?.id!==session?.author?.id){article.classList.add('forum-new');meta.append(node('span','Новое','badge forum-new-badge'));}
   article.append(meta);
   if(item.replyTo){const ref=node('a','в ответ на #'+item.replyTo,'forum-reply-ref');ref.href='#post-'+item.replyTo;article.append(ref);}
   const state=badge(item.status);if(state)article.append(state);
@@ -192,7 +210,7 @@
   const title=heading(info.title,'h2');view.append(title);
   const meta=node('p',undefined,'forum-meta');
   meta.append(node('span',author(info.author)),node('span',date(info.createdAt)));
-  if(info.subject)meta.append(link({s:info.subject},'Объект: '+info.subject));
+  if(info.subject)meta.append(link({s:info.subject},'Обсуждается: '+about(info.subject).label));
   view.append(meta);
   const state=badge(info.status);if(state)view.append(state);
   if(info.locked)view.append(node('p','Тема закрыта: новые ответы может оставить только модератор.','forum-note'));
@@ -200,7 +218,8 @@
   view.append(list,more);
   let replyTo=null;const target=node('p','','forum-reply-target');target.hidden=true;
   const onReply=item=>{replyTo=item.id;target.hidden=false;target.textContent='Ответ на #'+item.id+' · '+author(item.author);const area=$('.forum-reply textarea');area?.focus();};
-  const add=data=>{for(const item of data.posts||[])if(item&&Number.isSafeInteger(item.id)&&typeof item.text==='string')list.append(postItem(item,info,onReply));cursor=data.nextAfter||null;more.hidden=!cursor;};
+  const lastSeen=first.lastSeen;
+  const add=data=>{for(const item of data.posts||[])if(item&&Number.isSafeInteger(item.id)&&typeof item.text==='string')list.append(postItem(item,info,onReply,lastSeen));cursor=data.nextAfter||null;more.hidden=!cursor;};
   let cursor=null;add(first);
   more.addEventListener('click',()=>get('/forum/threads/'+id+'?after='+cursor).then(add).catch(error=>say(describe(error),true)));
   if(moderator()){
@@ -222,6 +241,24 @@
    }));
   }
   view.append(box);
+  const linked=/^#post-[1-9][0-9]{0,8}$/.test(location.hash)?document.getElementById(location.hash.slice(1)):null;
+  if(linked)linked.scrollIntoView({block:'start'});
+ }
+
+ async function mine(){
+  view.append(crumbs(node('span','Мои темы')),heading('Мои темы'),node('p','Темы, в которых вы писали. Новыми считаются опубликованные ответы других участников после вашего последнего прочтения.','forum-lead'));
+  const data=await get('/forum/notifications?limit=50'),list=node('div',undefined,'forum-threads');
+  for(const item of data.threads||[]){
+   if(!item||!Number.isSafeInteger(item.id))continue;
+   const row=node('article',undefined,'forum-thread-row'),title=node('h3'),a=link({t:item.id},item.title);
+   if(item.newPosts>0&&Number.isSafeInteger(item.firstNew)){a.hash='post-'+item.firstNew;row.classList.add('forum-new');}
+   title.append(a);
+   const meta=node('p',undefined,'forum-meta');
+   meta.append(node('span',categories[item.category]?.[0]||item.category),node('span',item.newPosts>0?'Новых ответов: '+item.newPosts:'Новых ответов нет'),node('span',date(item.lastActivityAt)));
+   row.append(title,meta);list.append(row);
+  }
+  if(!list.children.length)list.append(node('p','Вы ещё не писали на форуме. Здесь появятся темы, в которых вы участвуете.','forum-empty'));
+  view.append(list);
  }
 
  async function search(query){
@@ -269,7 +306,7 @@
   searchForm.action=page;searchForm.method='get';searchForm.setAttribute('role','search');searchForm.append(label,input,button);
   bar.append(searchForm);
   const who=node('p',undefined,'forum-who');
-  if(signedIn()){who.append(node('span',author(profile?.author||session.author)));if(moderator())who.append(link({mod:'people'},'Модерация'));}
+  if(signedIn()){who.append(node('span',author(profile?.author||session.author)));const unread=notices?.unreadPosts>0?notices.unreadPosts:0;who.append(link({mine:1},unread?'Мои темы · новых: '+unread:'Мои темы',unread?'forum-unread':undefined));if(moderator())who.append(link({mod:'people'},'Модерация'));}
   else who.append(signInLink('Войти через Relcom ID'));
   bar.append(who);
   return bar;
@@ -279,15 +316,16 @@
   try{
    say('Загружаем форум…');
    try{session=await get('/session');}catch{session=null;}
-   if(signedIn()){try{profile=await get('/forum/profile');}catch{profile=null;}}
+   if(signedIn()){try{profile=await get('/forum/profile');}catch{profile=null;}try{notices=await get('/forum/notifications?limit=1');}catch{notices=null;}}
    if(session?.access==='blocked')say(errors.access_blocked,true);
    view.replaceChildren();root.prepend(toolbar());
-   const t=params.get('t'),c=params.get('c'),s=params.get('s'),q=params.get('q'),mod=params.get('mod');
+   const t=params.get('t'),c=params.get('c'),s=params.get('s'),q=params.get('q'),mod=params.get('mod'),own=params.get('mine');
    if(t&&/^[1-9][0-9]{0,8}$/.test(t))await thread(t);
    else if(c)await category(c);
    else if(s)await subject(s);
    else if(q)await search(q);
    else if(mod)await queue(mod);
+   else if(own){if(!signedIn())throw Object.assign(new Error('signin'),{status:401,code:'sign_in_required'});await mine();}
    else await home();
    if(session?.access!=='blocked')say('');
   }catch(error){say(describe(error),true);}
