@@ -204,6 +204,40 @@ class Forum(unittest.TestCase):
         self.assertEqual(self.post('/posts/%d/moderation' % post_id, body, self.bob, key='bob-decision-1').status, 403)
 
 
+    def test_new_replies_in_threads_a_participant_wrote_in(self):
+        carol = {'sub': 'verified-carol', 'emailVerified': True}
+        notes = lambda user, query='': self.get('/notifications' + query, user)
+        self.assertEqual(notes(None).status, 401)
+        thread_id, opening = self.open_thread()
+        self.assertEqual(notes(self.alice).data, {'unreadThreads': 0, 'unreadPosts': 0, 'threads': []})
+        self.service.forum_review(opening, 'publish', 'On topic', 'claude-opus-5-5')
+        self.assertEqual([(t['id'], t['newPosts']) for t in notes(self.alice).data['threads']], [(thread_id, 0)])
+        pending = self.post('/threads/%d/posts' % thread_id, {'text': 'Bob answers'}, self.bob).data['post']['id']
+        self.assertEqual(notes(self.alice).data['unreadPosts'], 0)
+        self.service.forum_review(pending, 'publish', 'On topic', 'claude-opus-5-5')
+        owner_reply = self.post('/threads/%d/posts' % thread_id, {'text': 'Owner answers'}, self.owner).data['post']['id']
+        data = notes(self.alice).data
+        self.assertEqual((data['unreadThreads'], data['unreadPosts']), (1, 2))
+        self.assertEqual((data['threads'][0]['newPosts'], data['threads'][0]['firstNew']), (2, pending))
+        self.assertEqual(notes(self.bob).data['unreadPosts'], 1)
+        self.assertEqual(notes(carol).data['threads'], [])
+        # Reading moves the mark only for participants, and only past posts the page showed.
+        self.assertNotIn('lastSeen', self.thread(thread_id, carol).data)
+        self.assertEqual(self.get('/threads/%d?limit=2' % thread_id, self.alice).data['lastSeen'], opening)
+        self.assertEqual(notes(self.alice).data['unreadPosts'], 1)
+        self.assertEqual(self.thread(thread_id, self.alice).data['lastSeen'], pending)
+        self.assertEqual(self.thread(thread_id, self.alice).data['lastSeen'], owner_reply)
+        self.assertEqual(notes(self.alice).data['unreadPosts'], 0)
+        # Writing counts as reading up to one's own post; hiding the thread removes it.
+        self.post('/threads/%d/posts' % thread_id, {'text': 'Owner again'}, self.owner)
+        own = self.post('/threads/%d/posts' % thread_id, {'text': 'Alice replies'}, self.alice).data['post']['id']
+        self.assertEqual(notes(self.alice).data['unreadPosts'], 0)
+        self.assertEqual(self.thread(thread_id, self.alice).data['lastSeen'], own)
+        hide = self.post('/posts/%d/moderation' % opening, {'action': 'hide', 'reason': 'Off topic'}, self.owner)
+        self.assertEqual(hide.status, 200, hide.data)
+        self.assertEqual(notes(self.bob).data, {'unreadThreads': 0, 'unreadPosts': 0, 'threads': []})
+        self.assertEqual(notes(self.alice, '?limit=0').status, 400)
+
 class Routes(unittest.TestCase):
     def test_both_allowlists_name_the_same_forum_routes(self):
         patterns = []
@@ -215,7 +249,8 @@ class Routes(unittest.TestCase):
                      '/community/v1/forum/threads/12', '/community/v1/forum/threads/12/posts',
                      '/community/v1/forum/threads/12/moderation', '/community/v1/forum/posts/3/moderation',
                      '/community/v1/forum/subjects/rfc-0005.s3/threads', '/community/v1/forum/search',
-                     '/community/v1/forum/moderation', '/community/v1/forum/profile'):
+                     '/community/v1/forum/moderation', '/community/v1/forum/profile',
+                     '/community/v1/forum/notifications'):
             self.assertTrue(patterns[0].fullmatch(path), path)
         for path in ('/community/v1/forum/categories/evil/threads', '/community/v1/forum/threads/0',
                      '/community/v1/forum/threads/12/posts/3', '/community/v1/forum/subjects/A/threads',

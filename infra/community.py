@@ -136,11 +136,14 @@ class CommunityService:
                     created INTEGER NOT NULL, updated INTEGER NOT NULL);
                 CREATE TABLE IF NOT EXISTS forum_names (actor TEXT PRIMARY KEY, name TEXT NOT NULL,
                     folded TEXT NOT NULL UNIQUE, updated INTEGER NOT NULL);
+                CREATE TABLE IF NOT EXISTS forum_reads (actor TEXT NOT NULL, thread INTEGER NOT NULL,
+                    seen INTEGER NOT NULL, PRIMARY KEY(actor, thread)) WITHOUT ROWID;
                 CREATE INDEX IF NOT EXISTS forum_listing ON forum_threads(category,status,bumped,id);
                 CREATE INDEX IF NOT EXISTS forum_subject ON forum_threads(subject,status,bumped,id);
                 CREATE INDEX IF NOT EXISTS forum_thread_posts ON forum_posts(thread,status,id);
                 CREATE INDEX IF NOT EXISTS forum_queue ON forum_posts(status,review,id);
                 CREATE INDEX IF NOT EXISTS forum_author ON forum_posts(author,status);
+                CREATE INDEX IF NOT EXISTS forum_author_thread ON forum_posts(author,thread,id);
             ''')
             # Full-text search over published posts only. Without FTS5 the forum still
             # works and search answers 503.
@@ -610,6 +613,38 @@ class CommunityService:
             db.execute('UPDATE forum_threads SET status=? WHERE id=?', (status, row['thread']))
         self._refresh(db, row['thread'])
 
+    def _seen(self, db, actor, thread_id):
+        """The last post a participant has seen in a thread they wrote in, or None if they did not.
+
+        Writing a post counts as having read the thread up to it, so a participant's own
+        posts and everything before them are never new to them.
+        """
+        if not actor:
+            return None
+        own = db.execute('SELECT max(id) FROM forum_posts WHERE author=? AND thread=?', (actor, thread_id)).fetchone()[0]
+        if own is None:
+            return None
+        read = db.execute('SELECT seen FROM forum_reads WHERE actor=? AND thread=?', (actor, thread_id)).fetchone()
+        return max(own, read[0] if read else 0)
+
+    def _notifications(self, db, actor, limit):
+        """New published replies by others in the published threads a participant wrote in."""
+        rows = db.execute('''
+            WITH mine AS (SELECT thread, max(id) AS own FROM forum_posts WHERE author=? GROUP BY thread),
+                 marks AS (SELECT m.thread, max(m.own, COALESCE(r.seen, 0)) AS seen FROM mine m
+                           LEFT JOIN forum_reads r ON r.actor=? AND r.thread=m.thread)
+            SELECT t.*, count(p.id) AS fresh, min(p.id) AS first FROM marks k
+            JOIN forum_threads t ON t.id=k.thread AND t.status='published'
+            LEFT JOIN forum_posts p ON p.thread=k.thread AND p.status='published' AND p.author!=? AND p.id>k.seen
+            GROUP BY t.id ORDER BY fresh>0 DESC, t.bumped DESC, t.id DESC''', (actor, actor, actor)).fetchall()
+        threads = []
+        for row in rows[:limit]:
+            item = self._public_thread(db, row)
+            item.update(newPosts=row['fresh'], firstNew=row['first'])
+            threads.append(item)
+        return {'unreadThreads': sum(1 for row in rows if row['fresh']),
+                'unreadPosts': sum(row['fresh'] for row in rows), 'threads': threads}
+
     def _thread_page(self, db, where, values, query, actor):
         if set(query) - {'limit', 'before'}:
             raise Rejected(400, 'unknown_query')
@@ -675,7 +710,22 @@ class CommunityService:
             rows = db.execute('SELECT * FROM forum_posts WHERE thread=? AND id>? AND ' + clause + ' ORDER BY id LIMIT ?',
                               [thread['id'], after, *values, limit]).fetchall()
             items, cursor = self._page(rows, lambda row: self._public_post(db, row, moderator), limit)
-            return CommunityResponse(200, {'thread': self._public_thread(db, thread), 'posts': items, 'nextAfter': cursor})
+            data = {'thread': self._public_thread(db, thread), 'posts': items, 'nextAfter': cursor}
+            seen = self._seen(db, actor, thread['id'])
+            if seen is not None:
+                data['lastSeen'] = seen
+                shown = [item['id'] for item in items if item['status'] == 'published']
+                if shown and max(shown) > seen:
+                    db.execute('INSERT INTO forum_reads(actor,thread,seen) VALUES(?,?,?) '
+                               'ON CONFLICT(actor,thread) DO UPDATE SET seen=max(seen,excluded.seen)',
+                               (actor, thread['id'], max(shown)))
+            return CommunityResponse(200, data)
+        if path == '/notifications':
+            if not actor:
+                raise Rejected(401, 'sign_in_required')
+            if set(query) - {'limit'}:
+                raise Rejected(400, 'unknown_query')
+            return CommunityResponse(200, self._notifications(db, actor, self._limit(query, 20, 50)))
         if path == '/search':
             if set(query) - {'q', 'limit'}:
                 raise Rejected(400, 'unknown_query')

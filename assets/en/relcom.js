@@ -19,6 +19,14 @@
    const expiry=data.expiresAt?Date.parse(data.expiresAt):NaN;if(Number.isFinite(expiry)&&expiry<=Date.now())return;
    const name=typeof data.user.name==='string'&&data.user.name.trim()?data.user.name.trim():"IPvX participant";
    const label=document.createElement('span');label.textContent=name;headerAccount.replaceChildren(label);headerAccount.title="Signed in with Relcom ID";headerAccount.classList.add('signed-in');
+   /* New replies in the forum threads this participant wrote in; the link then opens that list. */
+   const forumLink=document.querySelector('header nav a[href^="forum"]');
+   if(forumLink)request('/community/v1/forum/notifications?limit=1',{credentials:'same-origin',cache:'no-store',headers:{Accept:'application/json'}}).then(notes=>{
+    const count=Number.isSafeInteger(notes.unreadPosts)?notes.unreadPosts:0;if(count<1)return;
+    const badge=document.createElement('span');badge.className='nav-count';badge.textContent=count>99?'99+':String(count);
+    const spoken=document.createElement('span');spoken.className='sr-only';spoken.textContent=" — new replies";
+    forumLink.append(badge,spoken);forumLink.href=forumLink.getAttribute('href').split('?')[0]+'?mine=1';
+   }).catch(()=>{/* The link stays plain when the forum cannot be read. */});
   }).catch(()=>{/* The header keeps the sign-in link when the session cannot be read. */});
  }
  const sessionStatus=byId('session-status');
