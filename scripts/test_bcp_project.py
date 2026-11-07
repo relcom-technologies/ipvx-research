@@ -2,7 +2,7 @@
 import json
 from pathlib import Path
 import unittest
-from bcp_project import facts, render, header
+from bcp_project import facts, render, header, ru_count
 
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -13,6 +13,13 @@ class BcpPresentation(unittest.TestCase):
         self.assertEqual(d['checks']['runner_tests'],77)
         self.assertIsNone(c['owner_launch_decision']);self.assertIsNone(c['run_dataset'])
         self.assertEqual(d['network_experiment'],'NOT_RUN')
+
+    def test_russian_counts_agree_with_their_number(self):
+        forms=('тест','теста','тестов')
+        for n,word in [(1,'тест'),(2,'теста'),(4,'теста'),(5,'тестов'),(11,'тестов'),(12,'тестов'),
+                       (14,'тестов'),(21,'тест'),(22,'теста'),(63,'теста'),(77,'тестов'),(111,'тестов')]:
+            self.assertEqual(ru_count(n,*forms),word,n)
+        self.assertIn('77 тестов runner и 14 проверок плана.',render(ROOT,'ru'))
 
     def test_all_languages_distinguish_three_evidence_states(self):
         for language in ['ru','en','de','es']:
