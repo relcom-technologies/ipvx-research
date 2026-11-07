@@ -3,7 +3,7 @@ import {parse} from '../i18n/node_modules/acorn/dist/acorn.mjs';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
 const sources=[];
-for(const name of ['portal','relcom','community','admin','replay','agent-replay']){
+for(const name of ['portal','relcom','community','admin','replay','agent-replay','forum']){
  const text=fs.readFileSync(`assets/${name}.js`,'utf8');
  const spans=[];
  function visit(node){

@@ -77,6 +77,11 @@
       "context": "account.html:text:header/nav/a"
     },
     {
+      "id": "b78d169b20863311",
+      "source": "Форум",
+      "context": "account.html:text:header/nav/a"
+    },
+    {
       "id": "c8b71789f6a63720",
       "source": "Вход / Relcom ID",
       "context": "account.html:text:header/div/a"
@@ -1027,13 +1032,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "80502ac970725bdd",
-      "source": "199 событий по HX-0199; авторы, основания, проверки и ограничения.",
+      "id": "0ead08acf58eda3c",
+      "source": "200 событий по HX-0200; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "d4fc39673b26929b",
-      "source": "398.0 КиБ · 12 файлов",
+      "id": "1b51c0f49c522c47",
+      "source": "401.2 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -1580,6 +1585,46 @@
       "id": "6033c67ef8585d57",
       "source": "Параметры модели →",
       "context": "experiments.html:text:section/p/a"
+    },
+    {
+      "id": "785be7f1fc376042",
+      "source": "Форум · IPvX Research",
+      "context": "forum.html:text:html/head/title"
+    },
+    {
+      "id": "1672a7e5ae36c8ab",
+      "source": "Форум участников",
+      "context": "forum.html:text:main/div/h1"
+    },
+    {
+      "id": "a1323c8a88f473c6",
+      "source": "Вопросы, идеи и разбор работы над IPvX. Читать может любой; писать можно после входа через Relcom ID. Новое сообщение участника публикуется после проверки.",
+      "context": "forum.html:text:main/div/p"
+    },
+    {
+      "id": "50f4147930a9ce5f",
+      "source": "Для форума нужен JavaScript. Читать RFC и историю проекта можно без него:",
+      "context": "forum.html:text:div/noscript/p"
+    },
+    {
+      "id": "c3e8dff2f515d7d9",
+      "source": "история",
+      "context": "forum.html:text:noscript/p/a"
+    },
+    {
+      "id": "1a002dd5eebbb410",
+      "source": "Форум служит для обсуждения. Изменение RFC идёт через",
+      "context": "forum.html:text:main/section/p"
+    },
+    {
+      "id": "6719f8faa4dde47e",
+      "source": "предложение к RFC",
+      "context": "forum.html:text:section/p/a"
+    },
+    {
+      "id": "146dfdec1f722cfa",
+      "source": "или PR в GitHub, а не через голосование на форуме.",
+      "context": "forum.html:text:main/section/p"
     },
     {
       "id": "a8d1c26018424dcd",
@@ -4867,14 +4912,104 @@
       "context": "history.html:text:main/section/p"
     },
     {
-      "id": "1297baf5a745cb69",
-      "source": "HX-0199 · Раннер NET-001-F впервые встретился с настоящим ядром: четыре сбоя исправлены, добавлена репетиция без разрешения",
+      "id": "ab92ef1d3172f157",
+      "source": "HX-0200 · Форум участников встроен в ipvx.org вместо Discourse",
       "context": "history.html:text:section/details/summary"
     },
     {
       "id": "e078c61c3e49f21a",
       "source": "Реализовано",
       "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "ff62925754f60ea6",
+      "source": "Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд) · 2026-11-07T20:30:00+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "eb9024a4bd9f2ffb",
+      "source": "7 ноября 2026 года владелец сначала выбрал Discourse на forum.ipvx.org: ВМ и маршрут объявлены в relcom-infra, Discourse установлен с входом через Relcom ID. В тот же день владелец решил писать форум сам, внутри ipvx.org, и попросил модерацию с помощью ИИ. Discourse остановлен. Комментарии блога в Relcom Press отключены, потому что требовали второй аккаунт. Реализованы бэкенд форума в сервисе сообщества (категории, темы, ответы, привязка темы к объекту проекта, поиск, публичное имя по желанию, очереди модерации) и страница forum.html на четырёх языках. Пост участника ждёт проверки; встроенный интерфейс позволяет автоматическому модератору опубликовать, скрыть или передать пост людям, модератор отменяет любое решение. Написан автоматический модератор: отдельный процесс по таймеру отправляет каждый ожидающий пост в Claude как данные и записывает решение с причиной; посты с узнаваемыми ключами и токенами скрываются локальным правилом без отправки в модель, а непонятный ответ модели передаёт пост людям.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "ac0cc73083ac447a",
+      "source": "Собственный форум использует уже работающие вход Relcom ID, роли, аудит и защиту от повторной отправки, не требует второго домена, аккаунта и чужого скрипта и выглядит как остальной сайт. Взамен проект отказывается от готовой защиты от спама, писем-дайджестов и чата Discourse. Модерация с ИИ ускоряет публикацию, но каждое её решение записывается и обратимо, а без работающего модератора посты ждут людей.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "34091d07ef8c6ebd",
+      "source": "docs/forum.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "d070ea66ee2814ab",
+      "source": "infra/community.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "0a33cac58507d81e",
+      "source": "assets/forum.js",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "aa17155fac26b1e3",
+      "source": "infra/forum_moderator.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "1e3bb1ead3380156",
+      "source": "scripts/test_forum_moderator.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "9df7500e24cea105",
+      "source": "scripts/test_forum.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "353fb9d18ab42886",
+      "source": "scripts/browser_forum_check.mjs",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "a0ec2c130a04e2cb",
+      "source": "Автоматический модератор не включён: он проверен тестами с подставным клиентом и настоящим SDK против локального сервера, без вызовов Claude API. Включение платное и требует ключа и отдельного разрешения владельца.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "2c06c9a170b0326b",
+      "source": "Форум не выкачен; проверен юнит-тестами и браузерной проверкой с синтетическим API, без настоящих участников.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "a0e691056bcbd0d0",
+      "source": "Уведомлений и писем нет. ВМ, маршрут, DNS-запись и приложение Relcom ID от Discourse ещё не убраны.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "eef48afb7e7c7a81",
+      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "1297baf5a745cb69",
+      "source": "HX-0199 · Раннер NET-001-F впервые встретился с настоящим ядром: четыре сбоя исправлены, добавлена репетиция без разрешения",
+      "context": "history.html:text:section/details/summary"
     },
     {
       "id": "36efc420beffeb19",
@@ -4887,19 +5022,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "7f718f9001f6c098",
       "source": "Репетиция нужна потому, что сбои такого рода заглушки показать не могут, а обнаружить их настоящим прогоном стоило бы разрешения и набора данных. Четвёртый сбой нашла сама репетиция, при чтении кода он был пропущен. Строгий аудит интерфейсов оставлен без изменений: запасные туннели ядра описаны как условие для стенда, а не разрешены кодом. Каталоги выше акторов стали проходимыми (0711), но не читаемыми, а каталоги самих акторов остались закрытыми (0700). Другой способ, открывать журнал по пути /proc/self/cwd, не выбран, потому что SQLite раскрывает символические ссылки и снова упирается в те же каталоги; это вывод из устройства SQLite, отдельно он не проверялся.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "556c0953d77cf78b",
@@ -4927,11 +5052,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "476238b9d8c55d31",
       "source": "Контейнер не является стендом: ядро 7.0.14-linuxkit на aarch64, а прогон требует x86_64. Прослойка пробы обошла проверку архитектуры и убрала из запретов fork и vfork, которых на arm64 нет, поэтому запрет этих двух вызовов не проверялся.",
       "context": "history.html:text:details/ul/li"
@@ -4950,11 +5070,6 @@
       "id": "365fc176e546e8ca",
       "source": "Открытыми оставлены: захват работает под UID своего узла, git rev-parse вызывается после расхода разрешения, 329 закреплённых файлов лежат вне путей, запускающих CI раннера.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "eef48afb7e7c7a81",
-      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "3a819b587ecabbbf",
@@ -10737,11 +10852,6 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "d070ea66ee2814ab",
-      "source": "infra/community.py",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
       "id": "88c5b931ebd39053",
       "source": "infra/auth.py",
       "context": "history.html:text:ul/li/a"
@@ -14455,6 +14565,411 @@
       "id": "0703f8f3e991659b",
       "source": "Не удалось загрузить запись. Результаты и JSON доступны ниже; обновите страницу для повтора.",
       "context": "assets/agent-replay.js:5921"
+    },
+    {
+      "id": "9e37774086d1b0e3",
+      "source": "Текущая работа над BCP 0.2: прогоны, стенд, проверки и их границы.",
+      "context": "assets/forum.js:865"
+    },
+    {
+      "id": "c31cdbd07e6cc3a2",
+      "source": "Блог",
+      "context": "assets/forum.js:944"
+    },
+    {
+      "id": "bbbf2a2e58048677",
+      "source": "Обсуждение статей блога IPvX Research: одна тема на статью.",
+      "context": "assets/forum.js:951"
+    },
+    {
+      "id": "237252fc237a0b53",
+      "source": "Черновики RFC",
+      "context": "assets/forum.js:1022"
+    },
+    {
+      "id": "1ca8852dfa384b30",
+      "source": "Вопросы и идеи по черновикам RFC. Изменение RFC идёт через предложение к RFC или PR в GitHub.",
+      "context": "assets/forum.js:1038"
+    },
+    {
+      "id": "1c7444e19aafc326",
+      "source": "Эксперименты и лаборатория",
+      "context": "assets/forum.js:1151"
+    },
+    {
+      "id": "cc4cee2f3f790f0e",
+      "source": "Эксперименты, стенд lab.ipvx.org, гипотезы и их проверки.",
+      "context": "assets/forum.js:1180"
+    },
+    {
+      "id": "9fe78c578deeabc5",
+      "source": "Архитектура",
+      "context": "assets/forum.js:1258"
+    },
+    {
+      "id": "723f6e30f804c900",
+      "source": "Устройство IPvX: адресация, маршрутизация, доставка сообщений.",
+      "context": "assets/forum.js:1272"
+    },
+    {
+      "id": "9c924186ced1f2cf",
+      "source": "Вопросы",
+      "context": "assets/forum.js:1352"
+    },
+    {
+      "id": "9d7a07e8149bcf79",
+      "source": "Вопросы о проекте и протоколе.",
+      "context": "assets/forum.js:1362"
+    },
+    {
+      "id": "0c7074136b3b94cf",
+      "source": "Сайт и форум",
+      "context": "assets/forum.js:1405"
+    },
+    {
+      "id": "a287192f900c40e3",
+      "source": "Отзывы о сайте и форуме, правила и заметки модераторов.",
+      "context": "assets/forum.js:1420"
+    },
+    {
+      "id": "3aa429df0710bb94",
+      "source": "Ждут решения людей",
+      "context": "assets/forum.js:1503"
+    },
+    {
+      "id": "b4c8ed80277861fc",
+      "source": "Ждут автоматической проверки",
+      "context": "assets/forum.js:1534"
+    },
+    {
+      "id": "37cd5876821e8021",
+      "source": "Скрытые",
+      "context": "assets/forum.js:1572"
+    },
+    {
+      "id": "abda2910b5d6ea68",
+      "source": "На проверке · видно только вам и модераторам",
+      "context": "assets/forum.js:1612"
+    },
+    {
+      "id": "00a02c3a05e4d1fe",
+      "source": "Сеанс истёк. Войдите снова через Relcom ID.",
+      "context": "assets/forum.js:1721"
+    },
+    {
+      "id": "13e4c62fe85e7166",
+      "source": "Для участия нужна учётная запись с подтверждённой почтой.",
+      "context": "assets/forum.js:1793"
+    },
+    {
+      "id": "579b2b5ea6dc233e",
+      "source": "Ваше участие заблокировано администратором.",
+      "context": "assets/forum.js:1868"
+    },
+    {
+      "id": "e9c8c575888fb649",
+      "source": "Тема закрыта для новых ответов.",
+      "context": "assets/forum.js:1928"
+    },
+    {
+      "id": "013ba261006d29b7",
+      "source": "Тема не найдена или ещё не опубликована.",
+      "context": "assets/forum.js:1979"
+    },
+    {
+      "id": "8d2ac50bf0981458",
+      "source": "Такой категории нет.",
+      "context": "assets/forum.js:2041"
+    },
+    {
+      "id": "166f821dece13d00",
+      "source": "У вас слишком много сообщений на проверке. Дождитесь решения.",
+      "context": "assets/forum.js:2086"
+    },
+    {
+      "id": "6a3aab4cd30c3faa",
+      "source": "Слишком много действий подряд. Попробуйте через несколько минут.",
+      "context": "assets/forum.js:2170"
+    },
+    {
+      "id": "4f663e19b5173bed",
+      "source": "Это имя уже занято.",
+      "context": "assets/forum.js:2248"
+    },
+    {
+      "id": "0a5671240101f91a",
+      "source": "Имя: от 2 до 40 букв и цифр, без служебных слов.",
+      "context": "assets/forum.js:2283"
+    },
+    {
+      "id": "fa57a7d28e46ab5e",
+      "source": "Проверьте длину текста: заголовок от 3 до 200 знаков, сообщение до 8000.",
+      "context": "assets/forum.js:2347"
+    },
+    {
+      "id": "a4bdcad02fbf1978",
+      "source": "Поиск временно недоступен.",
+      "context": "assets/forum.js:2441"
+    },
+    {
+      "id": "9e9f14dd42147c08",
+      "source": "Введите хотя бы одно слово из двух букв.",
+      "context": "assets/forum.js:2485"
+    },
+    {
+      "id": "9ce4f440ef912fd0",
+      "source": "Нужна роль модератора.",
+      "context": "assets/forum.js:2542"
+    },
+    {
+      "id": "b8a8ccd80cd645d5",
+      "source": "Форум временно недоступен. Повторите позже.",
+      "context": "assets/forum.js:2721"
+    },
+    {
+      "id": "b266c6f0f8667f33",
+      "source": "Запрос не выполнен.",
+      "context": "assets/forum.js:2767"
+    },
+    {
+      "id": "a393e127129273aa",
+      "source": "Пишите простым текстом. Не публикуйте пароли, ключи и личные данные.",
+      "context": "assets/forum.js:6219"
+    },
+    {
+      "id": "899dce11fb2c0f4c",
+      "source": "Отправляем…",
+      "context": "assets/forum.js:6633"
+    },
+    {
+      "id": "3186280aca4f0fbb",
+      "source": "Опубликовано.",
+      "context": "assets/forum.js:6969"
+    },
+    {
+      "id": "262220cee2a67c07",
+      "source": "Отправлено. Сообщение появится после проверки; пока его видите только вы.",
+      "context": "assets/forum.js:6985"
+    },
+    {
+      "id": "26c80474c7221e11",
+      "source": "Новая тема",
+      "context": "assets/forum.js:7177"
+    },
+    {
+      "id": "98562f8141d841a3",
+      "source": "Войдите через Relcom ID",
+      "context": "assets/forum.js:7254"
+    },
+    {
+      "id": "0857a51b6c33e1d1",
+      "source": ", чтобы начать тему.",
+      "context": "assets/forum.js:7305"
+    },
+    {
+      "id": "41f780fdee89f896",
+      "source": "Категория",
+      "context": "assets/forum.js:7426"
+    },
+    {
+      "id": "2ffeafbca981d162",
+      "source": "Опубликовать тему",
+      "context": "assets/forum.js:7694"
+    },
+    {
+      "id": "7b9de65d16725ec8",
+      "source": "ответ",
+      "context": "assets/forum.js:8590"
+    },
+    {
+      "id": "2878e68255e5e1ef",
+      "source": "ответов",
+      "context": "assets/forum.js:8598"
+    },
+    {
+      "id": "d70e2991341717b0",
+      "source": "Закрыта",
+      "context": "assets/forum.js:8787"
+    },
+    {
+      "id": "e86a9f261bb63858",
+      "source": "Тем пока нет. Начните первую.",
+      "context": "assets/forum.js:9237"
+    },
+    {
+      "id": "05f6c615a3518d94",
+      "source": "Категории",
+      "context": "assets/forum.js:9442"
+    },
+    {
+      "id": "672e9a1bbbeb0541",
+      "source": "Тем:",
+      "context": "assets/forum.js:9844"
+    },
+    {
+      "id": "bfc2b5508cf371f3",
+      "source": "· последнее:",
+      "context": "assets/forum.js:9865"
+    },
+    {
+      "id": "a45b6dce57013d75",
+      "source": "Тем пока нет",
+      "context": "assets/forum.js:9908"
+    },
+    {
+      "id": "eac88378e03b0899",
+      "source": "Обсуждения:",
+      "context": "assets/forum.js:10855"
+    },
+    {
+      "id": "fcc8e9eb339f6170",
+      "source": "в ответ на #",
+      "context": "assets/forum.js:11567"
+    },
+    {
+      "id": "b9af23eeff5da84a",
+      "source": "Ответить",
+      "context": "assets/forum.js:11946"
+    },
+    {
+      "id": "a5483ea07f882437",
+      "source": "Модерация",
+      "context": "assets/forum.js:12311"
+    },
+    {
+      "id": "eb604b03dfbc9dcc",
+      "source": "Отметка проверки:",
+      "context": "assets/forum.js:12369"
+    },
+    {
+      "id": "aee7bfdd238185e0",
+      "source": "Скрыто.",
+      "context": "assets/forum.js:12775"
+    },
+    {
+      "id": "59a7550ec72ea352",
+      "source": "Объект:",
+      "context": "assets/forum.js:13375"
+    },
+    {
+      "id": "43179c6963573b93",
+      "source": "Тема закрыта: новые ответы может оставить только модератор.",
+      "context": "assets/forum.js:13523"
+    },
+    {
+      "id": "423ce129e1e2b464",
+      "source": "Показать ещё ответы",
+      "context": "assets/forum.js:13669"
+    },
+    {
+      "id": "feb89900a501d52a",
+      "source": "Ответ на #",
+      "context": "assets/forum.js:13949"
+    },
+    {
+      "id": "95837f0d814001fd",
+      "source": "Открыть тему",
+      "context": "assets/forum.js:14539"
+    },
+    {
+      "id": "737f9620e6176156",
+      "source": "Закрыть тему",
+      "context": "assets/forum.js:14554"
+    },
+    {
+      "id": "a7a4033657e89fc9",
+      "source": "Закрыть",
+      "context": "assets/forum.js:14671"
+    },
+    {
+      "id": "8269124505a107ee",
+      "source": "Готово. Обновите страницу.",
+      "context": "assets/forum.js:14833"
+    },
+    {
+      "id": "363f81e7f3bd7ed4",
+      "source": ", чтобы ответить.",
+      "context": "assets/forum.js:15090"
+    },
+    {
+      "id": "b7717c6c8eb0310b",
+      "source": "Тема закрыта.",
+      "context": "assets/forum.js:15184"
+    },
+    {
+      "id": "102eefe4f6c95575",
+      "source": "Ответы откроются, когда тему опубликуют.",
+      "context": "assets/forum.js:15273"
+    },
+    {
+      "id": "ceb68a9287da00d8",
+      "source": "Отправить",
+      "context": "assets/forum.js:15433"
+    },
+    {
+      "id": "180f58ab975323f9",
+      "source": "Поиск",
+      "context": "assets/forum.js:15869"
+    },
+    {
+      "id": "798ff068cd437db1",
+      "source": "Поиск:",
+      "context": "assets/forum.js:15887"
+    },
+    {
+      "id": "6bd686a245261e16",
+      "source": "Ничего не найдено.",
+      "context": "assets/forum.js:16388"
+    },
+    {
+      "id": "b1ff8198038c3e25",
+      "source": "Модерация форума",
+      "context": "assets/forum.js:16661"
+    },
+    {
+      "id": "c3dcb5467b98cdbd",
+      "source": "начало темы",
+      "context": "assets/forum.js:17220"
+    },
+    {
+      "id": "73561e0a5bf2597b",
+      "source": "Как вас показывать",
+      "context": "assets/forum.js:17555"
+    },
+    {
+      "id": "2aa98ec188e2526b",
+      "source": "Сейчас:",
+      "context": "assets/forum.js:17654"
+    },
+    {
+      "id": "06aac3b5dc5f79ab",
+      "source": "Сейчас вы показаны псевдонимом «",
+      "context": "assets/forum.js:17679"
+    },
+    {
+      "id": "5b6563c66c6fdc02",
+      "source": "». Имя и почта из Relcom ID на форуме не видны.",
+      "context": "assets/forum.js:17730"
+    },
+    {
+      "id": "4a11b55556c77ba2",
+      "source": "Публичное имя",
+      "context": "assets/forum.js:17821"
+    },
+    {
+      "id": "59322ea5e71f4d6d",
+      "source": "Сохранить имя",
+      "context": "assets/forum.js:17884"
+    },
+    {
+      "id": "440a79c335cd171c",
+      "source": "Поиск по форуму",
+      "context": "assets/forum.js:18205"
+    },
+    {
+      "id": "b37952ae01b23375",
+      "source": "Загружаем форум…",
+      "context": "assets/forum.js:18987"
     },
     {
       "id": "dd1b88ab67f4b98a",
