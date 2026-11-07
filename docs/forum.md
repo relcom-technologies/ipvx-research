@@ -97,8 +97,12 @@ If the automatic moderator is not running, posts wait for people; nothing is pub
    schema, the `ipvx-forum-moderator` service and timer, `scripts/test_forum_moderator.py` against a
    scripted client. Turning it on makes paid API calls and needs the owner's separate permission and
    key; see "Running the automatic moderator".
-4. **Links:** "Обсудить" next to RFC sections, experiments, hypotheses, lab gates; a "Форум" link in
-   the lab header and the blog footer (Press Settings → Footer).
+4. **Links** (done on the portal): "Обсудить на форуме" on every RFC page and "Обсудить раздел" next to
+   each of its sections (`rfc-0005.s3`, numbered by heading order), on hypotheses `llm1`…`llm8`, on the
+   experiments `experiments.llm`, `.native`, `.documents`, `.scale`, and the BCP page links to the BCP
+   category. `forum.html?s=<ref>` names the object, links back to it in the reader's language and
+   suggests a category. Still to do: "Форум" in the lab header (ipvx-agent-lab), links from lab gates
+   (`lab.<gate>`), and the blog footer (Press Settings → Footer, the owner's setting).
 5. **Notifications:** an on-site unread count for threads a participant wrote in. Email later, once a
    mail provider is chosen.
 

@@ -52,6 +52,20 @@
  const badge=state=>statusNames[state]?node('span',statusNames[state],'badge forum-state forum-'+state):null;
  const crumbs=(...items)=>{const trail=node('p',undefined,'forum-crumbs');trail.append(link(null,"Forum"));for(const item of items){trail.append(node('span','/','forum-sep'));trail.append(item);}return trail;};
  const heading=(text,level='h2')=>node(level,text,'forum-heading');
+ // Project objects a thread can be about; the link back stays in the reader's language edition.
+ const edition=(page.match(/^forum(\.[a-z]{2})?\.html$/)||[])[1]||'';
+ const experiments={llm:"Two local models",native:"Five machines and relay failure",documents:"Documents over the native network",scale:"Large-network simulation"};
+ function about(ref){
+  let match=/^rfc-(\d{4})(?:\.s([1-9]\d?))?$/.exec(ref);
+  if(match)return {label:'RFC-'+match[1]+(match[2]?", section "+match[2]:''),href:'rfc-'+match[1]+edition+'.html'+(match[2]?'#s'+match[2]:''),category:'rfc'};
+  match=/^llm([1-9]\d?)$/.exec(ref);
+  if(match)return {label:"Hypothesis LLM"+match[1],href:'experiments'+edition+'.html#llm'+match[1],category:'experiments'};
+  match=/^experiments\.([a-z]+)$/.exec(ref);
+  if(match&&experiments[match[1]])return {label:"Experiment: "+experiments[match[1]],href:'experiments'+edition+'.html#'+match[1],category:'experiments'};
+  match=/^lab\.([a-z0-9-]+)$/.exec(ref);
+  if(match)return {label:"Lab: "+match[1],href:'https://lab.ipvx.org/',category:'experiments'};
+  return {label:ref,href:null,category:null};
+ }
 
  function form(fields,submitText,onSubmit){
   const element=node('form',undefined,'forum-form'),result=node('p','','forum-form-status');result.setAttribute('role','status');result.setAttribute('aria-live','polite');
@@ -79,12 +93,12 @@
  }
  const published=data=>data.visibility==='published'?"Published.":"Sent. The post appears after review; until then only you can see it.";
 
- function composer(category,subject){
+ function composer(category,subject,suggested){
   const box=node('section',undefined,'forum-compose');
   box.append(heading("New topic",'h3'));
   if(!signedIn()){const p=node('p');p.append(signInLink("Sign in with Relcom ID"),document.createTextNode(" to start a topic."));box.append(p);return box;}
   const fields=[];
-  if(!category)fields.push({name:'category',label:"Category",type:'select',options:Object.entries(categories).map(([id,[name]])=>[id,name])});
+  if(!category)fields.push({name:'category',label:"Category",type:'select',value:suggested,options:Object.entries(categories).map(([id,[name]])=>[id,name])});
   fields.push({name:'title',label:"Title",max:200,required:true},{name:'text',label:"Message",type:'textarea',rows:7,max:8000,required:true});
   box.append(form(fields,"Post topic",async(values,result)=>{
    const target=category||values.category,body={title:values.title,text:values.text};
@@ -149,11 +163,14 @@
 
  async function subject(ref){
   if(!/^[a-z0-9][a-z0-9.-]{0,79}$/.test(ref))throw Object.assign(new Error('missing'),{status:404,code:'thread_not_found'});
-  view.append(crumbs(node('span',ref)),heading("Discussions: "+ref));
+  const info=about(ref);
+  document.title=info.label+' · '+document.title;
+  view.append(crumbs(node('span',info.label)),heading("Discussions: "+info.label));
+  if(info.href){const back=node('p',undefined,'forum-lead'),a=node('a',"Open on the site");a.href=info.href;back.append(a);view.append(back);}
   const list=node('div',undefined,'forum-threads'),more=node('button',"Show more",'button secondary forum-more');more.type='button';more.hidden=true;
   view.append(list,more);
   await threadList('/forum/subjects/'+ref+'/threads',list,more);
-  view.append(composer(null,ref));
+  view.append(composer(null,ref,info.category));
  }
 
  function postItem(item,thread,onReply){
@@ -192,7 +209,7 @@
   const title=heading(info.title,'h2');view.append(title);
   const meta=node('p',undefined,'forum-meta');
   meta.append(node('span',author(info.author)),node('span',date(info.createdAt)));
-  if(info.subject)meta.append(link({s:info.subject},"Object: "+info.subject));
+  if(info.subject)meta.append(link({s:info.subject},"About: "+about(info.subject).label));
   view.append(meta);
   const state=badge(info.status);if(state)view.append(state);
   if(info.locked)view.append(node('p',"This topic is closed: only a moderator can reply.",'forum-note'));

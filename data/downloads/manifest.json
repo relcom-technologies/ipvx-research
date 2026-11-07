@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "snapshot_through": "HX-0200",
+  "snapshot_through": "HX-0201",
   "bundles": [
     {
       "name": "ipvx-native-device-prototype.zip",
@@ -13,9 +13,9 @@
     {
       "name": "ipvx-research-history.zip",
       "label": "Полная доступная выгрузка истории",
-      "scope": "200 событий по HX-0200; авторы, основания, проверки и ограничения.",
-      "bytes": 410865,
-      "sha256": "835993a43b85691b05ee066ad1ee11ff3af6f57711328e7cedb3553acf3ff438",
+      "scope": "201 событий по HX-0201; авторы, основания, проверки и ограничения.",
+      "bytes": 412840,
+      "sha256": "70b7d22972e6919abb56ab8552c747144ec8fa1fb8e300c31e8bd45f28bbe5a2",
       "files": 12
     }
   ]

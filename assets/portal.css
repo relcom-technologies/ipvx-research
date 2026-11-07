@@ -11,3 +11,4 @@
 @media(min-width:701px) and (max-width:1050px){.mechanism-cell,.rfc-cell{grid-column:span 12}}
 .mechanism-cell>h2{font-size:24px}.pillars{display:grid;grid-template-columns:1fr 1fr;gap:28px 32px;margin:24px 0 20px;padding:0;list-style:none}.pillars li{min-width:0;border-top:1px solid var(--rule);padding-top:18px}.pillars p{font-size:15px;color:var(--muted);margin-bottom:12px}@media(max-width:700px){.pillars{grid-template-columns:1fr;gap:20px}}
 .pillar-links{display:flex;flex-wrap:wrap;gap:4px 18px;margin:12px 0 0;font-size:15px}.pillar-links a{display:inline-flex;align-items:center;min-height:44px}
+.section-head{display:flex;align-items:baseline;gap:0 20px;flex-wrap:wrap;margin:40px 0 20px}.section-head h2{margin:0}.discuss-link{font-size:14px;color:var(--muted)}.discuss-link a,a.discuss-link{display:inline-flex;align-items:center;min-height:44px}p.discuss-link{margin:-12px 0 8px}.hypotheses details p.discuss-link{margin-top:-16px;padding-bottom:4px}
