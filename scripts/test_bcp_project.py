@@ -37,7 +37,7 @@ class BcpPresentation(unittest.TestCase):
             s=render(ROOT,language,compact=True)
             self.assertIn('bcp'+('' if language=='ru' else '.'+language)+'.html',s)
             self.assertEqual(s.count('class="bcp-row"'),3)
-            self.assertIn('pull/845',render(ROOT,language))
+            self.assertIn('relcom-infra/pull/865',render(ROOT,language))
 
     def test_status_states_light_client_read_and_open_conditions(self):
         d=facts(ROOT);self.assertFalse(d['state_source']['own_node_required']);self.assertFalse(d['state_source']['helios_running_on_stand'])
