@@ -3114,5 +3114,9 @@
   "476238b9d8c55d31": "The container is not the stand: kernel 7.0.14-linuxkit on aarch64, while a run requires x86_64. The probe shim bypassed the architecture guard and removed fork and vfork from the deny list, because arm64 has no such calls, so denying those two was not tested.",
   "314fb5115a67cc49": "REHEARSAL_PASS was obtained only with this kernel's fallback tunnels hidden by a wrapper. Without that the rehearsal refuses, and the setting net.core.fb_tunnels_only_for_init_net=1 comes from the kernel documentation and was not tested.",
   "481a587d4438cc6a": "The real entry and Node have still never met a kernel: that happens only in the run itself, so a rehearsal pass does not promise a run pass. There is no independent review of the runner. The rehearsal was not run on the stand; that needs separate permission from the owner.",
-  "365fc176e546e8ca": "Left open: each capture runs under its node's UID, git rev-parse is called after the permit is consumed, and 329 pinned files sit outside the paths that trigger the runner CI."
+  "365fc176e546e8ca": "Left open: each capture runs under its node's UID, git rev-parse is called after the permit is consumed, and 329 pinned files sit outside the paths that trigger the runner CI.",
+  "29f1ed6acba6e50e": "Lab ↗",
+  "a89c15b03fa6a0a6": "Five-machine experiment →",
+  "3d65b35ade39ad6e": "Live stand ↗",
+  "8df944631f86c457": "How it is designed →"
 }
