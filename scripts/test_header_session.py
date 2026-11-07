@@ -17,7 +17,7 @@ class HeaderSessionTests(unittest.TestCase):
             js=(ROOT/f'assets/{lang}relcom.js').read_text()
             block=js.split("const headerAccount=",1)[1].split("const sessionStatus=",1)[0]
             self.assertIn("request('/auth/session',{credentials:'same-origin'",block)
-            self.assertIn('headerAccount.textContent=name',block)
+            self.assertIn('label.textContent=name',block)
             self.assertNotIn('innerHTML',block)
             self.assertIn(title,block)
             # An expired session leaves the sign-in link in place.

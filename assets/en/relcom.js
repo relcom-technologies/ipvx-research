@@ -18,7 +18,7 @@
    if(data.authenticated!==true||!data.user||typeof data.user.sub!=='string')return;
    const expiry=data.expiresAt?Date.parse(data.expiresAt):NaN;if(Number.isFinite(expiry)&&expiry<=Date.now())return;
    const name=typeof data.user.name==='string'&&data.user.name.trim()?data.user.name.trim():"IPvX participant";
-   headerAccount.textContent=name;headerAccount.title="Signed in with Relcom ID";headerAccount.classList.add('signed-in');
+   const label=document.createElement('span');label.textContent=name;headerAccount.replaceChildren(label);headerAccount.title="Signed in with Relcom ID";headerAccount.classList.add('signed-in');
   }).catch(()=>{/* The header keeps the sign-in link when the session cannot be read. */});
  }
  const sessionStatus=byId('session-status');
