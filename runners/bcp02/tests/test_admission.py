@@ -218,7 +218,8 @@ class DatasetAdmission(unittest.TestCase):
     def test_committed_config_has_no_dataset_or_owner_authority(self):
         from runners.bcp02.admission import HERE
         config=read_json(HERE/'launch-config.json')
-        self.assertIsNone(config['run_dataset']);self.assertIsNone(config['owner_public_key'])
+        self.assertIsNone(config['run_dataset']);self.assertIsNone(config['accepted_window'])
+        self.assertIsNone(config['owner_launch_decision'])
         with self.assertRaisesRegex(Blocked,'launch decision'):authorize('/unused')
 
 

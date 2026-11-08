@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "scope": "Offline unit tests with memory ports, synthetic clocks and fabricated PCAP/SQL evidence",
-  "tests": 91,
+  "tests": 93,
   "success": true,
   "test_names": [
     "test_admission.DatasetAdmission.test_alternate_sealed_bundle_needs_its_own_signature",
@@ -37,6 +37,8 @@
     "test_launch_tools.Owner.test_key_file_is_encrypted_and_never_overwritten",
     "test_launch_tools.Owner.test_requests_outside_the_v2_contract_are_refused",
     "test_launch_tools.Owner.test_signed_request_is_accepted_by_the_runner",
+    "test_launch_tools.Record.test_any_other_pin_change_voids_the_owner_ack",
+    "test_launch_tools.Record.test_committed_ack_covers_the_current_runner_pins",
     "test_launch_tools.Record.test_record_fills_only_the_run_slots_and_repins_the_config",
     "test_launch_tools.Record.test_record_refuses_without_reviewed_static_pins",
     "test_launch_tools.Revision.test_source_revision_comes_from_a_file_not_git",

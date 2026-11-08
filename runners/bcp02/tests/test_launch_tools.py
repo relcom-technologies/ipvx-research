@@ -58,18 +58,26 @@ class Window(unittest.TestCase):
 
 
 class Record(unittest.TestCase):
-    def static(self, **changes):
+    def static(self, manifest, name, **changes):
         c = json.loads(Path(stand_launch.HERE, 'launch-config.json').read_text())
-        c.update(owner_public_key='e' * 64, owner_scope_ack={'scope_sha256': SCOPE}, review_evidence='https://example.invalid/pr')
+        c.update(owner_public_key='e' * 64, review_evidence='https://example.invalid/pr',
+                 owner_scope_ack={'reviewed_pins_sha256': stand_launch.reviewed_pins(manifest, name), 'owner_statement': 'unit test'},
+                 run_dataset=None, accepted_window=None, owner_launch_decision=None)
         c.update(changes)
         return c
 
+    def files(self, d, **changes):
+        cfg, man = Path(d, 'launch-config.json'), Path(d, 'manifest.json')
+        name = str(cfg.resolve().relative_to(stand_launch.ROOT))
+        manifest = {'files': {name: '0' * 64, 'runners/bcp02/cli.py': '1' * 64}}
+        man.write_text(json.dumps(manifest))
+        cfg.write_text(json.dumps(self.static(manifest, name, **changes)))
+        return cfg, man
+
     def test_record_fills_only_the_run_slots_and_repins_the_config(self):
         with tempfile.TemporaryDirectory(dir=stand_launch.ROOT) as d:
-            cfg, man = Path(d, 'launch-config.json'), Path(d, 'manifest.json')
-            cfg.write_text(json.dumps(self.static()))
+            cfg, man = self.files(d)
             name = str(cfg.resolve().relative_to(stand_launch.ROOT))
-            man.write_text(json.dumps({'files': {name: '0' * 64}}))
             out = stand_launch.record(cfg, man, dict(DATASET), [T0 + 60, T0 + 1776])
             self.assertEqual(out['run_dataset'], DATASET)
             self.assertEqual(out['owner_launch_decision']['run_id'], DATASET['run_id'])
@@ -77,10 +85,24 @@ class Record(unittest.TestCase):
             with self.assertRaises(Blocked):stand_launch.record(cfg, man, dict(DATASET), [T0 + 60, T0 + 1776])
 
     def test_record_refuses_without_reviewed_static_pins(self):
+        bad = [dict(owner_public_key=None), dict(owner_public_key='E' * 64), dict(owner_public_key='e' * 63),
+               dict(owner_scope_ack=None), dict(owner_scope_ack={'reviewed_pins_sha256': '0' * 64, 'owner_statement': 'x'})]
+        for changes in bad:
+            with self.subTest(changes=changes), tempfile.TemporaryDirectory(dir=stand_launch.ROOT) as d:
+                cfg, man = self.files(d, **changes)
+                with self.assertRaises(Blocked):stand_launch.record(cfg, man, dict(DATASET), [T0 + 60, T0 + 1776])
+
+    def test_any_other_pin_change_voids_the_owner_ack(self):
         with tempfile.TemporaryDirectory(dir=stand_launch.ROOT) as d:
-            cfg, man = Path(d, 'launch-config.json'), Path(d, 'manifest.json')
-            cfg.write_text(json.dumps(self.static(owner_public_key=None)));man.write_text('{"files":{}}')
-            with self.assertRaises(Blocked):stand_launch.record(cfg, man, dict(DATASET), [T0 + 60, T0 + 1776])
+            cfg, man = self.files(d)
+            manifest = json.loads(man.read_text());manifest['files']['runners/bcp02/cli.py'] = '2' * 64
+            man.write_text(json.dumps(manifest))
+            with self.assertRaisesRegex(Blocked, 'acknowledged'):stand_launch.record(cfg, man, dict(DATASET), [T0 + 60, T0 + 1776])
+
+    def test_committed_ack_covers_the_current_runner_pins(self):
+        config = json.loads(Path(stand_launch.HERE, 'launch-config.json').read_text())
+        self.assertEqual(config['owner_scope_ack']['reviewed_pins_sha256'], stand_launch.reviewed_pins())
+        stand_launch.ready(config)
 
 
 class Network(unittest.TestCase):
