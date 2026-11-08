@@ -3257,5 +3257,15 @@
   "cdff0f6ecb4a5f60": "New replies:",
   "2fb7a81efbc0a130": "No new replies",
   "87e669baf1770cdb": "You have not written on the forum yet. Topics you take part in will appear here.",
-  "7d1e430bc7f23a28": "My topics · new:"
+  "7d1e430bc7f23a28": "My topics · new:",
+  "8fc9ab2eeb38ad7a": "Sign in",
+  "193f86bcb34b80e0": "Questions, ideas and reviews of experiments, next to the documents under discussion. Anyone can read; posting requires signing in with Relcom ID.",
+  "9bbca26ece5c1c2e": "Open the forum",
+  "6612ef91722c945e": "Lab",
+  "8002e10eec03fdd3": "A live testbed: five VMs on three physical hosts and synthetic agents without an LLM. It shows current routes, the timeline of an intermediary failure and signed evidence for every hop.",
+  "331370e189b46c0f": "View only: internal addresses and decrypted results are hidden, and only the testbed operator can switch nodes off.",
+  "a47de0c928015925": "Open the lab ↗",
+  "301b01695ffcfd64": "Topics on the forum:",
+  "57f7cf624a7b2836": "No topics yet — you can start the first one",
+  "7d7fd3fc79265c03": "ipvx.org/forum"
 }

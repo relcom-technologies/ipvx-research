@@ -334,3 +334,23 @@ session loss. The public page shell contains no member data.
 
 The separate localhost preview is visibly labeled and uses temporary synthetic
 users. It is not the production login or a mode installed in the public service.
+
+
+## Header and home gateways (November 8)
+
+The header keeps one row from 1181px up. The wordmark is the way home, so the
+navigation drops the separate overview link. Five research sections come first;
+a 1px control-tone divider separates the community pair, Forum and Participate.
+The discussion-venues page moves to the footer only. Header actions read
+Sign in, GitHub and an outlined Lab control, the one external destination
+that is a place rather than a reference. From 1180px down the navigation takes
+its own row; at the mobile breakpoint it keeps the single horizontally
+scrolling row.
+
+On the index, two equal gateway cells follow the name band and scope cell:
+a white forum cell with category shortcuts, an ink action and an optional
+topic count read from the public categories endpoint, and an inverted ink lab
+cell with a white action. The inverted cell is the only dark surface in the
+portal and marks leaving for the live testbed. Each cell shows its host in
+Plex Mono as a real address. Both stack at 900px and below. Without
+JavaScript or the API the forum cell keeps its text and links.
