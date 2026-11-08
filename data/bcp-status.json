@@ -16,9 +16,9 @@
   "registry_lc_read": {"id": "IPVX-BCP02-REG-001-LC", "status": "completed", "chain": "sepolia", "read_mode": "LC", "outcome": "PASS", "read_on": "2026-11-06", "closes": "R1", "criterion": "current_state", "s1_s3_read_mode": "Q", "history": "HX-0198", "result": "experiments/bcp02-reg-001-lc/result.json"},
   "state_source": {"read_mode": "LC", "replaces": "V", "replaced_on": "2026-11-05", "own_node_required": false, "helios_running_on_stand": false, "snapshot_refresh_rule": "open", "closed_validator_request": {"url": "https://github.com/relcom-technologies/relcom-infra/pull/854", "closed_on": "2026-11-05", "merged": false}},
   "stand": {"declared_in": "https://github.com/relcom-technologies/relcom-infra/pull/865", "rehearsal": "REHEARSAL_PASS", "rehearsal_runs": 3, "rehearsed_on": "2026-11-08", "history": "HX-0203", "record": "experiments/bcp02-net-001-f-rehearsal/result.json", "network_measurement": false},
-  "source_scope": {"runner_scope_sha256": "cd44d56e2394ec264f2f894eb432f6d79b5e2620a91128b9b94a189f64fc7788", "pinned_files": 150, "narrowed_on": "2026-11-08", "history": "HX-0204", "owner_confirmed": false},
-  "checks": {"runner_tests": 91, "plan_tests": 14},
-  "admission": {"permit_version": 2, "max_state_age_seconds": 1800, "raw_dataset_hash_required": true, "sealed_bundle_hash_required": true, "run_id_bound": true, "exclusive_expiry": true, "owner_launch_decision": null},
+  "source_scope": {"runner_scope_sha256": "0f9baae652e60865d3fcba3b19fae0f04fe0d83b71fef4e9ea5bb258826899d0", "pinned_files": 150, "narrowed_on": "2026-11-08", "history": "HX-0204", "owner_confirmed": true, "reviewed_pins_sha256": "90cedbff9c50c0dacf27eb7dd7ed248accf23ea0494003daf1ed848e9cad68b0", "owner_confirmed_on": "2026-11-08", "owner_confirmation_history": "HX-0206"},
+  "checks": {"runner_tests": 93, "plan_tests": 14},
+  "admission": {"permit_version": 2, "max_state_age_seconds": 1800, "raw_dataset_hash_required": true, "sealed_bundle_hash_required": true, "run_id_bound": true, "exclusive_expiry": true, "owner_key_pinned": true, "owner_launch_decision": null},
   "references": {
     "accepted_source": "8c68879211f2d491017bd5f821ec610138eade9c",
     "dataset_admission_revision": "c14cebd4d5040632bd1fb38319b74bce5b7c2152",

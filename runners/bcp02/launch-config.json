@@ -23,7 +23,11 @@
   "run_dataset": null,
   "owner_scope_ack": {
     "reviewed_pins_sha256": "90cedbff9c50c0dacf27eb7dd7ed248accf23ea0494003daf1ed848e9cad68b0",
-    "owner_statement": "PENDING",
+    "reviewed_branch": "bcp/owner-key",
+    "reviewed_commit": "d051fff",
+    "question": "Confirm reviewed_pins_sha256 90cedbff…68b0 for NET-001-F in your own words",
+    "owner_statement": "Подтверждаю",
+    "owner_statement_en": "I confirm",
     "acknowledged_on": "2026-11-08"
   },
   "owner_launch_decision": null,

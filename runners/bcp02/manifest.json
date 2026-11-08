@@ -125,7 +125,7 @@
     "runners/bcp02/evidence/preservation.json": "56f4256951e0e5a207a5293707f85ae414a239410cfb337837465ed72e7564f7",
     "runners/bcp02/fixture.py": "b2cce2b2dbd7d2a1644e77dd5b10d43c6b1e2ad36c9c1e4c63a0d19c9e2abd85",
     "runners/bcp02/generate_bank.mjs": "b76341b350e49fe571e2a4149ab34b6081b92a12d04ebcee8ee31766720cfcda",
-    "runners/bcp02/launch-config.json": "bc38fd5a83757d3cdd52d09e3fe1f4824a737bec3ec72a1a561b7586078046b3",
+    "runners/bcp02/launch-config.json": "b059bf050f57678a2a267811d25818660d5f06c06fd673db6008f655d1db243a",
     "runners/bcp02/linux.py": "1a167e019df787c14436bb1f665ced038c96cc5fdbcf779691188c6261f3cd05",
     "runners/bcp02/node.py": "7afe5ffb4915b60f4e0877ba51d6357b1cc929bb454aab33903f34e5b0895555",
     "runners/bcp02/owner.py": "10c1fb3879d43f50a290ff325ac3a8254e1051d055f8479e7a1af8c09b4e4986",

@@ -1037,13 +1037,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "89dbc24678262c54",
-      "source": "205 событий по HX-0205; авторы, основания, проверки и ограничения.",
+      "id": "87a2dc087118d55c",
+      "source": "206 событий по HX-0206; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "cece114fb94ea68d",
-      "source": "411.7 КиБ · 12 файлов",
+      "id": "12a5e39d183be91d",
+      "source": "413.4 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4987,14 +4987,94 @@
       "context": "history.html:text:main/section/p"
     },
     {
-      "id": "b2e48de9ac46d88a",
-      "source": "HX-0205 · Подготовлен запуск NET-001-F: закрепления стенда и инструменты владельца",
+      "id": "96f71de128c1e29e",
+      "source": "HX-0206 · Ключ владельца внесён, закрепления раннера подтверждены",
       "context": "history.html:text:section/details/summary"
     },
     {
       "id": "e078c61c3e49f21a",
       "source": "Реализовано",
       "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "10b130087482bdd2",
+      "source": "Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд) · 2026-11-08T18:00:00+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "a23a2d8b050df9a0",
+      "source": "Владелец создал ключ Ed25519 на своём компьютере; открытый ключ внесён в launch-config.json, закрытый ключ и пароль остались у владельца. Подтверждение области не может назвать полный хеш области: оно лежит в launch-config.json, а этот файл сам закреплён. Поэтому владелец подтвердил отпечаток всех закреплений раннера, кроме этого файла, — reviewed_pins_sha256 90cedbff…68b0 — ответом «Подтверждаю». prepare отказывает, если отпечаток изменился, а тест на main не даёт изменить закреплённый файл без нового подтверждения. Тестов раннера стало 93.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "e85e934ff57e3001",
+      "source": "Без ключа и подтверждения prepare не начинает подготовку, а подготовленный набор живёт меньше 30 минут. Эти шаги сделаны заранее и отдельным изменением, чтобы сеанс запуска свёлся к подготовке, подписи и старту. Отпечаток без launch-config.json делает подтверждение проверяемым и не круговым: любой может пересчитать его командой stand_launch reviewed-pins.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "0e393fbc4b380fea",
+      "source": "runners/bcp02/launch-config.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "4f31b1ac670c90a4",
+      "source": "runners/bcp02/stand_launch.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "24c6d1b3cf1f24c5",
+      "source": "runners/bcp02/tests/test_launch_tools.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "11fe384991771319",
+      "source": "runners/bcp02/LAUNCH.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "7135746f30a4a363",
+      "source": "data/bcp-status.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "de3d8e57e2181f0b",
+      "source": "Сетевой опыт NET-001-F не запускался; разрешение на прогон не подписано, набор данных не готовился.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "980762c29d0e795d",
+      "source": "Подтверждение относится к закреплениям раннера на дату записи; launch-config.json в него не входит, его допустимые изменения ограничивает сам prepare.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "729561c3186f73b0",
+      "source": "Правило обновления снимка в NET-001-L остаётся открытым условием.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "eef48afb7e7c7a81",
+      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "b2e48de9ac46d88a",
+      "source": "HX-0205 · Подготовлен запуск NET-001-F: закрепления стенда и инструменты владельца",
+      "context": "history.html:text:section/details/summary"
     },
     {
       "id": "615cfc59d373106b",
@@ -5007,24 +5087,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "89f757e0ccc9ead6",
       "source": "Набор данных живёт меньше 30 минут, а прогон требует отключённой сети стенда, к которому нет консоли. Поэтому всё, что не зависит от владельца, сделано заранее и проверено на самом стенде, а подготовка, подпись и запуск сведены к трём командам. Разрешение проверяется до любого изменения сети, а восстановление сети не зависит от того, завершится ли прогон.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
-      "id": "11fe384991771319",
-      "source": "runners/bcp02/LAUNCH.md",
-      "context": "history.html:text:ul/li/a"
     },
     {
       "id": "bc89f58361b144b5",
@@ -5032,29 +5097,9 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "4f31b1ac670c90a4",
-      "source": "runners/bcp02/stand_launch.py",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "0e393fbc4b380fea",
-      "source": "runners/bcp02/launch-config.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "24c6d1b3cf1f24c5",
-      "source": "runners/bcp02/tests/test_launch_tools.py",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
       "id": "f33503eeb7663633",
       "source": "runners/bcp02/admission.py",
       "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "b2b1c0999fd48f4b",
@@ -5070,11 +5115,6 @@
       "id": "89aa6020aaba2bac",
       "source": "Если сеть стенда не вернётся сама, понадобится перезагрузка ВМ оператором инфраструктуры.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "eef48afb7e7c7a81",
-      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "946554ad7263d02f",
@@ -5850,11 +5890,6 @@
       "id": "a0b5381cb84d0f84",
       "source": "Согласовать утверждения обоих сайтов с кодом и доказательствами. Показать привязку dataset к permit v2 и сроку свежести, сохранив прежние результаты, интерфейсы и историю. Общие JSON/CSS исключают расхождения между представлениями.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "7135746f30a4a363",
-      "source": "data/bcp-status.json",
-      "context": "history.html:text:ul/li/a"
     },
     {
       "id": "9185bd3ba51dfed5",
