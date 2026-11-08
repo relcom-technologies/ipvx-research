@@ -338,13 +338,13 @@ users. It is not the production login or a mode installed in the public service.
 
 ## Header and home gateways (November 8)
 
-The header keeps one row from 1181px up. The wordmark is the way home, so the
+The header keeps one row from 1261px up, with room for a signed-in name. The wordmark is the way home, so the
 navigation drops the separate overview link. Five research sections come first;
 a 1px control-tone divider separates the community pair, Forum and Participate.
 The discussion-venues page moves to the footer only. Header actions read
 Sign in, GitHub and an outlined Lab control, the one external destination
-that is a place rather than a reference. From 1180px down the navigation takes
-its own row; at the mobile breakpoint it keeps the single horizontally
+that is a place rather than a reference. From 1260px down the navigation takes
+its own row; up to 900px, and on phones, it keeps a single horizontally
 scrolling row.
 
 On the index, two equal gateway cells follow the name band and scope cell:
@@ -354,3 +354,5 @@ cell with a white action. The inverted cell is the only dark surface in the
 portal and marks leaving for the live testbed. Each cell shows its host in
 Plex Mono as a real address. Both stack at 900px and below. Without
 JavaScript or the API the forum cell keeps its text and links.
+On phones the header drops the GitHub action, which stays in the footer, so the
+sign-in and lab actions fit beside the wordmark in every language.
