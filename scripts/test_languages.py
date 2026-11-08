@@ -39,6 +39,14 @@ class Languages(unittest.TestCase):
         self.assertIn('<p>Ошибка сохранена.</p>', output)
         self.assertIn('<p>Draft proposal.</p>', output)
 
+    def test_lab_links_open_the_lab_in_the_same_language(self):
+        source = '<html><head><title>Тест</title></head><body><header><a class="lab-link" href="https://lab.ipvx.org/">Лаборатория</a></header><main><h1>Тест</h1><a href="https://lab.ipvx.org/#mesh">Стенд</a></main></body></html>'
+        for language in ('en', 'de', 'es'):
+            with self.subTest(language=language):
+                output = render(localized(Tree(source).root, 'index.html', language, self.catalog(source), {'index.html': source}))
+                self.assertIn('href="https://lab.ipvx.org/?lang=%s"' % language, output)
+                self.assertIn('href="https://lab.ipvx.org/?lang=%s#mesh"' % language, output)
+
     def test_translation_markup_is_text(self):
         source = '<html><head><title>Тест</title></head><body><header></header><main><h1>Тест</h1></main></body></html>'
         output = render(localized(Tree(source).root, 'index.html', 'es', {key('Тест'): '<script>bad()</script>'}, {'index.html': source}))

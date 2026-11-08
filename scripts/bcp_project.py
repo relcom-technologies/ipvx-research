@@ -118,6 +118,11 @@ def ru_count(n,one,few,many):
  return one if n%10==1 and n%100!=11 else few if 2<=n%10<=4 and not 12<=n%100<=14 else many
 
 
+def lab_edition(url,language):
+ """The Lab has the same four editions: https://lab.ipvx.org/#mesh becomes https://lab.ipvx.org/?lang=en#mesh."""
+ return url if language=='ru' else url.replace('https://lab.ipvx.org/','https://lab.ipvx.org/?lang='+language,1)
+
+
 def render(root,language='ru',*,compact=False,lab=False):
  d=facts(root);t=TEXT[language];e=lambda x:html.escape(str(x),quote=True)
  page='https://ipvx.org/bcp.html' if lab else ('bcp.html' if language=='ru' else 'bcp.'+language+'.html')
@@ -130,7 +135,7 @@ def render(root,language='ru',*,compact=False,lab=False):
  if compact:return output+f'<p class="bcp-links"><a class="button" href="{page}">{e(t["read"])}</a><a href="{e(refs["runner"])}">{e(t["source"])}</a></p></section>'
  output+=f'<div class="bcp-explanation"><h2>{e(t["idea"])}</h2><ol class="bcp-lifecycle">'+''.join(f'<li><h3>{e(t[k])}</h3><p>{e(t[k+"_text"])}</p></li>' for k in ['identity','route','packet'])+'</ol></div>'
  output+=f'<div class="bcp-admission"><h2>{e(t["admission"])}</h2><p>{e(t["admission_text"])}</p><p>{e(t["expiry"])}</p><details><summary>{e(t["format"])}</summary><p><code>dataset_sha256 · bundle_sha256 · run_id · created_at · expires_at</code></p><p><a href="{repo}/blob/{d["references"]["dataset_admission_revision"]}/runners/bcp02/dataset-admission.md">{e(t["format"])}</a></p></details></div>'
- output+=f'<div class="bcp-boundary"><h2>{e(t["boundary"])}</h2><p>{e(t["boundary_text"])}</p></div><div class="bcp-history"><h2>{e(t["mesh"])}</h2><p>{e(t["mesh_text"])}</p><p><a href="{("#mesh" if lab else refs["lab_mesh"])}">{e(t["mesh_link"])}</a> · <a href="https://ipvx.org/architecture.html#research-network">{e(t["strict"])}</a></p></div>'
+ output+=f'<div class="bcp-boundary"><h2>{e(t["boundary"])}</h2><p>{e(t["boundary_text"])}</p></div><div class="bcp-history"><h2>{e(t["mesh"])}</h2><p>{e(t["mesh_text"])}</p><p><a href="{("#mesh" if lab else lab_edition(refs["lab_mesh"],language))}">{e(t["mesh_link"])}</a> · <a href="https://ipvx.org/architecture.html#research-network">{e(t["strict"])}</a></p></div>'
  output+=f'<div class="bcp-links"><h2>{e(t["proof"])}</h2><a href="{e(refs["specification"])}">{e(t["source"])}</a><a href="{repo}/blob/{refs["dataset_admission_revision"]}/runners/bcp02/evidence/checks.json">{e(t["tests"])}</a><a href="{e(refs["registry_lc_read"])}">{e(t["lc_read"])}</a><a href="{e(refs["resource_request"])}">{e(t["request"])}</a></div></section>'
  return output
 

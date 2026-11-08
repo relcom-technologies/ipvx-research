@@ -15189,282 +15189,282 @@
     {
       "id": "a393e127129273aa",
       "source": "Пишите простым текстом. Не публикуйте пароли, ключи и личные данные.",
-      "context": "assets/forum.js:7357"
+      "context": "assets/forum.js:7396"
     },
     {
       "id": "899dce11fb2c0f4c",
       "source": "Отправляем…",
-      "context": "assets/forum.js:7771"
+      "context": "assets/forum.js:7810"
     },
     {
       "id": "3186280aca4f0fbb",
       "source": "Опубликовано.",
-      "context": "assets/forum.js:8107"
+      "context": "assets/forum.js:8146"
     },
     {
       "id": "262220cee2a67c07",
       "source": "Отправлено. Сообщение появится после проверки; пока его видите только вы.",
-      "context": "assets/forum.js:8123"
+      "context": "assets/forum.js:8162"
     },
     {
       "id": "26c80474c7221e11",
       "source": "Новая тема",
-      "context": "assets/forum.js:8325"
+      "context": "assets/forum.js:8364"
     },
     {
       "id": "98562f8141d841a3",
       "source": "Войдите через Relcom ID",
-      "context": "assets/forum.js:8402"
+      "context": "assets/forum.js:8441"
     },
     {
       "id": "0857a51b6c33e1d1",
       "source": ", чтобы начать тему.",
-      "context": "assets/forum.js:8453"
+      "context": "assets/forum.js:8492"
     },
     {
       "id": "41f780fdee89f896",
       "source": "Категория",
-      "context": "assets/forum.js:8574"
+      "context": "assets/forum.js:8613"
     },
     {
       "id": "2ffeafbca981d162",
       "source": "Опубликовать тему",
-      "context": "assets/forum.js:8858"
+      "context": "assets/forum.js:8897"
     },
     {
       "id": "7b9de65d16725ec8",
       "source": "ответ",
-      "context": "assets/forum.js:9754"
+      "context": "assets/forum.js:9793"
     },
     {
       "id": "2878e68255e5e1ef",
       "source": "ответов",
-      "context": "assets/forum.js:9762"
+      "context": "assets/forum.js:9801"
     },
     {
       "id": "d70e2991341717b0",
       "source": "Закрыта",
-      "context": "assets/forum.js:9951"
+      "context": "assets/forum.js:9990"
     },
     {
       "id": "e86a9f261bb63858",
       "source": "Тем пока нет. Начните первую.",
-      "context": "assets/forum.js:10401"
+      "context": "assets/forum.js:10440"
     },
     {
       "id": "05f6c615a3518d94",
       "source": "Категории",
-      "context": "assets/forum.js:10606"
+      "context": "assets/forum.js:10645"
     },
     {
       "id": "672e9a1bbbeb0541",
       "source": "Тем:",
-      "context": "assets/forum.js:11008"
+      "context": "assets/forum.js:11047"
     },
     {
       "id": "bfc2b5508cf371f3",
       "source": "· последнее:",
-      "context": "assets/forum.js:11029"
+      "context": "assets/forum.js:11068"
     },
     {
       "id": "a45b6dce57013d75",
       "source": "Тем пока нет",
-      "context": "assets/forum.js:11072"
+      "context": "assets/forum.js:11111"
     },
     {
       "id": "eac88378e03b0899",
       "source": "Обсуждения:",
-      "context": "assets/forum.js:12101"
+      "context": "assets/forum.js:12140"
     },
     {
       "id": "57fb0f05a811ee82",
       "source": "Открыть на сайте",
-      "context": "assets/forum.js:12201"
+      "context": "assets/forum.js:12240"
     },
     {
       "id": "7200631f8dc1d3c1",
       "source": "Новое",
-      "context": "assets/forum.js:13104"
+      "context": "assets/forum.js:13143"
     },
     {
       "id": "fcc8e9eb339f6170",
       "source": "в ответ на #",
-      "context": "assets/forum.js:13202"
+      "context": "assets/forum.js:13241"
     },
     {
       "id": "b9af23eeff5da84a",
       "source": "Ответить",
-      "context": "assets/forum.js:13581"
+      "context": "assets/forum.js:13620"
     },
     {
       "id": "a5483ea07f882437",
       "source": "Модерация",
-      "context": "assets/forum.js:13946"
+      "context": "assets/forum.js:13985"
     },
     {
       "id": "eb604b03dfbc9dcc",
       "source": "Отметка проверки:",
-      "context": "assets/forum.js:14004"
+      "context": "assets/forum.js:14043"
     },
     {
       "id": "aee7bfdd238185e0",
       "source": "Скрыто.",
-      "context": "assets/forum.js:14410"
+      "context": "assets/forum.js:14449"
     },
     {
       "id": "6342c9187e01caa4",
       "source": "Обсуждается:",
-      "context": "assets/forum.js:15010"
+      "context": "assets/forum.js:15049"
     },
     {
       "id": "43179c6963573b93",
       "source": "Тема закрыта: новые ответы может оставить только модератор.",
-      "context": "assets/forum.js:15176"
+      "context": "assets/forum.js:15215"
     },
     {
       "id": "423ce129e1e2b464",
       "source": "Показать ещё ответы",
-      "context": "assets/forum.js:15322"
+      "context": "assets/forum.js:15361"
     },
     {
       "id": "feb89900a501d52a",
       "source": "Ответ на #",
-      "context": "assets/forum.js:15602"
+      "context": "assets/forum.js:15641"
     },
     {
       "id": "95837f0d814001fd",
       "source": "Открыть тему",
-      "context": "assets/forum.js:16234"
+      "context": "assets/forum.js:16273"
     },
     {
       "id": "737f9620e6176156",
       "source": "Закрыть тему",
-      "context": "assets/forum.js:16249"
+      "context": "assets/forum.js:16288"
     },
     {
       "id": "a7a4033657e89fc9",
       "source": "Закрыть",
-      "context": "assets/forum.js:16366"
+      "context": "assets/forum.js:16405"
     },
     {
       "id": "8269124505a107ee",
       "source": "Готово. Обновите страницу.",
-      "context": "assets/forum.js:16528"
+      "context": "assets/forum.js:16567"
     },
     {
       "id": "363f81e7f3bd7ed4",
       "source": ", чтобы ответить.",
-      "context": "assets/forum.js:16785"
+      "context": "assets/forum.js:16824"
     },
     {
       "id": "b7717c6c8eb0310b",
       "source": "Тема закрыта.",
-      "context": "assets/forum.js:16879"
+      "context": "assets/forum.js:16918"
     },
     {
       "id": "102eefe4f6c95575",
       "source": "Ответы откроются, когда тему опубликуют.",
-      "context": "assets/forum.js:16968"
+      "context": "assets/forum.js:17007"
     },
     {
       "id": "ceb68a9287da00d8",
       "source": "Отправить",
-      "context": "assets/forum.js:17128"
+      "context": "assets/forum.js:17167"
     },
     {
       "id": "3d1faf00de44b6ae",
       "source": "Мои темы",
-      "context": "assets/forum.js:17724"
+      "context": "assets/forum.js:17763"
     },
     {
       "id": "d09ae9db0221c935",
       "source": "Темы, в которых вы писали. Новыми считаются опубликованные ответы других участников после вашего последнего прочтения.",
-      "context": "assets/forum.js:17766"
+      "context": "assets/forum.js:17805"
     },
     {
       "id": "cdff0f6ecb4a5f60",
       "source": "Новых ответов:",
-      "context": "assets/forum.js:18495"
+      "context": "assets/forum.js:18534"
     },
     {
       "id": "2fb7a81efbc0a130",
       "source": "Новых ответов нет",
-      "context": "assets/forum.js:18527"
+      "context": "assets/forum.js:18566"
     },
     {
       "id": "87e669baf1770cdb",
       "source": "Вы ещё не писали на форуме. Здесь появятся темы, в которых вы участвуете.",
-      "context": "assets/forum.js:18685"
+      "context": "assets/forum.js:18724"
     },
     {
       "id": "180f58ab975323f9",
       "source": "Поиск",
-      "context": "assets/forum.js:18867"
+      "context": "assets/forum.js:18906"
     },
     {
       "id": "798ff068cd437db1",
       "source": "Поиск:",
-      "context": "assets/forum.js:18885"
+      "context": "assets/forum.js:18924"
     },
     {
       "id": "6bd686a245261e16",
       "source": "Ничего не найдено.",
-      "context": "assets/forum.js:19386"
+      "context": "assets/forum.js:19425"
     },
     {
       "id": "b1ff8198038c3e25",
       "source": "Модерация форума",
-      "context": "assets/forum.js:19659"
+      "context": "assets/forum.js:19698"
     },
     {
       "id": "c3dcb5467b98cdbd",
       "source": "начало темы",
-      "context": "assets/forum.js:20218"
+      "context": "assets/forum.js:20257"
     },
     {
       "id": "73561e0a5bf2597b",
       "source": "Как вас показывать",
-      "context": "assets/forum.js:20553"
+      "context": "assets/forum.js:20592"
     },
     {
       "id": "2aa98ec188e2526b",
       "source": "Сейчас:",
-      "context": "assets/forum.js:20652"
+      "context": "assets/forum.js:20691"
     },
     {
       "id": "06aac3b5dc5f79ab",
       "source": "Сейчас вы показаны псевдонимом «",
-      "context": "assets/forum.js:20677"
+      "context": "assets/forum.js:20716"
     },
     {
       "id": "5b6563c66c6fdc02",
       "source": "». Имя и почта из Relcom ID на форуме не видны.",
-      "context": "assets/forum.js:20728"
+      "context": "assets/forum.js:20767"
     },
     {
       "id": "4a11b55556c77ba2",
       "source": "Публичное имя",
-      "context": "assets/forum.js:20819"
+      "context": "assets/forum.js:20858"
     },
     {
       "id": "59322ea5e71f4d6d",
       "source": "Сохранить имя",
-      "context": "assets/forum.js:20882"
+      "context": "assets/forum.js:20921"
     },
     {
       "id": "440a79c335cd171c",
       "source": "Поиск по форуму",
-      "context": "assets/forum.js:21203"
+      "context": "assets/forum.js:21242"
     },
     {
       "id": "7d1e430bc7f23a28",
       "source": "Мои темы · новых:",
-      "context": "assets/forum.js:21893"
+      "context": "assets/forum.js:21932"
     },
     {
       "id": "b37952ae01b23375",
       "source": "Загружаем форум…",
-      "context": "assets/forum.js:22148"
+      "context": "assets/forum.js:22187"
     },
     {
       "id": "dd1b88ab67f4b98a",
