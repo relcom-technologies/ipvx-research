@@ -3103,8 +3103,8 @@
   "d510e2e180b66258": "Das Leseskript wurde zweimal gestartet: Der erste Start endete vor jeder Anfrage an Helios mit einem Zugriffsfehler und schrieb kein Ergebnis. Die Aufrufe helios --version, --help und ldd liefen außerhalb des separaten Benutzers. Beides ist im Protokoll vermerkt.",
   "5b7a173693d79997": "Das Intervall von 384 s wurde einmal gemessen, seine Ursache nicht untersucht. Auch die Ursache der 53 Warnungen inconsistent block history ist unbekannt; das Journal enthält keine Fehler.",
   "94228e0a97d2f428": "Die Binärdatei stammt aus dem Release und wurde nicht vom Projekt gebaut; es gibt eine Konsensquelle und kein Audit von Helios. Auf dem Stand läuft kein dauerhafter Helios-Dienst, und dieses Lesen zeigt nicht, dass NET-001-L bereit ist.",
-  "89dbc24678262c54": "205 Ereignisse bis HX-0205; Autoren, Begründungen, Prüfungen und Grenzen.",
-  "cece114fb94ea68d": "411.7 KiB · 12 Dateien",
+  "87a2dc087118d55c": "206 Ereignisse bis HX-0206; Autoren, Begründungen, Prüfungen und Grenzen.",
+  "12a5e39d183be91d": "413.4 KiB · 12 Dateien",
   "1297baf5a745cb69": "HX-0199 · Der NET-001-F-Runner traf erstmals auf einen echten Kernel: vier Fehler behoben, eine Probe ohne Genehmigung ergänzt",
   "36efc420beffeb19": "Claude Code — Assistent des Eigentümers (ipvx-agent-lab, öffentlicher Prüfstand) · 2026-11-06T20:46:00+00:00",
   "62383b93b7b3cfbe": "Am 6. November 2026 ergab eine Prüfung des NET-001-F-Runners im Auftrag des Eigentümers („Проба и PR“), dass die Offline-Tests den Kernel ersetzen, während ein echter Lauf seine einmalige Genehmigung schon vor dem ersten Namespace verbraucht. In einem lokalen Wegwerf-Container mit Docker wurden an Revision 2 vier Fehler reproduziert, von denen jeder einen Lauf abgebrochen hätte: leere Ausgabe von ip -j netns list auf einem neuen Host, ENETDOWN auf einem Capture-Socket, der an einen abgeschalteten Link gebunden ist, das seccomp-Verbot des Sockets innerhalb von if_nametoindex und ein SQLite-Journal, das sich nach dem Rechteabbau nicht über Elternverzeichnisse mit Modus 0700 öffnen lässt. Alle vier sind in Revision 3 behoben. Der neue Befehl rehearse geht denselben Weg durch den Kernel mit synthetischen Frames, ohne Genehmigung, Datensatz, Laufschlüssel, Core und Chain. Im Container ergab er REHEARSAL_PASS mit je 4 Frames ohne Verluste pro Link und verweigerte, als drei der Korrekturen zurückgenommen wurden. Das Experiment wurde nicht ausgeführt, sein Status bleibt NOT_RUN, der Prüfstand wurde nicht berührt.",
@@ -3304,5 +3304,13 @@
   "11fe384991771319": "runners/bcp02/LAUNCH.md",
   "bc89f58361b144b5": "runners/bcp02/owner.py",
   "4f31b1ac670c90a4": "runners/bcp02/stand_launch.py",
-  "24c6d1b3cf1f24c5": "runners/bcp02/tests/test_launch_tools.py"
+  "24c6d1b3cf1f24c5": "runners/bcp02/tests/test_launch_tools.py",
+  "96f71de128c1e29e": "HX-0206 · Eigentümerschlüssel eingetragen, Runner-Bindungen bestätigt",
+  "9484534297ce7695": "Eigentümerschlüssel eingetragen, Runner-Bindungen bestätigt",
+  "10b130087482bdd2": "Claude Code — Assistent des Eigentümers (ipvx-agent-lab, öffentlicher Stand) · 2026-11-08T18:00:00+00:00",
+  "a23a2d8b050df9a0": "Der Eigentümer hat auf seinem eigenen Computer einen Ed25519-Schlüssel erzeugt; der öffentliche Schlüssel steht in launch-config.json, privater Schlüssel und Passphrase blieben beim Eigentümer. Die Bereichsbestätigung kann den vollen Bereichshash nicht nennen: Sie steht in launch-config.json, und diese Datei ist selbst gebunden. Daher hat der Eigentümer den Digest aller Runner-Bindungen außer dieser Datei, reviewed_pins_sha256 90cedbff…68b0, mit der Antwort „Ich bestätige“ bestätigt. prepare verweigert, wenn sich der Digest geändert hat, und ein Test auf main verhindert eine Änderung an einer gebundenen Datei ohne neue Bestätigung. Der Runner hat jetzt 93 Tests.",
+  "e85e934ff57e3001": "Ohne Schlüssel und Bestätigung beginnt prepare nicht, und ein vorbereiteter Datensatz lebt weniger als 30 Minuten. Diese Schritte wurden vorab und als eigene Änderung erledigt, damit die Startsitzung nur aus Vorbereiten, Signieren und Starten besteht. Ein Digest ohne launch-config.json macht die Bestätigung prüfbar und nicht zirkulär: Jeder kann ihn mit stand_launch reviewed-pins neu berechnen.",
+  "de3d8e57e2181f0b": "Das Netzwerkexperiment NET-001-F ist nicht gelaufen; keine Laufgenehmigung wurde signiert und kein Datensatz vorbereitet.",
+  "980762c29d0e795d": "Die Bestätigung gilt für die Runner-Bindungen zum Zeitpunkt dieses Eintrags; launch-config.json gehört nicht dazu, seine zulässigen Änderungen begrenzt prepare selbst.",
+  "729561c3186f73b0": "Die Aktualisierungsregel für Snapshots in NET-001-L bleibt eine offene Bedingung."
 }

@@ -3103,8 +3103,8 @@
   "d510e2e180b66258": "El script de lectura se lanzó dos veces: el primer lanzamiento se detuvo por un error de permisos antes de cualquier solicitud a Helios y no escribió ningún resultado. Las llamadas helios --version, --help y ldd se ejecutaron fuera del usuario separado. Ambas cosas constan en el protocolo.",
   "5b7a173693d79997": "El intervalo de 384 s se midió una sola vez y no se investigó su causa. Tampoco se conoce la causa de las 53 advertencias inconsistent block history; el registro no contiene errores.",
   "94228e0a97d2f428": "El binario procede de la versión publicada y el proyecto no lo compiló; hay una sola fuente de consenso y ninguna auditoría de Helios. No hay un servicio permanente de Helios en el banco, y esta lectura no demuestra que NET-001-L esté listo.",
-  "89dbc24678262c54": "205 eventos hasta HX-0205; autores, motivos, comprobaciones y límites.",
-  "cece114fb94ea68d": "411.7 KiB · 12 archivos",
+  "87a2dc087118d55c": "206 eventos hasta HX-0206; autores, fundamentos, comprobaciones y límites.",
+  "12a5e39d183be91d": "413.4 KiB · 12 archivos",
   "1297baf5a745cb69": "HX-0199 · El runner de NET-001-F se encontró por primera vez con un kernel real: cuatro fallos corregidos y un ensayo sin permiso añadido",
   "36efc420beffeb19": "Claude Code — asistente del propietario (ipvx-agent-lab, banco público) · 2026-11-06T20:46:00+00:00",
   "62383b93b7b3cfbe": "El 6 de noviembre de 2026, por encargo del propietario («Проба и PR»), una revisión del runner de NET-001-F halló que las pruebas offline sustituyen al kernel, mientras que una ejecución real gasta su permiso de un solo uso antes del primer namespace. En un contenedor Docker local y desechable se reprodujeron en la revisión 2 cuatro fallos, cada uno de los cuales habría interrumpido una ejecución: salida vacía de ip -j netns list en un host nuevo, ENETDOWN en un socket de captura vinculado a un enlace apagado, la denegación por seccomp del socket interno de if_nametoindex y un diario SQLite que no se abre tras la pérdida de privilegios a través de directorios padre con modo 0700. Los cuatro están corregidos en la revisión 3. El nuevo comando rehearse sigue el mismo camino por el kernel con tramas sintéticas, sin permiso, conjunto de datos, claves de ejecución, Core ni cadena. En el contenedor dio REHEARSAL_PASS con 4 tramas sin pérdidas por enlace y se negó al revertir tres de las correcciones. El experimento no se ejecutó, su estado sigue siendo NOT_RUN y el banco no se tocó.",
@@ -3304,5 +3304,13 @@
   "11fe384991771319": "runners/bcp02/LAUNCH.md",
   "bc89f58361b144b5": "runners/bcp02/owner.py",
   "4f31b1ac670c90a4": "runners/bcp02/stand_launch.py",
-  "24c6d1b3cf1f24c5": "runners/bcp02/tests/test_launch_tools.py"
+  "24c6d1b3cf1f24c5": "runners/bcp02/tests/test_launch_tools.py",
+  "96f71de128c1e29e": "HX-0206 · Clave del propietario fijada y fijaciones del ejecutor confirmadas",
+  "9484534297ce7695": "Clave del propietario fijada y fijaciones del ejecutor confirmadas",
+  "10b130087482bdd2": "Claude Code — asistente del propietario (ipvx-agent-lab, banco público) · 2026-11-08T18:00:00+00:00",
+  "a23a2d8b050df9a0": "El propietario generó una clave Ed25519 en su propio ordenador; la clave pública está en launch-config.json, la clave privada y la frase de paso quedaron con el propietario. La confirmación del alcance no puede nombrar el hash completo del alcance: está en launch-config.json, que también está fijado. Por eso el propietario confirmó el resumen de todas las fijaciones del ejecutor salvo ese archivo, reviewed_pins_sha256 90cedbff…68b0, con la respuesta «Confirmo». prepare se niega si el resumen ha cambiado, y una prueba en main impide cambiar un archivo fijado sin una nueva confirmación. El ejecutor tiene ahora 93 pruebas.",
+  "e85e934ff57e3001": "Sin la clave y la confirmación prepare no empieza, y un conjunto de datos preparado vive menos de 30 minutos. Estos pasos se hicieron por adelantado y como un cambio aparte, para que la sesión de inicio se reduzca a preparar, firmar y arrancar. Un resumen sin launch-config.json hace la confirmación verificable y no circular: cualquiera puede recalcularlo con stand_launch reviewed-pins.",
+  "de3d8e57e2181f0b": "El experimento de red NET-001-F no se ha ejecutado; no se firmó ningún permiso de ejecución ni se preparó un conjunto de datos.",
+  "980762c29d0e795d": "La confirmación cubre las fijaciones del ejecutor a la fecha de este registro; launch-config.json queda fuera, y prepare limita por sí mismo sus cambios permitidos.",
+  "729561c3186f73b0": "La regla de actualización de la instantánea en NET-001-L sigue siendo una condición abierta."
 }

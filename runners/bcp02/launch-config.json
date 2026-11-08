@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "state_mode": "fixture-state-ethernet",
-  "status": "host_pinned_owner_key_pending",
-  "owner_public_key": null,
-  "review_evidence": null,
+  "status": "owner_key_pinned_launch_decision_pending",
+  "owner_public_key": "9777463460834351a9d6cb5e65e29894a9c5968627d118aa2023b0f4e3e07e3d",
+  "review_evidence": "https://github.com/relcom-technologies/ipvx-research/pull/85",
   "host_image_sha256": "4d0a7ed6c7c5e23cebd393a6c8309b221f143b05a2e616687911ed2b65023799",
   "kernel_config_sha256": "76caed2046528cf947e59d07024b9c25e4e741e67dfad6ed749a9b617e42bdb7",
   "binary_sha256": {
@@ -21,7 +21,15 @@
   },
   "accepted_window": null,
   "run_dataset": null,
-  "owner_scope_ack": null,
+  "owner_scope_ack": {
+    "reviewed_pins_sha256": "90cedbff9c50c0dacf27eb7dd7ed248accf23ea0494003daf1ed848e9cad68b0",
+    "reviewed_branch": "bcp/owner-key",
+    "reviewed_commit": "d051fff",
+    "question": "Confirm reviewed_pins_sha256 90cedbff…68b0 for NET-001-F in your own words",
+    "owner_statement": "Подтверждаю",
+    "owner_statement_en": "I confirm",
+    "acknowledged_on": "2026-11-08"
+  },
   "owner_launch_decision": null,
   "resources_allocated": true,
   "experiment_started": false,

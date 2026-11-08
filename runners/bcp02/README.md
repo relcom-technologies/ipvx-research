@@ -130,10 +130,21 @@ the deployed tree, and preflight requires that file before any permit is claimed
     re-pins that file and writes the permit request;
   - `start` checks the permit before taking the host off the network, runs once, brings
     the network back and arms an independent restore timer;
-  - `restore` brings the network back on its own.
-- `launch-config.json` now carries the measured host pins. The owner key, review link,
-  scope acknowledgement, dataset, window and launch decision stay empty until the owner
-  provides them.
+  - `restore` brings the network back on its own;
+  - `reviewed-pins` prints the digest the owner acknowledges (below); it needs no root.
+- `launch-config.json` carries the measured host pins, the owner's public key and the
+  owner's scope acknowledgement. Dataset, window and launch decision stay empty: `prepare`
+  fills them for one run.
+
+### Owner key and scope acknowledgement
+
+The owner generated the key on their own computer; only the public key is in
+`launch-config.json`. The acknowledgement cannot name the full scope hash, because writing
+it, and later the run slots, changes `launch-config.json`, which is itself pinned. It names
+`reviewed_pins_sha256` instead: the digest of `manifest.json` without that one file, so it
+covers all runner code, tests, plan and evidence pins. `prepare` refuses when the digest no
+longer matches, and a test fails on `main`, so any later change to a pinned file needs a new
+acknowledgement before a run. The permit still binds the full scope hash of the prepared tree.
 
 ## Source scope (2026-11-08)
 
@@ -151,8 +162,8 @@ review or permit covers it.
 
 ## Future admission and operation — not authorized by this PR
 
-`launch-config.json` deliberately has no owner key, allocated host, binary/image
-pins, dataset descriptor, accepted window, owner scope ACK or separate launch decision. Default CLI
+`launch-config.json` deliberately has no dataset descriptor, accepted window or separate
+launch decision; the owner key, host pins and scope acknowledgement are reviewed above. Default CLI
 only reports NOT_RUN. `run` fails before setup under the committed configuration.
 Changing it requires a reviewed candidate and a newly frozen `manifest.json`.
 

@@ -7,6 +7,8 @@ start    Check the signed permit first, then take the host off the network, run 
          bring the network back. A separate systemd timer restores the network even if this
          process dies, because the project has no console on the stand.
 restore  Bring the saved links up and restart systemd-networkd; safe to repeat.
+reviewed-pins  Print the digest of all runner pins except launch-config.json, which the
+         owner acknowledges in owner_scope_ack. Read-only; runs anywhere.
 
 The permit, not this file, is the authority: `start` refuses before touching the network
 unless admission.authorize accepts the permit against the configured owner key.
@@ -53,9 +55,32 @@ def window(descriptor, now):
     return [start, end]
 
 
-def ready(config):
+CONFIG_NAME = 'runners/bcp02/launch-config.json'
+
+
+def reviewed_pins(manifest=None, name=CONFIG_NAME):
+    """Digest of every runner pin except launch-config.json, the file that carries the owner's ack.
+
+    The full scope hash cannot be acknowledged inside launch-config.json, because writing the
+    ack, and later the run slots, changes that file. This digest covers everything else, so any
+    change to runner code, tests or plan after the owner's ack makes prepare refuse.
+    """
+    manifest = dict(read_json(HERE/'manifest.json') if manifest is None else manifest)
+    files = dict(manifest['files'])
+    need(name in files, 'launch-config.json must be pinned')
+    del files[name]
+    manifest['files'] = files
+    return sha(b'IPVX-BCP02-NET-001-F/reviewed-pins\0' + json.dumps(manifest, sort_keys=True, separators=(',', ':')).encode())
+
+
+def ready(config, manifest=None, name=CONFIG_NAME):
     need(all(config[k] for k in STATIC) and all(config['binary_sha256'].values()) and config['resources_allocated'] is True,
          'static owner and host pins must be reviewed and merged before preparing a run')
+    key = config['owner_public_key']
+    need(isinstance(key, str) and len(key) == 64 and all(c in '0123456789abcdef' for c in key), 'owner_public_key must be a raw Ed25519 key in hex')
+    ack = config['owner_scope_ack']
+    need(isinstance(ack, dict) and ack.get('owner_statement') and ack.get('reviewed_pins_sha256') == reviewed_pins(manifest, name),
+         'runner pins changed since the owner acknowledged them')
     need(config['run_dataset'] is None and config['accepted_window'] is None and config['owner_launch_decision'] is None,
          'launch-config already names a run; start from a fresh tree')
     return config
@@ -63,15 +88,14 @@ def ready(config):
 
 def record(config_path, manifest_path, descriptor, accepted):
     """Write this run's dataset, window and decision slot, then re-pin the config file."""
-    config = ready(read_json(config_path))
+    manifest = read_json(manifest_path)
+    name = str(Path(config_path).resolve().relative_to(ROOT))
+    config = ready(read_json(config_path), manifest, name)
     config['run_dataset'] = descriptor
     config['accepted_window'] = accepted
     config['owner_launch_decision'] = {'run_id': descriptor['run_id'], 'form': 'owner-signed v2 permit for this run only'}
     raw = (json.dumps(config, indent=2) + '\n').encode()
     Path(config_path).write_bytes(raw)
-    manifest = read_json(manifest_path)
-    name = str(Path(config_path).resolve().relative_to(ROOT))
-    need(name in manifest['files'], 'launch-config.json must be pinned')
     manifest['files'][name] = sha(raw)
     Path(manifest_path).write_text(json.dumps(manifest, indent=2) + '\n')
     return config
@@ -183,6 +207,7 @@ def main(argv=None):
     s.add_argument('--dataset', required=True, type=Path); s.add_argument('--output', required=True, type=Path)
     sub.add_parser('restore')
     sub.add_parser('inventory')
+    sub.add_parser('reviewed-pins', help='digest the owner acknowledges; needs no root')
     args = parser.parse_args(argv)
     if args.command == 'prepare':
         print(json.dumps(prepare(args.run_id, args.dataset, args.request), indent=2))
@@ -190,6 +215,8 @@ def main(argv=None):
         print(json.dumps(start(args.permit, args.dataset, args.output), indent=2))
     elif args.command == 'inventory':
         print(host_inventory())
+    elif args.command == 'reviewed-pins':
+        print(reviewed_pins())
     else:
         print(json.dumps(restore(), indent=2))
 
