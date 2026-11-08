@@ -1,0 +1,11 @@
+{
+  "error": null,
+  "statistics": [
+    {
+      "drops": 0,
+      "ifindex": 2,
+      "packets": 4,
+      "unfiltered": true
+    }
+  ]
+}

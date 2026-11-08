@@ -3,7 +3,7 @@
   "protocol_id": "IPVX-BCP02-NET-001-F",
   "version": "0.1",
   "status": "proposed_not_run",
-  "scope_sha256": "30597bb0ed1f96bf9e19d41712fdf339f2c4d5e6d10f10d68924cd29698ea148",
+  "scope_sha256": "2450ec5549f7ac9e35dd3e684a11568ccff58da15728333dbd77172c26977882",
   "files": {
     "README.md": "9dcfe6db1affd4760b7e1929ac12dd3662fc09d2a17823d3f910096e4f1d49c7",
     "candidate.json": "cf9d8345ec2312651e0519a74be76fc195b94a3fb0b1b2a366c111344dc40d79",
@@ -11,13 +11,13 @@
     "evidence-contract.json": "7fe923226d257aceb77195bcc7596fb3fecf477cadbb2000efb467800b4c714d",
     "preparation-notes.json": "c9e765db3ea3865b03dc92204a9d4dfa23af697822ac9e7a2a74551d1008f504",
     "preservation.json": "cc50115d2ab3049c2ac59383ec1746721825259ebd8f88d1e0292dec2e718e86",
-    "preserve.py": "32090bbb7fb39867e65dc2da186fc7d6fd8a703c9a2645841fced2f8c9f5235d",
+    "preserve.py": "157b74f9b3583c9dcf5ed13df9c0d177ea2690b27c1e343e49ddcbec871f6103",
     "protocol.json": "bfca6b9975217dc830768c00392c41baa6bdfd5a53c7c3dd0fd174e646c73f98",
-    "readiness.py": "7fac18178133800955b0f2217d3ea97f0bed293c9011b87bd1aab9a5f4f88d1e",
+    "readiness.py": "77843643bee0f4aee4d9ebdce38e8bd73b6231f91f664e1241eecb31b6e4424d",
     "source-pins.json": "4b64d91dedb3dd9d8e1bf341e1e851e90ee148be750d33463700027cb51be8a1",
     "stand.json": "6108919c13efd2fc2b724929ae35eb1dce4301218e65ea171a7788b20328ddb2",
-    "static-checks.json": "173bbb36fb7f2890cb1ecd07cf61d0980cb377b6977fbf25fe8e6fe0bb5825e3",
-    "tests/test_plan.py": "1c1862cd34a89fab2073bf0c946732bf542cce28174f9d691d86422611058e04"
+    "static-checks.json": "6e25b5137c67b4e142565d3c9b0fad089c59c7b146ece1ed0b87b7e8597db99b",
+    "tests/test_plan.py": "c2212277a61d090fa7ed6870d4c69c9c820970affc195c305f85e7b5a740017f"
   },
   "workflow_sha256": "6ebbe3724d58de7ca3de1836680fcc78d3472f1eefde790e995ad02d6697f989",
   "hashes_authenticate_identity": false,

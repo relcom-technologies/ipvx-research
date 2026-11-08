@@ -1037,13 +1037,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "f4f3864f6e7af3ae",
-      "source": "202 событий по HX-0202; авторы, основания, проверки и ограничения.",
+      "id": "4cd949a344678972",
+      "source": "204 событий по HX-0204; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "69f0d4026e29a220",
-      "source": "404.5 КиБ · 12 файлов",
+      "id": "1df7794da482e3d5",
+      "source": "409.4 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -1977,8 +1977,8 @@
       "context": "index.html:text:div/a/span"
     },
     {
-      "id": "1573dc78f28da2a5",
-      "source": "Ждёт ВМ",
+      "id": "280030a83b576cf3",
+      "source": "Ждёт допуска",
       "context": "index.html:text:div/a/span"
     },
     {
@@ -4987,14 +4987,154 @@
       "context": "history.html:text:main/section/p"
     },
     {
-      "id": "fe42842fa4177d63",
-      "source": "HX-0202 · Форум показывает новые ответы в темах участника",
+      "id": "946554ad7263d02f",
+      "source": "HX-0204 · Закрепление исходников раннера BCP сужено до файлов прогона",
       "context": "history.html:text:section/details/summary"
     },
     {
       "id": "e078c61c3e49f21a",
       "source": "Реализовано",
       "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "d67bd30b75a716dc",
+      "source": "Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд) · 2026-11-08T15:30:00+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "f24acbc938969038",
+      "source": "По решению владельца («Да, сузить») раннер NET-001-F закрепляет теперь 146 файлов вместо 450: раннер, ядро BCP, адаптеры, интеграцию, контракты, план опыта и подготовку стенда, тесты BCP, предложение BCP 0.2 и workflow BCP. Содержимое 145 из них не изменилось, добавлен тест области. Сайт, форум, документы и данные прошлых опытов больше не закреплены, поэтому их правки не блокируют проверку раннера. Workflow раннера запускается при изменении любого файла из области, а тест следит, чтобы область и триггеры CI совпадали. Сверки сохранности раннера и плана проверяют прежние исходники только внутри области; исходные байты семи изменённых файлов сохранены в архиве раннера. Хеш области сменился, поэтому никакое прежнее разрешение к нему не относится.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "eb06fd6d92a0a66e",
+      "source": "Правки сайта и форума блокировали проверку раннера и сверки сохранности на main, хотя прогон эти файлы не читает, а workflow раннера на них не запускался и разрыв никто не видел. Сужение убирает ложную зависимость и делает любую правку закреплённого файла видимой в CI раннера; перезаморозка всего набора повторила бы ту же проблему при следующей правке сайта.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "91945fc3d2085d02",
+      "source": "runners/bcp02/manifest.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "706704ad715e72e2",
+      "source": "runners/bcp02/README.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "79302de0658d8fd2",
+      "source": "runners/bcp02/tests/test_scope.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "cfb86f11baefaa6a",
+      "source": "runners/bcp02/preserve.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "c4c20defc411ce0f",
+      "source": "experiments/bcp02-net-001/readiness.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "8513325b1344a16e",
+      "source": ".github/workflows/bcp-runner.yml",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "b3073b1287613310",
+      "source": "Новая область закрепления ещё не рассмотрена отдельно: перед прогоном владельцу нужно подтвердить её хеш.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "b16a5f1eb11fa25f",
+      "source": "Отчёт подготовки стенда от PR48 сохранён как был и ссылается на прежний хеш области плана.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "6e8b54d002c5739b",
+      "source": "Репетиция на стенде записана на ревизии 12705b7, до сужения; с тех пор в коде раннера добавилась только функция проверки области в common.py.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "eef48afb7e7c7a81",
+      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "40cc41877d029831",
+      "source": "HX-0203 · Репетиция раннера NET-001-F прошла на стенде BCP",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "15a27e19e2133bde",
+      "source": "Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд) · 2026-11-08T14:05:20+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "cc38fd4085589377",
+      "source": "8 ноября 2026 года по разрешению владельца («Да, репетиция») репетиция раннера без разрешения на запуск впервые прошла на отдельной ВМ стенда BCP: x86_64, ядро Debian 13, 2 vCPU и около 2 ГБ памяти. Три прогона из трёх дали REHEARSAL_PASS: по 4 синтетических кадра 0x88B5 без потерь на каждом линке A—R—B. Все процессы после сброса привилегий работали без capabilities, с запретом новых привилегий и с seccomp. После каждого прогона namespaces и линки убраны. Занятая память выросла с 269 до 328 МиБ. Раньше репетиция проходила только в контейнере на aarch64 с обходами, теперь прошла на стенде без них. Разрешение, набор данных, ядро BCP и цепочка не использовались; сетевой опыт NET-001-F по-прежнему не запускался.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "7f0ca52ddb1bfc71",
+      "source": "Настоящий прогон тратит одноразовое разрешение до первого namespace, поэтому сбой ядра на новом хосте обошёлся бы разрешением. Репетиция на том же хосте, где будет прогон, проверяет ядро, seccomp и захваты без этой цены. Результат и найденный разрыв в закреплении исходников записаны в отдельной папке, чтобы не менять закреплённые файлы раннера.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "34c48e604a6a1de4",
+      "source": "experiments/bcp02-net-001-f-rehearsal/README.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "303d76dbb1d57fc5",
+      "source": "experiments/bcp02-net-001-f-rehearsal/result.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "7665abaff8a45aa7",
+      "source": "experiments/bcp02-net-001-f-rehearsal/SHA256SUMS",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "765cb6afa68f94bd",
+      "source": "Проверена только работа с ядром Linux на синтетических кадрах: ядро BCP и настоящий цикл узла с ядром ещё не встречались.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "53f5c6019337f197",
+      "source": "На текущем main проверка исходников раннера заблокирована: после третьей ревизии раннера изменился 21 закреплённый файл сайта и форума. Репетиция шла на ревизии 12705b7, где закрепление сходится; перед прогоном manifest нужно заморозить заново или сузить.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "f8abf1406eee6468",
+      "source": "В bcp/requirements.lock нет хешей пакетов; хеши установленных wheel-файлов записаны в result.json.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "caf692677ba011be",
+      "source": "Исходящий трафик хоста во время репетиции не закрывался; для настоящего прогона это обязательно.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "fe42842fa4177d63",
+      "source": "HX-0202 · Форум показывает новые ответы в темах участника",
+      "context": "history.html:text:section/details/summary"
     },
     {
       "id": "d0990ca7a62e8512",
@@ -5007,19 +5147,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "e38ea988ab5d6a45",
       "source": "Без уведомлений участник не узнаёт, что ему ответили, и разговор обрывается. Счётчик на сайте не требует почтового сервиса и не хранит ничего, кроме номера последнего прочитанного поста в теме.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "d070ea66ee2814ab",
@@ -5052,11 +5182,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "7cf5ae43d02196b4",
       "source": "Писем нет: для них нужен почтовый сервис, он ещё не выбран.",
       "context": "history.html:text:details/ul/li"
@@ -5070,11 +5195,6 @@
       "id": "e7f5d8c5deb95188",
       "source": "Изменение собрано поверх ещё не слитых PR78 и PR79 и не выкачено.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "eef48afb7e7c7a81",
-      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "84e076351e37cbef",
@@ -5184,11 +5304,6 @@
     {
       "id": "556c0953d77cf78b",
       "source": "runners/bcp02/rehearsal.py",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "706704ad715e72e2",
-      "source": "runners/bcp02/README.md",
       "context": "history.html:text:ul/li/a"
     },
     {
@@ -5937,11 +6052,6 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "91945fc3d2085d02",
-      "source": "runners/bcp02/manifest.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
       "id": "29a0f76b8db44c3e",
       "source": "runners/bcp02/evidence/preservation.json",
       "context": "history.html:text:ul/li/a"
@@ -6024,11 +6134,6 @@
     {
       "id": "bd2a434e30ef519d",
       "source": "runners/bcp02/components.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "8513325b1344a16e",
-      "source": ".github/workflows/bcp-runner.yml",
       "context": "history.html:text:ul/li/a"
     },
     {

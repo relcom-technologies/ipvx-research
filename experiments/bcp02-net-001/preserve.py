@@ -8,14 +8,18 @@ ROOT=HERE.parents[1]
 
 
 def check():
+    # Since 2026-11-08 only files inside the runner's source scope are preserved here.
+    from fnmatch import fnmatchcase
+    scope=json.loads((ROOT/'runners/bcp02/manifest.json').read_text())['scope']
     record=json.loads((HERE/'preservation.json').read_text())
-    for entry in record['unchanged_files']:
+    checked=[e for e in record['unchanged_files'] if any(fnmatchcase(e['path'],g) for g in scope)]
+    for entry in checked:
         path=ROOT/entry['path']
         if Path(entry['path']).is_absolute() or '..' in Path(entry['path']).parts or path.resolve()!=path:raise ValueError('unsafe preservation path')
         assert sha256(path.read_bytes()).hexdigest()==entry['sha256'],entry['path']
     prefix=b''.join((ROOT/'history/events.jsonl').read_bytes().splitlines(keepends=True)[:record['prior_history_events']])
     assert sha256(prefix).hexdigest()==record['prior_history_sha256'],'history prefix changed'
-    return {'previous_files':len(record['unchanged_files']),'previous_events':record['prior_history_events']}
+    return {'previous_files':len(record['unchanged_files']),'previous_files_checked':len(checked),'previous_events':record['prior_history_events']}
 
 
 def check_bundle():

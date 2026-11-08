@@ -10,7 +10,7 @@ ROOT=Path(__file__).resolve().parents[1]
 class BcpPresentation(unittest.TestCase):
     def test_snapshot_agrees_with_actual_report_and_closed_config(self):
         d=facts(ROOT);c=json.loads((ROOT/'runners/bcp02/launch-config.json').read_text())
-        self.assertEqual(d['checks']['runner_tests'],77)
+        self.assertEqual(d['checks']['runner_tests'],82)
         self.assertIsNone(c['owner_launch_decision']);self.assertIsNone(c['run_dataset'])
         self.assertEqual(d['network_experiment'],'NOT_RUN')
 
@@ -19,7 +19,7 @@ class BcpPresentation(unittest.TestCase):
         for n,word in [(1,'тест'),(2,'теста'),(4,'теста'),(5,'тестов'),(11,'тестов'),(12,'тестов'),
                        (14,'тестов'),(21,'тест'),(22,'теста'),(63,'теста'),(77,'тестов'),(111,'тестов')]:
             self.assertEqual(ru_count(n,*forms),word,n)
-        self.assertIn('77 тестов runner и 14 проверок плана.',render(ROOT,'ru'))
+        self.assertIn('82 теста runner и 14 проверок плана.',render(ROOT,'ru'))
 
     def test_all_languages_distinguish_three_evidence_states(self):
         for language in ['ru','en','de','es']:

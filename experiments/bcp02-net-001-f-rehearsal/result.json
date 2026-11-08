@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "id": "IPVX-BCP02-NET-001-F-REHEARSAL-STAND",
+  "kind": "kernel-rehearsal",
+  "performed_on": "2026-11-08",
+  "performed_by": "claude-code-assistant",
+  "owner_permission": "Owner chat reply on 2026-11-08: «Да, репетиция».",
+  "outcome": "REHEARSAL_PASS",
+  "runs": [
+    {
+      "started_utc": "2026-11-08T14:05:20Z",
+      "outcome": "REHEARSAL_PASS",
+      "links": {
+        "L1": {
+          "frames": 4,
+          "drops": 0
+        },
+        "L2": {
+          "frames": 4,
+          "drops": 0
+        }
+      },
+      "seconds": 0.9,
+      "report": "raw/rehearsal.json"
+    },
+    {
+      "started_utc": "2026-11-08T14:05:39Z",
+      "outcome": "REHEARSAL_PASS",
+      "links": {
+        "L1": {
+          "frames": 4,
+          "drops": 0
+        },
+        "L2": {
+          "frames": 4,
+          "drops": 0
+        }
+      }
+    },
+    {
+      "started_utc": "2026-11-08T14:05:40Z",
+      "outcome": "REHEARSAL_PASS",
+      "links": {
+        "L1": {
+          "frames": 4,
+          "drops": 0
+        },
+        "L2": {
+          "frames": 4,
+          "drops": 0
+        }
+      }
+    }
+  ],
+  "source": {
+    "repository_revision": "12705b73a62d83636b18445e80cbf47cab778b35",
+    "runner_revision": 3,
+    "scope_sha256": "6f2ce2573eb352175dd9dc5e9cebae4e09513e8f673db7fac2f8df597d24bcc1",
+    "check_outcome": "NOT_RUN"
+  },
+  "host": {
+    "declared_in": "relcom-technologies/relcom-infra#865",
+    "machine": "x86_64",
+    "kernel": "6.12.105+deb13-cloud-amd64",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "vcpu": 2,
+    "memory_mib": 1974,
+    "python": "3.13.5",
+    "host_changes": [
+      "apt: python3-venv",
+      "/opt/ipvx-bcp/<revision>: repository tree and venv",
+      "net.core.fb_tunnels_only_for_init_net=1 via /proc, until reboot",
+      "/var/lib/ipvx-bcp: rehearsal output directories, root-owned"
+    ],
+    "fallback_tunnel_modules_loaded": false,
+    "namespaces_after_each_run": 0,
+    "links_after_each_run": 2
+  },
+  "memory_used_mib": {
+    "before": 269,
+    "peak": 328,
+    "sampling": "free -m every 0.2 s during the first run"
+  },
+  "dependencies": {
+    "lock": "bcp/requirements.lock pins versions without hashes",
+    "installed_wheels_sha256": {
+      "cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl": "9dab55f57c74c3cad24c323bacbbd04be4705ba6eb0d92e920b1fc4837ed5079",
+      "cffi-2.1.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl": "a931079504ecc49efed7744c476a5c343a92fabf66dec2db95edb1b2fdc770e2",
+      "pycparser-3.12-py3-none-any.whl": "a076f3f489b39b43ed13563a1dafe42447445bec2e294154ec5c57fcdda4c85e"
+    }
+  },
+  "findings": [
+    {
+      "id": "pin-drift",
+      "summary": "On main 9aeb7a4 `cli check` is BLOCKED: 21 of the 450 files pinned by runners/bcp02/manifest.json changed after runner revision 3, all of them site and forum files (assets, infra, scripts, DESIGN.md, .github/workflows/browser.yml). Runner code itself is identical between 12705b7 and 9aeb7a4. runners/bcp02/preserve.py and experiments/bcp02-net-001/preserve.py fail on main for the same reason; their workflows run only on PRs touching runner or plan paths, so the first such PR will fail.",
+      "resolution": "Owner chose to narrow the pins (2026-11-08). Narrowed in the same pull request: 146 pins inside the runner scope, recorded as HX-0204."
+    }
+  ],
+  "permit_used": false,
+  "dataset_used": false,
+  "bcp_frames": 0,
+  "transactions": 0,
+  "network_measurement": false,
+  "ready_to_launch": false,
+  "network_experiment": "NOT_RUN"
+}

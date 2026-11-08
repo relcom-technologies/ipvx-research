@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "scope": "Offline unit tests with memory ports, synthetic clocks and fabricated PCAP/SQL evidence",
-  "tests": 77,
+  "tests": 82,
   "success": true,
   "test_names": [
     "test_admission.DatasetAdmission.test_alternate_sealed_bundle_needs_its_own_signature",
@@ -71,6 +71,11 @@
     "test_runner.RunnerCases.test_case_P02",
     "test_runner.RunnerCases.test_fault_banks_have_distinct_execution_and_cl_hashes",
     "test_runner.RunnerCases.test_relay_rejects_other_port_session",
+    "test_scope.Scope.test_a_change_to_any_pinned_file_runs_the_runner_checks",
+    "test_scope.Scope.test_every_pin_is_inside_the_scope",
+    "test_scope.Scope.test_scope_matching",
+    "test_scope.Scope.test_site_and_forum_files_are_not_pinned",
+    "test_scope.Scope.test_the_run_depends_on_pinned_sources",
     "test_verifier.EvidenceTests.test_capture_after_signed_expiry_is_inconclusive",
     "test_verifier.EvidenceTests.test_capture_drop_is_inconclusive",
     "test_verifier.EvidenceTests.test_changed_signed_binding_is_inconclusive",
