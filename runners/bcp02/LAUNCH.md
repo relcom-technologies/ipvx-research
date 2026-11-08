@@ -1,0 +1,81 @@
+# Launching IPVX-BCP02-NET-001-F on the stand
+
+How one authorized run happens. Nothing in this document authorizes a run: the
+owner's signed v2 permit does, for one run ID, one dataset and one window.
+
+## Before the session
+
+Already done (2026-11-08):
+
+- **Stand:** a dedicated VM declared in relcom-technologies/relcom-infra#865. It has
+  x86_64, 2 vCPU, about 2 GiB of memory and Debian 13. The permit-free rehearsal passed
+  there three times out of three (HX-0203).
+- **Host pins** in `launch-config.json`: the SHA-256 of `/etc/machine-id`, the kernel
+  config, `python3.13`, `ip`, `node` (v24.22.2, official tarball, checked against
+  SHASUMS256) and `libseccomp`. `host_image_sha256` is an operator-attested digest of the
+  OS release, kernel, machine and the full dpkg package list; `stand_launch.py inventory`
+  recomputes it, and `prepare` refuses if it changed. Automatic apt upgrades are
+  disabled on the stand, so the pins stay valid.
+
+Still with the owner:
+
+1. **Key.** Generate the owner key on your own computer. The private key never leaves it
+   and is stored encrypted with a passphrase:
+
+       python3 -m runners.bcp02.owner keygen --key ~/.ipvx/bcp-owner.pem
+
+   Put the printed public key into `launch-config.json` as `owner_public_key`, with
+   `review_evidence` (the merged pull request) and `owner_scope_ack` (the scope hash
+   reviewed, with the owner's words), in one reviewed pull request.
+2. **Session.** Agree on a time. The steps below must fit into one dataset lifetime of
+   about 29 minutes, and the run itself may take up to 20.
+
+## During the session
+
+1. Deploy the merged tree to `/opt/ipvx-bcp/<revision>` with `SOURCE_REVISION` next to
+   it. `cli check` must give NOT_RUN with the expected scope.
+2. **Prepare** (stand, root):
+
+       python3 -m runners.bcp02.stand_launch prepare --run-id <id> --dataset /var/lib/ipvx-bcp/datasets/<id> --request /var/lib/ipvx-bcp/<id>-request.json
+
+   This step:
+   - exports fresh actor keys and EVM fixture state and seals them;
+   - writes the descriptor, the window and the decision slot into the stand's
+     `launch-config.json`;
+   - re-pins that file in `manifest.json`;
+   - prints the exact permit request.
+
+   The window opens a minute after preparation and closes at the dataset's own deadline.
+3. **Sign** (owner, on the owner's computer):
+
+       python3 -m runners.bcp02.owner sign --key ~/.ipvx/bcp-owner.pem --request request.json --out permit.json
+
+   The tool shows run ID, scope, host image, dataset, bundle and window, and asks you to
+   type the run ID before it signs.
+4. **Start** (stand, root, detached so the run survives the end of the SSH session). The
+   permit goes to `/var/lib/ipvx-bcp/permits/` as a root-owned 0600 file:
+
+       systemd-run --unit ipvx-bcp-run-<id> --working-directory /opt/ipvx-bcp/<revision> venv/bin/python -B -m runners.bcp02.stand_launch start --permit <permit> --dataset <dataset> --output /var/lib/ipvx-bcp/runs/<id>
+
+   `start` takes these steps in order:
+   1. it checks the permit with `admission.authorize` before any network change;
+   2. it records the links and arms an independent systemd timer that restores the
+      network after the window plus five minutes;
+   3. it stops `systemd-networkd` and takes every non-loopback link down, as preflight
+      requires;
+   4. it runs `cli run` once;
+   5. it brings the links up again, restarts `systemd-networkd` and cancels the timer.
+
+   The stand is unreachable while the run lasts.
+5. **After.** Collect the run directory, the launch status and the CLI output, then
+   publish the result as it came out, with its limits. A consumed permit is never reused.
+
+## If something goes wrong
+
+- **Permit refused:** nothing changed on the network. Prepare a new dataset and sign a
+  new permit.
+- **Dataset or window expired:** keep the expired package as evidence and start again from
+  *Prepare* with a new run ID.
+- **Network not back:** the safety timer runs `stand_launch.py restore` at the end of the
+  window plus five minutes. If the stand still does not answer, the infrastructure
+  operator reboots the VM.

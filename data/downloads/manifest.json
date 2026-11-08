@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "snapshot_through": "HX-0204",
+  "snapshot_through": "HX-0205",
   "bundles": [
     {
       "name": "ipvx-native-device-prototype.zip",
@@ -13,9 +13,9 @@
     {
       "name": "ipvx-research-history.zip",
       "label": "Полная доступная выгрузка истории",
-      "scope": "204 событий по HX-0204; авторы, основания, проверки и ограничения.",
-      "bytes": 419186,
-      "sha256": "a2b47378e8f3fb380b32c80668701a330449d93b6d2eb734e6a86929a4b760d2",
+      "scope": "205 событий по HX-0205; авторы, основания, проверки и ограничения.",
+      "bytes": 421578,
+      "sha256": "b946c7fd95a989638b693b7e6c0925127069c90571090e345f72605d4949fbc2",
       "files": 12
     }
   ]

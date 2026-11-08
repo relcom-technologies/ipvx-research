@@ -8,7 +8,7 @@ import subprocess
 import sys
 import time
 
-from .admission import preflight, source_hash, claim_once, authorize, verify_permit
+from .admission import preflight, source_hash, source_revision, claim_once, authorize, verify_permit
 from .common import NODES, need, private_json, sha, control, run_id, ROOT, read_json
 from .dataset import load, snapshot, fresh
 from .scenarios import SCRIPTS, observed
@@ -165,7 +165,7 @@ class Controller:
                 admitted_at=time.time(),authority='Configured owner key; receipt alone does not authenticate a human.'))
             private_json(self.directory/'run-manifest.json',dict(run_id=self.run,state_mode='fixture-state-ethernet',
                 network_execution=True,scope_sha256=source_hash(),dataset_sha256=self.dataset_hash,
-                source_revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
+                source_revision=source_revision(),
                 host_preflight=self.health,transactions=0,models=0,paid_calls=0))
             self.bounds()
             private_json(self.directory/'inventory-down.json',self.stand.create())

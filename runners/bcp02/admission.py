@@ -26,6 +26,19 @@ def source_hash():
     return sha(b'IPVX-BCP02-NET-001-F/runner3\0'+json.dumps(manifest,sort_keys=True,separators=(',',':')).encode())
 
 
+def source_revision():
+    """Git revision the deployed tree was exported from, written by the operator next to it.
+
+    The stand receives an exported tree without .git or a git binary, so the run reads
+    the revision from ROOT/SOURCE_REVISION. Preflight requires it before any permit is claimed.
+    """
+    p=ROOT/'SOURCE_REVISION'
+    need(p.is_file() and not p.is_symlink(),'SOURCE_REVISION file required next to the deployed tree')
+    value=p.read_text().strip()
+    need(len(value)==40 and all(c in '0123456789abcdef' for c in value),'invalid SOURCE_REVISION')
+    return value
+
+
 PERMIT_DOMAIN = b'IPVX BCP02 isolated run permit v2\0'
 
 
@@ -91,6 +104,7 @@ def claim_once(permit, *, ledger=Path('/var/lib/ipvx-bcp02-used-permits')):
 def preflight(config):
     need(sys.platform=='linux' and platform.machine()=='x86_64' and os.geteuid()==0,
          'disposable Linux x86_64 setup authority required')
+    source_revision()
     need(sha(Path('/etc/machine-id').read_bytes())==config['allocated_host']['machine_id_sha256'], 'allocated host identity mismatch')
     need(len(os.sched_getaffinity(0))<=2,'host exceeds accepted vCPU bound')
     mem=next(int(s.split()[1]) for s in Path('/proc/meminfo').read_text().splitlines() if s.startswith('MemTotal:'))

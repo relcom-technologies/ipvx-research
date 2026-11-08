@@ -112,10 +112,28 @@ Conditions a host must meet, each checked only by the rehearsal or run itself:
   `net.core.fb_tunnels_only_for_init_net=1` first (kernel documentation; not exercised here);
 - every directory above `--output` searchable by the actor UIDs (`run` checks this before consuming the permit).
 
-Known gaps left open by this revision: each capture runs under its node's UID, because
-`spawn` looks the UID up by node and 60004 is never used; `run` calls `git rev-parse` after
-consuming the permit, and git is not in the preflight. The third gap of this list, pins
-outside the paths that trigger the runner workflow, is closed by the source scope below.
+Known gap left open by this revision: each capture runs under its node's UID, because
+`spawn` looks the UID up by node and 60004 is never used. Two earlier gaps are closed.
+Pins outside the paths that trigger the runner workflow are closed by the source scope
+below. `run` no longer calls `git rev-parse` after consuming the permit: the stand has
+neither git nor a repository. The run reads the revision from `SOURCE_REVISION` next to
+the deployed tree, and preflight requires that file before any permit is claimed.
+
+## Launch tools (2026-11-08)
+
+[LAUNCH.md](LAUNCH.md) describes one authorized run on the stand.
+
+- `owner.py` runs on the owner's own computer only. It generates an Ed25519 key, encrypted
+  with a passphrase, and signs the exact v2 permit request after showing it.
+- `stand_launch.py` runs on the stand as root:
+  - `prepare` exports and seals a dataset, writes the run slots of `launch-config.json`,
+    re-pins that file and writes the permit request;
+  - `start` checks the permit before taking the host off the network, runs once, brings
+    the network back and arms an independent restore timer;
+  - `restore` brings the network back on its own.
+- `launch-config.json` now carries the measured host pins. The owner key, review link,
+  scope acknowledgement, dataset, window and launch decision stay empty until the owner
+  provides them.
 
 ## Source scope (2026-11-08)
 
