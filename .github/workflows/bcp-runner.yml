@@ -1,7 +1,7 @@
 name: BCP runner offline checks
 on:
   pull_request:
-    paths: ['runners/**', 'bcp/**', 'adapters/**', 'integration/**', 'contracts/bcp02/**', 'experiments/bcp02-net-001/**', '.github/workflows/bcp-runner.yml']
+    paths: ['runners/**', 'bcp/**', 'adapters/**', 'integration/**', 'contracts/bcp02/**', 'experiments/bcp02-net-001/**', 'preparations/bcp02-net001-stand/**', 'tests/bcp/**', 'docs/proposals/bcp-0.2/**', 'docs/proposals/bcp-0.2-implementation-notes.md', '.github/workflows/bcp*.yml']
 permissions: {contents: read}
 jobs:
   runner-offline:

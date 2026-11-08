@@ -3103,8 +3103,8 @@
   "d510e2e180b66258": "Das Leseskript wurde zweimal gestartet: Der erste Start endete vor jeder Anfrage an Helios mit einem Zugriffsfehler und schrieb kein Ergebnis. Die Aufrufe helios --version, --help und ldd liefen außerhalb des separaten Benutzers. Beides ist im Protokoll vermerkt.",
   "5b7a173693d79997": "Das Intervall von 384 s wurde einmal gemessen, seine Ursache nicht untersucht. Auch die Ursache der 53 Warnungen inconsistent block history ist unbekannt; das Journal enthält keine Fehler.",
   "94228e0a97d2f428": "Die Binärdatei stammt aus dem Release und wurde nicht vom Projekt gebaut; es gibt eine Konsensquelle und kein Audit von Helios. Auf dem Stand läuft kein dauerhafter Helios-Dienst, und dieses Lesen zeigt nicht, dass NET-001-L bereit ist.",
-  "ef40d6e46073bd10": "203 Ereignisse bis HX-0203; Autoren, Begründungen, Prüfungen und Grenzen.",
-  "d63d8eca4a1245f9": "407.0 KiB · 12 Dateien",
+  "4cd949a344678972": "204 Ereignisse bis HX-0204; Autoren, Begründungen, Prüfungen und Grenzen.",
+  "1df7794da482e3d5": "409.4 KiB · 12 Dateien",
   "1297baf5a745cb69": "HX-0199 · Der NET-001-F-Runner traf erstmals auf einen echten Kernel: vier Fehler behoben, eine Probe ohne Genehmigung ergänzt",
   "36efc420beffeb19": "Claude Code — Assistent des Eigentümers (ipvx-agent-lab, öffentlicher Prüfstand) · 2026-11-06T20:46:00+00:00",
   "62383b93b7b3cfbe": "Am 6. November 2026 ergab eine Prüfung des NET-001-F-Runners im Auftrag des Eigentümers („Проба и PR“), dass die Offline-Tests den Kernel ersetzen, während ein echter Lauf seine einmalige Genehmigung schon vor dem ersten Namespace verbraucht. In einem lokalen Wegwerf-Container mit Docker wurden an Revision 2 vier Fehler reproduziert, von denen jeder einen Lauf abgebrochen hätte: leere Ausgabe von ip -j netns list auf einem neuen Host, ENETDOWN auf einem Capture-Socket, der an einen abgeschalteten Link gebunden ist, das seccomp-Verbot des Sockets innerhalb von if_nametoindex und ein SQLite-Journal, das sich nach dem Rechteabbau nicht über Elternverzeichnisse mit Modus 0700 öffnen lässt. Alle vier sind in Revision 3 behoben. Der neue Befehl rehearse geht denselben Weg durch den Kernel mit synthetischen Frames, ohne Genehmigung, Datensatz, Laufschlüssel, Core und Chain. Im Container ergab er REHEARSAL_PASS mit je 4 Frames ohne Verluste pro Link und verweigerte, als drei der Korrekturen zurückgenommen wurden. Das Experiment wurde nicht ausgeführt, sein Status bleibt NOT_RUN, der Prüfstand wurde nicht berührt.",
@@ -3281,5 +3281,16 @@
   "303d76dbb1d57fc5": "experiments/bcp02-net-001-f-rehearsal/result.json",
   "7665abaff8a45aa7": "experiments/bcp02-net-001-f-rehearsal/SHA256SUMS",
   "c4168b42801ef198": "12705b73a62d83636b18445e80cbf47cab778b35",
-  "f1dba7dc062b0e96": "https://github.com/relcom-technologies/relcom-infra/pull/865"
+  "f1dba7dc062b0e96": "https://github.com/relcom-technologies/relcom-infra/pull/865",
+  "946554ad7263d02f": "HX-0204 · Die Quellbindung des BCP-Runners auf die Dateien eines Laufs eingegrenzt",
+  "5a5f2b194814bf5e": "Die Quellbindung des BCP-Runners auf die Dateien eines Laufs eingegrenzt",
+  "d67bd30b75a716dc": "Claude Code — Assistent des Eigentümers (ipvx-agent-lab, öffentlicher Prüfstand) · 2026-11-08T15:30:00+00:00",
+  "f24acbc938969038": "Auf Entscheidung des Eigentümers („Ja, eingrenzen“) bindet der NET-001-F-Runner jetzt 146 statt 450 Dateien: Runner, BCP-Kern, Adapter, Integration, Verträge, Versuchsplan und Prüfstandvorbereitung, BCP-Tests, den BCP-0.2-Vorschlag und die BCP-Workflows. Der Inhalt von 145 davon blieb unverändert; ein Bereichstest kam hinzu. Website, Forum, Dokumentation und Daten früherer Experimente sind nicht mehr gebunden, ihre Änderungen blockieren die Runner-Prüfung also nicht. Der Runner-Workflow läuft bei jeder Änderung einer Datei im Bereich, und ein Test hält Bereich und CI-Auslöser gleich. Die Bewahrungsprüfungen von Runner und Plan prüfen frühere Quellen nur innerhalb des Bereichs; die Originalbytes der sieben geänderten Dateien liegen im Runner-Archiv. Der Bereichs-Hash hat sich geändert, daher gilt keine frühere Genehmigung für ihn.",
+  "eb06fd6d92a0a66e": "Änderungen an Website und Forum blockierten die Runner-Prüfung und die Bewahrungsprüfungen auf main, obwohl ein Lauf diese Dateien nicht liest und der Runner-Workflow bei ihnen nicht lief, sodass niemand die Lücke sah. Die Eingrenzung beseitigt die falsche Abhängigkeit und macht jede Änderung einer gebundenen Datei in der Runner-CI sichtbar; ein erneutes Einfrieren des ganzen Satzes hätte das Problem bei der nächsten Website-Änderung wiederholt.",
+  "b3073b1287613310": "Der neue Bindungsbereich ist noch nicht eigens geprüft: Vor einem Lauf muss der Eigentümer seinen Hash bestätigen.",
+  "b16a5f1eb11fa25f": "Der Bericht zur Prüfstandvorbereitung aus PR48 bleibt unverändert und verweist auf den früheren Bereichs-Hash des Plans.",
+  "6e8b54d002c5739b": "Die Probe auf dem Prüfstand ist auf Revision 12705b7 vor der Eingrenzung erfasst; seitdem kam im Runner-Code nur die Bereichsprüffunktion in common.py hinzu.",
+  "79302de0658d8fd2": "runners/bcp02/tests/test_scope.py",
+  "cfb86f11baefaa6a": "runners/bcp02/preserve.py",
+  "c4c20defc411ce0f": "experiments/bcp02-net-001/readiness.py"
 }

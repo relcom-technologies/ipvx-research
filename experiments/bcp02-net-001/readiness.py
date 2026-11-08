@@ -94,9 +94,14 @@ def validate(plan,stand,evidence,candidate):
 
 
 def pinned_sources():
+    # Since 2026-11-08 only pins inside the runner's source scope are verified; workflows and
+    # downloads outside it may change. The scope is read as JSON from the runner manifest.
+    from fnmatch import fnmatchcase
+    scope=json.loads((ROOT/'runners/bcp02/manifest.json').read_text())['scope']
     pins=load('source-pins.json');errors=[];verified=0
     if pins['source_base']!='f467f7ebeb7a2fe8ed108ba6f906fd966735f1a0':errors.append('source_base_mismatch')
     for name,expected in pins['files'].items():
+        if not any(fnmatchcase(name,g) for g in scope):continue
         relative=Path(name);path=ROOT/relative
         if relative.is_absolute() or '..' in relative.parts or path.resolve()!=path or not name.startswith(('bcp/','tests/bcp/','adapters/','integration/','contracts/','docs/proposals/','data/downloads/','.github/workflows/')):
             errors.append('unsafe_source_path');continue

@@ -92,7 +92,7 @@ class PlanTests(unittest.TestCase):
         self.assertIn('process_isolation',self.errors());self.assertIn('relay_control_binding',self.errors())
 
     def test_source_pins_and_physical_limits_remain_explicit(self):
-        errors,count=r.pinned_sources();self.assertEqual(errors,[]);self.assertGreaterEqual(count,84)
+        errors,count=r.pinned_sources();self.assertEqual(errors,[]);self.assertGreaterEqual(count,77)  # 77 of 84 pins lie inside the runner scope since 2026-11-08
         profile=r.ROOT/'docs/proposals/bcp-0.2/profile.json'
         import json
         constants=json.loads(profile.read_text())['constants']

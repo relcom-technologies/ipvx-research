@@ -3103,8 +3103,8 @@
   "d510e2e180b66258": "El script de lectura se lanzó dos veces: el primer lanzamiento se detuvo por un error de permisos antes de cualquier solicitud a Helios y no escribió ningún resultado. Las llamadas helios --version, --help y ldd se ejecutaron fuera del usuario separado. Ambas cosas constan en el protocolo.",
   "5b7a173693d79997": "El intervalo de 384 s se midió una sola vez y no se investigó su causa. Tampoco se conoce la causa de las 53 advertencias inconsistent block history; el registro no contiene errores.",
   "94228e0a97d2f428": "El binario procede de la versión publicada y el proyecto no lo compiló; hay una sola fuente de consenso y ninguna auditoría de Helios. No hay un servicio permanente de Helios en el banco, y esta lectura no demuestra que NET-001-L esté listo.",
-  "ef40d6e46073bd10": "203 eventos hasta HX-0203; autores, motivos, comprobaciones y límites.",
-  "d63d8eca4a1245f9": "407.0 KiB · 12 archivos",
+  "4cd949a344678972": "204 eventos hasta HX-0204; autores, motivos, comprobaciones y límites.",
+  "1df7794da482e3d5": "409.4 KiB · 12 archivos",
   "1297baf5a745cb69": "HX-0199 · El runner de NET-001-F se encontró por primera vez con un kernel real: cuatro fallos corregidos y un ensayo sin permiso añadido",
   "36efc420beffeb19": "Claude Code — asistente del propietario (ipvx-agent-lab, banco público) · 2026-11-06T20:46:00+00:00",
   "62383b93b7b3cfbe": "El 6 de noviembre de 2026, por encargo del propietario («Проба и PR»), una revisión del runner de NET-001-F halló que las pruebas offline sustituyen al kernel, mientras que una ejecución real gasta su permiso de un solo uso antes del primer namespace. En un contenedor Docker local y desechable se reprodujeron en la revisión 2 cuatro fallos, cada uno de los cuales habría interrumpido una ejecución: salida vacía de ip -j netns list en un host nuevo, ENETDOWN en un socket de captura vinculado a un enlace apagado, la denegación por seccomp del socket interno de if_nametoindex y un diario SQLite que no se abre tras la pérdida de privilegios a través de directorios padre con modo 0700. Los cuatro están corregidos en la revisión 3. El nuevo comando rehearse sigue el mismo camino por el kernel con tramas sintéticas, sin permiso, conjunto de datos, claves de ejecución, Core ni cadena. En el contenedor dio REHEARSAL_PASS con 4 tramas sin pérdidas por enlace y se negó al revertir tres de las correcciones. El experimento no se ejecutó, su estado sigue siendo NOT_RUN y el banco no se tocó.",
@@ -3281,5 +3281,16 @@
   "303d76dbb1d57fc5": "experiments/bcp02-net-001-f-rehearsal/result.json",
   "7665abaff8a45aa7": "experiments/bcp02-net-001-f-rehearsal/SHA256SUMS",
   "c4168b42801ef198": "12705b73a62d83636b18445e80cbf47cab778b35",
-  "f1dba7dc062b0e96": "https://github.com/relcom-technologies/relcom-infra/pull/865"
+  "f1dba7dc062b0e96": "https://github.com/relcom-technologies/relcom-infra/pull/865",
+  "946554ad7263d02f": "HX-0204 · La fijación de fuentes del ejecutor de BCP se acota a los archivos de una ejecución",
+  "5a5f2b194814bf5e": "La fijación de fuentes del ejecutor de BCP se acota a los archivos de una ejecución",
+  "d67bd30b75a716dc": "Claude Code — asistente del propietario (ipvx-agent-lab, banco público) · 2026-11-08T15:30:00+00:00",
+  "f24acbc938969038": "Por decisión del propietario («Sí, acotar») el ejecutor NET-001-F fija ahora 146 archivos en lugar de 450: el ejecutor, el núcleo de BCP, los adaptadores, la integración, los contratos, el plan del experimento y la preparación del banco, las pruebas de BCP, la propuesta BCP 0.2 y los workflows de BCP. El contenido de 145 de ellos no cambió; se añadió una prueba del alcance. El sitio, el foro, la documentación y los datos de experimentos anteriores ya no están fijados, así que editarlos no bloquea la comprobación del ejecutor. El workflow del ejecutor se ejecuta cuando cambia cualquier archivo del alcance, y una prueba mantiene iguales el alcance y los disparadores de CI. Las comprobaciones de preservación del ejecutor y del plan verifican las fuentes anteriores solo dentro del alcance; los bytes originales de los siete archivos cambiados se guardan en el archivo del ejecutor. El hash del alcance cambió, así que ningún permiso anterior se aplica a él.",
+  "eb06fd6d92a0a66e": "Las ediciones del sitio y del foro bloqueaban la comprobación del ejecutor y las de preservación en main, aunque una ejecución no lee esos archivos y el workflow del ejecutor no se ejecutaba con ellos, así que nadie vio el hueco. Acotar elimina la falsa dependencia y hace visible en la CI del ejecutor cualquier edición de un archivo fijado; volver a congelar todo el conjunto repetiría el problema en la siguiente edición del sitio.",
+  "b3073b1287613310": "El nuevo alcance de fijación aún no se ha revisado por separado: antes de una ejecución el propietario debe confirmar su hash.",
+  "b16a5f1eb11fa25f": "El informe de preparación del banco de PR48 se conserva tal cual y remite al hash anterior del alcance del plan.",
+  "6e8b54d002c5739b": "El ensayo en el banco consta en la revisión 12705b7, antes de acotar; desde entonces el código del ejecutor solo ganó la función de comprobación del alcance en common.py.",
+  "79302de0658d8fd2": "runners/bcp02/tests/test_scope.py",
+  "cfb86f11baefaa6a": "runners/bcp02/preserve.py",
+  "c4c20defc411ce0f": "experiments/bcp02-net-001/readiness.py"
 }

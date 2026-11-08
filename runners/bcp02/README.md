@@ -114,8 +114,22 @@ Conditions a host must meet, each checked only by the rehearsal or run itself:
 
 Known gaps left open by this revision: each capture runs under its node's UID, because
 `spawn` looks the UID up by node and 60004 is never used; `run` calls `git rev-parse` after
-consuming the permit, and git is not in the preflight; 329 of the pinned files are
-outside the paths that trigger the runner workflow, so a change there can break the pins unnoticed.
+consuming the permit, and git is not in the preflight. The third gap of this list, pins
+outside the paths that trigger the runner workflow, is closed by the source scope below.
+
+## Source scope (2026-11-08)
+
+Until 2026-11-08 `manifest.json` pinned 450 repository files, among them the website, forum,
+documentation and old evidence, although a run reads none of them. Website and forum edits
+then blocked `cli check` and both preservation checks on `main` without the runner workflow
+noticing. Pins now cover the 146 files inside `scope`: the 145 sources already pinned there,
+byte-identical, and `tests/test_scope.py`. The scope lists the CI path globs of
+`.github/workflows/bcp-runner.yml`: runner, BCP core, adapters, integration, contracts,
+NET-001 plan and stand preparation, BCP tests, the BCP 0.2 proposal and the BCP workflows.
+A test keeps the workflow triggers equal to the scope, so a change to any pinned file runs
+`cli check`. `preserve.py` here and in the plan check accepted earlier sources only inside the
+scope; files outside it may change. The scope hash changed with the manifest, so no earlier
+review or permit covers it.
 
 ## Future admission and operation — not authorized by this PR
 

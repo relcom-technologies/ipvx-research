@@ -93,7 +93,8 @@
   "findings": [
     {
       "id": "pin-drift",
-      "summary": "On main 9aeb7a4 `cli check` is BLOCKED: 21 of the 450 files pinned by runners/bcp02/manifest.json changed after runner revision 3, all of them site and forum files (assets, infra, scripts, DESIGN.md, .github/workflows/browser.yml). Runner code itself is identical between 12705b7 and 9aeb7a4. runners/bcp02/preserve.py and experiments/bcp02-net-001/preserve.py fail on main for the same reason; their workflows run only on PRs touching runner or plan paths, so the first such PR will fail."
+      "summary": "On main 9aeb7a4 `cli check` is BLOCKED: 21 of the 450 files pinned by runners/bcp02/manifest.json changed after runner revision 3, all of them site and forum files (assets, infra, scripts, DESIGN.md, .github/workflows/browser.yml). Runner code itself is identical between 12705b7 and 9aeb7a4. runners/bcp02/preserve.py and experiments/bcp02-net-001/preserve.py fail on main for the same reason; their workflows run only on PRs touching runner or plan paths, so the first such PR will fail.",
+      "resolution": "Owner chose to narrow the pins (2026-11-08). Narrowed in the same pull request: 146 pins inside the runner scope, recorded as HX-0204."
     }
   ],
   "permit_used": false,

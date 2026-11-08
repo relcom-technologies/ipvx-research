@@ -18,6 +18,12 @@ STAGES = ('START', 'PREPARE', 'PROBE', 'RETRY', 'HANDSHAKE', 'ROTATE', 'DENY_FOR
           'DENY_REVERSE', 'UNAVAILABLE', 'STALE', 'STOP', 'BARRIER')
 
 
+def in_scope(name, scope):
+    """True when a repository path lies in the runner's source scope (CI path globs)."""
+    from fnmatch import fnmatchcase
+    return any(fnmatchcase(name, pattern) for pattern in scope)
+
+
 class Blocked(RuntimeError):
     pass
 
