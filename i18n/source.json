@@ -37,11 +37,6 @@
       "context": "account.html:attribute:aria-label"
     },
     {
-      "id": "bd3a5be11e2addf7",
-      "source": "Обзор",
-      "context": "account.html:text:header/nav/a"
-    },
-    {
       "id": "12dd6323515fc7a0",
       "source": "BCP 0.2",
       "context": "account.html:text:header/nav/a"
@@ -67,33 +62,28 @@
       "context": "account.html:text:header/nav/a"
     },
     {
-      "id": "265d364393caa817",
-      "source": "Участвовать",
-      "context": "account.html:text:header/nav/a"
-    },
-    {
-      "id": "d23e4a0352080936",
-      "source": "Обсуждения",
-      "context": "account.html:text:header/nav/a"
-    },
-    {
       "id": "b78d169b20863311",
       "source": "Форум",
       "context": "account.html:text:header/nav/a"
     },
     {
-      "id": "c8b71789f6a63720",
-      "source": "Вход / Relcom ID",
-      "context": "account.html:text:header/div/a"
+      "id": "265d364393caa817",
+      "source": "Участвовать",
+      "context": "account.html:text:header/nav/a"
     },
     {
-      "id": "29f1ed6acba6e50e",
-      "source": "Лаборатория ↗",
+      "id": "8fc9ab2eeb38ad7a",
+      "source": "Войти",
       "context": "account.html:text:header/div/a"
     },
     {
       "id": "041ebc7928fb7759",
       "source": "GitHub ↗",
+      "context": "account.html:text:header/div/a"
+    },
+    {
+      "id": "29f1ed6acba6e50e",
+      "source": "Лаборатория ↗",
       "context": "account.html:text:header/div/a"
     },
     {
@@ -1780,6 +1770,56 @@
       "id": "8d4a8340dd6449af",
       "source": "Итоги опыта с реестром →",
       "context": "index.html:text:div/aside/a"
+    },
+    {
+      "id": "7d7fd3fc79265c03",
+      "source": "ipvx.org/forum",
+      "context": "index.html:text:section/div/span"
+    },
+    {
+      "id": "193f86bcb34b80e0",
+      "source": "Вопросы, идеи и разбор опытов рядом с документами, которые обсуждаются. Читать может любой, писать — после входа через Relcom ID.",
+      "context": "index.html:text:div/section/p"
+    },
+    {
+      "id": "237252fc237a0b53",
+      "source": "Черновики RFC",
+      "context": "index.html:text:ul/li/a"
+    },
+    {
+      "id": "1c7444e19aafc326",
+      "source": "Эксперименты и лаборатория",
+      "context": "index.html:text:ul/li/a"
+    },
+    {
+      "id": "9c924186ced1f2cf",
+      "source": "Вопросы",
+      "context": "index.html:text:ul/li/a"
+    },
+    {
+      "id": "9bbca26ece5c1c2e",
+      "source": "Открыть форум",
+      "context": "index.html:text:section/div/a"
+    },
+    {
+      "id": "6612ef91722c945e",
+      "source": "Лаборатория",
+      "context": "index.html:text:section/div/h2"
+    },
+    {
+      "id": "8002e10eec03fdd3",
+      "source": "Живой стенд: пять ВМ на трёх физических хостах и синтетические агенты без LLM. Видны текущие маршруты, хронология отказа посредника и подписанные доказательства каждого перехода.",
+      "context": "index.html:text:div/section/p"
+    },
+    {
+      "id": "331370e189b46c0f",
+      "source": "Только просмотр: внутренние адреса и расшифрованные результаты скрыты, отключать узлы может только оператор стенда.",
+      "context": "index.html:text:div/section/p"
+    },
+    {
+      "id": "a47de0c928015925",
+      "source": "Открыть лабораторию ↗",
+      "context": "index.html:text:section/div/a"
     },
     {
       "id": "e6d97ba987cddbe7",
@@ -13617,6 +13657,16 @@
       "context": "assets/portal.js:4768"
     },
     {
+      "id": "301b01695ffcfd64",
+      "source": "Тем на форуме:",
+      "context": "assets/portal.js:5437"
+    },
+    {
+      "id": "57f7cf624a7b2836",
+      "source": "Тем пока нет — можно начать первую",
+      "context": "assets/portal.js:5461"
+    },
+    {
       "id": "77dee7906532f171",
       "source": "Участник IPvX",
       "context": "assets/relcom.js:1130"
@@ -14692,19 +14742,9 @@
       "context": "assets/forum.js:979"
     },
     {
-      "id": "237252fc237a0b53",
-      "source": "Черновики RFC",
-      "context": "assets/forum.js:1050"
-    },
-    {
       "id": "1ca8852dfa384b30",
       "source": "Вопросы и идеи по черновикам RFC. Изменение RFC идёт через предложение к RFC или PR в GitHub.",
       "context": "assets/forum.js:1066"
-    },
-    {
-      "id": "1c7444e19aafc326",
-      "source": "Эксперименты и лаборатория",
-      "context": "assets/forum.js:1179"
     },
     {
       "id": "cc4cee2f3f790f0e",
@@ -14720,11 +14760,6 @@
       "id": "723f6e30f804c900",
       "source": "Устройство IPvX: адресация, маршрутизация, доставка сообщений.",
       "context": "assets/forum.js:1300"
-    },
-    {
-      "id": "9c924186ced1f2cf",
-      "source": "Вопросы",
-      "context": "assets/forum.js:1380"
     },
     {
       "id": "9d7a07e8149bcf79",

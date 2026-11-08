@@ -3257,5 +3257,15 @@
   "cdff0f6ecb4a5f60": "Respuestas nuevas:",
   "2fb7a81efbc0a130": "Sin respuestas nuevas",
   "87e669baf1770cdb": "Aún no ha escrito en el foro. Aquí aparecerán los temas en los que participe.",
-  "7d1e430bc7f23a28": "Mis temas · nuevas:"
+  "7d1e430bc7f23a28": "Mis temas · nuevas:",
+  "8fc9ab2eeb38ad7a": "Iniciar sesión",
+  "193f86bcb34b80e0": "Preguntas, ideas y análisis de experimentos, junto a los documentos que se debaten. Cualquiera puede leer; para escribir hay que iniciar sesión con Relcom ID.",
+  "9bbca26ece5c1c2e": "Abrir el foro",
+  "6612ef91722c945e": "Laboratorio",
+  "8002e10eec03fdd3": "Un banco de pruebas en vivo: cinco VM en tres hosts físicos y agentes sintéticos sin LLM. Muestra las rutas actuales, la cronología del fallo de un intermediario y la evidencia firmada de cada salto.",
+  "331370e189b46c0f": "Solo lectura: las direcciones internas y los resultados descifrados están ocultos, y solo el operador del banco puede apagar nodos.",
+  "a47de0c928015925": "Abrir el laboratorio ↗",
+  "301b01695ffcfd64": "Temas en el foro:",
+  "57f7cf624a7b2836": "Aún no hay temas: puede iniciar el primero",
+  "7d7fd3fc79265c03": "ipvx.org/forum"
 }
