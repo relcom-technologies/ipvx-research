@@ -1,0 +1,14 @@
+{
+  "binary_pins": {
+    "ip": "024784c6d16b183dc7c97d93a943a9270976f167f95f771e14d72442dc657f0c",
+    "libseccomp": "c851a2378b4ef3a42ada5f8ff1604ad38f6bbcafa2aeea3f6680160d628c2f27",
+    "node": "904a6d3484241d466989f9df9ba3aab822b1496191bdb28230eb491a55c32a52",
+    "python": "889c603f0d17cb54060951bcf4c4f9b8c9ebd9e52b392c70209bbb9755d797d9"
+  },
+  "host_egress_closed": true,
+  "kernel": "6.12.105+deb13-cloud-amd64",
+  "monotonic": 94893.94484644,
+  "ntp_synchronized": true,
+  "state_mode": "fixture-state-ethernet",
+  "wall": 1794169733.7643626
+}

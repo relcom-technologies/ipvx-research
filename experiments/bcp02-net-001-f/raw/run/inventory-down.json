@@ -1,0 +1,387 @@
+{
+  "A": {
+    "addresses": [
+      {
+        "addr_info": [],
+        "address": "00:00:00:00:00:00",
+        "broadcast": "00:00:00:00:00:00",
+        "flags": [
+          "LOOPBACK"
+        ],
+        "group": "default",
+        "ifindex": 1,
+        "ifname": "lo",
+        "link_type": "loopback",
+        "mtu": 65536,
+        "operstate": "DOWN",
+        "qdisc": "noop",
+        "txqlen": 1000
+      },
+      {
+        "addr_info": [],
+        "address": "02:bc:02:00:01:01",
+        "broadcast": "ff:ff:ff:ff:ff:ff",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST"
+        ],
+        "group": "default",
+        "ifindex": 2,
+        "ifname": "a0",
+        "link_index": 2,
+        "link_netnsid": 0,
+        "link_type": "ether",
+        "mtu": 1500,
+        "operstate": "DOWN",
+        "qdisc": "noop",
+        "txqlen": 1000
+      }
+    ],
+    "inode": 4026532294,
+    "links": [
+      {
+        "address": "00:00:00:00:00:00",
+        "allmulti": 0,
+        "broadcast": "00:00:00:00:00:00",
+        "flags": [
+          "LOOPBACK"
+        ],
+        "gro_ipv4_max_size": 65536,
+        "gro_max_size": 65536,
+        "group": "default",
+        "gso_ipv4_max_size": 65536,
+        "gso_max_segs": 65535,
+        "gso_max_size": 65536,
+        "ifindex": 1,
+        "ifname": "lo",
+        "inet6_addr_gen_mode": "eui64",
+        "link_type": "loopback",
+        "linkmode": "DEFAULT",
+        "max_mtu": 0,
+        "min_mtu": 0,
+        "mtu": 65536,
+        "num_rx_queues": 1,
+        "num_tx_queues": 1,
+        "operstate": "DOWN",
+        "promiscuity": 0,
+        "qdisc": "noop",
+        "tso_max_segs": 65535,
+        "tso_max_size": 524280,
+        "txqlen": 1000
+      },
+      {
+        "address": "02:bc:02:00:01:01",
+        "allmulti": 0,
+        "broadcast": "ff:ff:ff:ff:ff:ff",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST"
+        ],
+        "gro_ipv4_max_size": 65536,
+        "gro_max_size": 65536,
+        "group": "default",
+        "gso_ipv4_max_size": 65536,
+        "gso_max_segs": 65535,
+        "gso_max_size": 65536,
+        "ifindex": 2,
+        "ifname": "a0",
+        "inet6_addr_gen_mode": "eui64",
+        "link_index": 2,
+        "link_netnsid": 0,
+        "link_type": "ether",
+        "linkinfo": {
+          "info_kind": "veth"
+        },
+        "linkmode": "DEFAULT",
+        "max_mtu": 65535,
+        "min_mtu": 68,
+        "mtu": 1500,
+        "num_rx_queues": 2,
+        "num_tx_queues": 2,
+        "operstate": "DOWN",
+        "promiscuity": 0,
+        "qdisc": "noop",
+        "tso_max_segs": 65535,
+        "tso_max_size": 524280,
+        "txqlen": 1000
+      }
+    ],
+    "namespace": "bcp02-net001-a",
+    "routes": []
+  },
+  "B": {
+    "addresses": [
+      {
+        "addr_info": [],
+        "address": "00:00:00:00:00:00",
+        "broadcast": "00:00:00:00:00:00",
+        "flags": [
+          "LOOPBACK"
+        ],
+        "group": "default",
+        "ifindex": 1,
+        "ifname": "lo",
+        "link_type": "loopback",
+        "mtu": 65536,
+        "operstate": "DOWN",
+        "qdisc": "noop",
+        "txqlen": 1000
+      },
+      {
+        "addr_info": [],
+        "address": "02:bc:02:00:02:01",
+        "broadcast": "ff:ff:ff:ff:ff:ff",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST"
+        ],
+        "group": "default",
+        "ifindex": 2,
+        "ifname": "b0",
+        "link_index": 3,
+        "link_netnsid": 0,
+        "link_type": "ether",
+        "mtu": 1500,
+        "operstate": "DOWN",
+        "qdisc": "noop",
+        "txqlen": 1000
+      }
+    ],
+    "inode": 4026532406,
+    "links": [
+      {
+        "address": "00:00:00:00:00:00",
+        "allmulti": 0,
+        "broadcast": "00:00:00:00:00:00",
+        "flags": [
+          "LOOPBACK"
+        ],
+        "gro_ipv4_max_size": 65536,
+        "gro_max_size": 65536,
+        "group": "default",
+        "gso_ipv4_max_size": 65536,
+        "gso_max_segs": 65535,
+        "gso_max_size": 65536,
+        "ifindex": 1,
+        "ifname": "lo",
+        "inet6_addr_gen_mode": "eui64",
+        "link_type": "loopback",
+        "linkmode": "DEFAULT",
+        "max_mtu": 0,
+        "min_mtu": 0,
+        "mtu": 65536,
+        "num_rx_queues": 1,
+        "num_tx_queues": 1,
+        "operstate": "DOWN",
+        "promiscuity": 0,
+        "qdisc": "noop",
+        "tso_max_segs": 65535,
+        "tso_max_size": 524280,
+        "txqlen": 1000
+      },
+      {
+        "address": "02:bc:02:00:02:01",
+        "allmulti": 0,
+        "broadcast": "ff:ff:ff:ff:ff:ff",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST"
+        ],
+        "gro_ipv4_max_size": 65536,
+        "gro_max_size": 65536,
+        "group": "default",
+        "gso_ipv4_max_size": 65536,
+        "gso_max_segs": 65535,
+        "gso_max_size": 65536,
+        "ifindex": 2,
+        "ifname": "b0",
+        "inet6_addr_gen_mode": "eui64",
+        "link_index": 3,
+        "link_netnsid": 0,
+        "link_type": "ether",
+        "linkinfo": {
+          "info_kind": "veth"
+        },
+        "linkmode": "DEFAULT",
+        "max_mtu": 65535,
+        "min_mtu": 68,
+        "mtu": 1500,
+        "num_rx_queues": 2,
+        "num_tx_queues": 2,
+        "operstate": "DOWN",
+        "promiscuity": 0,
+        "qdisc": "noop",
+        "tso_max_segs": 65535,
+        "tso_max_size": 524280,
+        "txqlen": 1000
+      }
+    ],
+    "namespace": "bcp02-net001-b",
+    "routes": []
+  },
+  "R": {
+    "addresses": [
+      {
+        "addr_info": [],
+        "address": "00:00:00:00:00:00",
+        "broadcast": "00:00:00:00:00:00",
+        "flags": [
+          "LOOPBACK"
+        ],
+        "group": "default",
+        "ifindex": 1,
+        "ifname": "lo",
+        "link_type": "loopback",
+        "mtu": 65536,
+        "operstate": "DOWN",
+        "qdisc": "noop",
+        "txqlen": 1000
+      },
+      {
+        "addr_info": [],
+        "address": "02:bc:02:00:03:01",
+        "broadcast": "ff:ff:ff:ff:ff:ff",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST"
+        ],
+        "group": "default",
+        "ifindex": 2,
+        "ifname": "r0",
+        "link_index": 2,
+        "link_netnsid": 1,
+        "link_type": "ether",
+        "mtu": 1500,
+        "operstate": "DOWN",
+        "qdisc": "noop",
+        "txqlen": 1000
+      },
+      {
+        "addr_info": [],
+        "address": "02:bc:02:00:03:02",
+        "broadcast": "ff:ff:ff:ff:ff:ff",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST"
+        ],
+        "group": "default",
+        "ifindex": 3,
+        "ifname": "r1",
+        "link_index": 2,
+        "link_netnsid": 0,
+        "link_type": "ether",
+        "mtu": 1500,
+        "operstate": "DOWN",
+        "qdisc": "noop",
+        "txqlen": 1000
+      }
+    ],
+    "inode": 4026532351,
+    "links": [
+      {
+        "address": "00:00:00:00:00:00",
+        "allmulti": 0,
+        "broadcast": "00:00:00:00:00:00",
+        "flags": [
+          "LOOPBACK"
+        ],
+        "gro_ipv4_max_size": 65536,
+        "gro_max_size": 65536,
+        "group": "default",
+        "gso_ipv4_max_size": 65536,
+        "gso_max_segs": 65535,
+        "gso_max_size": 65536,
+        "ifindex": 1,
+        "ifname": "lo",
+        "inet6_addr_gen_mode": "eui64",
+        "link_type": "loopback",
+        "linkmode": "DEFAULT",
+        "max_mtu": 0,
+        "min_mtu": 0,
+        "mtu": 65536,
+        "num_rx_queues": 1,
+        "num_tx_queues": 1,
+        "operstate": "DOWN",
+        "promiscuity": 0,
+        "qdisc": "noop",
+        "tso_max_segs": 65535,
+        "tso_max_size": 524280,
+        "txqlen": 1000
+      },
+      {
+        "address": "02:bc:02:00:03:01",
+        "allmulti": 0,
+        "broadcast": "ff:ff:ff:ff:ff:ff",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST"
+        ],
+        "gro_ipv4_max_size": 65536,
+        "gro_max_size": 65536,
+        "group": "default",
+        "gso_ipv4_max_size": 65536,
+        "gso_max_segs": 65535,
+        "gso_max_size": 65536,
+        "ifindex": 2,
+        "ifname": "r0",
+        "inet6_addr_gen_mode": "eui64",
+        "link_index": 2,
+        "link_netnsid": 1,
+        "link_type": "ether",
+        "linkinfo": {
+          "info_kind": "veth"
+        },
+        "linkmode": "DEFAULT",
+        "max_mtu": 65535,
+        "min_mtu": 68,
+        "mtu": 1500,
+        "num_rx_queues": 2,
+        "num_tx_queues": 2,
+        "operstate": "DOWN",
+        "promiscuity": 0,
+        "qdisc": "noop",
+        "tso_max_segs": 65535,
+        "tso_max_size": 524280,
+        "txqlen": 1000
+      },
+      {
+        "address": "02:bc:02:00:03:02",
+        "allmulti": 0,
+        "broadcast": "ff:ff:ff:ff:ff:ff",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST"
+        ],
+        "gro_ipv4_max_size": 65536,
+        "gro_max_size": 65536,
+        "group": "default",
+        "gso_ipv4_max_size": 65536,
+        "gso_max_segs": 65535,
+        "gso_max_size": 65536,
+        "ifindex": 3,
+        "ifname": "r1",
+        "inet6_addr_gen_mode": "eui64",
+        "link_index": 2,
+        "link_netnsid": 0,
+        "link_type": "ether",
+        "linkinfo": {
+          "info_kind": "veth"
+        },
+        "linkmode": "DEFAULT",
+        "max_mtu": 65535,
+        "min_mtu": 68,
+        "mtu": 1500,
+        "num_rx_queues": 2,
+        "num_tx_queues": 2,
+        "operstate": "DOWN",
+        "promiscuity": 0,
+        "qdisc": "noop",
+        "tso_max_segs": 65535,
+        "tso_max_size": 524280,
+        "txqlen": 1000
+      }
+    ],
+    "namespace": "bcp02-net001-r",
+    "routes": []
+  }
+}

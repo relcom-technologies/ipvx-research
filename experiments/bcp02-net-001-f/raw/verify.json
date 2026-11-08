@@ -1,0 +1,94 @@
+{
+  "state_mode": "fixture-state-ethernet",
+  "outcome": "PASS",
+  "case_results": {
+    "P01": {
+      "pass_criteria_met": true,
+      "originals": 10,
+      "deliveries": 10,
+      "worker_rows": 10
+    },
+    "P02": {
+      "pass_criteria_met": true,
+      "originals": 1,
+      "deliveries": 1,
+      "worker_rows": 1
+    },
+    "N01": {
+      "pass_criteria_met": true,
+      "originals": 0,
+      "deliveries": 0,
+      "worker_rows": 0
+    },
+    "N02": {
+      "pass_criteria_met": true,
+      "originals": 10,
+      "deliveries": 0,
+      "worker_rows": 0
+    },
+    "N03": {
+      "pass_criteria_met": true,
+      "originals": 1,
+      "deliveries": 1,
+      "worker_rows": 1
+    },
+    "N04": {
+      "pass_criteria_met": true,
+      "originals": 1,
+      "deliveries": 1,
+      "worker_rows": 1
+    },
+    "N05": {
+      "pass_criteria_met": true,
+      "originals": 1,
+      "deliveries": 1,
+      "worker_rows": 1
+    },
+    "N06": {
+      "pass_criteria_met": true,
+      "originals": 1,
+      "deliveries": 0,
+      "worker_rows": 0
+    },
+    "N07-forward": {
+      "pass_criteria_met": true,
+      "originals": 1,
+      "deliveries": 0,
+      "worker_rows": 0
+    },
+    "N07-reverse": {
+      "pass_criteria_met": true,
+      "originals": 1,
+      "deliveries": 1,
+      "worker_rows": 0
+    },
+    "N08": {
+      "pass_criteria_met": true,
+      "originals": 0,
+      "deliveries": 0,
+      "worker_rows": 0
+    },
+    "N09": {
+      "pass_criteria_met": true,
+      "originals": 1,
+      "deliveries": 1,
+      "worker_rows": 1
+    },
+    "N10": {
+      "pass_criteria_met": true,
+      "originals": 1,
+      "deliveries": 1,
+      "worker_rows": 1
+    },
+    "N11": {
+      "pass_criteria_met": true,
+      "originals": 1,
+      "deliveries": 1,
+      "worker_rows": 0
+    }
+  },
+  "real_chain_finality": false,
+  "independent_operators": false,
+  "physical_ethernet": false,
+  "interpretation": "Transport with synthetic fixture-state only; no chain finality, physical link or independent-operator conclusion."
+}

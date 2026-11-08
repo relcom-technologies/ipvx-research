@@ -1,0 +1,17 @@
+{
+  "files": {
+    "A/adapter.sqlite": "00092e8ee941aa8756465ba8d3b4f76d1d157ca9eaee90e22b794e251f34c024",
+    "A/core.sqlite": "ecf41610bda0e1c0530ed02f2f3daa9719aa797d41ca5c4a19badf8a4fac6bca",
+    "A/events.jsonl": "688bac818978c1dd2c2c8dbdf36690510e9bb08188554bddf2873cea2c472733",
+    "A/stderr-12.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/adapter.sqlite": "00092e8ee941aa8756465ba8d3b4f76d1d157ca9eaee90e22b794e251f34c024",
+    "B/core.sqlite": "19609068b25bb9603d1d34f89eb70c4487428f842d34274380579fb302cfe21a",
+    "B/events.jsonl": "5615437d72cad662d32a6ebd4a73f02d7f3530deaffec93f5565ebdcadc29905",
+    "B/stderr-14.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "R/adapter.sqlite": "00092e8ee941aa8756465ba8d3b4f76d1d157ca9eaee90e22b794e251f34c024",
+    "R/core.sqlite": "508513b747ca832a71c081ae1ca60d2ec4dd057761102472bbd1d11dcb690e15",
+    "R/events.jsonl": "779e5e10d10205e6682ce60aa70b03930f2bd76f34808777655e60ec7d0f2c68",
+    "R/stderr-13.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "relay_stopped_monotonic": 94913.174574923
+}

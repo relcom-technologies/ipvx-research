@@ -1,0 +1,16 @@
+{
+  "created_at": 1794169391,
+  "dataset_sha256": "6d280035a65b38ee9c9fc44ab310c431dc2cf0cc51504f27ae4dd4e87dfac74f",
+  "expires_at": 1794171156,
+  "files": {
+    "A/key.json": "cd9d607c344ac041bfa230906dc2a087945b669aceeb61400cf77430b3b60d94",
+    "B/key.json": "05f464ab99e44bd4135dedd77542887ac89b98404d8311afc493e1f80296d7be",
+    "R/key.json": "ec4256287ef42a50d3a2efeb86bbe7683dbcf329c66e83d83e4373c8988f95dd",
+    "bank.json": "db2b0f93feb4ddbd65e89a7cc5f327ef9e6a4b395276b4d1d8bed55e8a3d4e78",
+    "dataset.json": "6d280035a65b38ee9c9fc44ab310c431dc2cf0cc51504f27ae4dd4e87dfac74f",
+    "public-keys.json": "478da416d583e2e94c70b9a3ddeeacc4e3dd8cc109a70f8c6f665df9c14b6678"
+  },
+  "max_state_age_seconds": 1800,
+  "run_id": "bcp-net001-run-0003",
+  "schema_version": 1
+}

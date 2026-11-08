@@ -12,7 +12,8 @@ class BcpPresentation(unittest.TestCase):
         d=facts(ROOT);c=json.loads((ROOT/'runners/bcp02/launch-config.json').read_text())
         self.assertEqual(d['checks']['runner_tests'],93)
         self.assertIsNone(c['owner_launch_decision']);self.assertIsNone(c['run_dataset'])
-        self.assertEqual(d['network_experiment'],'NOT_RUN')
+        self.assertEqual(d['network_experiment'],'NET-001-F_PASS');self.assertEqual(d['net001_l'],'NOT_RUN')
+        self.assertFalse(d['ready_to_launch'])
 
     def test_russian_counts_agree_with_their_number(self):
         forms=('тест','теста','тестов')

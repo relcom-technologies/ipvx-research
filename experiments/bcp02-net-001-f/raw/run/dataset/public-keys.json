@@ -1,0 +1,34 @@
+{
+  "1": {
+    "encryption": {
+      "public_key_hex": "8a87de8cfc5c9fbbcd3506f138b0af94b04ca4553a36e56792df0b13ac2cef6d"
+    },
+    "signing": {
+      "public_key_hex": "752cd0fd6e43033856032066cc7703a78bc19c22e5b67d335fbb836758d8c633"
+    }
+  },
+  "101": {
+    "encryption": {
+      "public_key_hex": "6821ca028bedae3c3c1f43e78af2044252d42ff592e1e195d4d280986d01254b"
+    },
+    "signing": {
+      "public_key_hex": "9908cf3dc447a5abfedafc0a7bf1844ceadb0f6bf4f3970544eca83c4aff0bfb"
+    }
+  },
+  "2": {
+    "encryption": {
+      "public_key_hex": "b61eaea6fff8db9fa326a64e429c2485c31bdf116e477e47f06c026d04bc202b"
+    },
+    "signing": {
+      "public_key_hex": "325dbd27e323b0e0e6ef6e98c56b069b66aadfae33a504f604e9936e8923b2ae"
+    }
+  },
+  "3": {
+    "encryption": {
+      "public_key_hex": "856a312fccf93b5f98a662d263cbadb40a9f56cc22b441df121197d354405e7f"
+    },
+    "signing": {
+      "public_key_hex": "12d07fef3f8643bccad8a84ab84e6240c08c71b1ac763643d76d345d11f4fd6d"
+    }
+  }
+}

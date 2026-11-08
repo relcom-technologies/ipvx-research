@@ -1,0 +1,781 @@
+[
+  {
+    "namespace_inode": 4026532294,
+    "node": "capture-L1",
+    "packet_sockets": [
+      "51208"
+    ],
+    "pid": 17428,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60001
+  },
+  {
+    "namespace_inode": 4026532406,
+    "node": "capture-L2",
+    "packet_sockets": [
+      "50480"
+    ],
+    "pid": 17429,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60003
+  },
+  {
+    "namespace_inode": 4026532406,
+    "node": "B",
+    "packet_sockets": [
+      "50527"
+    ],
+    "pid": 17448,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60003
+  },
+  {
+    "namespace_inode": 4026532294,
+    "node": "A",
+    "packet_sockets": [
+      "50542"
+    ],
+    "pid": 17446,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60001
+  },
+  {
+    "namespace_inode": 4026532351,
+    "node": "R",
+    "packet_sockets": [
+      "51284",
+      "51286"
+    ],
+    "pid": 17447,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60002
+  },
+  {
+    "namespace_inode": 4026532294,
+    "node": "A",
+    "packet_sockets": [
+      "50598"
+    ],
+    "pid": 17457,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60001
+  },
+  {
+    "namespace_inode": 4026532351,
+    "node": "R",
+    "packet_sockets": [
+      "51373",
+      "51375"
+    ],
+    "pid": 17458,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60002
+  },
+  {
+    "namespace_inode": 4026532406,
+    "node": "B",
+    "packet_sockets": [
+      "50603"
+    ],
+    "pid": 17459,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60003
+  },
+  {
+    "namespace_inode": 4026532406,
+    "node": "B",
+    "packet_sockets": [
+      "50629"
+    ],
+    "pid": 17462,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60003
+  },
+  {
+    "namespace_inode": 4026532294,
+    "node": "A",
+    "packet_sockets": [
+      "51404"
+    ],
+    "pid": 17460,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60001
+  },
+  {
+    "namespace_inode": 4026532351,
+    "node": "R",
+    "packet_sockets": [
+      "51409",
+      "51411"
+    ],
+    "pid": 17461,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60002
+  },
+  {
+    "namespace_inode": 4026532294,
+    "node": "A",
+    "packet_sockets": [
+      "50661"
+    ],
+    "pid": 17463,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60001
+  },
+  {
+    "namespace_inode": 4026532351,
+    "node": "R",
+    "packet_sockets": [
+      "51446",
+      "51457"
+    ],
+    "pid": 17464,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60002
+  },
+  {
+    "namespace_inode": 4026532406,
+    "node": "B",
+    "packet_sockets": [
+      "50666"
+    ],
+    "pid": 17465,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60003
+  },
+  {
+    "namespace_inode": 4026532294,
+    "node": "A",
+    "packet_sockets": [
+      "51485"
+    ],
+    "pid": 17469,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60001
+  },
+  {
+    "namespace_inode": 4026532406,
+    "node": "B",
+    "packet_sockets": [
+      "50723"
+    ],
+    "pid": 17471,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60003
+  },
+  {
+    "namespace_inode": 4026532351,
+    "node": "R",
+    "packet_sockets": [
+      "51490",
+      "51492"
+    ],
+    "pid": 17470,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60002
+  },
+  {
+    "namespace_inode": 4026532294,
+    "node": "A",
+    "packet_sockets": [
+      "51513"
+    ],
+    "pid": 17472,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60001
+  },
+  {
+    "namespace_inode": 4026532406,
+    "node": "B",
+    "packet_sockets": [
+      "50768"
+    ],
+    "pid": 17474,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60003
+  },
+  {
+    "namespace_inode": 4026532351,
+    "node": "R",
+    "packet_sockets": [
+      "51518",
+      "51520"
+    ],
+    "pid": 17473,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60002
+  },
+  {
+    "namespace_inode": 4026532294,
+    "node": "A",
+    "packet_sockets": [
+      "50789"
+    ],
+    "pid": 17475,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60001
+  },
+  {
+    "namespace_inode": 4026532406,
+    "node": "B",
+    "packet_sockets": [
+      "50794"
+    ],
+    "pid": 17477,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60003
+  },
+  {
+    "namespace_inode": 4026532351,
+    "node": "R",
+    "packet_sockets": [
+      "51566",
+      "51568"
+    ],
+    "pid": 17476,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60002
+  },
+  {
+    "namespace_inode": 4026532294,
+    "node": "A",
+    "packet_sockets": [
+      "51587"
+    ],
+    "pid": 17478,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60001
+  },
+  {
+    "namespace_inode": 4026532406,
+    "node": "B",
+    "packet_sockets": [
+      "51592"
+    ],
+    "pid": 17480,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60003
+  },
+  {
+    "namespace_inode": 4026532351,
+    "node": "R",
+    "packet_sockets": [
+      "50841",
+      "50843"
+    ],
+    "pid": 17479,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60002
+  },
+  {
+    "namespace_inode": 4026532294,
+    "node": "A",
+    "packet_sockets": [
+      "51605"
+    ],
+    "pid": 17481,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60001
+  },
+  {
+    "namespace_inode": 4026532351,
+    "node": "R",
+    "packet_sockets": [
+      "50886",
+      "50888"
+    ],
+    "pid": 17482,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60002
+  },
+  {
+    "namespace_inode": 4026532406,
+    "node": "B",
+    "packet_sockets": [
+      "50893"
+    ],
+    "pid": 17483,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60003
+  },
+  {
+    "namespace_inode": 4026532294,
+    "node": "A",
+    "packet_sockets": [
+      "50913"
+    ],
+    "pid": 17484,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60001
+  },
+  {
+    "namespace_inode": 4026532406,
+    "node": "B",
+    "packet_sockets": [
+      "50918"
+    ],
+    "pid": 17486,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60003
+  },
+  {
+    "namespace_inode": 4026532351,
+    "node": "R",
+    "packet_sockets": [
+      "51660",
+      "51662"
+    ],
+    "pid": 17485,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60002
+  },
+  {
+    "namespace_inode": 4026532294,
+    "node": "A",
+    "packet_sockets": [
+      "50930"
+    ],
+    "pid": 17487,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60001
+  },
+  {
+    "namespace_inode": 4026532406,
+    "node": "B",
+    "packet_sockets": [
+      "50935"
+    ],
+    "pid": 17489,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60003
+  },
+  {
+    "namespace_inode": 4026532351,
+    "node": "R",
+    "packet_sockets": [
+      "51717",
+      "51719"
+    ],
+    "pid": 17488,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60002
+  },
+  {
+    "namespace_inode": 4026532294,
+    "node": "A",
+    "packet_sockets": [
+      "51740"
+    ],
+    "pid": 17490,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60001
+  },
+  {
+    "namespace_inode": 4026532406,
+    "node": "B",
+    "packet_sockets": [
+      "51745"
+    ],
+    "pid": 17492,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60003
+  },
+  {
+    "namespace_inode": 4026532351,
+    "node": "R",
+    "packet_sockets": [
+      "50981",
+      "50983"
+    ],
+    "pid": 17491,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60002
+  },
+  {
+    "namespace_inode": 4026532406,
+    "node": "B",
+    "packet_sockets": [
+      "51765"
+    ],
+    "pid": 17493,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60003
+  },
+  {
+    "namespace_inode": 4026532294,
+    "node": "A",
+    "packet_sockets": [
+      "51776"
+    ],
+    "pid": 17494,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60001
+  },
+  {
+    "namespace_inode": 4026532351,
+    "node": "R",
+    "packet_sockets": [
+      "51041",
+      "51043"
+    ],
+    "pid": 17495,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60002
+  },
+  {
+    "namespace_inode": 4026532406,
+    "node": "B",
+    "packet_sockets": [
+      "51781"
+    ],
+    "pid": 17496,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60003
+  },
+  {
+    "namespace_inode": 4026532294,
+    "node": "A",
+    "packet_sockets": [
+      "51075"
+    ],
+    "pid": 17497,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60001
+  },
+  {
+    "namespace_inode": 4026532406,
+    "node": "B",
+    "packet_sockets": [
+      "51080"
+    ],
+    "pid": 17499,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60003
+  },
+  {
+    "namespace_inode": 4026532351,
+    "node": "R",
+    "packet_sockets": [
+      "51817",
+      "51819"
+    ],
+    "pid": 17498,
+    "status": {
+      "CapAmb": "0000000000000000",
+      "CapBnd": "0000000000000000",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "NoNewPrivs": "1",
+      "Seccomp": "2"
+    },
+    "uid": 60002
+  }
+]
