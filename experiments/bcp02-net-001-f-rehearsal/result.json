@@ -59,7 +59,6 @@
     "check_outcome": "NOT_RUN"
   },
   "host": {
-    "name": "proj-ipvx-bcp-stand",
     "declared_in": "relcom-technologies/relcom-infra#865",
     "machine": "x86_64",
     "kernel": "6.12.105+deb13-cloud-amd64",

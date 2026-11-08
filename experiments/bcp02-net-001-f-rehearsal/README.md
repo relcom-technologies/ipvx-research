@@ -29,7 +29,7 @@
 
 ## Стенд
 
-`proj-ipvx-bcp-stand`, объявлен в relcom-technologies/relcom-infra#865:
+Отдельная ВМ стенда BCP, объявлена в relcom-technologies/relcom-infra#865:
 
 - x86_64, ядро `6.12.105+deb13-cloud-amd64`, Debian 13;
 - 2 vCPU, 1974 МиБ памяти;
