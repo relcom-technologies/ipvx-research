@@ -1,0 +1,112 @@
+{
+  "bcp_frames": 0,
+  "dataset_used": false,
+  "interpretation": "Kernel plumbing with synthetic frames. Satisfies no launch gate and is no BCP evidence.",
+  "kernel": "6.12.105+deb13-cloud-amd64",
+  "kind": "kernel-rehearsal",
+  "links": {
+    "L1": {
+      "drops": 0,
+      "frames": 4
+    },
+    "L2": {
+      "drops": 0,
+      "frames": 4
+    }
+  },
+  "machine": "x86_64",
+  "network_measurement": false,
+  "outcome": "REHEARSAL_PASS",
+  "permit_used": false,
+  "processes": [
+    {
+      "namespace_inode": 4026532292,
+      "node": "capture-L1",
+      "packet_sockets": [
+        "32472"
+      ],
+      "pid": 15390,
+      "status": {
+        "CapAmb": "0000000000000000",
+        "CapBnd": "0000000000000000",
+        "CapEff": "0000000000000000",
+        "CapPrm": "0000000000000000",
+        "NoNewPrivs": "1",
+        "Seccomp": "2"
+      },
+      "uid": 60001
+    },
+    {
+      "namespace_inode": 4026532405,
+      "node": "capture-L2",
+      "packet_sockets": [
+        "33387"
+      ],
+      "pid": 15391,
+      "status": {
+        "CapAmb": "0000000000000000",
+        "CapBnd": "0000000000000000",
+        "CapEff": "0000000000000000",
+        "CapPrm": "0000000000000000",
+        "NoNewPrivs": "1",
+        "Seccomp": "2"
+      },
+      "uid": 60003
+    },
+    {
+      "namespace_inode": 4026532292,
+      "node": "A",
+      "packet_sockets": [
+        "33467"
+      ],
+      "pid": 15408,
+      "status": {
+        "CapAmb": "0000000000000000",
+        "CapBnd": "0000000000000000",
+        "CapEff": "0000000000000000",
+        "CapPrm": "0000000000000000",
+        "NoNewPrivs": "1",
+        "Seccomp": "2"
+      },
+      "uid": 60001
+    },
+    {
+      "namespace_inode": 4026532405,
+      "node": "B",
+      "packet_sockets": [
+        "32517"
+      ],
+      "pid": 15410,
+      "status": {
+        "CapAmb": "0000000000000000",
+        "CapBnd": "0000000000000000",
+        "CapEff": "0000000000000000",
+        "CapPrm": "0000000000000000",
+        "NoNewPrivs": "1",
+        "Seccomp": "2"
+      },
+      "uid": 60003
+    },
+    {
+      "namespace_inode": 4026532350,
+      "node": "R",
+      "packet_sockets": [
+        "33471",
+        "33473"
+      ],
+      "pid": 15409,
+      "status": {
+        "CapAmb": "0000000000000000",
+        "CapBnd": "0000000000000000",
+        "CapEff": "0000000000000000",
+        "CapPrm": "0000000000000000",
+        "NoNewPrivs": "1",
+        "Seccomp": "2"
+      },
+      "uid": 60002
+    }
+  ],
+  "ready_to_launch": false,
+  "schema_version": 1,
+  "transactions": 0
+}
