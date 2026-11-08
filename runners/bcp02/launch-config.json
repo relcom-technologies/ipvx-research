@@ -1,18 +1,30 @@
 {
   "schema_version": 1,
   "state_mode": "fixture-state-ethernet",
-  "status": "implementation_for_review_not_authorized",
+  "status": "host_pinned_owner_key_pending",
   "owner_public_key": null,
   "review_evidence": null,
-  "host_image_sha256": null,
-  "kernel_config_sha256": null,
-  "binary_sha256": {"python": null, "ip": null, "node": null, "libseccomp": null},
-  "allocated_host": null,
+  "host_image_sha256": "4d0a7ed6c7c5e23cebd393a6c8309b221f143b05a2e616687911ed2b65023799",
+  "kernel_config_sha256": "76caed2046528cf947e59d07024b9c25e4e741e67dfad6ed749a9b617e42bdb7",
+  "binary_sha256": {
+    "python": "889c603f0d17cb54060951bcf4c4f9b8c9ebd9e52b392c70209bbb9755d797d9",
+    "ip": "024784c6d16b183dc7c97d93a943a9270976f167f95f771e14d72442dc657f0c",
+    "node": "904a6d3484241d466989f9df9ba3aab822b1496191bdb28230eb491a55c32a52",
+    "libseccomp": "c851a2378b4ef3a42ada5f8ff1604ad38f6bbcafa2aeea3f6680160d628c2f27"
+  },
+  "allocated_host": {
+    "machine_id_sha256": "4d7c9daf256d52509c92f24cec7b215f627fd2ddc703d09fe7fa6ed848e0d6c1",
+    "declared_in": "https://github.com/relcom-technologies/relcom-infra/pull/865",
+    "kernel_release": "6.12.105+deb13-cloud-amd64",
+    "vcpu": 2,
+    "memory_kib": 2021512
+  },
   "accepted_window": null,
   "run_dataset": null,
   "owner_scope_ack": null,
   "owner_launch_decision": null,
-  "resources_allocated": false,
+  "resources_allocated": true,
   "experiment_started": false,
-  "network_measurement": null
+  "network_measurement": null,
+  "host_image_method": "SHA-256 of canonical JSON {os_release, kernel_release, machine, sorted dpkg Package=Version list, node: v24.22.2 official linux-x64 tarball}; operator-attested, recorded 2026-11-08"
 }

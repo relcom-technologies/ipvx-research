@@ -1037,13 +1037,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "4cd949a344678972",
-      "source": "204 событий по HX-0204; авторы, основания, проверки и ограничения.",
+      "id": "89dbc24678262c54",
+      "source": "205 событий по HX-0205; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "1df7794da482e3d5",
-      "source": "409.4 КиБ · 12 файлов",
+      "id": "cece114fb94ea68d",
+      "source": "411.7 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4987,14 +4987,99 @@
       "context": "history.html:text:main/section/p"
     },
     {
-      "id": "946554ad7263d02f",
-      "source": "HX-0204 · Закрепление исходников раннера BCP сужено до файлов прогона",
+      "id": "b2e48de9ac46d88a",
+      "source": "HX-0205 · Подготовлен запуск NET-001-F: закрепления стенда и инструменты владельца",
       "context": "history.html:text:section/details/summary"
     },
     {
       "id": "e078c61c3e49f21a",
       "source": "Реализовано",
       "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "615cfc59d373106b",
+      "source": "Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд) · 2026-11-08T16:00:00+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0bba976d53dd19c7",
+      "source": "По поручению владельца («Да, готовим») стенд BCP подготовлен к одному разрешённому прогону. На нём установлен Node 24, проверенный по контрольным суммам, разложены зависимости раннера, отключены автообновления пакетов. Хеши machine-id, конфига ядра, python, ip, node и libseccomp, а также отпечаток всего набора пакетов записаны в launch-config.json. Пробная подготовка набора данных на стенде заняла 15 секунд и дала срок жизни 1775 секунд; пробный набор удалён. Добавлены инструмент владельца для ключа и подписи разрешения на своём компьютере, обёртка запуска на стенде, которая проверяет разрешение до отключения сети и сама её восстанавливает, и порядок запуска в LAUNCH.md. Исправлен разрыв: раньше прогон вызывал git уже после траты разрешения, а на стенде git нет. Ключ владельца, подтверждение области и сам прогон ещё впереди.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "89f757e0ccc9ead6",
+      "source": "Набор данных живёт меньше 30 минут, а прогон требует отключённой сети стенда, к которому нет консоли. Поэтому всё, что не зависит от владельца, сделано заранее и проверено на самом стенде, а подготовка, подпись и запуск сведены к трём командам. Разрешение проверяется до любого изменения сети, а восстановление сети не зависит от того, завершится ли прогон.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "11fe384991771319",
+      "source": "runners/bcp02/LAUNCH.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "bc89f58361b144b5",
+      "source": "runners/bcp02/owner.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "4f31b1ac670c90a4",
+      "source": "runners/bcp02/stand_launch.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "0e393fbc4b380fea",
+      "source": "runners/bcp02/launch-config.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "24c6d1b3cf1f24c5",
+      "source": "runners/bcp02/tests/test_launch_tools.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "f33503eeb7663633",
+      "source": "runners/bcp02/admission.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "b2b1c0999fd48f4b",
+      "source": "Сетевой опыт NET-001-F не запускался; ключ владельца, подтверждение области и разрешение на прогон ещё не выданы.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "6c83c75ec577e2ab",
+      "source": "Отпечаток образа хоста удостоверяет оператор: это хеш списка пакетов и версий, а не образа диска.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "89aa6020aaba2bac",
+      "source": "Если сеть стенда не вернётся сама, понадобится перезагрузка ВМ оператором инфраструктуры.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "eef48afb7e7c7a81",
+      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "946554ad7263d02f",
+      "source": "HX-0204 · Закрепление исходников раннера BCP сужено до файлов прогона",
+      "context": "history.html:text:section/details/summary"
     },
     {
       "id": "d67bd30b75a716dc",
@@ -5007,19 +5092,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "eb06fd6d92a0a66e",
       "source": "Правки сайта и форума блокировали проверку раннера и сверки сохранности на main, хотя прогон эти файлы не читает, а workflow раннера на них не запускался и разрыв никто не видел. Сужение убирает ложную зависимость и делает любую правку закреплённого файла видимой в CI раннера; перезаморозка всего набора повторила бы ту же проблему при следующей правке сайта.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "91945fc3d2085d02",
@@ -5052,11 +5127,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "b3073b1287613310",
       "source": "Новая область закрепления ещё не рассмотрена отдельно: перед прогоном владельцу нужно подтвердить её хеш.",
       "context": "history.html:text:details/ul/li"
@@ -5070,11 +5140,6 @@
       "id": "6e8b54d002c5739b",
       "source": "Репетиция на стенде записана на ревизии 12705b7, до сужения; с тех пор в коде раннера добавилась только функция проверки области в common.py.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "eef48afb7e7c7a81",
-      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "40cc41877d029831",
@@ -5852,11 +5917,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "f33503eeb7663633",
-      "source": "runners/bcp02/admission.py",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
       "id": "318b4de7e4a7a84b",
       "source": "runners/bcp02/controller.py",
       "context": "history.html:text:ul/li/a"
@@ -5944,11 +6004,6 @@
     {
       "id": "a9b5d25a35282b59",
       "source": "preparations/bcp02-net001-stand/preflight.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "0e393fbc4b380fea",
-      "source": "runners/bcp02/launch-config.json",
       "context": "history.html:text:ul/li/a"
     },
     {
