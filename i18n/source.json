@@ -1037,13 +1037,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "87a2dc087118d55c",
-      "source": "206 событий по HX-0206; авторы, основания, проверки и ограничения.",
+      "id": "700e5af0670edf7a",
+      "source": "207 событий по HX-0207; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "12a5e39d183be91d",
-      "source": "413.4 КиБ · 12 файлов",
+      "id": "ffa56bfa0be7cb92",
+      "source": "415.0 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4987,8 +4987,8 @@
       "context": "history.html:text:main/section/p"
     },
     {
-      "id": "96f71de128c1e29e",
-      "source": "HX-0206 · Ключ владельца внесён, закрепления раннера подтверждены",
+      "id": "65e479491fbb0b62",
+      "source": "HX-0207 · Ключ владельца заменён; первый сеанс запуска закончился без подписи",
       "context": "history.html:text:section/details/summary"
     },
     {
@@ -4997,13 +4997,13 @@
       "context": "history.html:text:details/summary/span"
     },
     {
-      "id": "10b130087482bdd2",
-      "source": "Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд) · 2026-11-08T18:00:00+00:00",
+      "id": "d05aa9fe9b19e2de",
+      "source": "Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд) · 2026-11-08T20:00:00+00:00",
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "a23a2d8b050df9a0",
-      "source": "Владелец создал ключ Ed25519 на своём компьютере; открытый ключ внесён в launch-config.json, закрытый ключ и пароль остались у владельца. Подтверждение области не может назвать полный хеш области: оно лежит в launch-config.json, а этот файл сам закреплён. Поэтому владелец подтвердил отпечаток всех закреплений раннера, кроме этого файла, — reviewed_pins_sha256 90cedbff…68b0 — ответом «Подтверждаю». prepare отказывает, если отпечаток изменился, а тест на main не даёт изменить закреплённый файл без нового подтверждения. Тестов раннера стало 93.",
+      "id": "07e34940129e534f",
+      "source": "В сеансе запуска 2026-11-08 стенд подготовил набор данных для bcp-net001-run-0001 и запрос на разрешение с окном 19:40–20:08 UTC. Подписать запрос не удалось: пароль первого ключа владельца утерян, без него ключ не может подписывать. Разрешение не выдано и не израсходовано, сеть стенда не отключалась, прогон не начинался; набор данных истёк без использования и оставлен на стенде как свидетельство. Владелец создал второй ключ, пароль которого хранится в Связке ключей macOS. Его открытый ключ e65f1813…1000 заменил первый в launch-config.json, первый записан там как заменённый. Отпечаток закреплений раннера 90cedbff…68b0 не изменился, поэтому подтверждение владельца остаётся в силе.",
       "context": "history.html:text:section/details/p"
     },
     {
@@ -5012,8 +5012,8 @@
       "context": "history.html:text:section/details/h3"
     },
     {
-      "id": "e85e934ff57e3001",
-      "source": "Без ключа и подтверждения prepare не начинает подготовку, а подготовленный набор живёт меньше 30 минут. Эти шаги сделаны заранее и отдельным изменением, чтобы сеанс запуска свёлся к подготовке, подписи и старту. Отпечаток без launch-config.json делает подтверждение проверяемым и не круговым: любой может пересчитать его командой stand_launch reviewed-pins.",
+      "id": "964abc6adb7c12c1",
+      "source": "Ключ без пароля бесполезен, восстановить пароль нельзя. Первый ключ ни разу ничего не подписал, поэтому его замена ничего не отзывает. Замена записана открыто, чтобы было видно, каким ключом подписан будущий прогон и почему первый сеанс закончился без него.",
       "context": "history.html:text:section/details/p"
     },
     {
@@ -5027,13 +5027,8 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "4f31b1ac670c90a4",
-      "source": "runners/bcp02/stand_launch.py",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "24c6d1b3cf1f24c5",
-      "source": "runners/bcp02/tests/test_launch_tools.py",
+      "id": "7135746f30a4a363",
+      "source": "data/bcp-status.json",
       "context": "history.html:text:ul/li/a"
     },
     {
@@ -5042,14 +5037,59 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "7135746f30a4a363",
-      "source": "data/bcp-status.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
       "id": "02b7a03ed5618d42",
       "source": "Ограничения",
       "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "ead6a2e4ecf7e57f",
+      "source": "Сетевой опыт NET-001-F по-прежнему не запускался.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "df1ab300c9e47584",
+      "source": "Набор данных bcp-net001-run-0001 истёк без использования; следующий прогон получит новый идентификатор.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "28280ed907afc84b",
+      "source": "Хранение пароля в Связке ключей защищает ключ не сильнее, чем учётная запись macOS владельца.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "eef48afb7e7c7a81",
+      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "96f71de128c1e29e",
+      "source": "HX-0206 · Ключ владельца внесён, закрепления раннера подтверждены",
+      "context": "history.html:text:section/details/summary"
+    },
+    {
+      "id": "10b130087482bdd2",
+      "source": "Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд) · 2026-11-08T18:00:00+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "a23a2d8b050df9a0",
+      "source": "Владелец создал ключ Ed25519 на своём компьютере; открытый ключ внесён в launch-config.json, закрытый ключ и пароль остались у владельца. Подтверждение области не может назвать полный хеш области: оно лежит в launch-config.json, а этот файл сам закреплён. Поэтому владелец подтвердил отпечаток всех закреплений раннера, кроме этого файла, — reviewed_pins_sha256 90cedbff…68b0 — ответом «Подтверждаю». prepare отказывает, если отпечаток изменился, а тест на main не даёт изменить закреплённый файл без нового подтверждения. Тестов раннера стало 93.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "e85e934ff57e3001",
+      "source": "Без ключа и подтверждения prepare не начинает подготовку, а подготовленный набор живёт меньше 30 минут. Эти шаги сделаны заранее и отдельным изменением, чтобы сеанс запуска свёлся к подготовке, подписи и старту. Отпечаток без launch-config.json делает подтверждение проверяемым и не круговым: любой может пересчитать его командой stand_launch reviewed-pins.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "4f31b1ac670c90a4",
+      "source": "runners/bcp02/stand_launch.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "24c6d1b3cf1f24c5",
+      "source": "runners/bcp02/tests/test_launch_tools.py",
+      "context": "history.html:text:ul/li/a"
     },
     {
       "id": "de3d8e57e2181f0b",
@@ -5065,11 +5105,6 @@
       "id": "729561c3186f73b0",
       "source": "Правило обновления снимка в NET-001-L остаётся открытым условием.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "eef48afb7e7c7a81",
-      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "b2e48de9ac46d88a",

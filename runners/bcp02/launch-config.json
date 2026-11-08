@@ -2,7 +2,12 @@
   "schema_version": 1,
   "state_mode": "fixture-state-ethernet",
   "status": "owner_key_pinned_launch_decision_pending",
-  "owner_public_key": "9777463460834351a9d6cb5e65e29894a9c5968627d118aa2023b0f4e3e07e3d",
+  "owner_public_key": "e65f181321b000477a06f97eaec56db8600d080d4504d4133518781c53ab1000",
+  "owner_key_replaced": {
+    "previous_key": "9777463460834351a9d6cb5e65e29894a9c5968627d118aa2023b0f4e3e07e3d",
+    "reason": "passphrase of the first key is lost, so the key cannot sign; it never signed a permit",
+    "replaced_on": "2026-11-08"
+  },
   "review_evidence": "https://github.com/relcom-technologies/ipvx-research/pull/85",
   "host_image_sha256": "4d0a7ed6c7c5e23cebd393a6c8309b221f143b05a2e616687911ed2b65023799",
   "kernel_config_sha256": "76caed2046528cf947e59d07024b9c25e4e741e67dfad6ed749a9b617e42bdb7",
