@@ -1,0 +1,19 @@
+{
+  "case": "N03",
+  "dataset": "/var/lib/ipvx-bcp/runs/bcp-net001-run-0003/dataset/dataset.json",
+  "dataset_sha256": "6d280035a65b38ee9c9fc44ab310c431dc2cf0cc51504f27ae4dd4e87dfac74f",
+  "defer_handshake": false,
+  "link": null,
+  "monotonic": 94893.94484644,
+  "namespace_inode": 4026532351,
+  "node": "R",
+  "ports": [
+    "r0",
+    "r1"
+  ],
+  "role": "node",
+  "run_id": "bcp-net001-run-0003",
+  "uid": 60002,
+  "variant": "",
+  "wall": 1794169733.7643626
+}

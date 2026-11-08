@@ -1,0 +1,24 @@
+{
+  "run_id": "bcp-net001-run-0003",
+  "started_at": 1794169733.2742846,
+  "network_state": {
+    "links": [
+      "eth0"
+    ],
+    "default_devices": [
+      "eth0"
+    ]
+  },
+  "safety_timer": "ipvx-bcp-restore-bcp-net001-run-0003",
+  "network_down_at": 1794169733.3671699,
+  "cli_exit": 0,
+  "network_after": {
+    "links": [
+      "eth0"
+    ],
+    "default_devices": [
+      "eth0"
+    ]
+  },
+  "finished_at": 1794169846.9994123
+}

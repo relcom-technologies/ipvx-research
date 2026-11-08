@@ -1037,13 +1037,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "700e5af0670edf7a",
-      "source": "207 событий по HX-0207; авторы, основания, проверки и ограничения.",
+      "id": "6a04e5bed0ed8c25",
+      "source": "208 событий по HX-0208; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "ffa56bfa0be7cb92",
-      "source": "415.0 КиБ · 12 файлов",
+      "id": "7e8641f8a1f9f17f",
+      "source": "417.4 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -1972,13 +1972,13 @@
       "context": "index.html:text:div/a/strong"
     },
     {
-      "id": "84308d413588e2ef",
-      "source": "NET-001 · узлы берут адреса и права из реестра и обмениваются кадрами Ethernet без IP",
+      "id": "c30f57470b9081c5",
+      "source": "NET-001-F · на тестовом состоянии реестра: 14 из 14 проверок, 8 ноября 2026; на живом состоянии (NET-001-L) — впереди",
       "context": "index.html:text:div/a/span"
     },
     {
-      "id": "280030a83b576cf3",
-      "source": "Ждёт допуска",
+      "id": "e74a3268792c0d8a",
+      "source": "Тестовое состояние: PASS",
       "context": "index.html:text:div/a/span"
     },
     {
@@ -4987,14 +4987,99 @@
       "context": "history.html:text:main/section/p"
     },
     {
-      "id": "65e479491fbb0b62",
-      "source": "HX-0207 · Ключ владельца заменён; первый сеанс запуска закончился без подписи",
+      "id": "4e6afa43d0c01775",
+      "source": "HX-0208 · NET-001-F прошёл: 14 из 14 вариантов на тестовом состоянии реестра",
       "context": "history.html:text:section/details/summary"
     },
     {
       "id": "e078c61c3e49f21a",
       "source": "Реализовано",
       "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "10516f203b3bfb1b",
+      "source": "Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд) · 2026-11-08T20:30:46+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "f8cdabc8c2bbac97",
+      "source": "Прогон bcp-net001-run-0003 опыта IPVX-BCP02-NET-001-F прошёл на отдельной ВМ стенда BCP по разрешению, которое владелец подписал своим ключом на своём компьютере. Три узла A—R—B в пространствах имён одной ВМ обменивались подписанными и зашифрованными кадрами BCP по двум veth-линкам без IP, при синтетическом состоянии реестра. Хост был без сети 113,6 секунды. Все 14 вариантов выполнили свои критерии: разрешённая доставка дошла полностью, запрещённое — отозванные ключ и политики, остановленный посредник, повтор, испорченная подпись, устаревшее состояние — не прошло. Независимый верификатор подтвердил PASS, обе контрольные суммы раннера сходятся. Первая попытка этого же прогона остановилась до траты разрешения из-за неверных прав каталога вывода, заданных оператором; права исправлены, разрешение использовано один раз.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "8b35e331890bf251",
+      "source": "Протокол требовал проверить доставку и отказы на настоящем ядре Linux до того, как подключать живое состояние реестра. Результат публикуется как есть, вместе с неудачной попыткой, сеансами без подписи и ограничениями. Временные ключи узлов не публикуются; раннер не включает их в контрольные суммы, поэтому опубликованные файлы проверяются полностью.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "8e9fcab5c5086e23",
+      "source": "experiments/bcp02-net-001-f/README.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "8fce287df6d909f8",
+      "source": "experiments/bcp02-net-001-f/result.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "bf9b69835196f1fb",
+      "source": "experiments/bcp02-net-001-f/raw/verify.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "6a633cbdefcd2d76",
+      "source": "experiments/bcp02-net-001-f/SHA256SUMS",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "7135746f30a4a363",
+      "source": "data/bcp-status.json",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "8042aa0e22808d23",
+      "source": "Состояние реестра синтетическое, не живой Sepolia: о финальности цепочки результат ничего не говорит; NET-001-L не запускался.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "0d015d2393aa3264",
+      "source": "Все узлы на одной ВМ у одного оператора, линки — veth-пары, а не физический Ethernet.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "5145de2d56507ca5",
+      "source": "Каждый захват работает под UID своего узла — известный пробел раннера.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "279b99e07bcd129f",
+      "source": "Преимущество над IP не измерялось.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "eef48afb7e7c7a81",
+      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "65e479491fbb0b62",
+      "source": "HX-0207 · Ключ владельца заменён; первый сеанс запуска закончился без подписи",
+      "context": "history.html:text:section/details/summary"
     },
     {
       "id": "d05aa9fe9b19e2de",
@@ -5007,19 +5092,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "964abc6adb7c12c1",
       "source": "Ключ без пароля бесполезен, восстановить пароль нельзя. Первый ключ ни разу ничего не подписал, поэтому его замена ничего не отзывает. Замена записана открыто, чтобы было видно, каким ключом подписан будущий прогон и почему первый сеанс закончился без него.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "0e393fbc4b380fea",
@@ -5027,19 +5102,9 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "7135746f30a4a363",
-      "source": "data/bcp-status.json",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
       "id": "11fe384991771319",
       "source": "runners/bcp02/LAUNCH.md",
       "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "ead6a2e4ecf7e57f",
@@ -5055,11 +5120,6 @@
       "id": "28280ed907afc84b",
       "source": "Хранение пароля в Связке ключей защищает ключ не сильнее, чем учётная запись macOS владельца.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "eef48afb7e7c7a81",
-      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "96f71de128c1e29e",

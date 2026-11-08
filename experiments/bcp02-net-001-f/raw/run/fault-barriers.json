@@ -1,0 +1,464 @@
+[
+  {
+    "case_id": "P01",
+    "monotonic": 94895.191847064,
+    "node": "A",
+    "stage": "START"
+  },
+  {
+    "case_id": "P01",
+    "monotonic": 94895.587928034,
+    "node": "R",
+    "stage": "START"
+  },
+  {
+    "case_id": "P01",
+    "monotonic": 94895.596689174,
+    "node": "B",
+    "stage": "START"
+  },
+  {
+    "case_id": "P01",
+    "monotonic": 94896.295765238,
+    "node": "A",
+    "stage": "PROBE"
+  },
+  {
+    "case_id": "P02",
+    "monotonic": 94907.533414632,
+    "node": "A",
+    "stage": "START"
+  },
+  {
+    "case_id": "P02",
+    "monotonic": 94907.778708067,
+    "node": "R",
+    "stage": "START"
+  },
+  {
+    "case_id": "P02",
+    "monotonic": 94907.912731634,
+    "node": "B",
+    "stage": "START"
+  },
+  {
+    "case_id": "P02",
+    "monotonic": 94908.50514691,
+    "node": "A",
+    "stage": "PROBE"
+  },
+  {
+    "case_id": "N01",
+    "monotonic": 94910.094894703,
+    "node": "A",
+    "stage": "START"
+  },
+  {
+    "case_id": "N01",
+    "monotonic": 94910.404096146,
+    "node": "R",
+    "stage": "START"
+  },
+  {
+    "case_id": "N01",
+    "monotonic": 94910.475643655,
+    "node": "B",
+    "stage": "START"
+  },
+  {
+    "case_id": "N01",
+    "monotonic": 94911.11262628,
+    "node": "A",
+    "stage": "PROBE"
+  },
+  {
+    "case_id": "N02",
+    "monotonic": 94912.080886578,
+    "node": "A",
+    "stage": "START"
+  },
+  {
+    "case_id": "N02",
+    "monotonic": 94912.373824571,
+    "node": "R",
+    "stage": "START"
+  },
+  {
+    "case_id": "N02",
+    "monotonic": 94912.500699658,
+    "node": "B",
+    "stage": "START"
+  },
+  {
+    "case_id": "N02",
+    "monotonic": 94913.174595293,
+    "node": "A",
+    "stage": "PROBE"
+  },
+  {
+    "case_id": "N03",
+    "monotonic": 94965.062655936,
+    "node": "A",
+    "stage": "START"
+  },
+  {
+    "case_id": "N03",
+    "monotonic": 94965.268398671,
+    "node": "R",
+    "stage": "START"
+  },
+  {
+    "case_id": "N03",
+    "monotonic": 94965.482921226,
+    "node": "B",
+    "stage": "START"
+  },
+  {
+    "case_id": "N03",
+    "monotonic": 94966.016581664,
+    "node": "A",
+    "stage": "PROBE"
+  },
+  {
+    "case_id": "N04",
+    "monotonic": 94967.395971352,
+    "node": "A",
+    "stage": "START"
+  },
+  {
+    "case_id": "N04",
+    "monotonic": 94967.697093586,
+    "node": "R",
+    "stage": "START"
+  },
+  {
+    "case_id": "N04",
+    "monotonic": 94967.800297163,
+    "node": "B",
+    "stage": "START"
+  },
+  {
+    "case_id": "N04",
+    "monotonic": 94968.337632001,
+    "node": "A",
+    "stage": "PROBE"
+  },
+  {
+    "case_id": "N05",
+    "monotonic": 94969.745416889,
+    "node": "A",
+    "stage": "START"
+  },
+  {
+    "case_id": "N05",
+    "monotonic": 94969.900075706,
+    "node": "R",
+    "stage": "START"
+  },
+  {
+    "case_id": "N05",
+    "monotonic": 94970.112150201,
+    "node": "B",
+    "stage": "START"
+  },
+  {
+    "case_id": "N05",
+    "monotonic": 94971.00473388,
+    "node": "A",
+    "stage": "PROBE"
+  },
+  {
+    "case_id": "N06",
+    "monotonic": 94972.678436202,
+    "node": "A",
+    "stage": "START"
+  },
+  {
+    "case_id": "N06",
+    "monotonic": 94973.356657638,
+    "node": "R",
+    "stage": "START"
+  },
+  {
+    "case_id": "N06",
+    "monotonic": 94973.365487407,
+    "node": "B",
+    "stage": "START"
+  },
+  {
+    "case_id": "N06",
+    "monotonic": 94973.970348893,
+    "node": "A",
+    "stage": "PREPARE"
+  },
+  {
+    "case_id": "N06",
+    "monotonic": 94974.075273021,
+    "node": "A",
+    "stage": "ROTATE"
+  },
+  {
+    "case_id": "N06",
+    "monotonic": 94974.12224188,
+    "node": "R",
+    "stage": "ROTATE"
+  },
+  {
+    "case_id": "N06",
+    "monotonic": 94974.182471428,
+    "node": "B",
+    "stage": "ROTATE"
+  },
+  {
+    "case_id": "N06",
+    "monotonic": 94974.240311057,
+    "node": "A",
+    "stage": "PROBE"
+  },
+  {
+    "case_id": "N07",
+    "monotonic": 94975.266724214,
+    "node": "A",
+    "stage": "START"
+  },
+  {
+    "case_id": "N07",
+    "monotonic": 94975.622113716,
+    "node": "R",
+    "stage": "START"
+  },
+  {
+    "case_id": "N07",
+    "monotonic": 94975.634726636,
+    "node": "B",
+    "stage": "START"
+  },
+  {
+    "case_id": "N07",
+    "monotonic": 94976.628975002,
+    "node": "A",
+    "stage": "PREPARE"
+  },
+  {
+    "case_id": "N07",
+    "monotonic": 94976.731360719,
+    "node": "A",
+    "stage": "DENY_FORWARD"
+  },
+  {
+    "case_id": "N07",
+    "monotonic": 94976.773400788,
+    "node": "R",
+    "stage": "DENY_FORWARD"
+  },
+  {
+    "case_id": "N07",
+    "monotonic": 94976.817593427,
+    "node": "B",
+    "stage": "DENY_FORWARD"
+  },
+  {
+    "case_id": "N07",
+    "monotonic": 94976.867222726,
+    "node": "A",
+    "stage": "PROBE"
+  },
+  {
+    "case_id": "N07",
+    "monotonic": 94977.811172555,
+    "node": "A",
+    "stage": "START"
+  },
+  {
+    "case_id": "N07",
+    "monotonic": 94977.885575123,
+    "node": "R",
+    "stage": "START"
+  },
+  {
+    "case_id": "N07",
+    "monotonic": 94978.152095007,
+    "node": "B",
+    "stage": "START"
+  },
+  {
+    "case_id": "N07",
+    "monotonic": 94978.815173922,
+    "node": "A",
+    "stage": "PROBE"
+  },
+  {
+    "case_id": "N07",
+    "monotonic": 94979.093793296,
+    "node": "A",
+    "stage": "DENY_REVERSE"
+  },
+  {
+    "case_id": "N07",
+    "monotonic": 94979.154707784,
+    "node": "R",
+    "stage": "DENY_REVERSE"
+  },
+  {
+    "case_id": "N07",
+    "monotonic": 94979.241929572,
+    "node": "B",
+    "stage": "DENY_REVERSE"
+  },
+  {
+    "case_id": "N07",
+    "monotonic": 94979.280890061,
+    "node": "B",
+    "stage": "PROBE"
+  },
+  {
+    "case_id": "N08",
+    "monotonic": 94980.24477864,
+    "node": "A",
+    "stage": "START"
+  },
+  {
+    "case_id": "N08",
+    "monotonic": 94980.675096391,
+    "node": "R",
+    "stage": "START"
+  },
+  {
+    "case_id": "N08",
+    "monotonic": 94980.761101229,
+    "node": "B",
+    "stage": "START"
+  },
+  {
+    "case_id": "N08",
+    "monotonic": 94981.339453935,
+    "node": "A",
+    "stage": "UNAVAILABLE"
+  },
+  {
+    "case_id": "N08",
+    "monotonic": 94981.354047625,
+    "node": "R",
+    "stage": "UNAVAILABLE"
+  },
+  {
+    "case_id": "N08",
+    "monotonic": 94981.367557445,
+    "node": "B",
+    "stage": "UNAVAILABLE"
+  },
+  {
+    "case_id": "N08",
+    "monotonic": 94981.382713924,
+    "node": "A",
+    "stage": "STALE"
+  },
+  {
+    "case_id": "N08",
+    "monotonic": 94981.395055834,
+    "node": "R",
+    "stage": "STALE"
+  },
+  {
+    "case_id": "N08",
+    "monotonic": 94981.411486493,
+    "node": "B",
+    "stage": "STALE"
+  },
+  {
+    "case_id": "N09",
+    "monotonic": 94982.356196902,
+    "node": "A",
+    "stage": "START"
+  },
+  {
+    "case_id": "N09",
+    "monotonic": 94982.634934815,
+    "node": "R",
+    "stage": "START"
+  },
+  {
+    "case_id": "N09",
+    "monotonic": 94982.754858113,
+    "node": "B",
+    "stage": "START"
+  },
+  {
+    "case_id": "N09",
+    "monotonic": 94983.355607779,
+    "node": "A",
+    "stage": "PROBE"
+  },
+  {
+    "case_id": "N09",
+    "monotonic": 94984.17454012,
+    "node": "B",
+    "stage": "START"
+  },
+  {
+    "case_id": "N09",
+    "monotonic": 94984.205619439,
+    "node": "A",
+    "stage": "RETRY"
+  },
+  {
+    "case_id": "N09",
+    "monotonic": 94984.290073057,
+    "node": "B",
+    "stage": "HANDSHAKE"
+  },
+  {
+    "case_id": "N09",
+    "monotonic": 94984.562565691,
+    "node": "A",
+    "stage": "RETRY"
+  },
+  {
+    "case_id": "N10",
+    "monotonic": 94985.96336597,
+    "node": "A",
+    "stage": "START"
+  },
+  {
+    "case_id": "N10",
+    "monotonic": 94986.124639346,
+    "node": "R",
+    "stage": "START"
+  },
+  {
+    "case_id": "N10",
+    "monotonic": 94986.324541821,
+    "node": "B",
+    "stage": "START"
+  },
+  {
+    "case_id": "N10",
+    "monotonic": 94986.879701159,
+    "node": "A",
+    "stage": "PROBE"
+  },
+  {
+    "case_id": "N11",
+    "monotonic": 94988.945041441,
+    "node": "A",
+    "stage": "START"
+  },
+  {
+    "case_id": "N11",
+    "monotonic": 94989.120296557,
+    "node": "R",
+    "stage": "START"
+  },
+  {
+    "case_id": "N11",
+    "monotonic": 94989.295466783,
+    "node": "B",
+    "stage": "START"
+  },
+  {
+    "case_id": "N11",
+    "monotonic": 94989.934176169,
+    "node": "A",
+    "stage": "PROBE"
+  }
+]

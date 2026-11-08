@@ -1,0 +1,19 @@
+{
+  "dataset": {
+    "bundle_sha256": "673434bd95133387b75101d0881930997edb81762fb3255e19b9010a015653fb",
+    "created_at": 1794168148,
+    "dataset_sha256": "911fdb77fb094b2595a1f8eade2ec0b657604df3fbd0ffa94a3e107b807425a6",
+    "expires_at": 1794169920,
+    "max_state_age_seconds": 1800,
+    "run_id": "bcp-net001-run-0002"
+  },
+  "host_image_sha256": "4d0a7ed6c7c5e23cebd393a6c8309b221f143b05a2e616687911ed2b65023799",
+  "launch": true,
+  "not_after": 1794169920,
+  "not_before": 1794168224,
+  "production": false,
+  "run_id": "bcp-net001-run-0002",
+  "scope_sha256": "5dc4ef4c47980117801ef823d29aca9c374366b3fcef7b35979d54f9ccaf5d32",
+  "transactions": 0,
+  "version": 2
+}

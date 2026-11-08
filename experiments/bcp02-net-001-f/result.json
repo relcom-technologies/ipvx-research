@@ -1,0 +1,187 @@
+{
+  "schema_version": 1,
+  "id": "IPVX-BCP02-NET-001-F",
+  "kind": "network-experiment",
+  "run_id": "bcp-net001-run-0003",
+  "performed_on": "2026-11-08",
+  "performed_by": "claude-code-assistant",
+  "owner_permission": "Owner-signed v2 permit for bcp-net001-run-0003 (owner key e65f1813…ab1000), signed on the owner's computer; owner chat reply «Подписал».",
+  "outcome": "PASS",
+  "verifier_outcome": "PASS",
+  "verifier": "python3 -m runners.bcp02.cli verify (offline, on the stand)",
+  "state_mode": "fixture-state-ethernet",
+  "case_results": {
+    "P01": {
+      "pass_criteria_met": true,
+      "originals": 10,
+      "deliveries": 10,
+      "worker_rows": 10
+    },
+    "P02": {
+      "pass_criteria_met": true,
+      "originals": 1,
+      "deliveries": 1,
+      "worker_rows": 1
+    },
+    "N01": {
+      "pass_criteria_met": true,
+      "originals": 0,
+      "deliveries": 0,
+      "worker_rows": 0
+    },
+    "N02": {
+      "pass_criteria_met": true,
+      "originals": 10,
+      "deliveries": 0,
+      "worker_rows": 0
+    },
+    "N03": {
+      "pass_criteria_met": true,
+      "originals": 1,
+      "deliveries": 1,
+      "worker_rows": 1
+    },
+    "N04": {
+      "pass_criteria_met": true,
+      "originals": 1,
+      "deliveries": 1,
+      "worker_rows": 1
+    },
+    "N05": {
+      "pass_criteria_met": true,
+      "originals": 1,
+      "deliveries": 1,
+      "worker_rows": 1
+    },
+    "N06": {
+      "pass_criteria_met": true,
+      "originals": 1,
+      "deliveries": 0,
+      "worker_rows": 0
+    },
+    "N07-forward": {
+      "pass_criteria_met": true,
+      "originals": 1,
+      "deliveries": 0,
+      "worker_rows": 0
+    },
+    "N07-reverse": {
+      "pass_criteria_met": true,
+      "originals": 1,
+      "deliveries": 1,
+      "worker_rows": 0
+    },
+    "N08": {
+      "pass_criteria_met": true,
+      "originals": 0,
+      "deliveries": 0,
+      "worker_rows": 0
+    },
+    "N09": {
+      "pass_criteria_met": true,
+      "originals": 1,
+      "deliveries": 1,
+      "worker_rows": 1
+    },
+    "N10": {
+      "pass_criteria_met": true,
+      "originals": 1,
+      "deliveries": 1,
+      "worker_rows": 1
+    },
+    "N11": {
+      "pass_criteria_met": true,
+      "originals": 1,
+      "deliveries": 1,
+      "worker_rows": 0
+    }
+  },
+  "timing": {
+    "network_down_utc": "2026-11-08T20:28:53Z",
+    "finished_utc": "2026-11-08T20:30:46Z",
+    "offline_seconds": 113.6,
+    "window_utc": [
+      "2026-11-08T20:24:27Z",
+      "2026-11-08T20:52:36Z"
+    ]
+  },
+  "captures": {
+    "L1": {
+      "frames": 214,
+      "drops": 0,
+      "started_before_link_up": true
+    },
+    "L2": {
+      "frames": 215,
+      "drops": 0,
+      "started_before_link_up": true
+    }
+  },
+  "source": {
+    "repository_revision": "31a7448fc3d09b1caa09156a7b51b2873ee436a8",
+    "scope_sha256": "4b973accfdcf6adac1000a1ba8d7a5f43735c165a28ea76400ccda66abc9de52",
+    "scope_note": "Scope hash of the prepared tree: main 31a7448 (scope 64447bb2…) plus the run slots that prepare wrote into launch-config.json.",
+    "reviewed_pins_sha256": "90cedbff9c50c0dacf27eb7dd7ed248accf23ea0494003daf1ed848e9cad68b0"
+  },
+  "dataset": {
+    "dataset_sha256": "6d280035a65b38ee9c9fc44ab310c431dc2cf0cc51504f27ae4dd4e87dfac74f",
+    "bundle_sha256": "75823580dabc0a8031a228a146b4f25049cc4444b35b7058bde472ef91fb5d69"
+  },
+  "permit": {
+    "file_sha256": "c795475fb76540e3d7ac2129859fb2e3d128d7991b907f6dccd9c00a9fe2915b",
+    "document_sha256": "deb4935bee604575a01612c9b7bc077112109b9f7c73ca65cb81679d1ed0a469",
+    "claims": 1
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_utc": "2026-11-08T20:27:02Z",
+      "outcome": "ABORTED",
+      "stage": "before permit claim",
+      "network_down_seconds": 0.67,
+      "reason": "the operator created the output parent /var/lib/ipvx-bcp/runs with mode 0700; the runner requires every directory above the output to be searchable by actor UIDs",
+      "permit_consumed": false,
+      "files": [
+        "raw/attempt1/cli.json",
+        "raw/attempt1/launch.json"
+      ]
+    },
+    {
+      "attempt": 2,
+      "started_utc": "2026-11-08T20:28:53Z",
+      "outcome": "PASS",
+      "permit_consumed": true,
+      "files": [
+        "raw/cli.json",
+        "raw/launch.json",
+        "raw/verify.json",
+        "raw/run/"
+      ]
+    }
+  ],
+  "unsigned_sessions": [
+    {
+      "run_id": "bcp-net001-run-0001",
+      "reason": "passphrase of the first owner key lost; request not signed; dataset expired unused (HX-0207)"
+    },
+    {
+      "run_id": "bcp-net001-run-0002",
+      "reason": "the second key had been encrypted with clipboard text instead of the Keychain passphrase, so signing failed; request not signed; dataset expired unused. The owner then re-encrypted the same key with the Keychain passphrase."
+    }
+  ],
+  "excluded_from_publication": "key.json files of the run's temporary actor keys (45 files, in dataset/ and cases/). The runner leaves them out of SHA256SUMS and FINAL-SHA256SUMS, so both lists verify in full against raw/run/.",
+  "transactions": 0,
+  "paid_calls": 0,
+  "models": 0,
+  "permit_used": true,
+  "network_measurement": true,
+  "real_chain_finality": false,
+  "physical_ethernet": false,
+  "independent_operators": false,
+  "interpretation": "Transport with synthetic fixture-state only; no chain finality, physical link or independent-operator conclusion.",
+  "known_gaps": [
+    "Each capture runs under its node's UID (runner README, known gap).",
+    "All nodes run on one VM under one operator.",
+    "Registry state is a synthetic fixture, not live Sepolia; NET-001-L has not run."
+  ]
+}

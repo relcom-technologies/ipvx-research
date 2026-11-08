@@ -1,0 +1,94 @@
+{
+  "case_results": {
+    "N01": {
+      "deliveries": 0,
+      "originals": 0,
+      "pass_criteria_met": true,
+      "worker_rows": 0
+    },
+    "N02": {
+      "deliveries": 0,
+      "originals": 10,
+      "pass_criteria_met": true,
+      "worker_rows": 0
+    },
+    "N03": {
+      "deliveries": 1,
+      "originals": 1,
+      "pass_criteria_met": true,
+      "worker_rows": 1
+    },
+    "N04": {
+      "deliveries": 1,
+      "originals": 1,
+      "pass_criteria_met": true,
+      "worker_rows": 1
+    },
+    "N05": {
+      "deliveries": 1,
+      "originals": 1,
+      "pass_criteria_met": true,
+      "worker_rows": 1
+    },
+    "N06": {
+      "deliveries": 0,
+      "originals": 1,
+      "pass_criteria_met": true,
+      "worker_rows": 0
+    },
+    "N07-forward": {
+      "deliveries": 0,
+      "originals": 1,
+      "pass_criteria_met": true,
+      "worker_rows": 0
+    },
+    "N07-reverse": {
+      "deliveries": 1,
+      "originals": 1,
+      "pass_criteria_met": true,
+      "worker_rows": 0
+    },
+    "N08": {
+      "deliveries": 0,
+      "originals": 0,
+      "pass_criteria_met": true,
+      "worker_rows": 0
+    },
+    "N09": {
+      "deliveries": 1,
+      "originals": 1,
+      "pass_criteria_met": true,
+      "worker_rows": 1
+    },
+    "N10": {
+      "deliveries": 1,
+      "originals": 1,
+      "pass_criteria_met": true,
+      "worker_rows": 1
+    },
+    "N11": {
+      "deliveries": 1,
+      "originals": 1,
+      "pass_criteria_met": true,
+      "worker_rows": 0
+    },
+    "P01": {
+      "deliveries": 10,
+      "originals": 10,
+      "pass_criteria_met": true,
+      "worker_rows": 10
+    },
+    "P02": {
+      "deliveries": 1,
+      "originals": 1,
+      "pass_criteria_met": true,
+      "worker_rows": 1
+    }
+  },
+  "independent_operators": false,
+  "interpretation": "Transport with synthetic fixture-state only; no chain finality, physical link or independent-operator conclusion.",
+  "outcome": "PASS",
+  "physical_ethernet": false,
+  "real_chain_finality": false,
+  "state_mode": "fixture-state-ethernet"
+}

@@ -1,0 +1,18 @@
+{
+  "binaries": {
+    "ip": "024784c6d16b183dc7c97d93a943a9270976f167f95f771e14d72442dc657f0c",
+    "libseccomp": "c851a2378b4ef3a42ada5f8ff1604ad38f6bbcafa2aeea3f6680160d628c2f27",
+    "node": "904a6d3484241d466989f9df9ba3aab822b1496191bdb28230eb491a55c32a52",
+    "python": "889c603f0d17cb54060951bcf4c4f9b8c9ebd9e52b392c70209bbb9755d797d9"
+  },
+  "dataset_admission": {
+    "bundle_sha256": "75823580dabc0a8031a228a146b4f25049cc4444b35b7058bde472ef91fb5d69",
+    "created_at": 1794169391,
+    "dataset_sha256": "6d280035a65b38ee9c9fc44ab310c431dc2cf0cc51504f27ae4dd4e87dfac74f",
+    "expires_at": 1794171156,
+    "max_state_age_seconds": 1800,
+    "run_id": "bcp-net001-run-0003"
+  },
+  "dataset_sha256": "6d280035a65b38ee9c9fc44ab310c431dc2cf0cc51504f27ae4dd4e87dfac74f",
+  "scope_sha256": "4b973accfdcf6adac1000a1ba8d7a5f43735c165a28ea76400ccda66abc9de52"
+}
