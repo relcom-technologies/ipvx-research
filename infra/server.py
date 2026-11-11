@@ -54,7 +54,8 @@ class PublicFiles(BaseHTTPRequestHandler):
             data = json.dumps({'status': 'ok', 'revision': self.server.revision}).encode()
             content_type = 'application/json'
         else:
-            relative = 'index.html' if path == '/' else path.lstrip('/')
+            # English is the default edition at /; the Russian original stays at /index.html.
+            relative = 'index.en.html' if path == '/' else path.lstrip('/')
             parts = Path(relative).parts
             candidate = self.server.root / relative
             if (not parts or any(p.startswith('.') for p in parts) or '\\' in path
@@ -181,7 +182,7 @@ def make_server(root, bind, port, revision, auth_port=None, a2a_port=None, liais
             raise ValueError('Public release contains a symbolic link')
         if file.is_file():
             files.add(file.resolve())
-    if root / 'index.html' not in files or not re.fullmatch('[0-9a-f]{40}', revision):
+    if not {root / 'index.html', root / 'index.en.html'} <= files or not re.fullmatch('[0-9a-f]{40}', revision):
         raise ValueError('Incomplete or unversioned public release')
     server = ThreadingHTTPServer((bind, port), PublicFiles)
     server.root, server.public_files, server.revision = root, files, revision

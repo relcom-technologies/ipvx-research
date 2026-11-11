@@ -16,7 +16,7 @@ class CommunityAdapter(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
         self.root = Path(self.tmp.name)
-        tree = self.root/'public';tree.mkdir();(tree/'index.html').write_text('Public research')
+        tree = self.root/'public';tree.mkdir();(tree/'index.html').write_text('Public research');(tree/'index.en.html').write_text('Public research')
         self.provider = FakeProvider()
         self.community = c.CommunityService(self.root/'community', clock=lambda: self.provider.clock())
         self.service = auth.AuthService('client-1', 'pool-1', self.root/'auth', provider=self.provider,

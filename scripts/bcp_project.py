@@ -119,8 +119,8 @@ def ru_count(n,one,few,many):
 
 
 def lab_edition(url,language):
- """The Lab has the same four editions: https://lab.ipvx.org/#mesh becomes https://lab.ipvx.org/?lang=en#mesh."""
- return url if language=='ru' else url.replace('https://lab.ipvx.org/','https://lab.ipvx.org/?lang='+language,1)
+ """Every link names its Lab edition, Russian included: https://lab.ipvx.org/#mesh becomes https://lab.ipvx.org/?lang=ru#mesh."""
+ return url.replace('https://lab.ipvx.org/','https://lab.ipvx.org/?lang='+language,1)
 
 
 def render(root,language='ru',*,compact=False,lab=False):

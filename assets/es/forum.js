@@ -63,7 +63,7 @@
   match=/^experiments\.([a-z]+)$/.exec(ref);
   if(match&&experiments[match[1]])return {label:"Experimento: "+experiments[match[1]],href:'experiments'+edition+'.html#'+match[1],category:'experiments'};
   match=/^lab\.([a-z0-9-]+)$/.exec(ref);
-  if(match)return {label:"Laboratorio: "+match[1],href:'https://lab.ipvx.org/'+(edition?'?lang='+edition.slice(1):''),category:'experiments'};
+  if(match)return {label:"Laboratorio: "+match[1],href:'https://lab.ipvx.org/?lang='+(edition?edition.slice(1):'ru'),category:'experiments'};
   return {label:ref,href:null,category:null};
  }
 
