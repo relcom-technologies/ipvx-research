@@ -30,7 +30,7 @@ class BcpPresentation(unittest.TestCase):
                 for name in ['NodeRegistry','TransitPolicy','ConnectionPolicy','dataset_sha256','expires_at','veth']:
                     self.assertIn(name,s)
                 # Each edition links the Lab in the same language: / or /?lang=en|de|es.
-                self.assertIn('https://lab.ipvx.org/'+('' if language=='ru' else '?lang='+language)+'#mesh',s)
+                self.assertIn('https://lab.ipvx.org/?lang='+language+'#mesh',s)
                 self.assertNotIn('<form',s);self.assertNotIn('<button',s)
                 if language!='ru':self.assertNotRegex(s,'[А-Яа-яЁё]')
 

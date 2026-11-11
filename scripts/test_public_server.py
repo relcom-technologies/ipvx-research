@@ -14,7 +14,7 @@ spec.loader.exec_module(module)
 class PublicBoundary(unittest.TestCase):
     def test_only_whitelisted_liaison_exports_can_refresh(self):
         with tempfile.TemporaryDirectory() as directory:
-            root=Path(directory)/'public';root.mkdir();(root/'index.html').write_text('published');(root/'data').mkdir()
+            root=Path(directory)/'public';root.mkdir();(root/'index.html').write_text('published');(root/'index.en.html').write_text('published');(root/'data').mkdir()
             (root/'data/liaison-status.json').write_text('{"state":"prepared"}')
             live=Path(directory)/'live';live.mkdir();(live/'liaison-status.json').write_text('{"state":"running"}')
             (live/'ledger.sqlite').write_text('private ledger')
@@ -31,16 +31,20 @@ class PublicBoundary(unittest.TestCase):
     def test_public_file_and_private_routes(self):
         with tempfile.TemporaryDirectory() as directory:
             root=Path(directory)/'public';root.mkdir()
-            (root/'index.html').write_text('published')
+            (root/'index.html').write_text('Опубликовано')
+            (root/'index.en.html').write_text('Published')
             (Path(directory)/'private.json').write_text('private')
             server=module.make_server(root,'127.0.0.1',0,'a'*40)
             thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start()
             base='http://127.0.0.1:'+str(server.server_port)
             try:
+                # English is the default edition; the Russian original keeps its own address.
                 with urllib.request.urlopen(base+'/') as response:
-                    self.assertEqual(response.read(),b'published')
+                    self.assertEqual(response.read(),b'Published')
                     self.assertEqual(response.headers['X-IPvX-Revision'],'a'*40)
                     self.assertIn("frame-ancestors 'none'",response.headers['Content-Security-Policy'])
+                with urllib.request.urlopen(base+'/index.html') as response:
+                    self.assertEqual(response.read().decode(),'Опубликовано')
                 for path in ('/../private.json','/%2e%2e/private.json','/.env','/api/mesh','/data/'):
                     with self.assertRaises(urllib.error.HTTPError) as error:urllib.request.urlopen(base+path)
                     self.assertEqual(error.exception.code,404)
@@ -49,8 +53,13 @@ class PublicBoundary(unittest.TestCase):
 
     def test_symlink_release_refused(self):
         with tempfile.TemporaryDirectory() as directory:
-            root=Path(directory);(root/'index.html').write_text('published')
+            root=Path(directory);(root/'index.html').write_text('published');(root/'index.en.html').write_text('published')
             (root/'escape').symlink_to('/etc/passwd')
+            with self.assertRaises(ValueError):module.make_server(root,'127.0.0.1',0,'a'*40)
+
+    def test_release_without_the_english_default_refused(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);(root/'index.html').write_text('published')
             with self.assertRaises(ValueError):module.make_server(root,'127.0.0.1',0,'a'*40)
 
 if __name__=='__main__':unittest.main()

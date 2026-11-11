@@ -193,9 +193,9 @@ def localized(tree, name, language, catalog, pages):
                         node.set(lower, value.replace(path, page_name(path, language), 1))
                     elif value.startswith('https://ipvx.org/auth/login?returnTo='):
                         node.set(lower, re.sub(r'returnTo=/(account|admin|forum)\.html', r'returnTo=/\1.'+language+'.html', value))
-                    elif value.startswith('https://lab.ipvx.org/'):
-                        # The Lab has the same four editions at /?lang=en|de|es; keep the view after #.
-                        node.set(lower, 'https://lab.ipvx.org/?lang='+language+value.removeprefix('https://lab.ipvx.org/'))
+                    elif re.fullmatch(r'https://lab\.ipvx\.org/(?:\?lang=ru)?(?:#.*)?', value):
+                        # The Lab has the same four editions at /?lang=ru|en|de|es; keep the view after #.
+                        node.set(lower, re.sub(r'^https://lab\.ipvx\.org/(?:\?lang=ru)?', 'https://lab.ipvx.org/?lang='+language, value))
         original = original_nodes.get(id(node))
         node.children = [walk(child, skip) for child in node.children]
         if node.tag == 'html':

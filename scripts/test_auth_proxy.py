@@ -39,6 +39,7 @@ class ProxyBoundary(unittest.TestCase):
         self.directory = tempfile.TemporaryDirectory()
         root = Path(self.directory.name)
         (root / 'index.html').write_text('public research')
+        (root / 'index.en.html').write_text('public research')
         self.front = module.make_server(root, '127.0.0.1', 0, 'b' * 40, self.upstream.server_port)
         self.threads = [threading.Thread(target=s.serve_forever, daemon=True) for s in (self.upstream, self.front)]
         for thread in self.threads:
