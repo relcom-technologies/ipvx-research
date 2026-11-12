@@ -1,4 +1,5 @@
-// Forum pages against a synthetic API: plain-text rendering, sign-in gates, posting, moderation, widths, languages.
+// Forum pages against a synthetic API: plain-text rendering, sign-in gates, posting, moderation, widths, languages,
+// machine translations of posts.
 import {chromium} from 'playwright';
 import fs from 'node:fs/promises';
 const root=process.cwd();
@@ -12,8 +13,10 @@ function fixture(){
  const threads=[{id:1,category:'bcp',subject:'h5',title:'Synthetic topic '+hostile,status:'published',locked:false,author:member,replies:1,createdAt:stamp,lastActivityAt:stamp}];
  const posts=[{id:1,thread:1,text:'Opening text <script>window.__forumXss=1</script>',replyTo:null,status:'published',author:member,createdAt:stamp},
   {id:2,thread:1,text:'Second line\nwith a break',replyTo:1,status:'published',author:{id:'member_'+'1'.repeat(24),label:'Alice Novak',named:true},createdAt:stamp}];
- return {threads,posts,writes:[],keys:new Set()};
+ return {threads,posts,writes:[],keys:new Set(),langs:[]};
 }
+// What the server adds for ?lang= in another edition: the opening post and the title, made from Russian.
+const machine=(item,lang,text)=>lang&&lang!=='ru'?{...item,translation:{lang,from:'ru',text:'['+lang+'] '+text,by:'claude-sonnet-5-5:v1',machine:true}}:item;
 async function open(width,{signedIn=false,roles=[],path='forum.html',lastSeen}={}){
  const page=await browser.newPage({viewport:{width,height:1000},reducedMotion:'reduce'}),errors=[],state=fixture();
  page.on('pageerror',error=>errors.push(error.message));
@@ -21,12 +24,13 @@ async function open(width,{signedIn=false,roles=[],path='forum.html',lastSeen}={
  await page.route('**/auth/session',route=>reply(route,200,{authenticated:signedIn,user:signedIn?{sub:'verified-alice',name:'Alice'}:null}));
  await page.route('**/community/v1/**',async route=>{
   const request=route.request(),url=new URL(request.url()),path=url.pathname.replace('/community/v1',''),method=request.method();
+  const lang=url.searchParams.get('lang');if(lang)state.langs.push(path+'?lang='+lang);
   if(method==='GET'){
    if(path==='/session')return reply(route,200,{authenticated:signedIn,author:signedIn?member:null,roles:signedIn?['participant',...roles]:[],access:signedIn?'active':'anonymous',capabilities:[]});
    if(path==='/forum/profile')return signedIn?reply(route,200,{author:member,pendingPosts:0,publishesDirectly:roles.length>0}):reply(route,401,{error:'sign_in_required'});
    if(path==='/forum/categories')return reply(route,200,{categories:['bcp','blog','rfc','experiments','architecture','questions','meta'].map((id,i)=>({id,threads:i?0:1,lastActivityAt:i?null:stamp}))});
-   if(/^\/forum\/(categories\/bcp|subjects\/(h5|rfc-0005\.s3))\/threads$/.test(path))return reply(route,200,{threads:state.threads,nextBefore:null});
-   if(path==='/forum/threads/1')return reply(route,200,{thread:state.threads[0],posts:state.posts,nextAfter:null,...(lastSeen===undefined?{}:{lastSeen})});
+   if(/^\/forum\/(categories\/bcp|subjects\/(h5|rfc-0005\.s3))\/threads$/.test(path))return reply(route,200,{threads:state.threads.map(thread=>machine(thread,lang,'Translated topic')),nextBefore:null});
+   if(path==='/forum/threads/1')return reply(route,200,{thread:machine(state.threads[0],lang,'Translated topic'),posts:[machine(state.posts[0],lang,'Translated opening text'),...state.posts.slice(1)],nextAfter:null,...(lastSeen===undefined?{}:{lastSeen})});
    if(path==='/forum/notifications')return signedIn?reply(route,200,{unreadThreads:1,unreadPosts:2,threads:[{...state.threads[0],newPosts:2,firstNew:2}]}):reply(route,401,{error:'sign_in_required'});
    if(path==='/forum/search')return reply(route,200,{results:[{post:1,thread:1,title:state.threads[0].title,excerpt:'…Opening text…'}]});
    if(path==='/forum/moderation')return roles.length?reply(route,200,{queue:url.searchParams.get('queue'),posts:[{...state.posts[0],id:3,status:'pending',review:{queue:'people',note:'Unsure '+hostile},threadTitle:'Queued '+hostile,category:'bcp',opening:false}],nextBefore:null}):reply(route,403,{error:'role_required'});
@@ -158,6 +162,38 @@ for(const [language,word] of [['en','Categories'],['de','Kategorien'],['es','Cat
  if(!(await page.locator(`.forum-category a[href^="forum.${language}.html?c="]`).count()))throw Error(language+' links leave the edition');
  if(errors.length)throw Error('page errors: '+errors.join('; '));
  await page.close();checks.push([language,768]);
+}
+{
+ // Machine translation: shown in another edition, marked, the original one click away; Russian stays original.
+ const labels={en:'Machine translation from Russian',de:'Maschinelle Übersetzung aus dem Russischen',es:'Traducción automática del ruso'};
+ const toggles={en:['Show original','Show translation'],de:['Original anzeigen','Übersetzung anzeigen'],es:['Mostrar original','Mostrar traducción']};
+ for(const language of ['en','de','es']){
+  const {page,errors,state}=await open(390,{path:`forum.${language}.html?t=1`});
+  if(!state.langs.includes('/forum/threads/1?lang='+language))throw Error(language+': thread requested without its language');
+  const text=page.locator('#post-1 .forum-text'),note=page.locator('#post-1 .forum-translation');
+  if((await text.textContent())!==`[${language}] Translated opening text`||(await text.getAttribute('lang'))!==language)throw Error(language+': translation not shown');
+  if((await note.locator('span').textContent())!==labels[language])throw Error(language+': translation not marked');
+  if((await note.locator('button').textContent())!==toggles[language][0])throw Error(language+': no switch to the original');
+  if(!(await page.locator('.forum-heading').first().textContent()).startsWith(`[${language}] Translated topic`))throw Error(language+': title not translated');
+  if(await page.locator('#post-2 .forum-translation').count())throw Error(language+': untranslated post marked');
+  await noOverflow(page,'translation '+language);
+  if(language==='en')await page.screenshot({path:`${out}/forum-translation-390.png`,fullPage:true});
+  await note.locator('button').click();
+  if(!(await text.textContent()).startsWith('Opening text <script>')||(await text.getAttribute('lang'))!=='ru')throw Error(language+': original not restored');
+  if((await note.locator('button').textContent())!==toggles[language][1])throw Error(language+': switch label not updated');
+  if(await page.evaluate(()=>window.__forumXss))throw Error('original executed');
+  await note.locator('button').click();
+  if(!(await text.textContent()).startsWith(`[${language}]`))throw Error(language+': translation not restored');
+  await page.goto(base+`forum.${language}.html?c=bcp`);await settle(page);
+  const row=page.locator('.forum-thread-row a').first();
+  if(!(await row.textContent()).startsWith(`[${language}] Translated topic`)||!(await row.getAttribute('title')).startsWith('Synthetic topic'))throw Error(language+': list title not translated');
+  if(errors.length)throw Error('page errors: '+errors.join('; '));
+  await page.close();checks.push(['translation-'+language,390]);
+ }
+ const russian=await open(1440,{path:'forum.html?t=1'});
+ if(await russian.page.locator('.forum-translation').count())throw Error('Russian edition shows a translation of a Russian post');
+ if(!(await russian.page.locator('#post-1 .forum-text').textContent()).startsWith('Opening text'))throw Error('Russian original changed');
+ await russian.page.close();checks.push(['translation-ru',1440]);
 }
 await browser.close();
 await fs.writeFile(out+'/forum-checks.json',JSON.stringify(checks,null,1)+'\n');

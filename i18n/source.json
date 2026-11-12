@@ -1037,13 +1037,13 @@
       "context": "downloads.html:text:div/h3/a"
     },
     {
-      "id": "6a04e5bed0ed8c25",
-      "source": "208 событий по HX-0208; авторы, основания, проверки и ограничения.",
+      "id": "8724b9c3793ffcb3",
+      "source": "209 событий по HX-0209; авторы, основания, проверки и ограничения.",
       "context": "downloads.html:text:div/div/p"
     },
     {
-      "id": "7e8641f8a1f9f17f",
-      "source": "417.4 КиБ · 12 файлов",
+      "id": "51464cc7c4c20148",
+      "source": "419.7 КиБ · 12 файлов",
       "context": "downloads.html:text:div/div/p"
     },
     {
@@ -4987,14 +4987,99 @@
       "context": "history.html:text:main/section/p"
     },
     {
-      "id": "4e6afa43d0c01775",
-      "source": "HX-0208 · NET-001-F прошёл: 14 из 14 вариантов на тестовом состоянии реестра",
+      "id": "3b627027967aab08",
+      "source": "HX-0209 · Машинный перевод сообщений форума на языки сайта: реализован, не включён",
       "context": "history.html:text:section/details/summary"
     },
     {
       "id": "e078c61c3e49f21a",
       "source": "Реализовано",
       "context": "history.html:text:details/summary/span"
+    },
+    {
+      "id": "499aa5c125a44207",
+      "source": "Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд) · 2026-11-12T00:00:00+00:00",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "599c046dd6f361cc",
+      "source": "По просьбе владельца, который зовёт на форум иностранных участников, сделан автоматический перевод опубликованных сообщений и заголовков тем на языки сайта: ru, en, de и es, кроме языка оригинала. Отдельный воркер infra/forum_translator.py по таймеру отправляет в Claude (по умолчанию claude-sonnet-5-5, выбор владельца) только опубликованные тексты. Код, ссылки, адреса почты, номера RFC, хеши и подпись заменяются метками и в модель не попадают. Переводы хранятся в базе сообщества и привязаны к SHA-256 исходного текста. Страница форума в своём издании показывает перевод с пометкой «машинный перевод» и кнопкой «показать оригинал». Оригинал не меняется. При скрытии сообщения его переводы удаляются. Ключ API берётся только из /etc/ipvx-research/forum-translator.env на сервере; без этого файла таймер выключен.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "0369683b41e6de45",
+      "source": "Основание",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "2146dcc4739552c6",
+      "source": "Перевод после публикации, а не при просмотре: анонимный читатель не может вызвать платный запрос, а веб-сервис не держит ключ. Один вызов на текст даёт все языки сразу. Модель средней цены выбрана владельцем: перевод технического текста ей по силам при половинной цене Opus. Привязка к хешу и удаление при скрытии не дают показать устаревший или скрытый текст на других языках.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "27b5d1b30d35ff04",
+      "source": "Источники и проверки",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "6d089a48e5ceaf2d",
+      "source": "infra/forum_translator.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "d070ea66ee2814ab",
+      "source": "infra/community.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "0a33cac58507d81e",
+      "source": "assets/forum.js",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "a52f6a2c02a27bea",
+      "source": "scripts/test_forum_translator.py",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "353fb9d18ab42886",
+      "source": "scripts/browser_forum_check.mjs",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "34091d07ef8c6ebd",
+      "source": "docs/forum.md",
+      "context": "history.html:text:ul/li/a"
+    },
+    {
+      "id": "02b7a03ed5618d42",
+      "source": "Ограничения",
+      "context": "history.html:text:section/details/h3"
+    },
+    {
+      "id": "17c3ca65c55d5f8b",
+      "source": "Не развёрнуто и не включено: включение — отдельный шаг владельца с ключом и платными вызовами.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "c22bd44f870d37d7",
+      "source": "Качество переводов на реальных сообщениях не проверялось: тесты используют подставной клиент модели.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "aaf6c27c0451789b",
+      "source": "Поиск, очереди модерации и псевдонимы авторов («Участник …») остаются на языке оригинала.",
+      "context": "history.html:text:details/ul/li"
+    },
+    {
+      "id": "eef48afb7e7c7a81",
+      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
+      "context": "history.html:text:section/details/p"
+    },
+    {
+      "id": "4e6afa43d0c01775",
+      "source": "HX-0208 · NET-001-F прошёл: 14 из 14 вариантов на тестовом состоянии реестра",
+      "context": "history.html:text:section/details/summary"
     },
     {
       "id": "10516f203b3bfb1b",
@@ -5007,19 +5092,9 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "0369683b41e6de45",
-      "source": "Основание",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "8b35e331890bf251",
       "source": "Протокол требовал проверить доставку и отказы на настоящем ядре Linux до того, как подключать живое состояние реестра. Результат публикуется как есть, вместе с неудачной попыткой, сеансами без подписи и ограничениями. Временные ключи узлов не публикуются; раннер не включает их в контрольные суммы, поэтому опубликованные файлы проверяются полностью.",
       "context": "history.html:text:section/details/p"
-    },
-    {
-      "id": "27b5d1b30d35ff04",
-      "source": "Источники и проверки",
-      "context": "history.html:text:section/details/h3"
     },
     {
       "id": "8e9fcab5c5086e23",
@@ -5047,11 +5122,6 @@
       "context": "history.html:text:ul/li/a"
     },
     {
-      "id": "02b7a03ed5618d42",
-      "source": "Ограничения",
-      "context": "history.html:text:section/details/h3"
-    },
-    {
       "id": "8042aa0e22808d23",
       "source": "Состояние реестра синтетическое, не живой Sepolia: о финальности цепочки результат ничего не говорит; NET-001-L не запускался.",
       "context": "history.html:text:details/ul/li"
@@ -5070,11 +5140,6 @@
       "id": "279b99e07bcd129f",
       "source": "Преимущество над IP не измерялось.",
       "context": "history.html:text:details/ul/li"
-    },
-    {
-      "id": "eef48afb7e7c7a81",
-      "source": "Зафиксировал: Claude Code — ассистент владельца (ipvx-agent-lab, публичный стенд). Авторская запись.",
-      "context": "history.html:text:section/details/p"
     },
     {
       "id": "65e479491fbb0b62",
@@ -5352,16 +5417,6 @@
       "context": "history.html:text:section/details/p"
     },
     {
-      "id": "d070ea66ee2814ab",
-      "source": "infra/community.py",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "0a33cac58507d81e",
-      "source": "assets/forum.js",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
       "id": "25c8a7834e79bfc4",
       "source": "assets/relcom.js",
       "context": "history.html:text:ul/li/a"
@@ -5369,16 +5424,6 @@
     {
       "id": "9df7500e24cea105",
       "source": "scripts/test_forum.py",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "353fb9d18ab42886",
-      "source": "scripts/browser_forum_check.mjs",
-      "context": "history.html:text:ul/li/a"
-    },
-    {
-      "id": "34091d07ef8c6ebd",
-      "source": "docs/forum.md",
       "context": "history.html:text:ul/li/a"
     },
     {
@@ -15019,452 +15064,492 @@
     {
       "id": "9e37774086d1b0e3",
       "source": "Текущая работа над BCP 0.2: прогоны, стенд, проверки и их границы.",
-      "context": "assets/forum.js:893"
+      "context": "assets/forum.js:995"
     },
     {
       "id": "c31cdbd07e6cc3a2",
       "source": "Блог",
-      "context": "assets/forum.js:972"
+      "context": "assets/forum.js:1074"
     },
     {
       "id": "bbbf2a2e58048677",
       "source": "Обсуждение статей блога IPvX Research: одна тема на статью.",
-      "context": "assets/forum.js:979"
+      "context": "assets/forum.js:1081"
     },
     {
       "id": "1ca8852dfa384b30",
       "source": "Вопросы и идеи по черновикам RFC. Изменение RFC идёт через предложение к RFC или PR в GitHub.",
-      "context": "assets/forum.js:1066"
+      "context": "assets/forum.js:1168"
     },
     {
       "id": "cc4cee2f3f790f0e",
       "source": "Эксперименты, стенд lab.ipvx.org, гипотезы и их проверки.",
-      "context": "assets/forum.js:1208"
+      "context": "assets/forum.js:1310"
     },
     {
       "id": "9fe78c578deeabc5",
       "source": "Архитектура",
-      "context": "assets/forum.js:1286"
+      "context": "assets/forum.js:1388"
     },
     {
       "id": "723f6e30f804c900",
       "source": "Устройство IPvX: адресация, маршрутизация, доставка сообщений.",
-      "context": "assets/forum.js:1300"
+      "context": "assets/forum.js:1402"
     },
     {
       "id": "9d7a07e8149bcf79",
       "source": "Вопросы о проекте и протоколе.",
-      "context": "assets/forum.js:1390"
+      "context": "assets/forum.js:1492"
     },
     {
       "id": "0c7074136b3b94cf",
       "source": "Сайт и форум",
-      "context": "assets/forum.js:1433"
+      "context": "assets/forum.js:1535"
     },
     {
       "id": "a287192f900c40e3",
       "source": "Отзывы о сайте и форуме, правила и заметки модераторов.",
-      "context": "assets/forum.js:1448"
+      "context": "assets/forum.js:1550"
     },
     {
       "id": "3aa429df0710bb94",
       "source": "Ждут решения людей",
-      "context": "assets/forum.js:1531"
+      "context": "assets/forum.js:1633"
     },
     {
       "id": "b4c8ed80277861fc",
       "source": "Ждут автоматической проверки",
-      "context": "assets/forum.js:1562"
+      "context": "assets/forum.js:1664"
     },
     {
       "id": "37cd5876821e8021",
       "source": "Скрытые",
-      "context": "assets/forum.js:1600"
+      "context": "assets/forum.js:1702"
     },
     {
       "id": "abda2910b5d6ea68",
       "source": "На проверке · видно только вам и модераторам",
-      "context": "assets/forum.js:1640"
+      "context": "assets/forum.js:1742"
     },
     {
       "id": "00a02c3a05e4d1fe",
       "source": "Сеанс истёк. Войдите снова через Relcom ID.",
-      "context": "assets/forum.js:1749"
+      "context": "assets/forum.js:1851"
     },
     {
       "id": "13e4c62fe85e7166",
       "source": "Для участия нужна учётная запись с подтверждённой почтой.",
-      "context": "assets/forum.js:1821"
+      "context": "assets/forum.js:1923"
     },
     {
       "id": "579b2b5ea6dc233e",
       "source": "Ваше участие заблокировано администратором.",
-      "context": "assets/forum.js:1896"
+      "context": "assets/forum.js:1998"
     },
     {
       "id": "e9c8c575888fb649",
       "source": "Тема закрыта для новых ответов.",
-      "context": "assets/forum.js:1956"
+      "context": "assets/forum.js:2058"
     },
     {
       "id": "013ba261006d29b7",
       "source": "Тема не найдена или ещё не опубликована.",
-      "context": "assets/forum.js:2007"
+      "context": "assets/forum.js:2109"
     },
     {
       "id": "8d2ac50bf0981458",
       "source": "Такой категории нет.",
-      "context": "assets/forum.js:2069"
+      "context": "assets/forum.js:2171"
     },
     {
       "id": "166f821dece13d00",
       "source": "У вас слишком много сообщений на проверке. Дождитесь решения.",
-      "context": "assets/forum.js:2114"
+      "context": "assets/forum.js:2216"
     },
     {
       "id": "6a3aab4cd30c3faa",
       "source": "Слишком много действий подряд. Попробуйте через несколько минут.",
-      "context": "assets/forum.js:2198"
+      "context": "assets/forum.js:2300"
     },
     {
       "id": "4f663e19b5173bed",
       "source": "Это имя уже занято.",
-      "context": "assets/forum.js:2276"
+      "context": "assets/forum.js:2378"
     },
     {
       "id": "0a5671240101f91a",
       "source": "Имя: от 2 до 40 букв и цифр, без служебных слов.",
-      "context": "assets/forum.js:2311"
+      "context": "assets/forum.js:2413"
     },
     {
       "id": "fa57a7d28e46ab5e",
       "source": "Проверьте длину текста: заголовок от 3 до 200 знаков, сообщение до 8000.",
-      "context": "assets/forum.js:2375"
+      "context": "assets/forum.js:2477"
     },
     {
       "id": "a4bdcad02fbf1978",
       "source": "Поиск временно недоступен.",
-      "context": "assets/forum.js:2469"
+      "context": "assets/forum.js:2571"
     },
     {
       "id": "9e9f14dd42147c08",
       "source": "Введите хотя бы одно слово из двух букв.",
-      "context": "assets/forum.js:2513"
+      "context": "assets/forum.js:2615"
     },
     {
       "id": "9ce4f440ef912fd0",
       "source": "Нужна роль модератора.",
-      "context": "assets/forum.js:2570"
+      "context": "assets/forum.js:2672"
     },
     {
       "id": "b8a8ccd80cd645d5",
       "source": "Форум временно недоступен. Повторите позже.",
-      "context": "assets/forum.js:2749"
+      "context": "assets/forum.js:2851"
     },
     {
       "id": "b266c6f0f8667f33",
       "source": "Запрос не выполнен.",
-      "context": "assets/forum.js:2795"
+      "context": "assets/forum.js:2897"
+    },
+    {
+      "id": "5cf34f0a3a6606aa",
+      "source": "Машинный перевод с русского",
+      "context": "assets/forum.js:5764"
+    },
+    {
+      "id": "dc5bd876fa96c5dc",
+      "source": "Машинный перевод с английского",
+      "context": "assets/forum.js:5797"
+    },
+    {
+      "id": "3c79000906ec74c5",
+      "source": "Машинный перевод с немецкого",
+      "context": "assets/forum.js:5833"
+    },
+    {
+      "id": "976ac9d04b841f2c",
+      "source": "Машинный перевод с испанского",
+      "context": "assets/forum.js:5867"
+    },
+    {
+      "id": "8a1487d064b05492",
+      "source": "Показать перевод",
+      "context": "assets/forum.js:6679"
+    },
+    {
+      "id": "9e772617cfaf6054",
+      "source": "Показать оригинал",
+      "context": "assets/forum.js:6698"
+    },
+    {
+      "id": "8d64924b5ddf08c0",
+      "source": "Машинный перевод",
+      "context": "assets/forum.js:6858"
     },
     {
       "id": "46df2f48a251b2e0",
       "source": ", раздел",
-      "context": "assets/forum.js:5816"
+      "context": "assets/forum.js:7204"
     },
     {
       "id": "17a2bbc2d51be3f1",
       "source": "Гипотеза LLM",
-      "context": "assets/forum.js:5985"
+      "context": "assets/forum.js:7373"
     },
     {
       "id": "96eededdb91fd590",
       "source": "Опыт:",
-      "context": "assets/forum.js:6175"
+      "context": "assets/forum.js:7563"
     },
     {
       "id": "5c6f86a2718671e4",
       "source": "Лаборатория:",
-      "context": "assets/forum.js:6342"
+      "context": "assets/forum.js:7730"
     },
     {
       "id": "a393e127129273aa",
       "source": "Пишите простым текстом. Не публикуйте пароли, ключи и личные данные.",
-      "context": "assets/forum.js:7395"
+      "context": "assets/forum.js:8783"
     },
     {
       "id": "899dce11fb2c0f4c",
       "source": "Отправляем…",
-      "context": "assets/forum.js:7809"
+      "context": "assets/forum.js:9197"
     },
     {
       "id": "3186280aca4f0fbb",
       "source": "Опубликовано.",
-      "context": "assets/forum.js:8145"
+      "context": "assets/forum.js:9533"
     },
     {
       "id": "262220cee2a67c07",
       "source": "Отправлено. Сообщение появится после проверки; пока его видите только вы.",
-      "context": "assets/forum.js:8161"
+      "context": "assets/forum.js:9549"
     },
     {
       "id": "26c80474c7221e11",
       "source": "Новая тема",
-      "context": "assets/forum.js:8363"
+      "context": "assets/forum.js:9751"
     },
     {
       "id": "98562f8141d841a3",
       "source": "Войдите через Relcom ID",
-      "context": "assets/forum.js:8440"
+      "context": "assets/forum.js:9828"
     },
     {
       "id": "0857a51b6c33e1d1",
       "source": ", чтобы начать тему.",
-      "context": "assets/forum.js:8491"
+      "context": "assets/forum.js:9879"
     },
     {
       "id": "41f780fdee89f896",
       "source": "Категория",
-      "context": "assets/forum.js:8612"
+      "context": "assets/forum.js:10000"
     },
     {
       "id": "2ffeafbca981d162",
       "source": "Опубликовать тему",
-      "context": "assets/forum.js:8896"
+      "context": "assets/forum.js:10284"
     },
     {
       "id": "7b9de65d16725ec8",
       "source": "ответ",
-      "context": "assets/forum.js:9792"
+      "context": "assets/forum.js:11288"
     },
     {
       "id": "2878e68255e5e1ef",
       "source": "ответов",
-      "context": "assets/forum.js:9800"
+      "context": "assets/forum.js:11296"
+    },
+    {
+      "id": "79b324f5a117bbed",
+      "source": "Машинный перевод заголовка",
+      "context": "assets/forum.js:11389"
     },
     {
       "id": "d70e2991341717b0",
       "source": "Закрыта",
-      "context": "assets/forum.js:9989"
+      "context": "assets/forum.js:11555"
     },
     {
       "id": "e86a9f261bb63858",
       "source": "Тем пока нет. Начните первую.",
-      "context": "assets/forum.js:10439"
+      "context": "assets/forum.js:12005"
     },
     {
       "id": "05f6c615a3518d94",
       "source": "Категории",
-      "context": "assets/forum.js:10644"
+      "context": "assets/forum.js:12210"
     },
     {
       "id": "672e9a1bbbeb0541",
       "source": "Тем:",
-      "context": "assets/forum.js:11046"
+      "context": "assets/forum.js:12612"
     },
     {
       "id": "bfc2b5508cf371f3",
       "source": "· последнее:",
-      "context": "assets/forum.js:11067"
+      "context": "assets/forum.js:12633"
     },
     {
       "id": "a45b6dce57013d75",
       "source": "Тем пока нет",
-      "context": "assets/forum.js:11110"
+      "context": "assets/forum.js:12676"
     },
     {
       "id": "eac88378e03b0899",
       "source": "Обсуждения:",
-      "context": "assets/forum.js:12139"
+      "context": "assets/forum.js:13716"
     },
     {
       "id": "57fb0f05a811ee82",
       "source": "Открыть на сайте",
-      "context": "assets/forum.js:12239"
+      "context": "assets/forum.js:13816"
     },
     {
       "id": "7200631f8dc1d3c1",
       "source": "Новое",
-      "context": "assets/forum.js:13142"
+      "context": "assets/forum.js:14730"
     },
     {
       "id": "fcc8e9eb339f6170",
       "source": "в ответ на #",
-      "context": "assets/forum.js:13240"
+      "context": "assets/forum.js:14828"
     },
     {
       "id": "b9af23eeff5da84a",
       "source": "Ответить",
-      "context": "assets/forum.js:13619"
+      "context": "assets/forum.js:15315"
     },
     {
       "id": "a5483ea07f882437",
       "source": "Модерация",
-      "context": "assets/forum.js:13984"
+      "context": "assets/forum.js:15680"
     },
     {
       "id": "eb604b03dfbc9dcc",
       "source": "Отметка проверки:",
-      "context": "assets/forum.js:14042"
+      "context": "assets/forum.js:15738"
     },
     {
       "id": "aee7bfdd238185e0",
       "source": "Скрыто.",
-      "context": "assets/forum.js:14448"
+      "context": "assets/forum.js:16144"
     },
     {
       "id": "6342c9187e01caa4",
       "source": "Обсуждается:",
-      "context": "assets/forum.js:15048"
+      "context": "assets/forum.js:16900"
     },
     {
       "id": "43179c6963573b93",
       "source": "Тема закрыта: новые ответы может оставить только модератор.",
-      "context": "assets/forum.js:15214"
+      "context": "assets/forum.js:17066"
     },
     {
       "id": "423ce129e1e2b464",
       "source": "Показать ещё ответы",
-      "context": "assets/forum.js:15360"
+      "context": "assets/forum.js:17212"
     },
     {
       "id": "feb89900a501d52a",
       "source": "Ответ на #",
-      "context": "assets/forum.js:15640"
+      "context": "assets/forum.js:17492"
     },
     {
       "id": "95837f0d814001fd",
       "source": "Открыть тему",
-      "context": "assets/forum.js:16272"
+      "context": "assets/forum.js:18135"
     },
     {
       "id": "737f9620e6176156",
       "source": "Закрыть тему",
-      "context": "assets/forum.js:16287"
+      "context": "assets/forum.js:18150"
     },
     {
       "id": "a7a4033657e89fc9",
       "source": "Закрыть",
-      "context": "assets/forum.js:16404"
+      "context": "assets/forum.js:18267"
     },
     {
       "id": "8269124505a107ee",
       "source": "Готово. Обновите страницу.",
-      "context": "assets/forum.js:16566"
+      "context": "assets/forum.js:18429"
     },
     {
       "id": "363f81e7f3bd7ed4",
       "source": ", чтобы ответить.",
-      "context": "assets/forum.js:16823"
+      "context": "assets/forum.js:18686"
     },
     {
       "id": "b7717c6c8eb0310b",
       "source": "Тема закрыта.",
-      "context": "assets/forum.js:16917"
+      "context": "assets/forum.js:18780"
     },
     {
       "id": "102eefe4f6c95575",
       "source": "Ответы откроются, когда тему опубликуют.",
-      "context": "assets/forum.js:17006"
+      "context": "assets/forum.js:18869"
     },
     {
       "id": "ceb68a9287da00d8",
       "source": "Отправить",
-      "context": "assets/forum.js:17166"
+      "context": "assets/forum.js:19029"
     },
     {
       "id": "3d1faf00de44b6ae",
       "source": "Мои темы",
-      "context": "assets/forum.js:17762"
+      "context": "assets/forum.js:19625"
     },
     {
       "id": "d09ae9db0221c935",
       "source": "Темы, в которых вы писали. Новыми считаются опубликованные ответы других участников после вашего последнего прочтения.",
-      "context": "assets/forum.js:17804"
+      "context": "assets/forum.js:19667"
     },
     {
       "id": "cdff0f6ecb4a5f60",
       "source": "Новых ответов:",
-      "context": "assets/forum.js:18533"
+      "context": "assets/forum.js:20501"
     },
     {
       "id": "2fb7a81efbc0a130",
       "source": "Новых ответов нет",
-      "context": "assets/forum.js:18565"
+      "context": "assets/forum.js:20533"
     },
     {
       "id": "87e669baf1770cdb",
       "source": "Вы ещё не писали на форуме. Здесь появятся темы, в которых вы участвуете.",
-      "context": "assets/forum.js:18723"
+      "context": "assets/forum.js:20691"
     },
     {
       "id": "180f58ab975323f9",
       "source": "Поиск",
-      "context": "assets/forum.js:18905"
+      "context": "assets/forum.js:20873"
     },
     {
       "id": "798ff068cd437db1",
       "source": "Поиск:",
-      "context": "assets/forum.js:18923"
+      "context": "assets/forum.js:20891"
     },
     {
       "id": "6bd686a245261e16",
       "source": "Ничего не найдено.",
-      "context": "assets/forum.js:19424"
+      "context": "assets/forum.js:21392"
     },
     {
       "id": "b1ff8198038c3e25",
       "source": "Модерация форума",
-      "context": "assets/forum.js:19697"
+      "context": "assets/forum.js:21665"
     },
     {
       "id": "c3dcb5467b98cdbd",
       "source": "начало темы",
-      "context": "assets/forum.js:20256"
+      "context": "assets/forum.js:22224"
     },
     {
       "id": "73561e0a5bf2597b",
       "source": "Как вас показывать",
-      "context": "assets/forum.js:20591"
+      "context": "assets/forum.js:22559"
     },
     {
       "id": "2aa98ec188e2526b",
       "source": "Сейчас:",
-      "context": "assets/forum.js:20690"
+      "context": "assets/forum.js:22658"
     },
     {
       "id": "06aac3b5dc5f79ab",
       "source": "Сейчас вы показаны псевдонимом «",
-      "context": "assets/forum.js:20715"
+      "context": "assets/forum.js:22683"
     },
     {
       "id": "5b6563c66c6fdc02",
       "source": "». Имя и почта из Relcom ID на форуме не видны.",
-      "context": "assets/forum.js:20766"
+      "context": "assets/forum.js:22734"
     },
     {
       "id": "4a11b55556c77ba2",
       "source": "Публичное имя",
-      "context": "assets/forum.js:20857"
+      "context": "assets/forum.js:22825"
     },
     {
       "id": "59322ea5e71f4d6d",
       "source": "Сохранить имя",
-      "context": "assets/forum.js:20920"
+      "context": "assets/forum.js:22888"
     },
     {
       "id": "440a79c335cd171c",
       "source": "Поиск по форуму",
-      "context": "assets/forum.js:21241"
+      "context": "assets/forum.js:23209"
     },
     {
       "id": "7d1e430bc7f23a28",
       "source": "Мои темы · новых:",
-      "context": "assets/forum.js:21931"
+      "context": "assets/forum.js:23899"
     },
     {
       "id": "b37952ae01b23375",
       "source": "Загружаем форум…",
-      "context": "assets/forum.js:22186"
+      "context": "assets/forum.js:24154"
     },
     {
       "id": "dd1b88ab67f4b98a",

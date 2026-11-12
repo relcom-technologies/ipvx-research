@@ -1,7 +1,8 @@
 # Participants' forum: ipvx.org/forum
 
-Date: 2026-11-07. Status: **Backend, pages and automatic moderator implemented and locally tested;
-not deployed, and the automatic moderator is not switched on.** This replaces the Discourse plan of the same date (see "Superseded").
+Date: 2026-11-07, machine translation added 2026-11-12. Status: **Backend, pages, automatic
+moderator and machine translation implemented and locally tested; not deployed, and neither the
+automatic moderator nor machine translation is switched on.** This replaces the Discourse plan of the same date (see "Superseded").
 
 ## Why
 
@@ -104,12 +105,74 @@ If the automatic moderator is not running, posts wait for people; nothing is pub
    category. `forum.html?s=<ref>` names the object, links back to it in the reader's language and
    suggests a category. Still to do: "Форум" in the lab header (ipvx-agent-lab), links from lab gates
    (`lab.<gate>`), and the blog footer (Press Settings → Footer, the owner's setting).
-5. **Notifications** (done on the site): a participant follows every thread they wrote in. New
+5. **Machine translation** (done, not switched on): published posts and thread titles are translated
+   into the site's other languages by `infra/forum_translator.py`; see "Machine translation".
+6. **Notifications** (done on the site): a participant follows every thread they wrote in. New
    replies are other participants' published posts after their read mark; writing a post moves the
    mark to it, and opening a thread moves it past the posts the page showed (`forum_reads`, one row
    per participant and thread). The ipvx.org header shows the count next to "Форум" for a signed-in
    participant, the forum toolbar links "Мои темы" (`?mine=1`), each own thread links to its first new
    reply, and new posts are marked in the thread. No email yet: that waits for a mail provider.
+
+## Machine translation
+
+The forum is written mostly in Russian, while ipvx.org opens in English and invites participants
+from other countries. Each published post and each title of a published thread is therefore
+translated into every site language except its own: a Russian post into English, German and
+Spanish, an English post into Russian, German and Spanish. The original is never replaced.
+
+- **Who.** `infra/forum_translator.py`, a separate process next to the automatic moderator, calls
+  Claude through the Anthropic SDK. The default model is `claude-sonnet-5-5` at low effort: half the
+  price of `claude-opus-5-5`, and translating technical prose is well within its range. The owner can
+  set another model in `IPVX_FORUM_TRANSLATOR_MODEL`.
+- **When.** After publication, by a timer every two minutes, newest texts first; one model call per
+  text returns the detected source language and all translations. Pending and hidden posts are never
+  sent. Translation is not done while a page loads, so readers cannot cause paid calls and the web
+  service never holds the API key. Until a translation exists, every edition shows the original.
+- **Where.** In the community database: `forum_languages` (one row per text: SHA-256 of the exact
+  source, detected language, outcome, model and prompt version) and `forum_translations` (one row
+  per language). This is also the cache: a text is translated once. A translation is served only
+  while the SHA-256 matches the current text, so a changed text never shows a stale translation.
+  Posts cannot be edited today; an edit route must call `_forget_translations` so the text is queued again.
+- **What stays as written.** Code blocks and inline code, links, email addresses, RFC numbers,
+  revision hashes and a signature after a `--` line are replaced by numbered markers before the text
+  reaches the model and put back afterwards. A translation that loses, repeats or invents a marker,
+  or whose length is implausible, is dropped for that language. Author names are not sent at all.
+  A text without words (only code or a link) is recorded as skipped without a model call.
+- **On the page.** `GET …/forum/threads/<id>?lang=en` (and the thread lists and notifications) add a
+  `translation` object — `lang`, `from`, `text`, `by`, `machine: true` — beside the unchanged `text`.
+  The forum page asks for its own edition's language, shows the translation with the label
+  "Machine translation from Russian" and a "Show original" switch, and marks translated titles in
+  lists; the original title is the link's tooltip. Search and the moderators' queues use originals.
+- **Hiding.** When a post is hidden, by people or by the automatic moderator, its translations are
+  deleted; hiding the opening post also deletes the title's translations. Publishing it again queues
+  it again.
+- **Unusable answers.** A refusal, a truncated or unreadable answer is recorded as skipped and not
+  retried, so the original stays. An API failure stops the run without recording anything.
+
+### Limits and cost
+
+Each run translates up to 20 texts, at most `IPVX_FORUM_TRANSLATOR_DAILY_CALLS` model calls a day
+(default 200, counted in `forum-translator.json` next to the database). With `claude-sonnet-5-5`
+($2 / $10 per million input / output tokens) a post of about 300 words costs about $0.03 for three
+languages, a title much less; the daily default caps spending at roughly $6, and 20 posts a day cost
+about $0.60. When the limit is reached, the remaining texts wait for the next day and readers see
+originals.
+
+### Switching it on
+
+As with the automatic moderator, this is the owner's step after a separate decision:
+
+1. Create `/etc/ipvx-research/forum-translator.env` as root, mode `0600`, with `ANTHROPIC_API_KEY=…`
+   and optionally `IPVX_FORUM_TRANSLATOR_MODEL` and `IPVX_FORUM_TRANSLATOR_DAILY_CALLS`. The key never
+   goes into Git, a report or a chat.
+2. Optionally see what would be stored first (this still makes paid calls):
+   `systemd-run --wait --pipe -p DynamicUser=yes -p User=ipvx-research-auth -p StateDirectory=ipvx-research-auth -p EnvironmentFile=/etc/ipvx-research/forum-translator.env -E IPVX_COMMUNITY_STATE_DIR=/var/lib/ipvx-research-auth/community /srv/ipvx-research/current/moderator-venv/bin/python /srv/ipvx-research/current/forum_translator.py --dry-run`.
+3. `systemctl enable --now ipvx-forum-translator.timer`, or deploy again.
+
+The worker shares the moderator's virtual environment (`forum-moderator-requirements.lock`). To
+switch it off: `systemctl disable --now ipvx-forum-translator.timer` and remove the environment
+file; stored translations stay until their posts are hidden.
 
 ## Running the automatic moderator
 
@@ -143,6 +206,8 @@ the environment file.
   moderators' reversals appear in the audit log.
 - A hidden post disappears from its thread and from search; hiding an opening post hides its thread.
 - Pages pass at 1440, 768 and 390 px, in all four languages, with the strict self-only policy.
+- In the English, German and Spanish editions a translated post shows the translation, its label and
+  a switch to the original; the Russian original is unchanged.
 
 ## Superseded: Discourse at forum.ipvx.org
 

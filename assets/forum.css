@@ -27,6 +27,7 @@
 .forum-anchor{color:var(--muted);text-decoration:none}
 .forum-reply-ref{display:inline-block;margin-top:6px;font-size:14px}
 .forum-text{white-space:pre-wrap;overflow-wrap:anywhere;margin-top:12px;line-height:1.6}
+.forum-translation{display:flex;flex-wrap:wrap;align-items:center;gap:0 12px;margin:8px 0 0;font-size:14px;color:var(--muted)}
 .forum-state{margin-top:10px;white-space:normal}
 .forum-pending{background:var(--signal);color:var(--ink)}
 .forum-actions{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:flex-start;margin-top:12px}

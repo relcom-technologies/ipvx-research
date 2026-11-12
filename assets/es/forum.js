@@ -1,4 +1,5 @@
 /* Participants' forum. Posts are plain text rendered with textContent; roles come only from the verified backend.
+   Machine translations come from the server, are always marked and switch back to the original text.
    One page, views chosen by the query: categories, ?c= category, ?t= thread, ?s= subject, ?q= search, ?mine= own threads, ?mod= queue. */
 (()=>{
  'use strict';
@@ -54,6 +55,25 @@
  const heading=(text,level='h2')=>node(level,text,'forum-heading');
  // Project objects a thread can be about; the link back stays in the reader's language edition.
  const edition=(page.match(/^forum(\.[a-z]{2})?\.html$/)||[])[1]||'';
+ const lang=edition?edition.slice(1):'ru';
+ const localized=path=>path+(path.includes('?')?'&':'?')+'lang='+lang;
+ const fromNames={ru:"Traducción automática del ruso",en:"Traducción automática del inglés",de:"Traducción automática del alemán",es:"Traducción automática del español"};
+ const translated=item=>{const value=item?.translation;return value&&value.lang===lang&&typeof value.text==='string'&&value.text?value:null;};
+ // A machine translation shown in place of the original, marked, with a switch back to the original text.
+ function bilingual(target,original,translation){
+  const source=/^[a-z]{2,3}$/.test(translation.from||'')&&translation.from!=='und'?translation.from:'';
+  const note=node('p',undefined,'forum-translation'),button=node('button','','forum-link-button');button.type='button';
+  let originalShown=false;
+  const show=()=>{
+   target.textContent=originalShown?original:translation.text;
+   if(!originalShown)target.lang=lang;else if(source)target.lang=source;else target.removeAttribute('lang');
+   button.textContent=originalShown?"Mostrar traducción":"Mostrar original";
+  };
+  button.addEventListener('click',()=>{originalShown=!originalShown;show();});
+  note.append(node('span',fromNames[translation.from]||"Traducción automática"),button);
+  show();
+  return note;
+ }
  const experiments={llm:"Dos modelos locales",native:"Cinco máquinas y fallo del intermediario",documents:"Documentos a través de la red nativa",scale:"Simulación de redes grandes"};
  function about(ref){
   let match=/^rfc-(\d{4})(?:\.s([1-9]\d?))?$/.exec(ref);
@@ -113,11 +133,13 @@
  function threadRows(list,threads){
   for(const thread of threads){
    if(!thread||!Number.isSafeInteger(thread.id))continue;
-   const row=node('article',undefined,'forum-thread-row'),title=node('h3');
-   title.append(link({t:thread.id},thread.title));
+   const row=node('article',undefined,'forum-thread-row'),title=node('h3'),version=translated(thread);
+   const a=link({t:thread.id},version?version.text:thread.title);if(version){a.lang=lang;a.title=thread.title;}
+   title.append(a);
    const meta=node('p',undefined,'forum-meta');
    meta.append(node('span',author(thread.author)),node('span',categories[thread.category]?.[0]||thread.category),
     node('span',(thread.replies||0)+' '+(thread.replies===1?"respuesta":"respuestas")),node('span',date(thread.lastActivityAt)));
+   if(version)meta.append(node('span',"Título traducido automáticamente"));
    row.append(title,meta);
    const state=badge(thread.status);if(state)row.append(state);
    if(thread.locked)row.append(node('span',"Cerrado",'badge'));
@@ -157,7 +179,7 @@
   view.append(crumbs(node('span',categories[id][0])),heading(categories[id][0]),node('p',categories[id][1],'forum-lead'));
   const list=node('div',undefined,'forum-threads'),more=node('button',"Mostrar más",'button secondary forum-more');more.type='button';more.hidden=true;
   view.append(list,more);
-  await threadList('/forum/categories/'+id+'/threads',list,more);
+  await threadList(localized('/forum/categories/'+id+'/threads'),list,more);
   view.append(composer(id,null));
  }
 
@@ -169,7 +191,7 @@
   if(info.href){const back=node('p',undefined,'forum-lead'),a=node('a',"Abrir en el sitio");a.href=info.href;back.append(a);view.append(back);}
   const list=node('div',undefined,'forum-threads'),more=node('button',"Mostrar más",'button secondary forum-more');more.type='button';more.hidden=true;
   view.append(list,more);
-  await threadList('/forum/subjects/'+ref+'/threads',list,more);
+  await threadList(localized('/forum/subjects/'+ref+'/threads'),list,more);
   view.append(composer(null,ref,info.category));
  }
 
@@ -182,7 +204,9 @@
   article.append(meta);
   if(item.replyTo){const ref=node('a',"en respuesta a #"+item.replyTo,'forum-reply-ref');ref.href='#post-'+item.replyTo;article.append(ref);}
   const state=badge(item.status);if(state)article.append(state);
-  article.append(node('div',item.text,'forum-text'));
+  const text=node('div',item.text,'forum-text'),version=translated(item);
+  if(version)article.append(bilingual(text,item.text,version));
+  article.append(text);
   const actions=node('div',undefined,'forum-actions');
   if(signedIn()&&item.status==='published'&&(!thread.locked||moderator())){
    const reply=node('button',"Responder",'forum-link-button');reply.type='button';reply.addEventListener('click',()=>onReply(item));actions.append(reply);
@@ -203,11 +227,13 @@
  }
 
  async function thread(id){
-  const first=await get('/forum/threads/'+id);
+  const first=await get(localized('/forum/threads/'+id));
   const info=first.thread;if(!info||!Number.isSafeInteger(info.id))throw new Error('invalid_response');
-  document.title=info.title+' · '+document.title;
+  const titleVersion=translated(info);
+  document.title=(titleVersion?titleVersion.text:info.title)+' · '+document.title;
   view.append(crumbs(link({c:info.category},categories[info.category]?.[0]||info.category)));
   const title=heading(info.title,'h2');view.append(title);
+  if(titleVersion)view.append(bilingual(title,info.title,titleVersion));
   const meta=node('p',undefined,'forum-meta');
   meta.append(node('span',author(info.author)),node('span',date(info.createdAt)));
   if(info.subject)meta.append(link({s:info.subject},"Sobre: "+about(info.subject).label));
@@ -221,7 +247,7 @@
   const lastSeen=first.lastSeen;
   const add=data=>{for(const item of data.posts||[])if(item&&Number.isSafeInteger(item.id)&&typeof item.text==='string')list.append(postItem(item,info,onReply,lastSeen));cursor=data.nextAfter||null;more.hidden=!cursor;};
   let cursor=null;add(first);
-  more.addEventListener('click',()=>get('/forum/threads/'+id+'?after='+cursor).then(add).catch(error=>say(describe(error),true)));
+  more.addEventListener('click',()=>get(localized('/forum/threads/'+id+'?after='+cursor)).then(add).catch(error=>say(describe(error),true)));
   if(moderator()){
    const lock=node('details',undefined,'forum-moderate');lock.append(node('summary',info.locked?"Reabrir tema":"Cerrar tema"));
    lock.append(form([{name:'reason',label:"Motivo",max:1000,required:true}],info.locked?"Abrir":"Cerrar",async(values,result)=>{
@@ -247,10 +273,11 @@
 
  async function mine(){
   view.append(crumbs(node('span',"Mis temas")),heading("Mis temas"),node('p',"Temas en los que escribió. Son nuevas las respuestas publicadas por otros participantes desde su última lectura.",'forum-lead'));
-  const data=await get('/forum/notifications?limit=50'),list=node('div',undefined,'forum-threads');
+  const data=await get(localized('/forum/notifications?limit=50')),list=node('div',undefined,'forum-threads');
   for(const item of data.threads||[]){
    if(!item||!Number.isSafeInteger(item.id))continue;
-   const row=node('article',undefined,'forum-thread-row'),title=node('h3'),a=link({t:item.id},item.title);
+   const row=node('article',undefined,'forum-thread-row'),title=node('h3'),version=translated(item),a=link({t:item.id},version?version.text:item.title);
+   if(version){a.lang=lang;a.title=item.title;}
    if(item.newPosts>0&&Number.isSafeInteger(item.firstNew)){a.hash='post-'+item.firstNew;row.classList.add('forum-new');}
    title.append(a);
    const meta=node('p',undefined,'forum-meta');

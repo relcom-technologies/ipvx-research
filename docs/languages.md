@@ -17,7 +17,9 @@ alternates. RFC prose and every history entry include a disclosure with the
 original text. Editorial translations are visibly identified. Raw signed proof
 objects, code, keys, model JSON, measurements and original downloadable evidence
 are unchanged. User comments, names and live moderation text are displayed as
-submitted, never translated by the browser. Relcom ID and Press are separate
+submitted, never translated by the browser. The one exception is the forum: published posts and
+thread titles get server-side machine translations, always labelled as such and switchable back to
+the original (`docs/forum.md`, "Machine translation"); the static build sends no visitor text anywhere. Relcom ID and Press are separate
 services; this change does not alter their provider interfaces or OAuth settings.
 
 ## Rebuild
