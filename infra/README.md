@@ -25,6 +25,8 @@ The participants' forum (docs/forum.md) uses the same process, database and allo
 under /community/v1/forum; its posts start pending until a moderator decides.
 `forum_moderator.py` is its automatic first-pass moderator, run by `ipvx-forum-moderator.timer`
 only when the owner has created `/etc/ipvx-research/forum-moderator.env`.
+`forum_translator.py` translates published posts into the site's languages, run by
+`ipvx-forum-translator.timer` only when the owner has created `/etc/ipvx-research/forum-translator.env`.
 The private community database/HMAC key sit in their own StateDirectory child.
 The optional root-owned /etc/ipvx-research/community.env pins an already observed
 owner pseudonym; without it, nobody is automatically promoted. The scoped operator

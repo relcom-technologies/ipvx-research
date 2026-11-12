@@ -38,6 +38,15 @@ MAX_POSTS = 100000
 FORUM_PENDING = 20
 RESERVED_NAMES = {'admin', 'administrator', 'moderator', 'ipvx', 'relcom', 'system',
                   'automatic-moderator', 'participant', 'участник', 'модератор', 'администратор'}
+# The site's language editions. Published posts and thread titles get machine translations
+# into each of them (infra/forum_translator.py); the original text is never replaced.
+FORUM_LANGUAGES = ('ru', 'en', 'de', 'es')
+TRANSLATOR = r'[a-z0-9][a-z0-9.:-]{2,79}'
+
+
+def _digest(text):
+    """Which exact source text a translation belongs to."""
+    return hashlib.sha256(text.encode()).hexdigest()
 
 
 @dataclass(frozen=True)
@@ -144,6 +153,11 @@ class CommunityService:
                 CREATE INDEX IF NOT EXISTS forum_queue ON forum_posts(status,review,id);
                 CREATE INDEX IF NOT EXISTS forum_author ON forum_posts(author,status);
                 CREATE INDEX IF NOT EXISTS forum_author_thread ON forum_posts(author,thread,id);
+                CREATE TABLE IF NOT EXISTS forum_languages (kind TEXT NOT NULL, item INTEGER NOT NULL,
+                    digest TEXT NOT NULL, source TEXT, outcome TEXT NOT NULL, translator TEXT NOT NULL,
+                    note TEXT, created INTEGER NOT NULL, PRIMARY KEY(kind, item)) WITHOUT ROWID;
+                CREATE TABLE IF NOT EXISTS forum_translations (kind TEXT NOT NULL, item INTEGER NOT NULL,
+                    lang TEXT NOT NULL, text TEXT NOT NULL, PRIMARY KEY(kind, item, lang)) WITHOUT ROWID;
             ''')
             # Full-text search over published posts only. Without FTS5 the forum still
             # works and search answers 503.
@@ -575,16 +589,48 @@ class CommunityService:
     def _opening(self, db, thread_id):
         return db.execute('SELECT min(id) FROM forum_posts WHERE thread=?', (thread_id,)).fetchone()[0]
 
-    def _public_thread(self, db, row):
-        return {'id': row['id'], 'category': row['category'], 'subject': row['subject'],
+    def _language(self, query):
+        lang = query.get('lang', [None])[0]
+        if lang is not None and lang not in FORUM_LANGUAGES:
+            raise Rejected(400, 'invalid_language')
+        return lang
+
+    def _translation(self, db, kind, item, original, status, lang):
+        """The machine translation of a published text into ``lang``, or None.
+
+        A translation is served only for the exact text it was made from, so a changed
+        source never shows a stale translation.
+        """
+        if not lang or status != 'published':
+            return None
+        row = db.execute("SELECT l.digest, l.source, l.translator, t.text FROM forum_languages l "
+                         'JOIN forum_translations t ON t.kind=l.kind AND t.item=l.item AND t.lang=? '
+                         "WHERE l.kind=? AND l.item=? AND l.outcome='translated'", (lang, kind, item)).fetchone()
+        if not row or row['digest'] != _digest(original):
+            return None
+        return {'lang': lang, 'from': row['source'], 'text': row['text'], 'by': row['translator'], 'machine': True}
+
+    def _forget_translations(self, db, kind, item):
+        db.execute('DELETE FROM forum_translations WHERE kind=? AND item=?', (kind, item))
+        db.execute('DELETE FROM forum_languages WHERE kind=? AND item=?', (kind, item))
+
+    def _public_thread(self, db, row, lang=None):
+        item = {'id': row['id'], 'category': row['category'], 'subject': row['subject'],
                 'title': row['title'], 'status': row['status'], 'locked': bool(row['locked']),
                 'author': self._forum_author(db, row['author']), 'replies': max(row['posts'] - 1, 0),
                 'createdAt': _stamp(row['created']), 'lastActivityAt': _stamp(row['bumped'])}
+        translation = self._translation(db, 'title', row['id'], row['title'], row['status'], lang)
+        if translation:
+            item['translation'] = translation
+        return item
 
-    def _public_post(self, db, row, moderator=False):
+    def _public_post(self, db, row, moderator=False, lang=None):
         item = {'id': row['id'], 'thread': row['thread'], 'text': row['text'], 'replyTo': row['reply_to'],
                 'status': row['status'], 'author': self._forum_author(db, row['author']),
                 'createdAt': _stamp(row['created'])}
+        translation = self._translation(db, 'post', row['id'], row['text'], row['status'], lang)
+        if translation:
+            item['translation'] = translation
         if moderator:
             item['review'] = {'queue': 'people' if row['review'] == 'people' else 'automatic',
                               'note': row['review_note']}
@@ -609,8 +655,15 @@ class CommunityService:
     def _set_post(self, db, row, status, review, note):
         db.execute('UPDATE forum_posts SET status=?,review=?,review_note=?,updated=? WHERE id=?',
                    (status, review, note, int(self.clock()), row['id']))
-        if self._opening(db, row['thread']) == row['id']:
+        opening = self._opening(db, row['thread']) == row['id']
+        if opening:
             db.execute('UPDATE forum_threads SET status=? WHERE id=?', (status, row['thread']))
+        if status != 'published':
+            # A hidden text keeps no copies in other languages; publishing it again
+            # puts it back in the translation queue.
+            self._forget_translations(db, 'post', row['id'])
+            if opening:
+                self._forget_translations(db, 'title', row['thread'])
         self._refresh(db, row['thread'])
 
     def _seen(self, db, actor, thread_id):
@@ -627,7 +680,7 @@ class CommunityService:
         read = db.execute('SELECT seen FROM forum_reads WHERE actor=? AND thread=?', (actor, thread_id)).fetchone()
         return max(own, read[0] if read else 0)
 
-    def _notifications(self, db, actor, limit):
+    def _notifications(self, db, actor, limit, lang=None):
         """New published replies by others in the published threads a participant wrote in."""
         rows = db.execute('''
             WITH mine AS (SELECT thread, max(id) AS own FROM forum_posts WHERE author=? GROUP BY thread),
@@ -639,16 +692,17 @@ class CommunityService:
             GROUP BY t.id ORDER BY fresh>0 DESC, t.bumped DESC, t.id DESC''', (actor, actor, actor)).fetchall()
         threads = []
         for row in rows[:limit]:
-            item = self._public_thread(db, row)
+            item = self._public_thread(db, row, lang)
             item.update(newPosts=row['fresh'], firstNew=row['first'])
             threads.append(item)
         return {'unreadThreads': sum(1 for row in rows if row['fresh']),
                 'unreadPosts': sum(row['fresh'] for row in rows), 'threads': threads}
 
     def _thread_page(self, db, where, values, query, actor):
-        if set(query) - {'limit', 'before'}:
+        if set(query) - {'limit', 'before', 'lang'}:
             raise Rejected(400, 'unknown_query')
         limit = self._limit(query, 25, 50)
+        lang = self._language(query)
         before = query.get('before', [''])[0]
         if before:
             if not re.fullmatch(r'[0-9]{1,12}-[1-9][0-9]{0,8}', before):
@@ -663,7 +717,7 @@ class CommunityService:
                           [*values, limit]).fetchall()
         items, used = [], 0
         for row in rows:
-            item = self._public_thread(db, row)
+            item = self._public_thread(db, row, lang)
             size = len(json.dumps(item, ensure_ascii=False).encode()) + 2
             if used + size > PAGE_BYTES:
                 break
@@ -697,9 +751,10 @@ class CommunityService:
             return CommunityResponse(200, {'subject': match[1], **page})
         match = re.fullmatch(r'/threads/([1-9][0-9]{0,8})', path)
         if match:
-            if set(query) - {'limit', 'after'}:
+            if set(query) - {'limit', 'after', 'lang'}:
                 raise Rejected(400, 'unknown_query')
             limit = self._limit(query, 50, 100)
+            lang = self._language(query)
             after = int(query.get('after', ['0'])[0])
             if not 0 <= after <= 999999999:
                 raise Rejected(400, 'invalid_pagination')
@@ -709,8 +764,8 @@ class CommunityService:
             clause, values = ('1=1', []) if moderator else ("(status='published' OR author=?)", [actor])
             rows = db.execute('SELECT * FROM forum_posts WHERE thread=? AND id>? AND ' + clause + ' ORDER BY id LIMIT ?',
                               [thread['id'], after, *values, limit]).fetchall()
-            items, cursor = self._page(rows, lambda row: self._public_post(db, row, moderator), limit)
-            data = {'thread': self._public_thread(db, thread), 'posts': items, 'nextAfter': cursor}
+            items, cursor = self._page(rows, lambda row: self._public_post(db, row, moderator, lang), limit)
+            data = {'thread': self._public_thread(db, thread, lang), 'posts': items, 'nextAfter': cursor}
             seen = self._seen(db, actor, thread['id'])
             if seen is not None:
                 data['lastSeen'] = seen
@@ -723,9 +778,10 @@ class CommunityService:
         if path == '/notifications':
             if not actor:
                 raise Rejected(401, 'sign_in_required')
-            if set(query) - {'limit'}:
+            if set(query) - {'limit', 'lang'}:
                 raise Rejected(400, 'unknown_query')
-            return CommunityResponse(200, self._notifications(db, actor, self._limit(query, 20, 50)))
+            return CommunityResponse(200, self._notifications(db, actor, self._limit(query, 20, 50),
+                                                              self._language(query)))
         if path == '/search':
             if set(query) - {'q', 'limit'}:
                 raise Rejected(400, 'unknown_query')
@@ -913,4 +969,65 @@ class CommunityService:
                 self._set_post(db, row, 'published' if verdict == 'publish' else 'hidden', 'automatic', reason)
             self._audit(db, 'automatic-moderator', 'forum_auto_' + verdict, row['id'],
                         {'reviewer': reviewer, 'reason': reason})
+            return True
+
+    # Machine translation of the forum (infra/forum_translator.py), in-process only like the
+    # automatic moderator. Only published posts and titles of published threads are queued;
+    # each translation is tied to the SHA-256 of the exact text it was made from.
+
+    def forum_translation_queue(self, limit=20):
+        """Published texts with no translation record yet, newest first."""
+        if type(limit) is not int or not 1 <= limit <= 100:
+            raise ValueError('limit must be 1..100')
+        with self._db() as db:
+            rows = db.execute('''
+                SELECT 'title' AS kind, t.id AS item, t.title AS text, t.category, t.title, t.created AS at
+                FROM forum_threads t LEFT JOIN forum_languages l ON l.kind='title' AND l.item=t.id
+                WHERE t.status='published' AND l.item IS NULL
+                UNION ALL
+                SELECT 'post', p.id, p.text, t.category, t.title, p.created
+                FROM forum_posts p JOIN forum_threads t ON t.id=p.thread
+                LEFT JOIN forum_languages l ON l.kind='post' AND l.item=p.id
+                WHERE p.status='published' AND t.status='published' AND l.item IS NULL
+                ORDER BY at DESC, kind DESC, item DESC LIMIT ?''', (limit,)).fetchall()
+            return [{'kind': row['kind'], 'id': row['item'], 'category': row['category'],
+                     'threadTitle': row['title'], 'text': row['text'], 'digest': _digest(row['text'])}
+                    for row in rows]
+
+    def forum_translation_record(self, kind, item, digest, translator, *, source=None, texts=None, note=None):
+        """Store the translations of one published text, or why it has none.
+
+        ``texts`` maps site languages to translated text; an empty map records that the
+        text was skipped (nothing to translate, an unusable answer) so it is not retried.
+        Returns False when the text is no longer published or changed meanwhile.
+        """
+        if kind not in ('post', 'title'):
+            raise ValueError('kind must be post or title')
+        if not isinstance(translator, str) or not re.fullmatch(TRANSLATOR, translator):
+            raise ValueError('translator must name the model or rule set')
+        if source is not None and (not isinstance(source, str) or not re.fullmatch(r'[a-z]{2,3}', source)):
+            raise ValueError('source must be a language code')
+        texts = dict(texts or {})
+        if set(texts) - set(FORUM_LANGUAGES) or source in texts:
+            raise ValueError('translations must target other site languages')
+        texts = {lang: _text(text, 1, 16000 if kind == 'post' else 400) for lang, text in texts.items()}
+        if note is not None:
+            note = _text(note, 3, 300)
+        with self._db() as db:
+            db.execute('BEGIN IMMEDIATE')
+            if kind == 'post':
+                row = db.execute('SELECT p.text, p.status, t.status AS thread FROM forum_posts p '
+                                 'JOIN forum_threads t ON t.id=p.thread WHERE p.id=?', (item,)).fetchone()
+                current = row and row['status'] == 'published' and row['thread'] == 'published' and row['text']
+            else:
+                row = db.execute('SELECT title, status FROM forum_threads WHERE id=?', (item,)).fetchone()
+                current = row and row['status'] == 'published' and row['title']
+            if not current or _digest(current) != digest:
+                return False
+            self._forget_translations(db, kind, item)
+            db.execute('INSERT INTO forum_languages(kind,item,digest,source,outcome,translator,note,created) '
+                       'VALUES(?,?,?,?,?,?,?,?)', (kind, item, digest, source,
+                       'translated' if texts else 'skipped', translator, note, int(self.clock())))
+            db.executemany('INSERT INTO forum_translations(kind,item,lang,text) VALUES(?,?,?,?)',
+                           [(kind, item, lang, text) for lang, text in sorted(texts.items())])
             return True
